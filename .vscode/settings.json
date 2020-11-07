@@ -1,0 +1,8 @@
+{
+	"files.eol": "\n",
+	"files.trimFinalNewlines": true,
+	"files.insertFinalNewline": true,
+	"css.validate": false,
+	"less.validate": false,
+	"scss.validate": false
+}

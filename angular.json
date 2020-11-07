@@ -1,0 +1,146 @@
+{
+	"$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+	"version": 1,
+	"newProjectRoot": "projects",
+	"projects": {
+		"angular-quickstart": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				}
+			},
+			"root": "",
+			"sourceRoot": "src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "@angular-builders/custom-webpack:browser",
+					"options": {
+						"customWebpackConfig": {
+							"path": "./webpack.config.js"
+						},
+						"outputPath": "dist/angular-quickstart",
+						"index": "src/index.html",
+						"main": "src/main.ts",
+						"polyfills": "src/polyfills.ts",
+						"tsConfig": "tsconfig.app.json",
+						"aot": true,
+						"assets": [
+							"src/favicon.ico",
+							"src/assets",
+							"src/manifest.webmanifest"
+						],
+						"styles": [
+							"src/assets/coreui/free/free-icons.scss",
+							"src/assets/coreui/brand/brand-icons.scss",
+							"src/assets/fonts/FiraSans/fira-sans.scss",
+							"src/assets/fonts/Lato/lato.scss",
+							"src/assets/fonts/Montserrat/montserrat.scss",
+							"src/styles/styles.scss"
+						],
+						"stylePreprocessorOptions": {
+							"includePaths": ["src/styles"]
+						},
+						"scripts": []
+					},
+					"configurations": {
+						"production": {
+							"fileReplacements": [
+								{
+									"replace": "src/environments/environment.ts",
+									"with": "src/environments/environment.prod.ts"
+								}
+							],
+							"optimization": true,
+							"outputHashing": "all",
+							"sourceMap": false,
+							"extractCss": true,
+							"namedChunks": false,
+							"extractLicenses": true,
+							"vendorChunk": false,
+							"buildOptimizer": true,
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "2mb",
+									"maximumError": "5mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "6kb",
+									"maximumError": "10kb"
+								}
+							],
+							"serviceWorker": true,
+							"ngswConfigPath": "ngsw-config.json"
+						}
+					}
+				},
+				"serve": {
+					"builder": "@angular-builders/custom-webpack:dev-server",
+					"options": {
+						"customWebpackConfig": {
+							"path": "./webpack.config.js"
+						},
+						"browserTarget": "angular-quickstart:build"
+					},
+					"configurations": {
+						"production": {
+							"browserTarget": "angular-quickstart:build:production"
+						}
+					}
+				},
+				"extract-i18n": {
+					"builder": "@angular-devkit/build-angular:extract-i18n",
+					"options": {
+						"browserTarget": "angular-quickstart:build"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"main": "src/test.ts",
+						"polyfills": "src/polyfills.ts",
+						"tsConfig": "tsconfig.spec.json",
+						"karmaConfig": "karma.conf.js",
+						"assets": [
+							"src/favicon.ico",
+							"src/assets",
+							"src/manifest.webmanifest"
+						],
+						"styles": ["src/styles/styles.scss"],
+						"stylePreprocessorOptions": {
+							"includePaths": ["src/styles"]
+						},
+						"scripts": []
+					}
+				},
+				"lint": {
+					"builder": "@angular-devkit/build-angular:tslint",
+					"options": {
+						"tsConfig": [
+							"tsconfig.app.json",
+							"tsconfig.spec.json",
+							"e2e/tsconfig.json"
+						],
+						"exclude": ["**/node_modules/**"]
+					}
+				},
+				"e2e": {
+					"builder": "@angular-devkit/build-angular:protractor",
+					"options": {
+						"protractorConfig": "e2e/protractor.conf.js",
+						"devServerTarget": "angular-quickstart:serve"
+					},
+					"configurations": {
+						"production": {
+							"devServerTarget": "angular-quickstart:serve:production"
+						}
+					}
+				}
+			}
+		}
+	},
+	"defaultProject": "angular-quickstart"
+}

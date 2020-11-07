@@ -1,0 +1,14 @@
+<footer class="body-font bg-default-inverse text-default-inverse">
+	<div class="container py-6 flex justify-between items-center">
+		<p class="text-sm">© {{ currentYear }}</p>
+		<label
+			><input
+				#themeCheckbox
+				type="checkbox"
+				class="mr-3"
+				[checked]="isDarkTheme | async"
+				(change)="toggleDarkTheme(themeCheckbox.checked)"
+			/>{{ themeCheckbox.checked ? 'Light theme' : 'Dark Theme' }}
+		</label>
+	</div>
+</footer>
