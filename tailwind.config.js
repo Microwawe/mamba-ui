@@ -22,11 +22,18 @@ module.exports = {
 				'9xl': '8rem',
 				'10xl': '10rem',
 			},
+			colors: {
+				primary: '#fff',
+				secondary: '#fff',
+				defaultLight: '#fff',
+				defaultDark: '#fff',
+			},
 		},
 	},
 	variants: {
 		textColor: ['dark', 'dark-hover', 'responsive', 'hover', 'focus'],
 		backgroundColor: ['dark', 'dark-hover', 'responsive', 'hover', 'focus'],
+		borderColor: ['dark', 'dark-hover', 'responsive', 'hover', 'focus'],
 	},
 	corePlugins: {
 		container: false,
@@ -37,7 +44,6 @@ module.exports = {
 			addComponents({
 				'.container': {
 					margin: 'auto',
-					padding: theme('spacing.6'),
 					maxWidth: theme('maxWidth.full'),
 
 					// Breakpoints

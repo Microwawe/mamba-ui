@@ -1,6 +1,32 @@
 <div [ngClass]="{'dark-theme': isDarkTheme | async}">
-	<div class="flex flex-col min-h-screen bg-default text-default">
+	<div
+		class="flex flex-col min-h-screen bg-default-inverse text-default-inverse"
+	>
 		<custom-header></custom-header>
+		<div class="container">
+			<div class="flex flex-wrap place-content-stretch p-12">
+				<a
+					[routerLink]="['/footer']"
+					class="text-default bg-default text-default py-4 px-8 m-3 text-lg rounded-md"
+					>Footer</a
+				>
+				<a
+					[routerLink]="['/hero']"
+					class="text-default bg-default text-default py-4 px-8 m-3 text-lg rounded-md"
+					>Hero</a
+				>
+				<a
+					[routerLink]="['/blog']"
+					class="text-default bg-default text-default py-4 px-8 m-3 text-lg rounded-md"
+					>Blog</a
+				>
+				<a
+					[routerLink]="['/call-to-action']"
+					class="text-default bg-default text-default py-4 px-8 m-3 text-lg rounded-md"
+					>Call to Action</a
+				>
+			</div>
+		</div>
 		<div class="flex-1">
 			<router-outlet></router-outlet>
 		</div>

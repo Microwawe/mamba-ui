@@ -7,11 +7,9 @@ export class ThemeService {
 	private isDarkTheme: BehaviorSubject<boolean>;
 
 	constructor() {
-		console.log('theme constructor');
 		this.isDarkTheme = new BehaviorSubject<boolean>(
 			localStorage.getItem(this.key) === 'true'
 		);
-		console.log(this.isDarkTheme.getValue());
 	}
 
 	setDarkTheme(isDarkTheme: boolean) {
