@@ -2,10 +2,10 @@ import {Component, OnInit} from '@angular/core';
 import {BaseComponent} from '@shared/components/base/base.component';
 
 @Component({
-	selector: 'custom-footer-showcase',
-	templateUrl: './footer-showcase.component.html',
+	selector: 'custom-pricing1',
+	templateUrl: './pricing1.component.html',
 })
-export class FooterShowcaseComponent extends BaseComponent implements OnInit {
+export class Pricing1Component extends BaseComponent implements OnInit {
 	constructor() {
 		super();
 	}

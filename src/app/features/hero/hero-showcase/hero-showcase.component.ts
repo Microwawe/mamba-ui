@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {BaseComponent} from '@shared/components/base/base.component';
 
 @Component({
-  selector: 'app-hero-showcase',
-  templateUrl: './hero-showcase.component.html',
-  styleUrls: ['./hero-showcase.component.scss']
+	selector: 'custom-hero-showcase',
+	templateUrl: './hero-showcase.component.html',
+	styleUrls: ['./hero-showcase.component.scss'],
 })
-export class HeroShowcaseComponent implements OnInit {
+export class HeroShowcaseComponent extends BaseComponent implements OnInit {
+	constructor() {
+		super();
+	}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+	ngOnInit() {}
 }

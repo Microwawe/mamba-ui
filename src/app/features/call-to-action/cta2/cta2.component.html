@@ -16,7 +16,8 @@
 			class="flex flex-col space-y-4 justify-center items-center flex-shrink-0 mt-6 sm:flex-row sm:space-y-0 sm:space-x-4 lg:ml-4 lg:mt-0 lg:justify-end"
 		>
 			<button
-				class="bg-primary text-default-inverse inline-flex py-3 px-6 rounded-lg items-center"
+				class="text-default-inverse inline-flex py-3 px-6 rounded-lg items-center"
+				[ngClass]="primaryBackground"
 			>
 				<i class="cib-google-play text-xl"></i>
 				<span class="ml-4 flex items-start flex-col leading-none"
@@ -26,7 +27,8 @@
 					></span
 				></button
 			><button
-				class="bg-primary text-default-inverse inline-flex py-3 px-5 rounded-lg items-center"
+				class="text-default-inverse inline-flex py-3 px-5 rounded-lg items-center"
+				[ngClass]="primaryBackground"
 			>
 				<i class="cib-apple text-xl"></i>
 				<span class="ml-4 flex items-start flex-col leading-none"

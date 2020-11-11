@@ -14,13 +14,13 @@
 	}
 }
 
-.text-primary {
+/* .text-primary {
 	@apply text-blue-700;
 
 	.dark-theme & {
 		@apply text-orange-500;
 	}
-}
+} */
 
 .bg-default {
 	@apply bg-gray-100;
@@ -38,13 +38,13 @@
 	}
 }
 
-.bg-primary {
+/* .bg-primary {
 	@apply bg-blue-700;
 
 	.dark-theme & {
 		@apply bg-orange-500;
 	}
-}
+} */
 
 .fill-default {
 	@apply text-gray-200;

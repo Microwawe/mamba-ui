@@ -24,6 +24,13 @@ const routes: Routes = [
 			import('./features/blog/blog.module').then(m => m.BlogModule),
 	},
 	{
+		path: 'pricing',
+		loadChildren: () =>
+			import('./features/pricing/pricing.module').then(
+				m => m.PricingModule
+			),
+	},
+	{
 		path: 'call-to-action',
 		loadChildren: () =>
 			import('./features/call-to-action/call-to-action.module').then(

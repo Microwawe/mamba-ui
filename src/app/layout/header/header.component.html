@@ -1,4 +1,4 @@
-<header class="body-font">
+<header class="body-font text-white" [ngClass]="primaryBackground">
 	<div
 		class="container p-6 mx-auto flex flex-wrap flex-col md:flex-row items-center"
 	>
@@ -13,6 +13,8 @@
 		>
 			<a href="#" class="">Github</a>
 			<a href="#" class="">Contact</a>
+			<custom-color-selector></custom-color-selector>
+			<custom-theme-selector></custom-theme-selector>
 		</nav>
 	</div>
 </header>
