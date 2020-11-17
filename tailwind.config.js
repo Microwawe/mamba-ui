@@ -23,10 +23,12 @@ module.exports = {
 				'10xl': '10rem',
 			},
 			colors: {
-				primary: 'var(--color-primary)',
-				secondary: 'var(--color-secondary)',
-				light: 'var(--color-light)',
-				dark: 'var(--color-dark)',
+				'primary': 'var(--primary)',
+				'secondary': 'var(--secondary)',
+				'default': 'var(--default)',
+				'default-inverse': 'var(--default-inverse)',
+				'contrast': 'var(--contrast)',
+				'contrast-inverse': 'var(--contrast-inverse)',
 			},
 		},
 	},
@@ -41,7 +43,7 @@ module.exports = {
 	plugins: [
 		require('@tailwindcss/typography'),
 		({addComponents, theme}) => {
-			addComponents({
+			const container = {
 				'.container': {
 					margin: 'auto',
 					maxWidth: theme('maxWidth.full'),
@@ -60,7 +62,8 @@ module.exports = {
 						maxWidth: theme('maxWidth.6xl'),
 					},
 				},
-			});
+			};
+			addComponents(container);
 		},
 		({addVariant, prefix}) => {
 			addVariant('dark', ({modifySelectors, separator}) => {
@@ -80,9 +83,7 @@ module.exports = {
 		({addVariant, e}) => {
 			addVariant('dark-hover', ({modifySelectors, separator}) => {
 				modifySelectors(({className}) => {
-					return `.dark-theme .${e(
-						`dark:hover${separator}${className}`
-					)}:hover`;
+					return `.dark-theme .${e(`dark:hover${separator}${className}`)}:hover`;
 				});
 			});
 		},

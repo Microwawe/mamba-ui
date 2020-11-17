@@ -26,12 +26,10 @@
 						"polyfills": "src/polyfills.ts",
 						"tsConfig": "tsconfig.app.json",
 						"aot": true,
-						"assets": [
-							"src/favicon.ico",
-							"src/assets",
-							"src/manifest.webmanifest"
-						],
+						"assets": ["src/favicon.ico", "src/assets", "src/manifest.webmanifest"],
 						"styles": [
+							"node_modules/prismjs/themes/prism-tomorrow.css",
+							"node_modules/prismjs/themes/prism-coy.css",
 							"src/assets/coreui/free/free-icons.scss",
 							"src/assets/coreui/brand/brand-icons.scss",
 							"src/assets/fonts/FiraSans/fira-sans.scss",
@@ -104,11 +102,7 @@
 						"polyfills": "src/polyfills.ts",
 						"tsConfig": "tsconfig.spec.json",
 						"karmaConfig": "karma.conf.js",
-						"assets": [
-							"src/favicon.ico",
-							"src/assets",
-							"src/manifest.webmanifest"
-						],
+						"assets": ["src/favicon.ico", "src/assets", "src/manifest.webmanifest"],
 						"styles": ["src/styles/styles.scss"],
 						"stylePreprocessorOptions": {
 							"includePaths": ["src/styles"]

@@ -19,121 +19,103 @@
 			</div>
 		</div>
 		<div class="grid gap-6 auto-rows-fr grid-cols-1 lg:grid-cols-3">
-			<div class="p-8 flex flex-col items-center border rounded-md">
+			<div class="p-8 relative flex flex-col items-center border rounded-md">
+				<span
+					class="absolute top-0 px-6 pt-1 pb-2 rounded-b-lg text-default-inverse font-medium"
+					[ngClass]="primaryBackground"
+					>Personal</span
+				>
+				<p class="text-4xl font-bold self-start" [ngClass]="primaryText">FREE</p>
+				<ul class="flex-1 self-stretch space-y-2">
+					<li class="flex items-center space-x-2">
+						<span>Lumet consectetur adipisicing</span>
+					</li>
+					<li class="flex items-center space-x-2">
+						<span>Lumet consectetur adipisicing</span>
+					</li>
+					<li class="flex items-center space-x-2">
+						<span>Lumet consectetur adipisicing</span>
+					</li>
+					<li class="flex items-center space-x-2">
+						<span>Lumet consectetur adipisicing</span>
+					</li>
+				</ul>
+				<button
+					class="border font-semibold btn mt-12 uppercase"
+					[ngClass]="[primaryBorder]"
+				>
+					Order now
+				</button>
+			</div>
+			<div class="p-8 relative flex flex-col items-center border rounded-md">
 				<p class="self-start">Personal</p>
 				<p class="text-4xl font-bold self-start">FREE</p>
 				<ul class="flex-1 self-stretch space-y-2">
 					<li class="flex items-center space-x-2">
-						<i
-							class="text-2xl font-semibold cil-check-alt inline-flex justify-center items-center"
-							[ngClass]="primaryText"
-						></i>
 						<span>Lumet consectetur adipisicing</span>
 					</li>
 					<li class="flex items-center space-x-2">
-						<i
-							class="text-2xl font-semibold cil-check-alt inline-flex justify-center items-center"
-							[ngClass]="primaryText"
-						></i>
 						<span>Lumet consectetur adipisicing</span>
 					</li>
 					<li class="flex items-center space-x-2">
-						<i
-							class="text-2xl font-semibold cil-check-alt inline-flex justify-center items-center"
-							[ngClass]="primaryText"
-						></i>
 						<span>Lumet consectetur adipisicing</span>
 					</li>
 					<li class="flex items-center space-x-2">
-						<i
-							class="text-2xl font-semibold cil-check-alt inline-flex justify-center items-center"
-							[ngClass]="primaryText"
-						></i>
 						<span>Lumet consectetur adipisicing</span>
 					</li>
 				</ul>
-				<button class="text-default-inverse border border-gray-900 font-semibold btn mt-12">
-					Contact
+				<button
+					class="text-default-inverse border border-gray-900 font-semibold btn mt-12 uppercase"
+				>
+					Order now
 				</button>
 			</div>
 			<div
-				class="p-8 flex flex-col items-center border-2 rounded-md"
+				class="p-8 relative flex flex-col items-center border-2 rounded-md"
 				[ngClass]="primaryBorder"
 			>
 				<p class="self-start">Personal</p>
 				<p class="text-4xl font-bold self-start">9€ <span class="text-xl">/mo</span></p>
 				<ul class="flex-1 self-stretch">
 					<li class="flex items-center space-x-2">
-						<i
-							class="text-2xl font-semibold cil-check-alt inline-flex justify-center items-center"
-							[ngClass]="primaryText"
-						></i>
 						<span>Lumet consectetur adipisicing</span>
 					</li>
 					<li class="flex items-center space-x-2">
-						<i
-							class="text-2xl font-semibold cil-check-alt inline-flex justify-center items-center"
-							[ngClass]="primaryText"
-						></i>
 						<span>Lumet consectetur adipisicing</span>
 					</li>
 					<li class="flex items-center space-x-2">
-						<i
-							class="text-2xl font-semibold cil-check-alt inline-flex justify-center items-center"
-							[ngClass]="primaryText"
-						></i>
 						<span>Lumet consectetur adipisicing</span>
 					</li>
 					<li class="flex items-center space-x-2">
-						<i
-							class="text-2xl font-semibold cil-check-alt inline-flex justify-center items-center"
-							[ngClass]="primaryText"
-						></i>
 						<span>Lumet consectetur adipisicing</span>
 					</li>
 				</ul>
 				<button
-					class="text-default-inverse font-semibold btn mt-12"
+					class="text-default-inverse font-semibold btn mt-12 uppercase"
 					[ngClass]="primaryBackground"
 				>
-					Contact
+					Order now
 				</button>
 			</div>
-			<div class="p-8 flex flex-col items-center border rounded-md">
+			<div class="p-8 relative flex flex-col items-center border rounded-md">
 				<p class="self-start">Business</p>
 				<p class="text-4xl font-bold self-start">17€ <span class="text-xl">/mo</span></p>
 				<ul class="flex-1 self-stretch">
 					<li class="flex items-center space-x-2">
-						<i
-							class="text-2xl font-semibold cil-check-alt inline-flex justify-center items-center"
-							[ngClass]="primaryText"
-						></i>
 						<span>Lumet consectetur adipisicing</span>
 					</li>
 					<li class="flex items-center space-x-2">
-						<i
-							class="text-2xl font-semibold cil-check-alt inline-flex justify-center items-center"
-							[ngClass]="primaryText"
-						></i>
 						<span>Lumet consectetur adipisicing</span>
 					</li>
 					<li class="flex items-center space-x-2">
-						<i
-							class="text-2xl font-semibold cil-check-alt inline-flex justify-center items-center"
-							[ngClass]="primaryText"
-						></i>
 						<span>Lumet consectetur adipisicing</span>
 					</li>
 					<li class="flex items-center space-x-2">
-						<i
-							class="text-2xl font-semibold cil-check-alt inline-flex justify-center items-center"
-							[ngClass]="primaryText"
-						></i>
 						<span>Lumet consectetur adipisicing</span>
 					</li>
 				</ul>
-				<button class="text-default-inverse border-2 font-semibold btn mt-12">
-					Contact
+				<button class="text-default-inverse border-2 font-semibold btn mt-12 uppercase">
+					Order now
 				</button>
 			</div>
 		</div>

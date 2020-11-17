@@ -4,12 +4,14 @@ import {FormsModule} from '@angular/forms';
 
 import {BaseComponent} from './components/base/base.component';
 import {ColorSelectorComponent} from './components/color-selector/color-selector.component';
+import {ShowCodeComponent} from './components/show-code/show-code.component';
 import {ThemeSelectorComponent} from './components/theme-selector/theme-selector.component';
 
 const components = [
 	BaseComponent,
-	ThemeSelectorComponent,
 	ColorSelectorComponent,
+	ShowCodeComponent,
+	ThemeSelectorComponent,
 ];
 @NgModule({
 	imports: [CommonModule],

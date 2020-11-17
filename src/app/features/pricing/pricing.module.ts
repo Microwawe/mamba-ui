@@ -5,6 +5,7 @@ import {SharedModule} from '@shared/shared.module';
 import {PricingShowcaseComponent} from './pricing-showcase.component';
 import {Pricing1Component} from './pricing1/pricing1.component';
 import {Pricing2Component} from './pricing2/pricing2.component';
+import {Pricing3Component} from './pricing3/pricing3.component';
 
 const routes: Routes = [
 	{
@@ -19,6 +20,7 @@ const routes: Routes = [
 		PricingShowcaseComponent,
 		Pricing1Component,
 		Pricing2Component,
+		Pricing3Component,
 	],
 })
 export class PricingModule {}
