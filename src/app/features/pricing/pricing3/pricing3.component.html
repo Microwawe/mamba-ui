@@ -8,24 +8,20 @@
 			</p>
 			<div>
 				<button
-					class="rounded-l-lg border py-1 px-4 font-semibold text-default-inverse"
-					[ngClass]="[primaryBorder, primaryBackground]"
+					class="rounded-l-lg bg-primary border border-primary py-1 px-4 font-semibold text-default-inverse"
 				>
 					Monthly
 				</button>
-				<button class="rounded-r-lg border py-1 px-4" [ngClass]="primaryBorder">
-					Annually
-				</button>
+				<button class="rounded-r-lg border border-primary py-1 px-4">Annually</button>
 			</div>
 		</div>
 		<div class="grid gap-6 auto-rows-fr grid-cols-1 lg:grid-cols-3">
 			<div class="p-8 relative flex flex-col items-center border rounded-md">
 				<span
-					class="absolute top-0 px-6 pt-1 pb-2 rounded-b-lg text-default-inverse font-medium"
-					[ngClass]="primaryBackground"
+					class="absolute bg-primary top-0 px-6 pt-1 pb-2 rounded-b-lg text-default-inverse font-medium"
 					>Personal</span
 				>
-				<p class="text-4xl font-bold self-start" [ngClass]="primaryText">FREE</p>
+				<p class="text-4xl font-bold text-primary self-start">FREE</p>
 				<ul class="flex-1 self-stretch space-y-2">
 					<li class="flex items-center space-x-2">
 						<span>Lumet consectetur adipisicing</span>
@@ -40,10 +36,7 @@
 						<span>Lumet consectetur adipisicing</span>
 					</li>
 				</ul>
-				<button
-					class="border font-semibold btn mt-12 uppercase"
-					[ngClass]="[primaryBorder]"
-				>
+				<button class="border border-primary font-semibold btn mt-12 uppercase">
 					Order now
 				</button>
 			</div>
@@ -70,10 +63,7 @@
 					Order now
 				</button>
 			</div>
-			<div
-				class="p-8 relative flex flex-col items-center border-2 rounded-md"
-				[ngClass]="primaryBorder"
-			>
+			<div class="p-8 relative flex flex-col items-center border-2 border-primary rounded-md">
 				<p class="self-start">Personal</p>
 				<p class="text-4xl font-bold self-start">9€ <span class="text-xl">/mo</span></p>
 				<ul class="flex-1 self-stretch">
@@ -90,10 +80,7 @@
 						<span>Lumet consectetur adipisicing</span>
 					</li>
 				</ul>
-				<button
-					class="text-default-inverse font-semibold btn mt-12 uppercase"
-					[ngClass]="primaryBackground"
-				>
+				<button class="text-default-inverse bg-primary font-semibold btn mt-12 uppercase">
 					Order now
 				</button>
 			</div>

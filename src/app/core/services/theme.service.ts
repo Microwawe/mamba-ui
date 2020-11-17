@@ -3,21 +3,65 @@ import {BehaviorSubject, Observable} from 'rxjs';
 
 @Injectable()
 export class ThemeService {
-	private key = 'is-custom-dark-theme';
+	private themeKey = 'is-custom-dark-theme';
+	private colorKey = 'custom-primary-color';
 	private isDarkTheme: BehaviorSubject<boolean>;
 
 	constructor() {
-		this.isDarkTheme = new BehaviorSubject<boolean>(localStorage.getItem(this.key) === 'true');
+		this.isDarkTheme = new BehaviorSubject<boolean>(
+			localStorage.getItem(this.themeKey) === 'true'
+		);
+		const savedColor = localStorage.getItem(this.colorKey);
+		this.setPrimaryColor(savedColor || '');
 	}
 
 	setDarkTheme(isDarkTheme: boolean) {
 		this.isDarkTheme.next(isDarkTheme);
-		localStorage.setItem(this.key, this.isDarkTheme.value.toString());
+		localStorage.setItem(this.themeKey, this.isDarkTheme.value.toString());
 		this.swapThemeColors(isDarkTheme);
 	}
 
 	getDarkTheme(): Observable<boolean> {
 		return this.isDarkTheme;
+	}
+
+	setPrimaryColor(selectedColor: string) {
+		const rootStyle = document.documentElement.style;
+		let newColor: Colors = Colors['green-500'];
+		switch (selectedColor) {
+			case 'yellow':
+				newColor = Colors['yellow-500'];
+				break;
+			case 'orange':
+				newColor = Colors['orange-500'];
+				break;
+			case 'red':
+				newColor = Colors['red-500'];
+				break;
+			case 'pink':
+				newColor = Colors['pink-500'];
+				break;
+			case 'purple':
+				newColor = Colors['purple-500'];
+				break;
+			case 'indigo':
+				newColor = Colors['indigo-500'];
+				break;
+			case 'blue':
+				newColor = Colors['blue-500'];
+				break;
+			case 'teal':
+				newColor = Colors['teal-500'];
+				break;
+			case 'green':
+				newColor = Colors['green-500'];
+				break;
+			default:
+				newColor = Colors['green-500'];
+				break;
+		}
+		localStorage.setItem(this.colorKey, selectedColor);
+		rootStyle.setProperty(Variables.PRIMARY, newColor);
 	}
 
 	swapThemeColors(isDarkTheme: boolean) {

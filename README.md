@@ -22,6 +22,26 @@ ng new projectName --style=scss --routing
 - [x] Service worker
 
 
+## TODO
+
+- [ ] Prism colors for light theme
+- [ ] Primary/secondary colors
+- [ ] More components
+  - [ ] Contact
+  - [ ] FAQ
+  - [ ] Form
+  - [ ] Gallery
+  - [ ] Login
+  - [ ] Menu
+  - [ ] Settings
+  - [ ] Stats
+  - [ ] Steps
+  - [ ] Tag/label
+  - [ ] Team
+  - [ ] Testimonial
+- [ ] React components
+- [ ] Vue components
+
 ## Installation
 
 

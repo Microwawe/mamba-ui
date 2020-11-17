@@ -2,7 +2,7 @@
 	<button
 		*ngFor="let color of colors"
 		class="h-6 w-6 rounded-full border border-gray-500"
-		[ngClass]="'bg-' + color.name + '-' + color.shade"
+		[ngClass]="'bg-' + color + '-500'"
 		(click)="changeColor(color)"
 	></button>
 </div>
