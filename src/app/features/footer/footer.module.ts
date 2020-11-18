@@ -15,10 +15,6 @@ const routes: Routes = [
 
 @NgModule({
 	imports: [RouterModule.forChild(routes), SharedModule],
-	declarations: [
-		FooterShowcaseComponent,
-		FooterSimple1Component,
-		FooterSimple2Component,
-	],
+	declarations: [FooterShowcaseComponent, FooterSimple1Component, FooterSimple2Component],
 })
 export class FooterModule {}
