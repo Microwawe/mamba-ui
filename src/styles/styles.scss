@@ -1,3 +1,13 @@
+html {
+	--primary: #ed8936;
+	--secondary: #4299e1;
+	--default: #1a202c;
+	--default-inverse: #edf2f7;
+	--contrast: #000;
+	--contrast-inverse: #fff;
+	/* ... */
+}
+
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';

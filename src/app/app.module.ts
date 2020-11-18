@@ -19,9 +19,9 @@ import {NotFoundComponent} from './layout/not-found/not-found.component';
 		NotFoundComponent,
 	],
 	imports: [
+		CoreModule,
 		AppRoutingModule,
 		BrowserModule,
-		CoreModule,
 		SharedModule,
 		ServiceWorkerModule.register('ngsw-worker.js', {
 			enabled: environment.production,

@@ -1,6 +1,16 @@
 <div [ngClass]="{'dark-theme': isDarkTheme | async}">
-	<div class="flex flex-col min-h-screen bg-default text-default">
+	<div class="flex flex-col min-h-screen bg-gray-500 text-default-inverse">
 		<custom-header></custom-header>
+		<div class="container">
+			<div class="flex flex-wrap place-content-stretch p-12">
+				<a
+					*ngFor="let category of categories"
+					[routerLink]="['/' + category]"
+					class="text-default-inverse bg-default text-default-inverse capitalize py-4 px-8 m-3 text-lg rounded-md"
+					>{{ category }}</a
+				>
+			</div>
+		</div>
 		<div class="flex-1">
 			<router-outlet></router-outlet>
 		</div>

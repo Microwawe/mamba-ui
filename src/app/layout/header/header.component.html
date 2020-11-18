@@ -1,6 +1,6 @@
-<header class="body-font">
+<header class="body-font text-white" [ngClass]="primaryBackground">
 	<div
-		class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
+		class="container p-6 mx-auto flex flex-wrap flex-col md:flex-row items-center"
 	>
 		<a
 			class="flex title-font font-medium items-center mb-4 md:mb-0"
@@ -9,20 +9,12 @@
 			LOGO
 		</a>
 		<nav
-			class="md:ml-auto flex flex-wrap items-center text-base justify-center"
+			class="md:ml-auto flex flex-wrap items-center text-base justify-center space-x-6"
 		>
-			<a
-				[routerLink]="['/link']"
-				[routerLinkActive]="['text-primary', 'font-semibold']"
-				class="mr-5 text-default"
-				>Link</a
-			>
-			<a
-				[routerLink]="['/link']"
-				[routerLinkActive]="['text-primary', 'font-semibold']"
-				class="mr-5 text-default"
-				>Link</a
-			>
+			<a href="#" class="">Github</a>
+			<a href="#" class="">Contact</a>
+			<custom-color-selector></custom-color-selector>
+			<custom-theme-selector></custom-theme-selector>
 		</nav>
 	</div>
 </header>
