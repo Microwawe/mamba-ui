@@ -1,5 +1,5 @@
 <section class="container overflow-hidden rounded-lg scrollbar-none">
-	<div class="overflow-hidden divide-y rounded shadow-sm bg-default divide-default-inverse">
+	<div class="overflow-hidden divide-y rounded shadow-sm bg-default divide-neutral">
 		<div class="p-4 space-x-2 sm:space-x-4">
 			<button class="px-2 py-px text-sm sm:px-3 sm:py-1" (click)="showPreview()">
 				Preview
@@ -17,7 +17,7 @@
 			<button
 				*ngIf="codeVisible"
 				(click)="copyToClipboard()"
-				class="absolute top-0 right-0 flex mt-4 mr-4 space-x-2 border btn border-primary"
+				class="absolute top-0 right-0 flex mt-4 mr-4 space-x-2 border bg-default btn border-primary"
 			>
 				<i class="self-center text-xl cil-copy"></i>
 				<span>Copy</span>

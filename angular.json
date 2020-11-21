@@ -29,7 +29,6 @@
 						"assets": ["src/favicon.ico", "src/assets", "src/manifest.webmanifest"],
 						"styles": [
 							"node_modules/prismjs/themes/prism-tomorrow.css",
-							"node_modules/prismjs/themes/prism-coy.css",
 							"src/assets/coreui/free/free-icons.scss",
 							"src/assets/coreui/brand/brand-icons.scss",
 							"src/assets/fonts/FiraSans/fira-sans.scss",
