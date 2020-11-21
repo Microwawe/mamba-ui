@@ -1,25 +1,25 @@
-<section class="container rounded-lg overflow-hidden scrollbar-none">
-	<div class="overflow-hidden rounded shadow-sm bg-default divide-y divide-default-inverse px-4">
+<section class="container overflow-hidden rounded-lg scrollbar-none">
+	<div class="overflow-hidden divide-y rounded shadow-sm bg-default divide-default-inverse">
 		<div class="p-4 space-x-2 sm:space-x-4">
-			<button class="px-2 sm:px-3 py-px sm:py-1 text-sm" (click)="showPreview()">
+			<button class="px-2 py-px text-sm sm:px-3 sm:py-1" (click)="showPreview()">
 				Preview
 			</button>
-			<button class="px-2 sm:px-3 py-px sm:py-1 text-sm" (click)="showCode()">HTML</button>
+			<button class="px-2 py-px text-sm sm:px-3 sm:py-1" (click)="showCode()">HTML</button>
 		</div>
 		<div class="relative overflow-auto">
 			<div #rawContent *ngIf="!codeVisible">
 				<ng-content></ng-content>
 			</div>
-			<pre *ngIf="codeVisible" class="my-6 px-8" style="white-space: pre-line">
+			<pre *ngIf="codeVisible" class="px-8 my-6" style="white-space: pre-line">
 				<code class=" language-markdown" [innerHTML]="code">
 				</code>
 			</pre>
 			<button
 				*ngIf="codeVisible"
 				(click)="copyToClipboard()"
-				class="btn border border-primary flex space-x-2 absolute top-0 right-0 mt-4 mr-4"
+				class="absolute top-0 right-0 flex mt-4 mr-4 space-x-2 border btn border-primary"
 			>
-				<i class="cil-copy text-xl self-center"></i>
+				<i class="self-center text-xl cil-copy"></i>
 				<span>Copy</span>
 			</button>
 		</div>

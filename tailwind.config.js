@@ -23,7 +23,10 @@ module.exports = {
 				'10xl': '10rem',
 			},
 			colors: {
+				'dark': 'var(--dark)',
+				'neutral': 'var(--neutral)',
 				'primary': 'var(--primary)',
+				'primary-variant': 'var(--primary-variant)',
 				'secondary': 'var(--secondary)',
 				'default': 'var(--default)',
 				'default-inverse': 'var(--default-inverse)',
