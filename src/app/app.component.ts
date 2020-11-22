@@ -9,7 +9,22 @@ import {Observable} from 'rxjs';
 })
 export class AppComponent {
 	isDarkTheme!: Observable<boolean>;
-	categories = ['blog', 'hero', 'footer', 'call-to-action', 'pricing'];
+	categories = [
+		'blog',
+		'call-to-action',
+		'contact',
+		'faq',
+		'footer',
+		'form',
+		'hero',
+		'login',
+		'pricing',
+		'stats',
+		'steps',
+		'team',
+		'testimonial',
+		'timeline',
+	];
 
 	constructor(private themeService: ThemeService) {}
 

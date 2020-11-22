@@ -1,0 +1,25 @@
+<section class="py-6 bg-default text-default-inverse">
+	<div class="container flex flex-col items-center justify-center p-10 space-y-8">
+		<h1 class="text-5xl font-bold leading-none text-center">Our team</h1>
+		<p class="text-xl font-medium text-center">
+			At a assumenda quas cum earum ut itaque commodi saepe rem aspernatur quam natus quis
+			nihil quod, hic explicabo doloribus magnam neque, exercitationem eius sunt!
+		</p>
+
+		<div class="flex flex-row flex-wrap-reverse justify-center">
+			<div
+				*ngFor="let person of [1, 2, 3, 4, 5, 6, 7, 8, 9]; let i = index"
+				class="flex flex-col justify-center m-8 text-center"
+			>
+				<img
+					class="self-center w-24 h-24 mb-4 bg-center bg-cover rounded-full"
+					src="https://source.unsplash.com/10{{ i }}x10{{ i }}/?portrait"
+					alt=""
+				/>
+				<p class="text-xl font-semibold leading-tight">Distinctio Animi</p>
+				<p class="">Visual Designer</p>
+				<p class="text-primary-variant">@animi</p>
+			</div>
+		</div>
+	</div>
+</section>

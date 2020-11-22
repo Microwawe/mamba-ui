@@ -1,12 +1,12 @@
 import {Component, OnInit} from '@angular/core';
+
 import {BaseComponent} from '@shared/components/base/base.component';
 
 @Component({
-	selector: 'app-hero',
-	templateUrl: './hero.component.html',
-	styleUrls: ['./hero.component.scss'],
+	selector: 'custom-hero1',
+	templateUrl: './hero1.component.html',
 })
-export class HeroComponent extends BaseComponent implements OnInit {
+export class Hero1Component extends BaseComponent implements OnInit {
 	constructor() {
 		super();
 	}

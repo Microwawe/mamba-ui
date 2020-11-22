@@ -33,6 +33,11 @@ module.exports = {
 				'contrast': 'var(--contrast)',
 				'contrast-inverse': 'var(--contrast-inverse)',
 			},
+			width: {
+				'72': '18rem',
+				'80': '20rem',
+				'96': '24rem',
+			},
 		},
 	},
 	variants: {

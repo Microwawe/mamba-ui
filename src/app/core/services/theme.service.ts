@@ -31,48 +31,48 @@ export class ThemeService {
 	setPrimaryColor(selectedColor: string) {
 		const rootStyle = document.documentElement.style;
 		const isDarkTheme = this.isDarkTheme.getValue();
-		let newColor: Colors = isDarkTheme ? Colors['green-200'] : Colors['green-500'];
-		let newVariant: Colors = isDarkTheme ? Colors['green-400'] : Colors['green-700'];
+		let newColor: Colors = isDarkTheme ? Colors['green-400'] : Colors['green-500'];
+		let newVariant: Colors = isDarkTheme ? Colors['green-200'] : Colors['green-700'];
 		switch (selectedColor) {
 			case 'yellow':
-				newColor = isDarkTheme ? Colors['yellow-200'] : Colors['yellow-500'];
-				newVariant = isDarkTheme ? Colors['yellow-400'] : Colors['yellow-700'];
+				newColor = isDarkTheme ? Colors['yellow-400'] : Colors['yellow-500'];
+				newVariant = isDarkTheme ? Colors['yellow-200'] : Colors['yellow-700'];
 				break;
 			case 'orange':
-				newColor = isDarkTheme ? Colors['orange-200'] : Colors['orange-500'];
-				newVariant = isDarkTheme ? Colors['orange-400'] : Colors['orange-700'];
+				newColor = isDarkTheme ? Colors['orange-400'] : Colors['orange-500'];
+				newVariant = isDarkTheme ? Colors['orange-200'] : Colors['orange-700'];
 				break;
 			case 'red':
-				newColor = isDarkTheme ? Colors['red-200'] : Colors['red-500'];
-				newVariant = isDarkTheme ? Colors['red-400'] : Colors['red-700'];
+				newColor = isDarkTheme ? Colors['red-400'] : Colors['red-500'];
+				newVariant = isDarkTheme ? Colors['red-200'] : Colors['red-700'];
 				break;
 			case 'pink':
-				newColor = isDarkTheme ? Colors['pink-200'] : Colors['pink-500'];
-				newVariant = isDarkTheme ? Colors['pink-400'] : Colors['pink-700'];
+				newColor = isDarkTheme ? Colors['pink-400'] : Colors['pink-500'];
+				newVariant = isDarkTheme ? Colors['pink-200'] : Colors['pink-700'];
 				break;
 			case 'purple':
-				newColor = isDarkTheme ? Colors['purple-200'] : Colors['purple-500'];
-				newVariant = isDarkTheme ? Colors['purple-400'] : Colors['purple-700'];
+				newColor = isDarkTheme ? Colors['purple-400'] : Colors['purple-500'];
+				newVariant = isDarkTheme ? Colors['purple-200'] : Colors['purple-700'];
 				break;
 			case 'indigo':
-				newColor = isDarkTheme ? Colors['indigo-200'] : Colors['indigo-500'];
-				newVariant = isDarkTheme ? Colors['indigo-400'] : Colors['indigo-700'];
+				newColor = isDarkTheme ? Colors['indigo-400'] : Colors['indigo-500'];
+				newVariant = isDarkTheme ? Colors['indigo-200'] : Colors['indigo-700'];
 				break;
 			case 'blue':
-				newColor = isDarkTheme ? Colors['blue-200'] : Colors['blue-500'];
-				newVariant = isDarkTheme ? Colors['blue-400'] : Colors['blue-700'];
+				newColor = isDarkTheme ? Colors['blue-400'] : Colors['blue-500'];
+				newVariant = isDarkTheme ? Colors['blue-200'] : Colors['blue-700'];
 				break;
 			case 'teal':
-				newColor = isDarkTheme ? Colors['teal-200'] : Colors['teal-500'];
-				newVariant = isDarkTheme ? Colors['teal-400'] : Colors['teal-700'];
+				newColor = isDarkTheme ? Colors['teal-400'] : Colors['teal-500'];
+				newVariant = isDarkTheme ? Colors['teal-200'] : Colors['teal-700'];
 				break;
 			case 'green':
-				newColor = isDarkTheme ? Colors['green-200'] : Colors['green-500'];
-				newVariant = isDarkTheme ? Colors['green-400'] : Colors['green-700'];
+				newColor = isDarkTheme ? Colors['green-400'] : Colors['green-500'];
+				newVariant = isDarkTheme ? Colors['green-200'] : Colors['green-700'];
 				break;
 			default:
-				newColor = isDarkTheme ? Colors['green-200'] : Colors['green-500'];
-				newVariant = isDarkTheme ? Colors['green-400'] : Colors['green-700'];
+				newColor = isDarkTheme ? Colors['green-400'] : Colors['green-500'];
+				newVariant = isDarkTheme ? Colors['green-200'] : Colors['green-700'];
 				break;
 		}
 		localStorage.setItem(this.colorKey, selectedColor);
