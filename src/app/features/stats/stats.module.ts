@@ -6,6 +6,7 @@ import {StatsShowcaseComponent} from './stats-showcase.component';
 import {Stats1Component} from './stats1/stats1.component';
 import {Stats2Component} from './stats2/stats2.component';
 import {Stats3Component} from './stats3/stats3.component';
+import {Stats4Component} from './stats4/stats4.component';
 
 const routes: Routes = [
 	{
@@ -16,6 +17,12 @@ const routes: Routes = [
 
 @NgModule({
 	imports: [RouterModule.forChild(routes), SharedModule],
-	declarations: [StatsShowcaseComponent, Stats1Component, Stats2Component, Stats3Component],
+	declarations: [
+		StatsShowcaseComponent,
+		Stats1Component,
+		Stats2Component,
+		Stats3Component,
+		Stats4Component,
+	],
 })
 export class StatsModule {}

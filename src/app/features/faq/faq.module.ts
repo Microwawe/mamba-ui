@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {SharedModule} from '@shared/shared.module';
 
 import {FaqShowcaseComponent} from './faq-showcase.component';
+import {Faq1Component} from './faq1/faq1.component';
 
 const routes: Routes = [
 	{
@@ -13,6 +14,6 @@ const routes: Routes = [
 
 @NgModule({
 	imports: [RouterModule.forChild(routes), SharedModule],
-	declarations: [FaqShowcaseComponent],
+	declarations: [FaqShowcaseComponent, Faq1Component],
 })
 export class FaqModule {}
