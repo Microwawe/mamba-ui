@@ -3,6 +3,8 @@ import {RouterModule, Routes} from '@angular/router';
 import {SharedModule} from '@shared/shared.module';
 
 import {TimelineShowcaseComponent} from './timeline-showcase.component';
+import {Timeline1Component} from './timeline1/timeline1.component';
+import {Timeline2Component} from './timeline2/timeline2.component';
 
 const routes: Routes = [
 	{
@@ -13,6 +15,6 @@ const routes: Routes = [
 
 @NgModule({
 	imports: [RouterModule.forChild(routes), SharedModule],
-	declarations: [TimelineShowcaseComponent],
+	declarations: [TimelineShowcaseComponent, Timeline1Component, Timeline2Component],
 })
 export class TimelineModule {}

@@ -2,7 +2,7 @@
 /* eslint-disable node/no-unpublished-require */
 const purgecss = require('@fullhuman/postcss-purgecss')({
 	content: ['./src/**/*.html', './src/**/*.component.ts'],
-	whitelistPatterns: [/^cdk-|mat-/],
+	safelist: [/bg-.+-500/, /^cil-/, /^cib-/],
 	defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
 });
 

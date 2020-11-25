@@ -23,6 +23,10 @@ const routes: Routes = [
 		loadChildren: () => import('./features/faq/faq.module').then(m => m.FaqModule),
 	},
 	{
+		path: 'feature',
+		loadChildren: () => import('./features/feature/feature.module').then(m => m.FeatureModule),
+	},
+	{
 		path: 'footer',
 		loadChildren: () => import('./features/footer/footer.module').then(m => m.FooterModule),
 	},

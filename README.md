@@ -1,23 +1,18 @@
-![GitHub package.json version](https://img.shields.io/github/package-json/v/Microwawe/angular-quickstart) [![Code Style: Google](https://img.shields.io/badge/code%20style-google-blueviolet.svg)](https://github.com/google/gts) [![GitHub license](https://img.shields.io/github/license/Microwawe/angular-quickstart)](https://github.com/Microwawe/angular-quickstart)
+ [![GitHub license](https://img.shields.io/github/license/Microwawe/angular-quickstart)](https://github.com/Microwawe/angular-quickstart)
 
 
-# Angular Quickstart
+# UI Kit
 
-This project is supposed to help you to get a new project set up easier. 
-
-The base files were generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.0 with the following command:
-```
-ng new projectName --style=scss --routing
-```
+An UI Kit for plain HTML and TailwindCSS components. [View the demo](https://mirkonowak.com/ui-kit).
 
 ## What was added?
 
 - [x] [TailwindCSS](https://tailwindcss.com/)
-- [x] Dynamic light and dark themes
 - [x] [CoreUI Icons](https://icons.coreui.io/icons/)
-- [x] Shared module
-- [x] Core module
-  - All services which have to have one and only one instance per application (singleton services) should be implemented here. Typical example can be authentication service or user service.
+- [x] [Montserrat font](https://fonts.google.com/specimen/Montserrat)
+- [x] [Prismjs code highlighter](https://prismjs.com/)
+- [x] Dynamic light and dark themes
+  - [x] Selected theme saved in localstorage
 - [x] Lazy loading
 - [x] Service worker
 
@@ -26,25 +21,37 @@ ng new projectName --style=scss --routing
 
 - [ ] Prism colors for light theme
 - [ ] Primary/secondary colors
+- [ ] Different shades
 - [ ] More components
+  - [ ] Blog
+  - [ ] Call to Action
   - [ ] Contact
   - [ ] FAQ
+  - [ ] Feature
+  - [ ] Footer
   - [ ] Form
+  - [ ] Header
+  - [ ] Hero
   - [ ] Gallery
   - [ ] Login
   - [ ] Menu
+  - [ ] Not found 404
+  - [ ] Pricing
   - [ ] Settings
   - [ ] Stats
   - [ ] Steps
-  - [ ] Tag/label
+  - [ ] Tag
   - [ ] Team
   - [ ] Testimonial
-- [ ] React components
-- [ ] Vue components
+- [ ] Full demo pages
+- [ ] Copy and paste components
+  - [ ] Plain html + css that works out of the box
+  - [ ] React components
+  - [ ] Vue components
 
 ## Installation
 
-
+If you find a component that you like you can copy the code with the click of a button!
 
 ## Usage
 

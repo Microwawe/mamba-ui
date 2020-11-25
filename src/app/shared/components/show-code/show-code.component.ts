@@ -29,7 +29,9 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit {
 
 	beautifyHTML(codeStr: string) {
 		const div = document.createElement('div');
-		div.innerHTML = this.removeAngularCode(codeStr).trim();
+		let cleanedString = this.removeAngularCode(codeStr);
+		cleanedString = this.removeBindings(cleanedString);
+		div.innerHTML = cleanedString.trim();
 		return this.formatNode(div, 0).innerHTML.trim();
 	}
 
@@ -59,6 +61,10 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit {
 	removeAngularCode(codeStr: string) {
 		// removes parts that start with "_ng"
 		return codeStr.replace(/\s_?ng[\w-="]+/g, '');
+	}
+
+	removeBindings(codeStr: string) {
+		return codeStr.replace(/<!--[.\s\w=":,{}-]+-->/gm, '');
 	}
 
 	copyToClipboard() {

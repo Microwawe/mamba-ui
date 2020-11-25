@@ -14,6 +14,7 @@ export class AppComponent {
 		'call-to-action',
 		'contact',
 		'faq',
+		'feature',
 		'footer',
 		'form',
 		'hero',
@@ -23,7 +24,7 @@ export class AppComponent {
 		'steps',
 		'team',
 		'testimonial',
-		'timeline',
+		// 'timeline',
 	];
 
 	constructor(private themeService: ThemeService) {}
