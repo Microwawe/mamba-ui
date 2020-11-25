@@ -19,6 +19,7 @@ An UI Kit for plain HTML and TailwindCSS components. [View the demo](https://mir
 
 ## TODO
 
+- [ ] Update to TailwindCSS 2.0
 - [ ] Prism colors for light theme
 - [ ] Primary/secondary colors
 - [ ] Different shades
