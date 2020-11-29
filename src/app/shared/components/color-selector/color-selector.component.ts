@@ -1,7 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {TailwindColor} from '@core/services/color.service';
-import {Colors, ThemeService} from '@core/services/theme.service';
-import {Observable} from 'rxjs';
+import {ThemeService} from '@core/services/theme.service';
 import {BaseComponent} from '../base/base.component';
 
 @Component({
@@ -32,6 +30,6 @@ export class ColorSelectorComponent extends BaseComponent implements OnInit {
 
 	changeColor(color: string) {
 		this.themeService.setPrimaryColor(color);
-		//this.colorService.setCurrentColor(color);
+		this.colorService.setCurrentColorString(color);
 	}
 }

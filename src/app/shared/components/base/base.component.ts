@@ -1,16 +1,16 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ColorService, TailwindColor} from '@core/services/color.service';
+import {Component, OnDestroy} from '@angular/core';
+import {ColorService} from '@core/services/color.service';
 import {CustomInjector} from '@core/services/custom-injector.service';
-import {Observable, Subscription} from 'rxjs';
+import {Subscription} from 'rxjs';
 
 @Component({
 	templateUrl: './base.component.html',
 	styleUrls: ['./base.component.scss'],
 })
 export class BaseComponent implements OnDestroy {
-	primaryBackground = '';
-	primaryText = '';
-	primaryBorder = '';
+	bgPrimary = '';
+	textPrimary = '';
+	borderPrimary = '';
 	currentColorSub: Subscription;
 
 	protected colorService: ColorService;
@@ -19,13 +19,11 @@ export class BaseComponent implements OnDestroy {
 		const injector = CustomInjector.getInstance();
 		this.colorService = injector.get(ColorService);
 
-		this.currentColorSub = this.colorService
-			.observeCurrentColor()
-			.subscribe(color => {
-				this.primaryBackground = `bg-${color?.name}-${color?.shade}`;
-				this.primaryText = `text-${color?.name}-${color?.shade}`;
-				this.primaryBorder = `border-${color?.name}-${color?.shade}`;
-			});
+		this.currentColorSub = this.colorService.observeCurrentColor().subscribe(color => {
+			this.bgPrimary = `bg-${color?.name}-${color?.shade}`;
+			this.textPrimary = `text-${color?.name}-${color?.shade}`;
+			this.borderPrimary = `border-${color?.name}-${color?.shade}`;
+		});
 	}
 
 	ngOnDestroy(): void {
