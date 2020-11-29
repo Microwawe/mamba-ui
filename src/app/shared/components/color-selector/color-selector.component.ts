@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {TailwindColor} from '@core/services/color.service';
-import {Observable} from 'rxjs';
+import {ThemeService} from '@core/services/theme.service';
 import {BaseComponent} from '../base/base.component';
 
 @Component({
@@ -9,19 +8,28 @@ import {BaseComponent} from '../base/base.component';
 	styleUrls: ['./color-selector.component.scss'],
 })
 export class ColorSelectorComponent extends BaseComponent implements OnInit {
-	selectedColor!: Observable<TailwindColor>;
-	colors: TailwindColor[] = [];
+	colors: string[] = [];
 
-	constructor() {
+	constructor(private themeService: ThemeService) {
 		super();
 	}
 
 	ngOnInit() {
-		this.colors = this.colorService.colors;
-		this.selectedColor = this.colorService.observeCurrentColor();
+		this.colors = [
+			'yellow',
+			'orange',
+			'red',
+			'pink',
+			'purple',
+			'indigo',
+			'blue',
+			'teal',
+			'green',
+		];
 	}
 
-	changeColor(color: TailwindColor) {
-		this.colorService.setCurrentColor(color);
+	changeColor(color: string) {
+		this.themeService.setPrimaryColor(color);
+		this.colorService.setCurrentColorString(color);
 	}
 }

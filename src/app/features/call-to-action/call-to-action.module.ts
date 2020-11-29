@@ -7,6 +7,7 @@ import {Cta2Component} from './cta2/cta2.component';
 import {Cta3Component} from './cta3/cta3.component';
 import {Cta4Component} from './cta4/cta4.component';
 import {Cta5Component} from './cta5/cta5.component';
+import {Cta6Component} from './cta6/cta6.component';
 
 const routes: Routes = [
 	{
@@ -24,6 +25,7 @@ const routes: Routes = [
 		Cta3Component,
 		Cta4Component,
 		Cta5Component,
+		Cta6Component,
 	],
 })
 export class CallToActionModule {}

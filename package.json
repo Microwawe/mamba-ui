@@ -1,5 +1,5 @@
 {
-	"name": "angular-quickstart",
+	"name": "ui-kit",
 	"version": "0.2.0",
 	"scripts": {
 		"ng": "ng",
@@ -16,7 +16,8 @@
 		"fix": "gts fix",
 		"prepare": "npm.cmd run compile",
 		"pretest": "npm.cmd run compile",
-		"posttest": "npm.cmd run lint"
+		"posttest": "npm.cmd run lint",
+		"ghpages": "ng build --prod --base-href /ui-kit/ --rebase-root-relative-css-urls true && npx angular-cli-ghpages --dir=dist/ui-kit"
 	},
 	"private": true,
 	"dependencies": {
@@ -51,6 +52,7 @@
 		"@types/prismjs": "^1.16.2",
 		"@typescript-eslint/eslint-plugin": "4.3.0",
 		"@typescript-eslint/parser": "4.3.0",
+		"angular-cli-ghpages": "^0.6.2",
 		"autoprefixer": "^10.0.1",
 		"codelyzer": "^6.0.0",
 		"eslint": "^7.6.0",

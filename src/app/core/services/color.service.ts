@@ -59,6 +59,13 @@ export class ColorService {
 		this.currentColor.next(currentColor);
 	}
 
+	setCurrentColorString(currentColor: string) {
+		const newColor: TailwindColor =
+			this.colors.find(color => color.name === currentColor) || this.defaultColor;
+		localStorage.setItem(this.key, JSON.stringify(newColor));
+		this.currentColor.next(newColor);
+	}
+
 	observeCurrentColor(): Observable<TailwindColor> {
 		return this.currentColor.asObservable();
 	}

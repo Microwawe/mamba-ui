@@ -1,8 +1,8 @@
-<div class="flex space-x-1 p-2 rounded-2xl bg-gray-200">
+<div class="flex p-2 space-x-1 bg-gray-200 rounded-2xl">
 	<button
 		*ngFor="let color of colors"
-		class="h-6 w-6 rounded-full border border-gray-500"
-		[ngClass]="'bg-' + color.name + '-' + color.shade"
+		class="w-6 h-6 border border-gray-500 rounded-full"
+		[ngClass]="'bg-' + color + '-500'"
 		(click)="changeColor(color)"
 	></button>
 </div>

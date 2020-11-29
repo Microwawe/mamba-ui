@@ -1,0 +1,8 @@
+<section class="p-6">
+	<div class="container grid justify-center grid-cols-2 text-center lg:grid-cols-3">
+		<div *ngFor="let stat of stats" class="flex flex-col justify-start m-2 lg:m-6">
+			<p class="text-4xl font-bold leading-none ld:text-6xl">{{ stat.amount }}</p>
+			<p class="text-sm">{{ stat.label }}</p>
+		</div>
+	</div>
+</section>

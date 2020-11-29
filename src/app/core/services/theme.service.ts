@@ -3,38 +3,103 @@ import {BehaviorSubject, Observable} from 'rxjs';
 
 @Injectable()
 export class ThemeService {
-	private key = 'is-custom-dark-theme';
+	private themeKey = 'is-custom-dark-theme';
+	private colorKey = 'custom-primary-color';
 	private isDarkTheme: BehaviorSubject<boolean>;
 
 	constructor() {
-		this.isDarkTheme = new BehaviorSubject<boolean>(localStorage.getItem(this.key) === 'true');
+		const savedTheme = localStorage.getItem(this.themeKey) === 'true';
+		const savedColor = localStorage.getItem(this.colorKey);
+
+		this.isDarkTheme = new BehaviorSubject<boolean>(savedTheme);
+		this.swapThemeColors(savedTheme);
+		this.setPrimaryColor(savedColor || '');
 	}
 
 	setDarkTheme(isDarkTheme: boolean) {
 		this.isDarkTheme.next(isDarkTheme);
-		localStorage.setItem(this.key, this.isDarkTheme.value.toString());
+		localStorage.setItem(this.themeKey, this.isDarkTheme.value.toString());
 		this.swapThemeColors(isDarkTheme);
+		const savedColor = localStorage.getItem(this.colorKey);
+		this.setPrimaryColor(savedColor || '');
 	}
 
 	getDarkTheme(): Observable<boolean> {
 		return this.isDarkTheme;
 	}
 
+	setPrimaryColor(selectedColor: string) {
+		const rootStyle = document.documentElement.style;
+		const isDarkTheme = this.isDarkTheme.getValue();
+		let newColor: Colors = isDarkTheme ? Colors['green-400'] : Colors['green-500'];
+		let newVariant: Colors = isDarkTheme ? Colors['green-200'] : Colors['green-700'];
+		switch (selectedColor) {
+			case 'yellow':
+				newColor = isDarkTheme ? Colors['yellow-400'] : Colors['yellow-500'];
+				newVariant = isDarkTheme ? Colors['yellow-200'] : Colors['yellow-700'];
+				break;
+			case 'orange':
+				newColor = isDarkTheme ? Colors['orange-400'] : Colors['orange-500'];
+				newVariant = isDarkTheme ? Colors['orange-200'] : Colors['orange-700'];
+				break;
+			case 'red':
+				newColor = isDarkTheme ? Colors['red-400'] : Colors['red-500'];
+				newVariant = isDarkTheme ? Colors['red-200'] : Colors['red-700'];
+				break;
+			case 'pink':
+				newColor = isDarkTheme ? Colors['pink-400'] : Colors['pink-500'];
+				newVariant = isDarkTheme ? Colors['pink-200'] : Colors['pink-700'];
+				break;
+			case 'purple':
+				newColor = isDarkTheme ? Colors['purple-400'] : Colors['purple-500'];
+				newVariant = isDarkTheme ? Colors['purple-200'] : Colors['purple-700'];
+				break;
+			case 'indigo':
+				newColor = isDarkTheme ? Colors['indigo-400'] : Colors['indigo-500'];
+				newVariant = isDarkTheme ? Colors['indigo-200'] : Colors['indigo-700'];
+				break;
+			case 'blue':
+				newColor = isDarkTheme ? Colors['blue-400'] : Colors['blue-500'];
+				newVariant = isDarkTheme ? Colors['blue-200'] : Colors['blue-700'];
+				break;
+			case 'teal':
+				newColor = isDarkTheme ? Colors['teal-400'] : Colors['teal-500'];
+				newVariant = isDarkTheme ? Colors['teal-200'] : Colors['teal-700'];
+				break;
+			case 'green':
+				newColor = isDarkTheme ? Colors['green-400'] : Colors['green-500'];
+				newVariant = isDarkTheme ? Colors['green-200'] : Colors['green-700'];
+				break;
+			default:
+				newColor = isDarkTheme ? Colors['green-400'] : Colors['green-500'];
+				newVariant = isDarkTheme ? Colors['green-200'] : Colors['green-700'];
+				break;
+		}
+		localStorage.setItem(this.colorKey, selectedColor);
+		rootStyle.setProperty(Variables.PRIMARY, newColor);
+		rootStyle.setProperty(Variables.PRIMARY_VARIANT, newVariant);
+	}
+
 	swapThemeColors(isDarkTheme: boolean) {
 		const rootStyle = document.documentElement.style;
-		const neutral1 = isDarkTheme ? Colors['gray-900'] : Colors['gray-200'];
-		const neutral2 = isDarkTheme ? Colors['gray-200'] : Colors['gray-900'];
-		const default1 = isDarkTheme ? Colors.black : Colors.white;
-		const default2 = isDarkTheme ? Colors.white : Colors.black;
-		rootStyle.setProperty(Variables.DEFAULT, neutral1);
-		rootStyle.setProperty(Variables.DEFAULT_INV, neutral2);
-		rootStyle.setProperty(Variables.CONTRAST, default1);
-		rootStyle.setProperty(Variables.CONTRAST_INV, default2);
+		const neutral = isDarkTheme ? Colors['gray-700'] : Colors['gray-400'];
+		const default1 = isDarkTheme ? Colors['gray-900'] : Colors['gray-200'];
+		const default2 = isDarkTheme ? Colors['gray-200'] : Colors['gray-900'];
+		const contrast1 = isDarkTheme ? Colors.black : Colors.white;
+		const contrast2 = isDarkTheme ? Colors.white : Colors.black;
+		rootStyle.setProperty(Variables.NEUTRAL, neutral);
+		rootStyle.setProperty(Variables.DEFAULT, default1);
+		rootStyle.setProperty(Variables.DEFAULT_INV, default2);
+		rootStyle.setProperty(Variables.CONTRAST, contrast1);
+		rootStyle.setProperty(Variables.CONTRAST_INV, contrast2);
 	}
 }
 
 export enum Variables {
+	DARK = '--dark',
+	NEUTRAL = '--neutral',
 	PRIMARY = '--primary',
+	PRIMARY_VARIANT = '--primary-variant',
 	SECONDARY = '--secondary',
 	DEFAULT = '--default',
 	DEFAULT_INV = '--default-inverse',

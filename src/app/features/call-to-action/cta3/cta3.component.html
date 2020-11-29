@@ -7,20 +7,20 @@
 		background-size: cover;
 	"
 >
-	<div class="p-10 py-20 flex flex-col flex-wrap justify-center content-center">
-		<h1 class="text-5xl leading-none font-semibold text-white antialiased text-center">
+	<div class="flex flex-col flex-wrap content-center justify-center p-4 py-20 md:p-10">
+		<h1 class="text-5xl antialiased font-semibold leading-none text-center text-white">
 			Get Our Updates
 		</h1>
-		<p class="text-xl text-white antialiased text-center pt-2 pb-8">
+		<p class="pt-2 pb-8 text-xl antialiased text-center text-white">
 			Find out about events and other news
 		</p>
-		<div class="flex flex-row flex-wrap">
-			<input type="text" class="w-2/3 p-3 rounded-l-lg" placeholder="example@email.com" />
-			<button
-				class="p-3 w-1/3 rounded-r-lg text-default-inverse"
-				[ngClass]="primaryBackground"
-				type="button"
-			>
+		<div class="flex flex-row">
+			<input
+				type="text"
+				class="w-3/5 p-3 rounded-l-lg sm:w-2/3"
+				placeholder="example@email.com"
+			/>
+			<button class="w-2/5 p-3 rounded-r-lg sm:w-1/3 bg-primary text-dark" type="button">
 				Subscribe
 			</button>
 		</div>

@@ -1,0 +1,13 @@
+<section class="p-6">
+	<div class="container p-4 text-center">
+		<h2 class="text-4xl font-bold">Trusted by the industry leaders</h2>
+	</div>
+	<div class="container flex flex-wrap justify-center">
+		<div
+			*ngFor="let icon of icons"
+			class="flex justify-center w-1/2 p-6 align-middle md:w-1/3 xl:w-1/4"
+		>
+			<i class="text-6xl" [ngClass]="'cib-' + icon"></i>
+		</div>
+	</div>
+</section>

@@ -5,11 +5,13 @@ import {FormsModule} from '@angular/forms';
 import {BaseComponent} from './components/base/base.component';
 import {ColorSelectorComponent} from './components/color-selector/color-selector.component';
 import {ShowCodeComponent} from './components/show-code/show-code.component';
+import {ShowcaseComponent} from './components/showcase/showcase.component';
 import {ThemeSelectorComponent} from './components/theme-selector/theme-selector.component';
 
 const components = [
 	BaseComponent,
 	ColorSelectorComponent,
+	ShowcaseComponent,
 	ShowCodeComponent,
 	ThemeSelectorComponent,
 ];

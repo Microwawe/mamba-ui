@@ -3,7 +3,7 @@
 	"version": 1,
 	"newProjectRoot": "projects",
 	"projects": {
-		"angular-quickstart": {
+		"ui-kit": {
 			"projectType": "application",
 			"schematics": {
 				"@schematics/angular:component": {
@@ -20,7 +20,7 @@
 						"customWebpackConfig": {
 							"path": "./webpack.config.js"
 						},
-						"outputPath": "dist/angular-quickstart",
+						"outputPath": "dist/ui-kit",
 						"index": "src/index.html",
 						"main": "src/main.ts",
 						"polyfills": "src/polyfills.ts",
@@ -29,7 +29,6 @@
 						"assets": ["src/favicon.ico", "src/assets", "src/manifest.webmanifest"],
 						"styles": [
 							"node_modules/prismjs/themes/prism-tomorrow.css",
-							"node_modules/prismjs/themes/prism-coy.css",
 							"src/assets/coreui/free/free-icons.scss",
 							"src/assets/coreui/brand/brand-icons.scss",
 							"src/assets/fonts/FiraSans/fira-sans.scss",
@@ -38,7 +37,7 @@
 							"src/styles/styles.scss"
 						],
 						"stylePreprocessorOptions": {
-							"includePaths": ["src/styles"]
+							"includePaths": ["src/styles", "src/assets/coreui"]
 						},
 						"scripts": []
 					},
@@ -81,18 +80,18 @@
 						"customWebpackConfig": {
 							"path": "./webpack.config.js"
 						},
-						"browserTarget": "angular-quickstart:build"
+						"browserTarget": "ui-kit:build"
 					},
 					"configurations": {
 						"production": {
-							"browserTarget": "angular-quickstart:build:production"
+							"browserTarget": "ui-kit:build:production"
 						}
 					}
 				},
 				"extract-i18n": {
 					"builder": "@angular-devkit/build-angular:extract-i18n",
 					"options": {
-						"browserTarget": "angular-quickstart:build"
+						"browserTarget": "ui-kit:build"
 					}
 				},
 				"test": {
@@ -125,16 +124,20 @@
 					"builder": "@angular-devkit/build-angular:protractor",
 					"options": {
 						"protractorConfig": "e2e/protractor.conf.js",
-						"devServerTarget": "angular-quickstart:serve"
+						"devServerTarget": "ui-kit:serve"
 					},
 					"configurations": {
 						"production": {
-							"devServerTarget": "angular-quickstart:serve:production"
+							"devServerTarget": "ui-kit:serve:production"
 						}
 					}
+				},
+				"deploy": {
+					"builder": "angular-cli-ghpages:deploy",
+					"options": {}
 				}
 			}
 		}
 	},
-	"defaultProject": "angular-quickstart"
+	"defaultProject": "ui-kit"
 }
