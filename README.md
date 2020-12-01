@@ -11,6 +11,8 @@ An UI Kit for plain HTML and TailwindCSS components. [View the demo](https://mir
 - [x] [CoreUI Icons](https://icons.coreui.io/icons/)
 - [x] [Montserrat font](https://fonts.google.com/specimen/Montserrat)
 - [x] [Prismjs code highlighter](https://prismjs.com/)
+  - [x] Light theme: [Coy without shadows](https://github.com/PrismJS/prism-themes/blob/master/themes/prism-coy-without-shadows.css) by [RunDevelopment](https://github.com/RunDevelopment) (based on Tim Shedor's Coy theme)
+  - [x] Dark theme: [Material Dark](https://github.com/PrismJS/prism-themes/blob/master/themes/prism-material-dark.css) by [dutchenkoOleg](https://github.com/dutchenkoOleg) 
 - [x] Dynamic light and dark themes
   - [x] Selected theme saved in localstorage
 - [x] Lazy loading
@@ -19,36 +21,54 @@ An UI Kit for plain HTML and TailwindCSS components. [View the demo](https://mir
 
 ## TODO
 
-- [ ] Update to TailwindCSS 2.0
-  - [ ] Tailwind typography
-  - [ ] Tailwind forms
-- [ ] Prism colors for light theme
-- [ ] Primary/secondary colors
-- [ ] Different shades
-- [ ] More components
-  - [ ] Blog
-  - [ ] Call to Action
+- [x] Update to TailwindCSS 2.0
+  - [x] Tailwind typography plugin
+  - [x] Tailwind forms plugin
+- [x] Prism colors for light theme
+- [ ] More complex color themes
+  - [ ] Primary/secondary colors
+  - [ ] Different shades
+  - [ ] Warm/cold grays
+- [ ] Components
+  - [ ] Buttons
+    - [ ] Basic
+    - [ ] Outline
+    - [ ] Raised
+    - [ ] With icon
+- [ ] Sections
+  - [ ] Banner
+  - [x] Blog
+  - [x] Call to Action
   - [ ] Contact
-  - [ ] FAQ
-  - [ ] Feature
-  - [ ] Footer
+  - [ ] Dialog
+  - [x] FAQ
+  - [x] Feature
+  - [x] Footer
   - [ ] Form
   - [ ] Header
-  - [ ] Hero
+  - [x] Hero
   - [ ] Gallery
   - [ ] Login
   - [ ] Menu
   - [ ] Not found 404
-  - [ ] Pricing
+  - [x] Pricing
   - [ ] Settings
-  - [ ] Stats
+  - [ ] Snackbar
+  - [x] Stats
   - [ ] Steps
+  - [ ] Tab
   - [ ] Tag
-  - [ ] Team
-  - [ ] Testimonial
+  - [x] Team
+  - [x] Testimonial
+  - [x] Timeline
+  - [ ] Tooltip
 - [ ] Full demo pages
+  - [ ] App landing page
+  - [ ] Blog
+  - [ ] Marketing
+  - [ ] Portfolio
 - [ ] Copy and paste components
-  - [ ] Plain html + css that works out of the box
+  - [x] Plain html + css that works out of the box
   - [ ] React components
   - [ ] Vue components
 

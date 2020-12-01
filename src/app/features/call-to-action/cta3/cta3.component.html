@@ -20,7 +20,11 @@
 				class="w-3/5 p-3 rounded-l-lg sm:w-2/3"
 				placeholder="example@email.com"
 			/>
-			<button class="w-2/5 p-3 rounded-r-lg sm:w-1/3 bg-primary text-dark" type="button">
+			<button
+				class="w-2/5 p-3 rounded-r-lg sm:w-1/3 text-dark"
+				type="button"
+				[ngClass]="[bgPrimary]"
+			>
 				Subscribe
 			</button>
 		</div>

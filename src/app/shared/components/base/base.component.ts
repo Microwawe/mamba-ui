@@ -11,6 +11,7 @@ export class BaseComponent implements OnDestroy {
 	bgPrimary = '';
 	textPrimary = '';
 	borderPrimary = '';
+	ringPrimary = '';
 	currentColorSub: Subscription;
 
 	protected colorService: ColorService;
@@ -20,9 +21,10 @@ export class BaseComponent implements OnDestroy {
 		this.colorService = injector.get(ColorService);
 
 		this.currentColorSub = this.colorService.observeCurrentColor().subscribe(color => {
-			this.bgPrimary = `bg-${color?.name}-${color?.shade}`;
-			this.textPrimary = `text-${color?.name}-${color?.shade}`;
-			this.borderPrimary = `border-${color?.name}-${color?.shade}`;
+			this.bgPrimary = `bg-${color}-500`;
+			this.textPrimary = `text-${color}-500`;
+			this.borderPrimary = `border-${color}-500`;
+			this.ringPrimary = `ring-${color}-500`;
 		});
 	}
 

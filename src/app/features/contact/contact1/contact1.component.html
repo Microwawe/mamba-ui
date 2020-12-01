@@ -1,0 +1,61 @@
+<section class="my-6">
+	<div
+		class="grid max-w-6xl grid-cols-1 px-6 mx-auto divide-y bg-default lg:px-8 md:grid-cols-2 md:divide-x md:divide-y-0"
+	>
+		<div class="py-6 text-default-inverse md:py-0 md:px-6">
+			<h1 class="text-4xl font-bold tracking-tight">Get in touch</h1>
+			<p class="">Fill in the form to start a conversation</p>
+
+			<p class="flex items-center my-4">
+				<i class="mr-2 text-2xl sm:mr-6 cil-location-pin"></i>
+				<span>Fake address, 9999 City</span>
+			</p>
+			<p class="flex items-center my-4">
+				<i class="mr-2 text-2xl sm:mr-6 cil-phone"></i>
+				<span>123456789</span>
+			</p>
+			<p class="flex items-center my-4">
+				<i class="mr-2 text-2xl sm:mr-6 cil-envelope-closed"></i>
+				<span>contact@business.com</span>
+			</p>
+		</div>
+
+		<form class="flex flex-col py-6 space-y-6 md:py-0 md:px-6">
+			<label class="block">
+				<span class="">Full name</span>
+				<input
+					type="text"
+					class="block w-full rounded-md shadow-sm text-default focus:ring focus:ring-opacity-75"
+					[ngClass]="['focus:' + ringPrimary]"
+					placeholder="Leroy Jenkins"
+				/>
+			</label>
+			<label class="block">
+				<span class="">Email address</span>
+				<input
+					type="email"
+					class="block w-full rounded-md shadow-sm text-default focus:ring focus:ring-opacity-75"
+					[ngClass]="['focus:' + ringPrimary]"
+					placeholder="leroy@jenkins.com"
+				/>
+			</label>
+
+			<label class="block">
+				<span class="">Message</span>
+				<textarea
+					class="block w-full rounded-md text-default focus:ring focus:ring-opacity-75"
+					[ngClass]="['focus:' + ringPrimary]"
+					rows="3"
+				></textarea>
+			</label>
+
+			<button
+				type="button"
+				class="self-center btn text-contrast focus:ring-opacity-75"
+				[ngClass]="[bgPrimary, 'focus:' + ringPrimary, 'hover:' + ringPrimary]"
+			>
+				Submit
+			</button>
+		</form>
+	</div>
+</section>

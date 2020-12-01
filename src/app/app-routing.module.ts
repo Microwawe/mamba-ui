@@ -51,6 +51,11 @@ const routes: Routes = [
 		loadChildren: () => import('./features/pricing/pricing.module').then(m => m.PricingModule),
 	},
 	{
+		path: 'snackbar',
+		loadChildren: () =>
+			import('./features/snackbar/snackbar.module').then(m => m.SnackbarModule),
+	},
+	{
 		path: 'stats',
 		loadChildren: () => import('./features/stats/stats.module').then(m => m.StatsModule),
 	},

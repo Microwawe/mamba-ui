@@ -4,69 +4,47 @@ import {BehaviorSubject, Observable} from 'rxjs';
 @Injectable({providedIn: 'root'})
 export class ColorService {
 	private key = 'custom-current-color';
-	private currentColor: BehaviorSubject<TailwindColor>;
-	private defaultColor: TailwindColor = {
-		name: 'purple',
-		shade: 500,
-	};
-	colors: TailwindColor[] = [
-		{
-			name: 'yellow',
-			shade: 500,
-		},
-		{
-			name: 'orange',
-			shade: 500,
-		},
-		{
-			name: 'red',
-			shade: 500,
-		},
-		{
-			name: 'pink',
-			shade: 500,
-		},
-		{
-			name: 'purple',
-			shade: 500,
-		},
-		{
-			name: 'indigo',
-			shade: 500,
-		},
-		{
-			name: 'blue',
-			shade: 500,
-		},
-		{
-			name: 'teal',
-			shade: 500,
-		},
-		{
-			name: 'green',
-			shade: 500,
-		},
+	private currentColor: BehaviorSubject<string>;
+	private defaultColor = 'purple';
+	colors = [
+		'yellow',
+		'amber',
+		'orange',
+		'red',
+		'rose',
+		'pink',
+		'fuchsia',
+		'purple',
+		'violet',
+		'indigo',
+		'blue',
+		'lightBlue',
+		'cyan',
+		'teal',
+		'emerald',
+		'green',
+		'lime',
 	];
 
 	constructor() {
 		const savedColor = localStorage.getItem(this.key);
 		const color = savedColor ? JSON.parse(savedColor) : this.defaultColor;
-		this.currentColor = new BehaviorSubject<TailwindColor>(color);
+		this.currentColor = new BehaviorSubject<string>(color);
 	}
 
-	setCurrentColor(currentColor: TailwindColor) {
+	setCurrentColor(currentColor: string) {
 		localStorage.setItem(this.key, JSON.stringify(currentColor));
 		this.currentColor.next(currentColor);
 	}
 
 	setCurrentColorString(currentColor: string) {
-		const newColor: TailwindColor =
-			this.colors.find(color => color.name === currentColor) || this.defaultColor;
+		const newColor: string =
+			this.colors.find(color => color === currentColor) || this.defaultColor;
 		localStorage.setItem(this.key, JSON.stringify(newColor));
 		this.currentColor.next(newColor);
 	}
 
-	observeCurrentColor(): Observable<TailwindColor> {
+	observeCurrentColor(): Observable<string> {
 		return this.currentColor.asObservable();
 	}
 }

@@ -1,15 +1,38 @@
 /* eslint-disable node/no-unpublished-require */
 /* eslint-disable node/no-missing-require */
-// eslint-disable-next-line node/no-extraneous-require
-const selectorParser = require('postcss-selector-parser');
+const colors = require('tailwindcss/colors');
 
 module.exports = {
-	future: {
-		// removeDeprecatedGapUtilities: true,
-		// purgeLayersByDefault: true,
-	},
 	purge: [],
 	theme: {
+		colors: {
+			transparent: 'transparent',
+			current: 'currentColor',
+			black: colors.black,
+			white: colors.black,
+			rose: colors.rose,
+			pink: colors.pink,
+			fuchsia: colors.fuchsia,
+			purple: colors.purple,
+			violet: colors.violet,
+			indigo: colors.indigo,
+			blue: colors.blue,
+			lightBlue: colors.lightBlue,
+			cyan: colors.cyan,
+			teal: colors.teal,
+			emerald: colors.emerald,
+			green: colors.green,
+			lime: colors.lime,
+			yellow: colors.yellow,
+			amber: colors.amber,
+			orange: colors.orange,
+			red: colors.red,
+			warmGray: colors.warmGray,
+			trueGray: colors.trueGray,
+			gray: colors.gray,
+			blueGray: colors.blueGray,
+			coolGray: colors.coolGray,
+		},
 		extend: {
 			fontFamily: {
 				mont: ['Montserrat', 'sans-serif'],
@@ -41,15 +64,17 @@ module.exports = {
 		},
 	},
 	variants: {
-		textColor: ['dark', 'dark-hover', 'responsive', 'hover', 'focus'],
-		backgroundColor: ['dark', 'dark-hover', 'responsive', 'hover', 'focus'],
-		borderColor: ['dark', 'dark-hover', 'responsive', 'hover', 'focus'],
+		textColor: ['responsive', 'hover', 'focus'],
+		backgroundColor: ['responsive', 'hover', 'focus'],
+		borderColor: ['responsive', 'hover', 'focus'],
+		ringWidth: ['hover', 'active'],
 	},
 	corePlugins: {
 		container: false,
 	},
 	plugins: [
 		require('@tailwindcss/typography'),
+		require('@tailwindcss/forms'),
 		({addComponents, theme}) => {
 			const container = {
 				'.container': {
@@ -72,28 +97,6 @@ module.exports = {
 				},
 			};
 			addComponents(container);
-		},
-		({addVariant, prefix}) => {
-			addVariant('dark', ({modifySelectors, separator}) => {
-				modifySelectors(({selector}) => {
-					return selectorParser(selectors => {
-						selectors.walkClasses(sel => {
-							sel.value = `dark${separator}${sel.value}`;
-							sel.parent.insertBefore(
-								sel,
-								selectorParser().astSync(prefix('.dark-theme '))
-							);
-						});
-					}).processSync(selector);
-				});
-			});
-		},
-		({addVariant, e}) => {
-			addVariant('dark-hover', ({modifySelectors, separator}) => {
-				modifySelectors(({className}) => {
-					return `.dark-theme .${e(`dark:hover${separator}${className}`)}:hover`;
-				});
-			});
 		},
 	],
 };

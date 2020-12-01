@@ -28,12 +28,13 @@
 						"aot": true,
 						"assets": ["src/favicon.ico", "src/assets", "src/manifest.webmanifest"],
 						"styles": [
-							"node_modules/prismjs/themes/prism-tomorrow.css",
 							"src/assets/coreui/free/free-icons.scss",
 							"src/assets/coreui/brand/brand-icons.scss",
 							"src/assets/fonts/FiraSans/fira-sans.scss",
 							"src/assets/fonts/Lato/lato.scss",
 							"src/assets/fonts/Montserrat/montserrat.scss",
+							"src/styles/prism_light.scss",
+							"src/styles/prism_dark.scss",
 							"src/styles/styles.scss"
 						],
 						"stylePreprocessorOptions": {

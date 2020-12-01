@@ -1,10 +1,10 @@
 import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
-import {FooterShowcaseComponent} from './footer-showcase.component';
 import {SharedModule} from '@shared/shared.module';
-import {FooterSimple1Component} from './footer-simple-1/footer-simple-1.component';
-import {FooterSimple2Component} from './footer-simple-2/footer-simple-2.component';
+
+import {FooterShowcaseComponent} from './footer-showcase.component';
+import {Footer1Component} from './footer1/foote1.component';
+import {Footer2Component} from './footer2/footer2.component';
 
 const routes: Routes = [
 	{
@@ -15,6 +15,6 @@ const routes: Routes = [
 
 @NgModule({
 	imports: [RouterModule.forChild(routes), SharedModule],
-	declarations: [FooterShowcaseComponent, FooterSimple1Component, FooterSimple2Component],
+	declarations: [FooterShowcaseComponent, Footer1Component, Footer2Component],
 })
 export class FooterModule {}

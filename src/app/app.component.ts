@@ -20,6 +20,7 @@ export class AppComponent {
 		'hero',
 		'login',
 		'pricing',
+		'snackbar',
 		'stats',
 		'steps',
 		'team',

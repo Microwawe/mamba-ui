@@ -4,7 +4,8 @@
 			<div class="pb-6 col-span-full md:pb-0 md:col-span-6">
 				<a class="flex justify-center space-x-3 md:justify-start" href="#">
 					<i
-						class="flex items-center justify-center w-12 h-12 text-xl font-bold rounded-full text-dark bg-primary cib-x-pack"
+						class="flex items-center justify-center w-12 h-12 text-xl font-bold rounded-full text-dark cib-x-pack"
+						[ngClass]="[bgPrimary]"
 					></i>
 					<span class="self-center text-2xl font-semibold">Brand name</span>
 				</a>
@@ -12,40 +13,16 @@
 			<div class="col-span-6 text-center md:text-left md:col-span-3">
 				<p class="pb-1 text-lg font-medium">Category</p>
 				<ul>
-					<li>
-						<a href="#" class="hover:text-primary">Link</a>
-					</li>
-					<li>
-						<a href="#" class="hover:text-primary">Link</a>
-					</li>
-					<li>
-						<a href="#" class="hover:text-primary">Link</a>
-					</li>
-					<li>
-						<a href="#" class="hover:text-primary">Link</a>
-					</li>
-					<li>
-						<a href="#" class="hover:text-primary">Link</a>
+					<li *ngFor="let i of [1, 2, 3, 4, 5]">
+						<a href="#" class="" [ngClass]="['hover:' + textPrimary]">Link</a>
 					</li>
 				</ul>
 			</div>
 			<div class="col-span-6 text-center md:text-left md:col-span-3">
 				<p class="pb-1 text-lg font-medium">Category</p>
 				<ul>
-					<li>
-						<a href="#" class="hover:text-primary">Link</a>
-					</li>
-					<li>
-						<a href="#" class="hover:text-primary">Link</a>
-					</li>
-					<li>
-						<a href="#" class="hover:text-primary">Link</a>
-					</li>
-					<li>
-						<a href="#" class="hover:text-primary">Link</a>
-					</li>
-					<li>
-						<a href="#" class="hover:text-primary">Link</a>
+					<li *ngFor="let i of [1, 2, 3, 4, 5]">
+						<a href="#" class="" [ngClass]="['hover:' + textPrimary]">Link</a>
 					</li>
 				</ul>
 			</div>
@@ -64,19 +41,22 @@
 			</div>
 			<div class="flex justify-center pt-4 space-x-4 lg:pt-0 lg:col-end-13">
 				<a
-					class="flex items-center justify-center w-10 h-10 rounded-full text-dark bg-primary"
+					class="flex items-center justify-center w-10 h-10 rounded-full text-dark"
+					[ngClass]="[bgPrimary]"
 					href="#"
 				>
 					<i class="cib-instagram"></i>
 				</a>
 				<a
-					class="flex items-center justify-center w-10 h-10 rounded-full text-dark bg-primary"
+					class="flex items-center justify-center w-10 h-10 rounded-full text-dark"
+					[ngClass]="[bgPrimary]"
 					href="#"
 				>
 					<i class="cib-pinterest"></i>
 				</a>
 				<a
-					class="flex items-center justify-center w-10 h-10 rounded-full text-dark bg-primary"
+					class="flex items-center justify-center w-10 h-10 rounded-full text-dark"
+					[ngClass]="[bgPrimary]"
 					href="#"
 				>
 					<i class="cib-twitter"></i>

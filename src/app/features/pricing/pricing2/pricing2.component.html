@@ -8,7 +8,8 @@
 			</p>
 			<div>
 				<button
-					class="px-4 py-1 font-semibold border rounded-l-lg border-primary bg-primary text-dark"
+					class="px-4 py-1 font-semibold border rounded-l-lg border-primary text-dark"
+					[ngClass]="[bgPrimary]"
 				>
 					Monthly
 				</button>
@@ -20,27 +21,10 @@
 				<p class="self-start">Personal</p>
 				<p class="self-start text-4xl font-bold">FREE</p>
 				<ul class="self-stretch flex-1 space-y-2">
-					<li class="flex items-center space-x-2">
+					<li class="flex items-center space-x-2" *ngFor="let i of [1, 2, 3, 4, 5]">
 						<i
-							class="inline-flex items-center justify-center text-2xl font-semibold text-primary cil-check-alt"
-						></i>
-						<span>Lumet consectetur adipisicing</span>
-					</li>
-					<li class="flex items-center space-x-2">
-						<i
-							class="inline-flex items-center justify-center text-2xl font-semibold text-primary cil-check-alt"
-						></i>
-						<span>Lumet consectetur adipisicing</span>
-					</li>
-					<li class="flex items-center space-x-2">
-						<i
-							class="inline-flex items-center justify-center text-2xl font-semibold text-primary cil-check-alt"
-						></i>
-						<span>Lumet consectetur adipisicing</span>
-					</li>
-					<li class="flex items-center space-x-2">
-						<i
-							class="inline-flex items-center justify-center text-2xl font-semibold text-primary cil-check-alt"
+							class="inline-flex items-center justify-center text-2xl font-semibold cil-check-alt"
+							[ngClass]="[textPrimary]"
 						></i>
 						<span>Lumet consectetur adipisicing</span>
 					</li>
@@ -55,32 +39,15 @@
 				<p class="self-start">Personal</p>
 				<p class="self-start text-4xl font-bold">9€ <span class="text-xl">/mo</span></p>
 				<ul class="self-stretch flex-1">
-					<li class="flex items-center space-x-2">
+					<li class="flex items-center space-x-2" *ngFor="let i of [1, 2, 3, 4, 5]">
 						<i
-							class="inline-flex items-center justify-center text-2xl font-semibold text-primary cil-check-alt"
-						></i>
-						<span>Lumet consectetur adipisicing</span>
-					</li>
-					<li class="flex items-center space-x-2">
-						<i
-							class="inline-flex items-center justify-center text-2xl font-semibold text-primary cil-check-alt"
-						></i>
-						<span>Lumet consectetur adipisicing</span>
-					</li>
-					<li class="flex items-center space-x-2">
-						<i
-							class="inline-flex items-center justify-center text-2xl font-semibold text-primary cil-check-alt"
-						></i>
-						<span>Lumet consectetur adipisicing</span>
-					</li>
-					<li class="flex items-center space-x-2">
-						<i
-							class="inline-flex items-center justify-center text-2xl font-semibold text-primary cil-check-alt"
+							class="inline-flex items-center justify-center text-2xl font-semibold cil-check-alt"
+							[ngClass]="[textPrimary]"
 						></i>
 						<span>Lumet consectetur adipisicing</span>
 					</li>
 				</ul>
-				<button class="mt-6 font-semibold sm:mt-12 text-dark bg-primary btn">
+				<button class="mt-6 font-semibold sm:mt-12 text-dark btn" [ngClass]="[bgPrimary]">
 					Contact
 				</button>
 			</div>
@@ -88,27 +55,10 @@
 				<p class="self-start">Business</p>
 				<p class="self-start text-4xl font-bold">17€ <span class="text-xl">/mo</span></p>
 				<ul class="self-stretch flex-1">
-					<li class="flex items-center space-x-2">
+					<li class="flex items-center space-x-2" *ngFor="let i of [1, 2, 3, 4, 5]">
 						<i
-							class="inline-flex items-center justify-center text-2xl font-semibold text-primary cil-check-alt"
-						></i>
-						<span>Lumet consectetur adipisicing</span>
-					</li>
-					<li class="flex items-center space-x-2">
-						<i
-							class="inline-flex items-center justify-center text-2xl font-semibold text-primary cil-check-alt"
-						></i>
-						<span>Lumet consectetur adipisicing</span>
-					</li>
-					<li class="flex items-center space-x-2">
-						<i
-							class="inline-flex items-center justify-center text-2xl font-semibold text-primary cil-check-alt"
-						></i>
-						<span>Lumet consectetur adipisicing</span>
-					</li>
-					<li class="flex items-center space-x-2">
-						<i
-							class="inline-flex items-center justify-center text-2xl font-semibold text-primary cil-check-alt"
+							class="inline-flex items-center justify-center text-2xl font-semibold cil-check-alt"
+							[ngClass]="[textPrimary]"
 						></i>
 						<span>Lumet consectetur adipisicing</span>
 					</li>

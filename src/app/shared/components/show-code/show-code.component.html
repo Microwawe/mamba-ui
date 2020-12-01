@@ -6,18 +6,24 @@
 			</button>
 			<button class="px-2 py-px text-sm sm:px-3 sm:py-1" (click)="showCode()">HTML</button>
 		</div>
-		<div class="relative overflow-auto">
+		<div class="relative">
 			<div #rawContent *ngIf="!codeVisible">
 				<ng-content></ng-content>
 			</div>
-			<pre *ngIf="codeVisible" class="px-8 my-6" style="white-space: pre-line">
+			<pre
+				*ngIf="codeVisible"
+				class="p-6 overflow-auto"
+				[ngClass]="(isDarkTheme | async) ? 'prism-dark' : 'prism-light'"
+				style="white-space: pre-line"
+			>
 				<code class="language-markdown" [innerHTML]="code">
 				</code>
 			</pre>
 			<button
 				*ngIf="codeVisible"
 				(click)="copyToClipboard()"
-				class="absolute top-0 right-0 flex mt-4 mr-4 space-x-2 border bg-default btn border-primary"
+				class="absolute top-0 right-0 flex px-4 py-2 mt-3 mr-3 space-x-2 border rounded-lg bg-default hover:ring-4"
+				[ngClass]="['focus:' + ringPrimary, 'hover:' + ringPrimary, borderPrimary]"
 			>
 				<i class="self-center text-xl cil-copy"></i>
 				<span>Copy</span>
