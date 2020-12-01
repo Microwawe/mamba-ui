@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {SharedModule} from '@shared/shared.module';
 
 import {ContactShowcaseComponent} from './contact-showcase.component';
+import {Contact1Component} from './contact1/contact1.component';
 
 const routes: Routes = [
 	{
@@ -13,6 +14,6 @@ const routes: Routes = [
 
 @NgModule({
 	imports: [RouterModule.forChild(routes), SharedModule],
-	declarations: [ContactShowcaseComponent],
+	declarations: [ContactShowcaseComponent, Contact1Component],
 })
 export class ContactModule {}

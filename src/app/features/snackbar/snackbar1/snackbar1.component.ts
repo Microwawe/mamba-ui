@@ -2,10 +2,10 @@ import {Component, OnInit} from '@angular/core';
 import {BaseComponent} from '@shared/components/base/base.component';
 
 @Component({
-	selector: 'custom-feature1',
-	templateUrl: './feature1.component.html',
+	selector: 'custom-snackbar1',
+	templateUrl: './snackbar1.component.html',
 })
-export class Feature1Component extends BaseComponent implements OnInit {
+export class Snackbar1Component extends BaseComponent implements OnInit {
 	constructor() {
 		super();
 	}

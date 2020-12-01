@@ -8,8 +8,6 @@ export class CustomInjector {
 
 	public static getInstance(): Injector {
 		if (!CustomInjector.injector) {
-			console.log('created new instance');
-
 			CustomInjector.injector = Injector.create({
 				providers: [{provide: ColorService, deps: []}],
 			});

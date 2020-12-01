@@ -1,6 +1,8 @@
 import {AfterViewInit, Component, ElementRef, Input, ViewChild} from '@angular/core';
+import {ThemeService} from '@core/services/theme.service';
 // eslint-disable-next-line node/no-unpublished-import
 import * as Prism from 'prismjs';
+import {Observable} from 'rxjs/internal/Observable';
 import {BaseComponent} from '../base/base.component';
 
 @Component({
@@ -10,20 +12,23 @@ import {BaseComponent} from '../base/base.component';
 export class ShowCodeComponent extends BaseComponent implements AfterViewInit {
 	@Input() language = 'html';
 	@ViewChild('rawContent') rawContent!: ElementRef;
+
+	isDarkTheme!: Observable<boolean>;
 	rawCode = '';
 	code = '';
 	codeVisible = false;
 
-	constructor(private el: ElementRef) {
+	constructor(private el: ElementRef, private themeService: ThemeService) {
 		super();
 	}
 
 	ngAfterViewInit() {
-		const content = this.rawContent.nativeElement.firstChild.innerHTML;
+		this.isDarkTheme = this.themeService.getDarkTheme();
+		const content = this.rawContent?.nativeElement?.firstChild.innerHTML;
 		const grammar = Prism.languages[this.language];
 		setTimeout(() => {
-			this.code = this.beautifyHTML(content);
-			this.code = Prism.highlight(this.code, grammar, this.language);
+			const cleanHtml = this.beautifyHTML(content);
+			this.code = Prism.highlight(cleanHtml, grammar, this.language);
 		}, 0);
 	}
 

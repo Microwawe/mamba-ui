@@ -8,7 +8,8 @@
 			</p>
 			<div>
 				<button
-					class="px-4 py-1 font-semibold border rounded-l-lg bg-primary border-primary text-dark"
+					class="px-4 py-1 font-semibold border rounded-l-lg border-primary text-dark"
+					[ngClass]="[bgPrimary]"
 				>
 					Monthly
 				</button>
@@ -18,10 +19,11 @@
 		<div class="grid grid-cols-1 gap-6 auto-rows-fr lg:grid-cols-3">
 			<div class="relative flex flex-col items-center p-8 border rounded-md">
 				<span
-					class="absolute top-0 px-6 pt-1 pb-2 font-medium rounded-b-lg bg-primary text-dark"
+					class="absolute top-0 px-6 pt-1 pb-2 font-medium rounded-b-lg text-dark"
+					[ngClass]="[bgPrimary]"
 					>Personal</span
 				>
-				<p class="self-start text-4xl font-bold text-primary">FREE</p>
+				<p class="self-start text-4xl font-bold" [ngClass]="[textPrimary]">FREE</p>
 				<ul class="self-stretch flex-1 space-y-2">
 					<li class="flex items-center space-x-2">
 						<span>Lumet consectetur adipisicing</span>
@@ -82,7 +84,7 @@
 						<span>Lumet consectetur adipisicing</span>
 					</li>
 				</ul>
-				<button class="mt-12 font-semibold uppercase text-dark bg-primary btn">
+				<button class="mt-12 font-semibold uppercase text-dark btn" [ngClass]="[bgPrimary]">
 					Order now
 				</button>
 			</div>

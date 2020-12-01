@@ -1,11 +1,9 @@
-<header class="body-font text-contrast bg-primary">
+<header class="body-font text-contrast" [ngClass]="[bgPrimary]">
 	<div class="container flex flex-col flex-wrap items-center p-6 mx-auto md:flex-row">
 		<a class="flex items-center mb-4 font-medium title-font md:mb-0" [routerLink]="['/']">
 			LOGO
 		</a>
-		<nav class="flex flex-wrap items-center justify-center space-x-6 text-base md:ml-auto">
-			<a href="#" class="">Github</a>
-			<a href="#" class="">Contact</a>
+		<nav class="flex flex-wrap items-center justify-center text-base md:space-x-6 md:ml-auto">
 			<custom-color-selector></custom-color-selector>
 			<custom-theme-selector></custom-theme-selector>
 		</nav>

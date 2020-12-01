@@ -16,14 +16,19 @@
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, reprehenderit
 				adipisci tempore voluptas laborum quod.
 			</p>
-			<a href="#" class="inline-flex items-center pt-2 pb-6 space-x-2 text-sm text-primary">
+			<a
+				href="#"
+				class="inline-flex items-center pt-2 pb-6 space-x-2 text-sm"
+				[ngClass]="[textPrimary]"
+			>
 				<span class="">Read more</span>
 				<i class="inline-flex items-center w-5 h-5 cil-arrow-right"></i>
 			</a>
 			<div class="flex items-center justify-between pt-2">
 				<div class="flex space-x-2">
 					<i
-						class="flex items-center justify-center w-8 h-8 rounded-full text-dark bg-primary cil-user text-md"
+						class="flex items-center justify-center w-8 h-8 rounded-full text-dark cil-user text-md"
+						[ngClass]="[bgPrimary]"
 					></i>
 					<span class="self-center">by Leroy Jenkins</span>
 				</div>

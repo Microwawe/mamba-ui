@@ -17,14 +17,22 @@ export class ColorSelectorComponent extends BaseComponent implements OnInit {
 	ngOnInit() {
 		this.colors = [
 			'yellow',
+			'amber',
 			'orange',
 			'red',
+			'rose',
 			'pink',
+			'fuchsia',
 			'purple',
+			'violet',
 			'indigo',
 			'blue',
+			'lightBlue',
+			'cyan',
 			'teal',
+			'emerald',
 			'green',
+			'lime',
 		];
 	}
 
