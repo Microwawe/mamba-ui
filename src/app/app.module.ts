@@ -12,12 +12,7 @@ import {HeaderComponent} from './layout/header/header.component';
 import {NotFoundComponent} from './layout/not-found/not-found.component';
 
 @NgModule({
-	declarations: [
-		AppComponent,
-		FooterComponent,
-		HeaderComponent,
-		NotFoundComponent,
-	],
+	declarations: [AppComponent, FooterComponent, HeaderComponent, NotFoundComponent],
 	imports: [
 		CoreModule,
 		AppRoutingModule,

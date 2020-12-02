@@ -1,11 +1,29 @@
 <header class="body-font text-contrast" [ngClass]="[bgPrimary]">
-	<div class="container flex flex-col flex-wrap items-center p-6 mx-auto md:flex-row">
-		<a class="flex items-center mb-4 font-medium title-font md:mb-0" [routerLink]="['/']">
-			LOGO
+	<div
+		class="container flex flex-col flex-wrap items-center justify-between p-6 mx-auto md:flex-row"
+	>
+		<a class="flex items-center mb-4 font-extralight md:mb-0" [routerLink]="['/']">
+			<i class="text-4xl cil-fingerprint"></i>
 		</a>
-		<nav class="flex flex-wrap items-center justify-center text-base md:space-x-6 md:ml-auto">
-			<custom-color-selector></custom-color-selector>
-			<custom-theme-selector></custom-theme-selector>
-		</nav>
+		<div class="flex space-between-2">
+			<a
+				class="flex items-center p-4 mb-4 font-medium title-font md:mb-0"
+				[routerLink]="['/components']"
+			>
+				Components
+			</a>
+			<a
+				class="flex items-center p-4 mb-4 font-medium title-font md:mb-0"
+				[routerLink]="['/sections']"
+			>
+				Sections
+			</a>
+			<a
+				class="flex items-center p-4 mb-4 font-medium title-font md:mb-0"
+				[routerLink]="['/']"
+			>
+				Pages
+			</a>
+		</div>
 	</div>
 </header>

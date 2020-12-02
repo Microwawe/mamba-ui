@@ -1,0 +1,50 @@
+<div class="container p-4">
+	<header class="flex justify-between h-16 border-b-2 border-gray-200">
+		<button class="flex p-4">
+			<i class="self-center text-2xl cib-coreui-c" [ngClass]="textPrimary"></i>
+		</button>
+		<ul class="items-stretch hidden space-x-3 lg:flex">
+			<li class="flex">
+				<a
+					[routerLink]="['#1']"
+					[routerLinkActive]="[textPrimary, borderPrimary]"
+					class="flex items-center -mb-0.5 border-b-2 px-4 border-transparent"
+					>Link</a
+				>
+			</li>
+			<li class="flex">
+				<a
+					[routerLink]="['']"
+					[routerLinkActive]="[textPrimary, borderPrimary]"
+					class="flex items-center -mb-0.5 border-b-2 px-4 border-transparent"
+					>Link</a
+				>
+			</li>
+			<li class="flex">
+				<a
+					[routerLink]="['#3']"
+					[routerLinkActive]="[textPrimary, borderPrimary]"
+					class="flex items-center -mb-0.5 border-b-2 px-4 border-transparent"
+					>Link</a
+				>
+			</li>
+			<li class="flex">
+				<a
+					[routerLink]="['#4']"
+					[routerLinkActive]="[textPrimary, borderPrimary]"
+					class="flex items-center -mb-0.5 border-b-2 px-4 border-transparent"
+					>Link</a
+				>
+			</li>
+		</ul>
+		<div class="flex-shrink-0 hidden lg:block">
+			<button class="self-center btn text-default-inverse">Sign in</button>
+			<button class="self-center font-semibold btn text-dark" [ngClass]="bgPrimary">
+				Sign up
+			</button>
+		</div>
+		<button class="flex p-4 lg:hidden">
+			<i class="self-center text-2xl cil-menu text-default-inverse"></i>
+		</button>
+	</header>
+</div>

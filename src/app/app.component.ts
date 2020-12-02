@@ -5,28 +5,9 @@ import {Observable} from 'rxjs';
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.component.html',
-	styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
 	isDarkTheme!: Observable<boolean>;
-	categories = [
-		'blog',
-		'call-to-action',
-		'contact',
-		'faq',
-		'feature',
-		'footer',
-		'form',
-		'hero',
-		'login',
-		'pricing',
-		'snackbar',
-		'stats',
-		'steps',
-		'team',
-		'testimonial',
-		// 'timeline',
-	];
 
 	constructor(private themeService: ThemeService) {}
 

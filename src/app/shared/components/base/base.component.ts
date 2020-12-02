@@ -1,7 +1,8 @@
 import {Component, OnDestroy} from '@angular/core';
+import {Subscription} from 'rxjs';
+
 import {ColorService} from '@core/services/color.service';
 import {CustomInjector} from '@core/services/custom-injector.service';
-import {Subscription} from 'rxjs';
 
 @Component({
 	templateUrl: './base.component.html',

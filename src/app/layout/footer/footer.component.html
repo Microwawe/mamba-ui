@@ -1,14 +1,19 @@
-<footer class="">
-	<div class="container p-6 flex justify-between items-center">
-		<p class="text-sm">© {{ currentYear }}</p>
-		<label
-			><input
-				#themeCheckbox
-				type="checkbox"
-				class="mr-3"
-				[checked]="isDarkTheme | async"
-				(change)="toggleDarkTheme(themeCheckbox.checked)"
-			/>{{ themeCheckbox.checked ? 'Light theme' : 'Dark Theme' }}
-		</label>
+<footer class="bg-default-inverse">
+	<div
+		class="container flex flex-col-reverse items-center justify-center px-6 py-10 lg:flex-row lg:justify-between"
+	>
+		<p class="my-6 text-center text-default lg:text-left">
+			© {{ currentYear }}
+			<a
+				href="https://www.twitter.com/nnowwakk"
+				class="hover:underline"
+				[ngClass]="textPrimary"
+				>@nnowwakk</a
+			>
+		</p>
+		<div class="flex flex-col-reverse items-center justify-center lg:flex-row lg:space-x-3">
+			<custom-color-selector></custom-color-selector>
+			<custom-theme-selector></custom-theme-selector>
+		</div>
 	</div>
 </footer>

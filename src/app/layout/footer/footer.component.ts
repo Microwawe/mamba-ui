@@ -1,17 +1,21 @@
 import {Component, OnInit} from '@angular/core';
-import {ThemeService} from '@core/services/theme.service';
 import {Observable} from 'rxjs';
+
+import {ThemeService} from '@core/services/theme.service';
+import {BaseComponent} from '@shared/components/base/base.component';
 
 @Component({
 	selector: 'custom-footer',
 	templateUrl: './footer.component.html',
 	styleUrls: ['./footer.component.scss'],
 })
-export class FooterComponent implements OnInit {
+export class FooterComponent extends BaseComponent implements OnInit {
 	currentYear!: number;
 	isDarkTheme!: Observable<boolean>;
 
-	constructor(private themeService: ThemeService) {}
+	constructor(private themeService: ThemeService) {
+		super();
+	}
 
 	ngOnInit() {
 		this.currentYear = new Date().getFullYear();

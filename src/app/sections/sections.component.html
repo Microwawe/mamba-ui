@@ -1,0 +1,11 @@
+<div class="container">
+	<h1 class="text-4xl font-bold text-center">Sections</h1>
+	<div class="flex flex-wrap p-12 place-content-center">
+		<a
+			*ngFor="let category of categories"
+			[routerLink]="['/sections/' + category]"
+			class="px-6 py-3 m-2 capitalize rounded-md text-default-inverse bg-default"
+			>{{ category }}</a
+		>
+	</div>
+</div>
