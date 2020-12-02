@@ -1,7 +1,7 @@
 <div [ngClass]="{'dark-theme': isDarkTheme | async}">
 	<div class="flex flex-col min-h-screen bg-neutral text-default-inverse">
 		<custom-header></custom-header>
-		<div class="flex-1">
+		<div class="flex-1 my-8">
 			<router-outlet></router-outlet>
 		</div>
 		<custom-footer></custom-footer>

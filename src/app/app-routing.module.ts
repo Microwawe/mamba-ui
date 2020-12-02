@@ -1,15 +1,21 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule, PreloadAllModules} from '@angular/router';
-import {NotFoundComponent} from './layout/not-found/not-found.component';
+
+import {HomeComponent} from '@core/layout/home/home.component';
+import {NotFoundComponent} from '@core/layout/not-found/not-found.component';
 
 const routes: Routes = [
 	{
 		path: 'home',
-		loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
+		component: HomeComponent,
 	},
 	{
 		path: 'components',
 		loadChildren: () => import('./components/components.module').then(m => m.ComponentsModule),
+	},
+	{
+		path: 'demos',
+		loadChildren: () => import('./demos/demos.module').then(m => m.DemosModule),
 	},
 	{
 		path: 'sections',

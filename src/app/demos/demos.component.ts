@@ -1,12 +1,14 @@
 import {Component, OnInit} from '@angular/core';
+
 import {BaseComponent} from '@shared/components/base/base.component';
 
 @Component({
-	selector: 'custom-header',
-	templateUrl: './header.component.html',
-	styleUrls: ['./header.component.scss'],
+	selector: 'custom-demos',
+	templateUrl: './demos.component.html',
 })
-export class HeaderComponent extends BaseComponent implements OnInit {
+export class DemosComponent extends BaseComponent implements OnInit {
+	categories = [];
+
 	constructor() {
 		super();
 	}

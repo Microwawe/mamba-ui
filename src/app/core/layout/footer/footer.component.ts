@@ -7,7 +7,6 @@ import {BaseComponent} from '@shared/components/base/base.component';
 @Component({
 	selector: 'custom-footer',
 	templateUrl: './footer.component.html',
-	styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent extends BaseComponent implements OnInit {
 	currentYear!: number;
