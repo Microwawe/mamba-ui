@@ -15,12 +15,22 @@ An UI Kit for plain HTML and TailwindCSS components to help you get started even
 - [x] Dynamic light and dark themes
   - [x] Selected theme saved in localstorage
 
+## Installation
+
+All the components and layouts that you can copy-paste to your project works out-of-the-box without any modifications as long as you have [TailwindCSS installed](https://tailwindcss.com/docs/installation) in your project.
+
+If you want to use the same icons as I have, you'll also need [CoreUI Icons installed](https://icons.coreui.io/). If you don't want to use these then you can remove all the ``` <i> </i>``` elements and css-classes starting with `cil-` and `cib-`.  
 
 ## Usage
 
-After you clone this repository to your desktop with ```git clone https://github.com/Microwawe/ui-kit.git```, go to its root directory and run ```npm install``` to install its dependencies.
+How to use the components on your own websites?
 
-Once the dependencies are installed, you can run ``` ng serve ``` to start the application. You will then be able to access it at ```localhost:4200```
+1. Find a component that you like from the [demo website](https://mirkonowak.com/ui-kit/home)
+2. Select the primary color from the available colors
+3. Select the light or dark theme
+4. Click the "HTML"-button
+5. Copy/paste into your project
+6. Profit
 
 ## TODO
 
@@ -75,32 +85,22 @@ Once the dependencies are installed, you can run ``` ng serve ``` to start the a
   - [ ] Marketing
   - [ ] Portfolio
 - [ ] Copy and paste components
-  - [x] Plain html + css that works out of the box
+  - [ ] Plain html + css that works out of the box
   - [ ] React components
   - [ ] Vue components
 
-## Installation
 
-All the components and layouts that you can copy-paste to your project works out-of-the-box without any modifications as long as you have [TailwindCSS installed](https://tailwindcss.com/docs/installation) in your project.
-
-If you want to use the same icons as I have, you'll also need [CoreUI Icons installed](https://icons.coreui.io/). If you don't want to use these then you can remove all the ``` <i> </i>``` elements and css-classes starting with `cil-` and `cib-`.  
-
-## Usage
-
-How to use the components on your own websites?
-
-1. Find a component that you like from the [demo website](https://mirkonowak.com/ui-kit/home)
-2. Select the primary color from the available colors
-3. Select the light or dark theme
-4. Click the "HTML"-button
-5. Copy/paste into your project
-6. Profit
 
 ## Contributing
 Right now this is just a hobby project for me and there aren't a lot of users (if any) so I update and maintain the project as I have spare time.
 
 If you want to help, pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
+## Development
+
+After you clone this repository to your desktop with ```git clone https://github.com/Microwawe/ui-kit.git```, go to its root directory and run ```npm install``` to install its dependencies.
+
+Once the dependencies are installed, you can run ``` ng serve ``` to start the application. You will then be able to access it at ```localhost:4200```
 
 ## Credits and references
 

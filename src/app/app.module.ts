@@ -10,9 +10,18 @@ import {SharedModule} from '@shared/shared.module';
 import {FooterComponent} from '@core/layout/footer/footer.component';
 import {HeaderComponent} from '@core/layout/header/header.component';
 import {NotFoundComponent} from '@core/layout/not-found/not-found.component';
+import {BreadcrumbComponent} from '@core/layout/breadcrumb/breadcrumb.component';
+import {HomeComponent} from '@core/layout/home/home.component';
 
 @NgModule({
-	declarations: [AppComponent, FooterComponent, HeaderComponent, NotFoundComponent],
+	declarations: [
+		AppComponent,
+		BreadcrumbComponent,
+		FooterComponent,
+		HeaderComponent,
+		HomeComponent,
+		NotFoundComponent,
+	],
 	imports: [
 		CoreModule,
 		AppRoutingModule,

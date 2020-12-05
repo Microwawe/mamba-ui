@@ -48,6 +48,7 @@ module.exports = {
 			colors: {
 				'dark': 'var(--dark)',
 				'neutral': 'var(--neutral)',
+				'neutral-inverse': 'var(--neutral-inverse)',
 				'primary': 'var(--primary)',
 				'primary-variant': 'var(--primary-variant)',
 				'secondary': 'var(--secondary)',

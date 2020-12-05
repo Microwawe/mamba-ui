@@ -1,0 +1,19 @@
+<section *ngIf="breadcrumbs.length > 0">
+	<div class="container p-4">
+		<ol class="flex">
+			<li class="flex items-center">
+				<a [routerLink]="['/']" class="p-1 hover:underline"> Home </a>
+			</li>
+			<li *ngFor="let breadcrumb of breadcrumbs; let i = index" class="flex items-center">
+				<i *ngIf="i < breadcrumbs.length" class="mx-2 text-xs cil-minus"></i>
+				<a
+					[routerLink]="breadcrumb.url"
+					class="p-1 hover:underline"
+					[ngClass]="{'hover:no-underline cursor-default': i == breadcrumbs.length - 1}"
+				>
+					<span>{{ breadcrumb.label }}</span>
+				</a>
+			</li>
+		</ol>
+	</div>
+</section>

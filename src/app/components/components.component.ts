@@ -5,8 +5,7 @@ import {Component, OnInit} from '@angular/core';
 	templateUrl: './components.component.html',
 })
 export class ComponentsComponent implements OnInit {
-	//categories = ['Button', 'Label', 'snackbar'];
-	categories = [];
+	categories = ['button', 'label', 'snackbar'];
 
 	constructor() {}
 

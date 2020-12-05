@@ -11,6 +11,12 @@ const routes: Routes = [
 	{
 		path: 'snackbar',
 		loadChildren: () => import('./snackbar/snackbar.module').then(m => m.SnackbarModule),
+		data: {title: 'Snackbars', breadcrumb: 'Snackbar'},
+	},
+	{
+		path: 'button',
+		loadChildren: () => import('./button/button.module').then(m => m.ButtonModule),
+		data: {title: 'Buttons', breadcrumb: 'Button'},
 	},
 	/* {
 		path: 'blog',

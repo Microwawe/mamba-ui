@@ -8,12 +8,14 @@
 			</p>
 			<div>
 				<button
-					class="px-4 py-1 font-semibold border rounded-l-lg border-primary text-dark"
-					[ngClass]="[bgPrimary]"
+					class="px-4 py-1 font-semibold border rounded-l-lg text-dark"
+					[ngClass]="[bgPrimary, borderPrimary]"
 				>
 					Monthly
 				</button>
-				<button class="px-4 py-1 border rounded-r-lg border-primary">Annually</button>
+				<button class="px-4 py-1 border rounded-r-lg" [ngClass]="[borderPrimary]">
+					Annually
+				</button>
 			</div>
 		</div>
 		<div class="grid grid-cols-1 gap-6 auto-rows-fr lg:grid-cols-3">
@@ -39,7 +41,8 @@
 					</li>
 				</ul>
 				<button
-					class="px-4 py-2 mt-4 font-semibold uppercase border rounded-lg md:mt-12 sm:py-3 sm:px-8 border-primary"
+					class="px-4 py-2 mt-4 font-semibold uppercase border rounded-lg md:mt-12 sm:py-3 sm:px-8"
+					[ngClass]="[borderPrimary]"
 				>
 					Order now
 				</button>
@@ -67,7 +70,10 @@
 					Order now
 				</button>
 			</div>
-			<div class="relative flex flex-col items-center p-8 border-2 rounded-md border-primary">
+			<div
+				class="relative flex flex-col items-center p-8 border-2 rounded-md"
+				[ngClass]="[borderPrimary]"
+			>
 				<p class="self-start">Personal</p>
 				<p class="self-start text-4xl font-bold">9€ <span class="text-xl">/mo</span></p>
 				<ul class="self-stretch flex-1">

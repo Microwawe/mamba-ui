@@ -12,14 +12,17 @@ const routes: Routes = [
 	{
 		path: 'components',
 		loadChildren: () => import('./components/components.module').then(m => m.ComponentsModule),
+		data: {title: 'Components', breadcrumb: 'Components'},
 	},
 	{
-		path: 'demos',
+		path: 'demo',
 		loadChildren: () => import('./demos/demos.module').then(m => m.DemosModule),
+		data: {title: 'Demo pages', breadcrumb: 'Demos'},
 	},
 	{
 		path: 'sections',
 		loadChildren: () => import('./sections/sections.module').then(m => m.SectionsModule),
+		data: {title: 'Sections', breadcrumb: 'Sections'},
 	},
 	{path: '', pathMatch: 'full', redirectTo: 'home'},
 	{path: '**', component: NotFoundComponent},

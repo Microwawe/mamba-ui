@@ -1,58 +1,305 @@
-<section class="py-8 -my-8 bg-coolGray-100">
-	<article class="container p-4 prose md:p-8 lg:prose-xl">
-		<h1>Create stylish websites without writing custom css</h1>
-		<p>
-			All the components are just good ol' HTML and CSS, but without the need of writing
-			complex css rules thanks to
-			<a href="https://tailwindcss.com/">TailwindCSS</a>. TailwindCSS is a utility-first CSS
-			framework so if one of my components doesn't fit your needs just right, you can modify
-			them easily by following the TailwindCSS
-			<a href="https://tailwindcss.com/docs">documentation</a>.
-		</p>
-
-		<h2>Features</h2>
-		<p>
-			There are dozens of individual components and page sections that you can just copy-paste
-			you your own website.
-		</p>
-
-		<h2>Prerequisites</h2>
-		<p>
-			Since everything you see on this page is built with TailwindCSS you'll need to have it
-			installed for the components and sections to work out-of-the-box. They have an extensive
-			<a href="https://tailwindcss.com/docs/installation">installation guide</a> in their docs
-			for all sorts of different tools and frameworks.
-		</p>
-		<p>
-			Also if you want to use the exact same icons as I have, you'll need to install
-			<a href="https://icons.coreui.io/">CoreUI Icons</a> as well. And most of the text on the
-			site uses the
-			<a href="https://fonts.google.com/specimen/Montserrat">Montserrat</a> font-family.
-		</p>
-
-		<h2>Coming soon™</h2>
-		<ul>
-			<li>Full demo pages for different purposes such as marketing or blogging</li>
-			<li>Plenty of new components and sections</li>
-			<li>More customizable colors and shades from the TailwindCSS 2.0 color palette</li>
-			<li>
-				Ability to view the components in tablet and mobile sizes without resizing the
-				browser
-			</li>
-			<li>Copy-pasting React and Vue components</li>
-			<p>
-				Something else that I haven't thought of? If you have a feature request or just want
-				to chat, you can contact me on Twitter
-				<a href="https://www.twitter.com/nnowwakk">@nnowwakk</a> or you can create a new
-				issue on <a href="https://github.com/Microwawe/ui-kit/issues">Github</a>.
+<div class="space-y-12">
+	<div class="container p-4">
+		<header class="flex justify-between h-16 border-b-2 border-gray-200">
+			<button class="flex p-4">
+				<i class="self-center text-2xl cib-coreui-c text-emerald-500"></i>
+			</button>
+			<ul class="items-stretch hidden space-x-3 lg:flex">
+				<li class="flex">
+					<a
+						class="flex items-center -mb-0.5 border-b-2 px-4 border-transparent"
+						href="/sections/header/%231"
+						>Link</a
+					>
+				</li>
+				<li class="flex">
+					<a
+						class="flex items-center -mb-0.5 border-b-2 px-4 border-transparent text-emerald-500 border-emerald-500"
+						href="/"
+						>Link</a
+					>
+				</li>
+				<li class="flex">
+					<a
+						class="flex items-center -mb-0.5 border-b-2 px-4 border-transparent"
+						href="/sections/header/%233"
+						>Link</a
+					>
+				</li>
+				<li class="flex">
+					<a
+						class="flex items-center -mb-0.5 border-b-2 px-4 border-transparent"
+						href="/sections/header/%234"
+						>Link</a
+					>
+				</li>
+			</ul>
+			<div class="flex-shrink-0 hidden lg:block">
+				<button class="self-center btn text-default-inverse">Sign in</button>
+				<button class="self-center font-semibold btn text-dark bg-emerald-500">
+					Sign up
+				</button>
+			</div>
+			<button class="flex p-4 lg:hidden">
+				<i class="self-center text-2xl cil-menu text-default-inverse"></i>
+			</button>
+		</header>
+	</div>
+	<section>
+		<div
+			class="container flex flex-col items-center px-4 py-16 text-center md:py-32 md:px-10 lg:px-32 xl:max-w-3xl"
+		>
+			<h1 class="text-4xl font-bold leading-none sm:text-5xl">
+				Quisquam necessita vel
+				<span class="text-emerald-500">laborum doloribus</span> delectus
+			</h1>
+			<p class="px-8 mt-8 mb-12 text-lg">
+				Cupiditate minima voluptate temporibus quia? Architecto beatae esse ab amet vero
+				eaque explicabo!
 			</p>
-			<a href="https://www.buymeacoffee.com/nnowwakk" target="_blank"
-				><img
-					src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
-					alt="Buy Me A Coffee"
-					class="mx-auto"
-					style="height: 60px !important; width: 217px !important"
-			/></a>
-		</ul>
-	</article>
-</section>
+			<div class="flex flex-wrap justify-center">
+				<button class="m-2 font-semibold text-dark btn bg-emerald-500">Get started</button>
+				<button class="m-2 border text-contrast-inverse border-neutral btn">
+					Learn more
+				</button>
+			</div>
+		</div>
+	</section>
+	<section class="p-6 my-6">
+		<div class="container grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
+			<div class="flex p-4 space-x-4 rounded-lg md:space-x-6 bg-default-inverse text-default">
+				<div class="flex justify-center p-2 align-middle rounded-lg sm:p-4 bg-emerald-500">
+					<i class="flex text-4xl place-items-center cil-cart"></i>
+				</div>
+				<div class="flex flex-col justify-center align-middle">
+					<p class="text-3xl font-semibold leading-none">12 000</p>
+					<p class="capitalize">orders</p>
+				</div>
+			</div>
+			<div class="flex p-4 space-x-4 rounded-lg md:space-x-6 bg-default-inverse text-default">
+				<div class="flex justify-center p-2 align-middle rounded-lg sm:p-4 bg-emerald-500">
+					<i class="flex text-4xl place-items-center cil-mood-very-good"></i>
+				</div>
+				<div class="flex flex-col justify-center align-middle">
+					<p class="text-3xl font-semibold leading-none">7 500</p>
+					<p class="capitalize">New customers</p>
+				</div>
+			</div>
+			<div class="flex p-4 space-x-4 rounded-lg md:space-x-6 bg-default-inverse text-default">
+				<div class="flex justify-center p-2 align-middle rounded-lg sm:p-4 bg-emerald-500">
+					<i class="flex text-4xl place-items-center cil-speedometer"></i>
+				</div>
+				<div class="flex flex-col justify-center align-middle">
+					<p class="text-3xl font-semibold leading-none">125%</p>
+					<p class="capitalize">Growth</p>
+				</div>
+			</div>
+			<div class="flex p-4 space-x-4 rounded-lg md:space-x-6 bg-default-inverse text-default">
+				<div class="flex justify-center p-2 align-middle rounded-lg sm:p-4 bg-emerald-500">
+					<i class="flex text-4xl place-items-center cil-touch-app"></i>
+				</div>
+				<div class="flex flex-col justify-center align-middle">
+					<p class="text-3xl font-semibold leading-none">17%</p>
+					<p class="capitalize">Click rate</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="m-4 md:m-8">
+		<div class="container p-4 my-6 space-y-1 text-center">
+			<span class="text-xs tracking-wider uppercase text-emerald-500"
+				>shortcut to your dream ui</span
+			>
+			<h2 class="pb-3 text-3xl font-bold md:text-4xl">Create a stylish website in minutes</h2>
+			<p>
+				Get a jumpstart to creating your new webpage! With our fully responsive and
+				carefully styled components you can get the structure of your website done with just
+				a couple of clicks.
+			</p>
+		</div>
+		<div
+			class="container grid justify-center gap-4 divide-y xl:divide-x xl:divide-y-0 lg:grid-cols-2 xl:grid-cols-4"
+		>
+			<div class="flex flex-col px-8 py-6">
+				<h2 class="mb-2 text-lg font-semibold sm:text-xl text-default-inverse title-font">
+					Components
+				</h2>
+				<p class="flex-1 mb-4 text-base leading-relaxed text-neutral-inverse">
+					Individual components that can be re-used multiple times in your designs.
+				</p>
+				<a class="inline-flex items-center text-sm text-emerald-500" href="/components">
+					<span>Learn More</span>
+					<i class="ml-2 cil-arrow-right"></i>
+				</a>
+			</div>
+			<div class="flex flex-col px-8 py-6 lg:border-none xl:border-solid">
+				<h2 class="mb-2 text-lg font-semibold sm:text-xl text-default-inverse title-font">
+					Sections
+				</h2>
+				<p class="flex-1 mb-4 text-base leading-relaxed text-neutral-inverse">
+					Pre-made building blocks that you can stack on top of each other like Legos to
+					build a website of your own in minutes.
+				</p>
+				<a class="inline-flex items-center text-sm text-emerald-500" href="/sections">
+					<span>Learn More</span>
+					<i class="ml-2 cil-arrow-right"></i>
+				</a>
+			</div>
+			<div class="flex flex-col px-8 py-6">
+				<h2 class="mb-2 text-lg font-semibold sm:text-xl text-default-inverse title-font">
+					Demo pages
+				</h2>
+				<p class="flex-1 mb-4 text-base leading-relaxed text-neutral-inverse">
+					Full pages that showcase pieces of what you can achieve with the building blocks
+					that are in this UI Kit.
+				</p>
+				<a class="inline-flex items-center text-sm text-emerald-500" href="/demos">
+					<span>Learn More</span>
+					<i class="ml-2 cil-arrow-right"></i>
+				</a>
+			</div>
+			<div class="flex flex-col px-8 py-6">
+				<h2 class="mb-2 text-lg font-semibold sm:text-xl text-default-inverse title-font">
+					Customizable
+				</h2>
+				<p class="flex-1 mb-4 text-base leading-relaxed text-neutral-inverse">
+					Choose your primary color from any of the TailwindCSS 2.0 colors. You can also
+					view all of the components in our light and dark themes.
+				</p>
+				<a class="inline-flex items-center text-sm text-emerald-500" href="/docs">
+					<span>Learn More</span>
+					<i class="ml-2 cil-arrow-right"></i>
+				</a>
+			</div>
+		</div>
+	</section>
+	<section class="py-6 text-dark bg-emerald-500">
+		<div
+			class="container flex flex-col items-center justify-center p-4 space-y-8 md:p-10 md:px-24 xl:px-48"
+		>
+			<h1 class="text-5xl font-bold leading-none text-center">Something totally different</h1>
+			<p class="pt-2 pb-8 text-xl font-medium text-center">
+				Eum omnis itaque harum at quae sequi unde similique alias asperiores totam. Ex
+				cumque maxime harum doloremque, tempore nam fugiat aspernatur rerum ipsa unde est
+				modi commodi molestias maiores eveniet eius esse asperiores neque dicta ea quisquam?
+				Excepturi sapiente officiis explicabo ab?
+			</p>
+			<button class="font-semibold bg-default text-contrast-inverse btn">Learn more</button>
+		</div>
+	</section>
+	<section class="my-8">
+		<div class="container flex flex-col items-center p-4 space-y-6 md:p-8">
+			<i class="text-5xl cil-badge text-emerald-500"></i>
+			<p
+				class="px-6 py-2 text-2xl font-semibold text-center sm:font-bold sm:text-3xl md:text-4xl text-neutral-inverse lg:max-w-2xl xl:max-w-4xl"
+			>
+				"Veniam quidem animi ea maxime odit fugiat architecto perferendis ipsum perspiciatis
+				iusto, provident qui nam dolorum corporis."
+			</p>
+			<div class="flex justify-center space-x-3">
+				<img
+					src="https://source.unsplash.com/80x80/?portrait"
+					alt=""
+					class="w-20 h-20 bg-center bg-cover rounded-md bg-neutral"
+				/>
+				<div>
+					<p class="leading-tight">Leroy Jenkins</p>
+					<p class="text-sm leading-tight text-neutral-inverse">Founder, Company</p>
+					<a class="flex items-center py-2 space-x-1 text-sm text-emerald-500" href="/">
+						<span> Read full story </span>
+						<i class="cil-arrow-right"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer class="py-6 bg-default text-default-inverse">
+		<div
+			class="container px-6 space-y-6 divide-y divide-gray-400 md:space-y-12 divide-opacity-50"
+		>
+			<div class="grid grid-cols-12">
+				<div class="pb-6 col-span-full md:pb-0 md:col-span-6">
+					<a href="#" class="flex justify-center space-x-3 md:justify-start">
+						<i
+							class="flex items-center justify-center w-12 h-12 text-xl font-bold rounded-full text-dark cib-x-pack bg-emerald-500"
+						></i>
+						<span class="self-center text-2xl font-semibold">Brand name</span>
+					</a>
+				</div>
+				<i class="col-span-6 text-center md:text-left md:col-span-3">
+					<p class="pb-1 text-lg font-medium">Category</p>
+					<ul>
+						<li>
+							<a href="#" class="hover:text-emerald-500">Link</a>
+						</li>
+						<li>
+							<a href="#" class="hover:text-emerald-500">Link</a>
+						</li>
+						<li>
+							<a href="#" class="hover:text-emerald-500">Link</a>
+						</li>
+						<li>
+							<a href="#" class="hover:text-emerald-500">Link</a>
+						</li>
+						<li>
+							<a href="#" class="hover:text-emerald-500">Link</a>
+						</li>
+					</ul>
+				</i>
+				<div class="col-span-6 text-center md:text-left md:col-span-3">
+					<p class="pb-1 text-lg font-medium">Category</p>
+					<ul>
+						<li>
+							<a href="#" class="hover:text-emerald-500">Link</a>
+						</li>
+						<li>
+							<a href="#" class="hover:text-emerald-500">Link</a>
+						</li>
+						<li>
+							<a href="#" class="hover:text-emerald-500">Link</a>
+						</li>
+						<li>
+							<a href="#" class="hover:text-emerald-500">Link</a>
+						</li>
+						<li>
+							<a href="#" class="hover:text-emerald-500">Link</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="grid justify-center pt-6 lg:justify-between">
+				<div
+					class="flex flex-col self-center text-sm text-center md:block lg:col-start-1 md:space-x-6"
+				>
+					<span>©2020 All rights reserved</span>
+					<a href="#">
+						<span>Privacy policy</span>
+					</a>
+					<a href="#">
+						<span>Terms of service</span>
+					</a>
+				</div>
+				<div class="flex justify-center pt-4 space-x-4 lg:pt-0 lg:col-end-13">
+					<a
+						href="#"
+						class="flex items-center justify-center w-10 h-10 rounded-full text-dark bg-emerald-500"
+					>
+						<i class="cib-instagram"></i>
+					</a>
+					<a
+						href="#"
+						class="flex items-center justify-center w-10 h-10 rounded-full text-dark bg-emerald-500"
+					>
+						<i class="cib-pinterest"></i>
+					</a>
+					<a
+						href="#"
+						class="flex items-center justify-center w-10 h-10 rounded-full text-dark bg-emerald-500"
+					>
+						<i class="cib-twitter"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div>

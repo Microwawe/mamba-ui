@@ -37,7 +37,7 @@ export class ColorSelectorComponent extends BaseComponent implements OnInit {
 	}
 
 	changeColor(color: string) {
-		this.themeService.setPrimaryColor(color);
+		// this.themeService.setPrimaryColor(color);
 		this.colorService.setCurrentColorString(color);
 	}
 }
