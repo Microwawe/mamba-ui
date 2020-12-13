@@ -35,7 +35,7 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit {
 	beautifyHTML(codeStr: string) {
 		const div = document.createElement('div');
 		let cleanedString = this.removeAngularCode(codeStr);
-		cleanedString = this.removeBindings(cleanedString);
+		cleanedString = this.removeAngularComments(cleanedString);
 		div.innerHTML = cleanedString.trim();
 		return this.formatNode(div, 0).innerHTML.trim();
 	}
@@ -63,13 +63,21 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit {
 		return node;
 	}
 
+	/**
+	 * Removes Angular directives that start with "_ng" or "ng" from the string
+	 * @param codeStr The code
+	 */
 	removeAngularCode(codeStr: string) {
 		// removes parts that start with "_ng"
-		return codeStr.replace(/\s_?ng[\w-="]+/g, '');
+		return codeStr.replace(/ng-[^"\s]*="[^"]*"/g, '');
 	}
 
-	removeBindings(codeStr: string) {
-		return codeStr.replace(/<!--[.\s\w=":,{}-]+-->/gm, '');
+	/**
+	 * Removes Angular binding comments for "ng-reflect-ng-if" and "ng-reflect-for-of" for example
+	 * @param codeStr The code
+	 */
+	removeAngularComments(codeStr: string) {
+		return codeStr.replace(/<!--[.\s\w=":,{}[\]-]+-->/gm, '');
 	}
 
 	copyToClipboard() {

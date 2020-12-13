@@ -1,0 +1,361 @@
+<div class="bg-default">
+	<div class="container p-4">
+		<header class="flex justify-between h-16 border-b-2 border-gray-200">
+			<button class="flex p-4">
+				<i class="self-center text-2xl cib-coreui-c" [ngClass]="textPrimary"></i>
+			</button>
+			<ul class="items-stretch hidden space-x-3 lg:flex">
+				<li class="flex">
+					<a
+						[routerLink]="['#1']"
+						[routerLinkActive]="[textPrimary, borderPrimary]"
+						class="flex items-center -mb-0.5 border-b-2 px-4 border-transparent"
+						>Link</a
+					>
+				</li>
+				<li class="flex">
+					<a
+						[routerLink]="['']"
+						[routerLinkActive]="[textPrimary, borderPrimary]"
+						class="flex items-center -mb-0.5 border-b-2 px-4 border-transparent"
+						>Link</a
+					>
+				</li>
+				<li class="flex">
+					<a
+						[routerLink]="['#3']"
+						[routerLinkActive]="[textPrimary, borderPrimary]"
+						class="flex items-center -mb-0.5 border-b-2 px-4 border-transparent"
+						>Link</a
+					>
+				</li>
+				<li class="flex">
+					<a
+						[routerLink]="['#4']"
+						[routerLinkActive]="[textPrimary, borderPrimary]"
+						class="flex items-center -mb-0.5 border-b-2 px-4 border-transparent"
+						>Link</a
+					>
+				</li>
+			</ul>
+			<div class="flex-shrink-0 hidden lg:block">
+				<button class="self-center btn text-default-inverse">Sign in</button>
+				<button class="self-center font-semibold btn text-dark" [ngClass]="bgPrimary">
+					Sign up
+				</button>
+			</div>
+			<button class="flex p-4 lg:hidden">
+				<i class="self-center text-2xl cil-menu text-default-inverse"></i>
+			</button>
+		</header>
+	</div>
+
+	<section>
+		<div
+			class="container flex flex-col items-center px-4 py-16 text-center md:py-32 md:px-10 lg:px-32 xl:max-w-3xl"
+		>
+			<h1 class="text-4xl font-bold leading-none sm:text-5xl">
+				Quisquam necessita vel
+				<span class="" [ngClass]="[textPrimary]">laborum doloribus</span> delectus
+			</h1>
+			<p class="px-8 mt-8 mb-12 text-lg">
+				Cupiditate minima voluptate temporibus quia? Architecto beatae esse ab amet vero
+				eaque explicabo!
+			</p>
+			<div class="flex flex-wrap justify-center">
+				<button class="m-2 font-semibold text-dark btn" [ngClass]="[bgPrimary]">
+					Get started
+				</button>
+
+				<button class="m-2 border text-contrast-inverse border-neutral btn">
+					Learn more
+				</button>
+			</div>
+		</div>
+	</section>
+
+	<section class="p-6">
+		<div class="container p-4 text-center">
+			<h2 class="text-4xl font-bold">Trusted by the industry leaders</h2>
+		</div>
+		<div class="container flex flex-wrap justify-center">
+			<div
+				*ngFor="let icon of icons"
+				class="flex justify-center w-1/2 p-6 align-middle md:w-1/3 xl:w-1/4"
+			>
+				<i class="text-6xl" [ngClass]="'cib-' + icon"></i>
+			</div>
+		</div>
+	</section>
+
+	<section class="m-4 md:m-8">
+		<div class="container p-4 my-6 space-y-1 text-center">
+			<span class="text-xs font-semibold tracking-wider uppercase" [ngClass]="[textPrimary]"
+				>shortcut to your dream ui</span
+			>
+			<h2 class="pb-3 text-3xl font-bold md:text-4xl">Create a stylish website in minutes</h2>
+			<p class="">
+				Get a jumpstart to creating your new webpage! With our fully responsive and
+				carefully styled components you can get the structure of your website done with just
+				a couple of clicks.
+			</p>
+		</div>
+		<div
+			class="container grid justify-center gap-4 divide-y xl:divide-x xl:divide-y-0 lg:grid-cols-2 xl:grid-cols-4"
+		>
+			<div class="flex flex-col px-8 py-6">
+				<h2 class="mb-2 text-lg font-semibold sm:text-xl text-default-inverse title-font">
+					Components
+				</h2>
+				<p class="flex-1 mb-4 text-base leading-relaxed text-neutral-inverse">
+					Individual components that can be re-used multiple times in your designs.
+				</p>
+				<a
+					class="inline-flex items-center text-sm"
+					[routerLink]="['/components']"
+					[ngClass]="[textPrimary]"
+				>
+					<span>Learn More</span>
+					<i class="ml-2 cil-arrow-right"></i>
+				</a>
+			</div>
+			<div class="flex flex-col px-8 py-6 lg:border-none xl:border-solid">
+				<h2 class="mb-2 text-lg font-semibold sm:text-xl text-default-inverse title-font">
+					Sections
+				</h2>
+				<p class="flex-1 mb-4 text-base leading-relaxed text-neutral-inverse">
+					Pre-made building blocks that you can stack on top of each other like Legos to
+					build a website of your own in minutes.
+				</p>
+				<a
+					class="inline-flex items-center text-sm"
+					[routerLink]="['/sections']"
+					[ngClass]="[textPrimary]"
+				>
+					<span>Learn More</span>
+					<i class="ml-2 cil-arrow-right"></i>
+				</a>
+			</div>
+			<div class="flex flex-col px-8 py-6">
+				<h2 class="mb-2 text-lg font-semibold sm:text-xl text-default-inverse title-font">
+					Templates
+				</h2>
+				<p class="flex-1 mb-4 text-base leading-relaxed text-neutral-inverse">
+					Full pages that showcase pieces of what you can achieve with the building blocks
+					that are in this UI Kit.
+				</p>
+				<a
+					class="inline-flex items-center text-sm"
+					[routerLink]="['/templates']"
+					[ngClass]="[textPrimary]"
+				>
+					<span>Learn More</span>
+					<i class="ml-2 cil-arrow-right"></i>
+				</a>
+			</div>
+			<div class="flex flex-col px-8 py-6">
+				<h2 class="mb-2 text-lg font-semibold sm:text-xl text-default-inverse title-font">
+					Customizable
+				</h2>
+				<p class="flex-1 mb-4 text-base leading-relaxed text-neutral-inverse">
+					Choose your primary color from any of the TailwindCSS 2.0 colors. You can also
+					view all of the components in our light and dark themes.
+				</p>
+				<a
+					class="inline-flex items-center text-sm"
+					[routerLink]="['/docs']"
+					[ngClass]="[textPrimary]"
+				>
+					<span>Learn More</span>
+					<i class="ml-2 cil-arrow-right"></i>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="py-6 bg-default text-default-inverse">
+		<div class="container p-4 sm:p-10">
+			<div class="mb-12 space-y-4 text-center">
+				<h1 class="text-4xl font-semibold leading-tight">Pricing</h1>
+				<p class="px-4 sm:px-8 lg:px-24">
+					Sunt suscipit eaque qui iure unde labore numquam iusto alias explicabo, pariatur
+					ipsam, cupiditate aliquid modi?
+				</p>
+				<div>
+					<button
+						class="px-4 py-1 font-semibold border rounded-l-lg text-dark"
+						[ngClass]="[bgPrimary, borderPrimary]"
+					>
+						Monthly
+					</button>
+					<button class="px-4 py-1 border rounded-r-lg" [ngClass]="[borderPrimary]">
+						Annually
+					</button>
+				</div>
+			</div>
+			<div class="grid grid-cols-1 gap-6 auto-rows-fr lg:grid-cols-3">
+				<div class="flex flex-col items-center p-8 border rounded-md">
+					<p class="self-start">Personal</p>
+					<p class="self-start text-4xl font-bold">FREE</p>
+					<ul class="self-stretch flex-1 space-y-2">
+						<li class="flex items-center space-x-2" *ngFor="let i of [1, 2, 3, 4, 5]">
+							<i
+								class="inline-flex items-center justify-center text-2xl font-semibold cil-check-alt"
+								[ngClass]="[textPrimary]"
+							></i>
+							<span>Lumet consectetur adipisicing</span>
+						</li>
+					</ul>
+					<button
+						class="mt-6 font-semibold border sm:mt-12 border-neutral text-default-inverse btn"
+					>
+						Contact
+					</button>
+				</div>
+				<div
+					class="flex flex-col items-center p-8 border-2 rounded-md"
+					[ngClass]="[borderPrimary]"
+				>
+					<p class="self-start">Personal</p>
+					<p class="self-start text-4xl font-bold">9€ <span class="text-xl">/mo</span></p>
+					<ul class="self-stretch flex-1">
+						<li class="flex items-center space-x-2" *ngFor="let i of [1, 2, 3, 4, 5]">
+							<i
+								class="inline-flex items-center justify-center text-2xl font-semibold cil-check-alt"
+								[ngClass]="[textPrimary]"
+							></i>
+							<span>Lumet consectetur adipisicing</span>
+						</li>
+					</ul>
+					<button
+						class="mt-6 font-semibold sm:mt-12 text-dark btn"
+						[ngClass]="[bgPrimary]"
+					>
+						Contact
+					</button>
+				</div>
+				<div class="flex flex-col items-center p-8 border rounded-md">
+					<p class="self-start">Business</p>
+					<p class="self-start text-4xl font-bold">
+						17€ <span class="text-xl">/mo</span>
+					</p>
+					<ul class="self-stretch flex-1">
+						<li class="flex items-center space-x-2" *ngFor="let i of [1, 2, 3, 4, 5]">
+							<i
+								class="inline-flex items-center justify-center text-2xl font-semibold cil-check-alt"
+								[ngClass]="[textPrimary]"
+							></i>
+							<span>Lumet consectetur adipisicing</span>
+						</li>
+					</ul>
+					<button
+						class="mt-6 font-semibold border sm:mt-12 border-neutral text-default-inverse btn"
+					>
+						Contact
+					</button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="my-8">
+		<div class="container flex flex-col items-center p-4 space-y-6 md:p-8">
+			<i class="text-5xl cil-badge" [ngClass]="[textPrimary]"></i>
+			<p
+				class="px-6 py-2 text-2xl font-semibold text-center sm:font-bold sm:text-3xl md:text-4xl text-neutral-inverse lg:max-w-2xl xl:max-w-4xl"
+			>
+				"Veniam quidem animi ea maxime odit fugiat architecto perferendis ipsum perspiciatis
+				iusto, provident qui nam dolorum corporis."
+			</p>
+			<div class="flex justify-center space-x-3">
+				<img
+					class="w-20 h-20 bg-center bg-cover rounded-md bg-neutral"
+					src="https://source.unsplash.com/80x80/?portrait"
+					alt=""
+				/>
+				<div>
+					<p class="leading-tight">Leroy Jenkins</p>
+					<p class="text-sm leading-tight text-neutral-inverse">Founder, Company</p>
+					<a
+						[routerLink]="['/']"
+						class="flex items-center py-2 space-x-1 text-sm"
+						[ngClass]="[textPrimary]"
+					>
+						<span> Read full story </span>
+						<i class="cil-arrow-right"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="py-6 bg-default text-default-inverse">
+		<div
+			class="container px-6 space-y-6 divide-y divide-gray-400 md:space-y-12 divide-opacity-50"
+		>
+			<div class="grid grid-cols-12">
+				<div class="pb-6 col-span-full md:pb-0 md:col-span-6">
+					<a class="flex justify-center space-x-3 md:justify-start" href="#">
+						<i
+							class="flex items-center justify-center w-12 h-12 text-xl font-bold rounded-full text-dark cib-x-pack"
+							[ngClass]="[bgPrimary]"
+						></i>
+						<span class="self-center text-2xl font-semibold">Brand name</span>
+					</a>
+				</div>
+				<div class="col-span-6 text-center md:text-left md:col-span-3">
+					<p class="pb-1 text-lg font-medium">Category</p>
+					<ul>
+						<li *ngFor="let i of [1, 2, 3, 4, 5]">
+							<a href="#" class="" [ngClass]="['hover:' + textPrimary]">Link</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-span-6 text-center md:text-left md:col-span-3">
+					<p class="pb-1 text-lg font-medium">Category</p>
+					<ul>
+						<li *ngFor="let i of [1, 2, 3, 4, 5]">
+							<a href="#" class="" [ngClass]="['hover:' + textPrimary]">Link</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="grid justify-center pt-6 lg:justify-between">
+				<div
+					class="flex flex-col self-center text-sm text-center md:block lg:col-start-1 md:space-x-6"
+				>
+					<span>©2020 All rights reserved</span>
+					<a class="" href="#">
+						<span>Privacy policy</span>
+					</a>
+					<a class="" href="#">
+						<span>Terms of service</span>
+					</a>
+				</div>
+				<div class="flex justify-center pt-4 space-x-4 lg:pt-0 lg:col-end-13">
+					<a
+						class="flex items-center justify-center w-10 h-10 rounded-full text-dark"
+						[ngClass]="[bgPrimary]"
+						href="#"
+					>
+						<i class="cib-instagram"></i>
+					</a>
+					<a
+						class="flex items-center justify-center w-10 h-10 rounded-full text-dark"
+						[ngClass]="[bgPrimary]"
+						href="#"
+					>
+						<i class="cib-pinterest"></i>
+					</a>
+					<a
+						class="flex items-center justify-center w-10 h-10 rounded-full text-dark"
+						[ngClass]="[bgPrimary]"
+						href="#"
+					>
+						<i class="cib-twitter"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div>

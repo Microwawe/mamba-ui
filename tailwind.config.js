@@ -9,7 +9,7 @@ module.exports = {
 			transparent: 'transparent',
 			current: 'currentColor',
 			black: colors.black,
-			white: colors.black,
+			white: colors.white,
 			rose: colors.rose,
 			pink: colors.pink,
 			fuchsia: colors.fuchsia,
@@ -39,15 +39,11 @@ module.exports = {
 				fira: ['"Fira Sans"', 'Helvetica', 'sans-serif'],
 				lato: ['Lato', 'Helvetica', 'sans-serif'],
 			},
-			fontSize: {
-				'7xl': '5.25rem',
-				'8xl': '6.5rem',
-				'9xl': '8rem',
-				'10xl': '10rem',
-			},
+
 			colors: {
 				'dark': 'var(--dark)',
 				'neutral': 'var(--neutral)',
+				'neutral-inverse': 'var(--neutral-inverse)',
 				'primary': 'var(--primary)',
 				'primary-variant': 'var(--primary-variant)',
 				'secondary': 'var(--secondary)',
@@ -56,18 +52,15 @@ module.exports = {
 				'contrast': 'var(--contrast)',
 				'contrast-inverse': 'var(--contrast-inverse)',
 			},
-			width: {
-				'72': '18rem',
-				'80': '20rem',
-				'96': '24rem',
-			},
 		},
 	},
 	variants: {
-		textColor: ['responsive', 'hover', 'focus'],
-		backgroundColor: ['responsive', 'hover', 'focus'],
-		borderColor: ['responsive', 'hover', 'focus'],
-		ringWidth: ['hover', 'active'],
+		backgroundColor: ['responsive', 'hover', 'focus', 'active'],
+		borderColor: ['responsive', 'hover', 'focus', 'active'],
+		textColor: ['responsive', 'hover', 'focus', 'active'],
+		ringColor: ['hover', 'focus', 'active'],
+		ringOpacity: ['hover', 'focus', 'active'],
+		ringWidth: ['hover', 'focus', 'active'],
 	},
 	corePlugins: {
 		container: false,
@@ -93,6 +86,9 @@ module.exports = {
 					},
 					'@screen xl': {
 						maxWidth: theme('maxWidth.6xl'),
+					},
+					'@screen 2xl': {
+						maxWidth: theme('maxWidth.7xl'),
 					},
 				},
 			};

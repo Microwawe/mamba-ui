@@ -1,0 +1,15 @@
+<div class="container md:my-6">
+	<h1 class="text-4xl font-bold text-center">Sections</h1>
+	<div class="flex flex-wrap p-4 place-content-center">
+		<a
+			*ngFor="let category of categories"
+			[routerLink]="['/sections/' + category]"
+			[routerLinkActive]="['ring', 'ring-opacity-20', ringPrimary]"
+			class="px-3 py-1 m-1 capitalize rounded-md shadow-sm md:px-4 md:py-2 text-default-inverse bg-default hover:ring hover:ring-opacity-50"
+			[ngClass]="['hover:' + ringPrimary]"
+		>
+			{{ category }}</a
+		>
+	</div>
+	<router-outlet></router-outlet>
+</div>

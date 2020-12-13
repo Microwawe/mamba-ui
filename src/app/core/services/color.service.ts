@@ -1,11 +1,11 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
 
-@Injectable({providedIn: 'root'})
+@Injectable()
 export class ColorService {
 	private key = 'custom-current-color';
 	private currentColor: BehaviorSubject<string>;
-	private defaultColor = 'purple';
+	private defaultColor = 'emerald';
 	colors = [
 		'yellow',
 		'amber',

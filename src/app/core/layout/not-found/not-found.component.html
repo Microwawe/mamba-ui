@@ -1,0 +1,19 @@
+<!-- component -->
+<!-- This is an example component -->
+<section class="flex items-center w-screen mb-12">
+	<div class="container flex flex-col items-center justify-center px-5 my-8 text-default-inverse">
+		<div class="max-w-md text-center">
+			<div class="font-bold text-8xl">404</div>
+			<p class="text-2xl font-light leading-normal md:text-3xl">
+				Sorry we couldn't find this page.
+			</p>
+			<p class="mt-4 mb-8">
+				But dont worry, you can find plenty of other things on our homepage.
+			</p>
+
+			<a [routerLink]="['/']" class="font-semibold btn text-dark" [ngClass]="bgPrimary">
+				Back to homepage
+			</a>
+		</div>
+	</div>
+</section>

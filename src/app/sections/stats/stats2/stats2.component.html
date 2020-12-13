@@ -1,0 +1,19 @@
+<section class="p-6 my-6">
+	<div class="container grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
+		<div
+			*ngFor="let stat of stats"
+			class="flex p-4 space-x-4 rounded-lg md:space-x-6 bg-default-inverse text-default"
+		>
+			<div
+				class="flex justify-center p-2 align-middle rounded-lg sm:p-4"
+				[ngClass]="[bgPrimary]"
+			>
+				<i class="flex text-4xl place-items-center" [ngClass]="'cil-' + stat.icon"></i>
+			</div>
+			<div class="flex flex-col justify-center align-middle">
+				<p class="text-3xl font-semibold leading-none">{{ stat.amount }}</p>
+				<p class="capitalize">{{ stat.label }}</p>
+			</div>
+		</div>
+	</div>
+</section>

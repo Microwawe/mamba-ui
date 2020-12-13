@@ -1,0 +1,52 @@
+<section class="p-6">
+	<form
+		class="container w-full max-w-xl p-8 space-y-6 rounded-md shadow text-default-inverse bg-default"
+	>
+		<h2 class="w-full text-3xl font-bold leading-tight">Contact us</h2>
+
+		<div>
+			<label for="name" class="block mb-0.5 ml-0.5 text-default-inverse">Name</label>
+			<input
+				class="block w-full p-2 rounded bg-neutral focus:outline-none focus:bg-contrast focus:ring focus:ring-opacity-25 focus:text-default-inverse"
+				[ngClass]="['focus:' + ringPrimary]"
+				id="name"
+				type="text"
+				placeholder="Your name"
+				required
+			/>
+		</div>
+
+		<div>
+			<label for="email" class="block mb-0.5 ml-0.5 text-default-inverse">Email</label>
+			<input
+				class="block w-full p-2 rounded bg-neutral focus:outline-none focus:bg-contrast focus:ring focus:ring-opacity-25 focus:text-default-inverse"
+				[ngClass]="['focus:' + ringPrimary]"
+				id="email"
+				type="email"
+				placeholder="Your email"
+				required
+			/>
+		</div>
+
+		<div>
+			<label for="message" class="block mb-0.5 ml-0.5 text-default-inverse">Message </label>
+			<textarea
+				class="block w-full p-2 rounded bg-neutral autoexpand focus:outline-none focus:bg-contrast focus:ring focus:ring-opacity-25 focus:text-default-inverse"
+				[ngClass]="['focus:' + ringPrimary]"
+				id="message"
+				type="text"
+				placeholder="Message..."
+			></textarea>
+		</div>
+
+		<div class="">
+			<button
+				class="w-full px-4 py-2 font-bold rounded shadow text-contrast-inverse focus:outline-none focus:ring hover:ring focus:ring-opacity-50"
+				[ngClass]="[bgPrimary, 'focus:' + ringPrimary, 'hover:' + ringPrimary]"
+				type="submit"
+			>
+				Send
+			</button>
+		</div>
+	</form>
+</section>

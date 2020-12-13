@@ -1,0 +1,79 @@
+<section class="py-6 bg-default text-default-inverse">
+	<div class="container p-4 sm:p-10">
+		<div class="mb-12 space-y-4 text-center">
+			<h1 class="text-4xl font-semibold leading-tight">Pricing</h1>
+			<p class="px-4 sm:px-8 lg:px-24">
+				Sunt suscipit eaque qui iure unde labore numquam iusto alias explicabo, pariatur
+				ipsam, cupiditate aliquid modi?
+			</p>
+			<div>
+				<button
+					class="px-4 py-1 font-semibold border rounded-l-lg text-dark"
+					[ngClass]="[bgPrimary, borderPrimary]"
+				>
+					Monthly
+				</button>
+				<button class="px-4 py-1 border rounded-r-lg" [ngClass]="[borderPrimary]">
+					Annually
+				</button>
+			</div>
+		</div>
+		<div class="grid grid-cols-1 gap-6 auto-rows-fr lg:grid-cols-3">
+			<div class="flex flex-col items-center p-8 border rounded-md">
+				<p class="self-start">Personal</p>
+				<p class="self-start text-4xl font-bold">FREE</p>
+				<ul class="self-stretch flex-1 space-y-2">
+					<li class="flex items-center space-x-2" *ngFor="let i of [1, 2, 3, 4, 5]">
+						<i
+							class="inline-flex items-center justify-center text-2xl font-semibold cil-check-alt"
+							[ngClass]="[textPrimary]"
+						></i>
+						<span>Lumet consectetur adipisicing</span>
+					</li>
+				</ul>
+				<button
+					class="mt-6 font-semibold border sm:mt-12 border-neutral text-default-inverse btn"
+				>
+					Contact
+				</button>
+			</div>
+			<div
+				class="flex flex-col items-center p-8 border-2 rounded-md"
+				[ngClass]="[borderPrimary]"
+			>
+				<p class="self-start">Personal</p>
+				<p class="self-start text-4xl font-bold">9€ <span class="text-xl">/mo</span></p>
+				<ul class="self-stretch flex-1">
+					<li class="flex items-center space-x-2" *ngFor="let i of [1, 2, 3, 4, 5]">
+						<i
+							class="inline-flex items-center justify-center text-2xl font-semibold cil-check-alt"
+							[ngClass]="[textPrimary]"
+						></i>
+						<span>Lumet consectetur adipisicing</span>
+					</li>
+				</ul>
+				<button class="mt-6 font-semibold sm:mt-12 text-dark btn" [ngClass]="[bgPrimary]">
+					Contact
+				</button>
+			</div>
+			<div class="flex flex-col items-center p-8 border rounded-md">
+				<p class="self-start">Business</p>
+				<p class="self-start text-4xl font-bold">17€ <span class="text-xl">/mo</span></p>
+				<ul class="self-stretch flex-1">
+					<li class="flex items-center space-x-2" *ngFor="let i of [1, 2, 3, 4, 5]">
+						<i
+							class="inline-flex items-center justify-center text-2xl font-semibold cil-check-alt"
+							[ngClass]="[textPrimary]"
+						></i>
+						<span>Lumet consectetur adipisicing</span>
+					</li>
+				</ul>
+				<button
+					class="mt-6 font-semibold border sm:mt-12 border-neutral text-default-inverse btn"
+				>
+					Contact
+				</button>
+			</div>
+		</div>
+	</div>
+</section>

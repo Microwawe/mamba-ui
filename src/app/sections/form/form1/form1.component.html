@@ -1,0 +1,132 @@
+<section class="p-6">
+	<form action="" class="flex flex-col space-y-12">
+		<fieldset class="grid grid-cols-4 gap-6 p-6 rounded-md shadow-md">
+			<div class="space-y-2 col-span-full lg:col-span-1">
+				<p>Personal Inormation</p>
+				<p class="text-xs">
+					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci fuga autem
+					eum!
+				</p>
+			</div>
+			<div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
+				<div class="col-span-full sm:col-span-3">
+					<label class="text-sm" for="firstname">First name</label>
+					<input
+						id="firstname"
+						type="text"
+						class="w-full rounded-md border-neutral focus:ring focus:ring-opacity-75"
+						[ngClass]="['focus:' + ringPrimary]"
+						placeholder="First name"
+					/>
+				</div>
+				<div class="col-span-full sm:col-span-3">
+					<label class="text-sm" for="lastname">Last name</label>
+					<input
+						id="lastname"
+						type="text"
+						class="w-full rounded-md border-neutral focus:ring focus:ring-opacity-75"
+						[ngClass]="['focus:' + ringPrimary]"
+						placeholder="Last name"
+					/>
+				</div>
+				<div class="col-span-full sm:col-span-3">
+					<label class="text-sm" for="email">Email</label>
+					<input
+						id="email"
+						type="email"
+						class="w-full rounded-md border-neutral focus:ring focus:ring-opacity-75"
+						[ngClass]="['focus:' + ringPrimary]"
+						placeholder="Email"
+					/>
+				</div>
+
+				<div class="col-span-full">
+					<label class="text-sm" for="address">Address</label>
+					<input
+						id="address"
+						type="text"
+						class="w-full rounded-md border-neutral focus:ring focus:ring-opacity-75"
+						[ngClass]="['focus:' + ringPrimary]"
+						placeholder=""
+					/>
+				</div>
+				<div class="col-span-full sm:col-span-2">
+					<label class="text-sm" for="city">City</label>
+					<input
+						id="city"
+						type="text"
+						class="w-full rounded-md border-neutral focus:ring focus:ring-opacity-75"
+						[ngClass]="['focus:' + ringPrimary]"
+						placeholder=""
+					/>
+				</div>
+				<div class="col-span-full sm:col-span-2">
+					<label class="text-sm" for="state">State / Province</label>
+					<input
+						id="state"
+						type="text"
+						class="w-full rounded-md border-neutral focus:ring focus:ring-opacity-75"
+						[ngClass]="['focus:' + ringPrimary]"
+						placeholder=""
+					/>
+				</div>
+				<div class="col-span-full sm:col-span-2">
+					<label class="text-sm" for="zip">ZIP / Postal</label>
+					<input
+						id="zip"
+						type="text"
+						class="w-full rounded-md border-neutral focus:ring focus:ring-opacity-75"
+						[ngClass]="['focus:' + ringPrimary]"
+						placeholder=""
+					/>
+				</div>
+			</div>
+		</fieldset>
+		<fieldset class="grid grid-cols-4 gap-6 p-6 rounded-md shadow-md">
+			<div class="space-y-2 col-span-full lg:col-span-1">
+				<p>Profile</p>
+				<p class="text-xs">Adipisci fuga autem eum!</p>
+			</div>
+			<div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
+				<div class="col-span-full sm:col-span-3">
+					<label class="text-sm" for="username">Username</label>
+					<input
+						id="username"
+						type="text"
+						class="w-full rounded-md border-neutral focus:ring focus:ring-opacity-75"
+						[ngClass]="['focus:' + ringPrimary]"
+						placeholder="Username"
+					/>
+				</div>
+				<div class="col-span-full sm:col-span-3">
+					<label class="text-sm" for="website">Website</label>
+					<input
+						id="website"
+						type="text"
+						class="w-full rounded-md border-neutral focus:ring focus:ring-opacity-75"
+						[ngClass]="['focus:' + ringPrimary]"
+						placeholder="https://"
+					/>
+				</div>
+				<div class="col-span-full">
+					<label class="text-sm" for="bio">Bio</label>
+					<textarea
+						id="bio"
+						class="w-full rounded-md border-neutral focus:ring focus:ring-opacity-75"
+						[ngClass]="['focus:' + ringPrimary]"
+						placeholder=""
+					></textarea>
+				</div>
+				<div class="col-span-full">
+					<label class="text-sm" for="bio">Photo</label>
+					<div class="flex items-center space-x-2">
+						<img src="" alt="" class="w-10 h-10 rounded-full bg-neutral" />
+						<button class="px-4 py-2 border rounded-md border-default-inverse">
+							Change
+						</button>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+</section>

@@ -1,0 +1,84 @@
+<section class="m-4 md:m-8">
+	<div class="container p-4 my-6 space-y-1 text-center">
+		<span class="text-xs font-semibold tracking-wider uppercase" [ngClass]="[textPrimary]"
+			>shortcut to your dream ui</span
+		>
+		<h2 class="pb-3 text-3xl font-bold md:text-4xl">Create a stylish website in minutes</h2>
+		<p class="">
+			Get a jumpstart to creating your new webpage! With our fully responsive and carefully
+			styled components you can get the structure of your website done with just a couple of
+			clicks.
+		</p>
+	</div>
+	<div
+		class="container grid justify-center gap-4 divide-y xl:divide-x xl:divide-y-0 lg:grid-cols-2 xl:grid-cols-4"
+	>
+		<div class="flex flex-col px-8 py-6">
+			<h2 class="mb-2 text-lg font-semibold sm:text-xl text-default-inverse title-font">
+				Components
+			</h2>
+			<p class="flex-1 mb-4 text-base leading-relaxed text-neutral-inverse">
+				Individual components that can be re-used multiple times in your designs.
+			</p>
+			<a
+				class="inline-flex items-center text-sm"
+				[routerLink]="['/components']"
+				[ngClass]="[textPrimary]"
+			>
+				<span>Learn More</span>
+				<i class="ml-2 cil-arrow-right"></i>
+			</a>
+		</div>
+		<div class="flex flex-col px-8 py-6 lg:border-none xl:border-solid">
+			<h2 class="mb-2 text-lg font-semibold sm:text-xl text-default-inverse title-font">
+				Sections
+			</h2>
+			<p class="flex-1 mb-4 text-base leading-relaxed text-neutral-inverse">
+				Pre-made building blocks that you can stack on top of each other like Legos to build
+				a website of your own in minutes.
+			</p>
+			<a
+				class="inline-flex items-center text-sm"
+				[routerLink]="['/sections']"
+				[ngClass]="[textPrimary]"
+			>
+				<span>Learn More</span>
+				<i class="ml-2 cil-arrow-right"></i>
+			</a>
+		</div>
+		<div class="flex flex-col px-8 py-6">
+			<h2 class="mb-2 text-lg font-semibold sm:text-xl text-default-inverse title-font">
+				Templates
+			</h2>
+			<p class="flex-1 mb-4 text-base leading-relaxed text-neutral-inverse">
+				Full pages that showcase pieces of what you can achieve with the building blocks
+				that are in this UI Kit.
+			</p>
+			<a
+				class="inline-flex items-center text-sm"
+				[routerLink]="['/templates']"
+				[ngClass]="[textPrimary]"
+			>
+				<span>Learn More</span>
+				<i class="ml-2 cil-arrow-right"></i>
+			</a>
+		</div>
+		<div class="flex flex-col px-8 py-6">
+			<h2 class="mb-2 text-lg font-semibold sm:text-xl text-default-inverse title-font">
+				Customization
+			</h2>
+			<p class="flex-1 mb-4 text-base leading-relaxed text-neutral-inverse">
+				Choose your primary color from any of the TailwindCSS 2.0 colors. You can also view
+				all of the components in our light and dark themes.
+			</p>
+			<a
+				class="inline-flex items-center text-sm"
+				[routerLink]="['/docs']"
+				[ngClass]="[textPrimary]"
+			>
+				<span>Learn More</span>
+				<i class="ml-2 cil-arrow-right"></i>
+			</a>
+		</div>
+	</div>
+</section>

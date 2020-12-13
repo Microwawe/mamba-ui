@@ -4,31 +4,31 @@ import {BehaviorSubject, Observable} from 'rxjs';
 @Injectable()
 export class ThemeService {
 	private themeKey = 'is-custom-dark-theme';
-	private colorKey = 'custom-primary-color';
+	// private colorKey = 'custom-primary-color';
 	private isDarkTheme: BehaviorSubject<boolean>;
 
 	constructor() {
 		const savedTheme = localStorage.getItem(this.themeKey) === 'true';
-		const savedColor = localStorage.getItem(this.colorKey);
+		// const savedColor = localStorage.getItem(this.colorKey);
 
 		this.isDarkTheme = new BehaviorSubject<boolean>(savedTheme);
 		this.swapThemeColors(savedTheme);
-		this.setPrimaryColor(savedColor || '');
+		// this.setPrimaryColor(savedColor || '');
 	}
 
 	setDarkTheme(isDarkTheme: boolean) {
 		this.isDarkTheme.next(isDarkTheme);
 		localStorage.setItem(this.themeKey, this.isDarkTheme.value.toString());
 		this.swapThemeColors(isDarkTheme);
-		const savedColor = localStorage.getItem(this.colorKey);
-		this.setPrimaryColor(savedColor || '');
+		// const savedColor = localStorage.getItem(this.colorKey);
+		// this.setPrimaryColor(savedColor || '');
 	}
 
 	getDarkTheme(): Observable<boolean> {
 		return this.isDarkTheme;
 	}
 
-	setPrimaryColor(selectedColor: string) {
+	/* 	setPrimaryColor(selectedColor: string) {
 		const rootStyle = document.documentElement.style;
 		const isDarkTheme = this.isDarkTheme.getValue();
 		let newColor: Colors = isDarkTheme ? Colors['green-400'] : Colors['green-500'];
@@ -78,16 +78,18 @@ export class ThemeService {
 		localStorage.setItem(this.colorKey, selectedColor);
 		rootStyle.setProperty(Variables.PRIMARY, newColor);
 		rootStyle.setProperty(Variables.PRIMARY_VARIANT, newVariant);
-	}
+	} */
 
 	swapThemeColors(isDarkTheme: boolean) {
 		const rootStyle = document.documentElement.style;
-		const neutral = isDarkTheme ? Colors['gray-700'] : Colors['gray-400'];
-		const default1 = isDarkTheme ? Colors['gray-900'] : Colors['gray-200'];
-		const default2 = isDarkTheme ? Colors['gray-200'] : Colors['gray-900'];
+		const neutral1 = isDarkTheme ? Colors['gray-700'] : Colors['gray-300'];
+		const neutral2 = isDarkTheme ? Colors['gray-300'] : Colors['gray-700'];
+		const default1 = isDarkTheme ? Colors['gray-900'] : Colors['gray-100'];
+		const default2 = isDarkTheme ? Colors['gray-100'] : Colors['gray-900'];
 		const contrast1 = isDarkTheme ? Colors.black : Colors.white;
 		const contrast2 = isDarkTheme ? Colors.white : Colors.black;
-		rootStyle.setProperty(Variables.NEUTRAL, neutral);
+		rootStyle.setProperty(Variables.NEUTRAL, neutral1);
+		rootStyle.setProperty(Variables.NEUTRAL_INV, neutral2);
 		rootStyle.setProperty(Variables.DEFAULT, default1);
 		rootStyle.setProperty(Variables.DEFAULT_INV, default2);
 		rootStyle.setProperty(Variables.CONTRAST, contrast1);
@@ -98,6 +100,7 @@ export class ThemeService {
 export enum Variables {
 	DARK = '--dark',
 	NEUTRAL = '--neutral',
+	NEUTRAL_INV = '--neutral-inverse',
 	PRIMARY = '--primary',
 	PRIMARY_VARIANT = '--primary-variant',
 	SECONDARY = '--secondary',
@@ -119,7 +122,7 @@ export enum Colors {
 	'gray-700' = '#4a5568',
 	'gray-800' = '#2d3748',
 	'gray-900' = '#1a202c',
-	'red-100' = '#fff5f5',
+	/* 'red-100' = '#fff5f5',
 	'red-200' = '#fed7d7',
 	'red-300' = '#feb2b2',
 	'red-400' = '#fc8181',
@@ -199,5 +202,5 @@ export enum Colors {
 	'pink-600' = '#d53f8c',
 	'pink-700' = '#b83280',
 	'pink-800' = '#97266d',
-	'pink-900' = '#702459',
+	'pink-900' = '#702459', */
 }

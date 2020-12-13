@@ -1,0 +1,27 @@
+<header class="p-4 body-font text-contrast" [ngClass]="[bgPrimary]">
+	<div class="container flex flex-col flex-wrap items-center justify-between mx-auto md:flex-row">
+		<a class="flex items-center font-extralight" [routerLink]="['/']">
+			<i class="text-4xl cil-fingerprint"></i>
+		</a>
+		<div class="flex space-between-2">
+			<a
+				class="px-2 py-4 font-medium text-default-inverse focus:ring"
+				[routerLink]="['/components']"
+				[routerLinkActive]="['font-bold']"
+				>Components
+			</a>
+			<a
+				class="px-2 py-4 font-medium text-default-inverse focus:ring"
+				[routerLink]="['/sections']"
+				[routerLinkActive]="['font-bold']"
+				>Sections
+			</a>
+			<a
+				class="px-2 py-4 font-medium text-default-inverse focus:ring"
+				[routerLink]="['/templates']"
+				[routerLinkActive]="['font-bold']"
+				>Templates
+			</a>
+		</div>
+	</div>
+</header>
