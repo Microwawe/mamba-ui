@@ -9,6 +9,7 @@ import {CustomInjector} from '@core/services/custom-injector.service';
 	styleUrls: ['./base.component.scss'],
 })
 export class BaseComponent implements OnDestroy {
+	btn = 'py-3 px-8 rounded text-lg';
 	bgPrimary = '';
 	textPrimary = '';
 	borderPrimary = '';

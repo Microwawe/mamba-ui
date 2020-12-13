@@ -12,15 +12,19 @@ import {HeaderComponent} from '@core/layout/header/header.component';
 import {NotFoundComponent} from '@core/layout/not-found/not-found.component';
 import {BreadcrumbComponent} from '@core/layout/breadcrumb/breadcrumb.component';
 import {HomeComponent} from '@core/layout/home/home.component';
+import {SettingsComponent} from '@core/layout/settings/settings.component';
+import {DocsComponent} from '@core/layout/docs/docs.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		BreadcrumbComponent,
+		DocsComponent,
 		FooterComponent,
 		HeaderComponent,
 		HomeComponent,
 		NotFoundComponent,
+		SettingsComponent,
 	],
 	imports: [
 		CoreModule,

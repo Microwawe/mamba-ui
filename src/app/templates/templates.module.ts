@@ -2,14 +2,18 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
 import {SharedModule} from '@shared/shared.module';
-import {DemosComponent} from './demos.component';
+import {Template1Component} from './template1/template1.component';
+import {TemplatesComponent} from './templates.component';
 
 const routes: Routes = [
 	{
 		path: '',
-		component: DemosComponent,
+		component: TemplatesComponent,
 	},
-
+	{
+		path: 'test',
+		component: Template1Component,
+	},
 	/* {
 		path: 'blog',
 		loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule),
@@ -18,6 +22,6 @@ const routes: Routes = [
 
 @NgModule({
 	imports: [RouterModule.forChild(routes), SharedModule],
-	declarations: [DemosComponent],
+	declarations: [TemplatesComponent, Template1Component],
 })
-export class DemosModule {}
+export class TemplatesModule {}

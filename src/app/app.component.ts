@@ -1,3 +1,4 @@
+import {environment} from '@env';
 import {Component} from '@angular/core';
 import {Title} from '@angular/platform-browser';
 import {Router, NavigationEnd, ActivatedRoute} from '@angular/router';
@@ -12,6 +13,7 @@ import {ThemeService} from '@core/services/theme.service';
 })
 export class AppComponent {
 	isDarkTheme!: Observable<boolean>;
+	devMode = false;
 
 	constructor(
 		private themeService: ThemeService,
@@ -22,6 +24,7 @@ export class AppComponent {
 
 	ngOnInit() {
 		this.isDarkTheme = this.themeService.getDarkTheme();
+		this.devMode = !environment.production;
 
 		const defaultTitle = this.titleService.getTitle();
 		this.router.events

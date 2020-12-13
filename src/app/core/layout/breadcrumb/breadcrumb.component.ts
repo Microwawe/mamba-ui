@@ -10,6 +10,7 @@ import {distinctUntilChanged, filter} from 'rxjs/operators';
 })
 export class BreadcrumbComponent extends BaseComponent implements OnInit {
 	breadcrumbs: IBreadCrumb[];
+	showBreadcrumbs = true;
 
 	constructor(private router: Router, private activatedRoute: ActivatedRoute) {
 		super();

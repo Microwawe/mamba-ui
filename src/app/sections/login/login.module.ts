@@ -3,6 +3,8 @@ import {RouterModule, Routes} from '@angular/router';
 import {SharedModule} from '@shared/shared.module';
 
 import {LoginShowcaseComponent} from './login-showcase.component';
+import {Login1Component} from './login1/login1.component';
+import {Login2Component} from './login2/login2.component';
 
 const routes: Routes = [
 	{
@@ -13,6 +15,6 @@ const routes: Routes = [
 
 @NgModule({
 	imports: [RouterModule.forChild(routes), SharedModule],
-	declarations: [LoginShowcaseComponent],
+	declarations: [LoginShowcaseComponent, Login1Component, Login2Component],
 })
 export class LoginModule {}

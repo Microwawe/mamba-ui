@@ -1,0 +1,63 @@
+<div
+	class="fixed left-0 z-50 p-2 transition-transform duration-300 transform -translate-y-1/2 shadow-xl top-1/2 bg-blueGray-700 rounded-r-2xl"
+	[ngClass]="[colorsOpen ? 'translate-x-0' : '-translate-x-full']"
+>
+	<div class="relative flex flex-col items-center justify-center">
+		<!-- Color palette -->
+		<div class="grid grid-cols-2 gap-1 p-2">
+			<button
+				*ngFor="let color of colors"
+				class="w-8 h-8 border rounded-md"
+				[ngClass]="[
+					'bg-' + color + '-500',
+					'border-' + color + '-900',
+					'hover:ring-2',
+					'hover:ring-inset',
+					'hover:ring-white'
+				]"
+				(click)="changeColor(color)"
+			></button>
+		</div>
+
+		<button
+			(click)="toggleColors()"
+			class="absolute w-12 h-12 transform -translate-y-1/2 rounded-r-xl left-full top-1/2 bg-blueGray-700 focus:outline-none"
+		>
+			<i class="text-2xl font-thin cil-color-palette text-blueGray-300"></i>
+		</button>
+
+		<!-- Light/Dark theme -->
+		<div class="my-4 rounded-full power-switch bg-blueGray-800">
+			<input
+				#themeCheckbox
+				type="checkbox"
+				[checked]="isDarkTheme | async"
+				(change)="toggleDarkTheme(themeCheckbox.checked)"
+			/>
+			<div class="button">
+				<svg class="power-off">
+					<use xlink:href="#line" class="line" />
+					<use xlink:href="#circle" class="circle" />
+				</svg>
+				<svg class="power-on">
+					<use xlink:href="#line" class="line" />
+					<use xlink:href="#circle" class="circle" />
+				</svg>
+			</div>
+		</div>
+
+		<!-- SVG -->
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			style="display: none"
+			class="text-green-800 fill-current"
+		>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" id="line">
+				<line x1="75" y1="34" x2="75" y2="58" />
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" id="circle">
+				<circle cx="75" cy="80" r="35" />
+			</symbol>
+		</svg>
+	</div>
+</div>

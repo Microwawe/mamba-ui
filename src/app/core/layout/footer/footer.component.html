@@ -1,21 +1,102 @@
-<footer class="bg-default-inverse">
-	<div
-		class="container flex flex-col-reverse items-center justify-center px-6 py-10 lg:flex-row lg:justify-between"
-	>
-		<p class="my-6 text-center text-default lg:text-left">
-			© {{ currentYear }}
+<footer class="py-6 bg-default text-default-inverse">
+	<div class="container px-6 space-y-6 divide-y divide-gray-400 md:space-y-12 divide-opacity-50">
+		<div class="grid grid-cols-12">
+			<div class="flex flex-col my-6 space-y-6 md:m-0 col-span-full md:pb-0 md:col-span-6">
+				<a class="flex justify-center space-x-3 md:justify-start" href="#">
+					<i
+						class="flex items-center justify-center w-12 h-12 text-xl font-bold rounded-full text-dark cib-x-pack"
+						[ngClass]="[bgPrimary]"
+					></i>
+					<span class="self-center text-2xl font-semibold">UI Kit</span>
+				</a>
+				<a
+					href="https://www.buymeacoffee.com/nnowwakk"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="md:place-self-start"
+					><img
+						src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+						alt="Buy Me A Coffee"
+						class="mx-auto"
+						style="height: 50px !important; width: 185px !important"
+				/></a>
+			</div>
+			<div class="col-span-6 text-center md:text-left md:col-span-3">
+				<p class="pb-2 text-lg font-medium">Resources</p>
+				<ul class="text-sm">
+					<li>
+						<a [routerLink]="['/docs']" class="" [ngClass]="['hover:' + textPrimary]"
+							>Documentation</a
+						>
+					</li>
+					<li>
+						<a
+							[routerLink]="['/components']"
+							class=""
+							[ngClass]="['hover:' + textPrimary]"
+							>Components</a
+						>
+					</li>
+					<li>
+						<a
+							[routerLink]="['/sections']"
+							class=""
+							[ngClass]="['hover:' + textPrimary]"
+							>Sections</a
+						>
+					</li>
+					<li>
+						<a
+							[routerLink]="['/templates']"
+							class=""
+							[ngClass]="['hover:' + textPrimary]"
+							>Templates</a
+						>
+					</li>
+				</ul>
+			</div>
+			<div class="col-span-6 text-center md:text-left md:col-span-3">
+				<p class="pb-2 text-lg font-medium">Social media</p>
+				<ul class="text-sm">
+					<li>
+						<a [routerLink]="['/']" class="" [ngClass]="['hover:' + textPrimary]"
+							>Contact</a
+						>
+					</li>
+					<li>
+						<a [routerLink]="['/']" class="" [ngClass]="['hover:' + textPrimary]"
+							>Twitter</a
+						>
+					</li>
+					<li>
+						<a [routerLink]="['/']" class="" [ngClass]="['hover:' + textPrimary]"
+							>Github</a
+						>
+					</li>
+					<li>
+						<a [routerLink]="['/']" class="" [ngClass]="['hover:' + textPrimary]"
+							>Instagram</a
+						>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div
+			class="flex flex-col justify-center pt-6 text-sm text-center md:flex-row md:justify-between"
+		>
+			<span>©2020 All rights reserved</span>
+			<a class="" href="#">
+				<span>Privacy policy</span>
+			</a>
+			<a class="" href="#">
+				<span>Credits</span>
+			</a>
 			<a
 				href="https://www.twitter.com/nnowwakk"
 				class="hover:underline"
-				[ngClass]="textPrimary"
+				[ngClass]="'hover:' + textPrimary"
 				>@nnowwakk</a
 			>
-		</p>
-		<div
-			class="flex flex-col-reverse items-center justify-center space-y-3 space-y-reverse lg:flex-row lg:space-y-0 lg:space-x-3"
-		>
-			<custom-color-selector></custom-color-selector>
-			<custom-theme-selector></custom-theme-selector>
 		</div>
 	</div>
 </footer>

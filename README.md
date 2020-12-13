@@ -79,7 +79,7 @@ How to use the components on your own websites?
   - [x] Testimonial
   - [x] Timeline
   - [ ] Tooltip
-- [ ] Full demo pages
+- [ ] Full templates
   - [ ] App landing page
   - [ ] Blog
   - [ ] Marketing

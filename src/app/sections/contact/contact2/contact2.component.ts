@@ -3,12 +3,10 @@ import {Component, OnInit} from '@angular/core';
 import {BaseComponent} from '@shared/components/base/base.component';
 
 @Component({
-	selector: 'custom-demos',
-	templateUrl: './demos.component.html',
+	selector: 'custom-contact2',
+	templateUrl: './contact2.component.html',
 })
-export class DemosComponent extends BaseComponent implements OnInit {
-	categories = [];
-
+export class Contact2Component extends BaseComponent implements OnInit {
 	constructor() {
 		super();
 	}

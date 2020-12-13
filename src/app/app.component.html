@@ -1,10 +1,25 @@
-<div [ngClass]="{'dark-theme': isDarkTheme | async}">
-	<div class="flex flex-col min-h-screen bg-coolGray-100 text-default-inverse">
+<div [ngClass]="{'dark-theme': (isDarkTheme | async)}">
+	<div
+		class="flex flex-col min-h-screen text-default-inverse"
+		[ngClass]="(isDarkTheme | async) ? 'bg-coolGray-800' : 'bg-coolGray-100'"
+	>
 		<custom-header></custom-header>
 		<custom-breadcrumb></custom-breadcrumb>
-		<div class="flex-1">
+		<main class="flex-1">
+			<custom-settings></custom-settings>
 			<router-outlet></router-outlet>
-		</div>
-		<custom-footer></custom-footer>
+		</main>
 	</div>
+	<custom-footer></custom-footer>
+	<span
+		*ngIf="devMode"
+		class="fixed bottom-0 left-0 px-3 py-2 bg-gray-900 rounded-tr-lg text-warmGray-50"
+	>
+		<span class="sm:hidden">XS</span>
+		<span class="hidden sm:block md:hidden">SM</span>
+		<span class="hidden md:block lg:hidden">MD</span>
+		<span class="hidden lg:block xl:hidden">LG</span>
+		<span class="hidden xl:block 2xl:hidden">XL</span>
+		<span class="hidden 2xl:block">XXL</span>
+	</span>
 </div>

@@ -1,10 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 
+import {BaseComponent} from '@shared/components/base/base.component';
+
 @Component({
 	selector: 'custom-sections',
 	templateUrl: './sections.component.html',
 })
-export class SectionsComponent implements OnInit {
+export class SectionsComponent extends BaseComponent implements OnInit {
 	categories = [
 		'blog',
 		'call-to-action',
@@ -17,7 +19,6 @@ export class SectionsComponent implements OnInit {
 		'hero',
 		'login',
 		'pricing',
-		'snackbar',
 		'stats',
 		'steps',
 		'team',
@@ -25,7 +26,9 @@ export class SectionsComponent implements OnInit {
 		// 'timeline',
 	];
 
-	constructor() {}
+	constructor() {
+		super();
+	}
 
 	ngOnInit() {}
 }
