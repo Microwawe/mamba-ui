@@ -11,12 +11,6 @@
 		"watch": "ng test --browser ChromeHeadless",
 		"e2e": "ng e2e",
 		"release": "standard-version && git push --follow-tags origin master && npm publish",
-		"clean": "gts clean",
-		"compile": "tsc",
-		"fix": "gts fix",
-		"prepare": "npm.cmd run compile",
-		"pretest": "npm.cmd run compile",
-		"posttest": "npm.cmd run lint",
 		"ghpages": "ng build --prod --base-href /ui-kit/ --rebase-root-relative-css-urls true && npx angular-cli-ghpages --dir=dist/ui-kit"
 	},
 	"private": true,
