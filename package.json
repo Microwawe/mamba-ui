@@ -5,7 +5,7 @@
 		"ng": "ng",
 		"start": "ng serve",
 		"build": "ng build",
-		"build:prod": "ng build --target production --build-optimizer --vendor-chunk --output-hashing all",
+		"build:prod": "ng build --prod --build-optimizer --vendor-chunk --output-hashing all",
 		"test": "ng test --browser ChromeHeadless --single-run",
 		"lint": "gts lint",
 		"watch": "ng test --browser ChromeHeadless",
