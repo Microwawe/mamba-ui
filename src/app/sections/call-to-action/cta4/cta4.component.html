@@ -1,4 +1,4 @@
-<section class="py-6 text-dark" [ngClass]="[bgPrimary]">
+<section class="py-6" [ngClass]="['bg-' + primaryAlt, 'text-' + contrast]">
 	<div
 		class="container flex flex-col items-center justify-center p-4 space-y-8 md:p-10 md:px-24 xl:px-48"
 	>
@@ -10,6 +10,8 @@
 			sapiente officiis explicabo ab?
 		</p>
 
-		<button class="font-semibold bg-default text-contrast-inverse btn">Learn more</button>
+		<button class="font-semibold btn" [ngClass]="['bg-' + defaultInv, 'text-' + contrast]">
+			Learn more
+		</button>
 	</div>
 </section>

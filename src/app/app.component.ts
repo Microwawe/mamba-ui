@@ -6,21 +6,24 @@ import {filter, map} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 
 import {ThemeService} from '@core/services/theme.service';
+import {BaseComponent} from '@shared/components/base/base.component';
 
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.component.html',
 })
-export class AppComponent {
+export class AppComponent extends BaseComponent {
 	isDarkTheme!: Observable<boolean>;
 	devMode = false;
 
 	constructor(
-		private themeService: ThemeService,
+		protected themeService: ThemeService,
 		private titleService: Title,
 		private router: Router,
 		private activatedRoute: ActivatedRoute
-	) {}
+	) {
+		super();
+	}
 
 	ngOnInit() {
 		this.isDarkTheme = this.themeService.getDarkTheme();

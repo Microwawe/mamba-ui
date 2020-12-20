@@ -1,5 +1,4 @@
 import {AfterViewInit, Component, ElementRef, Input, ViewChild} from '@angular/core';
-import {ThemeService} from '@core/services/theme.service';
 // eslint-disable-next-line node/no-unpublished-import
 import * as Prism from 'prismjs';
 import {Observable} from 'rxjs/internal/Observable';
@@ -13,29 +12,31 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit {
 	@Input() language = 'html';
 	@ViewChild('rawContent') rawContent!: ElementRef;
 
-	isDarkTheme!: Observable<boolean>;
+	isDarkTheme = false;
 	rawCode = '';
 	code = '';
 	codeVisible = false;
+	grammar = Prism.languages[this.language];
 
-	constructor(private el: ElementRef, private themeService: ThemeService) {
+	constructor(private el: ElementRef) {
 		super();
 	}
 
 	ngAfterViewInit() {
-		this.isDarkTheme = this.themeService.getDarkTheme();
+		this.themeService.getDarkTheme().subscribe(isDark => {
+			this.isDarkTheme = isDark;
+		});
 		const content = this.rawContent?.nativeElement?.firstChild.innerHTML;
-		const grammar = Prism.languages[this.language];
-		setTimeout(() => {
-			const cleanHtml = this.beautifyHTML(content);
-			this.code = Prism.highlight(cleanHtml, grammar, this.language);
-		}, 0);
+		const cleanHtml = this.beautifyHTML(content);
+		this.code = Prism.highlight(cleanHtml, this.grammar, this.language);
 	}
 
 	beautifyHTML(codeStr: string) {
 		const div = document.createElement('div');
 		let cleanedString = this.removeAngularCode(codeStr);
 		cleanedString = this.removeAngularComments(cleanedString);
+		cleanedString = this.toggleDarkModeVariants(cleanedString);
+
 		div.innerHTML = cleanedString.trim();
 		return this.formatNode(div, 0).innerHTML.trim();
 	}
@@ -80,6 +81,13 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit {
 		return codeStr.replace(/<!--[.\s\w=":,{}[\]-]+-->/gm, '');
 	}
 
+	toggleDarkModeVariants(codeStr: string) {
+		console.log(this.isDarkTheme);
+		return this.isDarkTheme
+			? codeStr.replace(/(bg|border|placeholder|text|from|via|to)-/gm, 'dark:$1-')
+			: codeStr.replace(/dark:/gm, '');
+	}
+
 	copyToClipboard() {
 		const el = document.createElement('textarea');
 		el.value = this.rawCode;
@@ -99,7 +107,8 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit {
 	}
 
 	showCode() {
-		this.rawCode = this.beautifyHTML(this.rawContent.nativeElement.firstChild.innerHTML);
+		const cleanHtml = this.beautifyHTML(this.rawContent?.nativeElement?.firstChild.innerHTML);
+		this.code = Prism.highlight(cleanHtml, this.grammar, this.language);
 		this.codeVisible = true;
 	}
 }

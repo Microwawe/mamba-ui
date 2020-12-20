@@ -1,4 +1,4 @@
-<div class="bg-default text-default-inverse">
+<div [ngClass]="['bg-' + defaultInv, 'text-' + contrast]">
 	<div class="container grid grid-cols-12">
 		<div
 			class="bg-gray-700 bg-no-repeat bg-cover col-span-full lg:col-span-4"
@@ -10,7 +10,14 @@
 			"
 		></div>
 		<div class="flex flex-col p-6 col-span-full row-span-full lg:col-span-8 lg:p-10">
-			<pre class="text-xs">Tag</pre>
+			<div class="flex justify-start">
+				<span
+					class="px-2 py-1 text-xs rounded-full text-coolGray-800"
+					[ngClass]="['bg-' + primary200]"
+				>
+					Label</span
+				>
+			</div>
 			<h1 class="text-3xl font-semibold">Lorem ipsum dolor sit.</h1>
 			<p class="flex-1 pt-2">
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, reprehenderit
@@ -19,7 +26,7 @@
 			<a
 				href="#"
 				class="inline-flex items-center pt-2 pb-6 space-x-2 text-sm"
-				[ngClass]="[textPrimary]"
+				[ngClass]="['text-' + primary]"
 			>
 				<span class="">Read more</span>
 				<i class="inline-flex items-center w-5 h-5 cil-arrow-right"></i>
@@ -27,12 +34,12 @@
 			<div class="flex items-center justify-between pt-2">
 				<div class="flex space-x-2">
 					<i
-						class="flex items-center justify-center w-8 h-8 rounded-full text-dark cil-user text-md"
-						[ngClass]="[bgPrimary]"
+						class="flex items-center justify-center w-8 h-8 rounded-full text-coolGray-900 cil-user text-md"
+						[ngClass]="['bg-' + primary]"
 					></i>
-					<span class="self-center">by Leroy Jenkins</span>
+					<span class="self-center text-sm">by Leroy Jenkins</span>
 				</div>
-				<span>3 min read</span>
+				<span class="text-xs">3 min read</span>
 			</div>
 		</div>
 	</div>

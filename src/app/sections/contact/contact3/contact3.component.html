@@ -1,14 +1,17 @@
-<section class="p-6">
-	<form
-		class="container w-full max-w-xl p-8 space-y-6 rounded-md shadow text-default-inverse bg-default"
-	>
+<section class="p-6" [ngClass]="['text-' + default, 'bg-' + defaultInv]">
+	<form class="container w-full max-w-xl p-8 space-y-6 rounded-md shadow">
 		<h2 class="w-full text-3xl font-bold leading-tight">Contact us</h2>
 
 		<div>
-			<label for="name" class="block mb-0.5 ml-0.5 text-default-inverse">Name</label>
+			<label for="name" class="block mb-0.5 ml-0.5">Name</label>
 			<input
-				class="block w-full p-2 rounded bg-neutral focus:outline-none focus:bg-contrast focus:ring focus:ring-opacity-25 focus:text-default-inverse"
-				[ngClass]="['focus:' + ringPrimary]"
+				class="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25"
+				[ngClass]="[
+					'focus:ring-' + primary,
+					'bg-' + defaultInv,
+					'focus:bg-' + contrast,
+					'focus:text-' + default
+				]"
 				id="name"
 				type="text"
 				placeholder="Your name"
@@ -17,10 +20,15 @@
 		</div>
 
 		<div>
-			<label for="email" class="block mb-0.5 ml-0.5 text-default-inverse">Email</label>
+			<label for="email" class="block mb-0.5 ml-0.5">Email</label>
 			<input
-				class="block w-full p-2 rounded bg-neutral focus:outline-none focus:bg-contrast focus:ring focus:ring-opacity-25 focus:text-default-inverse"
-				[ngClass]="['focus:' + ringPrimary]"
+				class="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25"
+				[ngClass]="[
+					'focus:ring-' + primary,
+					'bg-' + defaultInv,
+					'focus:bg-' + contrast,
+					'focus:text-' + default
+				]"
 				id="email"
 				type="email"
 				placeholder="Your email"
@@ -29,10 +37,15 @@
 		</div>
 
 		<div>
-			<label for="message" class="block mb-0.5 ml-0.5 text-default-inverse">Message </label>
+			<label for="message" class="block mb-0.5 ml-0.5">Message </label>
 			<textarea
-				class="block w-full p-2 rounded bg-neutral autoexpand focus:outline-none focus:bg-contrast focus:ring focus:ring-opacity-25 focus:text-default-inverse"
-				[ngClass]="['focus:' + ringPrimary]"
+				class="block w-full p-2 rounded autoexpand focus:outline-none focus:ring focus:ring-opacity-25"
+				[ngClass]="[
+					'focus:ring-' + primary,
+					'bg-' + defaultInv,
+					'focus:bg-' + contrast,
+					'focus:text-' + default
+				]"
 				id="message"
 				type="text"
 				placeholder="Message..."
@@ -41,8 +54,13 @@
 
 		<div class="">
 			<button
-				class="w-full px-4 py-2 font-bold rounded shadow text-contrast-inverse focus:outline-none focus:ring hover:ring focus:ring-opacity-50"
-				[ngClass]="[bgPrimary, 'focus:' + ringPrimary, 'hover:' + ringPrimary]"
+				class="w-full px-4 py-2 font-bold rounded shadow focus:outline-none focus:ring hover:ring focus:ring-opacity-50"
+				[ngClass]="[
+					'bg-' + primary,
+					'focus:ring-' + primary,
+					'hover:ring-' + primary,
+					'text.' + contrast
+				]"
 				type="submit"
 			>
 				Send

@@ -6,13 +6,21 @@ import {BaseComponent} from '@shared/components/base/base.component';
 	templateUrl: './home.component.html',
 })
 export class HomeComponent extends BaseComponent implements OnInit {
-	stats = [
-		{amount: '50+', label: 'Components'},
-		{amount: '20+', label: 'Sections'},
-		{amount: '10+', label: 'Templates'},
-		{amount: '100%', label: 'Free'},
-		{amount: '1', label: 'Developer'},
-		{amount: '0', label: 'Github Stars'},
+	stats: Object[] = [
+		{icon: 'cart', amount: '12 000', label: 'orders'},
+		{icon: 'mood-very-good', amount: '7 500', label: 'New customers'},
+		{icon: 'speedometer', amount: '125%', label: 'Growth'},
+		{icon: 'touch-app', amount: '17%', label: 'Click rate'},
+	];
+	icons: string[] = [
+		'intel',
+		'digital-ocean',
+		'dell',
+		'epson',
+		'epic-games',
+		'fedex',
+		'foursquare',
+		'sonos',
 	];
 
 	constructor() {

@@ -9,8 +9,8 @@
 					<input
 						class="rounded-t-md"
 						[ngClass]="[
-							'focus:' + ringPrimary,
-							'focus:' + borderPrimary,
+							'focus:ring-' + primary,
+							'focus:border-' + primary,
 							'focus:ring-2'
 						]"
 						id="email"
@@ -21,8 +21,8 @@
 					<input
 						class="rounded-b-md"
 						[ngClass]="[
-							'focus:' + ringPrimary,
-							'focus:' + borderPrimary,
+							'focus:ring-' + primary,
+							'focus:border-' + primary,
 							'focus:ring-2'
 						]"
 						id="password"
@@ -38,8 +38,8 @@
 							id="remember"
 							class="mr-1 rounded-sm"
 							[ngClass]="[
-								'focus:' + ringPrimary,
-								'focus:' + borderPrimary,
+								'focus:ring-' + primary,
+								'focus:border-' + primary,
 								'focus:ring-2'
 							]"
 						/>
@@ -50,7 +50,7 @@
 				<button
 					type="button"
 					class="space-x-2 font-semibold text-dark"
-					[ngClass]="[bgPrimary, btn]"
+					[ngClass]="['bg-' + primary, btn]"
 				>
 					<i class="font-semibold place-self-center cil-lock-unlocked"></i>
 					<span>Sign in</span>
