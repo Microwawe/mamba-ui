@@ -2,6 +2,7 @@
 	class="fixed left-0 z-50 p-2 transition-transform duration-300 transform -translate-y-1/2 shadow-xl top-1/2 bg-blueGray-700 rounded-r-2xl"
 	[ngClass]="[colorsOpen ? 'translate-x-0' : '-translate-x-full']"
 >
+	<p class="text-center capitalize" [ngClass]="['text-' + light]">{{ selectedColor | async }}</p>
 	<div class="relative flex flex-col items-center justify-center">
 		<!-- Color palette -->
 		<div class="grid grid-cols-2 gap-1 p-2">

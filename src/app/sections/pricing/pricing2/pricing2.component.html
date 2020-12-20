@@ -9,11 +9,11 @@
 			<div>
 				<button
 					class="px-4 py-1 font-semibold border rounded-l-lg text-dark"
-					[ngClass]="[bgPrimary, borderPrimary]"
+					[ngClass]="['bg-' + primary, 'border-' + primary]"
 				>
 					Monthly
 				</button>
-				<button class="px-4 py-1 border rounded-r-lg" [ngClass]="[borderPrimary]">
+				<button class="px-4 py-1 border rounded-r-lg" [ngClass]="['border-' + primary]">
 					Annually
 				</button>
 			</div>
@@ -26,7 +26,7 @@
 					<li class="flex items-center space-x-2" *ngFor="let i of [1, 2, 3, 4, 5]">
 						<i
 							class="inline-flex items-center justify-center text-2xl font-semibold cil-check-alt"
-							[ngClass]="[textPrimary]"
+							[ngClass]="['text-' + primary]"
 						></i>
 						<span>Lumet consectetur adipisicing</span>
 					</li>
@@ -39,7 +39,7 @@
 			</div>
 			<div
 				class="flex flex-col items-center p-8 border-2 rounded-md"
-				[ngClass]="[borderPrimary]"
+				[ngClass]="['border-' + primary]"
 			>
 				<p class="self-start">Personal</p>
 				<p class="self-start text-4xl font-bold">9€ <span class="text-xl">/mo</span></p>
@@ -47,12 +47,15 @@
 					<li class="flex items-center space-x-2" *ngFor="let i of [1, 2, 3, 4, 5]">
 						<i
 							class="inline-flex items-center justify-center text-2xl font-semibold cil-check-alt"
-							[ngClass]="[textPrimary]"
+							[ngClass]="['text-' + primary]"
 						></i>
 						<span>Lumet consectetur adipisicing</span>
 					</li>
 				</ul>
-				<button class="mt-6 font-semibold sm:mt-12 text-dark btn" [ngClass]="[bgPrimary]">
+				<button
+					class="mt-6 font-semibold sm:mt-12 text-dark btn"
+					[ngClass]="['bg-' + primary]"
+				>
 					Contact
 				</button>
 			</div>
@@ -63,7 +66,7 @@
 					<li class="flex items-center space-x-2" *ngFor="let i of [1, 2, 3, 4, 5]">
 						<i
 							class="inline-flex items-center justify-center text-2xl font-semibold cil-check-alt"
-							[ngClass]="[textPrimary]"
+							[ngClass]="['text-' + primary]"
 						></i>
 						<span>Lumet consectetur adipisicing</span>
 					</li>

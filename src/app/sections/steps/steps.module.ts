@@ -4,6 +4,7 @@ import {SharedModule} from '@shared/shared.module';
 
 import {StepsShowcaseComponent} from './steps-showcase.component';
 import {Steps1Component} from './steps1/steps1.component';
+import {Steps2Component} from './steps2/steps2.component';
 
 const routes: Routes = [
 	{
@@ -14,6 +15,6 @@ const routes: Routes = [
 
 @NgModule({
 	imports: [RouterModule.forChild(routes), SharedModule],
-	declarations: [StepsShowcaseComponent, Steps1Component],
+	declarations: [StepsShowcaseComponent, Steps1Component, Steps2Component],
 })
 export class StepsModule {}

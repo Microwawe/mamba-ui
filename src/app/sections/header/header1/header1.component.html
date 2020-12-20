@@ -1,13 +1,13 @@
 <div class="container p-4">
 	<header class="flex justify-between h-16 border-b-2 border-gray-200">
 		<button class="flex p-4">
-			<i class="self-center text-2xl cib-coreui-c" [ngClass]="textPrimary"></i>
+			<i class="self-center text-2xl cib-coreui-c" [ngClass]="['text-' + primary]"></i>
 		</button>
 		<ul class="items-stretch hidden space-x-3 lg:flex">
 			<li class="flex">
 				<a
 					[routerLink]="['#1']"
-					[routerLinkActive]="[textPrimary, borderPrimary]"
+					[routerLinkActive]="['text-' + primary, 'border-' + primary]"
 					class="flex items-center -mb-0.5 border-b-2 px-4 border-transparent"
 					>Link</a
 				>
@@ -15,7 +15,7 @@
 			<li class="flex">
 				<a
 					[routerLink]="['']"
-					[routerLinkActive]="[textPrimary, borderPrimary]"
+					[routerLinkActive]="['text-' + primary, 'border-' + primary]"
 					class="flex items-center -mb-0.5 border-b-2 px-4 border-transparent"
 					>Link</a
 				>
@@ -23,7 +23,7 @@
 			<li class="flex">
 				<a
 					[routerLink]="['#3']"
-					[routerLinkActive]="[textPrimary, borderPrimary]"
+					[routerLinkActive]="['text-' + primary, 'border-' + primary]"
 					class="flex items-center -mb-0.5 border-b-2 px-4 border-transparent"
 					>Link</a
 				>
@@ -31,7 +31,7 @@
 			<li class="flex">
 				<a
 					[routerLink]="['#4']"
-					[routerLinkActive]="[textPrimary, borderPrimary]"
+					[routerLinkActive]="['text-' + primary, 'border-' + primary]"
 					class="flex items-center -mb-0.5 border-b-2 px-4 border-transparent"
 					>Link</a
 				>
@@ -39,7 +39,7 @@
 		</ul>
 		<div class="flex-shrink-0 hidden lg:block">
 			<button class="self-center btn text-default-inverse">Sign in</button>
-			<button class="self-center font-semibold btn text-dark" [ngClass]="bgPrimary">
+			<button class="self-center font-semibold btn text-dark" [ngClass]="'bg-' + primary">
 				Sign up
 			</button>
 		</div>

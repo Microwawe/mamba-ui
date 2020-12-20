@@ -5,7 +5,7 @@
 	</div>
 	<div class="container grid justify-center gap-4 md:grid-cols-2 lg:grid-cols-3">
 		<div *ngFor="let i of [1, 2, 3, 4, 5, 6]" class="flex flex-col items-center p-4">
-			<i class="text-6xl" [ngClass]="[textPrimary, 'cil-bolt']"></i>
+			<i class="text-6xl" [ngClass]="['text-' + primary, 'cil-bolt']"></i>
 			<h3 class="my-3 text-3xl font-semibold">Product</h3>
 			<div class="space-y-1 leading-tight text-center">
 				<p>Similique quas ea veniam</p>

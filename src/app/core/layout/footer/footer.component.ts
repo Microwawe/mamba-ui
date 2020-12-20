@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 
-import {ThemeService} from '@core/services/theme.service';
 import {BaseComponent} from '@shared/components/base/base.component';
 
 @Component({
@@ -12,7 +11,7 @@ export class FooterComponent extends BaseComponent implements OnInit {
 	currentYear!: number;
 	isDarkTheme!: Observable<boolean>;
 
-	constructor(private themeService: ThemeService) {
+	constructor() {
 		super();
 	}
 

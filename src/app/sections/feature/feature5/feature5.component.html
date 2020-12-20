@@ -1,6 +1,6 @@
 <section class="m-4 md:m-8">
 	<div class="container p-4 my-6 space-y-1 text-center">
-		<span class="text-xs font-semibold tracking-wider uppercase" [ngClass]="[textPrimary]"
+		<span class="text-xs font-semibold tracking-wider uppercase" [ngClass]="['text-' + primary]"
 			>shortcut to your dream ui</span
 		>
 		<h2 class="pb-3 text-3xl font-bold md:text-4xl">Create a stylish website in minutes</h2>
@@ -23,7 +23,7 @@
 			<a
 				class="inline-flex items-center text-sm"
 				[routerLink]="['/components']"
-				[ngClass]="[textPrimary]"
+				[ngClass]="['text-' + primary]"
 			>
 				<span>Learn More</span>
 				<i class="ml-2 cil-arrow-right"></i>
@@ -40,7 +40,7 @@
 			<a
 				class="inline-flex items-center text-sm"
 				[routerLink]="['/sections']"
-				[ngClass]="[textPrimary]"
+				[ngClass]="['text-' + primary]"
 			>
 				<span>Learn More</span>
 				<i class="ml-2 cil-arrow-right"></i>
@@ -52,12 +52,12 @@
 			</h2>
 			<p class="flex-1 mb-4 text-base leading-relaxed text-neutral-inverse">
 				Full pages that showcase pieces of what you can achieve with the building blocks
-				that are in this UI Kit.
+				that are in this UI kit.
 			</p>
 			<a
 				class="inline-flex items-center text-sm"
 				[routerLink]="['/templates']"
-				[ngClass]="[textPrimary]"
+				[ngClass]="['text-' + primary]"
 			>
 				<span>Learn More</span>
 				<i class="ml-2 cil-arrow-right"></i>
@@ -74,7 +74,7 @@
 			<a
 				class="inline-flex items-center text-sm"
 				[routerLink]="['/docs']"
-				[ngClass]="[textPrimary]"
+				[ngClass]="['text-' + primary]"
 			>
 				<span>Learn More</span>
 				<i class="ml-2 cil-arrow-right"></i>

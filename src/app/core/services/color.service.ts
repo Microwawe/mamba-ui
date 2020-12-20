@@ -5,7 +5,7 @@ import {BehaviorSubject, Observable} from 'rxjs';
 export class ColorService {
 	private key = 'custom-current-color';
 	private currentColor: BehaviorSubject<string>;
-	private defaultColor = 'emerald';
+	private defaultColor = 'violet';
 	colors = [
 		'yellow',
 		'amber',

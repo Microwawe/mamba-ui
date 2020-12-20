@@ -1,10 +1,10 @@
  [![GitHub license](https://img.shields.io/github/license/Microwawe/angular-quickstart)](https://github.com/Microwawe/angular-quickstart)
 
 
-# UI Kit
+# Mamba UI
 
 
-An UI Kit for plain HTML and TailwindCSS components to help you get started even faster. [View the demo](https://mirkonowak.com/ui-kit).
+An UI kit for plain HTML and TailwindCSS components to help you get started even faster. [View the demo](https://mirkonowak.com/ui-kit).
 
 ## Features
 
@@ -18,8 +18,6 @@ An UI Kit for plain HTML and TailwindCSS components to help you get started even
 ## Installation
 
 All the components and layouts that you can copy-paste to your project works out-of-the-box without any modifications as long as you have [TailwindCSS installed](https://tailwindcss.com/docs/installation) in your project.
-
-If you want to use the same icons as I have, you'll also need [CoreUI Icons installed](https://icons.coreui.io/). If you don't want to use these then you can remove all the ``` <i> </i>``` elements and css-classes starting with `cil-` and `cib-`.  
 
 ## Usage
 

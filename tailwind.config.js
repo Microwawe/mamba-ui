@@ -46,7 +46,6 @@ module.exports = {
 				'neutral-inverse': 'var(--neutral-inverse)',
 				'primary': 'var(--primary)',
 				'primary-variant': 'var(--primary-variant)',
-				'secondary': 'var(--secondary)',
 				'default': 'var(--default)',
 				'default-inverse': 'var(--default-inverse)',
 				'contrast': 'var(--contrast)',
@@ -76,13 +75,13 @@ module.exports = {
 
 					// Breakpoints
 					'@screen sm': {
-						maxWidth: theme('maxWidth.xl'),
-					},
-					'@screen md': {
 						maxWidth: theme('maxWidth.2xl'),
 					},
+					'@screen md': {
+						maxWidth: theme('maxWidth.3xl'),
+					},
 					'@screen lg': {
-						maxWidth: theme('maxWidth.4xl'),
+						maxWidth: theme('maxWidth.5xl'),
 					},
 					'@screen xl': {
 						maxWidth: theme('maxWidth.6xl'),

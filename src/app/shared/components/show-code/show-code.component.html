@@ -1,5 +1,8 @@
 <section class="container overflow-hidden rounded-lg shadow-sm scrollbar-none">
-	<div class="overflow-hidden divide-y rounded shadow-sm bg-default divide-neutral">
+	<div
+		class="overflow-hidden divide-y rounded shadow-sm"
+		[ngClass]="['bg-' + defaultInv, 'divide-' + neutralInv]"
+	>
 		<div class="p-4 space-x-2 sm:space-x-4">
 			<button class="px-2 py-px text-sm sm:px-3 sm:py-1" (click)="showPreview()">
 				Preview
@@ -13,7 +16,7 @@
 			<pre
 				*ngIf="codeVisible"
 				class="p-6 overflow-auto"
-				[ngClass]="(isDarkTheme | async) ? 'prism-dark' : 'prism-light'"
+				[ngClass]="isDarkTheme ? 'prism-dark' : 'prism-light'"
 				style="white-space: pre-line"
 			>
 				<code class="language-markdown" [innerHTML]="code">
@@ -22,8 +25,13 @@
 			<button
 				*ngIf="codeVisible"
 				(click)="copyToClipboard()"
-				class="absolute top-0 right-0 flex px-4 py-2 mt-3 mr-3 space-x-2 border rounded-lg bg-default hover:ring-4"
-				[ngClass]="['focus:' + ringPrimary, 'hover:' + ringPrimary, borderPrimary]"
+				class="absolute top-0 right-0 flex px-4 py-2 mt-3 mr-3 space-x-2 border rounded-lg hover:ring-4"
+				[ngClass]="[
+					'focus:ring-' + primary,
+					'hover:ring-' + primary,
+					'border-' + primary,
+					'bg-' + default
+				]"
 			>
 				<i class="self-center text-xl cil-copy"></i>
 				<span>Copy</span>

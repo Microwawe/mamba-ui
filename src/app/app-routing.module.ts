@@ -7,7 +7,7 @@ import {NotFoundComponent} from '@core/layout/not-found/not-found.component';
 
 const routes: Routes = [
 	{
-		path: 'home',
+		path: '',
 		component: HomeComponent,
 	},
 	{
@@ -30,7 +30,6 @@ const routes: Routes = [
 		component: DocsComponent,
 		data: {title: 'Documentation', breadcrumb: 'Documentation'},
 	},
-	{path: '', pathMatch: 'full', redirectTo: 'home'},
 	{path: '**', component: NotFoundComponent},
 ];
 

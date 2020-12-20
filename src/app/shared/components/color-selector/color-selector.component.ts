@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ThemeService} from '@core/services/theme.service';
+
 import {BaseComponent} from '../base/base.component';
 
 @Component({
@@ -10,7 +10,7 @@ import {BaseComponent} from '../base/base.component';
 export class ColorSelectorComponent extends BaseComponent implements OnInit {
 	colors: string[] = [];
 
-	constructor(private themeService: ThemeService) {
+	constructor() {
 		super();
 	}
 

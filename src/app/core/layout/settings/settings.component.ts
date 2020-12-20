@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 
-import {ThemeService} from '@core/services/theme.service';
 import {BaseComponent} from '@shared/components/base/base.component';
 import {Observable} from 'rxjs';
 
@@ -13,13 +12,15 @@ export class SettingsComponent extends BaseComponent implements OnInit {
 	isDarkTheme!: Observable<boolean>;
 	colors: string[] = [];
 	colorsOpen = false;
+	selectedColor!: Observable<string>;
 
-	constructor(private themeService: ThemeService) {
+	constructor() {
 		super();
 	}
 
 	ngOnInit() {
 		this.isDarkTheme = this.themeService.getDarkTheme();
+		this.selectedColor = this.colorService.observeCurrentColor();
 		this.colors = [
 			'yellow',
 			'amber',

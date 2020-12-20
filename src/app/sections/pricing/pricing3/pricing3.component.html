@@ -9,11 +9,11 @@
 			<div>
 				<button
 					class="px-4 py-1 font-semibold border rounded-l-lg text-dark"
-					[ngClass]="[bgPrimary, borderPrimary]"
+					[ngClass]="['bg-' + primary, 'border-' + primary]"
 				>
 					Monthly
 				</button>
-				<button class="px-4 py-1 border rounded-r-lg" [ngClass]="[borderPrimary]">
+				<button class="px-4 py-1 border rounded-r-lg" [ngClass]="['border-' + primary]">
 					Annually
 				</button>
 			</div>
@@ -22,42 +22,42 @@
 			<div class="relative z-0 flex flex-col items-center p-8 border rounded-md bg-default">
 				<span
 					class="absolute top-0 px-6 pt-1 pb-2 font-medium rounded-b-lg text-dark"
-					[ngClass]="[bgPrimary]"
+					[ngClass]="['bg-' + primary]"
 					>Personal</span
 				>
-				<p class="my-6 text-4xl font-bold" [ngClass]="[textPrimary]">FREE</p>
+				<p class="my-6 text-4xl font-bold" [ngClass]="['text-' + primary]">FREE</p>
 				<ul class="flex-1 space-y-2">
 					<li class="flex items-center space-x-2">
-						<i class="text-xl cil-check-circle" [ngClass]="textPrimary"></i>
+						<i class="text-xl cil-check-circle" [ngClass]="['text-' + primary]"></i>
 						<span>Lumet consectetur adipisicing</span>
 					</li>
 					<li class="flex items-center space-x-2">
-						<i class="text-xl cil-check-circle" [ngClass]="textPrimary"></i>
+						<i class="text-xl cil-check-circle" [ngClass]="['text-' + primary]"></i>
 						<span>Lumet consectetur adipisicing</span>
 					</li>
 					<li class="flex items-center space-x-2">
-						<i class="text-xl cil-check-circle" [ngClass]="textPrimary"></i>
+						<i class="text-xl cil-check-circle" [ngClass]="['text-' + primary]"></i>
 						<span>Lumet consectetur adipisicing</span>
 					</li>
 					<li class="flex items-center space-x-2">
-						<i class="text-xl cil-check-circle" [ngClass]="textPrimary"></i>
+						<i class="text-xl cil-check-circle" [ngClass]="['text-' + primary]"></i>
 						<span>Lumet consectetur adipisicing</span>
 					</li>
 				</ul>
 				<button
 					class="px-4 py-2 mt-4 font-semibold uppercase border rounded-lg md:mt-12 sm:py-3 sm:px-8"
-					[ngClass]="[borderPrimary]"
+					[ngClass]="['border-' + primary]"
 				>
 					Subscribe
 				</button>
 			</div>
 			<div
 				class="relative z-10 flex flex-col items-center p-8 transform scale-110 border-2 rounded-md bg-default"
-				[ngClass]="[borderPrimary]"
+				[ngClass]="['border-' + primary]"
 			>
 				<span
 					class="absolute top-0 px-6 pt-1 pb-2 font-medium rounded-b-lg text-dark"
-					[ngClass]="[bgPrimary]"
+					[ngClass]="['bg-' + primary]"
 					>Professional</span
 				>
 				<p class="flex items-center justify-center my-6 space-x-2 font-bold">
@@ -67,25 +67,25 @@
 				</p>
 				<ul class="flex-1 space-y-2">
 					<li class="flex items-center space-x-2">
-						<i class="text-xl cil-check-circle" [ngClass]="textPrimary"></i>
+						<i class="text-xl cil-check-circle" [ngClass]="['text-' + primary]"></i>
 						<span>Consectetur</span>
 					</li>
 					<li class="flex items-center space-x-2">
-						<i class="text-xl cil-check-circle" [ngClass]="textPrimary"></i>
+						<i class="text-xl cil-check-circle" [ngClass]="['text-' + primary]"></i>
 						<span>Adipisicing</span>
 					</li>
 					<li class="flex items-center space-x-2">
-						<i class="text-xl cil-check-circle" [ngClass]="textPrimary"></i>
+						<i class="text-xl cil-check-circle" [ngClass]="['text-' + primary]"></i>
 						<span>Aliquam</span>
 					</li>
 					<li class="flex items-center space-x-2">
-						<i class="text-xl cil-check-circle" [ngClass]="textPrimary"></i>
+						<i class="text-xl cil-check-circle" [ngClass]="['text-' + primary]"></i>
 						<span>Lumet consectetur facilis</span>
 					</li>
 				</ul>
 				<button
 					class="mt-12 font-semibold uppercase text-dark"
-					[ngClass]="[btn, bgPrimary]"
+					[ngClass]="[btn, 'bg-' + primary]"
 				>
 					Subscribe
 				</button>
@@ -93,7 +93,7 @@
 			<div class="relative z-0 flex flex-col items-center p-8 border rounded-md bg-default">
 				<span
 					class="absolute top-0 px-6 pt-1 pb-2 font-medium rounded-b-lg text-dark"
-					[ngClass]="[bgPrimary]"
+					[ngClass]="['bg-' + primary]"
 					>Enterprise</span
 				>
 				<p class="flex items-center justify-center my-6 space-x-2 font-bold">
@@ -103,19 +103,19 @@
 				</p>
 				<ul class="flex-1 space-y-2">
 					<li class="flex items-center space-x-2">
-						<i class="text-xl cil-check-circle" [ngClass]="textPrimary"></i>
+						<i class="text-xl cil-check-circle" [ngClass]="['text-' + primary]"></i>
 						<span>Lumet consectetur adipisicing</span>
 					</li>
 					<li class="flex items-center space-x-2">
-						<i class="text-xl cil-check-circle" [ngClass]="textPrimary"></i>
+						<i class="text-xl cil-check-circle" [ngClass]="['text-' + primary]"></i>
 						<span>Lumet consectetur adipisicing</span>
 					</li>
 					<li class="flex items-center space-x-2">
-						<i class="text-xl cil-check-circle" [ngClass]="textPrimary"></i>
+						<i class="text-xl cil-check-circle" [ngClass]="['text-' + primary]"></i>
 						<span>Lumet consectetur adipisicing</span>
 					</li>
 					<li class="flex items-center space-x-2">
-						<i class="text-xl cil-check-circle" [ngClass]="textPrimary"></i>
+						<i class="text-xl cil-check-circle" [ngClass]="['text-' + primary]"></i>
 						<span>Lumet consectetur adipisicing</span>
 					</li>
 				</ul>

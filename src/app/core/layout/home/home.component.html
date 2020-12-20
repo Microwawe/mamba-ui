@@ -1,310 +1,353 @@
-<section class="">
-	<div [ngClass]="[bgPrimary]">
-		<div
-			class="container flex flex-col items-center px-4 py-16 pb-24 text-center lg:pb-56 md:py-32 md:px-10 lg:px-32 text-dark"
-		>
-			<h1 class="text-5xl font-bold leading-none sm:text-6xl xl:max-w-3xl">
-				Kickstart your next project
-			</h1>
-			<p
-				class="mt-6 mb-8 text-lg sm:mb-12 xl:max-w-3xl"
-				[ngClass]="['bg-' + test.primary + '-700']"
+<div class="space-y-24" [ngClass]="['bg-' + default, 'text-' + defaultInv]">
+	<section class="pt-20 pb-10 lg:py-40">
+		<div class="container flex flex-col justify-center lg:flex-row">
+			<div
+				class="flex flex-col justify-center p-6 space-y-6 text-center rounded-sm lg:text-left lg:w-1/2 xl:w-2/5"
 			>
-				You can get the layout of your website done with just a couple of clicks.
-			</p>
-			<div class="flex flex-wrap justify-center">
-				<button class="m-2 font-semibold bg-default text-contrast-inverse btn">
-					Get started
-				</button>
-				<button class="m-2 border text-contrast border-neutral btn">Learn more</button>
+				<h1 class="text-5xl font-bold leading-none sm:text-6xl xl:max-w-3xl">
+					Kickstart your next project
+				</h1>
+				<p class="mt-6 mb-8 text-lg sm:mb-12 xl:max-w-3xl">
+					You can get the layout of your website done with just a couple of clicks.
+				</p>
+				<div class="flex flex-wrap justify-center lg:justify-start">
+					<button
+						class="m-2 font-semibold btn"
+						[ngClass]="['bg-' + primary, 'text-' + contrast]"
+					>
+						Get started
+					</button>
+					<button class="m-2 border btn" [ngClass]="['border-' + neutralInv]">
+						Learn more
+					</button>
+				</div>
+			</div>
+			<div class="flex items-center justify-center lg:w-1/2 xl:w-3/5">
+				<img class="h-72 lg:h-96" src="assets/svg/Business_SVG.svg" alt="" />
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
 
-<section class="p-6 pt-12 text-default-inverse bg-default">
-	<div class="container flex flex-col">
-		<h2 class="py-4 text-3xl font-bold text-center">How does it work?</h2>
-		<div class="divide-y divide-neutral">
-			<div class="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 lg:space-y-0">
-				<div
-					class="flex items-center justify-center lg:col-span-1 col-span-full md:flex-row"
-				>
-					<i class="cil-wallpaper text-8xl"></i>
-				</div>
-				<div
-					class="flex flex-col justify-center text-center col-span-full lg:col-span-3 lg:text-left"
-				>
-					<span class="text-xs tracking-wider uppercase" [ngClass]="textPrimary"
-						>Step 1 - Browse</span
+	<section class="p-6 pt-12">
+		<div class="container flex flex-col">
+			<h2 class="py-4 text-3xl font-bold text-center">How does it work?</h2>
+			<div class="divide-y" [ngClass]="['divide-' + neutral]">
+				<div class="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 lg:space-y-0">
+					<div
+						class="flex items-center justify-center lg:col-span-1 col-span-full md:flex-row"
 					>
-					<span class="text-xl font-bold md:text-2xl">
-						Find something that you like
-					</span>
-					<span class="mt-4 text-neutral-inverse">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam facilis,
-						voluptates error alias dolorem praesentium sit soluta iure incidunt labore
-						explicabo eaque, quia architecto veritatis dolores, enim cons equatur nihil
-						ipsum.
-					</span>
+						<i class="cil-wallpaper text-8xl"></i>
+					</div>
+					<div
+						class="flex flex-col justify-center text-center col-span-full lg:col-span-3 lg:text-left"
+					>
+						<span
+							class="text-xs tracking-wider uppercase"
+							[ngClass]="['text-' + primary]"
+							>Step 1 - Browse</span
+						>
+						<span class="text-xl font-bold md:text-2xl">
+							Find something that you like
+						</span>
+						<span class="mt-4" [ngClass]="['text-' + neutralInv]">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
+							facilis, voluptates error alias dolorem praesentium sit soluta iure
+							incidunt labore explicabo eaque, quia architecto veritatis dolores, enim
+							cons equatur nihil ipsum.
+						</span>
+					</div>
 				</div>
-			</div>
 
-			<div class="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 lg:space-y-0">
-				<div
-					class="flex items-center justify-center lg:col-span-1 col-span-full md:flex-row"
-				>
-					<i class="cil-paint-bucket text-8xl"></i>
-				</div>
-				<div
-					class="flex flex-col justify-center text-center col-span-full lg:col-span-3 lg:text-left"
-				>
-					<span class="text-xs tracking-wider uppercase" [ngClass]="textPrimary"
-						>Step 2 - Colors</span
+				<div class="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 lg:space-y-0">
+					<div
+						class="flex items-center justify-center lg:col-span-1 col-span-full md:flex-row"
 					>
-					<span class="text-xl font-bold md:text-2xl"> Select the theme and colors </span>
-					<span class="mt-4 text-neutral-inverse">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam facilis,
-						voluptates error alias dolorem praesentium sit soluta iure incidunt labore
-						explicabo eaque, quia architecto veritatis dolores, enim cons equatur nihil
-						ipsum.
-					</span>
+						<i class="cil-paint-bucket text-8xl"></i>
+					</div>
+					<div
+						class="flex flex-col justify-center text-center col-span-full lg:col-span-3 lg:text-left"
+					>
+						<span
+							class="text-xs tracking-wider uppercase"
+							[ngClass]="['text-' + primary]"
+							>Step 2 - Colors</span
+						>
+						<span class="text-xl font-bold md:text-2xl">
+							Select the theme and colors
+						</span>
+						<span class="mt-4" [ngClass]="['text-' + neutralInv]">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
+							facilis, voluptates error alias dolorem praesentium sit soluta iure
+							incidunt labore explicabo eaque, quia architecto veritatis dolores, enim
+							cons equatur nihil ipsum.
+						</span>
+					</div>
 				</div>
-			</div>
 
-			<div class="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 lg:space-y-0">
-				<div
-					class="flex items-center justify-center lg:col-span-1 col-span-full md:flex-row"
-				>
-					<i class="cil-code text-8xl"></i>
-				</div>
-				<div
-					class="flex flex-col justify-center text-center col-span-full lg:col-span-3 lg:text-left"
-				>
-					<span class="text-xs tracking-wider uppercase" [ngClass]="textPrimary"
-						>Step 3 - Export</span
+				<div class="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 lg:space-y-0">
+					<div
+						class="flex items-center justify-center lg:col-span-1 col-span-full md:flex-row"
 					>
-					<span class="text-xl font-bold md:text-2xl">Copy the code</span>
-					<span class="mt-4 text-neutral-inverse">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam facilis,
-						voluptates error alias dolorem praesentium sit soluta iure incidunt labore
-						explicabo eaque, quia architecto veritatis dolores, enim cons equatur nihil
-						ipsum.
-					</span>
+						<i class="cil-code text-8xl"></i>
+					</div>
+					<div
+						class="flex flex-col justify-center text-center col-span-full lg:col-span-3 lg:text-left"
+					>
+						<span
+							class="text-xs tracking-wider uppercase"
+							[ngClass]="['text-' + primary]"
+							>Step 3 - Export</span
+						>
+						<span class="text-xl font-bold md:text-2xl">Copy the code</span>
+						<span class="mt-4" [ngClass]="['text-' + neutralInv]">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
+							facilis, voluptates error alias dolorem praesentium sit soluta iure
+							incidunt labore explicabo eaque, quia architecto veritatis dolores, enim
+							cons equatur nihil ipsum.
+						</span>
+					</div>
 				</div>
-			</div>
 
-			<div class="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 lg:space-y-0">
-				<div
-					class="flex items-center justify-center lg:col-span-1 col-span-full md:flex-row"
-				>
-					<i class="cil-devices text-8xl"></i>
-				</div>
-				<div
-					class="flex flex-col justify-center text-center col-span-full lg:col-span-3 lg:text-left"
-				>
-					<span class="text-xs tracking-wider uppercase" [ngClass]="textPrimary"
-						>Step 4 - Implementation</span
+				<div class="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 lg:space-y-0">
+					<div
+						class="flex items-center justify-center lg:col-span-1 col-span-full md:flex-row"
 					>
-					<span class="text-xl font-bold md:text-2xl">Create your own layout</span>
-					<span class="mt-4 text-neutral-inverse">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam facilis,
-						voluptates error alias dolorem praesentium sit soluta iure incidunt labore
-						explicabo eaque, quia architecto veritatis dolores, enim cons equatur nihil
-						ipsum.
-					</span>
+						<i class="cil-devices text-8xl"></i>
+					</div>
+					<div
+						class="flex flex-col justify-center text-center col-span-full lg:col-span-3 lg:text-left"
+					>
+						<span
+							class="text-xs tracking-wider uppercase"
+							[ngClass]="['text-' + primary]"
+							>Step 4 - Implementation</span
+						>
+						<span class="text-xl font-bold md:text-2xl">Create your own layout</span>
+						<span class="mt-4" [ngClass]="['text-' + neutralInv]">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
+							facilis, voluptates error alias dolorem praesentium sit soluta iure
+							incidunt labore explicabo eaque, quia architecto veritatis dolores, enim
+							cons equatur nihil ipsum.
+						</span>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
 
-<section class="p-6 bg-default">
-	<div class="container grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
+	<section class="relative" [ngClass]="['bg-' + primary]">
+		<svg
+			class="absolute w-full h-4 fill-current -top-4"
+			[ngClass]="['text-' + primary]"
+			viewBox="0 0 1400 50"
+			preserveAspectRatio="none"
+			xmlns="http://www.w3.org/2000/svg"
+		>
+			<path
+				d="M0 0c309.151 33.333 542.484 50 700 50 157.516 0 390.849-16.667 700-50v50H0V0z"
+			/>
+		</svg>
 		<div
-			*ngFor="let stat of stats"
-			class="flex p-4 space-x-4 rounded-lg md:space-x-6 bg-default-inverse text-default"
+			class="container grid grid-cols-1 gap-6 px-6 py-8 sm:py-16 sm:grid-cols-2 xl:grid-cols-4"
 		>
 			<div
-				class="flex justify-center p-2 align-middle rounded-lg sm:p-4"
-				[ngClass]="[bgPrimary]"
+				*ngFor="let stat of stats"
+				class="flex p-4 space-x-4 rounded-lg md:space-x-6 -inverse"
+				[ngClass]="['text-' + defaultInv, 'bg-' + default]"
 			>
-				<i class="flex text-4xl place-items-center" [ngClass]="'cil-' + stat.icon"></i>
-			</div>
-			<div class="flex flex-col justify-center align-middle">
-				<p class="text-3xl font-semibold leading-none">{{ stat.amount }}</p>
-				<p class="capitalize">{{ stat.label }}</p>
+				<div
+					class="flex justify-center p-2 align-middle rounded-lg sm:p-4"
+					[ngClass]="['bg-' + contrast]"
+				>
+					<i
+						class="flex text-4xl place-items-center"
+						[ngClass]="['cil-' + stat.icon, 'text-' + primary]"
+					></i>
+				</div>
+				<div class="flex flex-col justify-center align-middle">
+					<p class="text-3xl font-semibold leading-none">{{ stat.amount }}</p>
+					<p class="capitalize">{{ stat.label }}</p>
+				</div>
 			</div>
 		</div>
-	</div>
-</section>
-
-<section class="p-4 md:p-8 bg-default text-default-inverse">
-	<div class="container p-4 my-6 space-y-1 text-center">
-		<span class="text-xs font-semibold tracking-wider uppercase" [ngClass]="[textPrimary]"
-			>shortcut to your dream ui</span
+		<svg
+			class="absolute w-full h-4 fill-current -bottom-4"
+			[ngClass]="'text-' + primary"
+			viewBox="0 0 1400 50"
+			preserveAspectRatio="none"
+			xmlns="http://www.w3.org/2000/svg"
 		>
-		<h2 class="pb-3 text-3xl font-bold md:text-4xl">Create a stylish website in minutes</h2>
-		<p class="">
-			Get a jumpstart to creating your new webpage! With our fully responsive and carefully
-			styled components you can get the structure of your website done with just a couple of
-			clicks.
-		</p>
-	</div>
-	<div
-		class="container grid justify-center gap-4 divide-y xl:divide-x xl:divide-y-0 lg:grid-cols-2 xl:grid-cols-4"
-	>
-		<div class="flex flex-col px-8 py-6">
-			<h2 class="mb-2 text-lg font-semibold sm:text-xl text-default-inverse title-font">
-				Components
-			</h2>
-			<p class="flex-1 mb-4 text-base leading-relaxed text-neutral-inverse">
-				Individual components that can be re-used multiple times in your designs.
-			</p>
-			<a
-				class="inline-flex items-center text-sm"
-				[routerLink]="['/components']"
-				[ngClass]="[textPrimary]"
-			>
-				<span>Learn More</span>
-				<i class="ml-2 cil-arrow-right"></i>
-			</a>
-		</div>
-		<div class="flex flex-col px-8 py-6 lg:border-none xl:border-solid">
-			<h2 class="mb-2 text-lg font-semibold sm:text-xl text-default-inverse title-font">
-				Sections
-			</h2>
-			<p class="flex-1 mb-4 text-base leading-relaxed text-neutral-inverse">
-				Pre-made building blocks that you can stack on top of each other like Legos to build
-				a website of your own in minutes.
-			</p>
-			<a
-				class="inline-flex items-center text-sm"
-				[routerLink]="['/sections']"
-				[ngClass]="[textPrimary]"
-			>
-				<span>Learn More</span>
-				<i class="ml-2 cil-arrow-right"></i>
-			</a>
-		</div>
-		<div class="flex flex-col px-8 py-6">
-			<h2 class="mb-2 text-lg font-semibold sm:text-xl text-default-inverse title-font">
-				Templates
-			</h2>
-			<p class="flex-1 mb-4 text-base leading-relaxed text-neutral-inverse">
-				Full pages that showcase pieces of what you can achieve with the building blocks
-				that are in this UI Kit.
-			</p>
-			<a
-				class="inline-flex items-center text-sm"
-				[routerLink]="['/templates']"
-				[ngClass]="[textPrimary]"
-			>
-				<span>Learn More</span>
-				<i class="ml-2 cil-arrow-right"></i>
-			</a>
-		</div>
-		<div class="flex flex-col px-8 py-6">
-			<h2 class="mb-2 text-lg font-semibold sm:text-xl text-default-inverse title-font">
-				Customization
-			</h2>
-			<p class="flex-1 mb-4 text-base leading-relaxed text-neutral-inverse">
-				Choose your primary color from any of the TailwindCSS 2.0 colors. You can also view
-				all of the components in our light and dark themes.
-			</p>
-			<a
-				class="inline-flex items-center text-sm"
-				[routerLink]="['/docs']"
-				[ngClass]="[textPrimary]"
-			>
-				<span>Learn More</span>
-				<i class="ml-2 cil-arrow-right"></i>
-			</a>
-		</div>
-	</div>
-</section>
+			<path
+				d="M0 50C309.151 16.667 542.484 0 700 0c157.516 0 390.849 16.667 700 50V0H0v50z"
+			/>
+		</svg>
+	</section>
 
-<section class="py-6 text-default-inverse" [ngClass]="bgPrimary">
-	<div
-		class="container justify-center p-4 space-y-8 md:p-10 lg:space-y-0 lg:space-x-12 lg:justify-around lg:flex lg:flex-row"
-	>
-		<div class="flex flex-col space-y-2 text-center text-dark lg:text-left">
-			<h1 class="text-2xl font-bold leading-none">Sign up for project updates</h1>
-			<p class="text-lg">When we add something new, you will be the first to know</p>
+	<section class="p-4 md:p-8">
+		<div class="container p-4 my-6 space-y-1 text-center">
+			<span
+				class="text-xs font-semibold tracking-wider uppercase"
+				[ngClass]="['text-' + primary]"
+				>shortcut to your dream ui</span
+			>
+			<h2 class="pb-3 text-3xl font-bold md:text-4xl font-mont">
+				Create a stylish website in minutes
+			</h2>
+			<p class="">
+				Get a jumpstart to creating your new webpage! With our fully responsive and
+				carefully styled components you can get the structure of your website done with just
+				a couple of clicks.
+			</p>
 		</div>
 		<div
-			class="flex flex-row items-center self-center justify-center flex-shrink-0 lg:justify-end"
+			class="container grid justify-center gap-4 divide-y xl:divide-x xl:divide-y-0 lg:grid-cols-2 xl:grid-cols-4"
 		>
-			<div class="flex flex-row shadow-md">
-				<input
-					type="text"
-					class="w-3/5 p-3 border rounded-l-lg sm:w-2/3 border-default"
-					placeholder="example@email.com"
-				/>
-				<button
-					class="w-2/5 p-3 rounded-r-lg sm:w-1/3 text-default-inverse bg-default"
-					type="button "
+			<div class="flex flex-col px-8 py-6">
+				<h3 class="mb-2 text-lg font-semibold sm:text-xl title-font">Components</h3>
+				<p class="flex-1 mb-4 text-base leading-relaxed" [ngClass]="['text-' + neutralInv]">
+					Individual components that can be re-used multiple times in your designs.
+				</p>
+				<a
+					class="inline-flex items-center text-sm"
+					[routerLink]="['/components']"
+					[ngClass]="['text-' + primary]"
 				>
-					Subscribe
-				</button>
+					<span>Learn More</span>
+					<i class="ml-2 cil-arrow-right"></i>
+				</a>
+			</div>
+			<div class="flex flex-col px-8 py-6 lg:border-none xl:border-solid">
+				<h3 class="mb-2 text-lg font-semibold sm:text-xl title-font">Sections</h3>
+				<p class="flex-1 mb-4 text-base leading-relaxed" [ngClass]="['text-' + neutralInv]">
+					Pre-made building blocks that you can stack on top of each other like Legos to
+					build a website of your own in minutes.
+				</p>
+				<a
+					class="inline-flex items-center text-sm"
+					[routerLink]="['/sections']"
+					[ngClass]="['text-' + primary]"
+				>
+					<span>Learn More</span>
+					<i class="ml-2 cil-arrow-right"></i>
+				</a>
+			</div>
+			<div class="flex flex-col px-8 py-6">
+				<h3 class="mb-2 text-lg font-semibold sm:text-xl title-font">Templates</h3>
+				<p class="flex-1 mb-4 text-base leading-relaxed" [ngClass]="['text-' + neutralInv]">
+					Full pages that showcase pieces of what you can achieve with the building blocks
+					that are in this UI Kit.
+				</p>
+				<a
+					class="inline-flex items-center text-sm"
+					[routerLink]="['/templates']"
+					[ngClass]="['text-' + primary]"
+				>
+					<span>Learn More</span>
+					<i class="ml-2 cil-arrow-right"></i>
+				</a>
+			</div>
+			<div class="flex flex-col px-8 py-6">
+				<h3 class="mb-2 text-lg font-semibold sm:text-xl title-font">Customization</h3>
+				<p class="flex-1 mb-4 text-base leading-relaxed" [ngClass]="['text-' + neutralInv]">
+					Choose your primary color from any of the TailwindCSS 2.0 colors. You can also
+					view all of the components in our light and dark themes.
+				</p>
+				<a
+					class="inline-flex items-center text-sm"
+					[routerLink]="['/docs']"
+					[ngClass]="['text-' + primary]"
+				>
+					<span>Learn More</span>
+					<i class="ml-2 cil-arrow-right"></i>
+				</a>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
 
-<section class="bg-default">
-	<div class="container flex flex-col justify-center p-4 md:p-8">
-		<p
-			class="p-2 text-sm font-medium tracking-wider text-center uppercase"
-			[ngClass]="textPrimary"
+	<section class="py-6" [ngClass]="'bg-' + primary">
+		<div
+			class="container justify-center p-4 space-y-8 md:p-10 lg:space-y-0 lg:space-x-12 lg:justify-around lg:flex lg:flex-row"
 		>
-			How it works
-		</p>
-		<h1 class="mb-12 text-4xl font-bold leading-none text-center sm:text-5xl">
-			Frequently Asked Questions
-		</h1>
-		<div class="flex flex-col divide-y divide-neutral sm:px-8 lg:px-12 xl:px-32">
-			<details class="">
-				<summary class="py-2 outline-none cursor-pointer focus:underline">
-					Optio maiores eligendi molestiae totam dolores similique?
-				</summary>
-				<div class="px-4 pb-4">
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde neque in
-						fugiat magni, quas animi enim veritatis deleniti ex. Impedit.
-					</p>
+			<div class="flex flex-col space-y-2 text-center text-gray-800 lg:text-left">
+				<h2 class="text-3xl font-bold leading-none">Sign up for project updates</h2>
+				<p class="text-lg">When we add something new, you will be the first to know</p>
+			</div>
+			<div
+				class="flex flex-row items-center self-center justify-center flex-shrink-0 lg:justify-end"
+			>
+				<div class="flex flex-row shadow-md">
+					<input
+						type="text"
+						class="w-3/5 p-3 border-none rounded-l-lg sm:w-2/3"
+						placeholder="example@email.com"
+					/>
+					<button
+						class="w-2/5 p-3 border-none rounded-r-lg sm:w-1/3"
+						type="button"
+						[ngClass]="['bg-' + default]"
+					>
+						Subscribe
+					</button>
 				</div>
-			</details>
-			<details class="">
-				<summary class="py-2 outline-none cursor-pointer focus:underline">
-					Modi dolorem veritatis culpa quos consequuntur beatae itaque excepturi
-					perspiciatis?
-				</summary>
-				<div class="px-4 pb-4">
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Est aspernatur
-						quae, eos explicabo odit minima libero veniam similique quibusdam doloribus
-						facilis ipsa accusantium vel maiores corrupti! Libero voluptate a doloribus?
-					</p>
-				</div>
-			</details>
-			<details class="">
-				<summary class="py-2 outline-none cursor-pointer focus:underline">
-					Magni reprehenderit possimus debitis?
-				</summary>
-				<div class="px-4 pb-4 space-y-2">
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates
-						aspernatur dolores in consequatur doloremque inventore reprehenderit,
-						consequuntur perspiciatis architecto.
-					</p>
-					<p>
-						Sed consectetur quod tenetur! Voluptatibus culpa incidunt veritatis velit
-						quasi cupiditate unde eaque! Iure, voluptatibus autem eaque unde possimus
-						quae.
-					</p>
-				</div>
-			</details>
+			</div>
 		</div>
-	</div>
-</section>
+	</section>
+
+	<section class="pb-24">
+		<div class="container flex flex-col justify-center p-4 md:p-8">
+			<p
+				class="p-2 text-sm font-medium tracking-wider text-center uppercase"
+				[ngClass]="['text-' + primary]"
+			>
+				How it works
+			</p>
+			<h2 class="mb-12 text-4xl font-bold leading-none text-center sm:text-5xl font-mont">
+				Frequently Asked Questions
+			</h2>
+			<div class="flex flex-col divide-y divide-neutral sm:px-8 lg:px-12 xl:px-32">
+				<details class="">
+					<summary class="py-2 outline-none cursor-pointer focus:underline">
+						Optio maiores eligendi molestiae totam dolores similique?
+					</summary>
+					<div class="px-4 pb-4">
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde neque in
+							fugiat magni, quas animi enim veritatis deleniti ex. Impedit.
+						</p>
+					</div>
+				</details>
+				<details class="">
+					<summary class="py-2 outline-none cursor-pointer focus:underline">
+						Modi dolorem veritatis culpa quos consequuntur beatae itaque excepturi
+						perspiciatis?
+					</summary>
+					<div class="px-4 pb-4">
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Est aspernatur
+							quae, eos explicabo odit minima libero veniam similique quibusdam
+							doloribus facilis ipsa accusantium vel maiores corrupti! Libero
+							voluptate a doloribus?
+						</p>
+					</div>
+				</details>
+				<details class="">
+					<summary class="py-2 outline-none cursor-pointer focus:underline">
+						Magni reprehenderit possimus debitis?
+					</summary>
+					<div class="px-4 pb-4 space-y-2">
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates
+							aspernatur dolores in consequatur doloremque inventore reprehenderit,
+							consequuntur perspiciatis architecto.
+						</p>
+						<p>
+							Sed consectetur quod tenetur! Voluptatibus culpa incidunt veritatis
+							velit quasi cupiditate unde eaque! Iure, voluptatibus autem eaque unde
+							possimus quae.
+						</p>
+					</div>
+				</details>
+			</div>
+		</div>
+	</section>
+</div>
