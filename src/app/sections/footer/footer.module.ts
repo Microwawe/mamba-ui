@@ -3,7 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {SharedModule} from '@shared/shared.module';
 
 import {FooterShowcaseComponent} from './footer-showcase.component';
-import {Footer1Component} from './footer1/foote1.component';
+import {Footer1Component} from './footer1/footer1.component';
 import {Footer2Component} from './footer2/footer2.component';
 
 const routes: Routes = [

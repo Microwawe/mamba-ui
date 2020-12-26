@@ -1,6 +1,5 @@
 <div
-	class="w-full"
-	[ngClass]="['bg-' + dark]"
+	class="w-full bg-gray-500"
 	style="
 		background-image: url('https://source.unsplash.com/random/640x480');
 		background-position: center center;
@@ -11,11 +10,11 @@
 	<div class="flex flex-col flex-wrap content-center justify-center p-4 py-20 md:p-10">
 		<h1
 			class="text-5xl antialiased font-semibold leading-none text-center"
-			[ngClass]="['text-' + light]"
+			[ngClass]="['text' + light]"
 		>
 			Get Our Updates
 		</h1>
-		<p class="pt-2 pb-8 text-xl antialiased text-center" [ngClass]="['text-' + light]">
+		<p class="pt-2 pb-8 text-xl antialiased text-center" [ngClass]="['text' + light]">
 			Find out about events and other news
 		</p>
 		<div class="flex flex-row">
@@ -25,9 +24,9 @@
 				placeholder="example@email.com"
 			/>
 			<button
-				class="w-2/5 p-3 rounded-r-lg sm:w-1/3 text-dark"
+				class="w-2/5 p-3 font-medium rounded-r-lg sm:w-1/3"
 				type="button"
-				[ngClass]="['bg-' + primary]"
+				[ngClass]="['bg' + primary, 'text' + dark]"
 			>
 				Subscribe
 			</button>

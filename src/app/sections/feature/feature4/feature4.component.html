@@ -1,13 +1,13 @@
 <section class="m-4 md:m-8">
 	<div class="container p-4 my-6 space-y-1 text-center">
 		<h2 class="text-4xl font-bold">Built to empower every team</h2>
-		<p class="">Libero minima optio qui</p>
+		<p class="" [ngClass]="['text' + plainInv]">Libero minima optio qui</p>
 	</div>
-	<div class="container grid justify-center gap-4 md:grid-cols-2 lg:grid-cols-3">
+	<div class="container grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-3">
 		<div *ngFor="let i of [1, 2, 3, 4, 5, 6]" class="flex flex-col items-center p-4">
-			<i class="text-6xl" [ngClass]="['text-' + primary, 'cil-bolt']"></i>
+			<i class="text-6xl" [ngClass]="['text' + primary, 'cil-bolt']"></i>
 			<h3 class="my-3 text-3xl font-semibold">Product</h3>
-			<div class="space-y-1 leading-tight text-center">
+			<div class="space-y-1 leading-tight">
 				<p>Similique quas ea veniam</p>
 				<p>Tempore quasi porro</p>
 				<p>Blanditiis aut mollitia ex</p>

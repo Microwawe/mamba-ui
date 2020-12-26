@@ -1,11 +1,11 @@
-<footer class="py-6 bg-default text-default-inverse">
+<footer class="py-6" [ngClass]="['bg' + default, 'text' + contrastInv]">
 	<div class="container px-6 space-y-6 divide-y divide-gray-400 md:space-y-12 divide-opacity-50">
 		<div class="grid grid-cols-12">
 			<div class="pb-6 col-span-full md:pb-0 md:col-span-6">
 				<a class="flex justify-center space-x-3 md:justify-start" href="#">
 					<i
-						class="flex items-center justify-center w-12 h-12 text-xl font-bold rounded-full text-dark cib-x-pack"
-						[ngClass]="['bg-' + primary]"
+						class="flex items-center justify-center w-12 h-12 text-xl font-bold rounded-full cib-x-pack"
+						[ngClass]="['bg' + primary, 'text' + contrast]"
 					></i>
 					<span class="self-center text-2xl font-semibold">Brand name</span>
 				</a>
@@ -41,22 +41,22 @@
 			</div>
 			<div class="flex justify-center pt-4 space-x-4 lg:pt-0 lg:col-end-13">
 				<a
-					class="flex items-center justify-center w-10 h-10 rounded-full text-dark"
-					[ngClass]="['bg-' + primary]"
+					class="flex items-center justify-center w-10 h-10 rounded-full"
+					[ngClass]="['bg' + primary, 'text' + contrast]"
 					href="#"
 				>
 					<i class="cib-instagram"></i>
 				</a>
 				<a
-					class="flex items-center justify-center w-10 h-10 rounded-full text-dark"
-					[ngClass]="['bg-' + primary]"
+					class="flex items-center justify-center w-10 h-10 rounded-full"
+					[ngClass]="['bg' + primary, 'text' + contrast]"
 					href="#"
 				>
 					<i class="cib-pinterest"></i>
 				</a>
 				<a
-					class="flex items-center justify-center w-10 h-10 rounded-full text-dark"
-					[ngClass]="['bg-' + primary]"
+					class="flex items-center justify-center w-10 h-10 rounded-full"
+					[ngClass]="['bg' + primary, 'text' + contrast]"
 					href="#"
 				>
 					<i class="cib-twitter"></i>

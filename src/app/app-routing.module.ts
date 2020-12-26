@@ -1,7 +1,8 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule, PreloadAllModules} from '@angular/router';
-import {DocsComponent} from '@core/layout/docs/docs.component';
 
+import {CreditsComponent} from '@core/layout/credits/credits.component';
+import {DocsComponent} from '@core/layout/docs/docs.component';
 import {HomeComponent} from '@core/layout/home/home.component';
 import {NotFoundComponent} from '@core/layout/not-found/not-found.component';
 
@@ -30,11 +31,21 @@ const routes: Routes = [
 		component: DocsComponent,
 		data: {title: 'Documentation', breadcrumb: 'Documentation'},
 	},
+	{
+		path: 'credits',
+		component: CreditsComponent,
+		data: {title: 'Credits', breadcrumb: 'Credits'},
+	},
 	{path: '**', component: NotFoundComponent},
 ];
 
 @NgModule({
-	imports: [RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules})],
+	imports: [
+		RouterModule.forRoot(routes, {
+			preloadingStrategy: PreloadAllModules,
+			scrollPositionRestoration: 'enabled',
+		}),
+	],
 	exports: [RouterModule],
 })
 export class AppRoutingModule {}

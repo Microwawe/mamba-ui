@@ -23,7 +23,7 @@ export class SectionsComponent extends BaseComponent implements OnInit {
 		'steps',
 		'team',
 		'testimonial',
-		// 'timeline',
+		'timeline',
 	];
 
 	constructor() {

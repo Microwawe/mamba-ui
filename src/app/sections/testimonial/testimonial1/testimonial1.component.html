@@ -8,23 +8,26 @@
 		<div class="flex flex-col items-center mx-12 lg:mx-0">
 			<div class="relative text-center">
 				<i
-					class="absolute top-0 left-0 font-semibold text-neutral cil-double-quote-sans-left"
+					class="absolute top-0 left-0 font-semibold cil-double-quote-sans-left"
+					[ngClass]="['text' + neutral]"
 				></i>
 				<p class="px-6 py-1 text-lg italic">
 					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus
 					quibusdam, eligendi exercitationem molestias possimus facere.
 				</p>
 				<i
-					class="absolute bottom-0 right-0 font-semibold text-neutral cil-double-quote-sans-right"
+					class="absolute bottom-0 right-0 font-semibold cil-double-quote-sans-right"
+					[ngClass]="['text' + neutral]"
 				></i>
 			</div>
-			<span class="w-12 h-1 my-2 rounded-lg" [ngClass]="['bg-' + primary]"></span>
+			<span class="w-12 h-1 my-2 rounded-lg" [ngClass]="['bg' + primary]"></span>
 			<p class="">Leroy Jenkins</p>
 		</div>
 		<div class="flex flex-col items-center max-w-lg mx-12 lg:mx-0">
 			<div class="relative text-center">
 				<i
-					class="absolute top-0 left-0 font-semibold text-neutral cil-double-quote-sans-left"
+					class="absolute top-0 left-0 font-semibold cil-double-quote-sans-left"
+					[ngClass]="['text' + neutral]"
 				></i>
 				<p class="px-6 py-1 text-lg italic">
 					Accusantium illum cupiditate harum asperiores iusto quos quasi quis quae! Fugit
@@ -32,10 +35,11 @@
 					incidunt quisquam quae veritatis, quos iure harum.
 				</p>
 				<i
-					class="absolute bottom-0 right-0 font-semibold text-neutral cil-double-quote-sans-right"
+					class="absolute bottom-0 right-0 font-semibold cil-double-quote-sans-right"
+					[ngClass]="['text' + neutral]"
 				></i>
 			</div>
-			<span class="w-12 h-1 my-2 rounded-lg" [ngClass]="['bg-' + primary]"></span>
+			<span class="w-12 h-1 my-2 rounded-lg" [ngClass]="['bg' + primary]"></span>
 			<p class="">Leroy Jenkins</p>
 		</div>
 	</div>

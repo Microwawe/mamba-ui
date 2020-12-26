@@ -1,23 +1,19 @@
-<section class="text-default-inverse">
+<section class="" [ngClass]="['bg' + default, 'text' + defaultInv]">
 	<div class="container flex flex-col p-6">
 		<h2 class="py-4 text-3xl font-bold text-center">Temporibus elit</h2>
-		<div class="divide-y divide-neutral">
-			<div
-				class="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 bg-default lg:space-y-0"
-			>
+		<div class="divide-y" [ngClass]="['divide' + neutral]">
+			<div class="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 lg:space-y-0">
 				<div class="flex items-center justify-center lg:col-span-1 col-span-full">
 					<i class="cil-library text-8xl"></i>
 				</div>
 				<div
 					class="flex flex-col justify-center max-w-3xl text-center col-span-full lg:col-span-3 lg:text-left"
 				>
-					<span class="text-xs tracking-wider uppercase" [ngClass]="'text-' + primary"
+					<span class="text-xs tracking-wider uppercase" [ngClass]="'text' + primary"
 						>Step 1 - Nihil</span
 					>
-					<span class="text-xl font-bold text-default-inverse md:text-2xl">
-						Veritatis dolores
-					</span>
-					<span class="mt-4 text-neutral-inverse">
+					<span class="text-xl font-bold md:text-2xl"> Veritatis dolores </span>
+					<span class="mt-4" [ngClass]="['text' + neutralInv]">
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam facilis,
 						voluptates error alias dolorem praesentium sit soluta iure incidunt labore
 						explicabo eaque, quia architecto veritatis dolores, enim cons equatur nihil
@@ -26,22 +22,18 @@
 				</div>
 			</div>
 
-			<div
-				class="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 bg-default lg:space-y-0"
-			>
+			<div class="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 lg:space-y-0">
 				<div class="flex items-center justify-center lg:col-span-1 col-span-full">
 					<i class="cil-opacity text-8xl"></i>
 				</div>
 				<div
 					class="flex flex-col justify-center max-w-3xl text-center col-span-full lg:col-span-3 lg:text-left"
 				>
-					<span class="text-xs tracking-wider uppercase" [ngClass]="'text-' + primary"
+					<span class="text-xs tracking-wider uppercase" [ngClass]="'text' + primary"
 						>Step 2 - Explicabo</span
 					>
-					<span class="text-xl font-bold text-default-inverse md:text-2xl">
-						Iure incidunt labore
-					</span>
-					<span class="mt-4 text-neutral-inverse">
+					<span class="text-xl font-bold md:text-2xl"> Iure incidunt labore </span>
+					<span class="mt-4" [ngClass]="['text' + neutralInv]">
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam facilis,
 						voluptates error alias dolorem praesentium sit soluta iure incidunt labore
 						explicabo eaque, quia architecto veritatis dolores, enim cons equatur nihil
@@ -50,22 +42,18 @@
 				</div>
 			</div>
 
-			<div
-				class="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 bg-default lg:space-y-0"
-			>
+			<div class="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 lg:space-y-0">
 				<div class="flex items-center justify-center lg:col-span-1 col-span-full">
 					<i class="cil-paint-bucket text-8xl"></i>
 				</div>
 				<div
 					class="flex flex-col justify-center max-w-3xl text-center col-span-full lg:col-span-3 lg:text-left"
 				>
-					<span class="text-xs tracking-wider uppercase" [ngClass]="'text-' + primaryAlt"
+					<span class="text-xs tracking-wider uppercase" [ngClass]="['text' + primary]"
 						>Step 3 - Facilis</span
 					>
-					<span class="text-xl font-bold text-default-inverse md:text-2xl">
-						Dolorem praesentium
-					</span>
-					<span class="mt-4 text-neutral-inverse">
+					<span class="text-xl font-bold md:text-2xl"> Dolorem praesentium </span>
+					<span class="mt-4" [ngClass]="['bg' + default, 'text' + neutralInv]">
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam facilis,
 						voluptates error alias dolorem praesentium sit soluta iure incidunt labore
 						explicabo eaque, quia architecto veritatis dolores, enim cons equatur nihil
@@ -74,22 +62,18 @@
 				</div>
 			</div>
 
-			<div
-				class="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 bg-default lg:space-y-0"
-			>
+			<div class="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 lg:space-y-0">
 				<div class="flex items-center justify-center lg:col-span-1 col-span-full">
 					<i class="cil-code text-8xl"></i>
 				</div>
 				<div
 					class="flex flex-col justify-center max-w-3xl text-center col-span-full lg:col-span-3 lg:text-left"
 				>
-					<span class="text-xs tracking-wider uppercase" [ngClass]="['text-' + primary]"
+					<span class="text-xs tracking-wider uppercase" [ngClass]="['text' + primary]"
 						>Step 4 - Aperiam</span
 					>
-					<span class="text-xl font-bold text-default-inverse md:text-2xl">
-						Explicabo eaque
-					</span>
-					<span class="mt-4 text-neutral-inverse">
+					<span class="text-xl font-bold md:text-2xl"> Explicabo eaque </span>
+					<span class="mt-4" [ngClass]="['text' + neutralInv]">
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam facilis,
 						voluptates error alias dolorem praesentium sit soluta iure incidunt labore
 						explicabo eaque, quia architecto veritatis dolores, enim cons equatur nihil

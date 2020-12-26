@@ -1,13 +1,13 @@
 <section *ngIf="breadcrumbs.length > 0">
 	<div class="container px-4 py-2">
-		<ol class="flex" [ngClass]="['text-' + defaultInv]">
+		<ol class="flex" [ngClass]="['text' + defaultInv]">
 			<li class="flex items-center">
 				<a [routerLink]="['/']" class="p-1 hover:underline"
 					><svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 20 20"
 						class="w-5 h-5"
-						[ngClass]="['text-' + plainInv]"
+						[ngClass]="['text' + plainInv]"
 						fill="currentColor"
 					>
 						<path

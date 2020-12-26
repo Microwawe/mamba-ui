@@ -1,0 +1,231 @@
+<section [ngClass]="['text' + defaultInv, 'bg' + default]">
+	<div class="container flex flex-col px-4 py-16 space-y-12 md:py-32 lg:max-w-3xl">
+		<div class="flex items-center space-x-4">
+			<div class="w-12 h-px" [ngClass]="['bg' + neutral]"></div>
+			<h2 class="text-lg font-bold" [ngClass]="['text' + neutralInv]">December, 2020</h2>
+			<div class="flex-1 h-px" [ngClass]="['bg' + neutral]"></div>
+		</div>
+
+		<div class="flex space-x-4">
+			<div class="flex flex-col items-center">
+				<div
+					class="flex justify-center p-3 border-4 rounded-full align-center"
+					[ngClass]="['bg' + primaryLight, 'border' + default]"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="w-5 h-5 stroke-current"
+						[ngClass]="['text' + primaryDark]"
+					>
+						<circle cx="12" cy="12" r="4"></circle>
+						<line x1="1.05" y1="12" x2="7" y2="12"></line>
+						<line x1="17.01" y1="12" x2="22.96" y2="12"></line>
+					</svg>
+				</div>
+				<div class="flex-1 w-px -mb-12" [ngClass]="['bg' + neutral]"></div>
+			</div>
+			<div class="flex flex-col flex-1 mt-1 space-y-4">
+				<div class="flex flex-col">
+					<h3 class="font-medium" [ngClass]="['text' + defaultInv]">
+						Published my stack
+					</h3>
+					<span class="text-sm" [ngClass]="['text' + plainInv]">December 21, 2020</span>
+				</div>
+				<p [ngClass]="['text' + neutralInv]">
+					Over the years, I’ve been curating my list of favorite tools, apps, and
+					independent software. Let me know what else I should try!
+				</p>
+				<div class="flex flex-wrap space-y-4 md:space-y-0 md:space-x-4">
+					<a
+						class="px-4 py-2 text-sm border rounded"
+						[ngClass]="[
+							'bg' + default,
+							'border' + plain,
+							'hover:border-' + primaryDark
+						]"
+						href="/"
+						>Do something</a
+					>
+					<a
+						class="px-4 py-2 text-sm border rounded"
+						[ngClass]="[
+							'bg' + default,
+							'border' + plain,
+							'hover:border-' + primaryDark
+						]"
+						href="/"
+						>Do something else</a
+					>
+				</div>
+			</div>
+		</div>
+
+		<div class="flex mb-12 space-x-4 md:mb-12">
+			<div class="flex flex-col items-center">
+				<div
+					class="flex justify-center p-3 border-4 rounded-full align-center"
+					[ngClass]="['bg' + primaryLight, 'border' + default]"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="w-5 h-5 stroke-current"
+						[ngClass]="['text' + primaryDark]"
+					>
+						<circle cx="12" cy="12" r="4"></circle>
+						<line x1="1.05" y1="12" x2="7" y2="12"></line>
+						<line x1="17.01" y1="12" x2="22.96" y2="12"></line>
+					</svg>
+				</div>
+				<div class="flex-1 w-px -mb-12" [ngClass]="['bg' + neutral]"></div>
+			</div>
+			<div class="flex flex-col flex-1 space-y-4">
+				<div class="flex flex-col">
+					<h3 class="font-medium" [ngClass]="['text' + defaultInv]">
+						Published new post
+					</h3>
+					<span class="text-sm" [ngClass]="['text' + plainInv]">December 20, 2020</span>
+				</div>
+				<div class="flex -ml-16 md:ml-0">
+					<a class="px-4 py-3 rounded-md shadow" [ngClass]="['bg' + contrast]" href="/"
+						><div class="flex flex-col space-y-4">
+							<div class="flex flex-col space-y-1">
+								<p class="font-semibold">Design to Save People from Themselves</p>
+								<p class="font-normal" [ngClass]="['text' + plainInv]">
+									How software can prevent people from making mistakes, causing
+									permanent damage, or bringing about the collapse of democracy.
+								</p>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="flex items-center space-x-4">
+			<div class="w-12 h-0" [ngClass]="['bg' + neutral]"></div>
+			<h2 class="text-lg font-bold" [ngClass]="['text' + neutralInv]">November, 2020</h2>
+			<div class="flex-1 h-px" [ngClass]="['bg' + neutral]"></div>
+		</div>
+
+		<div class="flex mb-12 space-x-4 md:mb-12">
+			<div class="flex flex-col items-center">
+				<div
+					class="flex justify-center p-3 border-4 rounded-full align-center"
+					[ngClass]="['bg' + primaryLight, 'border' + default]"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="w-5 h-5 stroke-current"
+						[ngClass]="['text' + primaryDark]"
+					>
+						<path
+							d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+						></path>
+					</svg>
+				</div>
+				<div class="flex-1 w-px -mb-12" [ngClass]="['bg' + neutral]"></div>
+			</div>
+			<div class="flex flex-col flex-1 space-y-4">
+				<div class="flex flex-col">
+					<h3 class="font-medium" [ngClass]="['text' + defaultInv]">Twitter quote</h3>
+					<span class="text-sm" [ngClass]="['text' + plainInv]">December 20, 2020</span>
+				</div>
+				<div class="flex flex-col space-y-4">
+					<div class="-mt-2 prose prose-md">
+						<div class="p-2 border-l-4" [ngClass]="['border' + plain]">
+							<span class="italic" [ngClass]="['text' + neutralInv]">
+								Are any designers out there making good passive income outside of
+								your day job? What are you trying?
+							</span>
+						</div>
+						<p [ngClass]="['text' + defaultInv]">
+							There were some really inspiring ideas in this thread about how to
+							generate passive income as a designer. I didn’t realize there were real
+							businesses being built on top of Figma plugins.
+						</p>
+					</div>
+					<div class="flex flex-wrap space-y-3 md:space-y-0 md:space-x-3">
+						<a
+							href="https://twitter.com/brian_lovin/status/1327734503142354945?s=21"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="px-4 py-2 text-sm rounded-md shadow"
+							[ngClass]="['bg' + contrast]"
+							>View tweet</a
+						>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="flex mb-12 space-x-4 md:mb-12">
+			<div class="flex flex-col items-center">
+				<div
+					class="flex justify-center p-3 border-4 rounded-full align-center"
+					[ngClass]="['bg' + primaryLight, 'border' + default]"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="w-5 h-5 stroke-current"
+						[ngClass]="['text' + primaryDark]"
+					>
+						<path
+							d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+						></path>
+					</svg>
+				</div>
+				<div class="flex-1 w-px -mb-12" [ngClass]="['bg' + neutral]"></div>
+			</div>
+
+			<div class="flex flex-col flex-1 space-y-4">
+				<div class="flex flex-col">
+					<h3 class="font-medium" [ngClass]="['text' + defaultInv]">Twitter quote</h3>
+					<span class="text-sm" [ngClass]="['text' + plainInv]">December 20, 2020</span>
+				</div>
+				<div class="flex flex-col -ml-16 space-y-4 md:ml-0">
+					<a
+						target="_blank"
+						rel="noopener noreferrer"
+						href="/"
+						class="rounded"
+						[ngClass]="['bg' + contrast]"
+						><div class="flex flex-col space-y-4 text-center rounded-md shadow">
+							<h4 class="px-2 pt-2 text-lg font-semibold">Staff Design</h4>
+							<p class="font-normal md:text-center">
+								Conversations with high-impact individual contributors in product
+								design.
+							</p>
+							<p
+								class="text-xs tracking-wider uppercase flex-1text-xs dark:text-gray-300 md:text-center"
+								[ngClass]="['text' + plainInv]"
+							>
+								Coming January, 2021
+							</p>
+							<div class="btn btn-primary">View the project</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

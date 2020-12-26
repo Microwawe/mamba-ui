@@ -2,13 +2,13 @@
 	<div class="container p-4">
 		<header class="flex justify-between h-16 border-b-2 border-gray-200">
 			<button class="flex p-4">
-				<i class="self-center text-2xl cib-coreui-c" [ngClass]="['text-' + primary]"></i>
+				<i class="self-center text-2xl cib-coreui-c" [ngClass]="['text' + primary]"></i>
 			</button>
 			<ul class="items-stretch hidden space-x-3 lg:flex">
 				<li class="flex">
 					<a
 						[routerLink]="['#1']"
-						[routerLinkActive]="['text-' + primary, 'border-' + primary]"
+						[routerLinkActive]="['text' + primary, 'border' + primary]"
 						class="flex items-center -mb-0.5 border-b-2 px-4 border-transparent"
 						>Link</a
 					>
@@ -16,7 +16,7 @@
 				<li class="flex">
 					<a
 						[routerLink]="['']"
-						[routerLinkActive]="['text-' + primary, 'border-' + primary]"
+						[routerLinkActive]="['text' + primary, 'border' + primary]"
 						class="flex items-center -mb-0.5 border-b-2 px-4 border-transparent"
 						>Link</a
 					>
@@ -24,7 +24,7 @@
 				<li class="flex">
 					<a
 						[routerLink]="['#3']"
-						[routerLinkActive]="['text-' + primary, 'border-' + primary]"
+						[routerLinkActive]="['text' + primary, 'border' + primary]"
 						class="flex items-center -mb-0.5 border-b-2 px-4 border-transparent"
 						>Link</a
 					>
@@ -32,7 +32,7 @@
 				<li class="flex">
 					<a
 						[routerLink]="['#4']"
-						[routerLinkActive]="['text-' + primary, 'border-' + primary]"
+						[routerLinkActive]="['text' + primary, 'border' + primary]"
 						class="flex items-center -mb-0.5 border-b-2 px-4 border-transparent"
 						>Link</a
 					>
@@ -40,7 +40,7 @@
 			</ul>
 			<div class="flex-shrink-0 hidden lg:block">
 				<button class="self-center btn text-default-inverse">Sign in</button>
-				<button class="self-center font-semibold btn text-dark" [ngClass]="'bg-' + primary">
+				<button class="self-center font-semibold btn text-dark" [ngClass]="'bg' + primary">
 					Sign up
 				</button>
 			</div>
@@ -56,14 +56,14 @@
 		>
 			<h1 class="text-4xl font-bold leading-none sm:text-5xl">
 				Quisquam necessita vel
-				<span class="" [ngClass]="['text-' + primary]">laborum doloribus</span> delectus
+				<span class="" [ngClass]="['text' + primary]">laborum doloribus</span> delectus
 			</h1>
 			<p class="px-8 mt-8 mb-12 text-lg">
 				Cupiditate minima voluptate temporibus quia? Architecto beatae esse ab amet vero
 				eaque explicabo!
 			</p>
 			<div class="flex flex-wrap justify-center">
-				<button class="m-2 font-semibold text-dark btn" [ngClass]="['bg-' + primary]">
+				<button class="m-2 font-semibold text-dark btn" [ngClass]="['bg' + primary]">
 					Get started
 				</button>
 
@@ -92,7 +92,7 @@
 		<div class="container p-4 my-6 space-y-1 text-center">
 			<span
 				class="text-xs font-semibold tracking-wider uppercase"
-				[ngClass]="['text-' + primary]"
+				[ngClass]="['text' + primary]"
 				>shortcut to your dream ui</span
 			>
 			<h2 class="pb-3 text-3xl font-bold md:text-4xl">Create a stylish website in minutes</h2>
@@ -115,7 +115,7 @@
 				<a
 					class="inline-flex items-center text-sm"
 					[routerLink]="['/components']"
-					[ngClass]="['text-' + primary]"
+					[ngClass]="['text' + primary]"
 				>
 					<span>Learn More</span>
 					<i class="ml-2 cil-arrow-right"></i>
@@ -132,7 +132,7 @@
 				<a
 					class="inline-flex items-center text-sm"
 					[routerLink]="['/sections']"
-					[ngClass]="['text-' + primary]"
+					[ngClass]="['text' + primary]"
 				>
 					<span>Learn More</span>
 					<i class="ml-2 cil-arrow-right"></i>
@@ -149,7 +149,7 @@
 				<a
 					class="inline-flex items-center text-sm"
 					[routerLink]="['/templates']"
-					[ngClass]="['text-' + primary]"
+					[ngClass]="['text' + primary]"
 				>
 					<span>Learn More</span>
 					<i class="ml-2 cil-arrow-right"></i>
@@ -166,7 +166,7 @@
 				<a
 					class="inline-flex items-center text-sm"
 					[routerLink]="['/docs']"
-					[ngClass]="['text-' + primary]"
+					[ngClass]="['text' + primary]"
 				>
 					<span>Learn More</span>
 					<i class="ml-2 cil-arrow-right"></i>
@@ -186,11 +186,11 @@
 				<div>
 					<button
 						class="px-4 py-1 font-semibold border rounded-l-lg text-dark"
-						[ngClass]="['bg-' + primary, 'border-' + primary]"
+						[ngClass]="['bg' + primary, 'border' + primary]"
 					>
 						Monthly
 					</button>
-					<button class="px-4 py-1 border rounded-r-lg" [ngClass]="['border-' + primary]">
+					<button class="px-4 py-1 border rounded-r-lg" [ngClass]="['border' + primary]">
 						Annually
 					</button>
 				</div>
@@ -203,7 +203,7 @@
 						<li class="flex items-center space-x-2" *ngFor="let i of [1, 2, 3, 4, 5]">
 							<i
 								class="inline-flex items-center justify-center text-2xl font-semibold cil-check-alt"
-								[ngClass]="['text-' + primary]"
+								[ngClass]="['text' + primary]"
 							></i>
 							<span>Lumet consectetur adipisicing</span>
 						</li>
@@ -216,7 +216,7 @@
 				</div>
 				<div
 					class="flex flex-col items-center p-8 border-2 rounded-md"
-					[ngClass]="['border-' + primary]"
+					[ngClass]="['border' + primary]"
 				>
 					<p class="self-start">Personal</p>
 					<p class="self-start text-4xl font-bold">9€ <span class="text-xl">/mo</span></p>
@@ -224,14 +224,14 @@
 						<li class="flex items-center space-x-2" *ngFor="let i of [1, 2, 3, 4, 5]">
 							<i
 								class="inline-flex items-center justify-center text-2xl font-semibold cil-check-alt"
-								[ngClass]="['text-' + primary]"
+								[ngClass]="['text' + primary]"
 							></i>
 							<span>Lumet consectetur adipisicing</span>
 						</li>
 					</ul>
 					<button
 						class="mt-6 font-semibold sm:mt-12 text-dark btn"
-						[ngClass]="['bg-' + primary]"
+						[ngClass]="['bg' + primary]"
 					>
 						Contact
 					</button>
@@ -245,7 +245,7 @@
 						<li class="flex items-center space-x-2" *ngFor="let i of [1, 2, 3, 4, 5]">
 							<i
 								class="inline-flex items-center justify-center text-2xl font-semibold cil-check-alt"
-								[ngClass]="['text-' + primary]"
+								[ngClass]="['text' + primary]"
 							></i>
 							<span>Lumet consectetur adipisicing</span>
 						</li>
@@ -262,7 +262,7 @@
 
 	<section class="my-8">
 		<div class="container flex flex-col items-center p-4 space-y-6 md:p-8">
-			<i class="text-5xl cil-badge" [ngClass]="['text-' + primary]"></i>
+			<i class="text-5xl cil-badge" [ngClass]="['text' + primary]"></i>
 			<p
 				class="px-6 py-2 text-2xl font-semibold text-center sm:font-bold sm:text-3xl md:text-4xl text-neutral-inverse lg:max-w-2xl xl:max-w-4xl"
 			>
@@ -281,7 +281,7 @@
 					<a
 						[routerLink]="['/']"
 						class="flex items-center py-2 space-x-1 text-sm"
-						[ngClass]="['text-' + primary]"
+						[ngClass]="['text' + primary]"
 					>
 						<span> Read full story </span>
 						<i class="cil-arrow-right"></i>
@@ -300,7 +300,7 @@
 					<a class="flex justify-center space-x-3 md:justify-start" href="#">
 						<i
 							class="flex items-center justify-center w-12 h-12 text-xl font-bold rounded-full text-dark cib-x-pack"
-							[ngClass]="['bg-' + primary]"
+							[ngClass]="['bg' + primary]"
 						></i>
 						<span class="self-center text-2xl font-semibold">Brand name</span>
 					</a>
@@ -337,21 +337,21 @@
 				<div class="flex justify-center pt-4 space-x-4 lg:pt-0 lg:col-end-13">
 					<a
 						class="flex items-center justify-center w-10 h-10 rounded-full text-dark"
-						[ngClass]="['bg-' + primary]"
+						[ngClass]="['bg' + primary]"
 						href="#"
 					>
 						<i class="cib-instagram"></i>
 					</a>
 					<a
 						class="flex items-center justify-center w-10 h-10 rounded-full text-dark"
-						[ngClass]="['bg-' + primary]"
+						[ngClass]="['bg' + primary]"
 						href="#"
 					>
 						<i class="cib-pinterest"></i>
 					</a>
 					<a
 						class="flex items-center justify-center w-10 h-10 rounded-full text-dark"
-						[ngClass]="['bg-' + primary]"
+						[ngClass]="['bg' + primary]"
 						href="#"
 					>
 						<i class="cib-twitter"></i>

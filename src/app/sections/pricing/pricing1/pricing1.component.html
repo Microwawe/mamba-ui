@@ -1,29 +1,30 @@
-<section class="py-6 bg-default text-contrast-inverse">
+<section class="py-6" [ngClass]="['bg' + default, 'text' + contrastInv]">
 	<div class="container flex flex-col items-center justify-center p-4 sm:p-10 lg:flex-row">
 		<div class="flex flex-col items-center justify-center flex-1 p-4 pb-8 sm:p-8 lg:p-16">
-			<pre class="text-sm">Basic</pre>
+			<span class="text-sm">Basic</span>
 			<p class="text-5xl font-bold text-center">39€</p>
 			<p class="font-semibold text-center">
 				Nemo deserunt possimus quo provident recusandae! Dolores qui architecto omnis
 				pariatur eos voluptatibus sequi cum, non nesciunt aspernatur a?
 			</p>
-			<button
-				class="mt-6 font-semibold border sm:mt-12 border-neutral text-contrast-inverse btn"
-			>
+			<button class="mt-6 font-semibold border sm:mt-12 btn" [ngClass]="['border' + neutral]">
 				Contact
 			</button>
 		</div>
 		<div
-			class="flex flex-col items-center justify-center flex-1 p-4 pb-8 text-center rounded-md sm:p-8 lg:p-16 text-dark"
-			[ngClass]="['bg-' + primary]"
+			class="flex flex-col items-center justify-center flex-1 p-4 pb-8 text-center rounded-md sm:p-8 lg:p-16"
+			[ngClass]="['bg' + primary, 'text' + dark]"
 		>
-			<pre class="text-sm font-semibold">Advanced</pre>
+			<span class="text-sm font-semibold">Advanced</span>
 			<p class="text-5xl font-bold">89€</p>
 			<p class="font-semibold">
 				Nemo deserunt possimus quo provident recusandae! Dolores qui architecto omnis
 				pariatur eos voluptatibus sequi cum, non nesciunt aspernatur a?
 			</p>
-			<button class="mt-6 font-semibold sm:mt-12 bg-default text-contrast-inverse btn">
+			<button
+				class="mt-6 font-semibold sm:mt-12 btn"
+				[ngClass]="['bg' + default, 'text' + contrastInv]"
+			>
 				Contact
 			</button>
 		</div>

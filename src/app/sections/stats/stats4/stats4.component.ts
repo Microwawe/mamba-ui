@@ -1,10 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 
+import {BaseComponent} from '@shared/components/base/base.component';
+
 @Component({
 	selector: 'custom-stats4',
 	templateUrl: './stats4.component.html',
 })
-export class Stats4Component implements OnInit {
+export class Stats4Component extends BaseComponent implements OnInit {
 	stats = [
 		{amount: '50+', label: 'Clients'},
 		{amount: '89K', label: 'Followers on social media'},
@@ -13,7 +15,9 @@ export class Stats4Component implements OnInit {
 		{amount: '22', label: 'Years of experience'},
 		{amount: '10+', label: 'Workshops'},
 	];
-	constructor() {}
+	constructor() {
+		super();
+	}
 
 	ngOnInit() {}
 }
