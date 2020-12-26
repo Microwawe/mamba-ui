@@ -2,9 +2,13 @@
 	<div class="container grid grid-cols-1 gap-6 m-4 md:m-0 md:grid-cols-2 xl:grid-cols-3">
 		<div
 			*ngFor="let stat of stats"
-			class="flex overflow-hidden rounded-lg bg-default-inverse text-default"
+			class="flex overflow-hidden rounded-lg"
+			[ngClass]="['bg' + contrast, 'text' + defaultInv]"
 		>
-			<div class="flex items-center justify-center px-4" [ngClass]="['bg-' + primaryAlt]">
+			<div
+				class="flex items-center justify-center px-4"
+				[ngClass]="['bg' + primary, 'text' + default]"
+			>
 				<i class="flex text-2xl place-items-center" [ngClass]="'cil-' + stat.icon"></i>
 			</div>
 

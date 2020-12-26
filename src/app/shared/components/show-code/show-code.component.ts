@@ -1,7 +1,7 @@
-import {AfterViewInit, Component, ElementRef, Input, ViewChild} from '@angular/core';
-// eslint-disable-next-line node/no-unpublished-import
+/* eslint-disable node/no-unpublished-import */
+import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 import * as Prism from 'prismjs';
-import {Observable} from 'rxjs/internal/Observable';
+import 'prismjs/components/prism-jsx';
 import {BaseComponent} from '../base/base.component';
 
 @Component({
@@ -9,14 +9,13 @@ import {BaseComponent} from '../base/base.component';
 	templateUrl: './show-code.component.html',
 })
 export class ShowCodeComponent extends BaseComponent implements AfterViewInit {
-	@Input() language = 'html';
 	@ViewChild('rawContent') rawContent!: ElementRef;
 
 	isDarkTheme = false;
 	rawCode = '';
+	prettyCode = '';
 	code = '';
 	codeVisible = false;
-	grammar = Prism.languages[this.language];
 
 	constructor(private el: ElementRef) {
 		super();
@@ -26,19 +25,17 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit {
 		this.themeService.getDarkTheme().subscribe(isDark => {
 			this.isDarkTheme = isDark;
 		});
-		const content = this.rawContent?.nativeElement?.firstChild.innerHTML;
-		const cleanHtml = this.beautifyHTML(content);
-		this.code = Prism.highlight(cleanHtml, this.grammar, this.language);
+		this.rawCode = this.rawContent?.nativeElement?.firstChild.innerHTML;
 	}
 
-	beautifyHTML(codeStr: string) {
+	beautifyHTML(codeStr: string, startAtLevel = 0): string {
 		const div = document.createElement('div');
 		let cleanedString = this.removeAngularCode(codeStr);
 		cleanedString = this.removeAngularComments(cleanedString);
-		cleanedString = this.toggleDarkModeVariants(cleanedString);
+		//cleanedString = this.toggleDarkModeVariants(cleanedString);
 
 		div.innerHTML = cleanedString.trim();
-		return this.formatNode(div, 0).innerHTML.trim();
+		return this.formatNode(div, startAtLevel).innerHTML.trim();
 	}
 
 	formatNode(node: any, level: number) {
@@ -88,9 +85,14 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit {
 			: codeStr.replace(/dark:/gm, '');
 	}
 
+	useReactSyntax(codeStr: string) {
+		// TODO: SVG syntax
+		return codeStr.replace(/class=/gm, 'className=');
+	}
+
 	copyToClipboard() {
 		const el = document.createElement('textarea');
-		el.value = this.rawCode;
+		el.value = this.prettyCode;
 		el.setAttribute('readonly', '');
 		el.style.position = 'absolute';
 		el.style.left = '-9999px';
@@ -102,13 +104,47 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit {
 	}
 
 	showPreview() {
-		this.rawCode = '';
 		this.codeVisible = false;
 	}
 
-	showCode() {
-		const cleanHtml = this.beautifyHTML(this.rawContent?.nativeElement?.firstChild.innerHTML);
-		this.code = Prism.highlight(cleanHtml, this.grammar, this.language);
+	showHtml() {
+		this.prettyCode = this.beautifyHTML(this.rawCode);
+		this.showCode(this.prettyCode);
+	}
+
+	showReactClass() {
+		let content = 'var mambaUI = React.createClass({\n';
+		content += '\t render: function() {' + '\n';
+		content += '\t\t return (';
+		content += this.rawCode;
+		content += '\n\t\t);\n';
+		content += '\t}\n';
+		content += '});';
+		const beautified = this.beautifyHTML(content, 3);
+		this.prettyCode = this.useReactSyntax(beautified);
+		this.showCode(this.prettyCode, 'jsx');
+	}
+
+	showReactFunctional() {
+		let content = 'const MambaUI = (props) => {\n';
+		content += '\t return (\n';
+		content += '\t\t' + this.beautifyHTML(this.rawCode, 2);
+		content += '\n\t);\n';
+		content += '});';
+		this.prettyCode = this.useReactSyntax(content);
+		this.showCode(this.prettyCode, 'jsx');
+	}
+
+	showVue() {
+		let content = '<template>\n\t';
+		content += this.beautifyHTML(this.rawCode, 1) + '\n';
+		content += '</template>';
+		this.prettyCode = content;
+		this.showCode(this.prettyCode);
+	}
+
+	showCode(content: string, language = 'html') {
+		this.code = Prism.highlight(content, Prism.languages[language], language);
 		this.codeVisible = true;
 	}
 }

@@ -1,7 +1,7 @@
 <!-- component -->
 <!-- This is an example component -->
-<section class="flex items-center w-screen mb-12">
-	<div class="container flex flex-col items-center justify-center px-5 my-8 text-default-inverse">
+<section class="flex items-center w-screen mb-12" [ngClass]="['text' + defaultInv]">
+	<div class="container flex flex-col items-center justify-center px-5 my-8">
 		<div class="max-w-md text-center">
 			<div class="font-bold text-8xl">404</div>
 			<p class="text-2xl font-light leading-normal md:text-3xl">
@@ -11,7 +11,11 @@
 				But dont worry, you can find plenty of other things on our homepage.
 			</p>
 
-			<a [routerLink]="['/']" class="font-semibold btn text-dark" [ngClass]="'bg-' + primary">
+			<a
+				[routerLink]="['/']"
+				class="font-semibold btn"
+				[ngClass]="['bg' + primary, 'text' + contrast]"
+			>
 				Back to homepage
 			</a>
 		</div>

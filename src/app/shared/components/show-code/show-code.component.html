@@ -1,13 +1,18 @@
 <section class="container overflow-hidden rounded-lg shadow-sm scrollbar-none">
 	<div
 		class="overflow-hidden divide-y rounded shadow-sm"
-		[ngClass]="['bg-' + defaultInv, 'divide-' + neutralInv]"
+		[ngClass]="['bg' + default, 'divide-' + neutralInv]"
 	>
-		<div class="p-4 space-x-2 sm:space-x-4">
-			<button class="px-2 py-px text-sm sm:px-3 sm:py-1" (click)="showPreview()">
-				Preview
+		<div class="flex px-2 py-4 space-x-2 overflow-x-auto sm:p-4 sm:space-x-4 flex-nowrap">
+			<button class="px-2 text-sm sm:px-3 sm:py-1" (click)="showPreview()">Preview</button>
+			<button class="px-2 text-sm sm:px-3 sm:py-1" (click)="showHtml()">HTML</button>
+			<button class="px-2 text-sm sm:px-3 sm:py-1" (click)="showVue()">Vue</button>
+			<button class="px-2 text-sm sm:px-3 sm:py-1" (click)="showReactFunctional()">
+				React
 			</button>
-			<button class="px-2 py-px text-sm sm:px-3 sm:py-1" (click)="showCode()">HTML</button>
+			<button class="flex-shrink-0 px-2 text-sm sm:px-3 sm:py-1" (click)="showReactClass()">
+				React (class)
+			</button>
 		</div>
 		<div class="relative">
 			<div #rawContent *ngIf="!codeVisible">
@@ -29,8 +34,8 @@
 				[ngClass]="[
 					'focus:ring-' + primary,
 					'hover:ring-' + primary,
-					'border-' + primary,
-					'bg-' + default
+					'border' + primary,
+					'bg' + default
 				]"
 			>
 				<i class="self-center text-xl cil-copy"></i>

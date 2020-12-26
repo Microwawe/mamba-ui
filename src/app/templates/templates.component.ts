@@ -7,7 +7,7 @@ import {BaseComponent} from '@shared/components/base/base.component';
 	templateUrl: './templates.component.html',
 })
 export class TemplatesComponent extends BaseComponent implements OnInit {
-	categories = ['test'];
+	categories = [];
 
 	constructor() {
 		super();

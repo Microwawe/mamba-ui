@@ -1,9 +1,8 @@
-<section class="py-6">
+<section class="py-6" [ngClass]="['bg' + default, 'text' + contrastInv]">
 	<div
 		class="grid max-w-6xl grid-cols-1 px-6 mx-auto divide-y lg:px-8 md:grid-cols-2 md:divide-x md:divide-y-0"
-		[ngClass]="['bg-' + defaultInv]"
 	>
-		<div class="py-6 md:py-0 md:px-6" [ngClass]="['text-' + default]">
+		<div class="py-6 md:py-0 md:px-6">
 			<h1 class="text-4xl font-bold tracking-tight">Get in touch</h1>
 			<p class="">Fill in the form to start a conversation</p>
 
@@ -21,9 +20,9 @@
 			</p>
 		</div>
 
-		<form class="flex flex-col py-6 space-y-6 md:py-0 md:px-6" [ngClass]="['text-' + contrast]">
+		<form class="flex flex-col py-6 space-y-6 md:py-0 md:px-6" [ngClass]="['text' + contrast]">
 			<label class="block">
-				<span class="" [ngClass]="'text-' + default">Full name</span>
+				<span class="" [ngClass]="'text' + default">Full name</span>
 				<input
 					type="text"
 					class="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75"
@@ -32,7 +31,7 @@
 				/>
 			</label>
 			<label class="block">
-				<span class="" [ngClass]="'text-' + default">Email address</span>
+				<span class="" [ngClass]="'text' + default">Email address</span>
 				<input
 					type="email"
 					class="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75"
@@ -42,7 +41,7 @@
 			</label>
 
 			<label class="block">
-				<span class="" [ngClass]="'text-' + default">Message</span>
+				<span class="" [ngClass]="'text' + default">Message</span>
 				<textarea
 					class="block w-full rounded-md focus:ring focus:ring-opacity-75"
 					[ngClass]="['focus:ring-' + primary]"
@@ -53,7 +52,7 @@
 			<button
 				type="button"
 				class="self-center btn focus:ring-opacity-75"
-				[ngClass]="['bg-' + primary, 'focus:ring-' + primary, 'hover:ring-' + primary]"
+				[ngClass]="['bg' + primary, 'focus:ring-' + primary, 'hover:ring-' + primary]"
 			>
 				Submit
 			</button>

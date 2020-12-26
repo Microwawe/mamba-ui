@@ -3,10 +3,10 @@ import {Component, OnInit} from '@angular/core';
 import {BaseComponent} from '@shared/components/base/base.component';
 
 @Component({
-	selector: 'custom-faq1',
-	templateUrl: './faq1.component.html',
+	selector: 'custom-credits',
+	templateUrl: './credits.component.html',
 })
-export class Faq1Component extends BaseComponent implements OnInit {
+export class CreditsComponent extends BaseComponent implements OnInit {
 	constructor() {
 		super();
 	}

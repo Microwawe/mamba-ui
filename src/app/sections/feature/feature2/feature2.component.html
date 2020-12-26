@@ -9,7 +9,7 @@
 			"
 		></div>
 		<div class="flex flex-col w-full p-6 lg:w-2/3 md:p-8 lg:p-12">
-			<i class="mb-8 text-2xl cil-shield-alt"></i>
+			<i class="mb-8 text-2xl cil-shield-alt" [ngClass]="['text' + primary]"></i>
 			<h2 class="text-3xl font-semibold leading-none">
 				Modern solutions to all kinds of problems
 			</h2>
@@ -17,8 +17,8 @@
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Non voluptatum rem amet!
 			</p>
 			<button
-				class="self-start px-10 py-3 text-lg font-medium rounded-3xl -variant text-contrast"
-				[ngClass]="['bg-' + primary]"
+				class="self-start px-10 py-3 text-lg font-medium rounded-3xl"
+				[ngClass]="['bg' + primary, 'text' + contrast]"
 			>
 				Get started
 			</button>

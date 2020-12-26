@@ -1,4 +1,4 @@
-<section class="py-6 bg-default text-default-inverse">
+<section class="py-6" [ngClass]="['bg' + default, 'text' + contrastInv]">
 	<div class="container p-10">
 		<div class="mb-16 space-y-4 text-center">
 			<h1 class="text-4xl font-semibold leading-tight">Pricing</h1>
@@ -8,119 +8,127 @@
 			</p>
 			<div>
 				<button
-					class="px-4 py-1 font-semibold border rounded-l-lg text-dark"
-					[ngClass]="['bg-' + primary, 'border-' + primary]"
+					class="px-4 py-1 font-semibold border rounded-l-lg"
+					[ngClass]="['bg' + primary, 'border' + primary, 'text' + dark]"
 				>
 					Monthly
 				</button>
-				<button class="px-4 py-1 border rounded-r-lg" [ngClass]="['border-' + primary]">
+				<button class="px-4 py-1 border rounded-r-lg" [ngClass]="['border' + primary]">
 					Annually
 				</button>
 			</div>
 		</div>
 		<div class="grid grid-cols-1 gap-6 auto-rows-fr lg:gap-2 xl:gap-6 lg:grid-cols-3">
-			<div class="relative z-0 flex flex-col items-center p-8 border rounded-md bg-default">
+			<div class="relative z-0 flex flex-col items-center p-8 border rounded-md">
 				<span
-					class="absolute top-0 px-6 pt-1 pb-2 font-medium rounded-b-lg text-dark"
-					[ngClass]="['bg-' + primary]"
+					class="absolute top-0 px-6 pt-1 pb-2 font-medium rounded-b-lg"
+					[ngClass]="['bg' + primary, 'text' + dark]"
 					>Personal</span
 				>
-				<p class="my-6 text-4xl font-bold" [ngClass]="['text-' + primary]">FREE</p>
+				<p class="my-6 text-4xl font-bold" [ngClass]="['text' + primary]">FREE</p>
 				<ul class="flex-1 space-y-2">
 					<li class="flex items-center space-x-2">
-						<i class="text-xl cil-check-circle" [ngClass]="['text-' + primary]"></i>
+						<i class="text-xl cil-check-circle" [ngClass]="['text' + primary]"></i>
 						<span>Lumet consectetur adipisicing</span>
 					</li>
 					<li class="flex items-center space-x-2">
-						<i class="text-xl cil-check-circle" [ngClass]="['text-' + primary]"></i>
+						<i class="text-xl cil-check-circle" [ngClass]="['text' + primary]"></i>
 						<span>Lumet consectetur adipisicing</span>
 					</li>
 					<li class="flex items-center space-x-2">
-						<i class="text-xl cil-check-circle" [ngClass]="['text-' + primary]"></i>
+						<i class="text-xl cil-check-circle" [ngClass]="['text' + primary]"></i>
 						<span>Lumet consectetur adipisicing</span>
 					</li>
 					<li class="flex items-center space-x-2">
-						<i class="text-xl cil-check-circle" [ngClass]="['text-' + primary]"></i>
+						<i class="text-xl cil-check-circle" [ngClass]="['text' + primary]"></i>
 						<span>Lumet consectetur adipisicing</span>
 					</li>
 				</ul>
 				<button
 					class="px-4 py-2 mt-4 font-semibold uppercase border rounded-lg md:mt-12 sm:py-3 sm:px-8"
-					[ngClass]="['border-' + primary]"
+					[ngClass]="['border' + primary]"
 				>
 					Subscribe
 				</button>
 			</div>
 			<div
-				class="relative z-10 flex flex-col items-center p-8 transform scale-110 border-2 rounded-md bg-default"
-				[ngClass]="['border-' + primary]"
+				class="relative z-10 flex flex-col items-center p-8 transform scale-110 border-2 rounded-md"
+				[ngClass]="['border' + primary, 'bg' + default]"
 			>
 				<span
-					class="absolute top-0 px-6 pt-1 pb-2 font-medium rounded-b-lg text-dark"
-					[ngClass]="['bg-' + primary]"
+					class="absolute top-0 px-6 pt-1 pb-2 font-medium rounded-b-lg"
+					[ngClass]="['bg' + primary, 'text' + dark]"
 					>Professional</span
 				>
 				<p class="flex items-center justify-center my-6 space-x-2 font-bold">
-					<span class="text-lg line-through text-neutral-inverse">&nbsp;32€&nbsp;</span>
+					<span class="text-lg line-through" [ngClass]="['text' + neutralInv]"
+						>&nbsp;32€&nbsp;</span
+					>
 					<span class="pb-2 text-4xl">19€</span>
 					<span class="text-lg">/mo</span>
 				</p>
 				<ul class="flex-1 space-y-2">
 					<li class="flex items-center space-x-2">
-						<i class="text-xl cil-check-circle" [ngClass]="['text-' + primary]"></i>
+						<i class="text-xl cil-check-circle" [ngClass]="['text' + primary]"></i>
 						<span>Consectetur</span>
 					</li>
 					<li class="flex items-center space-x-2">
-						<i class="text-xl cil-check-circle" [ngClass]="['text-' + primary]"></i>
+						<i class="text-xl cil-check-circle" [ngClass]="['text' + primary]"></i>
 						<span>Adipisicing</span>
 					</li>
 					<li class="flex items-center space-x-2">
-						<i class="text-xl cil-check-circle" [ngClass]="['text-' + primary]"></i>
+						<i class="text-xl cil-check-circle" [ngClass]="['text' + primary]"></i>
 						<span>Aliquam</span>
 					</li>
 					<li class="flex items-center space-x-2">
-						<i class="text-xl cil-check-circle" [ngClass]="['text-' + primary]"></i>
+						<i class="text-xl cil-check-circle" [ngClass]="['text' + primary]"></i>
 						<span>Lumet consectetur facilis</span>
 					</li>
 				</ul>
 				<button
-					class="mt-12 font-semibold uppercase text-dark"
-					[ngClass]="[btn, 'bg-' + primary]"
+					class="mt-12 font-semibold uppercase"
+					[ngClass]="[btn, 'bg' + primary, 'text' + dark]"
 				>
 					Subscribe
 				</button>
 			</div>
-			<div class="relative z-0 flex flex-col items-center p-8 border rounded-md bg-default">
+			<div
+				class="relative z-0 flex flex-col items-center p-8 border rounded-md"
+				[ngClass]="['bg' + default]"
+			>
 				<span
-					class="absolute top-0 px-6 pt-1 pb-2 font-medium rounded-b-lg text-dark"
-					[ngClass]="['bg-' + primary]"
+					class="absolute top-0 px-6 pt-1 pb-2 font-medium rounded-b-lg"
+					[ngClass]="['bg' + primary, 'text' + dark]"
 					>Enterprise</span
 				>
 				<p class="flex items-center justify-center my-6 space-x-2 font-bold">
-					<span class="text-lg line-through text-neutral-inverse">&nbsp;49€&nbsp;</span>
+					<span class="text-lg line-through" [ngClass]="['text' + neutralInv]"
+						>&nbsp;49€&nbsp;</span
+					>
 					<span class="pb-2 text-4xl">37€</span>
 					<span class="text-lg">/mo</span>
 				</p>
 				<ul class="flex-1 space-y-2">
 					<li class="flex items-center space-x-2">
-						<i class="text-xl cil-check-circle" [ngClass]="['text-' + primary]"></i>
+						<i class="text-xl cil-check-circle" [ngClass]="['text' + primary]"></i>
 						<span>Lumet consectetur adipisicing</span>
 					</li>
 					<li class="flex items-center space-x-2">
-						<i class="text-xl cil-check-circle" [ngClass]="['text-' + primary]"></i>
+						<i class="text-xl cil-check-circle" [ngClass]="['text' + primary]"></i>
 						<span>Lumet consectetur adipisicing</span>
 					</li>
 					<li class="flex items-center space-x-2">
-						<i class="text-xl cil-check-circle" [ngClass]="['text-' + primary]"></i>
+						<i class="text-xl cil-check-circle" [ngClass]="['text' + primary]"></i>
 						<span>Lumet consectetur adipisicing</span>
 					</li>
 					<li class="flex items-center space-x-2">
-						<i class="text-xl cil-check-circle" [ngClass]="['text-' + primary]"></i>
+						<i class="text-xl cil-check-circle" [ngClass]="['text' + primary]"></i>
 						<span>Lumet consectetur adipisicing</span>
 					</li>
 				</ul>
 				<button
-					class="mt-12 font-semibold uppercase border border-gray-900 text-default-inverse btn"
+					class="mt-12 font-semibold uppercase border btn"
+					[ngClass]="['border' + primary]"
 				>
 					Subscribe
 				</button>

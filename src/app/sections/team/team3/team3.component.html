@@ -1,4 +1,4 @@
-<section class="py-6 bg-default text-default-inverse">
+<section class="py-6" [ngClass]="['bg' + default, 'text' + defaultInv]">
 	<div class="container flex flex-col items-center justify-center p-4 sm:p-10">
 		<p class="p-2 text-sm font-medium tracking-wider text-center uppercase">Development team</p>
 		<h1 class="text-4xl font-bold leading-none text-center sm:text-5xl">
@@ -8,7 +8,8 @@
 		<div class="flex flex-row flex-wrap-reverse justify-center mt-8">
 			<div
 				*ngFor="let person of [1, 2, 3, 4, 5, 6]; let i = index"
-				class="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 bg-default-inverse text-default"
+				class="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64"
+				[ngClass]="['bg' + defaultInv, 'text' + default]"
 			>
 				<img
 					class="self-center w-24 h-24 -mt-12 bg-center bg-cover rounded-full"
@@ -20,16 +21,16 @@
 					<p class="">Visual Designer</p>
 				</div>
 				<div class="flex items-center justify-center p-3 space-x-3 border-t-2">
-					<a href="#" class="hover:" [ngClass]="['text-' + primary]">
+					<a href="#" class="hover:" [ngClass]="['text' + primary]">
 						<i class="text-lg cib-mail-ru"></i>
 					</a>
-					<a href="#" class="hover:" [ngClass]="['text-' + primary]">
+					<a href="#" class="hover:" [ngClass]="['text' + primary]">
 						<i class="text-lg cib-twitter"></i>
 					</a>
-					<a href="#" class="hover:" [ngClass]="['text-' + primary]">
+					<a href="#" class="hover:" [ngClass]="['text' + primary]">
 						<i class="text-lg cib-linkedin-in"></i>
 					</a>
-					<a href="#" class="hover:" [ngClass]="['text-' + primary]">
+					<a href="#" class="hover:" [ngClass]="['text' + primary]">
 						<i class="text-lg cib-github"></i>
 					</a>
 				</div>

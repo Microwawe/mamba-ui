@@ -1,4 +1,4 @@
-<section class="py-6 bg-default text-default-inverse">
+<section class="py-6" [ngClass]="['bg' + default, 'text' + defaultInv]">
 	<div class="container flex flex-col items-center justify-center p-4 space-y-8 sm:p-10">
 		<h1 class="text-4xl font-bold leading-none text-center sm:text-5xl">Our team</h1>
 		<p class="text-xl font-medium text-center">
@@ -18,7 +18,7 @@
 				/>
 				<p class="text-xl font-semibold leading-tight">Distinctio Animi</p>
 				<p class="">Visual Designer</p>
-				<p class="" [ngClass]="['text-' + primary]">@animi</p>
+				<p class="" [ngClass]="['text' + primary]">@animi</p>
 			</div>
 		</div>
 	</div>

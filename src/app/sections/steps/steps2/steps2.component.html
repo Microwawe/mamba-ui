@@ -1,4 +1,4 @@
-<section class="py-8">
+<section class="py-8" [ngClass]="['bg' + default, 'text' + defaultInv]">
 	<div class="container">
 		<div class="p-4 mx-auto text-center md:px-10 lg:px-32 xl:max-w-3xl">
 			<h2 class="text-2xl font-bold leading-none sm:text-4xl">Deploy and scale seamlessly</h2>
@@ -14,31 +14,31 @@
 			>
 				<button
 					class="p-2 border-b-2 md:border-l-2 md:border-b-0 md:py-3"
-					[ngClass]="['border-' + neutralInv, 'text-' + plainInv]"
+					[ngClass]="['border' + neutralInv, 'text' + plainInv]"
 				>
 					Deploy
 				</button>
 				<button
 					class="px-2 py-1 border-b-2 md:border-l-2 md:border-b-0 md:py-3"
-					[ngClass]="['border-' + primary, 'text-' + contrast]"
+					[ngClass]="['border' + primary, 'text' + contrastInv]"
 				>
 					Scale
 				</button>
 				<button
 					class="px-2 py-1 border-b-2 md:border-l-2 md:border-b-0 md:py-3"
-					[ngClass]="['border-' + neutralInv, 'text-' + plainInv]"
+					[ngClass]="['border' + neutralInv, 'text' + plainInv]"
 				>
 					Store
 				</button>
 				<button
 					class="px-2 py-1 border-b-2 md:border-l-2 md:border-b-0 md:py-3"
-					[ngClass]="['border-' + neutralInv, 'text-' + plainInv]"
+					[ngClass]="['border' + neutralInv, 'text' + plainInv]"
 				>
 					Secure
 				</button>
 				<button
 					class="px-2 py-1 border-b-2 md:border-l-2 md:border-b-0 md:py-3"
-					[ngClass]="['border-' + neutralInv, 'text-' + plainInv]"
+					[ngClass]="['border' + neutralInv, 'text' + plainInv]"
 				>
 					Monitor
 				</button>
@@ -52,7 +52,7 @@
 					<svg
 						class="w-6 h-6"
 						fill="none"
-						[ngClass]="['text-' + primary]"
+						[ngClass]="['text' + primary]"
 						stroke="currentColor"
 						viewBox="0 0 24 24"
 						xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +76,7 @@
 					<svg
 						class="w-6 h-6"
 						fill="none"
-						[ngClass]="['text-' + primary]"
+						[ngClass]="['text' + primary]"
 						stroke="currentColor"
 						viewBox="0 0 24 24"
 						xmlns="http://www.w3.org/2000/svg"
@@ -100,7 +100,7 @@
 					<svg
 						class="w-6 h-6"
 						fill="none"
-						[ngClass]="['text-' + primary]"
+						[ngClass]="['text' + primary]"
 						stroke="currentColor"
 						viewBox="0 0 24 24"
 						xmlns="http://www.w3.org/2000/svg"
@@ -125,7 +125,7 @@
 					<svg
 						class="w-6 h-6"
 						fill="none"
-						[ngClass]="['text-' + primary]"
+						[ngClass]="['text' + primary]"
 						stroke="currentColor"
 						viewBox="0 0 24 24"
 						xmlns="http://www.w3.org/2000/svg"

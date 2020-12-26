@@ -1,4 +1,4 @@
-<footer class="relative" [ngClass]="['bg-' + default, 'text-' + defaultInv]">
+<footer class="relative" [ngClass]="['bg' + default, 'text' + defaultInv]">
 	<div class="container space-y-6 divide-y divide-gray-400 divide-opacity-50">
 		<div class="grid grid-cols-12 p-12 space-y-8 md:space-y-0">
 			<div class="flex flex-col my-6 space-y-6 md:m-0 col-span-full md:pb-0 md:col-span-6">
@@ -49,14 +49,17 @@
 					</svg>
 					<span class="self-center text-2xl font-semibold font-mont">Mamba UI</span>
 				</a>
-				<p [ngClass]="['text-' + plain]" class="flex text-center md:max-w-sm md:text-left">
+				<p
+					[ngClass]="['text' + plainInv]"
+					class="flex text-center md:max-w-sm md:text-left"
+				>
 					This project is not affiliated with or endorsed by the creators of the
 					TailwindCSS framework.
 				</p>
 			</div>
 			<div class="text-center col-span-full sm:col-span-4 md:text-left md:col-span-2">
 				<p class="pb-2 text-lg font-medium">Quick links</p>
-				<ul class="text-sm" [ngClass]="'text-' + neutralInv">
+				<ul class="text-sm" [ngClass]="'text' + neutralInv">
 					<li>
 						<a
 							[routerLink]="['/components']"
@@ -85,7 +88,7 @@
 			</div>
 			<div class="text-center col-span-full sm:col-span-4 md:text-left md:col-span-2">
 				<p class="pb-2 text-lg font-medium">Resources</p>
-				<ul class="text-sm" [ngClass]="'text-' + neutralInv">
+				<ul class="text-sm" [ngClass]="'text' + neutralInv">
 					<li>
 						<a [routerLink]="['/docs']" class="" [ngClass]="['hover:text-' + primary]"
 							>Documentation</a
@@ -100,7 +103,7 @@
 						>
 					</li>
 					<li>
-						<a [routerLink]="['/']" class="" [ngClass]="['hover:text-' + primary]"
+						<a [routerLink]="['#']" class="" [ngClass]="['hover:text-' + primary]"
 							>Privacy</a
 						>
 					</li>
@@ -108,25 +111,26 @@
 			</div>
 			<div class="text-center col-span-full sm:col-span-4 md:text-left md:col-span-2">
 				<p class="pb-2 text-lg font-medium">Social media</p>
-				<ul class="text-sm" [ngClass]="'text-' + neutralInv">
+				<ul class="text-sm" [ngClass]="'text' + neutralInv">
 					<li>
 						<a [routerLink]="['/']" class="" [ngClass]="['hover:text-' + primary]"
 							>Contact</a
 						>
 					</li>
 					<li>
-						<a [routerLink]="['/']" class="" [ngClass]="['hover:text-' + primary]"
+						<a
+							href="https://twitter.com/mambaui"
+							class=""
+							[ngClass]="['hover:text-' + primary]"
 							>Twitter</a
 						>
 					</li>
 					<li>
-						<a [routerLink]="['/']" class="" [ngClass]="['hover:text-' + primary]"
+						<a
+							href="https://github.com/Microwawe/mamba-ui"
+							class=""
+							[ngClass]="['hover:text-' + primary]"
 							>Github</a
-						>
-					</li>
-					<li>
-						<a [routerLink]="['/']" class="" [ngClass]="['hover:text-' + primary]"
-							>Instagram</a
 						>
 					</li>
 				</ul>

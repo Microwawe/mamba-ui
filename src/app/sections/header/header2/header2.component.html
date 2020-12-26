@@ -1,39 +1,56 @@
-<section class="">
-	<div class="container p-4 md:p-8">
-		<h1 class="text-2xl font-bold">Title</h1>
-		<ul class="items-stretch hidden space-x-3 border-b-2 border-gray-300 md:flex">
+<div class="container p-4" [ngClass]="['bg' + default, 'text' + defaultInv]">
+	<header class="flex justify-between h-16 border-b-2" [ngClass]="['border' + neutral]">
+		<button class="flex p-4">
+			<i class="self-center text-2xl cib-coreui-c" [ngClass]="['text' + primary]"></i>
+		</button>
+		<ul class="items-stretch hidden space-x-3 md:flex">
 			<li class="flex">
 				<a
-					[routerLink]="['#']"
-					[routerLinkActive]="['text-' + primary, 'border-' + primary]"
-					class="flex items-center -mb-0.5 border-b-2 px-5 py-3 border-transparent"
+					[routerLink]="['#1']"
+					[routerLinkActive]="['text' + primary, 'border' + primary]"
+					class="flex items-center -mb-0.5 border-b-2 px-4 border-transparent"
 					>Link</a
 				>
 			</li>
 			<li class="flex">
 				<a
 					[routerLink]="['']"
-					[routerLinkActive]="['text-' + primary, 'border-' + primary]"
-					class="flex items-center -mb-0.5 border-b-2 px-5 py-3 border-transparent"
+					[routerLinkActive]="['text' + primary, 'border' + primary]"
+					class="flex items-center -mb-0.5 border-b-2 px-4 border-transparent"
 					>Link</a
 				>
 			</li>
 			<li class="flex">
 				<a
-					[routerLink]="['#']"
-					[routerLinkActive]="['text-' + primary, 'border-' + primary]"
-					class="flex items-center -mb-0.5 border-b-2 px-5 py-3 border-transparent"
+					[routerLink]="['#3']"
+					[routerLinkActive]="['text' + primary, 'border' + primary]"
+					class="flex items-center -mb-0.5 border-b-2 px-4 border-transparent"
 					>Link</a
 				>
 			</li>
 			<li class="flex">
 				<a
-					[routerLink]="['#']"
-					[routerLinkActive]="['text-' + primary, 'border-' + primary]"
-					class="flex items-center -mb-0.5 border-b-2 px-5 py-3 border-transparent"
+					[routerLink]="['#4']"
+					[routerLinkActive]="['text' + primary, 'border' + primary]"
+					class="flex items-center -mb-0.5 border-b-2 px-4 border-transparent"
 					>Link</a
 				>
 			</li>
 		</ul>
-	</div>
-</section>
+		<button class="flex justify-end p-4 md:hidden">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke="currentColor"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M4 6h16M4 12h16M4 18h16"
+				/>
+			</svg>
+		</button>
+	</header>
+</div>
