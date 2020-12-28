@@ -5,7 +5,18 @@
 	</div>
 	<div class="container grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-3">
 		<div *ngFor="let i of [1, 2, 3, 4, 5, 6]" class="flex flex-col items-center p-4">
-			<i class="text-6xl" [ngClass]="['text' + primary, 'cil-bolt']"></i>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 20 20"
+				fill="currentColor"
+				class="w-8 h-8"
+			>
+				<path
+					fill-rule="evenodd"
+					d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+					clip-rule="evenodd"
+				/>
+			</svg>
 			<h3 class="my-3 text-3xl font-semibold">Product</h3>
 			<div class="space-y-1 leading-tight">
 				<p>Similique quas ea veniam</p>

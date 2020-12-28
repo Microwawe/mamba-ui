@@ -1,7 +1,7 @@
 <section class="container overflow-hidden rounded-lg shadow-sm scrollbar-none">
 	<div
 		class="overflow-hidden divide-y rounded shadow-sm"
-		[ngClass]="['bg' + default, 'divide-' + neutralInv]"
+		[ngClass]="['bg' + default, 'divide' + neutralInv]"
 	>
 		<div class="flex px-2 py-4 space-x-2 overflow-x-auto sm:p-4 sm:space-x-4 flex-nowrap">
 			<button class="px-2 text-sm sm:px-3 sm:py-1" (click)="showPreview()">Preview</button>
@@ -38,7 +38,17 @@
 					'bg' + default
 				]"
 			>
-				<i class="self-center text-xl cil-copy"></i>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 20 20"
+					fill="currentColor"
+					class="w-5 h-5"
+				>
+					<path
+						d="M9 2a2 2 0 00-2 2v8a2 2 0 002 2h6a2 2 0 002-2V6.414A2 2 0 0016.414 5L14 2.586A2 2 0 0012.586 2H9z"
+					/>
+					<path d="M3 8a2 2 0 012-2v10h8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" />
+				</svg>
 				<span>Copy</span>
 			</button>
 		</div>

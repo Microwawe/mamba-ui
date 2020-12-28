@@ -1,51 +1,58 @@
 $font-path: '/assets/fonts/FiraSans' !default;
 
-@font-face {
-	font-family: 'Fira Sans';
-	font-style: normal;
-	font-weight: 100;
-	src: url('#{$font-path}/FiraSans-Thin.woff') format('woff');
-}
+// @font-face {
+// 	font-family: 'Fira Sans';
+// 	font-style: normal;
+// 	font-weight: 100;
+// 	font-display: swap;
+// 	src: url('#{$font-path}/FiraSans-Thin.woff') format('woff');
+// }
 
-@font-face {
-	font-family: 'Fira Sans';
-	font-style: italic;
-	font-weight: 100;
-	src: url('#{$font-path}/FiraSans-ThinItalic.woff') format('woff');
-}
+// @font-face {
+// 	font-family: 'Fira Sans';
+// 	font-style: italic;
+// 	font-weight: 100;
+// 	font-display: swap;
+// 	src: url('#{$font-path}/FiraSans-ThinItalic.woff') format('woff');
+// }
 
-@font-face {
-	font-family: 'Fira Sans';
-	font-style: normal;
-	font-weight: 200;
-	src: url('#{$font-path}/FiraSans-ExtraLight.woff') format('woff');
-}
+// @font-face {
+// 	font-family: 'Fira Sans';
+// 	font-style: normal;
+// 	font-weight: 200;
+// 	font-display: swap;
+// 	src: url('#{$font-path}/FiraSans-ExtraLight.woff') format('woff');
+// }
 
-@font-face {
-	font-family: 'Fira Sans';
-	font-style: italic;
-	font-weight: 200;
-	src: url('#{$font-path}/FiraSans-ExtraLightItalic.woff') format('woff');
-}
+// @font-face {
+// 	font-family: 'Fira Sans';
+// 	font-style: italic;
+// 	font-weight: 200;
+// 	font-display: swap;
+// 	src: url('#{$font-path}/FiraSans-ExtraLightItalic.woff') format('woff');
+// }
 
-@font-face {
-	font-family: 'Fira Sans';
-	font-style: normal;
-	font-weight: 300;
-	src: url('#{$font-path}/FiraSans-Light.woff') format('woff');
-}
+// @font-face {
+// 	font-family: 'Fira Sans';
+// 	font-style: normal;
+// 	font-weight: 300;
+// 	font-display: swap;
+// 	src: url('#{$font-path}/FiraSans-Light.woff') format('woff');
+// }
 
-@font-face {
-	font-family: 'Fira Sans';
-	font-style: italic;
-	font-weight: 300;
-	src: url('#{$font-path}/FiraSans-LightItalic.woff') format('woff');
-}
+// @font-face {
+// 	font-family: 'Fira Sans';
+// 	font-style: italic;
+// 	font-weight: 300;
+// 	font-display: swap;
+// 	src: url('#{$font-path}/FiraSans-LightItalic.woff') format('woff');
+// }
 
 @font-face {
 	font-family: 'Fira Sans';
 	font-style: normal;
 	font-weight: 400;
+	font-display: swap;
 	src: url('#{$font-path}/FiraSans-Regular.woff') format('woff');
 }
 
@@ -53,6 +60,7 @@ $font-path: '/assets/fonts/FiraSans' !default;
 	font-family: 'Fira Sans';
 	font-style: italic;
 	font-weight: 400;
+	font-display: swap;
 	src: url('#{$font-path}/FiraSans-Italic.woff') format('woff');
 }
 
@@ -60,68 +68,78 @@ $font-path: '/assets/fonts/FiraSans' !default;
 	font-family: 'Fira Sans';
 	font-style: normal;
 	font-weight: 500;
+	font-display: swap;
 	src: url('#{$font-path}/FiraSans-Medium.woff') format('woff');
 }
 
-@font-face {
-	font-family: 'Fira Sans';
-	font-style: italic;
-	font-weight: 500;
-	src: url('#{$font-path}/FiraSans-MediumItalic.woff') format('woff');
-}
+// @font-face {
+// 	font-family: 'Fira Sans';
+// 	font-style: italic;
+// 	font-weight: 500;
+// 	font-display: swap;
+// 	src: url('#{$font-path}/FiraSans-MediumItalic.woff') format('woff');
+// }
 
 @font-face {
 	font-family: 'Fira Sans';
 	font-style: normal;
 	font-weight: 600;
+	font-display: swap;
 	src: url('#{$font-path}/FiraSans-SemiBold.woff') format('woff');
 }
 
-@font-face {
-	font-family: 'Fira Sans';
-	font-style: italic;
-	font-weight: 600;
-	src: url('#{$font-path}/FiraSans-SemiBoldItalic.woff') format('woff');
-}
+// @font-face {
+// 	font-family: 'Fira Sans';
+// 	font-style: italic;
+// 	font-weight: 600;
+// 	font-display: swap;
+// 	src: url('#{$font-path}/FiraSans-SemiBoldItalic.woff') format('woff');
+// }
 
 @font-face {
 	font-family: 'Fira Sans';
 	font-style: normal;
 	font-weight: 700;
+	font-display: swap;
 	src: url('#{$font-path}/FiraSans-Bold.woff') format('woff');
 }
 
-@font-face {
-	font-family: 'Fira Sans';
-	font-style: italic;
-	font-weight: 700;
-	src: url('#{$font-path}/FiraSans-BoldItalic.woff') format('woff');
-}
+// @font-face {
+// 	font-family: 'Fira Sans';
+// 	font-style: italic;
+// 	font-weight: 700;
+// 	font-display: swap;
+// 	src: url('#{$font-path}/FiraSans-BoldItalic.woff') format('woff');
+// }
 
 @font-face {
 	font-family: 'Fira Sans';
 	font-style: normal;
 	font-weight: 800;
+	font-display: swap;
 	src: url('#{$font-path}/FiraSans-ExtraBold.woff') format('woff');
 }
 
-@font-face {
-	font-family: 'Fira Sans';
-	font-style: italic;
-	font-weight: 800;
-	src: url('#{$font-path}/FiraSans-ExtraBoldItalic.woff') format('woff');
-}
+// @font-face {
+// 	font-family: 'Fira Sans';
+// 	font-style: italic;
+// 	font-weight: 800;
+// 	font-display: swap;
+// 	src: url('#{$font-path}/FiraSans-ExtraBoldItalic.woff') format('woff');
+// }
 
-@font-face {
-	font-family: 'Fira Sans';
-	font-style: normal;
-	font-weight: 900;
-	src: url('#{$font-path}/FiraSans-Black.woff') format('woff');
-}
+// @font-face {
+// 	font-family: 'Fira Sans';
+// 	font-style: normal;
+// 	font-weight: 900;
+// 	font-display: swap;
+// 	src: url('#{$font-path}/FiraSans-Black.woff') format('woff');
+// }
 
-@font-face {
-	font-family: 'Fira Sans';
-	font-style: italic;
-	font-weight: 900;
-	src: url('#{$font-path}/FiraSans-BlackItalic.woff') format('woff');
-}
+// @font-face {
+// 	font-family: 'Fira Sans';
+// 	font-style: italic;
+// 	font-weight: 900;
+// 	font-display: swap;
+// 	src: url('#{$font-path}/FiraSans-BlackItalic.woff') format('woff');
+// }

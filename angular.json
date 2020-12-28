@@ -3,7 +3,7 @@
 	"version": 1,
 	"newProjectRoot": "projects",
 	"projects": {
-		"ui-kit": {
+		"mamba-ui": {
 			"projectType": "application",
 			"schematics": {
 				"@schematics/angular:component": {
@@ -20,13 +20,21 @@
 						"customWebpackConfig": {
 							"path": "./webpack.config.js"
 						},
-						"outputPath": "dist/ui-kit",
+						"outputPath": "dist/mamba-ui",
 						"index": "src/index.html",
 						"main": "src/main.ts",
 						"polyfills": "src/polyfills.ts",
 						"tsConfig": "tsconfig.app.json",
 						"aot": true,
-						"assets": ["src/favicon.ico", "src/assets", "src/manifest.webmanifest"],
+						"assets": [
+							"src/favicon.ico",
+							"src/manifest.webmanifest",
+							{
+								"glob": "**/*",
+								"input": "src/assets",
+								"output": "assets"
+							}
+						],
 						"styles": [
 							"src/assets/coreui/free/free-icons.scss",
 							"src/assets/coreui/brand/brand-icons.scss",
@@ -81,18 +89,18 @@
 						"customWebpackConfig": {
 							"path": "./webpack.config.js"
 						},
-						"browserTarget": "ui-kit:build"
+						"browserTarget": "mamba-ui:build"
 					},
 					"configurations": {
 						"production": {
-							"browserTarget": "ui-kit:build:production"
+							"browserTarget": "mamba-ui:build:production"
 						}
 					}
 				},
 				"extract-i18n": {
 					"builder": "@angular-devkit/build-angular:extract-i18n",
 					"options": {
-						"browserTarget": "ui-kit:build"
+						"browserTarget": "mamba-ui:build"
 					}
 				},
 				"test": {
@@ -125,11 +133,11 @@
 					"builder": "@angular-devkit/build-angular:protractor",
 					"options": {
 						"protractorConfig": "e2e/protractor.conf.js",
-						"devServerTarget": "ui-kit:serve"
+						"devServerTarget": "mamba-ui:serve"
 					},
 					"configurations": {
 						"production": {
-							"devServerTarget": "ui-kit:serve:production"
+							"devServerTarget": "mamba-ui:serve:production"
 						}
 					}
 				},
@@ -140,5 +148,5 @@
 			}
 		}
 	},
-	"defaultProject": "ui-kit"
+	"defaultProject": "mamba-ui"
 }
