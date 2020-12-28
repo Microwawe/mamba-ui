@@ -42,6 +42,7 @@ testem.log
 debug.log
 /typings
 package-lock.json
+.lighthouseci
 
 # System Files
 .DS_Store

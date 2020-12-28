@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule, PreloadAllModules} from '@angular/router';
 
+import {CustomPreloadingStrategy} from '@core/custom.preload.strategy';
 import {CreditsComponent} from '@core/layout/credits/credits.component';
 import {DocsComponent} from '@core/layout/docs/docs.component';
 import {HomeComponent} from '@core/layout/home/home.component';
@@ -14,17 +15,17 @@ const routes: Routes = [
 	{
 		path: 'components',
 		loadChildren: () => import('./components/components.module').then(m => m.ComponentsModule),
-		data: {title: 'Components', breadcrumb: 'Components'},
+		data: {title: 'Components', breadcrumb: 'Components', preload: true},
 	},
 	{
 		path: 'templates',
 		loadChildren: () => import('./templates/templates.module').then(m => m.TemplatesModule),
-		data: {title: 'Templates', breadcrumb: 'templates'},
+		data: {title: 'Templates', breadcrumb: 'Templates', preload: true},
 	},
 	{
 		path: 'sections',
 		loadChildren: () => import('./sections/sections.module').then(m => m.SectionsModule),
-		data: {title: 'Sections', breadcrumb: 'Sections'},
+		data: {title: 'Sections', breadcrumb: 'Sections', preload: true},
 	},
 	{
 		path: 'docs',
@@ -42,7 +43,7 @@ const routes: Routes = [
 @NgModule({
 	imports: [
 		RouterModule.forRoot(routes, {
-			preloadingStrategy: PreloadAllModules,
+			preloadingStrategy: CustomPreloadingStrategy,
 			scrollPositionRestoration: 'enabled',
 		}),
 	],

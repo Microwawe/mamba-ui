@@ -3,16 +3,10 @@
 	"index": "/index.html",
 	"assetGroups": [
 		{
-			"name": "Angular Quickstart",
+			"name": "Mamba UI",
 			"installMode": "prefetch",
 			"resources": {
-				"files": [
-					"/favicon.ico",
-					"/index.html",
-					"/manifest.webmanifest",
-					"/*.css",
-					"/*.js"
-				]
+				"files": ["/favicon.ico", "/index.html", "/manifest.webmanifest", "/*.css", "/*.js"]
 			}
 		},
 		{
@@ -20,10 +14,7 @@
 			"installMode": "lazy",
 			"updateMode": "prefetch",
 			"resources": {
-				"files": [
-					"/assets/**",
-					"/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
-				]
+				"files": ["/assets/**", "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"]
 			}
 		}
 	]

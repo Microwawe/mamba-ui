@@ -17,7 +17,21 @@
 				</a>
 			</li>
 			<li *ngFor="let breadcrumb of breadcrumbs; let i = index" class="flex items-center">
-				<i *ngIf="i < breadcrumbs.length" class="mx-1 text-xs md:mx-2 cil-minus"></i>
+				<svg
+					*ngIf="i < breadcrumbs.length"
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 20 20"
+					fill="currentColor"
+					[ngClass]="['text' + plainInv]"
+					class="w-5 h-5 mx-1 md:mx-2"
+				>
+					<path
+						fill-rule="evenodd"
+						d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+						clip-rule="evenodd"
+					/>
+				</svg>
+
 				<a
 					[routerLink]="breadcrumb.url"
 					class="p-1 capitalize hover:underline"
