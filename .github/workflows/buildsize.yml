@@ -12,4 +12,4 @@ jobs:
         with:
           repo-token: '${{ secrets.TOKEN }}'
           build-script: 'ng build --prod'
-          pattern: '**/dist/mamba-ui/**/*.js'
+          pattern: '**/dist/mamba-ui/**/*.{js,css,html,json}'

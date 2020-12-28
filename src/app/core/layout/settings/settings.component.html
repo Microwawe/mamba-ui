@@ -12,8 +12,8 @@
 				*ngFor="let color of colors"
 				class="w-8 h-8 border rounded-md"
 				[ngClass]="[
-					'bg' + color + '-500',
-					'border' + color + '-900',
+					'bg-' + color + '-500',
+					'border-' + color + '-900',
 					'hover:ring-2',
 					'hover:ring-inset',
 					'hover:ring-white',
@@ -64,11 +64,7 @@
 		</div>
 
 		<!-- SVG -->
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			style="display: none"
-			class="text-green-800 fill-current"
-		>
+		<svg xmlns="http://www.w3.org/2000/svg" style="display: none" class="fill-current">
 			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" id="line">
 				<line x1="75" y1="34" x2="75" y2="58" />
 			</symbol>
