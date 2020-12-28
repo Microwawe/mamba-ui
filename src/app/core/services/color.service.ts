@@ -48,8 +48,3 @@ export class ColorService {
 		return this.currentColor.asObservable();
 	}
 }
-
-export interface TailwindColor {
-	name: string;
-	shade: number;
-}

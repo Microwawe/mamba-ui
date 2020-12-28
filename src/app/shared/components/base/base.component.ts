@@ -14,11 +14,6 @@ export class BaseComponent implements OnDestroy {
 
 	btn = 'py-3 px-8 rounded text-lg';
 
-	bgPrimary = '';
-	textPrimary = '';
-	borderPrimary = '';
-	ringPrimary = '';
-
 	primary = '';
 	primaryLight = '';
 	primaryDark = '';
@@ -58,11 +53,6 @@ export class BaseComponent implements OnDestroy {
 			this.darkTheme = theme;
 			this.setPrimaryColor(color);
 			this.setGrayscale();
-
-			this.bgPrimary = `bg-${color}-500`;
-			this.textPrimary = `text-${color}-500`;
-			this.borderPrimary = `border-${color}-500`;
-			this.ringPrimary = `ring-${color}-500`;
 		});
 	}
 
