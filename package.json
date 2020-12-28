@@ -12,7 +12,8 @@
 		"e2e": "ng e2e",
 		"release": "standard-version && git push --follow-tags origin master && npm publish",
 		"analyze": "ng build --prod --stats-json && webpack-bundle-analyzer dist/mamba-ui/stats.json",
-		"ghpages": "ng build --prod --base-href /mamba-ui/ --rebase-root-relative-css-urls true && npx angular-cli-ghpages --dir=dist/mamba-ui"
+		"ghpages": "ng build --prod --base-href /mamba-ui/ --rebase-root-relative-css-urls true && npx angular-cli-ghpages --dir=dist/mamba-ui",
+		"lhci": "lhci collect && lhci assert --config=./.lighthouserc.js"
 	},
 	"private": true,
 	"dependencies": {
