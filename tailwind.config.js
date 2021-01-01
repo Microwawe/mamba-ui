@@ -39,15 +39,20 @@ module.exports = {
 				fira: ['"Fira Sans"', 'Helvetica', 'sans-serif'],
 				lato: ['Lato', 'Helvetica', 'sans-serif'],
 			},
+			minHeight: {
+				'96': '24rem',
+			},
 		},
 	},
 	variants: {
-		backgroundColor: ['hover', 'focus', 'active'],
-		borderColor: ['hover', 'focus', 'active'],
-		textColor: ['hover', 'focus', 'active'],
-		ringColor: ['hover', 'focus', 'active'],
-		ringOpacity: ['hover', 'focus', 'active'],
-		ringWidth: ['hover', 'focus', 'active'],
+		extend: {
+			backgroundColor: ['hover', 'focus', 'active'],
+			borderColor: ['hover', 'focus', 'active'],
+			textColor: ['hover', 'focus', 'active'],
+			ringColor: ['hover', 'focus', 'active'],
+			ringOpacity: ['hover', 'focus', 'active'],
+			ringWidth: ['hover', 'focus', 'active'],
+		},
 	},
 	corePlugins: {
 		container: false,

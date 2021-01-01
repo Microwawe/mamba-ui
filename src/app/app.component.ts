@@ -17,7 +17,6 @@ export class AppComponent extends BaseComponent {
 	devMode = false;
 
 	constructor(
-		protected themeService: ThemeService,
 		private titleService: Title,
 		private router: Router,
 		private activatedRoute: ActivatedRoute

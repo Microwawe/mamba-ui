@@ -11,10 +11,11 @@ export class SectionsComponent extends BaseComponent implements OnInit {
 		{name: 'blog', count: 2},
 		{name: 'call-to-action', count: 6},
 		{name: 'contact', count: 3},
-		{name: 'faq', count: 1},
+		{name: 'faq', count: 2},
 		{name: 'feature', count: 5},
 		{name: 'footer', count: 2},
 		{name: 'form', count: 1},
+		{name: 'gallery', count: 1},
 		{name: 'header', count: 2},
 		{name: 'hero', count: 2},
 		{name: 'login', count: 2},
@@ -23,7 +24,7 @@ export class SectionsComponent extends BaseComponent implements OnInit {
 		{name: 'steps', count: 2},
 		{name: 'team', count: 3},
 		{name: 'testimonial', count: 3},
-		{name: 'timeline', count: 3},
+		{name: 'timeline', count: 2},
 	];
 
 	constructor() {

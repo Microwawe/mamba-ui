@@ -1,5 +1,8 @@
 <div [ngClass]="['text' + defaultInv]">
-	<div class="flex flex-col min-h-screen" [ngClass]="['bg' + contrast]">
+	<div
+		class="flex flex-col min-h-screen"
+		[ngClass]="[(isDarkTheme | async) ? 'bg-coolGray-900' : 'bg-coolGray-200']"
+	>
 		<custom-header></custom-header>
 		<main class="flex-1 mt-28 sm:mt-20">
 			<custom-breadcrumb></custom-breadcrumb>
@@ -10,7 +13,7 @@
 	<custom-footer></custom-footer>
 	<span
 		*ngIf="devMode"
-		class="fixed bottom-0 left-0 px-3 py-2 bg-gray-900 rounded-tr-lg text-warmGray-50"
+		class="fixed bottom-0 left-0 px-3 py-2 bg-gray-900 rounded-tr-lg text-coolGray-50"
 	>
 		<span class="sm:hidden">XS</span>
 		<span class="hidden sm:block md:hidden">SM</span>

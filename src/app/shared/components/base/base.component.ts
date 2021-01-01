@@ -9,7 +9,7 @@ import {ThemeService} from '@core/services/theme.service';
 	template: '',
 })
 export class BaseComponent implements OnDestroy {
-	darkTheme = true;
+	darkTheme!: boolean;
 	combinedSub: Subscription;
 
 	btn = 'py-3 px-8 rounded text-lg';

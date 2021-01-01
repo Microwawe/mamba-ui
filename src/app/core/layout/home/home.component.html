@@ -1,34 +1,128 @@
 <div class="space-y-24" [ngClass]="['bg' + default, 'text' + defaultInv]">
-	<section class="pt-20 pb-10 lg:py-40">
-		<div class="container flex flex-col justify-center lg:flex-row">
+	<section class="pt-20 pb-6 lg:py-40">
+		<div class="container flex flex-col-reverse justify-center lg:flex-row">
 			<div
 				class="flex flex-col justify-center p-6 space-y-6 text-center rounded-sm lg:text-left lg:w-1/2 xl:w-2/5"
 			>
 				<h1 class="text-5xl font-bold leading-none sm:text-6xl xl:max-w-3xl">
-					Kickstart your next project
+					Kickstart your
+					<span [ngClass]="['text' + primary]">website</span>
+					in minutes
 				</h1>
 				<p class="mt-6 mb-8 text-lg sm:mb-12 xl:max-w-3xl">
-					You can get the layout of your website done with just a couple of clicks.
+					The easiest way to create a website with premade components that come with zero
+					design skills required
 				</p>
 				<div class="flex flex-wrap justify-center lg:justify-start">
-					<button
+					<a
 						class="m-2 font-semibold btn"
+						[routerLink]="['/sections']"
 						[ngClass]="['bg' + primary, 'text' + contrast]"
 					>
-						Get started
-					</button>
-					<button class="m-2 border btn" [ngClass]="['border' + neutralInv]">
-						Learn more
-					</button>
+						Browse sections
+					</a>
+					<a
+						class="m-2 border btn"
+						[routerLink]="['/docs']"
+						[ngClass]="['border' + neutralInv]"
+					>
+						Read docs
+					</a>
 				</div>
 			</div>
-			<div class="flex items-center justify-center lg:w-1/2 xl:w-3/5">
+			<div class="flex items-center justify-center mb-8 lg:w-1/2 xl:w-3/5 lg:mb-0">
 				<img class="h-72 lg:h-96" src="assets/svg/Business_SVG.svg" alt="" />
 			</div>
 		</div>
 	</section>
 
-	<section class="p-6 pt-12">
+	<section class="px-6" [ngClass]="['bg' + contrast]">
+		<div
+			class="container grid justify-center grid-cols-2 py-4 text-center rounded-lg shadow-sm md:grid-cols-4"
+		>
+			<div *ngFor="let stat of stats2" class="flex flex-col justify-start m-2 lg:m-6">
+				<p class="text-4xl font-bold">{{ stat.amount }}</p>
+				<p class="text-sm">{{ stat.label }}</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="p-4 lg:p-8" [ngClass]="['bg' + default, 'text' + defaultInv]">
+		<div class="container space-y-12">
+			<div
+				class="flex flex-col max-w-xl mx-auto overflow-hidden border rounded-md shadow-sm lg:max-w-full lg:mx-0 lg:flex-row min-h-96"
+				[ngClass]="['border' + plain]"
+			>
+				<div
+					[ngClass]="['bg' + primary, 'text' + contrast]"
+					class="flex items-center justify-center flex-1"
+				>
+					<img src="assets/svg/findcomponent.svg" class="p-8 h-60" alt="" />
+				</div>
+				<div class="flex flex-col justify-center flex-1 px-6 py-12">
+					<span class="text-xs uppercase" [ngClass]="['text' + plainInv]"
+						>Make the web your playground</span
+					>
+					<h2 class="text-3xl font-bold">
+						Easy to use UI elements, based on TailwindCSS
+					</h2>
+					<p class="my-6" [ngClass]="['text' + plainInv]">
+						Mamba UI is a collection of battle-tested designs that are already popular
+						on the web, crafted for simplicity and efficiency. And they're fully
+						responsive so you can create a layout that will work across all devices.
+					</p>
+					<button class="self-start">Action</button>
+				</div>
+			</div>
+			<div
+				class="flex flex-col max-w-xl mx-auto overflow-hidden border rounded-md shadow-sm lg:max-w-full lg:mx-0 lg:flex-row-reverse min-h-96"
+				[ngClass]="['border' + plain]"
+			>
+				<div [ngClass]="['bg' + primary]" class="flex items-center justify-center flex-1">
+					<img src="assets/svg/selectcolor.svg" class="p-8 h-60" alt="" />
+				</div>
+				<div class="flex flex-col justify-center flex-1 px-6 py-12">
+					<span class="text-xs uppercase" [ngClass]="['text' + plainInv]"
+						>zero design skills required</span
+					>
+					<h2 class="mt-3 text-3xl font-bold">
+						Skip the hassle of designing and coding your own components
+					</h2>
+					<p class="my-6" [ngClass]="['text' + plainInv]">
+						Create any type of website you want with our premade building blocks. You
+						can choose any of the 17 different colors in the TailwindCSS color palette
+						and you can preview them in our light and dark themes.
+					</p>
+					<button class="self-start">Action</button>
+				</div>
+			</div>
+			<div
+				class="flex flex-col max-w-xl mx-auto overflow-hidden border rounded-md shadow-sm lg:max-w-full lg:mx-0 lg:flex-row min-h-96"
+				[ngClass]="['border' + plain]"
+			>
+				<div
+					[ngClass]="['bg' + primary, 'text' + contrast]"
+					class="flex items-center justify-center flex-1"
+				>
+					<img src="assets/svg/copycode.svg" class="p-8 h-60" alt="" />
+				</div>
+				<div class="flex flex-col justify-center flex-1 px-6 py-12">
+					<span class="text-xs uppercase" [ngClass]="['text' + plainInv]"
+						>Join, it's free</span
+					>
+					<h2 class="text-3xl font-bold">Export as HTML or JSX</h2>
+					<p class="my-6" [ngClass]="['text' + plainInv]">
+						You can just copy-paste the code into your website and be done with the
+						design. Or you can start with our templates and then customize them to fit
+						your brand. Easy to use with any of the main frameworks.
+					</p>
+					<button class="self-start">Action</button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="p-6">
 		<div class="container flex flex-col">
 			<h2 class="py-4 text-3xl font-bold text-center">How does it work?</h2>
 			<div class="divide-y" [ngClass]="['divide' + neutral]">
@@ -176,7 +270,7 @@
 			</div>
 		</div>
 	</section>
-
+	<!-- 
 	<section class="relative" [ngClass]="['bg' + primary]">
 		<svg
 			class="absolute w-full h-4 fill-current -top-4"
@@ -311,6 +405,20 @@
 			/>
 		</svg>
 	</section>
+-->
+
+	<section class="py-6" [ngClass]="['bg' + primary, 'text' + contrast]">
+		<div
+			class="container flex flex-col items-center justify-center p-4 space-y-8 md:p-10 md:px-24 xl:px-48"
+		>
+			<h1 class="text-5xl font-bold leading-none text-center">Custom designs</h1>
+			<p class="pt-2 pb-8 text-xl font-medium text-center"></p>
+
+			<button class="font-semibold btn" [ngClass]="['bg' + default, 'text' + contrastInv]">
+				Learn more
+			</button>
+		</div>
+	</section>
 
 	<section class="p-4 md:p-8">
 		<div class="container p-4 my-6 space-y-1 text-center">
@@ -320,7 +428,7 @@
 				>shortcut to your dream ui</span
 			>
 			<h2 class="pb-3 text-3xl font-bold md:text-4xl font-mont">
-				Create a stylish website in minutes
+				Build websites faster with premade building blocks
 			</h2>
 			<p class="">
 				Get a jumpstart to creating your new webpage! With our fully responsive and
@@ -393,7 +501,7 @@
 		</div>
 	</section>
 
-	<section class="py-6" [ngClass]="['bg' + primary, 'text' + contrastInv]">
+	<section class="py-6" [ngClass]="['bg' + primary, 'text' + contrast]">
 		<div
 			class="container justify-center p-4 space-y-8 md:p-10 lg:space-y-0 lg:space-x-12 lg:justify-around lg:flex lg:flex-row"
 		>
@@ -406,7 +514,8 @@
 			>
 				<a
 					class="flex items-center space-x-4 font-semibold cursor-pointer btn"
-					[ngClass]="['bg' + contrast]"
+					[ngClass]="['bg' + contrast, 'text' + contrastInv]"
+					href="https://twitter.com/mamba_ui"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -418,7 +527,7 @@
 							d="M 50.0625 10.4375 C 48.214844 11.257813 46.234375 11.808594 44.152344 12.058594 C 46.277344 10.785156 47.910156 8.769531 48.675781 6.371094 C 46.691406 7.546875 44.484375 8.402344 42.144531 8.863281 C 40.269531 6.863281 37.597656 5.617188 34.640625 5.617188 C 28.960938 5.617188 24.355469 10.21875 24.355469 15.898438 C 24.355469 16.703125 24.449219 17.488281 24.625 18.242188 C 16.078125 17.8125 8.503906 13.71875 3.429688 7.496094 C 2.542969 9.019531 2.039063 10.785156 2.039063 12.667969 C 2.039063 16.234375 3.851563 19.382813 6.613281 21.230469 C 4.925781 21.175781 3.339844 20.710938 1.953125 19.941406 C 1.953125 19.984375 1.953125 20.027344 1.953125 20.070313 C 1.953125 25.054688 5.5 29.207031 10.199219 30.15625 C 9.339844 30.390625 8.429688 30.515625 7.492188 30.515625 C 6.828125 30.515625 6.183594 30.453125 5.554688 30.328125 C 6.867188 34.410156 10.664063 37.390625 15.160156 37.472656 C 11.644531 40.230469 7.210938 41.871094 2.390625 41.871094 C 1.558594 41.871094 0.742188 41.824219 -0.0585938 41.726563 C 4.488281 44.648438 9.894531 46.347656 15.703125 46.347656 C 34.617188 46.347656 44.960938 30.679688 44.960938 17.09375 C 44.960938 16.648438 44.949219 16.199219 44.933594 15.761719 C 46.941406 14.3125 48.683594 12.5 50.0625 10.4375 Z"
 						></path>
 					</svg>
-					<span>@nnowwakk</span>
+					<span>@mamba_ui</span>
 				</a>
 			</div>
 		</div>
@@ -439,47 +548,13 @@
 				class="flex flex-col divide-y sm:px-8 lg:px-12 xl:px-32"
 				[ngClass]="['divide' + neutral]"
 			>
-				<details class="">
+				<details class="" *ngFor="let q of faq">
 					<summary class="py-2 outline-none cursor-pointer focus:underline">
-						Optio maiores eligendi molestiae totam dolores similique?
+						{{ q.q }}
 					</summary>
-					<div class="px-4 pb-4">
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde neque in
-							fugiat magni, quas animi enim veritatis deleniti ex. Impedit.
-						</p>
-					</div>
-				</details>
-				<details class="">
-					<summary class="py-2 outline-none cursor-pointer focus:underline">
-						Modi dolorem veritatis culpa quos consequuntur beatae itaque excepturi
-						perspiciatis?
-					</summary>
-					<div class="px-4 pb-4">
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Est aspernatur
-							quae, eos explicabo odit minima libero veniam similique quibusdam
-							doloribus facilis ipsa accusantium vel maiores corrupti! Libero
-							voluptate a doloribus?
-						</p>
-					</div>
-				</details>
-				<details class="">
-					<summary class="py-2 outline-none cursor-pointer focus:underline">
-						Magni reprehenderit possimus debitis?
-					</summary>
-					<div class="px-4 pb-4 space-y-2">
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates
-							aspernatur dolores in consequatur doloremque inventore reprehenderit,
-							consequuntur perspiciatis architecto.
-						</p>
-						<p>
-							Sed consectetur quod tenetur! Voluptatibus culpa incidunt veritatis
-							velit quasi cupiditate unde eaque! Iure, voluptatibus autem eaque unde
-							possimus quae.
-						</p>
-					</div>
+					<p class="px-4 pb-4" [ngClass]="['text' + plainInv]">
+						{{ q.a }}
+					</p>
 				</details>
 			</div>
 		</div>
