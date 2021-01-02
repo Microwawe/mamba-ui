@@ -28,7 +28,7 @@
 						"aot": true,
 						"assets": [
 							"src/favicon.ico",
-							"src/manifest.webmanifest",
+							"src/site.webmanifest",
 							{
 								"glob": "**/*",
 								"input": "src/assets",
@@ -36,17 +36,13 @@
 							}
 						],
 						"styles": [
-							"src/assets/coreui/free/free-icons.scss",
-							"src/assets/coreui/brand/brand-icons.scss",
-							"src/assets/fonts/FiraSans/fira-sans.scss",
-							"src/assets/fonts/Lato/lato.scss",
 							"src/assets/fonts/Montserrat/montserrat.scss",
 							"src/styles/prism_light.scss",
 							"src/styles/prism_dark.scss",
 							"src/styles/styles.scss"
 						],
 						"stylePreprocessorOptions": {
-							"includePaths": ["src/styles", "src/assets/coreui"]
+							"includePaths": ["src/styles"]
 						},
 						"scripts": []
 					},
@@ -110,7 +106,7 @@
 						"polyfills": "src/polyfills.ts",
 						"tsConfig": "tsconfig.spec.json",
 						"karmaConfig": "karma.conf.js",
-						"assets": ["src/favicon.ico", "src/assets", "src/manifest.webmanifest"],
+						"assets": ["src/favicon.ico", "src/assets", "src/site.webmanifest"],
 						"styles": ["src/styles/styles.scss"],
 						"stylePreprocessorOptions": {
 							"includePaths": ["src/styles"]

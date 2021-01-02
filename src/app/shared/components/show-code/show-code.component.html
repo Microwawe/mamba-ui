@@ -7,12 +7,7 @@
 			<button class="px-2 text-sm sm:px-3 sm:py-1" (click)="showPreview()">Preview</button>
 			<button class="px-2 text-sm sm:px-3 sm:py-1" (click)="showHtml()">HTML</button>
 			<button class="px-2 text-sm sm:px-3 sm:py-1" (click)="showVue()">Vue</button>
-			<button class="px-2 text-sm sm:px-3 sm:py-1" (click)="showReactFunctional()">
-				React
-			</button>
-			<button class="flex-shrink-0 px-2 text-sm sm:px-3 sm:py-1" (click)="showReactClass()">
-				React (class)
-			</button>
+			<button class="px-2 text-sm sm:px-3 sm:py-1" (click)="showJSX()">JSX</button>
 		</div>
 		<div class="relative">
 			<div #rawContent *ngIf="!codeVisible">
@@ -30,7 +25,7 @@
 			<button
 				*ngIf="codeVisible"
 				(click)="copyToClipboard()"
-				class="absolute top-0 right-0 flex px-4 py-2 mt-3 mr-3 space-x-2 border rounded-lg hover:ring-4"
+				class="absolute top-0 right-0 flex items-center px-4 py-2 mt-3 mr-3 space-x-2 border rounded-lg hover:ring-4"
 				[ngClass]="[
 					'focus:ring' + primary,
 					'hover:ring' + primary,

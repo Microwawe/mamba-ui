@@ -17,7 +17,7 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit {
 	code = '';
 	codeVisible = false;
 
-	constructor(private el: ElementRef) {
+	constructor(protected el: ElementRef) {
 		super();
 	}
 
@@ -86,8 +86,11 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit {
 	}
 
 	useReactSyntax(codeStr: string) {
-		// TODO: SVG syntax
-		return codeStr.replace(/class=/gm, 'className=');
+		const cleanSVGs = codeStr.replace(/(stroke|fill|clip)-[a-z]/g, x => {
+			const parts = x.split('-');
+			return parts[0] + parts[1].toUpperCase();
+		});
+		return cleanSVGs.replace(/class=/gm, 'className=');
 	}
 
 	copyToClipboard() {
@@ -110,6 +113,11 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit {
 	showHtml() {
 		this.prettyCode = this.beautifyHTML(this.rawCode);
 		this.showCode(this.prettyCode);
+	}
+
+	showJSX() {
+		const content = this.beautifyHTML(this.rawCode);
+		this.showCode(this.useReactSyntax(content), 'jsx');
 	}
 
 	showReactClass() {

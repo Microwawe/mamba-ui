@@ -1,5 +1,5 @@
 <div
-	class="fixed left-0 z-50 transition-transform duration-300 transform -translate-y-1/2 shadow-xl top-1/2 bg-blueGray-700 rounded-r-2xl"
+	class="fixed left-0 z-50 transition-transform duration-300 transform -translate-y-1/2 shadow-xl top-1/2 bg-coolGray-700 rounded-r-2xl"
 	[ngClass]="[colorsOpen ? 'translate-x-0' : '-translate-x-full']"
 >
 	<p class="p-2 text-center capitalize" [ngClass]="['text' + light]">
@@ -27,13 +27,13 @@
 
 		<button
 			(click)="toggleColors()"
-			class="absolute flex items-center justify-center w-12 h-12 transform -translate-y-1/2 rounded-r-xl left-full top-1/2 bg-blueGray-700 text-blueGray-50 focus:outline-none"
+			class="absolute flex items-center justify-center w-10 h-10 transform -translate-y-1/2 rounded-r-xl left-full top-1/2 bg-coolGray-700 text-coolGray-50 focus:outline-none"
 		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 20 20"
 				fill="currentColor"
-				class="w-6 h-6"
+				class="w-5 h-5"
 			>
 				<path
 					fill-rule="evenodd"
@@ -44,7 +44,7 @@
 		</button>
 
 		<!-- Light/Dark theme -->
-		<div class="my-4 rounded-full power-switch bg-blueGray-800">
+		<div class="my-4 rounded-full power-switch bg-coolGray-800">
 			<input
 				#themeCheckbox
 				type="checkbox"

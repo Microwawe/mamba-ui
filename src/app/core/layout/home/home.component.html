@@ -1,185 +1,43 @@
 <div class="space-y-24" [ngClass]="['bg' + default, 'text' + defaultInv]">
-	<section class="pt-20 pb-10 lg:py-40">
-		<div class="container flex flex-col justify-center lg:flex-row">
+	<section class="pt-16 pb-6 lg:py-40">
+		<div class="container flex flex-col-reverse justify-center lg:flex-row">
 			<div
 				class="flex flex-col justify-center p-6 space-y-6 text-center rounded-sm lg:text-left lg:w-1/2 xl:w-2/5"
 			>
 				<h1 class="text-5xl font-bold leading-none sm:text-6xl xl:max-w-3xl">
-					Kickstart your next project
+					Kickstart your
+					<span [ngClass]="['text' + primary]">website</span>
+					in minutes
 				</h1>
 				<p class="mt-6 mb-8 text-lg sm:mb-12 xl:max-w-3xl">
-					You can get the layout of your website done with just a couple of clicks.
+					The UI kit for those who don't want to spend hours creating a custom UI
 				</p>
 				<div class="flex flex-wrap justify-center lg:justify-start">
-					<button
+					<a
 						class="m-2 font-semibold btn"
+						[routerLink]="['/sections']"
 						[ngClass]="['bg' + primary, 'text' + contrast]"
 					>
-						Get started
-					</button>
-					<button class="m-2 border btn" [ngClass]="['border' + neutralInv]">
-						Learn more
-					</button>
+						Browse sections
+					</a>
+					<a
+						class="m-2 border btn"
+						[routerLink]="['/docs']"
+						[ngClass]="['border' + neutralInv]"
+					>
+						Documentation
+					</a>
 				</div>
 			</div>
-			<div class="flex items-center justify-center lg:w-1/2 xl:w-3/5">
+			<div class="flex items-center justify-center mb-8 lg:w-1/2 xl:w-3/5 lg:mb-0">
 				<img class="h-72 lg:h-96" src="assets/svg/Business_SVG.svg" alt="" />
-			</div>
-		</div>
-	</section>
-
-	<section class="p-6 pt-12">
-		<div class="container flex flex-col">
-			<h2 class="py-4 text-3xl font-bold text-center">How does it work?</h2>
-			<div class="divide-y" [ngClass]="['divide' + neutral]">
-				<div class="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 lg:space-y-0">
-					<div
-						class="flex items-center justify-center lg:col-span-1 col-span-full md:flex-row"
-					>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							viewBox="0 0 20 20"
-							fill="currentColor"
-							class="w-20 h-20"
-						>
-							<path
-								d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.002z"
-							/>
-						</svg>
-					</div>
-					<div
-						class="flex flex-col justify-center text-center col-span-full lg:col-span-3 lg:text-left"
-					>
-						<span
-							class="text-xs tracking-wider uppercase"
-							[ngClass]="['text' + primary]"
-							>Step 1 - Browse</span
-						>
-						<span class="text-xl font-bold md:text-2xl">
-							Find something that you like
-						</span>
-						<span class="mt-4" [ngClass]="['text' + neutralInv]">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
-							facilis, voluptates error alias dolorem praesentium sit soluta iure
-							incidunt labore explicabo eaque, quia architecto veritatis dolores, enim
-							cons equatur nihil ipsum.
-						</span>
-					</div>
-				</div>
-
-				<div class="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 lg:space-y-0">
-					<div
-						class="flex items-center justify-center lg:col-span-1 col-span-full md:flex-row"
-					>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							viewBox="0 0 20 20"
-							fill="currentColor"
-							class="w-20 h-20"
-						>
-							<path
-								fill-rule="evenodd"
-								d="M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z"
-								clip-rule="evenodd"
-							/>
-						</svg>
-					</div>
-					<div
-						class="flex flex-col justify-center text-center col-span-full lg:col-span-3 lg:text-left"
-					>
-						<span
-							class="text-xs tracking-wider uppercase"
-							[ngClass]="['text' + primary]"
-							>Step 2 - Colors</span
-						>
-						<span class="text-xl font-bold md:text-2xl">
-							Select the theme and colors
-						</span>
-						<span class="mt-4" [ngClass]="['text' + neutralInv]">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
-							facilis, voluptates error alias dolorem praesentium sit soluta iure
-							incidunt labore explicabo eaque, quia architecto veritatis dolores, enim
-							cons equatur nihil ipsum.
-						</span>
-					</div>
-				</div>
-
-				<div class="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 lg:space-y-0">
-					<div
-						class="flex items-center justify-center lg:col-span-1 col-span-full md:flex-row"
-					>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							viewBox="0 0 20 20"
-							fill="currentColor"
-							class="w-20 h-20"
-						>
-							<path
-								fill-rule="evenodd"
-								d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
-								clip-rule="evenodd"
-							/>
-						</svg>
-					</div>
-					<div
-						class="flex flex-col justify-center text-center col-span-full lg:col-span-3 lg:text-left"
-					>
-						<span
-							class="text-xs tracking-wider uppercase"
-							[ngClass]="['text' + primary]"
-							>Step 3 - Export</span
-						>
-						<span class="text-xl font-bold md:text-2xl">Copy the code</span>
-						<span class="mt-4" [ngClass]="['text' + neutralInv]">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
-							facilis, voluptates error alias dolorem praesentium sit soluta iure
-							incidunt labore explicabo eaque, quia architecto veritatis dolores, enim
-							cons equatur nihil ipsum.
-						</span>
-					</div>
-				</div>
-
-				<div class="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 lg:space-y-0">
-					<div
-						class="flex items-center justify-center lg:col-span-1 col-span-full md:flex-row"
-					>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							viewBox="0 0 20 20"
-							fill="currentColor"
-							class="w-20 h-20"
-						>
-							<path
-								fill-rule="evenodd"
-								d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z"
-								clip-rule="evenodd"
-							/>
-						</svg>
-					</div>
-					<div
-						class="flex flex-col justify-center text-center col-span-full lg:col-span-3 lg:text-left"
-					>
-						<span
-							class="text-xs tracking-wider uppercase"
-							[ngClass]="['text' + primary]"
-							>Step 4 - Implementation</span
-						>
-						<span class="text-xl font-bold md:text-2xl">Create your own layout</span>
-						<span class="mt-4" [ngClass]="['text' + neutralInv]">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
-							facilis, voluptates error alias dolorem praesentium sit soluta iure
-							incidunt labore explicabo eaque, quia architecto veritatis dolores, enim
-							cons equatur nihil ipsum.
-						</span>
-					</div>
-				</div>
 			</div>
 		</div>
 	</section>
 
 	<section class="relative" [ngClass]="['bg' + primary]">
 		<svg
-			class="absolute w-full h-4 fill-current -top-4"
+			class="absolute w-full h-2 fill-current -top-2"
 			[ngClass]="['text' + primary]"
 			viewBox="0 0 1400 50"
 			preserveAspectRatio="none"
@@ -212,8 +70,8 @@
 					</svg>
 				</div>
 				<div class="flex flex-col justify-center align-middle">
-					<p class="text-3xl font-semibold leading-none">50</p>
-					<p class="capitalize">Components</p>
+					<p class="text-3xl font-semibold leading-none">50+</p>
+					<p class="capitalize">Sections</p>
 				</div>
 			</div>
 
@@ -237,7 +95,7 @@
 					</svg>
 				</div>
 				<div class="flex flex-col justify-center align-middle">
-					<p class="text-3xl font-semibold leading-none">3</p>
+					<p class="text-3xl font-semibold leading-none">2</p>
 					<p class="capitalize">Templates</p>
 				</div>
 			</div>
@@ -300,7 +158,7 @@
 			</div>
 		</div>
 		<svg
-			class="absolute w-full h-4 fill-current -bottom-4"
+			class="absolute w-full h-2 fill-current -bottom-2"
 			[ngClass]="'text' + primary"
 			viewBox="0 0 1400 50"
 			preserveAspectRatio="none"
@@ -312,101 +170,95 @@
 		</svg>
 	</section>
 
-	<section class="p-4 md:p-8">
-		<div class="container p-4 my-6 space-y-1 text-center">
-			<span
-				class="text-xs font-semibold tracking-wider uppercase"
-				[ngClass]="['text' + primary]"
-				>shortcut to your dream ui</span
+	<section class="p-4 lg:p-8" [ngClass]="['bg' + default, 'text' + defaultInv]">
+		<div class="container space-y-12 lg:space-y-32">
+			<div
+				class="flex flex-col max-w-xl mx-auto overflow-hidden rounded-md shadow-sm lg:max-w-full lg:mx-0 lg:flex-row min-h-96"
 			>
-			<h2 class="pb-3 text-3xl font-bold md:text-4xl font-mont">
-				Create a stylish website in minutes
-			</h2>
-			<p class="">
-				Get a jumpstart to creating your new webpage! With our fully responsive and
-				carefully styled components you can get the structure of your website done with just
-				a couple of clicks.
-			</p>
-		</div>
-		<div
-			class="container grid justify-center gap-4 divide-y xl:divide-x xl:divide-y-0 lg:grid-cols-2 xl:grid-cols-4"
-		>
-			<div class="flex flex-col px-8 py-6">
-				<h3 class="mb-2 text-lg font-semibold sm:text-xl title-font">Components</h3>
-				<p class="flex-1 mb-4 text-base leading-relaxed" [ngClass]="['text' + neutralInv]">
-					Individual components that can be re-used multiple times in your designs.
-				</p>
-				<a
-					class="inline-flex items-center text-sm"
-					[routerLink]="['/components']"
-					[ngClass]="['text' + primary]"
-				>
-					<span>Learn More</span>
-					<i class="ml-2 cil-arrow-right"></i>
-				</a>
+				<div class="flex items-center justify-center flex-1 lg:flex-3">
+					<img src="assets/images/demo1.png" class="h-full p-4" alt="" />
+				</div>
+				<div class="flex flex-col justify-center flex-1 px-6 py-12 lg:flex-2">
+					<span
+						class="mb-2 text-xs tracking-widest uppercase"
+						[ngClass]="['text' + plainInv]"
+						>Make the web your playground</span
+					>
+					<h2 class="text-3xl font-bold">
+						Easy to use UI elements based on Tailwind CSS
+					</h2>
+					<p class="my-6" [ngClass]="['text' + plainInv]">
+						Our goal is to help you create a website in minutes. Use one of our
+						templates and call it a day or mix and match different sections to create
+						any type of website. Everything is fully responsive so you can create a
+						layout that will work across all devices.
+					</p>
+				</div>
 			</div>
-			<div class="flex flex-col px-8 py-6 lg:border-none xl:border-solid">
-				<h3 class="mb-2 text-lg font-semibold sm:text-xl title-font">Sections</h3>
-				<p class="flex-1 mb-4 text-base leading-relaxed" [ngClass]="['text' + neutralInv]">
-					Pre-made building blocks that you can stack on top of each other like Legos to
-					build a website of your own in minutes.
-				</p>
-				<a
-					class="inline-flex items-center text-sm"
-					[routerLink]="['/sections']"
-					[ngClass]="['text' + primary]"
-				>
-					<span>Learn More</span>
-					<i class="ml-2 cil-arrow-right"></i>
-				</a>
+			<div
+				class="flex flex-col max-w-xl mx-auto overflow-hidden rounded-md shadow-sm lg:max-w-full lg:mx-0 lg:flex-row-reverse min-h-96"
+			>
+				<div class="flex items-center justify-center flex-1 lg:flex-3">
+					<img src="assets/images/demo2.png" class="h-full p-4" alt="" />
+				</div>
+				<div class="flex flex-col justify-center flex-1 px-6 py-12 lg:flex-2">
+					<span
+						class="mb-2 text-xs tracking-widest uppercase"
+						[ngClass]="['text' + plainInv]"
+						>zero design skills required</span
+					>
+					<h2 class="text-3xl font-bold">
+						Skip the hassle of designing and coding your own components
+					</h2>
+					<p class="my-6" [ngClass]="['text' + plainInv]">
+						You don't have to be a professional designer or developer to create
+						something beautiful. Start with our battle-tested designs and customize them
+						to fit your brand. You can choose any of the 17 Tailwind CSS colors as the
+						primary color. Light or dark? Your choice.
+					</p>
+				</div>
 			</div>
-			<div class="flex flex-col px-8 py-6">
-				<h3 class="mb-2 text-lg font-semibold sm:text-xl title-font">Templates</h3>
-				<p class="flex-1 mb-4 text-base leading-relaxed" [ngClass]="['text' + neutralInv]">
-					Full pages that showcase pieces of what you can achieve with the building blocks
-					that are in this UI Kit.
-				</p>
-				<a
-					class="inline-flex items-center text-sm"
-					[routerLink]="['/templates']"
-					[ngClass]="['text' + primary]"
-				>
-					<span>Learn More</span>
-					<i class="ml-2 cil-arrow-right"></i>
-				</a>
-			</div>
-			<div class="flex flex-col px-8 py-6">
-				<h3 class="mb-2 text-lg font-semibold sm:text-xl title-font">Customization</h3>
-				<p class="flex-1 mb-4 text-base leading-relaxed" [ngClass]="['text' + neutralInv]">
-					Choose your primary color from any of the TailwindCSS 2.0 colors. You can also
-					view all of the components in our light and dark themes.
-				</p>
-				<a
-					class="inline-flex items-center text-sm"
-					[routerLink]="['/docs']"
-					[ngClass]="['text' + primary]"
-				>
-					<span>Learn More</span>
-					<i class="ml-2 cil-arrow-right"></i>
-				</a>
+			<div
+				class="flex flex-col max-w-xl mx-auto overflow-hidden rounded-md shadow-sm lg:max-w-full lg:mx-0 lg:flex-row min-h-96"
+			>
+				<div class="flex items-center justify-center flex-1 lg:flex-3">
+					<img src="assets/images/demo5.png" class="h-full p-4" alt="" />
+				</div>
+				<div class="flex flex-col justify-center flex-1 px-6 py-12 lg:flex-2">
+					<span
+						class="mb-2 text-xs tracking-widest uppercase"
+						[ngClass]="['text' + plainInv]"
+						>just a couple of clicks</span
+					>
+					<h2 class="text-3xl font-bold">Export as HTML or JSX</h2>
+					<p class="my-6" [ngClass]="['text' + plainInv]">
+						Just copy-paste the code into your project, add your own content and publish
+						the website. Everything works out-of-the-box with minimal setup. And since
+						these were built with Tailwind CSS, you can also customize everything with
+						their
+						<a href="https://tailwindcss.com/docs/utility-first">utility-first </a> CSS
+						to create your own unique design without starting from scratch.
+					</p>
+				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="py-6" [ngClass]="['bg' + primary, 'text' + contrastInv]">
+	<section class="py-6" [ngClass]="['bg' + primary, 'text' + contrast]">
 		<div
 			class="container justify-center p-4 space-y-8 md:p-10 lg:space-y-0 lg:space-x-12 lg:justify-around lg:flex lg:flex-row"
 		>
 			<div class="flex flex-col space-y-2 text-center lg:text-left">
 				<h2 class="text-3xl font-bold leading-none">Follow us for project updates</h2>
-				<p class="text-lg">When we add something new, you will be the first to know</p>
+				<p class="px-4 text-lg">When we add something new, you will be the first to know</p>
 			</div>
 			<div
 				class="flex flex-row items-center self-center justify-center flex-shrink-0 lg:justify-end"
 			>
 				<a
 					class="flex items-center space-x-4 font-semibold cursor-pointer btn"
-					[ngClass]="['bg' + contrast]"
+					[ngClass]="['bg' + contrast, 'text' + defaultInv]"
+					href="https://twitter.com/mamba_ui"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -418,8 +270,183 @@
 							d="M 50.0625 10.4375 C 48.214844 11.257813 46.234375 11.808594 44.152344 12.058594 C 46.277344 10.785156 47.910156 8.769531 48.675781 6.371094 C 46.691406 7.546875 44.484375 8.402344 42.144531 8.863281 C 40.269531 6.863281 37.597656 5.617188 34.640625 5.617188 C 28.960938 5.617188 24.355469 10.21875 24.355469 15.898438 C 24.355469 16.703125 24.449219 17.488281 24.625 18.242188 C 16.078125 17.8125 8.503906 13.71875 3.429688 7.496094 C 2.542969 9.019531 2.039063 10.785156 2.039063 12.667969 C 2.039063 16.234375 3.851563 19.382813 6.613281 21.230469 C 4.925781 21.175781 3.339844 20.710938 1.953125 19.941406 C 1.953125 19.984375 1.953125 20.027344 1.953125 20.070313 C 1.953125 25.054688 5.5 29.207031 10.199219 30.15625 C 9.339844 30.390625 8.429688 30.515625 7.492188 30.515625 C 6.828125 30.515625 6.183594 30.453125 5.554688 30.328125 C 6.867188 34.410156 10.664063 37.390625 15.160156 37.472656 C 11.644531 40.230469 7.210938 41.871094 2.390625 41.871094 C 1.558594 41.871094 0.742188 41.824219 -0.0585938 41.726563 C 4.488281 44.648438 9.894531 46.347656 15.703125 46.347656 C 34.617188 46.347656 44.960938 30.679688 44.960938 17.09375 C 44.960938 16.648438 44.949219 16.199219 44.933594 15.761719 C 46.941406 14.3125 48.683594 12.5 50.0625 10.4375 Z"
 						></path>
 					</svg>
-					<span>@nnowwakk</span>
+					<span>@mamba_ui</span>
 				</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="p-6">
+		<div class="container flex flex-col">
+			<h2 class="py-4 text-3xl font-bold text-center">How does it work?</h2>
+			<div class="divide-y" [ngClass]="['divide' + neutral]">
+				<div class="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 lg:space-y-0">
+					<div
+						class="flex items-center justify-center lg:col-span-1 col-span-full md:flex-row"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 20 20"
+							[ngClass]="['text' + primary]"
+							fill="currentColor"
+							class="w-20 h-20"
+						>
+							<path
+								d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.002z"
+							/>
+						</svg>
+					</div>
+					<div
+						class="flex flex-col justify-center text-center col-span-full lg:col-span-3 lg:text-left"
+					>
+						<span
+							class="text-xs tracking-wider uppercase"
+							[ngClass]="['text' + primary]"
+							>Step 1 - Browse</span
+						>
+						<span class="text-xl font-bold md:text-2xl">
+							Find something that you like
+						</span>
+						<span class="mt-4" [ngClass]="['text' + neutralInv]">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
+							facilis, voluptates error alias dolorem praesentium sit soluta iure
+							incidunt labore explicabo eaque, quia architecto veritatis dolores, enim
+							cons equatur nihil ipsum.
+						</span>
+					</div>
+				</div>
+
+				<div class="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 lg:space-y-0">
+					<div
+						class="flex items-center justify-center lg:col-span-1 col-span-full md:flex-row"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 20 20"
+							[ngClass]="['text' + primary]"
+							fill="currentColor"
+							class="w-20 h-20"
+						>
+							<path
+								fill-rule="evenodd"
+								d="M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z"
+								clip-rule="evenodd"
+							/>
+						</svg>
+					</div>
+					<div
+						class="flex flex-col justify-center text-center col-span-full lg:col-span-3 lg:text-left"
+					>
+						<span
+							class="text-xs tracking-wider uppercase"
+							[ngClass]="['text' + primary]"
+							>Step 2 - Colors</span
+						>
+						<span class="text-xl font-bold md:text-2xl">
+							Select the theme and colors
+						</span>
+						<span class="mt-4" [ngClass]="['text' + neutralInv]">
+							Choose your primary color from any of the Tailwind CSS 2.0 colors. You
+							can also view all of the components in our light and dark themes.
+						</span>
+					</div>
+				</div>
+
+				<div class="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 lg:space-y-0">
+					<div
+						class="flex items-center justify-center lg:col-span-1 col-span-full md:flex-row"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 20 20"
+							[ngClass]="['text' + primary]"
+							fill="currentColor"
+							class="w-20 h-20"
+						>
+							<path
+								fill-rule="evenodd"
+								d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
+								clip-rule="evenodd"
+							/>
+						</svg>
+					</div>
+					<div
+						class="flex flex-col justify-center text-center col-span-full lg:col-span-3 lg:text-left"
+					>
+						<span
+							class="text-xs tracking-wider uppercase"
+							[ngClass]="['text' + primary]"
+							>Step 3 - Export</span
+						>
+						<span class="text-xl font-bold md:text-2xl">Copy the code</span>
+						<span class="mt-4" [ngClass]="['text' + neutralInv]">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
+							facilis, voluptates error alias dolorem praesentium sit soluta iure
+							incidunt labore explicabo eaque, quia architecto veritatis dolores, enim
+							cons equatur nihil ipsum.
+						</span>
+					</div>
+				</div>
+
+				<div class="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 lg:space-y-0">
+					<div
+						class="flex items-center justify-center lg:col-span-1 col-span-full md:flex-row"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 20 20"
+							[ngClass]="['text' + primary]"
+							fill="currentColor"
+							class="w-20 h-20"
+						>
+							<path
+								fill-rule="evenodd"
+								d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z"
+								clip-rule="evenodd"
+							/>
+						</svg>
+					</div>
+					<div
+						class="flex flex-col justify-center text-center col-span-full lg:col-span-3 lg:text-left"
+					>
+						<span
+							class="text-xs tracking-wider uppercase"
+							[ngClass]="['text' + primary]"
+							>Step 4 - Implementation</span
+						>
+						<span class="text-xl font-bold md:text-2xl">Create your own layout</span>
+						<span class="mt-4" [ngClass]="['text' + neutralInv]">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
+							facilis, voluptates error alias dolorem praesentium sit soluta iure
+							incidunt labore explicabo eaque, quia architecto veritatis dolores, enim
+							cons equatur nihil ipsum.
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="py-6" [ngClass]="['bg' + primary, 'text' + contrast]">
+		<div
+			class="container justify-center p-4 space-y-8 md:p-10 lg:space-y-0 lg:space-x-12 lg:justify-around lg:flex lg:flex-row"
+		>
+			<div class="flex flex-col space-y-2 text-center lg:text-left">
+				<h2 class="text-3xl font-bold leading-none">Custom designs</h2>
+				<p class="px-4 text-lg lg:px-0" [ngClass]="['text' + default]">
+					Do you have a design that you'd like to convert to Tailwind CSS? Didn't find
+					what you need? Contact us and we'll see how we can help.
+				</p>
+			</div>
+			<div
+				class="flex flex-row items-center self-center justify-center flex-shrink-0 lg:justify-end"
+			>
+				<a
+					class="flex items-center space-x-4 font-semibold cursor-pointer btn"
+					[ngClass]="['bg' + contrast, 'text' + defaultInv]"
+					href="https://twitter.com/mamba_ui"
+					>Let's talk</a
+				>
 			</div>
 		</div>
 	</section>
@@ -436,50 +463,16 @@
 				Frequently Asked Questions
 			</h2>
 			<div
-				class="flex flex-col divide-y sm:px-8 lg:px-12 xl:px-32"
+				class="flex flex-col px-8 divide-y lg:px-12 xl:px-32"
 				[ngClass]="['divide' + neutral]"
 			>
-				<details class="">
+				<details class="" *ngFor="let q of faq">
 					<summary class="py-2 outline-none cursor-pointer focus:underline">
-						Optio maiores eligendi molestiae totam dolores similique?
+						{{ q.q }}
 					</summary>
-					<div class="px-4 pb-4">
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde neque in
-							fugiat magni, quas animi enim veritatis deleniti ex. Impedit.
-						</p>
-					</div>
-				</details>
-				<details class="">
-					<summary class="py-2 outline-none cursor-pointer focus:underline">
-						Modi dolorem veritatis culpa quos consequuntur beatae itaque excepturi
-						perspiciatis?
-					</summary>
-					<div class="px-4 pb-4">
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Est aspernatur
-							quae, eos explicabo odit minima libero veniam similique quibusdam
-							doloribus facilis ipsa accusantium vel maiores corrupti! Libero
-							voluptate a doloribus?
-						</p>
-					</div>
-				</details>
-				<details class="">
-					<summary class="py-2 outline-none cursor-pointer focus:underline">
-						Magni reprehenderit possimus debitis?
-					</summary>
-					<div class="px-4 pb-4 space-y-2">
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates
-							aspernatur dolores in consequatur doloremque inventore reprehenderit,
-							consequuntur perspiciatis architecto.
-						</p>
-						<p>
-							Sed consectetur quod tenetur! Voluptatibus culpa incidunt veritatis
-							velit quasi cupiditate unde eaque! Iure, voluptatibus autem eaque unde
-							possimus quae.
-						</p>
-					</div>
+					<p class="px-4 pb-4" [ngClass]="['text' + plainInv]">
+						{{ q.a }}
+					</p>
 				</details>
 			</div>
 		</div>

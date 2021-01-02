@@ -13,14 +13,12 @@ import {NotFoundComponent} from '@core/layout/not-found/not-found.component';
 import {BreadcrumbComponent} from '@core/layout/breadcrumb/breadcrumb.component';
 import {HomeComponent} from '@core/layout/home/home.component';
 import {SettingsComponent} from '@core/layout/settings/settings.component';
-import {DocsComponent} from '@core/layout/docs/docs.component';
 import {CustomPreloadingStrategy} from '@core/custom.preload.strategy';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		BreadcrumbComponent,
-		DocsComponent,
 		FooterComponent,
 		HeaderComponent,
 		HomeComponent,

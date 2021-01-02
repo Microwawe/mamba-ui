@@ -1,6 +1,4 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
-// eslint-disable-next-line node/no-unpublished-import
-import * as Prism from 'prismjs';
+import {Component, OnInit} from '@angular/core';
 
 import {BaseComponent} from '@shared/components/base/base.component';
 
@@ -8,7 +6,14 @@ import {BaseComponent} from '@shared/components/base/base.component';
 	selector: 'custom-docs',
 	templateUrl: './docs.component.html',
 })
-export class DocsComponent extends BaseComponent implements OnInit, AfterViewInit {
+export class DocsComponent extends BaseComponent implements OnInit {
+	categories = [
+		{name: 'Get started', link: '/docs'},
+		{name: 'General', link: 'general'},
+		{name: 'Roadmap', link: 'roadmap'},
+		{name: 'Credits', link: 'credits'},
+	];
+	selectedCategory = this.categories[0];
 	code = '';
 	config = `
 	// tailwind.config.js
@@ -47,10 +52,6 @@ export class DocsComponent extends BaseComponent implements OnInit, AfterViewIni
 
 	constructor() {
 		super();
-	}
-
-	ngAfterViewInit(): void {
-		this.code = Prism.highlight(this.config, Prism.languages['js'], 'js');
 	}
 
 	ngOnInit() {}

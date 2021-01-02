@@ -1,0 +1,20 @@
+<section class="py-6" [ngClass]="['bg' + default, 'text' + contrastInv]">
+	<div class="container grid grid-cols-2 gap-4 p-4 md:grid-cols-4">
+		<img
+			class="w-full h-full col-span-2 row-span-2 rounded shadow-sm md:col-start-3 md:row-start-1"
+			src="https://source.unsplash.com/301x301/?random"
+			alt=""
+		/>
+		<img
+			*ngFor="let i of [0, 1, 2, 3, 4, 5, 6, 7]"
+			class="w-full h-full rounded shadow-sm"
+			src="https://source.unsplash.com/20{{ i }}x20{{ i }}/?random"
+			alt=""
+		/>
+		<img
+			class="w-full h-full col-span-2 row-span-2 rounded shadow-sm md:col-start-1 md:row-start-3"
+			src="https://source.unsplash.com/302x302/?random"
+			alt=""
+		/>
+	</div>
+</section>

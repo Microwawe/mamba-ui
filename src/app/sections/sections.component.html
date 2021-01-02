@@ -1,16 +1,18 @@
-<div class="container md:my-6" [ngClass]="['text' + defaultInv]">
+<div class="container min-h-screen md:my-6" [ngClass]="['text' + defaultInv]">
 	<h1 class="text-4xl font-bold text-center">Sections</h1>
 	<div class="flex flex-wrap p-4 place-content-center">
 		<a
 			*ngFor="let category of categories"
 			[routerLink]="['/sections/' + category.name]"
 			[routerLinkActive]="['ring', 'ring-opacity-20', 'ring' + primary]"
-			class="relative px-3 py-1 m-1 capitalize rounded-md shadow-sm md:px-4 md:py-2 hover:ring hover:ring-opacity-50"
+			class="relative px-3 py-1 m-1 capitalize rounded-md shadow-sm group md:px-4 md:py-2 hover:ring hover:ring-opacity-50"
 			[ngClass]="['hover:ring' + primary, 'bg' + default]"
 		>
-			<pre class="absolute top-0 right-0 p-1 text-xs" [ngClass]="['text' + plainInv]">{{
-				category.count
-			}}</pre>
+			<pre
+				class="absolute top-0 right-0 p-1 text-xs opacity-0 group-hover:opacity-100"
+				[ngClass]="['text' + plainInv]"
+				>{{ category.count }}</pre
+			>
 			<span>{{ category.name }}</span>
 		</a>
 	</div>

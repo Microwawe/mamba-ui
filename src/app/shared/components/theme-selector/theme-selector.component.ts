@@ -12,7 +12,7 @@ import {BaseComponent} from '../base/base.component';
 export class ThemeSelectorComponent extends BaseComponent implements OnInit {
 	isDarkTheme!: Observable<boolean>;
 
-	constructor(protected themeService: ThemeService) {
+	constructor() {
 		super();
 	}
 

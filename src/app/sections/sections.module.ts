@@ -47,6 +47,11 @@ const routes: Routes = [
 				data: {title: 'Form', breadcrumb: 'Form'},
 			},
 			{
+				path: 'gallery',
+				loadChildren: () => import('./gallery/gallery.module').then(m => m.GalleryModule),
+				data: {title: 'Gallery', breadcrumb: 'Gallery'},
+			},
+			{
 				path: 'header',
 				loadChildren: () => import('./header/header.module').then(m => m.HeaderModule),
 				data: {title: 'Header', breadcrumb: 'Header'},

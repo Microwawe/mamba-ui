@@ -1,9 +1,11 @@
 <header
-	class="fixed top-0 left-0 right-0 z-40 p-3 shadow-lg body-font"
+	class="fixed top-0 left-0 right-0 z-40 p-3 shadow-lg sm:p-3 body-font"
 	[ngClass]="['bg' + primary]"
 >
-	<div class="container flex flex-col flex-wrap items-center justify-between mx-auto sm:flex-row">
-		<a class="flex items-center font-extralight" [routerLink]="['/']">
+	<div
+		class="container flex flex-col flex-wrap items-center justify-between mx-auto space-y-1 sm:space-y-0 sm:flex-row"
+	>
+		<a class="flex items-center mt-1 sm:mt-0 font-extralight" [routerLink]="['/']">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="258.839"
@@ -65,19 +67,19 @@
 			[ngClass]="['text' + default]"
 		>
 			<a
-				class="px-2 py-3 font-medium sm:py-4 focus:ring"
+				class="px-2 py-2 font-medium sm:py-4 focus:ring"
 				[routerLink]="['/components']"
 				[routerLinkActive]="['underline']"
 				>Components
 			</a>
 			<a
-				class="px-2 py-3 font-medium sm:py-4 focus:ring"
+				class="px-2 py-2 font-medium sm:py-4 focus:ring"
 				[routerLink]="['/sections']"
 				[routerLinkActive]="['underline']"
 				>Sections
 			</a>
 			<a
-				class="px-2 py-3 font-medium sm:py-4 focus:ring"
+				class="px-2 py-2 font-medium sm:py-4 focus:ring"
 				[routerLink]="['/templates']"
 				[routerLinkActive]="['underline']"
 				>Templates

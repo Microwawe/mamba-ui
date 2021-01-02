@@ -1,0 +1,10 @@
+<div class="fixed inset-0 overflow-y-auto z-90" [ngClass]="['bg' + default]">
+	<button
+		(click)="close()"
+		class="fixed btn top-24 left-2"
+		[ngClass]="['bg' + defaultInv, 'text' + default]"
+	>
+		Close
+	</button>
+	<div #content></div>
+</div>
