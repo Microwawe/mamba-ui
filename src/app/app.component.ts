@@ -28,7 +28,7 @@ export class AppComponent extends BaseComponent {
 		this.isDarkTheme = this.themeService.getDarkTheme();
 		this.devMode = !environment.production;
 
-		const defaultTitle = this.titleService.getTitle();
+		const [defaultTitle, defaultTitleDescription] = this.titleService.getTitle().split('|');
 		this.router.events
 			.pipe(
 				filter(event => event instanceof NavigationEnd),
@@ -43,8 +43,10 @@ export class AppComponent extends BaseComponent {
 					return '';
 				})
 			)
-			.subscribe((title: string) => {
-				const newTitle = [defaultTitle, title].filter(Boolean).join(' - ');
+			.subscribe((routeTitle: string) => {
+				const newTitle = [defaultTitle, routeTitle, defaultTitleDescription]
+					.filter(Boolean)
+					.join(' | ');
 				this.titleService.setTitle(newTitle);
 			});
 	}

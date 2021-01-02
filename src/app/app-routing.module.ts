@@ -2,8 +2,8 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule, PreloadAllModules} from '@angular/router';
 
 import {CustomPreloadingStrategy} from '@core/custom.preload.strategy';
-import {CreditsComponent} from '@core/layout/credits/credits.component';
-import {DocsComponent} from '@core/layout/docs/docs.component';
+import {CreditsComponent} from 'app/docs/credits/credits.component';
+import {DocsComponent} from 'app/docs/docs.component';
 import {HomeComponent} from '@core/layout/home/home.component';
 import {NotFoundComponent} from '@core/layout/not-found/not-found.component';
 
@@ -29,13 +29,8 @@ const routes: Routes = [
 	},
 	{
 		path: 'docs',
-		component: DocsComponent,
+		loadChildren: () => import('./docs/docs.module').then(m => m.DocsModule),
 		data: {title: 'Documentation', breadcrumb: 'Documentation'},
-	},
-	{
-		path: 'credits',
-		component: CreditsComponent,
-		data: {title: 'Credits', breadcrumb: 'Credits'},
 	},
 	{path: '**', component: NotFoundComponent},
 ];

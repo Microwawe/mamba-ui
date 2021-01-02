@@ -1,0 +1,21 @@
+<div class="container grid grid-cols-5 p-6 md:p-8" [ngClass]="['bg' + default]">
+	<div class="flex flex-col justify-start px-4 space-y-1 col-span-full md:col-span-1">
+		<a
+			*ngFor="let category of categories"
+			[routerLink]="[category.link]"
+			routerLinkActive
+			[routerLinkActiveOptions]="{exact: true}"
+			#rla="routerLinkActive"
+			[ngClass]="[
+				rla.isActive ? 'border' + primary : 'border' + plain,
+				rla.isActive ? 'bg' + contrast : 'bg' + default,
+				rla.isActive ? 'text' + contrastInv : 'text' + plainInv
+			]"
+			class="px-2 py-2 capitalize border-l-2 cursor-pointer md:py-3"
+			>{{ category.name }}</a
+		>
+	</div>
+	<div class="py-4 col-span-full md:col-span-4">
+		<router-outlet> </router-outlet>
+	</div>
+</div>

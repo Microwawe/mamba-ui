@@ -1,9 +1,10 @@
-<!-- component -->
-<!-- This is an example component -->
-<section class="flex items-center w-screen mb-12" [ngClass]="['text' + defaultInv]">
+<section
+	class="flex items-center w-screen p-8 pb-16"
+	[ngClass]="['text' + defaultInv, 'bg' + contrast]"
+>
 	<div class="container flex flex-col items-center justify-center px-5 my-8">
 		<div class="max-w-md text-center">
-			<div class="font-bold text-8xl">404</div>
+			<img src="assets/svg/404.svg" alt="Error 404, page not found" class="h-80" />
 			<p class="text-2xl font-light leading-normal md:text-3xl">
 				Sorry we couldn't find this page.
 			</p>
