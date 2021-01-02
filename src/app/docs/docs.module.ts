@@ -54,6 +54,6 @@ const routes: Routes = [
 
 @NgModule({
 	imports: [RouterModule.forChild(routes), SharedModule],
-	declarations: [DocsComponent, GeneralComponent, CreditsComponent],
+	declarations: [DocsComponent, GeneralComponent, CreditsComponent, GetStartedComponent],
 })
 export class DocsModule {}
