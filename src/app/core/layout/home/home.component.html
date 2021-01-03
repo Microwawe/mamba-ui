@@ -1,27 +1,29 @@
 <div class="space-y-24" [ngClass]="['bg' + default, 'text' + defaultInv]">
-	<section class="pt-16 pb-6 lg:py-40">
-		<div class="container flex flex-col-reverse justify-center lg:flex-row">
+	<section class="pt-16 pb-8 sm:pt-20 sm:pb-16 lg:pt-40 2xl:pt-32 lg:pb-56">
+		<div class="container flex flex-col-reverse justify-center lg:flex-row lg:justify-between">
 			<div
-				class="flex flex-col justify-center p-6 space-y-6 text-center rounded-sm lg:text-left lg:w-1/2 xxl:w-2/5"
+				class="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left"
 			>
-				<h1 class="text-5xl font-bold leading-none sm:text-6xl xl:max-w-3xl">
-					Kickstart your
+				<h1 class="text-5xl font-bold leading-none sm:text-6xl">
+					Kickstart your next
 					<span [ngClass]="['text' + primary]">website</span>
 					in minutes
 				</h1>
-				<p class="mt-6 mb-8 text-lg sm:mb-12 xl:max-w-3xl">
+				<p class="mt-6 mb-8 text-lg sm:mb-12">
 					The UI kit for those who don't want to spend hours creating a custom UI
 				</p>
-				<div class="flex flex-wrap justify-center lg:justify-start">
+				<div
+					class="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start"
+				>
 					<a
-						class="m-2 font-semibold btn"
+						class="px-8 py-3 text-lg font-semibold rounded"
 						[routerLink]="['/sections']"
 						[ngClass]="['bg' + primary, 'text' + contrast]"
 					>
 						Browse sections
 					</a>
 					<a
-						class="m-2 border btn"
+						class="px-8 py-3 text-lg border rounded"
 						[routerLink]="['/docs']"
 						[ngClass]="['border' + neutralInv]"
 					>
@@ -29,8 +31,12 @@
 					</a>
 				</div>
 			</div>
-			<div class="flex items-center justify-center mb-8 lg:w-1/2 xxl:w-3/5 lg:mb-0">
-				<img class="object-contain h-72 lg:h-96" src="assets/svg/Business_SVG.svg" alt="" />
+			<div class="flex items-center justify-center p-6 mb-8 lg:mb-0">
+				<img
+					class="object-contain h-72 lg:h-96 xl:h-112 2xl:h-128"
+					src="assets/svg/Business_SVG.svg"
+					alt=""
+				/>
 			</div>
 		</div>
 	</section>
@@ -268,7 +274,7 @@
 				class="flex flex-row items-center self-center justify-center flex-shrink-0 lg:justify-end"
 			>
 				<a
-					class="flex items-center space-x-4 font-semibold cursor-pointer btn"
+					class="flex items-center px-8 py-3 space-x-4 text-lg font-semibold rounded cursor-pointer"
 					[ngClass]="['bg' + contrast, 'text' + defaultInv]"
 					href="https://twitter.com/mamba_ui"
 				>
@@ -454,7 +460,7 @@
 				class="flex flex-row items-center self-center justify-center flex-shrink-0 lg:justify-end"
 			>
 				<a
-					class="flex items-center space-x-4 font-semibold cursor-pointer btn"
+					class="flex items-center px-8 py-3 space-x-4 text-lg font-semibold rounded cursor-pointer"
 					[ngClass]="['bg' + contrast, 'text' + defaultInv]"
 					href="https://twitter.com/mamba_ui"
 					>Let's talk</a

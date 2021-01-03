@@ -1,8 +1,0 @@
-.btn {
-	@apply py-3 px-8 rounded text-lg;
-
-	&:hover {
-		filter: brightness(1.1);
-		@apply ring;
-	}
-}
