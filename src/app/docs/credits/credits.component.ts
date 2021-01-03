@@ -1,9 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-
-import {BaseComponent} from '@shared/components/base/base.component';
+import {Component} from '@angular/core';
 
 @Component({
-	selector: 'custom-credits',
+	selector: 'custom-docs-credits',
 	templateUrl: './credits.component.html',
 })
 export class CreditsComponent {

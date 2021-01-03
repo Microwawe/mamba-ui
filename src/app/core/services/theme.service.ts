@@ -7,8 +7,13 @@ export class ThemeService {
 	private isDarkTheme: BehaviorSubject<boolean>;
 
 	constructor() {
-		const savedTheme = localStorage.getItem(this.themeKey) === 'true';
-		this.isDarkTheme = new BehaviorSubject<boolean>(savedTheme);
+		const prefersDarkTheme =
+			window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+		const useDarkTheme = localStorage.getItem(this.themeKey)
+			? localStorage.getItem(this.themeKey) === 'true'
+			: prefersDarkTheme;
+		this.isDarkTheme = new BehaviorSubject<boolean>(useDarkTheme);
+		localStorage.setItem(this.themeKey, this.isDarkTheme.value.toString());
 	}
 
 	setDarkTheme(isDarkTheme: boolean) {

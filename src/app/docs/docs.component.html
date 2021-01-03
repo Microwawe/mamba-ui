@@ -1,4 +1,4 @@
-<div class="container grid grid-cols-5 p-6 md:p-8" [ngClass]="['bg' + default]">
+<div class="container grid grid-cols-5 p-6 mb-12 rounded-sm md:p-8" [ngClass]="['bg' + light]">
 	<div class="flex flex-col justify-start px-4 space-y-1 col-span-full md:col-span-1">
 		<a
 			*ngFor="let category of categories"
@@ -8,10 +8,10 @@
 			#rla="routerLinkActive"
 			[ngClass]="[
 				rla.isActive ? 'border' + primary : 'border' + plain,
-				rla.isActive ? 'bg' + contrast : 'bg' + default,
-				rla.isActive ? 'text' + contrastInv : 'text' + plainInv
+				rla.isActive ? 'bg-white' : 'bg' + light,
+				rla.isActive ? 'text' + dark : 'text-coolGray-600'
 			]"
-			class="px-2 py-2 capitalize border-l-2 cursor-pointer md:py-3"
+			class="px-2 py-2 capitalize border-l-4 cursor-pointer rounded-r-md md:py-3"
 			>{{ category.name }}</a
 		>
 	</div>
