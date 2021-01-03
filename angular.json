@@ -36,7 +36,6 @@
 							}
 						],
 						"styles": [
-							"src/assets/fonts/Montserrat/montserrat.scss",
 							"src/styles/prism_light.scss",
 							"src/styles/prism_dark.scss",
 							"src/styles/styles.scss"
@@ -57,7 +56,7 @@
 							"optimization": true,
 							"outputHashing": "all",
 							"sourceMap": false,
-							"extractCss": true,
+							"extractCss": false,
 							"namedChunks": false,
 							"extractLicenses": true,
 							"vendorChunk": false,
