@@ -13,12 +13,15 @@
 			</p>
 			<div class="flex flex-wrap justify-center">
 				<button
-					class="m-2 font-semibold btn"
+					class="px-8 py-3 m-2 text-lg font-semibold rounded"
 					[ngClass]="['bg' + default, 'text' + contrastInv]"
 				>
 					Get started
 				</button>
-				<button class="m-2 border btn" [ngClass]="['border' + neutral, 'text' + contrast]">
+				<button
+					class="px-8 py-3 m-2 text-lg border rounded"
+					[ngClass]="['border' + neutral, 'text' + contrast]"
+				>
 					Learn more
 				</button>
 			</div>

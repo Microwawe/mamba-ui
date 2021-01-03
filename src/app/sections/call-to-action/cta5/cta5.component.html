@@ -9,12 +9,15 @@
 		</p>
 
 		<div class="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:space-x-8">
-			<button class="font-semibold btn" [ngClass]="['bg' + primary, 'text' + contrast]">
+			<button
+				class="px-8 py-3 text-lg font-semibold rounded"
+				[ngClass]="['bg' + primary, 'text' + contrast]"
+			>
 				Get started
 			</button>
 
 			<button
-				class="font-normal border btn"
+				class="px-8 py-3 text-lg font-normal border rounded"
 				[ngClass]="['bg' + defaultInv, 'text' + contrast, 'border' + neutralInv]"
 			>
 				Learn more
