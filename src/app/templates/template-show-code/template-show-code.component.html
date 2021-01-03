@@ -12,7 +12,11 @@
 			</button>
 		</div>
 		<div class="relative">
-			<div #rawContent *ngIf="!codeVisible" class="overflow-y-auto max-h-half-screen">
+			<div
+				#rawContent
+				*ngIf="!codeVisible"
+				class="overflow-y-auto overscroll-contain max-h-half-screen"
+			>
 				<ng-content></ng-content>
 			</div>
 			<pre

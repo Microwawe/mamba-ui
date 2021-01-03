@@ -1,15 +1,3 @@
-html {
-	--primary: #ed8936;
-	--primary-variant: #c7732e;
-	--neutral: #cbd5e0;
-	--dark: #121212;
-	--default: #1a202c;
-	--default-inverse: #edf2f7;
-	--contrast: #000;
-	--contrast-inverse: #fff;
-	/* ... */
-}
-
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
