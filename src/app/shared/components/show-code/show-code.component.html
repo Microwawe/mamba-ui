@@ -15,9 +15,8 @@
 			</div>
 			<pre
 				*ngIf="codeVisible"
-				class="p-6 overflow-auto"
+				class="p-6 overflow-auto whitespace-pre-line max-h-half-screen overscroll-y-contain"
 				[ngClass]="isDarkTheme ? 'prism-dark' : 'prism-light'"
-				style="white-space: pre-line"
 			>
 				<code class="language-markdown" [innerHTML]="code">
 				</code>
@@ -25,7 +24,7 @@
 			<button
 				*ngIf="codeVisible"
 				(click)="copyToClipboard()"
-				class="absolute top-0 right-0 flex items-center px-4 py-2 mt-3 mr-3 space-x-2 border rounded-lg hover:ring-4"
+				class="absolute top-0 right-0 flex items-center px-4 py-2 mt-3 mr-6 space-x-2 border rounded-lg hover:ring-4"
 				[ngClass]="[
 					'focus:ring' + primary,
 					'hover:ring' + primary,
