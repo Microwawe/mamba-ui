@@ -30,6 +30,7 @@ export class ColorService {
 		const savedColor = localStorage.getItem(this.key);
 		const color = savedColor ? JSON.parse(savedColor) : this.defaultColor;
 		this.currentColor = new BehaviorSubject<string>(color);
+		localStorage.setItem(this.key, JSON.stringify(color));
 	}
 
 	setCurrentColor(currentColor: string) {
