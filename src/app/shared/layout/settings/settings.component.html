@@ -28,6 +28,7 @@
 			<input
 				#themeCheckbox
 				type="checkbox"
+				aria-label="Dark mode toggle"
 				[checked]="isDarkTheme | async"
 				(change)="toggleDarkTheme(themeCheckbox.checked)"
 			/>
