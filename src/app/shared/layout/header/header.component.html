@@ -1,15 +1,12 @@
 <header
-	class="fixed top-0 left-0 right-0 z-40 p-3 shadow-lg sm:p-3 body-font"
+	class="fixed top-0 left-0 right-0 z-20 h-20 shadow-lg body-font"
 	[ngClass]="['bg' + primary]"
 >
-	<div
-		class="container flex flex-col flex-wrap items-center justify-between mx-auto space-y-1 sm:space-y-0 sm:flex-row"
-	>
-		<a class="flex items-center mt-1 sm:mt-0 font-extralight" [routerLink]="['/']">
+	<div class="container fixed top-0 left-0 right-0 flex justify-center h-20">
+		<a class="flex items-center" aria-label="Back to homepage" [routerLink]="['/']">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
-				width="258.839"
-				height="35.658"
+				class="w-auto h-9 sm:h-10"
 				viewBox="0 0 258.839 35.658"
 			>
 				<g id="Group_12" data-name="Group 12" transform="translate(-862.627 -615)">
@@ -61,10 +58,10 @@
 				</g>
 			</svg>
 		</a>
-		<div
-			class="flex space-between-2"
+		<nav
+			class="hidden lg:flex space-between-2"
 			style="text-underline-position: under"
-			[ngClass]="['text' + default]"
+			[ngClass]="['text' + contrast]"
 		>
 			<a
 				class="px-2 py-2 font-medium sm:py-4 focus:ring"
@@ -84,6 +81,14 @@
 				[routerLinkActive]="['underline']"
 				>Templates
 			</a>
-		</div>
+		</nav>
 	</div>
 </header>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+	<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 56" id="menu">
+		<path
+			d="M48.33,45.6H18a14.17,14.17,0,0,1,0-28.34H78.86a17.37,17.37,0,0,1,0,34.74H42.33l-21-21.26L47.75,4"
+		/>
+	</symbol>
+</svg>

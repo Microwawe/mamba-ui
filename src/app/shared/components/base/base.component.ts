@@ -4,6 +4,7 @@ import {combineLatest, Subscription} from 'rxjs';
 import {CustomInjector} from '@core/injector/custom-injector.service';
 import {ColorService} from '@core/services/color.service';
 import {ThemeService} from '@core/services/theme.service';
+import {TailwindColor} from '@shared/interfaces/tailwind-colors.interface';
 
 @Component({
 	template: '',
@@ -35,8 +36,8 @@ export class BaseComponent implements OnDestroy {
 	defaultInv = '-coolGray-100';
 	contrast = '-coolGray-900';
 	contrastInv = '-coolGray-200';
-	dark = '-gray-900';
-	light = '-gray-100';
+	dark = '-coolGray-900';
+	light = '-coolGray-100';
 
 	protected colorService: ColorService;
 	protected themeService: ThemeService;
@@ -48,7 +49,7 @@ export class BaseComponent implements OnDestroy {
 
 		this.combinedSub = combineLatest([
 			this.themeService.getDarkTheme(),
-			this.colorService.observeCurrentColor(),
+			this.colorService.getCurrentColor(),
 		]).subscribe(([theme, color]) => {
 			this.darkTheme = theme;
 			this.setPrimaryColor(color);
@@ -67,20 +68,20 @@ export class BaseComponent implements OnDestroy {
 		this.contrastInv = this.darkTheme ? '-coolGray-50' : '-coolGray-900';
 	}
 
-	setPrimaryColor(color: string) {
-		this.primaryLight = this.darkTheme ? `-${color}-200` : `-${color}-300`;
-		this.primary = this.darkTheme ? `-${color}-400` : `-${color}-500`;
-		this.primaryDark = this.darkTheme ? `-${color}-600` : `-${color}-700`;
-		this.primary50 = `-${color}-50`;
-		this.primary100 = `-${color}-100`;
-		this.primary200 = `-${color}-200`;
-		this.primary300 = `-${color}-300`;
-		this.primary400 = `-${color}-400`;
-		this.primary500 = `-${color}-500`;
-		this.primary600 = `-${color}-600`;
-		this.primary700 = `-${color}-700`;
-		this.primary800 = `-${color}-800`;
-		this.primary900 = `-${color}-900`;
+	setPrimaryColor(color: TailwindColor) {
+		this.primaryLight = this.darkTheme ? `-${color.name}-200` : `-${color.name}-300`;
+		this.primary = this.darkTheme ? `-${color.name}-400` : `-${color.name}-500`;
+		this.primaryDark = this.darkTheme ? `-${color.name}-600` : `-${color.name}-700`;
+		this.primary50 = `-${color.name}-50`;
+		this.primary100 = `-${color.name}-100`;
+		this.primary200 = `-${color.name}-200`;
+		this.primary300 = `-${color.name}-300`;
+		this.primary400 = `-${color.name}-400`;
+		this.primary500 = `-${color.name}-500`;
+		this.primary600 = `-${color.name}-600`;
+		this.primary700 = `-${color.name}-700`;
+		this.primary800 = `-${color.name}-800`;
+		this.primary900 = `-${color.name}-900`;
 	}
 
 	ngOnDestroy(): void {

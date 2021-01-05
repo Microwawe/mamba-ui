@@ -1,5 +1,8 @@
-<footer class="relative" [ngClass]="['bg' + contrast, 'text' + defaultInv]">
-	<div class="container space-y-6 divide-y" [ngClass]="['divide' + neutral]">
+<footer
+	class="relative border-t"
+	[ngClass]="['bg' + default, 'text' + defaultInv, 'border' + neutral]"
+>
+	<div class="container space-y-6">
 		<div class="grid justify-between grid-cols-12 p-12 space-y-8 md:space-y-0">
 			<div class="flex flex-col my-6 space-y-6 md:m-0 col-span-full md:pb-0 md:col-span-6">
 				<a class="flex justify-center space-x-3 md:justify-start" href="#">
@@ -116,7 +119,10 @@
 				</ul>
 			</div>
 		</div>
-		<div class="flex items-center justify-between p-6 text-center">
+		<div
+			class="flex items-center justify-between p-6 text-center"
+			[ngClass]="['bg' + contrast]"
+		>
 			<span>©{{ currentYear }} All rights reserved</span>
 			<div class="flex space-x-2">
 				<a

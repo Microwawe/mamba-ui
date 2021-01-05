@@ -5,7 +5,6 @@ import {Router, NavigationEnd, ActivatedRoute} from '@angular/router';
 import {filter, map} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 
-import {ThemeService} from '@core/services/theme.service';
 import {BaseComponent} from '@shared/components/base/base.component';
 
 @Component({

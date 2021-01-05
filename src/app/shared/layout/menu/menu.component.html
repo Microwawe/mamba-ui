@@ -1,0 +1,73 @@
+<aside
+	class="fixed top-0 left-0 z-40 flex flex-col h-full transition-transform duration-300 ease-in-out transform shadow-lg w-72"
+	[ngClass]="[(isOpen | async) ? 'translate-x-0' : '-translate-x-full', 'bg' + default]"
+>
+	<button
+		class="z-50 w-12 h-10 pl-2 overflow-hidden rounded-r-md toggle top-5 left-full"
+		[ngClass]="['text' + defaultInv, (isOpen | async) ? 'bg' + default : 'bg-transparent']"
+		attr.aria-label="{{ (isOpen | async) ? 'Close sidemenu' : 'Open sidemenu' }}"
+		(click)="toggleMenu()"
+	>
+		<input type="checkbox" class="sr-only" [checked]="isOpen | async" aria-hidden="true" />
+		<svg class="w-full h-full stroke-current">
+			<use xlink:href="#menu" />
+			<use xlink:href="#menu" />
+		</svg>
+	</button>
+	<div class="flex-1 p-3 pb-8 -mt-8 space-y-6 overflow-y-auto overscroll-contain">
+		<div class="space-y-2">
+			<span class="text-lg">Categories</span>
+			<ul class="space-y-2 text-sm">
+				<li>
+					<a
+						*ngFor="let category of categories"
+						[routerLink]="['/' + category.link]"
+						[routerLinkActiveOptions]="{exact: true}"
+						routerLinkActive
+						#rla="routerLinkActive"
+						class="flex items-center p-3 font-medium rounded-md"
+						[ngClass]="[
+							'hover:bg' + plain,
+							'focus:bg' + plain,
+							'hover:text' + contrastInv,
+							rla.isActive ? 'bg' + plainInv : 'bg' + default,
+							rla.isActive ? 'text' + contrast : 'text' + defaultInv
+						]"
+					>
+						{{ category.name }}
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="space-y-2">
+			<span class="text-lg">Documentation</span>
+			<ul class="space-y-2 text-sm">
+				<li>
+					<a
+						*ngFor="let category of docsCategories"
+						[routerLink]="['/' + category.link]"
+						[routerLinkActiveOptions]="{exact: true}"
+						routerLinkActive
+						#rla="routerLinkActive"
+						class="flex items-center p-3 font-medium rounded-md"
+						[ngClass]="[
+							'hover:bg' + plain,
+							'focus:bg' + plain,
+							'hover:text' + contrastInv,
+							rla.isActive ? 'bg' + plainInv : 'bg' + default,
+							rla.isActive ? 'text' + contrast : 'text' + defaultInv
+						]"
+					>
+						{{ category.name }}
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<custom-settings></custom-settings>
+</aside>
+<div
+	*ngIf="isOpen | async"
+	class="fixed inset-0 z-30 flex w-full h-screen opacity-50 bg-coolGray-900"
+	(click)="closeMenu()"
+></div>

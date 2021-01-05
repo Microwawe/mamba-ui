@@ -1,0 +1,56 @@
+<div class="transition-transform duration-300 shadow-xl" [ngClass]="['bg' + contrast]">
+	<p class="p-2 text-center capitalize" [ngClass]="['text' + contrastInv]">
+		{{ selectedColor?.name }}
+	</p>
+	<div class="relative flex flex-col items-center justify-center">
+		<!-- Color palette -->
+		<div class="grid grid-cols-6 gap-1 px-3">
+			<button
+				*ngFor="let color of colors"
+				attr.aria-label="Set primary color to {{ color.name }}"
+				class="w-8 h-8 border rounded-md"
+				[ngClass]="[
+					'bg-' + color.name + '-500',
+					'border-' + color.name + '-900',
+					'hover:ring-2',
+					'hover:ring-inset',
+					'hover:ring-white',
+					selectedColor == color ? 'ring-2' : '',
+					selectedColor == color ? 'ring-inset' : '',
+					selectedColor == color ? 'ring-gray-300' : ''
+				]"
+				(click)="changeColor(color)"
+			></button>
+		</div>
+
+		<!-- Light/Dark theme -->
+		<div class="my-4 rounded-full power-switch bg-coolGray-800">
+			<input
+				#themeCheckbox
+				type="checkbox"
+				[checked]="isDarkTheme | async"
+				(change)="toggleDarkTheme(themeCheckbox.checked)"
+			/>
+			<div class="button">
+				<svg class="power-off">
+					<use xlink:href="#line" class="line" />
+					<use xlink:href="#circle" class="circle" />
+				</svg>
+				<svg class="power-on">
+					<use xlink:href="#line" class="line" />
+					<use xlink:href="#circle" class="circle" />
+				</svg>
+			</div>
+		</div>
+
+		<!-- SVG -->
+		<svg xmlns="http://www.w3.org/2000/svg" style="display: none" class="fill-current">
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" id="line">
+				<line x1="75" y1="34" x2="75" y2="58" />
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" id="circle">
+				<circle cx="75" cy="80" r="35" />
+			</symbol>
+		</svg>
+	</div>
+</div>

@@ -7,13 +7,14 @@ import {AppComponent} from './app.component';
 import {environment} from '../environments/environment';
 import {CoreModule} from '@core/core.module';
 import {SharedModule} from '@shared/shared.module';
-import {FooterComponent} from '@core/layout/footer/footer.component';
-import {HeaderComponent} from '@core/layout/header/header.component';
-import {NotFoundComponent} from '@core/layout/not-found/not-found.component';
-import {BreadcrumbComponent} from '@core/layout/breadcrumb/breadcrumb.component';
-import {HomeComponent} from '@core/layout/home/home.component';
-import {SettingsComponent} from '@core/layout/settings/settings.component';
+import {FooterComponent} from '@shared/layout/footer/footer.component';
+import {HeaderComponent} from '@shared/layout/header/header.component';
+import {NotFoundComponent} from '@shared/components/not-found/not-found.component';
+import {BreadcrumbComponent} from '@shared/layout/breadcrumb/breadcrumb.component';
+import {HomeComponent} from '@shared/components/home/home.component';
+import {SettingsComponent} from '@shared/layout/settings/settings.component';
 import {CustomPreloadingStrategy} from '@core/custom.preload.strategy';
+import {MenuComponent} from '@shared/layout/menu/menu.component';
 
 @NgModule({
 	declarations: [
@@ -22,6 +23,7 @@ import {CustomPreloadingStrategy} from '@core/custom.preload.strategy';
 		FooterComponent,
 		HeaderComponent,
 		HomeComponent,
+		MenuComponent,
 		NotFoundComponent,
 		SettingsComponent,
 	],

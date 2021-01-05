@@ -1,11 +1,9 @@
 import {NgModule} from '@angular/core';
-import {Routes, RouterModule, PreloadAllModules} from '@angular/router';
+import {Routes, RouterModule} from '@angular/router';
 
 import {CustomPreloadingStrategy} from '@core/custom.preload.strategy';
-import {CreditsComponent} from 'app/docs/credits/credits.component';
-import {DocsComponent} from 'app/docs/docs.component';
-import {HomeComponent} from '@core/layout/home/home.component';
-import {NotFoundComponent} from '@core/layout/not-found/not-found.component';
+import {HomeComponent} from '@shared/components/home/home.component';
+import {NotFoundComponent} from '@shared/components/not-found/not-found.component';
 
 const routes: Routes = [
 	{
