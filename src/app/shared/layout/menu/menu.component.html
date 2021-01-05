@@ -11,7 +11,7 @@
 			type="checkbox"
 			class="sr-only"
 			[checked]="isOpen | async"
-			aria-label="{{ (isOpen | async) ? 'Close sidemenu' : 'Open sidemenu' }}"
+			attr.aria-label="{{ (isOpen | async) ? 'Close sidemenu' : 'Open sidemenu' }}"
 		/>
 		<svg class="w-full h-full stroke-current">
 			<use xlink:href="#menu" />
