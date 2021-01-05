@@ -6,10 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
-      - run: npm install && npm install -g @lhci/cli@0.6.x
-        with:
-          node-version: '12.x'
-
       - uses: actions/cache@v1
         with:
           path: ~/.npm
