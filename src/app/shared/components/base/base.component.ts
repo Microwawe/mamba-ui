@@ -18,6 +18,7 @@ export class BaseComponent implements OnDestroy {
 	primary = '';
 	primaryLight = '';
 	primaryDark = '';
+	primaryAlt = '';
 	primary50 = '';
 	primary100 = '';
 	primary200 = '';
@@ -69,9 +70,10 @@ export class BaseComponent implements OnDestroy {
 	}
 
 	setPrimaryColor(color: TailwindColor) {
-		this.primaryLight = this.darkTheme ? `-${color.name}-200` : `-${color.name}-300`;
-		this.primary = this.darkTheme ? `-${color.name}-400` : `-${color.name}-500`;
-		this.primaryDark = this.darkTheme ? `-${color.name}-600` : `-${color.name}-700`;
+		this.primaryLight = this.darkTheme ? `-${color.name}-300` : `-${color.name}-500`;
+		this.primary = this.darkTheme ? `-${color.name}-400` : `-${color.name}-600`;
+		this.primaryAlt = this.darkTheme ? `-${color.name}-600` : `-${color.name}-400`;
+		this.primaryDark = this.darkTheme ? `-${color.name}-500` : `-${color.name}-700`;
 		this.primary50 = `-${color.name}-50`;
 		this.primary100 = `-${color.name}-100`;
 		this.primary200 = `-${color.name}-200`;
