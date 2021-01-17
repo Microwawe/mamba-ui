@@ -12,7 +12,7 @@ export class SectionsComponent extends BaseComponent implements OnInit {
 		{name: 'call-to-action', count: 6},
 		{name: 'contact', count: 2},
 		{name: 'faq', count: 2},
-		{name: 'feature', count: 4},
+		{name: 'feature', count: 5},
 		{name: 'footer', count: 2},
 		{name: 'form', count: 1},
 		{name: 'gallery', count: 1},

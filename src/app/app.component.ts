@@ -1,22 +1,26 @@
 import {environment} from '@env';
-import {Component} from '@angular/core';
+import {Component, OnDestroy} from '@angular/core';
 import {Title} from '@angular/platform-browser';
 import {Router, NavigationEnd, ActivatedRoute} from '@angular/router';
 import {filter, map} from 'rxjs/operators';
-import {Observable} from 'rxjs';
+import {Observable, Subscription} from 'rxjs';
 
 import {BaseComponent} from '@shared/components/base/base.component';
+import {MenuService} from '@core/services/menu.service';
 
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.component.html',
 })
-export class AppComponent extends BaseComponent {
+export class AppComponent extends BaseComponent implements OnDestroy {
 	isDarkTheme!: Observable<boolean>;
+	isOpen!: Observable<boolean>;
+	eventSub!: Subscription;
 	devMode = false;
 
 	constructor(
 		private titleService: Title,
+		private menuService: MenuService,
 		private router: Router,
 		private activatedRoute: ActivatedRoute
 	) {
@@ -25,10 +29,11 @@ export class AppComponent extends BaseComponent {
 
 	ngOnInit() {
 		this.isDarkTheme = this.themeService.getDarkTheme();
+		this.isOpen = this.menuService.isOpen();
 		this.devMode = !environment.production;
 
 		const [defaultTitle, defaultTitleDescription] = this.titleService.getTitle().split('|');
-		this.router.events
+		this.eventSub = this.router.events
 			.pipe(
 				filter(event => event instanceof NavigationEnd),
 				map(() => {
@@ -48,5 +53,13 @@ export class AppComponent extends BaseComponent {
 					.join(' | ');
 				this.titleService.setTitle(newTitle);
 			});
+	}
+
+	closeMenu() {
+		this.menuService.close();
+	}
+
+	ngOnDestroy() {
+		this.eventSub.unsubscribe();
 	}
 }

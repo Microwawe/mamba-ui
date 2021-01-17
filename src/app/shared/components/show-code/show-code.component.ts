@@ -1,16 +1,17 @@
 /* eslint-disable node/no-unpublished-import */
-import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnDestroy, ViewChild} from '@angular/core';
 import * as Prism from 'prismjs';
 import 'prismjs/components/prism-jsx';
+import {Subscription} from 'rxjs';
 import {BaseComponent} from '../base/base.component';
 
 @Component({
 	selector: 'custom-show-code',
 	templateUrl: './show-code.component.html',
 })
-export class ShowCodeComponent extends BaseComponent implements AfterViewInit {
+export class ShowCodeComponent extends BaseComponent implements AfterViewInit, OnDestroy {
 	@ViewChild('rawContent') rawContent!: ElementRef;
-
+	themeSub!: Subscription;
 	isDarkTheme = false;
 	rawCode = '';
 	prettyCode = '';
@@ -22,7 +23,7 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit {
 	}
 
 	ngAfterViewInit() {
-		this.themeService.getDarkTheme().subscribe(isDark => {
+		this.themeSub = this.themeService.getDarkTheme().subscribe(isDark => {
 			this.isDarkTheme = isDark;
 		});
 		this.rawCode = this.rawContent?.nativeElement?.firstChild.innerHTML;
@@ -79,7 +80,6 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit {
 	}
 
 	toggleDarkModeVariants(codeStr: string) {
-		console.log(this.isDarkTheme);
 		return this.isDarkTheme
 			? codeStr.replace(/(bg|border|placeholder|text|from|via|to)-/gm, 'dark:$1-')
 			: codeStr.replace(/dark:/gm, '');
@@ -154,5 +154,9 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit {
 	showCode(content: string, language = 'html') {
 		this.code = Prism.highlight(content, Prism.languages[language], language);
 		this.codeVisible = true;
+	}
+
+	ngOnDestroy() {
+		this.themeSub.unsubscribe();
 	}
 }

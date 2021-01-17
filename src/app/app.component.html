@@ -1,26 +1,27 @@
-<div [ngClass]="['text' + defaultInv]">
-	<!-- <custom-settings></custom-settings> -->
-	<custom-menu></custom-menu>
-	<div
-		class="flex flex-col min-h-screen"
-		[ngClass]="[(isDarkTheme | async) ? 'bg-coolGray-900' : 'bg-coolGray-200']"
-	>
+<div
+	class="relative flex flex-row w-full h-full"
+	[ngClass]="['text' + defaultInv, (isDarkTheme | async) ? 'bg-coolGray-900' : 'bg-coolGray-200']"
+>
+	<div class="flex flex-col w-full h-auto mt-20 overflow-y-auto" (click)="closeMenu()">
 		<custom-header></custom-header>
-		<main class="flex-1 mt-20">
-			<custom-breadcrumb></custom-breadcrumb>
+		<custom-menu></custom-menu>
+		<!-- <custom-breadcrumb></custom-breadcrumb> -->
+		<main class="flex-1">
+			<custom-settings></custom-settings>
 			<router-outlet></router-outlet>
 		</main>
 		<custom-footer></custom-footer>
 	</div>
-	<span
-		*ngIf="devMode"
-		class="fixed bottom-0 left-0 px-3 py-2 bg-gray-900 rounded-tr-lg text-coolGray-50"
-	>
-		<span class="sm:hidden">XS</span>
-		<span class="hidden sm:block md:hidden">SM</span>
-		<span class="hidden md:block lg:hidden">MD</span>
-		<span class="hidden lg:block xl:hidden">LG</span>
-		<span class="hidden xl:block 2xl:hidden">XL</span>
-		<span class="hidden 2xl:block">XXL</span>
-	</span>
 </div>
+<span
+	*ngIf="devMode"
+	style="z-index: 999"
+	class="fixed bottom-0 right-0 px-3 py-2 bg-gray-900 rounded-tl-lg text-coolGray-200"
+>
+	<span class="sm:hidden">XS</span>
+	<span class="hidden sm:block md:hidden">SM</span>
+	<span class="hidden md:block lg:hidden">MD</span>
+	<span class="hidden lg:block xl:hidden">LG</span>
+	<span class="hidden xl:block 2xl:hidden">XL</span>
+	<span class="hidden 2xl:block">XXL</span>
+</span>

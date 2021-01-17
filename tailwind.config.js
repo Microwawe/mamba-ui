@@ -5,6 +5,9 @@ const colors = require('tailwindcss/colors');
 module.exports = {
 	purge: [],
 	theme: {
+		container: {
+			center: true,
+		},
 		colors: {
 			transparent: 'transparent',
 			current: 'currentColor',
@@ -47,9 +50,6 @@ module.exports = {
 			},
 			maxHeight: {
 				'half-screen': '50vh',
-			},
-			zIndex: {
-				'90': '90',
 			},
 		},
 	},
@@ -163,7 +163,7 @@ module.exports = {
 		transitionDuration: [],
 		transitionProperty: [],
 		transitionTimingFunction: [],
-		translate: ['hover', 'focus'],
+		translate: ['responsive'],
 		userSelect: ['responsive'],
 		verticalAlign: ['responsive'],
 		visibility: ['responsive'],
@@ -172,37 +172,6 @@ module.exports = {
 		wordBreak: ['responsive'],
 		zIndex: [],
 	},
-	corePlugins: {
-		container: false,
-	},
-	plugins: [
-		require('@tailwindcss/typography'),
-		require('@tailwindcss/forms'),
-		({addComponents, theme}) => {
-			const container = {
-				'.container': {
-					margin: 'auto',
-					maxWidth: theme('maxWidth.full'),
-
-					// Breakpoints
-					'@screen sm': {
-						maxWidth: theme('maxWidth.2xl'),
-					},
-					'@screen md': {
-						maxWidth: theme('maxWidth.3xl'),
-					},
-					'@screen lg': {
-						maxWidth: theme('maxWidth.5xl'),
-					},
-					'@screen xl': {
-						maxWidth: theme('maxWidth.6xl'),
-					},
-					'@screen 2xl': {
-						maxWidth: theme('maxWidth.7xl'),
-					},
-				},
-			};
-			addComponents(container);
-		},
-	],
+	corePlugins: {},
+	plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms')],
 };

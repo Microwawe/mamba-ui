@@ -1,77 +1,77 @@
-<aside
-	class="fixed top-0 left-0 z-40 flex flex-col h-full transition-transform duration-300 ease-in-out transform shadow-lg w-72"
-	[ngClass]="[(isOpen | async) ? 'translate-x-0' : '-translate-x-full', 'bg' + default]"
->
-	<div
-		class="z-50 w-12 h-10 pl-2 overflow-hidden rounded-r-md toggle top-5 left-full"
-		[ngClass]="['text' + defaultInv, (isOpen | async) ? 'bg' + default : 'bg-transparent']"
-		(click)="toggleMenu()"
-	>
-		<input
-			type="checkbox"
-			class="sr-only"
-			[checked]="isOpen | async"
-			attr.aria-label="{{ (isOpen | async) ? 'Close sidemenu' : 'Open sidemenu' }}"
-		/>
-		<svg class="w-full h-full stroke-current">
-			<use xlink:href="#menu" />
-			<use xlink:href="#menu" />
-		</svg>
-	</div>
-	<div class="flex-1 p-3 pb-8 -mt-8 space-y-6 overflow-y-auto overscroll-contain">
-		<div class="space-y-2">
-			<span class="text-lg">Categories</span>
-			<ul class="space-y-2 text-sm">
-				<li>
-					<a
-						*ngFor="let category of categories"
-						[routerLink]="['/' + category.link]"
-						[routerLinkActiveOptions]="{exact: true}"
-						routerLinkActive
-						#rla="routerLinkActive"
-						class="flex items-center p-3 font-medium rounded-md"
-						[ngClass]="[
-							'hover:bg' + plain,
-							'focus:bg' + plain,
-							'hover:text' + contrastInv,
-							rla.isActive ? 'bg' + plainInv : 'bg' + default,
-							rla.isActive ? 'text' + contrast : 'text' + defaultInv
-						]"
-					>
-						{{ category.name }}
-					</a>
-				</li>
-			</ul>
-		</div>
-		<div class="space-y-2">
-			<span class="text-lg">Documentation</span>
-			<ul class="space-y-2 text-sm">
-				<li>
-					<a
-						*ngFor="let category of docsCategories"
-						[routerLink]="['/' + category.link]"
-						[routerLinkActiveOptions]="{exact: true}"
-						routerLinkActive
-						#rla="routerLinkActive"
-						class="flex items-center p-3 font-medium rounded-md"
-						[ngClass]="[
-							'hover:bg' + plain,
-							'focus:bg' + plain,
-							'hover:text' + contrastInv,
-							rla.isActive ? 'bg' + plainInv : 'bg' + default,
-							rla.isActive ? 'text' + contrast : 'text' + defaultInv
-						]"
-					>
-						{{ category.name }}
-					</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<custom-settings></custom-settings>
-</aside>
-<div
-	*ngIf="isOpen | async"
-	class="fixed inset-0 z-30 flex w-full h-screen opacity-50 bg-coolGray-900"
+<!-- <div
+	#backdrop
+	class="fixed inset-0 z-30 bg-black opacity-10 lg:hidden"
+	[ngClass]="[(menuOpen | async) ? 'block' : 'hidden']"
 	(click)="closeMenu()"
-></div>
+></div> -->
+<nav
+	[ngClass]="[(menuOpen | async) ? 'flex' : 'hidden', 'bg' + contrast, 'text' + defaultInv]"
+	class="fixed flex-col w-full pt-2 shadow-sm top-20"
+>
+	<div class="md:hidden">
+		<a
+			*ngFor="let category of categories"
+			class="block px-3 py-2 border-l-8 md:py-3"
+			[ngClass]="[
+				rla.isActive ? 'border' + primary : 'border' + contrast,
+				rla.isActive ? 'underline' : 'no-underline',
+				rla.isActive ? 'text' + contrastInv : 'text' + plainInv
+			]"
+			#rla="routerLinkActive"
+			routerLinkActive
+			[routerLinkActiveOptions]="{exact: category.name === 'Home'}"
+			[routerLink]="['/' + category.link]"
+			>{{ category.name }}</a
+		>
+		<div class="relative">
+			<button
+				(click)="toggleDocs($event)"
+				[ngClass]="[docsOpen ? 'text' + contrastInv : 'text' + plainInv]"
+				class="flex flex-row items-center justify-between w-full px-5 py-2 text-left outline-none md:py-3 focus:outline-none"
+			>
+				<span>Documentation</span>
+				<svg
+					fill="currentColor"
+					viewBox="0 0 20 20"
+					[ngClass]="[docsOpen ? 'rotate-180' : 'rotate-0']"
+					class="inline w-4 h-4 ml-1 transition-transform duration-200 transform"
+				>
+					<path
+						fill-rule="evenodd"
+						d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+						clip-rule="evenodd"
+					></path>
+				</svg>
+			</button>
+			<div
+				*ngIf="docsOpen"
+				class="absolute right-0 w-full origin-top-right rounded-md shadow-lg"
+			>
+				<div class="px-3 rounded-sm shadow-sm" [ngClass]="['bg' + contrast]">
+					<a
+						*ngFor="let doc of docsCategories"
+						class="block px-3 py-2 border-l-8 md:py-3"
+						[ngClass]="[
+							rla.isActive ? 'border' + primary : 'border' + contrast,
+							rla.isActive ? 'underline' : 'no-underline',
+							rla.isActive ? 'text' + contrastInv : 'text' + plainInv
+						]"
+						#rla="routerLinkActive"
+						routerLinkActive
+						[routerLinkActiveOptions]="{exact: true}"
+						[routerLink]="['/' + doc.link]"
+						>{{ doc.name }}</a
+					>
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+	<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 56" id="menu">
+		<path
+			d="M48.33,45.6H18a14.17,14.17,0,0,1,0-28.34H78.86a17.37,17.37,0,0,1,0,34.74H42.33l-21-21.26L47.75,4"
+		/>
+	</symbol>
+</svg>

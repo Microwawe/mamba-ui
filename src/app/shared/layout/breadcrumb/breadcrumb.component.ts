@@ -1,16 +1,18 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 
 import {BaseComponent} from '@shared/components/base/base.component';
+import {Subscription} from 'rxjs';
 import {distinctUntilChanged, filter} from 'rxjs/operators';
 
 @Component({
 	selector: 'custom-breadcrumb',
 	templateUrl: './breadcrumb.component.html',
 })
-export class BreadcrumbComponent extends BaseComponent implements OnInit {
+export class BreadcrumbComponent extends BaseComponent implements OnInit, OnDestroy {
 	breadcrumbs: IBreadCrumb[];
 	showBreadcrumbs = true;
+	eventsSub!: Subscription;
 
 	constructor(private router: Router, private activatedRoute: ActivatedRoute) {
 		super();
@@ -18,7 +20,7 @@ export class BreadcrumbComponent extends BaseComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.router.events
+		this.eventsSub = this.router.events
 			.pipe(
 				filter(event => event instanceof NavigationEnd),
 				distinctUntilChanged()
@@ -61,6 +63,10 @@ export class BreadcrumbComponent extends BaseComponent implements OnInit {
 			return this.buildBreadCrumb(route.firstChild, nextUrl, newBreadcrumbs);
 		}
 		return newBreadcrumbs;
+	}
+
+	ngOnDestroy() {
+		this.eventsSub.unsubscribe();
 	}
 }
 

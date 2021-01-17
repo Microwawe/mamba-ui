@@ -12,7 +12,7 @@ export class DocsComponent extends BaseComponent implements OnInit {
 		{name: 'General', link: 'general'},
 		{name: 'Roadmap', link: 'roadmap'},
 		{name: 'Credits', link: 'credits'},
-		{name: 'Privacy', link: 'privacy'},
+		// {name: 'Privacy', link: 'privacy'},
 	];
 	selectedCategory = this.categories[0];
 

@@ -10,7 +10,9 @@ import {Observable} from 'rxjs';
 	styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent extends BaseComponent implements OnInit {
-	isOpen!: Observable<boolean>;
+	menuOpen!: Observable<boolean>;
+	docsOpen = false;
+	settingsOpen = false;
 	categories = [
 		{link: '', name: 'Home'},
 		{link: 'components', name: 'Components'},
@@ -31,14 +33,24 @@ export class MenuComponent extends BaseComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.isOpen = this.menuService.isOpen();
+		this.menuOpen = this.menuService.isOpen();
 	}
 
 	closeMenu() {
+		this.docsOpen = false;
+		this.settingsOpen = false;
 		this.menuService.close();
 	}
 
-	toggleMenu() {
-		this.menuService.toggle();
+	toggleDocs(event: Event) {
+		this.docsOpen = !this.docsOpen;
+		this.settingsOpen = false;
+		event.stopPropagation();
+	}
+
+	toggleSettings(event: Event) {
+		this.settingsOpen = !this.settingsOpen;
+		this.docsOpen = false;
+		event.stopPropagation();
 	}
 }
