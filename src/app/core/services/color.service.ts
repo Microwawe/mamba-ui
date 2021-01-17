@@ -1,51 +1,61 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
+// eslint-disable-next-line node/no-unpublished-require
+const twColors: TailwindColorPalette = require('tailwindcss/colors');
+
+import {TailwindColor, TailwindColorPalette} from '@shared/interfaces/tailwind-colors.interface';
 
 @Injectable()
 export class ColorService {
 	private key = 'custom-current-color';
-	private currentColor: BehaviorSubject<string>;
-	private defaultColor = 'violet';
-	colors = [
-		'yellow',
-		'amber',
-		'orange',
-		'red',
-		'rose',
-		'pink',
-		'fuchsia',
-		'purple',
-		'violet',
-		'indigo',
-		'blue',
-		'lightBlue',
-		'cyan',
-		'teal',
-		'emerald',
-		'green',
-		'lime',
-	];
+	private currentColor!: BehaviorSubject<TailwindColor>;
+	private defaultColor: TailwindColor = {name: 'violet', shades: twColors.violet};
+	allTailwindColors!: TailwindColor[];
+	colors!: TailwindColor[];
+	grayscale!: TailwindColor[];
 
 	constructor() {
-		const savedColor = localStorage.getItem(this.key);
-		const color = savedColor ? JSON.parse(savedColor) : this.defaultColor;
-		this.currentColor = new BehaviorSubject<string>(color);
-		localStorage.setItem(this.key, JSON.stringify(color));
+		this.setupColors();
 	}
 
-	setCurrentColor(currentColor: string) {
-		localStorage.setItem(this.key, JSON.stringify(currentColor));
+	setCurrentColor(currentColor: TailwindColor) {
+		console.log(currentColor);
+
+		localStorage.setItem(this.key, currentColor.name);
 		this.currentColor.next(currentColor);
 	}
 
-	setCurrentColorString(currentColor: string) {
-		const newColor: string =
-			this.colors.find(color => color === currentColor) || this.defaultColor;
-		localStorage.setItem(this.key, JSON.stringify(newColor));
-		this.currentColor.next(newColor);
+	getCurrentColor(): Observable<TailwindColor> {
+		return this.currentColor.asObservable();
 	}
 
-	observeCurrentColor(): Observable<string> {
-		return this.currentColor.asObservable();
+	getAllColors(): TailwindColor[] {
+		return this.colors;
+	}
+
+	getGrayscale(): TailwindColor[] {
+		return this.grayscale;
+	}
+
+	setupColors(): void {
+		this.allTailwindColors = Object.getOwnPropertyNames(twColors)
+			.filter(colorName => colorName !== 'black' && colorName !== 'white')
+			.map(colorName => {
+				const mappedColor: TailwindColor = {
+					name: colorName,
+					shades: twColors[colorName],
+				};
+				return mappedColor;
+			});
+		this.colors = this.allTailwindColors.filter(color => !this.isGrayscale(color));
+		this.grayscale = this.allTailwindColors.filter(color => this.isGrayscale(color));
+
+		const savedColor = localStorage.getItem(this.key);
+		const color = this.colors.find(color => color.name === savedColor) || this.defaultColor;
+		this.currentColor = new BehaviorSubject<TailwindColor>(color);
+	}
+
+	isGrayscale(color: TailwindColor) {
+		return color.name.toLowerCase().includes('gray');
 	}
 }

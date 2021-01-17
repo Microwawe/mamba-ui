@@ -36,6 +36,7 @@
 							type="checkbox"
 							name="remember"
 							id="remember"
+							aria-label="Remember me"
 							class="mr-1 rounded-sm"
 							[ngClass]="[
 								'focus:ring' + primary,
@@ -50,7 +51,7 @@
 				<button
 					type="button"
 					class="px-8 py-3 space-x-2 text-lg font-semibold rounded"
-					[ngClass]="['bg' + primary, 'text' + dark]"
+					[ngClass]="['bg' + primary, 'text' + contrast]"
 				>
 					Sign in
 				</button>

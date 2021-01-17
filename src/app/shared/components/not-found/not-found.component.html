@@ -1,0 +1,24 @@
+<section
+	class="flex items-center h-full p-8 pb-16"
+	[ngClass]="['text' + defaultInv, 'bg' + contrast]"
+>
+	<div class="container flex flex-col items-center justify-center px-5 my-8">
+		<div class="max-w-md text-center">
+			<img src="assets/svg/404.svg" alt="Error 404, page not found" class="h-80" />
+			<p class="text-2xl font-light leading-normal md:text-3xl">
+				Sorry we couldn't find this page.
+			</p>
+			<p class="mt-4 mb-8">
+				But dont worry, you can find plenty of other things on our homepage.
+			</p>
+
+			<a
+				[routerLink]="['/']"
+				class="px-8 py-3 text-lg font-semibold rounded"
+				[ngClass]="['bg' + primary, 'text' + contrast]"
+			>
+				Back to homepage
+			</a>
+		</div>
+	</div>
+</section>

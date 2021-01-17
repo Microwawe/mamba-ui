@@ -1,0 +1,45 @@
+<section *ngIf="breadcrumbs.length > 0">
+	<div class="container px-4 py-2">
+		<ol class="flex" [ngClass]="['text' + defaultInv]">
+			<li class="flex items-center">
+				<a [routerLink]="['/']" class="p-1 hover:underline" aria-label="Back to homepage"
+					><svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 20 20"
+						class="w-5 h-5"
+						[ngClass]="['text' + plainInv]"
+						fill="currentColor"
+					>
+						<path
+							d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"
+						/>
+					</svg>
+				</a>
+			</li>
+			<li *ngFor="let breadcrumb of breadcrumbs; let i = index" class="flex items-center">
+				<svg
+					*ngIf="i < breadcrumbs.length"
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 20 20"
+					fill="currentColor"
+					[ngClass]="['text' + plainInv]"
+					class="w-5 h-5 mx-1 md:mx-2"
+				>
+					<path
+						fill-rule="evenodd"
+						d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+						clip-rule="evenodd"
+					/>
+				</svg>
+
+				<a
+					[routerLink]="breadcrumb.url"
+					class="p-1 capitalize hover:underline"
+					[ngClass]="{'hover:no-underline cursor-default': i == breadcrumbs.length - 1}"
+				>
+					<span>{{ breadcrumb.label }}</span>
+				</a>
+			</li>
+		</ol>
+	</div>
+</section>

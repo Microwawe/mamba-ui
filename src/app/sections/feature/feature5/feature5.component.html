@@ -10,9 +10,7 @@
 			clicks.
 		</p>
 	</div>
-	<div
-		class="container grid justify-center gap-4 divide-y xl:divide-x xl:divide-y-0 lg:grid-cols-2 xl:grid-cols-4"
-	>
+	<div class="container grid justify-center gap-4 lg:grid-cols-2 xl:grid-cols-4">
 		<div class="flex flex-col px-8 py-6">
 			<h2
 				class="mb-2 text-lg font-semibold sm:text-xl title-font"
@@ -20,11 +18,11 @@
 			>
 				Components
 			</h2>
-			<p class="flex-1 mb-4 text-base leading-relaxed" [ngClass]="['text' + neutralInv]">
+			<p class="flex-1 mb-4 text-base leading-relaxed" [ngClass]="['text' + plainInv]">
 				Individual components that can be re-used multiple times in your designs.
 			</p>
 			<a
-				class="inline-flex items-center text-sm"
+				class="inline-flex items-center space-x-2 text-sm"
 				[routerLink]="['/components']"
 				[ngClass]="['text' + primary]"
 			>
@@ -50,12 +48,12 @@
 			>
 				Sections
 			</h2>
-			<p class="flex-1 mb-4 text-base leading-relaxed" [ngClass]="['text' + neutralInv]">
+			<p class="flex-1 mb-4 text-base leading-relaxed" [ngClass]="['text' + plainInv]">
 				Pre-made building blocks that you can stack on top of each other like Legos to build
 				a website of your own in minutes.
 			</p>
 			<a
-				class="inline-flex items-center text-sm"
+				class="inline-flex items-center space-x-2 text-sm"
 				[routerLink]="['/sections']"
 				[ngClass]="['text' + primary]"
 			>
@@ -81,12 +79,12 @@
 			>
 				Templates
 			</h2>
-			<p class="flex-1 mb-4 text-base leading-relaxed" [ngClass]="['text' + neutralInv]">
+			<p class="flex-1 mb-4 text-base leading-relaxed" [ngClass]="['text' + plainInv]">
 				Full pages that showcase pieces of what you can achieve with the building blocks
 				that are in this UI kit.
 			</p>
 			<a
-				class="inline-flex items-center text-sm"
+				class="inline-flex items-center space-x-2 text-sm"
 				[routerLink]="['/templates']"
 				[ngClass]="['text' + primary]"
 			>
@@ -112,12 +110,12 @@
 			>
 				Customization
 			</h2>
-			<p class="flex-1 mb-4 text-base leading-relaxed" [ngClass]="['text' + neutralInv]">
+			<p class="flex-1 mb-4 text-base leading-relaxed" [ngClass]="['text' + plainInv]">
 				Choose your primary color from any of the Tailwind CSS 2.0 colors. You can also view
 				all of the components in our light and dark themes.
 			</p>
 			<a
-				class="inline-flex items-center text-sm"
+				class="inline-flex items-center space-x-2 text-sm"
 				[routerLink]="['/docs']"
 				[ngClass]="['text' + primary]"
 			>

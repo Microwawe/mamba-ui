@@ -1,8 +1,9 @@
-import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnDestroy, ViewChild} from '@angular/core';
 import {BaseComponent} from '@shared/components/base/base.component';
 /* eslint-disable node/no-unpublished-import */
 import * as Prism from 'prismjs';
 import 'prismjs/components/prism-jsx';
+import {Subscription} from 'rxjs';
 
 import {TemplateModalService} from '../template-fullscreen-modal/template-modal.service';
 
@@ -10,9 +11,9 @@ import {TemplateModalService} from '../template-fullscreen-modal/template-modal.
 	selector: 'custom-template-show-code',
 	templateUrl: './template-show-code.component.html',
 })
-export class TemplateShowCodeComponent extends BaseComponent implements AfterViewInit {
+export class TemplateShowCodeComponent extends BaseComponent implements AfterViewInit, OnDestroy {
 	@ViewChild('rawContent') rawContent!: ElementRef;
-
+	themeSub!: Subscription;
 	isDarkTheme = false;
 	rawCode = '';
 	prettyCode = '';
@@ -25,7 +26,7 @@ export class TemplateShowCodeComponent extends BaseComponent implements AfterVie
 	}
 
 	ngAfterViewInit() {
-		this.themeService.getDarkTheme().subscribe(isDark => {
+		this.themeSub = this.themeService.getDarkTheme().subscribe(isDark => {
 			this.isDarkTheme = isDark;
 		});
 		this.rawCode = this.rawContent?.nativeElement?.firstChild.innerHTML;
@@ -159,5 +160,9 @@ export class TemplateShowCodeComponent extends BaseComponent implements AfterVie
 	showFullscreen() {
 		console.log('showFullscreen');
 		this.templateModal.open(this.rawCode);
+	}
+
+	ngOnDestroy() {
+		this.themeSub.unsubscribe();
 	}
 }

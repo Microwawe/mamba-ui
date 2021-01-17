@@ -9,6 +9,7 @@ import {Feature3Component} from './feature3/feature3.component';
 import {Feature4Component} from './feature4/feature4.component';
 import {Feature5Component} from './feature5/feature5.component';
 import {Feature6Component} from './feature6/feature6.component';
+import {Feature7Component} from './feature7/feature7.component';
 
 const routes: Routes = [
 	{
@@ -27,6 +28,7 @@ const routes: Routes = [
 		Feature4Component,
 		Feature5Component,
 		Feature6Component,
+		Feature7Component,
 	],
 })
 export class FeatureModule {}
