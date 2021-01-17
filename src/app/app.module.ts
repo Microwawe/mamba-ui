@@ -15,7 +15,6 @@ import {HomeComponent} from '@shared/components/home/home.component';
 import {SettingsComponent} from '@shared/layout/settings/settings.component';
 import {CustomPreloadingStrategy} from '@core/custom.preload.strategy';
 import {MenuComponent} from '@shared/layout/menu/menu.component';
-import {MainComponent} from '@shared/layout/main/main.component';
 
 @NgModule({
 	declarations: [
@@ -24,7 +23,6 @@ import {MainComponent} from '@shared/layout/main/main.component';
 		FooterComponent,
 		HeaderComponent,
 		HomeComponent,
-		MainComponent,
 		MenuComponent,
 		NotFoundComponent,
 		SettingsComponent,
