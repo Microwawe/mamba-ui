@@ -1,3 +1,29 @@
-<p>
-  login2 works!
-</p>
+<section>
+	<div class="container flex items-center justify-center text-center">
+		<form class="flex flex-col w-full max-w-2xl p-12 rounded shadow-lg" action="" [ngClass]="['bg'+contrast, 'text' + defaultInv]">
+			<label class="self-start text-xs font-semibold" for="username">Username or Email</label>
+			<input
+				id="username"
+				class="flex items-center h-12 px-4 mt-2 bg-gray-200 rounded focus:outline-none focus:ring-2"
+				type="text"
+			/>
+			<label class="self-start mt-3 text-xs font-semibold" for="password">Password</label>
+			<input
+				id="password"
+				class="flex items-center h-12 px-4 mt-2 bg-gray-200 rounded focus:outline-none focus:ring-2"
+				type="password"
+			/>
+			<button
+				class="flex items-center justify-center h-12 px-6 mt-8 text-sm font-semibold rounded"
+				[ngClass]="['bg'+primary, 'text' + contrast]"
+			>
+				Login
+			</button>
+			<div class="flex justify-center mt-6 space-x-2 text-xs">
+				<a class="" [ngClass]="['text' + plainInv]" href="#">Forgot Password?</a>
+				<span [ngClass]="['text' + plainInv]">/</span>
+				<a class="" [ngClass]="['text' + plainInv]" href="#">Sign Up</a>
+			</div>
+		</form>
+	</div>
+</section>
