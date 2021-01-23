@@ -10,7 +10,7 @@
 			<button class="px-2 text-sm sm:px-3 sm:py-1" (click)="showJSX()">JSX</button>
 		</div>
 		<div class="relative">
-			<div #rawContent *ngIf="!codeVisible" class="flex items-center justify-center min-h-48">
+			<div #rawContent *ngIf="!codeVisible" class="min-h-48">
 				<ng-content></ng-content>
 			</div>
 			<pre

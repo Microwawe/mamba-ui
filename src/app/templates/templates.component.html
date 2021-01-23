@@ -1,11 +1,11 @@
 <div
-	class="container flex flex-col items-center min-h-96 md:my-6"
+	class="container flex flex-col items-center my-6 min-h-96"
 	*ngIf="(modalContent | async) == ''"
 	[ngClass]="['text' + defaultInv]"
 >
 	<h1 class="text-4xl font-bold text-center">Templates</h1>
 	<h2 class="my-8 text-2xl text-center">Coming soon™</h2>
-	<img src="assets/svg/robot.svg" alt="" class="max-w-sm lg:max-w-lg h-96" />
+	<img src="assets/svg/robot.svg" alt="" class="max-w-full p-4 sm:max-w-sm lg:max-w-lg sm:h-96" />
 	<div class="flex flex-wrap p-4 place-content-center">
 		<a
 			*ngFor="let category of categories"

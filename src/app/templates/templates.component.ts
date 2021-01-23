@@ -11,7 +11,7 @@ import {TemplateModalService} from './template-fullscreen-modal/template-modal.s
 })
 export class TemplatesComponent extends BaseComponent implements OnInit {
 	modalContent!: Observable<string>;
-	categories = ['test'];
+	categories = [];
 
 	constructor(private templateModal: TemplateModalService) {
 		super();

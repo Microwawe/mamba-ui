@@ -52,6 +52,44 @@ module.exports = {
 			maxHeight: {
 				'half-screen': '50vh',
 			},
+			typography: theme => ({
+				DEFAULT: {
+					css: {
+						color: theme('colors.gray.700'),
+						h2: {
+							color: theme('colors.gray.800'),
+						},
+						h3: {
+							color: theme('colors.gray.800'),
+						},
+						strong: {
+							color: theme('colors.gray.800'),
+						},
+						a: {
+							color: theme('colors.violet.500'),
+							'&:hover': {
+								color: theme('colors.violet.600'),
+							},
+						},
+					},
+				},
+				dark: {
+					css: {
+						color: theme('colors.gray.400'),
+						a: {color: theme('colors.gray.100')},
+						strong: {color: theme('colors.gray.100')},
+						h1: {color: theme('colors.gray.100')},
+						h2: {color: theme('colors.gray.100')},
+						h3: {color: theme('colors.gray.100')},
+						h4: {color: theme('colors.gray.100')},
+						code: {color: theme('colors.gray.100')},
+						pre: {
+							color: theme('colors.gray.200'),
+							backgroundColor: theme('colors.gray.800'),
+						},
+					},
+				},
+			}),
 		},
 	},
 	variants: {
@@ -165,6 +203,7 @@ module.exports = {
 		transitionProperty: [],
 		transitionTimingFunction: [],
 		translate: ['responsive'],
+		typography: ['dark'],
 		userSelect: ['responsive'],
 		verticalAlign: ['responsive'],
 		visibility: ['responsive'],
@@ -173,6 +212,36 @@ module.exports = {
 		wordBreak: ['responsive'],
 		zIndex: [],
 	},
-	corePlugins: {},
-	plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms')],
+	corePlugins: {
+		container: false,
+	},
+	plugins: [
+		require('@tailwindcss/typography'),
+		require('@tailwindcss/forms'),
+		require('@tailwindcss/aspect-ratio'),
+		({addComponents, theme}) => {
+			const container = {
+				'.container': {
+					margin: 'auto',
+					maxWidth: theme('maxWidth.full'),
+					'@screen sm': {
+						maxWidth: theme('maxWidth.2xl'),
+					},
+					'@screen md': {
+						maxWidth: theme('maxWidth.3xl'),
+					},
+					'@screen lg': {
+						maxWidth: theme('maxWidth.5xl'),
+					},
+					'@screen xl': {
+						maxWidth: theme('maxWidth.6xl'),
+					},
+					'@screen 2xl': {
+						maxWidth: theme('maxWidth.7xl'),
+					},
+				},
+			};
+			addComponents(container);
+		},
+	],
 };
