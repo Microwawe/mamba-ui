@@ -12,17 +12,16 @@
 			<div
 				#rawContent
 				*ngIf="!codeVisible"
-				class="overflow-x-hidden overflow-y-auto overscroll-contain max-h-half-screen"
+				class="overflow-y-auto overscroll-contain max-h-half-screen"
 			>
 				<ng-content></ng-content>
 			</div>
 			<pre
 				*ngIf="codeVisible"
-				class="p-6 overflow-auto"
+				class="p-6 overflow-auto whitespace-pre-line max-h-half-screen overscroll-y-contain"
 				[ngClass]="isDarkTheme ? 'prism-dark' : 'prism-light'"
-				style="white-space: pre-line"
 			>
-				<code class="language-markdown" [innerHTML]="code">
+				<code class="language-html" [innerHTML]="code">
 				</code>
 			</pre>
 			<button

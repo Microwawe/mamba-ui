@@ -2,12 +2,9 @@
 /* eslint-disable node/no-unpublished-require */
 const purgecss = require('@fullhuman/postcss-purgecss')({
 	content: ['./src/**/*.html', './src/**/*.ts'],
-	safelist: {
-		standard: [
-			/(bg|text|border|ring)-(coolGray|yellow|amber|orange|red|rose|pink|fuchsia|purple|violet|indigo|blue|lightBlue|cyan|teal|emerald|green|lime)-[1-9][0]?0$/,
-		],
-		deep: [/prism_(light|dark)/],
-	},
+	safelist: [
+		/(bg|text|border|ring)-(coolGray|yellow|amber|orange|red|rose|pink|fuchsia|purple|violet|indigo|blue|lightBlue|cyan|teal|emerald|green|lime)-[1-9][0]?0$/,
+	],
 	defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
 });
 
