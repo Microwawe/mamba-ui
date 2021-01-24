@@ -1,5 +1,5 @@
 <div
-	class="relative flex flex-row w-full h-full font-sans"
+	class="relative flex flex-row w-full h-full"
 	[ngClass]="['text' + defaultInv, (isDarkTheme | async) ? 'bg-coolGray-900' : 'bg-coolGray-200']"
 >
 	<div class="flex flex-col w-full h-auto mt-20 overflow-y-auto" (click)="closeMenu()">
@@ -16,7 +16,7 @@
 <span
 	*ngIf="devMode"
 	style="z-index: 999"
-	class="fixed bottom-0 right-0 px-3 py-2 bg-gray-900 rounded-tl-lg text-coolGray-100"
+	class="fixed bottom-0 right-0 px-3 py-2 bg-gray-900 rounded-tl-lg text-coolGray-200"
 >
 	<span class="sm:hidden">XS</span>
 	<span class="hidden sm:block md:hidden">SM</span>

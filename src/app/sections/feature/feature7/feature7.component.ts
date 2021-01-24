@@ -8,9 +8,9 @@ import {BaseComponent} from '@shared/components/base/base.component';
 })
 export class Feature7Component extends BaseComponent implements OnInit {
 	offerings = [
-		'Ea et neque distinctio',
-		'Quaerat obcaecati voluptatem ',
-		'Quas eius repudianda',
+		'ea et neque distinctio',
+		'quaerat obcaecati voluptatem ',
+		'quas eius repudianda',
 		'Free and MIT licensed',
 		'Praesentium ea et neque distinctio',
 		'Architecto beatae esse ab amet ',

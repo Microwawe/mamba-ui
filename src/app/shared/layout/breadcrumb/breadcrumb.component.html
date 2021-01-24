@@ -1,12 +1,12 @@
 <section *ngIf="breadcrumbs.length > 0">
 	<div class="container px-4 py-2">
-		<ol class="flex text-sm" [ngClass]="['text' + defaultInv]">
+		<ol class="flex" [ngClass]="['text' + defaultInv]">
 			<li class="flex items-center">
 				<a [routerLink]="['/']" class="p-1 hover:underline" aria-label="Back to homepage"
 					><svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 20 20"
-						class="w-4 h-4"
+						class="w-5 h-5"
 						[ngClass]="['text' + plainInv]"
 						fill="currentColor"
 					>
@@ -23,7 +23,7 @@
 					viewBox="0 0 20 20"
 					fill="currentColor"
 					[ngClass]="['text' + plainInv]"
-					class="w-4 h-4 mx-1"
+					class="w-5 h-5 mx-1 md:mx-2"
 				>
 					<path
 						fill-rule="evenodd"

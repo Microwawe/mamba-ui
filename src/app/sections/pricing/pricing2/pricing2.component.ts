@@ -6,11 +6,6 @@ import {BaseComponent} from '@shared/components/base/base.component';
 	templateUrl: './pricing2.component.html',
 })
 export class Pricing2Component extends BaseComponent implements OnInit {
-	categories = [
-		{title:"Personal", price:"0€"},
-		{title:"Professional", price:"8€"},
-		{title:"Enterprise", price:"19€"},
-	]
 	constructor() {
 		super();
 	}

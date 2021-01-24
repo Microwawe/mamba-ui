@@ -9,7 +9,12 @@
 			<label for="name" class="block mb-0.5 ml-0.5">Name</label>
 			<input
 				class="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25"
-				[ngClass]="['focus:ring' + primary, 'bg' + default]"
+				[ngClass]="[
+					'focus:ring' + primary,
+					'bg' + default,
+					'focus:bg' + contrastInv,
+					'focus:text' + defaultInv
+				]"
 				id="name"
 				type="text"
 				placeholder="Your name"
@@ -21,7 +26,12 @@
 			<label for="email" class="block mb-0.5 ml-0.5">Email</label>
 			<input
 				class="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25"
-				[ngClass]="['focus:ring' + primary, 'bg' + default]"
+				[ngClass]="[
+					'focus:ring' + primary,
+					'bg' + default,
+					'focus:bg' + contrastInv,
+					'focus:text' + defaultInv
+				]"
 				id="email"
 				type="email"
 				placeholder="Your email"
@@ -33,7 +43,12 @@
 			<label for="message" class="block mb-0.5 ml-0.5">Message </label>
 			<textarea
 				class="block w-full p-2 rounded autoexpand focus:outline-none focus:ring focus:ring-opacity-25"
-				[ngClass]="['focus:ring' + primary, 'bg' + default]"
+				[ngClass]="[
+					'focus:ring' + primary,
+					'bg' + default,
+					'focus:bg' + contrastInv,
+					'focus:text' + defaultInv
+				]"
 				id="message"
 				type="text"
 				placeholder="Message..."

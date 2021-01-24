@@ -18,50 +18,99 @@
 				</button>
 			</div>
 		</div>
-		<div class="grid max-w-md grid-cols-1 gap-6 mx-auto auto-rows-fr lg:grid-cols-3 lg:max-w-full">
+		<div class="grid grid-cols-1 gap-6 auto-rows-fr lg:grid-cols-3">
+			<div class="flex flex-col items-center p-8 border rounded-md">
+				<p class="self-start">Personal</p>
+				<p class="self-start text-4xl font-bold">FREE</p>
+				<ul class="self-stretch flex-1 space-y-2">
+					<li class="flex items-center space-x-2" *ngFor="let i of [1, 2, 3, 4, 5]">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke="currentColor"
+							class="w-6 h-6"
+							[ngClass]="['text' + primary]"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+							/>
+						</svg>
+						<span>Lumet consectetur adipisicing</span>
+					</li>
+				</ul>
+				<button
+					class="px-8 py-3 mt-6 text-lg font-semibold border rounded sm:mt-12"
+					[ngClass]="['border' + neutral, 'text' + contrastInv]"
+				>
+					Select
+				</button>
+			</div>
 			<div
-				*ngFor="let category of categories"
-				class="flex flex-col overflow-hidden border-2 rounded-md"
+				class="flex flex-col items-center p-8 border-2 rounded-md"
 				[ngClass]="['border' + primary]"
 			>
-				<div
-					class="flex flex-col items-center justify-center px-2 py-8 space-y-4"
-					[ngClass]="['bg' + default]"
+				<p class="self-start">Personal</p>
+				<p class="self-start text-4xl font-bold">9€ <span class="text-xl">/mo</span></p>
+				<ul class="self-stretch flex-1">
+					<li class="flex items-center space-x-2" *ngFor="let i of [1, 2, 3, 4, 5]">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke="currentColor"
+							class="w-6 h-6"
+							[ngClass]="['text' + primary]"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+							/>
+						</svg>
+						<span>Lumet consectetur adipisicing</span>
+					</li>
+				</ul>
+				<button
+					class="px-8 py-3 mt-6 text-lg font-semibold rounded sm:mt-12"
+					[ngClass]="['bg' + primary, 'text' + contrast]"
 				>
-					<p class="text-lg font-medium">{{category.title}}</p>
-					<p class="text-5xl font-bold">{{category.price}}<span class="text-xl" [ngClass]="['text' + plainInv]"> /mo</span></p>
-				</div>
-				<div
-					class="flex flex-col items-center justify-center px-2 py-8"
-					[ngClass]="['bg' + contrast]"
+					Select
+				</button>
+			</div>
+			<div class="flex flex-col items-center p-8 border rounded-md">
+				<p class="self-start">Business</p>
+				<p class="self-start text-4xl font-bold">17€ <span class="text-xl">/mo</span></p>
+				<ul class="self-stretch flex-1">
+					<li class="flex items-center space-x-2" *ngFor="let i of [1, 2, 3, 4, 5]">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke="currentColor"
+							class="w-6 h-6"
+							[ngClass]="['text' + primary]"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+							/>
+						</svg>
+						<span>Lumet consectetur adipisicing</span>
+					</li>
+				</ul>
+				<button
+					class="px-8 py-3 mt-6 text-lg font-semibold border rounded sm:mt-12"
+					[ngClass]="['border' + neutral, 'text' + contrastInv]"
 				>
-					<ul class="self-stretch flex-1 space-y-2">
-						<li class="flex justify-center space-x-2" *ngFor="let i of [1, 2, 3]">
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								fill="none"
-								viewBox="0 0 24 24"
-								stroke="currentColor"
-								class="w-6 h-6"
-								[ngClass]="['text' + primary]"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-								/>
-							</svg>
-							<span>Lumet consectetur adipisicing</span>
-						</li>
-					</ul>
-					<button
-						class="px-8 py-3 mt-6 text-lg font-semibold rounded sm:mt-12"
-						[ngClass]="['bg' + primary, 'text' + contrast]"
-					>
-						Sign up
-					</button>
-				</div>
+					Select
+				</button>
 			</div>
 		</div>
 	</div>

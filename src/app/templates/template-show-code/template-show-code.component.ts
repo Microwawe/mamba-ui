@@ -1,15 +1,17 @@
-/* eslint-disable node/no-unpublished-import */
 import {AfterViewInit, Component, ElementRef, OnDestroy, ViewChild} from '@angular/core';
+import {BaseComponent} from '@shared/components/base/base.component';
+/* eslint-disable node/no-unpublished-import */
 import * as Prism from 'prismjs';
 import 'prismjs/components/prism-jsx';
 import {Subscription} from 'rxjs';
-import {BaseComponent} from '../base/base.component';
+
+import {TemplateModalService} from '../template-fullscreen-modal/template-modal.service';
 
 @Component({
-	selector: 'custom-show-code',
-	templateUrl: './show-code.component.html',
+	selector: 'custom-template-show-code',
+	templateUrl: './template-show-code.component.html',
 })
-export class ShowCodeComponent extends BaseComponent implements AfterViewInit, OnDestroy {
+export class TemplateShowCodeComponent extends BaseComponent implements AfterViewInit, OnDestroy {
 	@ViewChild('rawContent') rawContent!: ElementRef;
 	themeSub!: Subscription;
 	isDarkTheme = false;
@@ -18,7 +20,8 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit, O
 	code = '';
 	codeVisible = false;
 
-	constructor(protected el: ElementRef) {
+	//TODO: Extract logic from here and show-code.component to a service
+	constructor(private el: ElementRef, private templateModal: TemplateModalService) {
 		super();
 	}
 
@@ -80,17 +83,15 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit, O
 	}
 
 	toggleDarkModeVariants(codeStr: string) {
+		console.log(this.isDarkTheme);
 		return this.isDarkTheme
 			? codeStr.replace(/(bg|border|placeholder|text|from|via|to)-/gm, 'dark:$1-')
 			: codeStr.replace(/dark:/gm, '');
 	}
 
 	useReactSyntax(codeStr: string) {
-		const cleanSVGs = codeStr.replace(/(stroke|fill|clip)-[a-z]/g, x => {
-			const parts = x.split('-');
-			return parts[0] + parts[1].toUpperCase();
-		});
-		return cleanSVGs.replace(/class=/gm, 'className=');
+		// TODO: SVG syntax
+		return codeStr.replace(/class=/gm, 'className=');
 	}
 
 	copyToClipboard() {
@@ -154,6 +155,11 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit, O
 	showCode(content: string, language = 'html') {
 		this.code = Prism.highlight(content, Prism.languages[language], language);
 		this.codeVisible = true;
+	}
+
+	showFullscreen() {
+		console.log('showFullscreen');
+		this.templateModal.open(this.rawCode);
 	}
 
 	ngOnDestroy() {

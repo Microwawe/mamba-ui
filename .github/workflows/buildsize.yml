@@ -13,4 +13,3 @@ jobs:
           repo-token: '${{ secrets.TOKEN }}'
           build-script: 'ng build --prod'
           pattern: '**/dist/mamba-ui/**/*.{js,css,html,json}'
-          minimum-change-threshold: 10000

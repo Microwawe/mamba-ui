@@ -30,11 +30,6 @@ const routes: Routes = [
 		loadChildren: () => import('./docs/docs.module').then(m => m.DocsModule),
 		data: {title: 'Documentation', breadcrumb: 'Documentation'},
 	},
-	{
-		path: 'contact',
-		loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule),
-		data: {title: 'Contact us', breadcrumb: 'Contact us'},
-	},
 	{path: '**', component: NotFoundComponent},
 ];
 
