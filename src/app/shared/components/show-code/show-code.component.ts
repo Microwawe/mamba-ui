@@ -1,5 +1,5 @@
 /* eslint-disable node/no-unpublished-import */
-import {AfterViewInit, Component, ElementRef, OnDestroy, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, Input, OnDestroy, ViewChild} from '@angular/core';
 import {FormatterService} from '@shared/services/formatter.service';
 import * as Prism from 'prismjs';
 import 'prismjs/components/prism-jsx';
@@ -12,6 +12,7 @@ import {BaseComponent} from '../base/base.component';
 })
 export class ShowCodeComponent extends BaseComponent implements AfterViewInit, OnDestroy {
 	@ViewChild('rawContent') rawContent!: ElementRef;
+	@Input() centered = false;
 	themeSub!: Subscription;
 	isDarkTheme = false;
 	rawCode = '';

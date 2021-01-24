@@ -218,7 +218,6 @@ module.exports = {
 	plugins: [
 		require('@tailwindcss/typography'),
 		require('@tailwindcss/forms'),
-		require('@tailwindcss/aspect-ratio'),
 		({addComponents, theme}) => {
 			const container = {
 				'.container': {

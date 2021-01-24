@@ -1,10 +1,13 @@
-<div class="flex items-center justify-between">
-	<div class="flex items-center self-stretch justify-center" [ngClass]="'bg' + primary">
+<div
+	class="flex items-center justify-between p-6 space-x-4 rounded-md"
+	[ngClass]="['bg' + contrast, 'text' + defaultInv]"
+>
+	<div class="flex items-center self-stretch justify-center">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 20 20"
 			fill="currentColor"
-			class="w-6 h-6"
+			class="w-10 h-10"
 		>
 			<path
 				fill-rule="evenodd"
@@ -14,19 +17,4 @@
 		</svg>
 	</div>
 	<span class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus?</span>
-	<button class="px-8 py-3 ml-8 text-lg rounded">
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			fill="none"
-			viewBox="0 0 24 24"
-			stroke="currentColor"
-		>
-			<path
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				stroke-width="2"
-				d="M6 18L18 6M6 6l12 12"
-			/>
-		</svg>
-	</button>
 </div>

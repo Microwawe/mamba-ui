@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { BaseComponent } from '@shared/components/base/base.component';
+import {Component, OnInit} from '@angular/core';
+
+import {BaseComponent} from '@shared/components/base/base.component';
 
 @Component({
 	selector: 'custom-avatar1',

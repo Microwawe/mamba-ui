@@ -1,0 +1,46 @@
+<section class="p-6" [ngClass]="['bg' + default, 'text' + defaultInv]">
+	<div class="container max-w-xl">
+		<div
+			class="flex flex-col items-center w-full p-6 space-y-8 rounded-md lg:h-full lg:p-8"
+			[ngClass]="['bg' + contrast]"
+		>
+			<img
+				src="https://source.unsplash.com/random/100x100"
+				alt=""
+				class="w-20 h-20 rounded-full object-"
+			/>
+			<blockquote class="max-w-lg text-lg italic font-medium text-center">
+				"Et, dignissimos obcaecati. Recusandae praesentium doloribus vitae? Rem unde atque
+				mollitia!"
+			</blockquote>
+
+			<div class="text-center" [ngClass]="['text' + plainInv]">
+				<p>Leroy Jenkins</p>
+				<p>CEO of Company Co.</p>
+			</div>
+
+			<div class="flex space-x-2">
+				<button
+					class="w-2 h-2 rounded-full"
+					aria-label="Page 1"
+					[ngClass]="['bg' + contrastInv]"
+				></button>
+				<button
+					class="w-2 h-2 rounded-full"
+					aria-label="Page 2"
+					[ngClass]="['bg' + plain]"
+				></button>
+				<button
+					class="w-2 h-2 rounded-full"
+					aria-label="Page 3"
+					[ngClass]="['bg' + plain]"
+				></button>
+				<button
+					class="w-2 h-2 rounded-full"
+					aria-label="Page 4"
+					[ngClass]="['bg' + plain]"
+				></button>
+			</div>
+		</div>
+	</div>
+</section>

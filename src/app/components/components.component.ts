@@ -12,9 +12,8 @@ export class ComponentsComponent extends BaseComponent implements OnInit {
 		{name: 'button', count: 1},
 		{name: 'pagination', count: 1},
 		{name: 'snackbar', count: 2},
-		{name: 'tab', count: 1},
+		// {name: 'tab', count: 1},
 	];
-
 
 	constructor() {
 		super();

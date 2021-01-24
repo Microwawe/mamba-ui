@@ -1,18 +1,40 @@
-<section class="p-6">
-	<form action="" class="container max-w-2xl bg-white">
-		<h3 class="text-2xl font-semibold text-gray-900">Let us call you!</h3>
-		<p class="text-gray-600">To help you choose your property</p>
+<section class="" [ngClass]="['bg' + default, 'text' + defaultInv]">
+	<form action="" class="container max-w-lg p-8" [ngClass]="['bg' + contrast]">
+		<h3 class="text-2xl font-semibold text-gray-900">Let's get in touch!</h3>
+		<p class="text-gray-600">Vero eius at minus modestias quo.</p>
 		<div class="flex mt-3 space-x-5">
-			<input type="text" name="" id="" placeholder="Your Name" class="w-1/2 p-2 border" />
-			<input type="tel" name="" id="" placeholder="Your Number" class="w-1/2 p-2 border" />
+			<label for="name" class="sr-only">Your name</label>
+			<input
+				type="text"
+				name="name"
+				id="name"
+				placeholder="Your name"
+				class="w-1/2 p-2 border"
+			/>
+			<label for="number" class="sr-only">Your phonenumber</label>
+			<input
+				type="number"
+				name="number"
+				id="number"
+				placeholder="Your number"
+				class="w-1/2 p-2 border"
+			/>
 		</div>
-		<input type="email" name="" id="" placeholder="Your Email" class="w-full p-2 mt-3 border" />
+		<label for="email" class="sr-only">Your email</label>
+		<input
+			type="email"
+			name="email"
+			id="email"
+			placeholder="Your email"
+			class="w-full p-2 mt-3 border"
+		/>
+		<label for="message" class="sr-only">Your message</label>
 		<textarea
-			name=""
-			id=""
+			name="message"
+			id="message"
 			cols="10"
 			rows="3"
-			placeholder="Tell us about desired property"
+			placeholder="Your message"
 			class="w-full p-2 mt-3 border"
 		></textarea>
 		<p class="mt-3 text-sm font-bold">GDPR Agreement *</p>

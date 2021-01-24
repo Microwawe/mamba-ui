@@ -1,6 +1,10 @@
-<section>
+<section [ngClass]="['bg' + default, 'text' + defaultInv]">
 	<div class="container flex items-center justify-center text-center">
-		<form class="flex flex-col w-full max-w-2xl p-12 rounded shadow-lg" action="" [ngClass]="['bg'+contrast, 'text' + defaultInv]">
+		<form
+			class="flex flex-col w-full max-w-xl p-12 rounded shadow-lg"
+			action=""
+			[ngClass]="['text' + defaultInv]"
+		>
 			<label class="self-start text-xs font-semibold" for="username">Username or Email</label>
 			<input
 				id="username"
@@ -15,7 +19,8 @@
 			/>
 			<button
 				class="flex items-center justify-center h-12 px-6 mt-8 text-sm font-semibold rounded"
-				[ngClass]="['bg'+primary, 'text' + contrast]"
+				[ngClass]="['bg' + primary, 'text' + contrast]"
+				type="submit"
 			>
 				Login
 			</button>
