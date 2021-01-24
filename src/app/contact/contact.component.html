@@ -1,0 +1,123 @@
+<div class="p-12 overflow-hidden" [ngClass]="['text' + defaultInv]">
+	<div class="max-w-xl mx-auto">
+		<div class="text-center">
+			<h2 class="text-3xl font-extrabold leading-loose tracking-tight sm:text-4xl">
+				Contact us
+			</h2>
+			<p class="mt-4 text-lg leading-6" [ngClass]="['text' + plainInv]">
+				If you have requests, suggestions or any other feedback, please leave a message
+				below and we'll get back to you as soon as possible.
+			</p>
+		</div>
+		<div class="mt-8">
+			<form
+				ngNoForm
+				action="https://jamform.com/f/YsP4r-CGysdvviLv1NTsu"
+				method="POST"
+				class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
+			>
+				<div class="sm:col-span-2">
+					<label for="name" class="block text-sm font-medium leading-5"
+						>Name
+						<div class="mt-1 rounded-md shadow-sm">
+							<input
+								id="name"
+								type="text"
+								name="name"
+								class="block w-full px-4 py-3 rounded-md shadow-sm"
+								[ngClass]="[
+									'border' + neutral,
+									'focus:border' + primary,
+									'focus:ring' + primary
+								]"
+							/></div
+					></label>
+				</div>
+				<div class="">
+					<label for="email" class="block text-sm font-medium leading-5"
+						>Email
+						<input
+							id="email"
+							type="email"
+							name="email"
+							class="block w-full px-4 py-3 mt-1 rounded-md shadow-sm"
+							[ngClass]="[
+								'border' + neutral,
+								'focus:border' + primary,
+								'focus:ring' + primary
+							]"
+						/>
+					</label>
+				</div>
+				<div class="">
+					<label for="twitter" class="block text-sm font-medium leading-5"
+						>Twitter handle
+						<input
+							id="twitter"
+							type="text"
+							name="twitter"
+							class="block w-full px-4 py-3 mt-1 rounded-md shadow-sm"
+							[ngClass]="[
+								'border' + neutral,
+								'focus:border' + primary,
+								'focus:ring' + primary
+							]"
+						/>
+					</label>
+				</div>
+				<div class="sm:col-span-2">
+					<label for="category" class="block text-sm font-medium leading-5"
+						>Category
+						<select
+							id="category"
+							name="category"
+							aria-label="Category"
+							class="block w-full px-4 py-3 mt-1 rounded-md shadow-sm"
+							[ngClass]="[
+								'border' + neutral,
+								'focus:border' + primary,
+								'focus:ring' + primary
+							]"
+						>
+							<option>Feature request</option>
+							<option>Feedback</option>
+							<option>Bug report</option>
+							<option>Other</option>
+						</select>
+					</label>
+				</div>
+				<div class="sm:col-span-2">
+					<label for="message" class="block text-sm font-medium leading-5"
+						>Message<span class="text xs">*</span>
+						<textarea
+							id="message"
+							name="message"
+							required
+							rows="4"
+							class="block w-full px-4 py-3 mt-1 rounded-md shadow-sm"
+							[ngClass]="[
+								'border' + neutral,
+								'focus:border' + primary,
+								'focus:ring' + primary
+							]"
+						></textarea>
+					</label>
+				</div>
+				<div class="sm:col-span-2">
+					<button
+						type="submit"
+						class="inline-flex items-center justify-center w-full px-6 py-3 text-base font-medium leading-6 border border-transparent rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2"
+						[ngClass]="[
+							'bg' + primary,
+							'text' + contrast,
+							'hover:bg' + primaryAlt,
+							'focus:ring' + primary
+						]"
+					>
+						Send message
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

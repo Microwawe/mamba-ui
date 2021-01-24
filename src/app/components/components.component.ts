@@ -7,8 +7,13 @@ import {BaseComponent} from '@shared/components/base/base.component';
 	templateUrl: './components.component.html',
 })
 export class ComponentsComponent extends BaseComponent implements OnInit {
-	//categories = ['button', 'label', 'snackbar', 'tab'];
-	categories = [];
+	categories = [
+		{name: 'avatar', count: 1},
+		{name: 'button', count: 1},
+		{name: 'pagination', count: 1},
+		{name: 'snackbar', count: 2},
+		// {name: 'tab', count: 1},
+	];
 
 	constructor() {
 		super();

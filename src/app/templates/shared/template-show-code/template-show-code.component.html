@@ -1,21 +1,18 @@
 <section class="container rounded-lg shadow-sm scrollbar-none">
 	<div class="divide-y rounded shadow-sm" [ngClass]="['bg' + default, 'divide' + neutralInv]">
-		<div class="flex px-2 py-4 space-x-2 overflow-x-auto sm:p-4 sm:space-x-4 flex-nowrap">
-			<button class="px-2 text-sm sm:px-3 sm:py-1" (click)="showPreview()">Preview</button>
-			<button class="px-2 text-sm sm:px-3 sm:py-1" (click)="showHtml()">HTML</button>
-			<button class="px-2 text-sm sm:px-3 sm:py-1" (click)="showJSX()">JSX</button>
-			<button
-				class="px-2 text-sm sm:px-3 sm:py-1 justify-self-end"
-				(click)="showFullscreen()"
-			>
-				Full screen
-			</button>
+		<div class="flex justify-between px-2 py-4 overflow-x-auto sm:p-4 flex-nowrap">
+			<div class="space-x-2">
+				<button class="px-2 text-sm sm:py-1" (click)="showPreview()">Preview</button>
+				<button class="px-2 text-sm sm:py-1" (click)="showHtml()">HTML</button>
+				<button class="px-2 text-sm sm:py-1" (click)="showJSX()">JSX</button>
+			</div>
+			<button class="px-2 text-sm sm:py-1" (click)="showFullscreen()">Full screen</button>
 		</div>
 		<div class="relative">
 			<div
 				#rawContent
 				*ngIf="!codeVisible"
-				class="overflow-y-auto overscroll-contain max-h-half-screen"
+				class="overflow-x-hidden overflow-y-auto overscroll-contain max-h-half-screen"
 			>
 				<ng-content></ng-content>
 			</div>

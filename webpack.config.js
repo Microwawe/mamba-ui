@@ -1,10 +1,13 @@
 /* eslint-disable node/no-unsupported-features/es-syntax */
 /* eslint-disable node/no-unpublished-require */
 const purgecss = require('@fullhuman/postcss-purgecss')({
-	content: ['./src/**/*.html', './src/**/*.component.ts'],
-	safelist: [
-		/(bg|text|border|ring)-(coolGray|yellow|amber|orange|red|rose|pink|fuchsia|purple|violet|indigo|blue|lightBlue|cyan|teal|emerald|green|lime)-[1-9][0]?0$/,
-	],
+	content: ['./src/**/*.{html|ts}', './src/styles/prism_{dark|light}.scss'],
+	safelist: {
+		standard: [
+			/(bg|text|border|ring)-(coolGray|yellow|amber|orange|red|rose|pink|fuchsia|purple|violet|indigo|blue|lightBlue|cyan|teal|emerald|green|lime)-[1-9][0]?0$/,
+		],
+		deep: [/prism_(light|dark)/],
+	},
 	defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
 });
 

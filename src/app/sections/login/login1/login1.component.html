@@ -1,8 +1,8 @@
-<section>
+<section [ngClass]="['bg' + default, 'text' + defaultInv]">
 	<div class="container flex items-center justify-center text-center">
-		<div class="flex flex-col w-full max-w-md p-12 space-y-4">
+		<div class="flex flex-col w-full max-w-md p-12 space-y-4" [ngClass]="['bg' + contrast]">
 			<h1 class="text-3xl font-semibold">Sign in to your account</h1>
-			<a [routerLink]="['/']">Or start your free trial</a>
+			<a [routerLink]="['/']" class="text-sm">Or start your free trial</a>
 			<form class="space-y-4">
 				<div class="flex flex-col">
 					<label for="email" class="sr-only">Email address</label>
@@ -50,7 +50,7 @@
 				</div>
 				<button
 					type="button"
-					class="px-8 py-3 space-x-2 text-lg font-semibold rounded"
+					class="px-8 py-3 space-x-2 font-semibold rounded"
 					[ngClass]="['bg' + primary, 'text' + contrast]"
 				>
 					Sign in

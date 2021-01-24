@@ -1,7 +1,7 @@
 <footer class="border-t" [ngClass]="['bg' + contrast, 'text' + defaultInv, 'border' + neutral]">
 	<div class="container space-y-6">
-		<div class="grid justify-between grid-cols-12 p-12 space-y-8 md:px-6 md:space-y-0">
-			<div class="flex flex-col my-6 space-y-6 md:m-0 col-span-full md:pb-0 md:col-span-6">
+		<div class="px-12 pt-12 space-y-8 md:flex md:justify-between md:px-6 md:space-y-0">
+			<div class="flex flex-col my-6 space-y-6 md:m-0">
 				<a class="flex justify-center space-x-3 md:justify-start" href="#">
 					<svg
 						id="Group_11"
@@ -53,61 +53,65 @@
 					Build websites faster with our premade building blocks.
 				</p>
 			</div>
-			<div
-				class="text-center col-span-full sm:col-span-6 md:text-left md:col-span-2 md:col-end-11"
-			>
-				<p class="pb-2 text-lg font-medium">Quick links</p>
-				<ul class="space-y-1" [ngClass]="'text' + neutralInv">
-					<li>
-						<a
-							[routerLink]="['/components']"
-							class=""
-							[ngClass]="['hover:text' + primary]"
-							>Components</a
-						>
-					</li>
-					<li>
-						<a
-							[routerLink]="['/sections']"
-							class=""
-							[ngClass]="['hover:text' + primary]"
-							>Sections</a
-						>
-					</li>
-					<li>
-						<a
-							[routerLink]="['/templates']"
-							class=""
-							[ngClass]="['hover:text' + primary]"
-							>Templates</a
-						>
-					</li>
-				</ul>
-			</div>
-			<div
-				class="text-center col-span-full sm:col-span-6 md:text-left md:col-span-2 md:col-end-13"
-			>
-				<p class="pb-2 text-lg font-medium">Resources</p>
-				<ul class="space-y-1" [ngClass]="'text' + neutralInv">
-					<li>
-						<a [routerLink]="['/docs']" class="" [ngClass]="['hover:text' + primary]"
-							>Documentation</a
-						>
-					</li>
-					<li>
-						<a
-							[routerLink]="['/docs/credits']"
-							class=""
-							[ngClass]="['hover:text' + primary]"
-							>Credits</a
-						>
-					</li>
-					<li>
-						<a [routerLink]="['/contact']" class="" [ngClass]="['hover:text' + primary]"
-							>Contact us</a
-						>
-					</li>
-				</ul>
+			<div class="flex flex-wrap justify-center lg:space-x-8">
+				<div class="p-6 text-center md:py-0">
+					<p class="pb-2 text-lg font-medium">Quick links</p>
+					<ul class="space-y-1" [ngClass]="'text' + neutralInv">
+						<li>
+							<a
+								[routerLink]="['/components']"
+								class=""
+								[ngClass]="['hover:text' + primary]"
+								>Components</a
+							>
+						</li>
+						<li>
+							<a
+								[routerLink]="['/sections']"
+								class=""
+								[ngClass]="['hover:text' + primary]"
+								>Sections</a
+							>
+						</li>
+						<li>
+							<a
+								[routerLink]="['/templates']"
+								class=""
+								[ngClass]="['hover:text' + primary]"
+								>Templates</a
+							>
+						</li>
+					</ul>
+				</div>
+				<div class="p-6 text-center md:py-0 md:pr-0">
+					<p class="pb-2 text-lg font-medium">Resources</p>
+					<ul class="space-y-1" [ngClass]="'text' + neutralInv">
+						<li>
+							<a
+								[routerLink]="['/docs']"
+								class=""
+								[ngClass]="['hover:text' + primary]"
+								>Documentation</a
+							>
+						</li>
+						<li>
+							<a
+								[routerLink]="['/docs/credits']"
+								class=""
+								[ngClass]="['hover:text' + primary]"
+								>Credits</a
+							>
+						</li>
+						<li>
+							<a
+								[routerLink]="['/contact']"
+								class=""
+								[ngClass]="['hover:text' + primary]"
+								>Contact us</a
+							>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 		<div class="flex flex-col-reverse items-center justify-between p-6 text-center sm:flex-row">
