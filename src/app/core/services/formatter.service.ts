@@ -1,10 +1,12 @@
 import {Injectable} from '@angular/core';
+import {PlausibleEvent} from '@shared/enum/plausible.event.enum';
+import {AnalyticsService} from './analytics.service';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class FormatterService {
-	constructor() {}
+	constructor(private analytics: AnalyticsService) {}
 
 	beautifyHTML(codeStr: string, startAtLevel = 0): string {
 		const div = document.createElement('div');
@@ -115,5 +117,22 @@ export class FormatterService {
 		content += '});';
 		const beautified = this.beautifyHTML(content, 3);
 		return this.useReactSyntax(beautified);
+	}
+
+	copyToClipboard(code: string, component: string, language: string) {
+		const el = document.createElement('textarea');
+		el.value = code;
+		el.setAttribute('readonly', '');
+		el.style.position = 'absolute';
+		el.style.left = '-9999px';
+		document.body.appendChild(el);
+		el.select();
+		document.execCommand('copy');
+		document.body.removeChild(el);
+
+		this.analytics.triggerEvent(PlausibleEvent.COPY_CODE, {
+			language: language,
+			component: component,
+		});
 	}
 }

@@ -1,4 +1,3 @@
-import {HttpClientModule} from '@angular/common/http';
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
@@ -13,7 +12,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-	imports: [RouterModule.forChild(routes), SharedModule, HttpClientModule],
+	imports: [RouterModule.forChild(routes), SharedModule],
 	declarations: [ContactComponent],
 })
 export class ContactModule {}

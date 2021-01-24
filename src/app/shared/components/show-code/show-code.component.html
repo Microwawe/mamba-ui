@@ -3,24 +3,53 @@
 		class="overflow-hidden divide-y rounded shadow-sm"
 		[ngClass]="['bg' + default, 'divide' + neutralInv]"
 	>
-		<div class="flex px-2 py-4 space-x-2 overflow-x-auto sm:p-4 sm:space-x-4 flex-nowrap">
-			<button class="px-2 text-sm sm:px-3 sm:py-1" (click)="showPreview()">Preview</button>
-			<button class="px-2 text-sm sm:px-3 sm:py-1" (click)="showHtml()">HTML</button>
-			<button class="px-2 text-sm sm:px-3 sm:py-1" (click)="showVue()">Vue</button>
-			<button class="px-2 text-sm sm:px-3 sm:py-1" (click)="showJSX()">JSX</button>
+		<div class="flex justify-between px-2 py-4 overflow-x-auto sm:p-4 flex-nowrap">
+			<div class="space-x-2">
+				<button class="px-2 py-1 text-sm" (click)="showPreview()" name="Show preview">
+					Preview
+				</button>
+				<button class="px-2 py-1 text-sm" (click)="showHtml()" name="Show HTML code">
+					HTML
+				</button>
+				<button class="px-2 py-1 text-sm" (click)="showVue()" name="Show Vue template">
+					Vue
+				</button>
+				<button class="px-2 py-1 text-sm" (click)="showJSX()" name="Show JSX code">
+					JSX
+				</button>
+			</div>
+			<button class="px-2 text-sm" (click)="showFullscreen()" name="Show in fullscreen">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 512 512"
+					class="w-4 h-4 mx-auto"
+				>
+					<polygon
+						fill="currentColor"
+						points="208 48 208 16 16 16 16 208 48 208 48 70.627 208.687 231.313 231.313 208.687 70.627 48 208 48"
+					/>
+					<polygon
+						fill="currentColor"
+						points="464 304 464 441.373 299.313 276.687 276.687 299.313 441.373 464 304 464 304 496 496 496 496 304 464 304"
+					/>
+				</svg>
+			</button>
 		</div>
 		<div class="relative">
 			<div
 				#rawContent
 				*ngIf="!codeVisible"
 				class="py-6"
-				[ngClass]="{'px-6 min-h-48 flex justify-center items-center': centered}"
+				[ngClass]="{
+					'px-6 min-h-48 flex justify-center items-center': isComponent,
+					'overflow-y-auto overscroll-contain max-h-half-screen': isTemplate
+				}"
 			>
 				<ng-content></ng-content>
 			</div>
 			<pre
 				*ngIf="codeVisible"
-				class="p-6 overflow-auto whitespace-pre-line max-h-half-screen overscroll-y-contain"
+				class="p-6 overflow-auto whitespace-pre-line language-html max-h-half-screen overscroll-y-contain"
 				[ngClass]="isDarkTheme ? 'prism-dark' : 'prism-light'"
 			>
 				<code class="language-html" [innerHTML]="code">
@@ -29,15 +58,18 @@
 			<button
 				*ngIf="codeVisible"
 				(click)="copyToClipboard()"
+				name="Copy to clipboard"
 				class="absolute top-0 right-0 flex items-center px-4 py-2 mt-3 mr-6 space-x-2 border rounded-lg hover:ring-4"
 				[ngClass]="[
 					'focus:ring' + primary,
 					'hover:ring' + primary,
 					'border' + primary,
-					'bg' + default
+					copied ? 'bg' + primary : 'bg' + default,
+					copied ? 'text' + contrast : 'text' + defaultInv
 				]"
 			>
 				<svg
+					*ngIf="!copied"
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 20 20"
 					fill="currentColor"
@@ -48,7 +80,25 @@
 					/>
 					<path d="M3 8a2 2 0 012-2v10h8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" />
 				</svg>
-				<span>Copy</span>
+				<svg
+					*ngIf="!!copied"
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 512 512"
+					fill="currentColor"
+					class="w-6 h-6"
+				>
+					<path
+						d="M256,16C123.452,16,16,123.452,16,256S123.452,496,256,496,496,388.548,496,256,388.548,16,256,16ZM403.078,403.078a207.253,207.253,0,1,1,44.589-66.125A207.332,207.332,0,0,1,403.078,403.078Z"
+					/>
+					<path d="M256,384A104,104,0,0,0,360,280H152A104,104,0,0,0,256,384Z" />
+					<polygon
+						points="205.757 228.292 226.243 203.708 168 155.173 109.757 203.708 130.243 228.292 168 196.827 205.757 228.292"
+					/>
+					<polygon
+						points="285.757 203.708 306.243 228.292 344 196.827 381.757 228.292 402.243 203.708 344 155.173 285.757 203.708"
+					/>
+				</svg>
+				<span>{{ copied ? 'Copied' : 'Copy' }}</span>
 			</button>
 		</div>
 	</div>

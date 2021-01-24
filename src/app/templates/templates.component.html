@@ -1,8 +1,4 @@
-<div
-	class="container my-6 min-h-96"
-	*ngIf="(modalContent | async) == ''"
-	[ngClass]="['text' + defaultInv]"
->
+<div class="container my-6 min-h-96" [ngClass]="['text' + defaultInv]">
 	<h1 class="text-4xl font-bold text-center">Templates</h1>
 	<div class="flex flex-wrap justify-center max-w-3xl p-4 mx-auto">
 		<a
@@ -22,4 +18,3 @@
 	</div>
 	<router-outlet></router-outlet>
 </div>
-<custom-template-fullscreen-modal *ngIf="modalContent | async"></custom-template-fullscreen-modal>
