@@ -1,4 +1,5 @@
 <div
+	*ngIf="(modalContent | async) == ''"
 	class="relative flex flex-row w-full h-full font-sans"
 	[ngClass]="['text' + defaultInv, (isDarkTheme | async) ? 'bg-coolGray-900' : 'bg-coolGray-200']"
 >
@@ -13,6 +14,7 @@
 		<custom-footer></custom-footer>
 	</div>
 </div>
+<custom-fullscreen-modal *ngIf="modalContent | async"></custom-fullscreen-modal>
 <span
 	*ngIf="devMode"
 	style="z-index: 999"

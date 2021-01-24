@@ -1,8 +1,10 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
 
-@Injectable()
-export class TemplateModalService {
+@Injectable({
+	providedIn: 'root',
+})
+export class FullscreenModalService {
 	private isModalOpen: BehaviorSubject<string>;
 
 	constructor() {

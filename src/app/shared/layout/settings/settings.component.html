@@ -1,6 +1,6 @@
 <div
 	class="fixed left-0 z-40 max-h-screen transition-transform duration-300 transform translate-y-1/2 shadow-xl bottom-1/2 bg-coolGray-700 rounded-r-2xl"
-	[ngClass]="[colorsOpen ? 'translate-x-0' : '-translate-x-full']"
+	[ngClass]="{'translate-x-0': colorsOpen, '-translate-x-full': !colorsOpen}"
 	(click)="$event.stopPropagation()"
 >
 	<p class="p-2 text-center capitalize" [ngClass]="['text' + light]">
@@ -29,11 +29,11 @@
 
 		<button
 			(click)="toggleColors()"
-			class="absolute flex items-center justify-center transform translate-y-1/2 bottom-1/2 rounded-r-xl left-full bg-coolGray-700 text-coolGray-50 focus:outline-none"
+			class="absolute flex items-center justify-center w-8 transform translate-y-1/2 h-28 bottom-1/2 rounded-r-xl left-full bg-coolGray-700 text-coolGray-50 focus:outline-none"
 		>
 			<span
 				style="writing-mode: vertical-lr; text-orientation: upright"
-				class="px-2 py-3 text-xs tracking-tight lg:tracking-tighter lg:text-sm"
+				class="text-sm tracking-tight"
 				>COLORS</span
 			>
 		</button>

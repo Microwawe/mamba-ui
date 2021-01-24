@@ -2,8 +2,6 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
 import {SharedModule} from '@shared/shared.module';
-import {TemplateModalService} from './shared/template-fullscreen-modal/template-modal.service';
-import {TemplatesSharedModule} from './shared/templates-shared.module';
 import {TemplatesComponent} from './templates.component';
 
 const routes: Routes = [
@@ -28,8 +26,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-	imports: [RouterModule.forChild(routes), SharedModule, TemplatesSharedModule],
+	imports: [RouterModule.forChild(routes), SharedModule],
 	declarations: [TemplatesComponent],
-	providers: [TemplateModalService],
+	providers: [],
 })
 export class TemplatesModule {}

@@ -7,12 +7,14 @@ import {Observable, Subscription} from 'rxjs';
 
 import {BaseComponent} from '@shared/components/base/base.component';
 import {MenuService} from '@core/services/menu.service';
+import {FullscreenModalService} from '@core/services/fullscreen.modal.service';
 
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.component.html',
 })
 export class AppComponent extends BaseComponent implements OnDestroy {
+	modalContent!: Observable<string>;
 	isDarkTheme!: Observable<boolean>;
 	isOpen!: Observable<boolean>;
 	eventSub!: Subscription;
@@ -21,6 +23,7 @@ export class AppComponent extends BaseComponent implements OnDestroy {
 	constructor(
 		private titleService: Title,
 		private menuService: MenuService,
+		private modalService: FullscreenModalService,
 		private router: Router,
 		private activatedRoute: ActivatedRoute
 	) {
@@ -29,6 +32,7 @@ export class AppComponent extends BaseComponent implements OnDestroy {
 
 	ngOnInit() {
 		this.isDarkTheme = this.themeService.getDarkTheme();
+		this.modalContent = this.modalService.getModalOpen();
 		this.isOpen = this.menuService.isOpen();
 		this.devMode = !environment.production;
 

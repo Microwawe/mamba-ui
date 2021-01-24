@@ -2,22 +2,21 @@ import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 import {take} from 'rxjs/operators';
 
 import {BaseComponent} from '@shared/components/base/base.component';
-
-import {TemplateModalService} from './template-modal.service';
+import {FullscreenModalService} from '../../../core/services/fullscreen.modal.service';
 
 @Component({
-	selector: 'custom-template-fullscreen-modal',
-	templateUrl: './template-fullscreen-modal.component.html',
+	selector: 'custom-fullscreen-modal',
+	templateUrl: './fullscreen-modal.component.html',
 })
-export class TemplateFullscreenModalComponent extends BaseComponent implements AfterViewInit {
+export class FullscreenModalComponent extends BaseComponent implements AfterViewInit {
 	@ViewChild('content') content!: ElementRef;
 
-	constructor(private templateModal: TemplateModalService) {
+	constructor(private modal: FullscreenModalService) {
 		super();
 	}
 
 	ngAfterViewInit() {
-		this.templateModal
+		this.modal
 			.getModalOpen()
 			.pipe(take(1))
 			.subscribe(html => {
@@ -26,6 +25,6 @@ export class TemplateFullscreenModalComponent extends BaseComponent implements A
 	}
 
 	close() {
-		this.templateModal.close();
+		this.modal.close();
 	}
 }
