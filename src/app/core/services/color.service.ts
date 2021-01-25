@@ -19,8 +19,6 @@ export class ColorService {
 	}
 
 	setCurrentColor(currentColor: TailwindColor) {
-		console.log(currentColor);
-
 		localStorage.setItem(this.key, currentColor.name);
 		this.currentColor.next(currentColor);
 	}
