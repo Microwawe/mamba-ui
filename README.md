@@ -1,112 +1,95 @@
- [![GitHub license](https://img.shields.io/github/license/Microwawe/angular-quickstart)](https://github.com/Microwawe/angular-quickstart)
-
+[![GitHub license](https://img.shields.io/github/license/Microwawe/mamba-ui)](https://github.com/Microwawe/mamba-ui/blob/master/LICENSE.md)
+[![GitHub issues](https://img.shields.io/github/issues/Microwawe/mamba-ui)](https://github.com/Microwawe/mamba-ui/issues)
+[![GitHub stars](https://img.shields.io/github/stars/Microwawe/mamba-ui)](https://github.com/Microwawe/mamba-ui/stargazers)
+![Twitter Follow](https://img.shields.io/twitter/follow/mamba_ui?style=social)
 
 # Mamba UI
 
+Mamba UI is a free, open-source collection of beautiful UI elements based on Tailwind CSS that make it easy for anyone to build a website in minutes. Take a look at the kit at [www.mambaui.com](https://mambaui.com).
 
-An UI kit for plain HTML and TailwindCSS components to help you get started even faster. [View the demo](https://mirkonowak.com/ui-kit).
+All the components are just good ol' HTML and CSS, but without the need of writing complex css rules thanks to [Tailwind CSS](https://tailwindcss.com/). Tailwind CSS is a utility-first CSS
+framework so if one of our components doesn't fit your needs just right, you can modify
+them easily by following the their [documentation](https://tailwindcss.com/docs) documentation</a> about the different classes.
 
 ## Features
 
-- [x] [TailwindCSS](https://tailwindcss.com/)
-- [x] [CoreUI Icons](https://icons.coreui.io/icons/)
-- [x] [Montserrat font](https://fonts.google.com/specimen/Montserrat)
-- [x] [Prismjs code highlighter](https://prismjs.com/)
-- [x] Dynamic light and dark themes
-  - [x] Selected theme saved in localstorage
+-   [x] 50+ building blocks
+-   [x] Choose your primary color from any of the 17 different Tailwind colors
+-   [x] Fully responsive
+-   [x] Export as HTML or JSX
+-   [x] Dynamic light and dark themes
+-   [x] All the icons and illustrations are open-sourced as well
+-   [x] Easy to customize with Tailwind CSS
+
+## Upcoming features
+
+If you want to know what we have planned for the near future, you can check out [our public roadmap](https://mambaui.com/docs/roadmap).
 
 ## Installation
 
-All the components and layouts that you can copy-paste to your project works out-of-the-box without any modifications as long as you have [TailwindCSS installed](https://tailwindcss.com/docs/installation) in your project.
+There is no need to download or install anything from Mamba UI. Just copy-paste the components and templates to your project and they'll work out-of-the-box without any modifications as long as you have [TailwindCSS installed](https://tailwindcss.com/docs/installation) in your project.
+
+NOTE: Tailwind doesn't have all the different colors enabled in the default configuration so here are all the possible colors mapped to their respective names.
+
+```
+module.exports = {
+	purge: [],
+	theme: {
+		colors: {
+			transparent: 'transparent',
+			current: 'currentColor',
+			black: colors.black,
+			white: colors.white,
+			rose: colors.rose,
+			pink: colors.pink,
+			fuchsia: colors.fuchsia,
+			purple: colors.purple,
+			violet: colors.violet,
+			indigo: colors.indigo,
+			blue: colors.blue,
+			lightBlue: colors.lightBlue,
+			cyan: colors.cyan,
+			teal: colors.teal,
+			emerald: colors.emerald,
+			green: colors.green,
+			lime: colors.lime,
+			yellow: colors.yellow,
+			amber: colors.amber,
+			orange: colors.orange,
+			red: colors.red,
+			warmGray: colors.warmGray,
+			trueGray: colors.trueGray,
+			gray: colors.gray,
+			blueGray: colors.blueGray,
+			coolGray: colors.coolGray,
+		},
+	}
+};
+```
 
 ## Usage
 
 How to use the components on your own websites?
 
-1. Find a component that you like from the [demo website](https://mirkonowak.com/ui-kit/home)
+1. Find a component, section or template that you like from the [Mamba UI website](https://mambaui.com)
 2. Select the primary color from the available colors
 3. Select the light or dark theme
-4. Click the "HTML"-button
-5. Copy/paste into your project
+4. View the HTML, Vue or React code for that element
+5. Copy/paste the code into your project
 6. Profit
 
-## TODO
-
-- [x] Update to TailwindCSS 2.0
-  - [x] Tailwind typography plugin
-  - [x] Tailwind forms plugin
-- [x] Prism colors for light theme
-- [ ] More complex color themes
-  - [ ] Primary/secondary colors
-  - [ ] Different shades
-  - [ ] Warm/cold grays
-- [ ] Custom color palettes
-- [ ] Mobile and table views
-- [ ] Components
-  - [ ] Buttons
-    - [ ] Basic
-    - [ ] Outline
-    - [ ] Text
-    - [ ] Raised
-    - [ ] With icon
-    - [ ] With dropdown
-- [ ] Sections
-  - [ ] Banner
-  - [x] Blog
-  - [x] Call to Action
-  - [ ] Contact
-  - [ ] Dialog
-  - [x] FAQ
-  - [x] Feature
-  - [x] Footer
-  - [ ] Form
-  - [ ] Header
-  - [x] Hero
-  - [ ] Gallery
-  - [ ] Login
-  - [ ] Menu
-  - [ ] Not found 404
-  - [x] Pricing
-  - [ ] Settings
-  - [ ] Snackbar
-  - [x] Stats
-  - [ ] Steps
-  - [ ] Tab
-  - [ ] Tag
-  - [x] Team
-  - [x] Testimonial
-  - [x] Timeline
-  - [ ] Tooltip
-- [ ] Full templates
-  - [ ] App landing page
-  - [ ] Blog
-  - [ ] Marketing
-  - [ ] Portfolio
-- [ ] Copy and paste components
-  - [ ] Plain html + css that works out of the box
-  - [ ] React components
-  - [ ] Vue components
-
-
-
 ## Contributing
+
 Right now this is just a hobby project for me and there aren't a lot of users (if any) so I update and maintain the project as I have spare time.
 
 If you want to help, pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## Development
 
-After you clone this repository to your desktop with ```git clone https://github.com/Microwawe/ui-kit.git```, go to its root directory and run ```npm install``` to install its dependencies.
+After you clone this repository to your desktop with `git clone https://github.com/Microwawe/mamba-ui.git`, go to its root directory and run `npm install` to install its dependencies.
 
-Once the dependencies are installed, you can run ``` ng serve ``` to start the application. You will then be able to access it at ```localhost:4200```
-
-## Credits and references
-
-Inspired by [Tailblocks](https://mertjf.github.io/tailblocks/) 
-
-PrismJS themes:
--  Light theme: [Coy without shadows](https://github.com/PrismJS/prism-themes/blob/master/themes/prism-coy-without-shadows.css) by [RunDevelopment](https://github.com/RunDevelopment) (based on Tim Shedor's Coy theme)
--  Dark theme: [Material Dark](https://github.com/PrismJS/prism-themes/blob/master/themes/prism-material-dark.css) by [dutchenkoOleg](https://github.com/dutchenkoOleg) 
+Once the dependencies are installed, you can run `ng serve` to start the application. You will then be able to access it at `localhost:4200`
 
 ## License
+
 [MIT](https://choosealicense.com/licenses/mit/)
