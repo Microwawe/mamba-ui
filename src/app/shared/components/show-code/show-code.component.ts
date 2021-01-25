@@ -1,10 +1,11 @@
 /* eslint-disable node/no-unpublished-import */
 import {AfterViewInit, Component, ElementRef, Input, OnDestroy, ViewChild} from '@angular/core';
-import {FormatterService} from '@core/services/formatter.service';
-import {FullscreenModalService} from '@core/services/fullscreen.modal.service';
+import {Subscription} from 'rxjs';
 import * as Prism from 'prismjs';
 import 'prismjs/components/prism-jsx';
-import {Subscription} from 'rxjs';
+
+import {FullscreenModalService} from '@shared/services/fullscreen.modal.service';
+import {FormatterService} from '@shared/services/formatter.service';
 import {BaseComponent} from '../base/base.component';
 
 @Component({
