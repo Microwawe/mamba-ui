@@ -29,17 +29,15 @@
 
 		<button
 			(click)="toggleColors()"
-			class="absolute flex items-center justify-center w-8 transform translate-y-1/2 h-28 bottom-1/2 rounded-r-xl left-full bg-coolGray-700 text-coolGray-50 focus:outline-none"
+			class="absolute flex items-center justify-center h-32 transform translate-y-1/2 w-7 bottom-1/2 rounded-r-xl left-full bg-coolGray-700 text-coolGray-50 focus:outline-none"
 		>
+			<span class="sr-only">Toggle</span>
 			<span
-				style="
-					writing-mode: vertical-lr;
-					text-orientation: upright;
-					letter-spacing: -0.25rem;
-				"
-				class="text-sm"
+				style="writing-mode: vertical-lr; text-orientation: upright"
+				class="font-mono text-sm antialiased font-medium"
 				>COLORS</span
 			>
+			<span class="sr-only">menu</span>
 		</button>
 
 		<!-- Light/Dark theme -->
