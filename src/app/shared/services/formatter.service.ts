@@ -1,12 +1,10 @@
 import {Injectable} from '@angular/core';
-import {PlausibleEvent} from '@shared/enum/plausible.event.enum';
-import {AnalyticsService} from './analytics.service';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class FormatterService {
-	constructor(private analytics: AnalyticsService) {}
+	constructor() {}
 
 	beautifyHTML(codeStr: string, startAtLevel = 0): string {
 		const div = document.createElement('div');
@@ -77,11 +75,15 @@ export class FormatterService {
 		return codeStr.replace(/>\s([^<]*)\s</g, '>$1<');
 	}
 
-	// toggleDarkModeVariants(codeStr: string) {
-	// 	return this.isDarkTheme
-	// 		? codeStr.replace(/(bg|border|placeholder|text|from|via|to)-/gm, 'dark:$1-')
-	// 		: codeStr.replace(/dark:/gm, '');
-	// }
+	toggleDarkModeVariants(codeStr: string, darkTheme: boolean) {
+		return darkTheme
+			? codeStr.replace(/(bg|border|placeholder|text|from|via|to)-/gm, 'dark:$1-')
+			: codeStr.replace(/dark:/gm, '');
+	}
+
+	replaceColor(codeStr: string, oldColor: string, newColor: string) {
+		return codeStr.replace('-' + oldColor + '-', '-' + newColor + '-');
+	}
 
 	useReactSyntax(codeStr: string) {
 		const cleanSVGs = codeStr.replace(/(stroke|fill|clip)-[a-z]/g, prop => {
@@ -119,7 +121,7 @@ export class FormatterService {
 		return this.useReactSyntax(beautified);
 	}
 
-	copyToClipboard(code: string, component: string, language: string) {
+	copyToClipboard(code: string) {
 		const el = document.createElement('textarea');
 		el.value = code;
 		el.setAttribute('readonly', '');
@@ -129,10 +131,5 @@ export class FormatterService {
 		el.select();
 		document.execCommand('copy');
 		document.body.removeChild(el);
-
-		this.analytics.triggerEvent(PlausibleEvent.COPY_CODE, {
-			language: language,
-			component: component,
-		});
 	}
 }

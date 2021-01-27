@@ -23,13 +23,12 @@
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 512 512"
 					class="w-4 h-4 mx-auto"
+					fill="currentColor"
 				>
 					<polygon
-						fill="currentColor"
 						points="208 48 208 16 16 16 16 208 48 208 48 70.627 208.687 231.313 231.313 208.687 70.627 48 208 48"
 					/>
 					<polygon
-						fill="currentColor"
 						points="464 304 464 441.373 299.313 276.687 276.687 299.313 441.373 464 304 464 304 496 496 496 496 304 464 304"
 					/>
 				</svg>
@@ -50,7 +49,7 @@
 			<pre
 				*ngIf="codeVisible"
 				class="p-6 overflow-auto whitespace-pre-line language-html max-h-half-screen overscroll-y-contain"
-				[ngClass]="isDarkTheme ? 'prism-dark' : 'prism-light'"
+				[ngClass]="this.options.darkTheme ? 'prism-dark' : 'prism-light'"
 			>
 				<code class="language-html" [innerHTML]="code">
 				</code>

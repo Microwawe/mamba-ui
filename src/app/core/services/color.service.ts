@@ -24,7 +24,7 @@ export class ColorService {
 	}
 
 	getCurrentColor(): Observable<TailwindColor> {
-		return this.currentColor.asObservable();
+		return this.currentColor;
 	}
 
 	getAllColors(): TailwindColor[] {

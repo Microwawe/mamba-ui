@@ -1,12 +1,14 @@
 /* eslint-disable node/no-unpublished-import */
 import {AfterViewInit, Component, ElementRef, Input, OnDestroy, ViewChild} from '@angular/core';
-import {Subscription} from 'rxjs';
+import {combineLatest, Subscription} from 'rxjs';
 import * as Prism from 'prismjs';
 import 'prismjs/components/prism-jsx';
 
 import {FullscreenModalService} from '@shared/services/fullscreen.modal.service';
 import {FormatterService} from '@shared/services/formatter.service';
 import {BaseComponent} from '../base/base.component';
+import {AnalyticsService} from '@shared/services/analytics.service';
+import {PlausibleEvent} from '@shared/enum/plausible.event.enum';
 
 @Component({
 	selector: 'custom-show-code',
@@ -16,35 +18,45 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit, O
 	@ViewChild('rawContent') rawContent!: ElementRef;
 	@Input() isComponent = false;
 	@Input() isTemplate = false;
-	themeSub!: Subscription;
-	isDarkTheme = false;
+	combinedSub!: Subscription;
 	rawCode = '';
 	prettyCode = '';
 	code = '';
 	copied = false;
 	codeVisible = false;
-	selectedLanguage = '';
-	selectedComponent = '';
+	options = {
+		language: '',
+		component: '',
+		darkTheme: false,
+		color: '',
+	};
 
-	constructor(private modal: FullscreenModalService, private formatter: FormatterService) {
+	constructor(
+		private modal: FullscreenModalService,
+		private formatter: FormatterService,
+		private analytics: AnalyticsService
+	) {
 		super();
 	}
 
 	ngAfterViewInit() {
-		this.themeSub = this.themeService.getDarkTheme().subscribe(isDark => {
-			this.isDarkTheme = isDark;
+		this.combinedSub = combineLatest([
+			this.colorService.getCurrentColor(),
+			this.themeService.getDarkTheme(),
+		]).subscribe(([color, theme]) => {
+			if (this.codeVisible) {
+				this.showPreview();
+			}
+			this.options.color = color.name;
+			this.options.darkTheme = theme;
 		});
-		this.rawCode = this.rawContent?.nativeElement?.firstChild.innerHTML;
-		this.selectedComponent = this.rawContent?.nativeElement?.firstChild.localName;
+		this.options.component = this.rawContent?.nativeElement?.firstChild.localName;
 	}
 
 	copyToClipboard() {
 		this.copied = true;
-		this.formatter.copyToClipboard(
-			this.prettyCode,
-			this.selectedComponent,
-			this.selectedLanguage
-		);
+		this.formatter.copyToClipboard(this.prettyCode);
+		this.analytics.triggerEvent(PlausibleEvent.COPY_CODE, this.options);
 	}
 
 	showPreview() {
@@ -53,30 +65,34 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit, O
 	}
 
 	showHtml() {
-		this.selectedLanguage = 'html';
-		this.prettyCode = this.formatter.beautifyHTML(this.rawCode);
+		this.options.language = 'html';
+		this.prettyCode = this.formatter.beautifyHTML(this.getRawCode());
+		this.prettyCode = this.formatter.toggleDarkModeVariants(
+			this.prettyCode,
+			this.options.darkTheme
+		);
 		this.showCode(this.prettyCode);
 	}
 
 	showJSX() {
-		this.selectedLanguage = 'jsx';
-		this.prettyCode = this.formatter.beautifyHTML(this.rawCode);
+		this.options.language = 'jsx';
+		this.prettyCode = this.formatter.beautifyHTML(this.getRawCode());
 		this.showCode(this.formatter.useReactSyntax(this.prettyCode), 'jsx');
 	}
 
 	showReactClass() {
-		this.prettyCode = this.formatter.toReactClass(this.rawCode);
+		this.prettyCode = this.formatter.toReactClass(this.getRawCode());
 		this.showCode(this.prettyCode, 'jsx');
 	}
 
 	showReactFunctional() {
-		this.prettyCode = this.formatter.toReactFunctional(this.rawCode);
+		this.prettyCode = this.formatter.toReactFunctional(this.getRawCode());
 		this.showCode(this.prettyCode, 'jsx');
 	}
 
 	showVue() {
-		this.selectedLanguage = 'vue';
-		this.prettyCode = this.formatter.toVue(this.rawCode);
+		this.options.language = 'vue';
+		this.prettyCode = this.formatter.toVue(this.getRawCode());
 		this.showCode(this.prettyCode);
 	}
 
@@ -85,11 +101,18 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit, O
 		this.codeVisible = true;
 	}
 
+	getRawCode() {
+		if (this.rawContent?.nativeElement?.firstChild.innerHTML) {
+			this.rawCode = this.rawContent?.nativeElement?.firstChild.innerHTML;
+		}
+		return this.rawCode;
+	}
+
 	showFullscreen() {
-		this.modal.open(this.rawCode);
+		this.modal.open(this.getRawCode());
 	}
 
 	ngOnDestroy() {
-		this.themeSub.unsubscribe();
+		this.combinedSub.unsubscribe();
 	}
 }
