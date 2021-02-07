@@ -50,7 +50,8 @@
 					<span class="self-center text-2xl font-bold">Mamba UI</span>
 				</a>
 				<p [ngClass]="['text' + plainInv]" class="text-center md:max-w-sm md:text-left">
-					We're all you need to build a great website.
+					We've got 50+ building blocks that can help you create almost any type of a
+					website with just a couple of clicks.
 				</p>
 			</div>
 			<div class="flex flex-wrap justify-center lg:space-x-8">
@@ -63,14 +64,6 @@
 								class=""
 								[ngClass]="['hover:text' + primary]"
 								>Components</a
-							>
-						</li>
-						<li>
-							<a
-								[routerLink]="['/sections']"
-								class=""
-								[ngClass]="['hover:text' + primary]"
-								>Sections</a
 							>
 						</li>
 						<li>
@@ -121,6 +114,7 @@
 					class="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10"
 					aria-label="Write me an email"
 					[ngClass]="['bg' + primary, 'text' + contrast]"
+					(click)="clickLink('email')"
 					href="mailto:mirko@mirkonowak.com"
 				>
 					<svg
@@ -140,6 +134,7 @@
 					class="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10"
 					aria-label="Contact via Twitter"
 					[ngClass]="['bg' + primary, 'text' + contrast]"
+					(click)="clickLink('twitter')"
 					href="https://twitter.com/mamba_ui"
 				>
 					<svg
@@ -158,6 +153,7 @@
 					class="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10"
 					aria-label="See the code in GitHub"
 					[ngClass]="['bg' + primary, 'text' + contrast]"
+					(click)="clickLink('github')"
 					href="https://github.com/Microwawe/mamba-ui"
 				>
 					<svg
@@ -175,9 +171,8 @@
 					class="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10"
 					aria-label="Support me via Buy me a coffee"
 					[ngClass]="['bg' + primary, 'text' + contrast]"
+					(click)="clickLink('buy me a coffee')"
 					href="https://www.buymeacoffee.com/nnowwakk"
-					target="_blank"
-					rel="noopener noreferrer"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
