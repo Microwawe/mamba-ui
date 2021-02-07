@@ -21,11 +21,6 @@ const routes: Routes = [
 		data: {title: 'Templates', breadcrumb: 'Templates', preload: true},
 	},
 	{
-		path: 'sections',
-		loadChildren: () => import('./sections/sections.module').then(m => m.SectionsModule),
-		data: {title: 'Sections', breadcrumb: 'Sections', preload: true},
-	},
-	{
 		path: 'docs',
 		loadChildren: () => import('./docs/docs.module').then(m => m.DocsModule),
 		data: {title: 'Documentation', breadcrumb: 'Documentation'},

@@ -12,11 +12,9 @@ import {Observable} from 'rxjs';
 export class MenuComponent extends BaseComponent implements OnInit {
 	menuOpen!: Observable<boolean>;
 	docsOpen = false;
-	settingsOpen = false;
 	categories = [
 		{link: '', name: 'Home'},
 		{link: 'components', name: 'Components'},
-		{link: 'sections', name: 'Sections'},
 		{link: 'templates', name: 'Templates'},
 		{link: 'contact', name: 'Contact us'},
 	];
@@ -25,7 +23,7 @@ export class MenuComponent extends BaseComponent implements OnInit {
 		{name: 'General', link: 'docs/general'},
 		{name: 'Roadmap', link: 'docs/roadmap'},
 		{name: 'Credits', link: 'docs/credits'},
-		{name: 'Privacy', link: 'docs/privacy'},
+		// {name: 'Privacy', link: 'docs/privacy'},
 	];
 
 	constructor(private menuService: MenuService) {
@@ -38,19 +36,11 @@ export class MenuComponent extends BaseComponent implements OnInit {
 
 	closeMenu() {
 		this.docsOpen = false;
-		this.settingsOpen = false;
 		this.menuService.close();
 	}
 
 	toggleDocs(event: Event) {
 		this.docsOpen = !this.docsOpen;
-		this.settingsOpen = false;
-		event.stopPropagation();
-	}
-
-	toggleSettings(event: Event) {
-		this.settingsOpen = !this.settingsOpen;
-		this.docsOpen = false;
 		event.stopPropagation();
 	}
 }

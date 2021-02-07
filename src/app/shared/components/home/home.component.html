@@ -1,5 +1,5 @@
 <div class="space-y-12 lg:space-y-24" [ngClass]="['bg' + default, 'text' + defaultInv]">
-	<section class="px-6 pt-8 pb-12 sm:pt-20 md:pb-16 lg:pt-40 2xl:pt-32">
+	<section class="px-6 pt-8 pb-12 sm:pt-20 md:pb-16 lg:pb-0 2xl:pt-32">
 		<div class="container flex flex-col justify-center lg:flex-row lg:justify-between">
 			<div
 				class="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left"
@@ -10,26 +10,20 @@
 					in minutes
 				</h1>
 				<p class="mt-6 mb-8 text-lg sm:mb-12">
-					Mamba UI is a free, open-source collection of UI elements
+					Mamba UI is a free, open-source collection of UI components
 					<br class="hidden md:inline lg:hidden" />
-					based on Tailwind CSS.
+					and templates based on Tailwind CSS.
 				</p>
 				<div
 					class="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start"
 				>
 					<a
 						class="px-8 py-3 text-lg font-semibold rounded"
-						[routerLink]="['/sections']"
+						[routerLink]="['/components']"
+						(click)="clickCTA()"
 						[ngClass]="['bg' + primary, 'text' + contrast]"
 					>
-						Browse sections
-					</a>
-					<a
-						class="px-8 py-3 text-lg border rounded"
-						[routerLink]="['/docs']"
-						[ngClass]="['border' + neutralInv]"
-					>
-						Documentation
+						Browse free components
 					</a>
 				</div>
 			</div>
@@ -180,10 +174,10 @@
 					</h2>
 					<p class="my-6" [ngClass]="['text' + plainInv]">
 						Mamba UI is a toolkit for developers and designers to make creating
-						interfaces easier. We have some of the most popularly used we components and
-						sections to help you get started. Everything is modular and customizable to
-						fit your brand. From blogs to portfolios to online stores, you can quickly
-						create a variety of layouts that look great on any screen.
+						interfaces easier. We have some of the most popularly used components to
+						help you get started. Everything is modular and customizable to fit your
+						brand. From blogs to portfolios to online stores, you can quickly create a
+						variety of layouts that look great on any screen.
 					</p>
 				</div>
 			</div>
@@ -267,6 +261,7 @@
 				<a
 					class="flex items-center px-8 py-3 space-x-4 text-lg font-semibold rounded cursor-pointer"
 					[ngClass]="['bg' + contrast, 'text' + defaultInv]"
+					(click)="clickLink('Mamba twitter')"
 					href="https://twitter.com/mamba_ui"
 				>
 					<svg
@@ -320,15 +315,15 @@
 						projects as you wish. If you'd still like to support me you can
 						<a
 							href="https://github.com/Microwawe/mamba-ui"
+							(click)="clickLink('FAQ github')"
 							class="font-semibold underline"
 							>star this project on Github</a
 						>. Or if you are feeling really generous you can also
 						<a
 							aria-label="Support me via Buy me a coffee"
 							class="font-semibold underline"
+							(click)="clickLink('FAQ buy me a coffee')"
 							href="https://www.buymeacoffee.com/nnowwakk"
-							target="_blank"
-							rel="noopener noreferrer"
 							>buy me a coffee.
 						</a>
 					</p>
