@@ -19,9 +19,9 @@
 					'hover:ring-2',
 					'hover:ring-inset',
 					'hover:ring-white',
-					selectedColor == color ? 'ring-2' : '',
-					selectedColor == color ? 'ring-inset' : '',
-					selectedColor == color ? 'ring-gray-300' : ''
+					selectedColor.name == color.name ? 'ring-2' : '',
+					selectedColor.name == color.name ? 'ring-inset' : '',
+					selectedColor.name == color.name ? 'ring-gray-300' : ''
 				]"
 				(click)="changeColor(color)"
 			></button>
