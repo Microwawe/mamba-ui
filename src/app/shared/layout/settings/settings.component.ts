@@ -1,7 +1,9 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 
 import {BaseComponent} from '@shared/components/base/base.component';
+import {PlausibleEvent} from '@shared/enum/plausible.event.enum';
 import {TailwindColor} from '@shared/interfaces/tailwind-colors.interface';
+import {AnalyticsService} from '@shared/services/analytics.service';
 import {Observable, Subscription} from 'rxjs';
 
 @Component({
@@ -16,7 +18,7 @@ export class SettingsComponent extends BaseComponent implements OnInit, OnDestro
 	colors: TailwindColor[] = [];
 	selectedColor!: TailwindColor;
 
-	constructor() {
+	constructor(private analytics: AnalyticsService) {
 		super();
 	}
 
@@ -29,10 +31,12 @@ export class SettingsComponent extends BaseComponent implements OnInit, OnDestro
 	}
 
 	changeColor(color: TailwindColor) {
+		this.analytics.triggerEvent(PlausibleEvent.CHANGE_COLOR, {color: color});
 		this.colorService.setCurrentColor(color);
 	}
 
 	toggleDarkTheme(dark: boolean) {
+		this.analytics.triggerEvent(PlausibleEvent.CHANGE_THEME, {darkTheme: dark});
 		this.themeService.setDarkTheme(dark);
 	}
 
