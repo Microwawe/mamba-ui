@@ -13,13 +13,13 @@ them easily by following the their [documentation](https://tailwindcss.com/docs)
 
 ## Features
 
--   [x] 50+ building blocks
--   [x] Choose your primary color from any of the 17 different Tailwind colors
--   [x] Fully responsive
--   [x] Export as HTML or JSX
--   [x] Dynamic light and dark themes
--   [x] All the icons and illustrations are open-sourced as well
--   [x] Easy to customize with Tailwind CSS
+- [x] 50+ building blocks
+- [x] Choose your primary color from any of the 17 different Tailwind colors
+- [x] Fully responsive
+- [x] Export as HTML or JSX
+- [x] Dynamic light and dark themes
+- [x] All the icons and illustrations are open-sourced as well
+- [x] Easy to customize with Tailwind CSS
 
 ## Upcoming features
 

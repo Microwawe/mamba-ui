@@ -1,5 +1,5 @@
 <section class="py-6" [ngClass]="['bg' + default, 'text' + contrastInv]">
-	<div class="container p-4 sm:p-10">
+	<div class="container mx-auto p-4 sm:p-10">
 		<div class="mb-12 space-y-4 text-center">
 			<h1 class="text-4xl font-semibold leading-tight">Pricing</h1>
 			<p class="px-4 sm:px-8 lg:px-24">
@@ -18,7 +18,9 @@
 				</button>
 			</div>
 		</div>
-		<div class="grid max-w-md grid-cols-1 gap-6 mx-auto auto-rows-fr lg:grid-cols-3 lg:max-w-full">
+		<div
+			class="grid max-w-md grid-cols-1 gap-6 mx-auto auto-rows-fr lg:grid-cols-3 lg:max-w-full"
+		>
 			<div
 				*ngFor="let category of categories"
 				class="flex flex-col overflow-hidden border-2 rounded-md"
@@ -28,8 +30,11 @@
 					class="flex flex-col items-center justify-center px-2 py-8 space-y-4"
 					[ngClass]="['bg' + default]"
 				>
-					<p class="text-lg font-medium">{{category.title}}</p>
-					<p class="text-5xl font-bold">{{category.price}}<span class="text-xl" [ngClass]="['text' + plainInv]"> /mo</span></p>
+					<p class="text-lg font-medium">{{ category.title }}</p>
+					<p class="text-5xl font-bold">
+						{{ category.price
+						}}<span class="text-xl" [ngClass]="['text' + plainInv]"> /mo</span>
+					</p>
 				</div>
 				<div
 					class="flex flex-col items-center justify-center px-2 py-8"

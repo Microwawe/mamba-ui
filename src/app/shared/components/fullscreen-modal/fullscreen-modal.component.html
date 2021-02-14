@@ -1,4 +1,7 @@
-<div class="fixed inset-0 z-50 overflow-y-auto overscroll-contain" [ngClass]="['bg' + default]">
+<div
+	class="fixed inset-0 z-50 py-16 overflow-y-auto bg-opacity-50 md:px-6 overscroll-contain"
+	[ngClass]="['bg' + contrast]"
+>
 	<button
 		(click)="close()"
 		class="fixed p-3 rounded top-2 right-2"
@@ -15,5 +18,5 @@
 			/>
 		</svg>
 	</button>
-	<div #content></div>
+	<div #content class="mx-auto"></div>
 </div>

@@ -6,7 +6,7 @@ module.exports = {
 	'printWidth': 100,
 	'overrides': [
 		{
-			'files': '*.yml',
+			'files': ['*.yml', '*.md'],
 			'options': {
 				'tabWidth': 2,
 				'useTabs': false,

@@ -1,4 +1,4 @@
-<section class="container overflow-hidden rounded-lg shadow-sm scrollbar-none">
+<section class="container mx-auto overflow-hidden rounded-lg shadow-sm scrollbar-none">
 	<div
 		class="overflow-hidden divide-y rounded shadow-sm"
 		[ngClass]="['bg' + default, 'divide' + neutralInv]"
@@ -38,9 +38,9 @@
 			<div
 				#rawContent
 				*ngIf="!codeVisible"
-				class="py-6"
+				class="p-3"
 				[ngClass]="{
-					'px-6 min-h-48 flex justify-center items-center': isComponent,
+					'px-6 min-h-48 flex justify-center items-center': centered,
 					'overflow-y-auto overscroll-contain max-h-half-screen': isTemplate
 				}"
 			>

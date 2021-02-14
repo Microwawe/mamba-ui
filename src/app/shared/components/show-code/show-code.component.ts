@@ -16,7 +16,7 @@ import {PlausibleEvent} from '@shared/enum/plausible.event.enum';
 })
 export class ShowCodeComponent extends BaseComponent implements AfterViewInit, OnDestroy {
 	@ViewChild('rawContent') rawContent!: ElementRef;
-	@Input() isComponent = false;
+	@Input() centered = false;
 	@Input() isTemplate = false;
 	combinedSub!: Subscription;
 	rawCode = '';
@@ -77,6 +77,10 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit, O
 	showJSX() {
 		this.options.language = 'jsx';
 		this.prettyCode = this.formatter.beautifyHTML(this.getRawCode());
+		this.prettyCode = this.formatter.toggleDarkModeVariants(
+			this.prettyCode,
+			this.options.darkTheme
+		);
 		this.showCode(this.formatter.useReactSyntax(this.prettyCode), 'jsx');
 	}
 
@@ -93,6 +97,10 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit, O
 	showVue() {
 		this.options.language = 'vue';
 		this.prettyCode = this.formatter.toVue(this.getRawCode());
+		this.prettyCode = this.formatter.toggleDarkModeVariants(
+			this.prettyCode,
+			this.options.darkTheme
+		);
 		this.showCode(this.prettyCode);
 	}
 

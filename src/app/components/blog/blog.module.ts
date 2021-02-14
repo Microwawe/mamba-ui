@@ -4,6 +4,7 @@ import {SharedModule} from '@shared/shared.module';
 import {BlogShowcaseComponent} from './blog-showcase.component';
 import {Blog1Component} from './blog1/blog1.component';
 import {Blog2Component} from './blog2/blog2.component';
+import {Blog3Component} from './blog3/blog3.component';
 
 const routes: Routes = [
 	{
@@ -14,6 +15,6 @@ const routes: Routes = [
 
 @NgModule({
 	imports: [RouterModule.forChild(routes), SharedModule],
-	declarations: [BlogShowcaseComponent, Blog1Component, Blog2Component],
+	declarations: [BlogShowcaseComponent, Blog1Component, Blog2Component, Blog3Component],
 })
 export class BlogModule {}
