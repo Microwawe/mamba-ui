@@ -6,8 +6,10 @@ import {BaseComponent} from '@shared/components/base/base.component';
 	templateUrl: './footer2.component.html',
 })
 export class Footer2Component extends BaseComponent implements OnInit {
+	year: number;
 	constructor() {
 		super();
+		this.year = new Date().getFullYear();
 	}
 
 	ngOnInit() {}

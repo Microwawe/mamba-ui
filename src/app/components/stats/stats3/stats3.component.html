@@ -1,5 +1,5 @@
-<section class="p-4 my-6 md:p-8">
-	<div class="container grid grid-cols-1 gap-6 m-4 md:m-0 md:grid-cols-2 xl:grid-cols-3">
+<section class="p-4 my-6 md:p-8" [ngClass]="['bg' + default, 'text' + defaultInv]">
+	<div class="container grid grid-cols-1 gap-6 m-4 mx-auto md:m-0 md:grid-cols-2 xl:grid-cols-3">
 		<div
 			class="flex overflow-hidden rounded-lg"
 			[ngClass]="['bg' + contrast, 'text' + defaultInv]"

@@ -88,6 +88,11 @@ const routes: Routes = [
 				data: {title: 'Paginations', breadcrumb: 'Pagination'},
 			},
 			{
+				path: 'review',
+				loadChildren: () => import('./review/review.module').then(m => m.ReviewModule),
+				data: {title: 'reviews', breadcrumb: 'review'},
+			},
+			{
 				path: 'pricing',
 				loadChildren: () => import('./pricing/pricing.module').then(m => m.PricingModule),
 				data: {title: 'Pricing', breadcrumb: 'Pricing'},

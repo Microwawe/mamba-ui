@@ -3,7 +3,7 @@
 <div [ngClass]="['bg' + default]" class="min-h-screen">
 	<div class="p-6 space-y-8">
 		<header
-			class="container flex items-center justify-between h-16 px-4 rounded"
+			class="container mx-auto flex items-center justify-between h-16 px-4 rounded"
 			[ngClass]="['bg' + contrast]"
 		>
 			<a href="#" aria-label="Homepage">
@@ -54,7 +54,7 @@
 			</button>
 		</header>
 		<main>
-			<div class="container space-y-16">
+			<div class="container mx-auto space-y-16">
 				<section class="grid gap-6 text-center lg:grid-cols-2 xl:grid-cols-5">
 					<div
 						class="w-full p-6 rounded-md sm:p-16 xl:col-span-2"
@@ -285,7 +285,10 @@
 					</div>
 				</section>
 				<section>
-					<div class="container p-6 py-20 rounded lg:px-8" [ngClass]="['bg' + contrast]">
+					<div
+						class="container mx-auto p-6 py-20 rounded lg:px-8"
+						[ngClass]="['bg' + contrast]"
+					>
 						<h2 class="text-5xl font-bold text-center">
 							Our team is here to help you.
 						</h2>
@@ -302,7 +305,10 @@
 			</div>
 		</main>
 		<footer>
-			<div class="container flex justify-between p-6 lg:p-8" [ngClass]="['bg' + contrast]">
+			<div
+				class="container mx-auto flex justify-between p-6 lg:p-8"
+				[ngClass]="['bg' + contrast]"
+			>
 				<a class="font-bold" href="#">Mamba</a>
 				<div class="flex space-x-2">
 					<a

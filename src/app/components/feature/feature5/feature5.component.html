@@ -1,5 +1,5 @@
-<section class="m-4 md:m-8">
-	<div class="container p-4 my-6 space-y-1 text-center">
+<section class="m-4 md:m-8" [ngClass]="['bg' + default, 'text' + defaultInv]">
+	<div class="container p-4 mx-auto my-6 space-y-1 text-center">
 		<span class="text-xs font-semibold tracking-wider uppercase" [ngClass]="['text' + primary]"
 			>shortcut to your dream ui</span
 		>
@@ -10,7 +10,7 @@
 			clicks.
 		</p>
 	</div>
-	<div class="container grid justify-center gap-4 lg:grid-cols-2 xl:grid-cols-4">
+	<div class="container grid justify-center gap-4 mx-auto lg:grid-cols-2 xl:grid-cols-4">
 		<div class="flex flex-col px-8 py-6">
 			<h2
 				class="mb-2 text-lg font-semibold sm:text-xl title-font"

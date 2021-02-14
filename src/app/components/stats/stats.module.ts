@@ -7,6 +7,7 @@ import {Stats1Component} from './stats1/stats1.component';
 import {Stats2Component} from './stats2/stats2.component';
 import {Stats3Component} from './stats3/stats3.component';
 import {Stats4Component} from './stats4/stats4.component';
+import {Stats5Component} from './stats5/stats5.component';
 
 const routes: Routes = [
 	{
@@ -23,6 +24,7 @@ const routes: Routes = [
 		Stats2Component,
 		Stats3Component,
 		Stats4Component,
+		Stats5Component,
 	],
 })
 export class StatsModule {}

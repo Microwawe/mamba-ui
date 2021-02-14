@@ -1,7 +1,5 @@
-<div class="flex justify-center space-x-1">
-	<button
-		class="flex items-center justify-center h-8 px-2 text-sm font-medium rounded"
-	>
+<div class="flex justify-center space-x-1" [ngClass]="['text' + defaultInv]">
+	<button class="flex items-center justify-center h-8 px-2 text-sm font-medium rounded">
 		<svg
 			class="w-5 h-5"
 			xmlns="http://www.w3.org/2000/svg"
@@ -19,14 +17,12 @@
 	<button
 		*ngFor="let page of [1, 2, 3, 4]"
 		class="flex items-center justify-center w-8 h-8 text-sm font-medium rounded"
-		[ngClass]="['bg'+primary200, 'text'+primaryDark]"
+		[ngClass]="['bg' + primary200, 'text' + primaryDark]"
 	>
 		{{ page }}
 	</button>
 
-	<button
-		class="flex items-center justify-center h-8 px-2 text-sm font-medium rounded"
-	>
+	<button class="flex items-center justify-center h-8 px-2 text-sm font-medium rounded">
 		Next
 		<svg
 			class="w-5 h-5"

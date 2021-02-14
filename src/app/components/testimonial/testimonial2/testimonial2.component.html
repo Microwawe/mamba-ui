@@ -1,11 +1,11 @@
-<section class="my-8">
-	<div class="container flex flex-col items-center mb-12 md:p-10 md:px-12">
+<section class="my-8" [ngClass]="['bg' + default, 'text' + defaultInv]">
+	<div class="container flex flex-col items-center mx-auto mb-12 md:p-10 md:px-12">
 		<h1 class="p-4 text-4xl font-semibold leading-none text-center">
 			What our customers are saying about us
 		</h1>
 	</div>
 	<div
-		class="container flex flex-col items-center justify-center lg:flex-row lg:flex-wrap lg:justify-evenly lg:px-10"
+		class="container flex flex-col items-center justify-center mx-auto lg:flex-row lg:flex-wrap lg:justify-evenly lg:px-10"
 	>
 		<div class="flex flex-col max-w-sm mx-4 my-6 shadow-lg">
 			<div class="px-4 py-12 rounded-t-lg sm:px-8 md:px-12" [ngClass]="['bg' + contrast]">

@@ -1,9 +1,9 @@
-<div class="p-4" [ngClass]="['bg' + default, 'text' + defaultInv]">
-	<header class="container flex justify-between h-16 border-b-2" [ngClass]="['border' + neutral]">
-		<button class="flex p-4">
+<header class="p-4" [ngClass]="['bg' + default, 'text' + defaultInv]">
+	<div class="container flex justify-between h-16 mx-auto">
+		<a class="flex items-center p-2" href="#" aria-label="Back to homepage">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
-				class="w-6 h-6"
+				class="w-8 h-8"
 				fill="currentColor"
 				viewBox="0 0 32 32"
 				[ngClass]="['text' + primary]"
@@ -15,37 +15,28 @@
 					d="M22.094 19.451h-0.758c-0.188 0-0.363 0.049-0.515 0.135l0.006-0.004-4.574 2.512-5.282-3.049v-6.082l5.282-3.051 4.576 2.504c0.146 0.082 0.323 0.131 0.508 0.131h0.758c0.293 0 0.529-0.239 0.529-0.531v-0.716c0-0.2-0.11-0.373-0.271-0.463l-0.004-0.002-5.078-2.777c-0.293-0.164-0.645-0.26-1.015-0.26-0.39 0-0.756 0.106-1.070 0.289l0.010-0.006-5.281 3.049c-0.636 0.375-1.056 1.055-1.059 1.834v6.082c0 0.779 0.422 1.461 1.049 1.828l0.009 0.006 5.281 3.049c0.305 0.178 0.67 0.284 1.061 0.284 0.373 0 0.723-0.098 1.027-0.265l-0.012 0.006 5.080-2.787c0.166-0.091 0.276-0.265 0.276-0.465v-0.716c0-0.293-0.238-0.529-0.529-0.529z"
 				/>
 			</svg>
-		</button>
+		</a>
 		<ul class="items-stretch hidden space-x-3 md:flex">
 			<li class="flex">
-				<a
-					[routerLink]="['#1']"
-					[routerLinkActive]="['text' + primary, 'border' + primary]"
-					class="flex items-center -mb-0.5 border-b-2 px-4 border-transparent"
+				<a href="#" class="flex items-center -mb-0.5 border-b-2 px-4 border-transparent"
+					>Link</a
+				>
+			</li>
+			<li class="flex">
+				<a href="#" class="flex items-center -mb-0.5 border-b-2 px-4 border-transparent"
 					>Link</a
 				>
 			</li>
 			<li class="flex">
 				<a
-					[routerLink]="['']"
-					[routerLinkActive]="['text' + primary, 'border' + primary]"
+					href="#"
 					class="flex items-center -mb-0.5 border-b-2 px-4 border-transparent"
+					[ngClass]="['text' + primary, 'border' + primary]"
 					>Link</a
 				>
 			</li>
 			<li class="flex">
-				<a
-					[routerLink]="['#3']"
-					[routerLinkActive]="['text' + primary, 'border' + primary]"
-					class="flex items-center -mb-0.5 border-b-2 px-4 border-transparent"
-					>Link</a
-				>
-			</li>
-			<li class="flex">
-				<a
-					[routerLink]="['#4']"
-					[routerLinkActive]="['text' + primary, 'border' + primary]"
-					class="flex items-center -mb-0.5 border-b-2 px-4 border-transparent"
+				<a href="#" class="flex items-center -mb-0.5 border-b-2 px-4 border-transparent"
 					>Link</a
 				>
 			</li>
@@ -55,6 +46,7 @@
 				xmlns="http://www.w3.org/2000/svg"
 				fill="none"
 				viewBox="0 0 24 24"
+				class="w-6 h-6"
 				stroke="currentColor"
 			>
 				<path
@@ -65,5 +57,5 @@
 				/>
 			</svg>
 		</button>
-	</header>
-</div>
+	</div>
+</header>
