@@ -16,15 +16,31 @@
 	<form class="space-y-6">
 		<div>
 			<label for="name" class="text-sm">Full name</label>
-			<input id="name" class="w-full p-3 rounded" type="text" placeholder="" />
+			<input
+				id="name"
+				class="w-full p-3 rounded"
+				type="text"
+				placeholder=""
+				[ngClass]="['bg' + default]"
+			/>
 		</div>
 		<div class="">
 			<label for="email" class="text-sm">Email</label>
-			<input id="email" class="w-full p-3 rounded" type="email" />
+			<input
+				id="email"
+				class="w-full p-3 rounded"
+				type="email"
+				[ngClass]="['bg' + default]"
+			/>
 		</div>
 		<div class="">
 			<label for="message" class="text-sm">Message</label>
-			<textarea id="message" rows="3" class="w-full p-3 rounded"></textarea>
+			<textarea
+				id="message"
+				rows="3"
+				class="w-full p-3 rounded"
+				[ngClass]="['bg' + default]"
+			></textarea>
 		</div>
 		<button
 			type="submit"

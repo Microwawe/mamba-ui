@@ -4,21 +4,37 @@
 		[ngClass]="['bg' + contrast, 'text' + defaultInv]"
 	>
 		<h1 class="text-3xl font-semibold">Sign in to your account</h1>
-		<a [routerLink]="['/']" class="text-sm">Or start your free trial</a>
+		<a [routerLink]="['/']" class="text-sm" [ngClass]="['text' + plainInv]"
+			>Or start your free trial</a
+		>
 		<form class="space-y-4">
 			<div class="flex flex-col">
 				<label for="email" class="sr-only">Email address</label>
 				<input
 					class="rounded-t-md"
-					[ngClass]="['focus:ring' + primary, 'focus:border' + primary, 'focus:ring-2']"
+					[ngClass]="[
+						'border' + plain,
+						'bg' + contrast,
+						'text' + defaultInv,
+						'focus:ring' + primary,
+						'focus:border' + primary,
+						'focus:ring-2'
+					]"
 					id="email"
 					type="email"
 					placeholder="Email address"
 				/>
 				<label for="password" class="sr-only">Password</label>
 				<input
-					class="rounded-b-md"
-					[ngClass]="['focus:ring' + primary, 'focus:border' + primary, 'focus:ring-2']"
+					class="-mt-1 rounded-b-md"
+					[ngClass]="[
+						'border' + plain,
+						'bg' + contrast,
+						'text' + defaultInv,
+						'focus:ring' + primary,
+						'focus:border' + primary,
+						'focus:ring-2'
+					]"
 					id="password"
 					type="text"
 					placeholder="Password"
@@ -38,9 +54,13 @@
 							'focus:ring-2'
 						]"
 					/>
-					<label for="remember">Remember me</label>
+					<label for="remember" class="text-sm" [ngClass]="['text' + plainInv]"
+						>Remember me</label
+					>
 				</div>
-				<a [routerLink]="['/']">Forgot your password?</a>
+				<a [routerLink]="['/']" class="text-sm" [ngClass]="['text' + plainInv]"
+					>Forgot your password?</a
+				>
 			</div>
 			<button
 				type="button"

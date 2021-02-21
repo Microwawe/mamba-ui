@@ -50,31 +50,31 @@
 			</div>
 		</div>
 
-		<form class="flex flex-col py-6 space-y-6 md:py-0 md:px-6" [ngClass]="['text' + contrast]">
+		<form class="flex flex-col py-6 space-y-6 md:py-0 md:px-6">
 			<label class="block">
-				<span class="mb-1" [ngClass]="'text' + defaultInv">Full name</span>
+				<span class="mb-1">Full name</span>
 				<input
 					type="text"
 					class="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75"
-					[ngClass]="['focus:ring' + primary]"
+					[ngClass]="['focus:ring' + primary, 'bg' + default]"
 					placeholder="Leroy Jenkins"
 				/>
 			</label>
 			<label class="block">
-				<span class="mb-1" [ngClass]="'text' + defaultInv">Email address</span>
+				<span class="mb-1">Email address</span>
 				<input
 					type="email"
 					class="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75"
-					[ngClass]="['focus:ring' + primary]"
+					[ngClass]="['focus:ring' + primary, 'bg' + default]"
 					placeholder="leroy@jenkins.com"
 				/>
 			</label>
 
 			<label class="block">
-				<span class="mb-1" [ngClass]="'text' + defaultInv">Message</span>
+				<span class="mb-1">Message</span>
 				<textarea
 					class="block w-full rounded-md focus:ring focus:ring-opacity-75"
-					[ngClass]="['focus:ring' + primary]"
+					[ngClass]="['focus:ring' + primary, 'bg' + default]"
 					rows="3"
 				></textarea>
 			</label>
