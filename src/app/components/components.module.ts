@@ -42,6 +42,11 @@ const routes: Routes = [
 				data: {title: 'Contact', breadcrumb: 'Contact'},
 			},
 			{
+				path: 'error',
+				loadChildren: () => import('./error/error.module').then(m => m.ErrorModule),
+				data: {title: 'Error', breadcrumb: 'Error'},
+			},
+			{
 				path: 'faq',
 				loadChildren: () => import('./faq/faq.module').then(m => m.FaqModule),
 				data: {title: 'FAQ', breadcrumb: 'FAQ'},
@@ -96,6 +101,11 @@ const routes: Routes = [
 				path: 'pricing',
 				loadChildren: () => import('./pricing/pricing.module').then(m => m.PricingModule),
 				data: {title: 'Pricing', breadcrumb: 'Pricing'},
+			},
+			{
+				path: 'profile',
+				loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule),
+				data: {title: 'Profile', breadcrumb: 'Profile'},
 			},
 			{
 				path: 'snackbar',

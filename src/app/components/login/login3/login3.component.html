@@ -1,0 +1,55 @@
+<div
+	class="container flex flex-col max-w-md p-6 mx-auto rounded-md sm:p-10"
+	[ngClass]="['bg' + contrast, 'text' + defaultInv]"
+>
+	<div class="mb-8 text-center">
+		<h1 class="my-3 text-4xl font-bold">Sign in</h1>
+		<p class="text-sm" [ngClass]="['text' + plainInv]">Sign in to access your account</p>
+	</div>
+	<form action="" class="space-y-12">
+		<div class="space-y-4">
+			<div class="">
+				<label for="email" class="block mb-2 text-sm">Email address</label>
+				<input
+					type="email"
+					name="email"
+					id="email"
+					placeholder="leroy@jenkins.com"
+					class="w-full px-3 py-2 border rounded-md"
+					[ngClass]="['border' + neutral, 'bg' + contrast, 'text' + defaultInv]"
+				/>
+			</div>
+			<div class="">
+				<div class="flex justify-between mb-2">
+					<label for="password" class="text-sm">Password</label>
+					<a href="#" class="text-xs hover:underline" [ngClass]="['text' + plainInv]"
+						>Forgot password?</a
+					>
+				</div>
+				<input
+					type="password"
+					name="password"
+					id="password"
+					placeholder="*****"
+					class="w-full px-3 py-2 border rounded-md"
+					[ngClass]="['border' + neutral, 'bg' + contrast, 'text' + defaultInv]"
+				/>
+			</div>
+		</div>
+		<div class="space-y-2">
+			<div class="">
+				<button
+					type="button"
+					class="w-full px-8 py-3 rounded-md"
+					[ngClass]="['bg' + primary, 'text' + contrast]"
+				>
+					Sign in
+				</button>
+			</div>
+			<p class="text-sm text-center" [ngClass]="['text' + plainInv]">
+				Don&#x27;t have an account yet?
+				<a href="#" class="hover:underline" [ngClass]="['text' + primary]">Sign up</a>.
+			</p>
+		</div>
+	</form>
+</div>

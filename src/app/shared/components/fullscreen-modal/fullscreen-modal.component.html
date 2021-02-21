@@ -1,6 +1,7 @@
 <div
 	class="fixed inset-0 z-50 py-16 overflow-y-auto bg-opacity-50 md:px-6 overscroll-contain"
 	[ngClass]="['bg' + contrast]"
+	(click)="close()"
 >
 	<button
 		(click)="close()"
@@ -18,5 +19,5 @@
 			/>
 		</svg>
 	</button>
-	<div #content class="mx-auto"></div>
+	<div #content class="mx-auto" (click)="$event.stopPropagation()"></div>
 </div>
