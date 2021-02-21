@@ -145,11 +145,6 @@ const routes: Routes = [
 					import('./timeline/timeline.module').then(m => m.TimelineModule),
 				data: {title: 'Timeline', breadcrumb: 'Timeline'},
 			},
-			{
-				path: 'weather',
-				loadChildren: () => import('./weather/weather.module').then(m => m.WeatherModule),
-				data: {title: 'Weather', breadcrumb: 'Weather'},
-			},
 		],
 	},
 ];
