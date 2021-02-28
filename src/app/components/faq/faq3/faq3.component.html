@@ -25,10 +25,10 @@
 			/>
 		</div>
 		<div
-			class="flex w-full divide-x sm:px-8 lg:px-12 xl:px-32"
+			class="flex flex-col w-full divide-y sm:flex-row sm:divide-y-0 sm:divide-x sm:px-8 lg:px-12 xl:px-32"
 			[ngClass]="['divide' + neutral]"
 		>
-			<div class="flex flex-col w-full divide-y">
+			<div class="flex flex-col w-full divide-y" [ngClass]="['divide' + neutral]">
 				<a class="flex items-center justify-center p-4 sm:py-8 lg:py-12" href="#"
 					>Billing</a
 				>
@@ -39,7 +39,7 @@
 					>Account</a
 				>
 			</div>
-			<div class="flex flex-col w-full divide-y">
+			<div class="flex flex-col w-full divide-y" [ngClass]="['divide' + neutral]">
 				<a class="flex items-center justify-center p-4 sm:py-8 lg:py-12" href="#"
 					>Features</a
 				>
@@ -50,7 +50,10 @@
 					>My orders</a
 				>
 			</div>
-			<div class="flex flex-col w-full divide-y">
+			<div
+				class="hidden w-full divide-y sm:flex-col sm:flex"
+				[ngClass]="['divide' + neutral]"
+			>
 				<a class="flex items-center justify-center p-4 sm:py-8 lg:py-12" href="#"
 					>Enterprise</a
 				>

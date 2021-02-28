@@ -77,7 +77,10 @@ export class FormatterService {
 
 	toggleDarkModeVariants(codeStr: string, darkTheme: boolean) {
 		return darkTheme
-			? codeStr.replace(/(bg|border|placeholder|text|from|via|to)-/gm, 'dark:$1-')
+			? codeStr.replace(
+					/(bg|border|placeholder|text|from|via|to)-(\w+-\d{2,3})/gm,
+					'dark:$1-$2'
+			  )
 			: codeStr.replace(/dark:/gm, '');
 	}
 
