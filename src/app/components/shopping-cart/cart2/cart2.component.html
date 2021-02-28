@@ -1,0 +1,91 @@
+<div
+	class="flex flex-col max-w-md p-6 space-y-4 divide-y sm:w-96 sm:p-10"
+	[ngClass]="['divide' + neutral, 'bg' + contrast, 'text' + defaultInv]"
+>
+	<h2 class="text-2xl font-semibold">Order items</h2>
+	<ul class="flex flex-col pt-4 space-y-2">
+		<li class="flex items-start justify-between">
+			<h3>Hard taco, chicken <span [ngClass]="['text' + primary]">x3</span></h3>
+			<div class="text-right">
+				<span class="block">$7.50</span>
+				<span class="text-sm" [ngClass]="['text' + plainInv]">à $2.50</span>
+			</div>
+		</li>
+		<li class="flex items-start justify-between">
+			<h3>Hard taco, beef <span [ngClass]="['text' + primary]">x3</span></h3>
+			<div class="text-right">
+				<span class="block">$8.25</span>
+				<span class="text-sm" [ngClass]="['text' + plainInv]">à $2.75</span>
+			</div>
+		</li>
+		<li class="flex items-start justify-between">
+			<h3>Curly fries <span [ngClass]="['text' + primary]">x3</span></h3>
+			<div class="text-right">
+				<span class="block">$1.75</span>
+				<span class="text-sm" [ngClass]="['text' + plainInv]">à $1.75</span>
+			</div>
+		</li>
+		<li class="flex items-start justify-between">
+			<h3>Large soda <span [ngClass]="['text' + primary]">x3</span></h3>
+			<div class="text-right">
+				<span class="block">$4.00</span>
+				<span class="text-sm" [ngClass]="['text' + plainInv]">à $2.00</span>
+			</div>
+		</li>
+	</ul>
+	<div class="pt-4 space-y-2">
+		<div class="">
+			<div class="flex justify-between">
+				<span>Subtotal</span>
+				<span class=""> $21.50</span>
+			</div>
+			<div class="flex items-center space-x-2 text-xs">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 512 512"
+					class="w-3 h-3 mt-0.5 fill-current"
+					[ngClass]="['text' + primary]"
+				>
+					<path
+						d="M485.887,263.261,248,25.373A31.791,31.791,0,0,0,225.373,16H64A48.055,48.055,0,0,0,16,64V225.078A32.115,32.115,0,0,0,26.091,248.4L279.152,486.125a23.815,23.815,0,0,0,16.41,6.51q.447,0,.9-.017a23.828,23.828,0,0,0,16.79-7.734L486.581,296.479A23.941,23.941,0,0,0,485.887,263.261ZM295.171,457.269,48,225.078V64A16.019,16.019,0,0,1,64,48H225.373L457.834,280.462Z"
+					/>
+					<path
+						d="M148,96a52,52,0,1,0,52,52A52.059,52.059,0,0,0,148,96Zm0,72a20,20,0,1,1,20-20A20.023,20.023,0,0,1,148,168Z"
+					/>
+				</svg>
+				<span [ngClass]="['text' + plainInv]">Spend $20.00, get 20% off</span>
+			</div>
+		</div>
+		<div class="flex justify-between">
+			<span>Discount</span>
+			<span class="">-$4.30</span>
+		</div>
+	</div>
+	<div class="pt-4 space-y-2">
+		<div class="flex justify-between">
+			<span>Service fee</span>
+			<span class="">$0.50</span>
+		</div>
+		<div class="flex flex-col">
+			<div class="flex justify-between">
+				<span>Delivery fee</span>
+				<span class="">$4.00</span>
+			</div>
+			<a href="#" class="text-xs hover:underline" [ngClass]="['text' + primary]"
+				>How do our fees work?</a
+			>
+		</div>
+		<div class="space-y-6">
+			<div class="flex justify-between">
+				<span>Total</span>
+				<span class="font-semibold">$22.70</span>
+			</div>
+			<button
+				class="w-full py-2 font-semibold border rounded"
+				[ngClass]="['bg' + primary, 'text' + contrast]"
+			>
+				Go to checkout
+			</button>
+		</div>
+	</div>
+</div>

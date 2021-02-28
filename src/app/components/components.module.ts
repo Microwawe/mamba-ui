@@ -108,6 +108,12 @@ const routes: Routes = [
 				data: {title: 'Profile', breadcrumb: 'Profile'},
 			},
 			{
+				path: 'shopping-cart',
+				loadChildren: () =>
+					import('./shopping-cart/shopping-cart.module').then(m => m.ShoppingCartModule),
+				data: {title: 'Shopping cart', breadcrumb: 'Shopping cart'},
+			},
+			{
 				path: 'snackbar',
 				loadChildren: () =>
 					import('./snackbar/snackbar.module').then(m => m.SnackbarModule),
@@ -144,6 +150,11 @@ const routes: Routes = [
 				loadChildren: () =>
 					import('./timeline/timeline.module').then(m => m.TimelineModule),
 				data: {title: 'Timeline', breadcrumb: 'Timeline'},
+			},
+			{
+				path: 'weather',
+				loadChildren: () => import('./weather/weather.module').then(m => m.WeatherModule),
+				data: {title: 'Weather', breadcrumb: 'Weather'},
 			},
 		],
 	},
