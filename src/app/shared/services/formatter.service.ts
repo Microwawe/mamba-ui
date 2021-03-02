@@ -78,14 +78,22 @@ export class FormatterService {
 	toggleDarkModeVariants(codeStr: string, darkTheme: boolean) {
 		return darkTheme
 			? codeStr.replace(
-					/(bg|border|placeholder|text|from|via|to)-(\w+-\d{2,3})/gm,
+					/(bg|border|placeholder|text|from|via|to)-(black|white|transparent|\w+-\d{2,3})/gm,
 					'dark:$1-$2'
 			  )
 			: codeStr.replace(/dark:/gm, '');
 	}
 
 	replaceColor(codeStr: string, oldColor: string, newColor: string) {
-		return codeStr.replace('-' + oldColor + '-', '-' + newColor + '-');
+		const colorsWithOnlyOneShade: string[] = ['black', 'white', 'transparent'];
+
+		oldColor = colorsWithOnlyOneShade.includes(oldColor)
+			? '-' + oldColor
+			: '-' + oldColor + '-';
+		newColor = colorsWithOnlyOneShade.includes(newColor)
+			? '-' + newColor
+			: '-' + newColor + '-';
+		return codeStr.replace(oldColor, newColor);
 	}
 
 	useReactSyntax(codeStr: string) {
