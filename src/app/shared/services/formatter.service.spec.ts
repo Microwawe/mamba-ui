@@ -86,6 +86,24 @@ describe('Service: Formatter', () => {
 			}
 		));
 
+		it('should not add dark variant to border width', inject(
+			[FormatterService],
+			(service: FormatterService) => {
+				const str = '<span class="border-t-4"></span>';
+				const result = '<span class="border-t-4"></span>';
+				expect(service.toggleDarkModeVariants(str, true)).toBe(result);
+			}
+		));
+
+		it('should not add dark variant to border opacity', inject(
+			[FormatterService],
+			(service: FormatterService) => {
+				const str = '<span class="border-opacity-50"></span>';
+				const result = '<span class="border-opacity-50"></span>';
+				expect(service.toggleDarkModeVariants(str, true)).toBe(result);
+			}
+		));
+
 		it('should add dark variant to placeholder color', inject(
 			[FormatterService],
 			(service: FormatterService) => {
@@ -95,11 +113,29 @@ describe('Service: Formatter', () => {
 			}
 		));
 
+		it('should not add dark variant to placeholder opacity', inject(
+			[FormatterService],
+			(service: FormatterService) => {
+				const str = '<span class="placeholder-opacity-50"></span>';
+				const result = '<span class="placeholder-opacity-50"></span>';
+				expect(service.toggleDarkModeVariants(str, true)).toBe(result);
+			}
+		));
+
 		it('should add dark variant to text color', inject(
 			[FormatterService],
 			(service: FormatterService) => {
 				const str = '<span class="text-white"></span>';
 				const result = '<span class="dark:text-white"></span>';
+				expect(service.toggleDarkModeVariants(str, true)).toBe(result);
+			}
+		));
+
+		it('should not add dark variant to text size', inject(
+			[FormatterService],
+			(service: FormatterService) => {
+				const str = '<span class="text-xl"></span>';
+				const result = '<span class="text-xl"></span>';
 				expect(service.toggleDarkModeVariants(str, true)).toBe(result);
 			}
 		));
@@ -121,5 +157,50 @@ describe('Service: Formatter', () => {
 				expect(service.toggleDarkModeVariants(str, false)).toBe(result);
 			}
 		));
+	});
+
+	describe('removeAngularComments()', () => {
+		it('should remove ngFor bindings', inject(
+			[FormatterService],
+			(service: FormatterService) => {
+				const str = `<span>
+				<!-- bindings={"ng-reflect-ng-for-of": "1,2,3,4,5,6"} -->
+				</span>`;
+				const result = '<span></span>';
+				expect(service.removeAngularComments(str)).toBe(result);
+			}
+		));
+
+		it('should remove ngIf bindings', inject(
+			[FormatterService],
+			(service: FormatterService) => {
+				const str = `<span>
+				<!-- bindings={"ng-reflect-ng-if": "true"} -->
+				<!-- bindings={
+					"ng-reflect-ng-if": "false"
+				} -->
+				</span>`;
+				const result = '<span></span>';
+				expect(service.removeAngularComments(str)).toBe(result);
+			}
+		));
+	});
+
+	describe('removeAngularCode()', () => {
+		it('should remove curly bracket bindings', inject(
+			[FormatterService],
+			(service: FormatterService) => {
+				const str = '<custom-showcase ng-reflect-title="Team"></custom-showcase>';
+				const result = '<custom-showcase></custom-showcase>';
+				expect(service.removeAngularCode(str)).toBe(result);
+			}
+		));
+
+		it('should remove ngClass', inject([FormatterService], (service: FormatterService) => {
+			const str =
+				'<span class="text-coolGray-800" ng-reflect-ng-class="text-coolGray-800"></span>';
+			const result = '<span class="text-coolGray-800"></span>';
+			expect(service.removeAngularCode(str)).toBe(result);
+		}));
 	});
 });
