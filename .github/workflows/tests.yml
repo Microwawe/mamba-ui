@@ -1,11 +1,8 @@
-name: Compressed Size
-
+name: Tests
 on: [pull_request]
-
 jobs:
-  build:
+  tests:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
@@ -17,9 +14,4 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      - uses: preactjs/compressed-size-action@v2
-        with:
-          repo-token: '${{ secrets.TOKEN }}'
-          build-script: 'ng build --prod'
-          pattern: '**/dist/mamba-ui/**/*.{js,css,html,json}'
-          minimum-change-threshold: 10000
+      - run: ng test
