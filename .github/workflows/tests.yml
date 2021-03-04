@@ -14,4 +14,6 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
+      - run: npm install
+      - run: npm install -g @angular/cli
       - run: ng test
