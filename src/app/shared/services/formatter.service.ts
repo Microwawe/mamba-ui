@@ -42,12 +42,11 @@ export class FormatterService {
 	}
 
 	/**
-	 * Removes Angular directives that start with "_ng" or "ng" from the string
+	 * Removes Angular directives that start with "ng" from the string
 	 * @param codeStr The code
 	 */
 	removeAngularCode(codeStr: string) {
-		// removes parts that start with "_ng"
-		return codeStr.replace(/ng-[^"\s]*="[^"]*"/g, '');
+		return codeStr.replace(/[\s]*ng-[^"\s]*="[^"]*"/g, '');
 	}
 
 	/**
@@ -55,7 +54,7 @@ export class FormatterService {
 	 * @param codeStr The code
 	 */
 	removeAngularComments(codeStr: string) {
-		return codeStr.replace(/<!--[.\s\w=":,{}[\]-]+-->/gm, '');
+		return codeStr.replace(/[\s]*<!--[.\s\w=":,{}[\]-]+-->[\s]*/gm, '');
 	}
 
 	/**
@@ -78,14 +77,22 @@ export class FormatterService {
 	toggleDarkModeVariants(codeStr: string, darkTheme: boolean) {
 		return darkTheme
 			? codeStr.replace(
-					/(bg|border|placeholder|text|from|via|to)-(\w+-\d{2,3})/gm,
+					/(bg|border|placeholder|text|from|via|to)-(?!opacity)(black|white|transparent|\w+-\d{2,3})/gm,
 					'dark:$1-$2'
 			  )
 			: codeStr.replace(/dark:/gm, '');
 	}
 
 	replaceColor(codeStr: string, oldColor: string, newColor: string) {
-		return codeStr.replace('-' + oldColor + '-', '-' + newColor + '-');
+		const colorsWithOnlyOneShade: string[] = ['black', 'white', 'transparent'];
+
+		oldColor = colorsWithOnlyOneShade.includes(oldColor)
+			? '-' + oldColor
+			: '-' + oldColor + '-';
+		newColor = colorsWithOnlyOneShade.includes(newColor)
+			? '-' + newColor
+			: '-' + newColor + '-';
+		return codeStr.replace(oldColor, newColor);
 	}
 
 	useReactSyntax(codeStr: string) {
