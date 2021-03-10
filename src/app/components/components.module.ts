@@ -114,6 +114,11 @@ const routes: Routes = [
 				data: {title: 'Shopping cart', breadcrumb: 'Shopping cart'},
 			},
 			{
+				path: 'sidebar',
+				loadChildren: () => import('./sidebar/sidebar.module').then(m => m.SidebarModule),
+				data: {title: 'Sidebar', breadcrumb: 'Sidebar'},
+			},
+			{
 				path: 'snackbar',
 				loadChildren: () =>
 					import('./snackbar/snackbar.module').then(m => m.SnackbarModule),

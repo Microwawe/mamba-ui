@@ -1,11 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {BaseComponent} from '@shared/components/base/base.component';
 
 @Component({
 	selector: 'custom-cart1',
 	templateUrl: './cart1.component.html',
 })
-export class Cart1Component extends BaseComponent implements OnInit {
+export class Cart1Component extends BaseComponent {
 	products = [
 		{
 			name: 'Polaroid camera',
@@ -35,6 +35,4 @@ export class Cart1Component extends BaseComponent implements OnInit {
 	constructor() {
 		super();
 	}
-
-	ngOnInit() {}
 }

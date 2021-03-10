@@ -1,5 +1,5 @@
 <div [ngClass]="['bg' + default, 'text' + contrastInv]">
-	<div class="container grid grid-cols-12 mx-auto">
+	<div class="container grid grid-cols-12 mx-auto" [ngClass]="['bg' + contrast]">
 		<div
 			class="bg-gray-700 bg-no-repeat bg-cover col-span-full lg:col-span-4"
 			style="
@@ -12,8 +12,8 @@
 		<div class="flex flex-col p-6 col-span-full row-span-full lg:col-span-8 lg:p-10">
 			<div class="flex justify-start">
 				<span
-					class="px-2 py-1 text-xs rounded-full text-coolGray-800"
-					[ngClass]="['bg' + primary200]"
+					class="px-2 py-1 text-xs rounded-full"
+					[ngClass]="['bg' + primary200, 'text' + contrast]"
 				>
 					Label</span
 				>

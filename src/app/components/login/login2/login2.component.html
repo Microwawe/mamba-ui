@@ -1,36 +1,37 @@
-<section [ngClass]="['bg' + default, 'text' + defaultInv]">
-	<div class="container flex items-center justify-center text-center">
-		<form
-			class="flex flex-col w-full max-w-lg p-12 rounded shadow-lg"
-			action=""
-			[ngClass]="['text' + defaultInv]"
+<div
+	class="flex items-center justify-center text-center"
+	[ngClass]="['bg' + contrast, 'text' + defaultInv]"
+>
+	<form
+		class="flex flex-col w-full max-w-lg p-12 rounded shadow-lg"
+		action=""
+		[ngClass]="['text' + defaultInv]"
+	>
+		<label class="self-start text-xs font-semibold" for="username">Username or Email</label>
+		<input
+			id="username"
+			class="flex items-center h-12 px-4 mt-2 rounded focus:outline-none focus:ring-2"
+			[ngClass]="['text' + dark]"
+			type="text"
+		/>
+		<label class="self-start mt-3 text-xs font-semibold" for="password">Password</label>
+		<input
+			id="password"
+			class="flex items-center h-12 px-4 mt-2 rounded focus:outline-none focus:ring-2"
+			[ngClass]="['text' + dark]"
+			type="password"
+		/>
+		<button
+			class="flex items-center justify-center h-12 px-6 mt-8 text-sm font-semibold rounded"
+			[ngClass]="['bg' + primary, 'text' + contrast]"
+			type="submit"
 		>
-			<label class="self-start text-xs font-semibold" for="username">Username or Email</label>
-			<input
-				id="username"
-				class="flex items-center h-12 px-4 mt-2 rounded focus:outline-none focus:ring-2"
-				[ngClass]="['text' + dark]"
-				type="text"
-			/>
-			<label class="self-start mt-3 text-xs font-semibold" for="password">Password</label>
-			<input
-				id="password"
-				class="flex items-center h-12 px-4 mt-2 rounded focus:outline-none focus:ring-2"
-				[ngClass]="['text' + dark]"
-				type="password"
-			/>
-			<button
-				class="flex items-center justify-center h-12 px-6 mt-8 text-sm font-semibold rounded"
-				[ngClass]="['bg' + primary, 'text' + contrast]"
-				type="submit"
-			>
-				Login
-			</button>
-			<div class="flex justify-center mt-6 space-x-2 text-xs">
-				<a class="" [ngClass]="['text' + plainInv]" href="#">Forgot Password?</a>
-				<span [ngClass]="['text' + plainInv]">/</span>
-				<a class="" [ngClass]="['text' + plainInv]" href="#">Sign Up</a>
-			</div>
-		</form>
-	</div>
-</section>
+			Login
+		</button>
+		<div class="flex justify-center mt-6 space-x-2 text-xs">
+			<a class="" [ngClass]="['text' + plainInv]" href="#">Forgot Password?</a>
+			<span [ngClass]="['text' + plainInv]">/</span>
+			<a class="" [ngClass]="['text' + plainInv]" href="#">Sign Up</a>
+		</div>
+	</form>
+</div>

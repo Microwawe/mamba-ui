@@ -7,6 +7,9 @@ import {Blog1Component} from './blog1/blog1.component';
 import {Blog2Component} from './blog2/blog2.component';
 import {Blog3Component} from './blog3/blog3.component';
 import {Blog4Component} from './blog4/blog4.component';
+import {Blog5Component} from './blog5/blog5.component';
+import {Blog6Component} from './blog6/blog6.component';
+import {Blog7Component} from './blog7/blog7.component';
 
 const routes: Routes = [
 	{
@@ -23,6 +26,9 @@ const routes: Routes = [
 		Blog2Component,
 		Blog3Component,
 		Blog4Component,
+		Blog5Component,
+		Blog6Component,
+		Blog7Component,
 	],
 })
 export class BlogModule {}

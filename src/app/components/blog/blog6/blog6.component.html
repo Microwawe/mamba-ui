@@ -1,0 +1,43 @@
+<section [ngClass]="['bg' + default, 'text' + defaultInv]" class="py-6 sm:py-12">
+	<div class="container p-6 mx-auto space-y-8">
+		<div class="space-y-2 text-center">
+			<h2 class="text-3xl font-bold">Partem reprimique an pro</h2>
+			<p class="font-serif text-sm" [ngClass]="['text' + plainInv]">
+				Qualisque erroribus usu at, duo te agam soluta mucius.
+			</p>
+		</div>
+		<div class="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
+			<article
+				*ngFor="let i of [1, 2, 3, 4]"
+				class="flex flex-col"
+				[ngClass]="['bg' + contrast]"
+			>
+				<a href="#" aria-label="Te nulla oportere reprimique his dolorum">
+					<img
+						class="object-cover w-full h-52"
+						alt=""
+						src="https://source.unsplash.com/20{{ i }}x20{{ i }}/?fashion"
+					/>
+					<div class="flex flex-col flex-1 p-6">
+						<a
+							href="#"
+							class="text-xs tracking-wider uppercase hover:underline"
+							[ngClass]="['text' + primary]"
+							>Convenire</a
+						>
+						<h3 class="flex-1 py-2 text-lg font-semibold leading-snug">
+							Te nulla oportere reprimique his dolorum
+						</h3>
+						<div
+							class="flex flex-wrap justify-between pt-3 space-x-2 text-xs"
+							[ngClass]="['text' + plainInv]"
+						>
+							<span>June {{ i }}, 2020</span>
+							<span>2.{{ i }}K views</span>
+						</div>
+					</div>
+				</a>
+			</article>
+		</div>
+	</div>
+</section>

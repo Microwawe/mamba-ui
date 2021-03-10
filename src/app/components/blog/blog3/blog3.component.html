@@ -1,11 +1,14 @@
 <div [ngClass]="['bg' + default, 'text' + defaultInv]">
-	<div class="container max-w-4xl px-10 py-6 mx-auto rounded-lg shadow-sm">
+	<div
+		class="container max-w-4xl px-10 py-6 mx-auto rounded-lg shadow-sm"
+		[ngClass]="['bg' + contrast]"
+	>
 		<div class="flex items-center justify-between">
-			<span class="text-sm">Jun 1, 2020</span
+			<span class="text-sm" [ngClass]="['text' + plainInv]">Jun 1, 2020</span
 			><a
 				href="#"
 				class="px-2 py-1 font-bold rounded"
-				[ngClass]="['bg' + plainInv, 'text' + default]"
+				[ngClass]="['bg' + primary, 'text' + contrast]"
 				>Javascript</a
 			>
 		</div>

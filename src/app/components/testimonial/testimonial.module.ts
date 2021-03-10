@@ -7,6 +7,7 @@ import {Testimonial1Component} from './testimonial1/testimonial1.component';
 import {Testimonial2Component} from './testimonial2/testimonial2.component';
 import {Testimonial3Component} from './testimonial3/testimonial3.component';
 import {Testimonial4Component} from './testimonial4/testimonial4.component';
+import {Testimonial5Component} from './testimonial5/testimonial5.component';
 
 const routes: Routes = [
 	{
@@ -23,6 +24,7 @@ const routes: Routes = [
 		Testimonial2Component,
 		Testimonial3Component,
 		Testimonial4Component,
+		Testimonial5Component,
 	],
 })
 export class TestimonialModule {}
