@@ -114,6 +114,11 @@ const routes: Routes = [
 				data: {title: 'Shopping cart', breadcrumb: 'Shopping cart'},
 			},
 			{
+				path: 'sidebar',
+				loadChildren: () => import('./sidebar/sidebar.module').then(m => m.SidebarModule),
+				data: {title: 'Sidebar', breadcrumb: 'Sidebar'},
+			},
+			{
 				path: 'snackbar',
 				loadChildren: () =>
 					import('./snackbar/snackbar.module').then(m => m.SnackbarModule),
@@ -129,11 +134,11 @@ const routes: Routes = [
 				loadChildren: () => import('./steps/steps.module').then(m => m.StepsModule),
 				data: {title: 'Step', breadcrumb: 'Step'},
 			},
-			{
+			/* {
 				path: 'tab',
 				loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsModule),
 				data: {title: 'Tabs', breadcrumb: 'Tabs'},
-			},
+			}, */
 			{
 				path: 'team',
 				loadChildren: () => import('./team/team.module').then(m => m.TeamModule),

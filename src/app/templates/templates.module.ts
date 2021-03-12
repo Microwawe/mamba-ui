@@ -15,16 +15,16 @@ const routes: Routes = [
 				component: EmptyChildRouteComponent,
 			},
 			{
-				path: 'portfolio',
-				loadChildren: () =>
-					import('./portfolio/portfolio.module').then(m => m.PortfolioModule),
-				data: {title: 'Portfolio', breadcrumb: 'Portfolio'},
-			},
-			{
 				path: 'business',
 				loadChildren: () =>
 					import('./business/business.module').then(m => m.BusinessModule),
 				data: {title: 'Business', breadcrumb: 'Business'},
+			},
+			{
+				path: 'portfolio',
+				loadChildren: () =>
+					import('./portfolio/portfolio.module').then(m => m.PortfolioModule),
+				data: {title: 'Portfolio', breadcrumb: 'Portfolio'},
 			},
 		],
 	},

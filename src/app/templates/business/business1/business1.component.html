@@ -1,9 +1,9 @@
 <!-- https://panels-template.webflow.io/demos/landing-3 -->
 
-<div [ngClass]="['bg' + default]" class="min-h-screen">
+<div [ngClass]="['bg' + default, 'text' + defaultInv]" class="min-h-screen">
 	<div class="p-6 space-y-8">
 		<header
-			class="container mx-auto flex items-center justify-between h-16 px-4 rounded"
+			class="container flex items-center justify-between h-16 px-4 mx-auto rounded"
 			[ngClass]="['bg' + contrast]"
 		>
 			<a href="#" aria-label="Homepage">
@@ -286,7 +286,7 @@
 				</section>
 				<section>
 					<div
-						class="container mx-auto p-6 py-20 rounded lg:px-8"
+						class="container p-6 py-20 mx-auto rounded lg:px-8"
 						[ngClass]="['bg' + contrast]"
 					>
 						<h2 class="text-5xl font-bold text-center">
@@ -306,7 +306,7 @@
 		</main>
 		<footer>
 			<div
-				class="container mx-auto flex justify-between p-6 lg:p-8"
+				class="container flex justify-between p-6 mx-auto lg:p-8"
 				[ngClass]="['bg' + contrast]"
 			>
 				<a class="font-bold" href="#">Mamba</a>

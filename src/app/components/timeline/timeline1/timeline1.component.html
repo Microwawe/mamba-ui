@@ -1,52 +1,61 @@
-<div class="m-8">
-	<div class="container mx-auto">
-		<h1 class="mb-4 text-2xl font-semibold text-center">Our company history</h1>
-		<div class="grid grid-cols-1 mx-8 auto-rows-fr">
-			<div class="border-b-4 border-l-4" [ngClass]="['border' + neutral]">
-				<div class="h-32 my-4 ml-4">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti facere
-					quo dignissimos. At perspiciatis quam ab quo culpa laudantium, accusantium
-					consequatur et qui reiciendis blanditiis enim. Ipsum explicabo itaque dolor
-					accusamus accusantium nobis corporis saepe doloremque, quod reiciendis veniam
-					nesciunt amet? Incidunt labore quia et quidem optio, esse molestias?
+<div class="max-w-xl p-8 mx-auto">
+	<ul class="">
+		<li>
+			<div class="relative pb-8">
+				<span class="absolute top-5 left-5 -ml-px h-full w-0.5"></span>
+				<div class="relative flex items-start space-x-3">
+					<div class="relative px-1">
+						<div
+							class="flex items-center justify-center w-8 h-8 rounded-full ring-2 ring-white"
+							[ngClass]="['bg' + defaultInv, 'text' + primary]"
+						>
+							<svg
+								class="w-5 h-5"
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="currentColor"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+								/>
+							</svg>
+						</div>
+					</div>
+					<div class="flex-1 min-w-0 py-0">
+						<div class="text-gray-500 text-md">
+							<a href="#" class="mr-2 font-medium">v3.2.0</a>
+
+							<a
+								href="#"
+								class="my-0.5 relative inline-flex items-center bg-white rounded-full border border-gray-300 px-3 py-0.5 text-sm"
+							>
+								<div
+									class="absolute flex items-center justify-center flex-shrink-0"
+								>
+									<span
+										class="h-1.5 w-1.5 rounded-full bg-green-500"
+										aria-hidden="true"
+									></span>
+								</div>
+								<div class="ml-3.5 font-medium">Feature</div>
+							</a>
+							<span class="text-xs whitespace-nowrap">10h ago</span>
+						</div>
+						<div class="mt-2">
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt
+								nunc ipsum tempor purus vitae id. Morbi in vestibulum nec varius. Et
+								diam cursus quis sed purus nam. Scelerisque amet elit non sit ut
+								tincidunt condimentum. Nisl ultrices eu venenatis diam.
+							</p>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="border-b-4 border-r-4" [ngClass]="['border' + neutral]">
-				<div class="h-24 my-4 mr-4">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti facere
-					quo dignissimos. At perspiciatis quam ab quo culpa laudantium, accusantium
-					consequatur et qui reiciendis blanditiis enim. Ipsum explicabo itaque dolor
-					accusamus accusantium nobis corporis saepe doloremque, quod reiciendis veniam
-					nesciunt amet? Incidunt labore quia et quidem optio, esse molestias?
-				</div>
-			</div>
-			<div class="border-b-4 border-l-4" [ngClass]="['border' + neutral]">
-				<div class="h-32 my-4 ml-4">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti facere
-					quo dignissimos. At perspiciatis quam ab quo culpa laudantium, accusantium
-					consequatur et qui reiciendis blanditiis enim. Ipsum explicabo itaque dolor
-					accusamus accusantium nobis corporis saepe doloremque, quod reiciendis veniam
-					nesciunt amet? Incidunt labore quia et quidem optio, esse molestias?
-				</div>
-			</div>
-			<div class="border-b-4 border-r-4" [ngClass]="['border' + neutral]">
-				<div class="my-4 mr-4">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti facere
-					quo dignissimos. At perspiciatis quam ab quo culpa laudantium, accusantium
-					consequatur et qui reiciendis blanditiis enim. Ipsum explicabo itaque dolor
-					accusamus accusantium nobis corporis saepe doloremque, quod reiciendis veniam
-					nesciunt amet? Incidunt labore quia et quidem optio, esse molestias?
-				</div>
-			</div>
-			<div class="border-b-4 border-l-4" [ngClass]="['border' + neutral]">
-				<div class="my-4 ml-4">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti facere
-					quo dignissimos. At perspiciatis quam ab quo culpa laudantium, accusantium
-					consequatur et qui reiciendis blanditiis enim. Ipsum explicabo itaque dolor
-					accusamus accusantium nobis corporis saepe doloremque, quod reiciendis veniam
-					nesciunt amet? Incidunt labore quia et quidem optio, esse molestias?
-				</div>
-			</div>
-		</div>
-	</div>
+		</li>
+	</ul>
 </div>
