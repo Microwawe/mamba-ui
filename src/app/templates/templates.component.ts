@@ -7,7 +7,10 @@ import {BaseComponent} from '@shared/components/base/base.component';
 	templateUrl: './templates.component.html',
 })
 export class TemplatesComponent extends BaseComponent {
-	categories = [{name: 'business', count: 1}];
+	categories = [
+		{name: 'business', count: 2},
+		{name: 'portfolio', count: 1},
+	];
 
 	constructor() {
 		super();
