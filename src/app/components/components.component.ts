@@ -15,13 +15,13 @@ export class ComponentsComponent extends BaseComponent {
 		{name: 'Contact', link: 'contact', count: 3},
 		{name: 'Error', link: 'error', count: 2},
 		{name: 'Faq', link: 'faq', count: 3},
-		{name: 'Feature', link: 'feature', count: 7},
+		{name: 'Feature', link: 'feature', count: 8},
 		{name: 'Footer', link: 'footer', count: 3}, // TODO
 		{name: 'Form', link: 'form', count: 1},
 		{name: 'Gallery', link: 'gallery', count: 1},
 		{name: 'Header', link: 'header', count: 5},
 		{name: 'Hero', link: 'hero', count: 5},
-		{name: 'Login', link: 'login', count: 3},
+		{name: 'Login', link: 'login', count: 4},
 		{name: 'Pagination', link: 'pagination', count: 1},
 		{name: 'Pricing', link: 'pricing', count: 4},
 		// {name: 'Product', link: 'product', count: 2}, // TODO
@@ -30,7 +30,7 @@ export class ComponentsComponent extends BaseComponent {
 		{name: 'Shopping cart', link: 'shopping-cart', count: 3}, // TODO cleanup
 		{name: 'Sidebar', link: 'sidebar', count: 3},
 		{name: 'Snackbar', link: 'snackbar', count: 2},
-		{name: 'Stats', link: 'stats', count: 6}, // TODO cleanup
+		{name: 'Stats', link: 'stats', count: 5}, // TODO cleanup
 		{name: 'Steps', link: 'steps', count: 3},
 		// {name: 'Tab', link: 'tab', count: 1}, // TODO
 		{name: 'Team', link: 'team', count: 4},
