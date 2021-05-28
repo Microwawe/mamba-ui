@@ -5,6 +5,7 @@ module.exports = {
 	'tabWidth': 4,
 	'quoteProps': 'preserve',
 	'printWidth': 100,
+	'htmlWhitespaceSensitivity': 'ignore',
 	'overrides': [
 		{
 			'files': ['*.yml', '*.md'],
