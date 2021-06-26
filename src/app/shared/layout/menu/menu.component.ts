@@ -21,7 +21,7 @@ export class MenuComponent extends BaseComponent implements OnInit {
 	docsCategories = [
 		{name: 'Get started', link: 'docs'},
 		{name: 'General', link: 'docs/general'},
-		{name: 'Roadmap', link: 'docs/roadmap'},
+		// {name: 'Roadmap', link: 'docs/roadmap'},
 		{name: 'Credits', link: 'docs/credits'},
 		// {name: 'Privacy', link: 'docs/privacy'},
 	];
