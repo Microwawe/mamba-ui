@@ -6,8 +6,6 @@ import {CreditsComponent} from './credits/credits.component';
 import {DocsComponent} from './docs.component';
 import {GeneralComponent} from './general/general.component';
 import {GetStartedComponent} from './get-started/get-started.component';
-import {PrivacyComponent} from './privacy/privacy.component';
-import {RoadmapComponent} from './roadmap/roadmap.component';
 
 const routes: Routes = [
 	{
@@ -28,12 +26,12 @@ const routes: Routes = [
 				component: GeneralComponent,
 				data: {title: 'General', breadcrumb: 'General'},
 			},
-			{
+			/* {
 				path: 'roadmap',
 				component: RoadmapComponent,
 				data: {title: 'Roadmap', breadcrumb: 'Roadmap'},
 			},
-			/* {
+			{
 				path: 'privacy',
 				component: PrivacyComponent,
 				data: {title: 'Privacy policy', breadcrumb: 'Privacy'},
