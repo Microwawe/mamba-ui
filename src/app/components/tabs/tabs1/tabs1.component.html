@@ -1,8 +1,12 @@
 <div
-	class="flex items-center -mx-4 overflow-x-auto overflow-y-hidden border-b sm:justify-center flex-nowrap"
+	class="flex items-center -mx-4 overflow-x-auto overflow-y-hidden sm:justify-center flex-nowrap"
 	[ngClass]="['bg' + default, 'text' + defaultInv]"
 >
-	<a class="flex items-center flex-shrink-0 px-5 py-3 space-x-2" href="#">
+	<a
+		class="flex items-center flex-shrink-0 px-5 py-3 space-x-2 border-b"
+		href="#"
+		[ngClass]="['border' + plainInv, 'text' + plainInv]"
+	>
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			class="w-4 h-4"
@@ -17,7 +21,11 @@
 		</svg>
 		<span>All</span>
 	</a>
-	<a class="flex items-center flex-shrink-0 px-5 py-3 space-x-2" href="#">
+	<a
+		class="flex items-center flex-shrink-0 px-5 py-3 space-x-2 border border-b-0 rounded-t-lg"
+		href="#"
+		[ngClass]="['border' + plainInv, 'text' + contrastInv]"
+	>
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			class="w-4 h-4"
@@ -33,7 +41,11 @@
 		</svg>
 		<span>Reading</span>
 	</a>
-	<a class="flex items-center flex-shrink-0 px-5 py-3 space-x-2" href="#">
+	<a
+		class="flex items-center flex-shrink-0 px-5 py-3 space-x-2 border-b"
+		href="#"
+		[ngClass]="['border' + plainInv, 'text' + plainInv]"
+	>
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			class="w-4 h-4"
@@ -50,7 +62,11 @@
 		</svg>
 		<span>Portfolios</span>
 	</a>
-	<a class="flex items-center flex-shrink-0 px-5 py-3 space-x-2" href="#">
+	<a
+		class="flex items-center flex-shrink-0 px-5 py-3 space-x-2 border-b"
+		href="#"
+		[ngClass]="['border' + plainInv, 'text' + plainInv]"
+	>
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			class="w-4 h-4"

@@ -1,0 +1,24 @@
+<fieldset [ngClass]="['text' + defaultInv]" class="w-full space-y-1">
+	<label for="price" class="block text-sm font-medium">Total price</label>
+	<div class="flex">
+		<input
+			type="text"
+			name="price"
+			id="price"
+			class="flex flex-1 text-right border sm:text-sm rounded-l-md focus:ring-inset"
+			[ngClass]="[
+				'border' + neutral,
+				'text' + defaultInv,
+				'bg' + default,
+				'focus:ring' + primary
+			]"
+			placeholder="99 999,99"
+		/>
+		<span
+			class="flex items-center px-3 pointer-events-none sm:text-sm rounded-r-md"
+			[ngClass]="['bg' + neutral]"
+		>
+			€
+		</span>
+	</div>
+</fieldset>

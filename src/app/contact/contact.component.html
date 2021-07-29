@@ -17,8 +17,8 @@
 				class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
 			>
 				<div class="sm:col-span-2">
-					<label for="name" class="block text-sm font-medium leading-5"
-						>Name
+					<label for="name" class="block text-sm font-medium leading-5">
+						Name
 						<div class="mt-1 rounded-md shadow-sm">
 							<input
 								id="name"
@@ -28,14 +28,16 @@
 								[ngClass]="[
 									'border' + neutral,
 									'focus:border' + primary,
-									'focus:ring' + primary
+									'focus:ring' + primary,
+									'bg' + default
 								]"
-							/></div
-					></label>
+							/>
+						</div>
+					</label>
 				</div>
 				<div class="">
-					<label for="email" class="block text-sm font-medium leading-5"
-						>Email
+					<label for="email" class="block text-sm font-medium leading-5">
+						Email
 						<input
 							id="email"
 							type="email"
@@ -44,14 +46,15 @@
 							[ngClass]="[
 								'border' + neutral,
 								'focus:border' + primary,
-								'focus:ring' + primary
+								'focus:ring' + primary,
+								'bg' + default
 							]"
 						/>
 					</label>
 				</div>
 				<div class="">
-					<label for="twitter" class="block text-sm font-medium leading-5"
-						>Twitter handle
+					<label for="twitter" class="block text-sm font-medium leading-5">
+						Twitter handle
 						<input
 							id="twitter"
 							type="text"
@@ -60,14 +63,15 @@
 							[ngClass]="[
 								'border' + neutral,
 								'focus:border' + primary,
-								'focus:ring' + primary
+								'focus:ring' + primary,
+								'bg' + default
 							]"
 						/>
 					</label>
 				</div>
 				<div class="sm:col-span-2">
-					<label for="category" class="block text-sm font-medium leading-5"
-						>Category
+					<label for="category" class="block text-sm font-medium leading-5">
+						Category
 						<select
 							id="category"
 							name="category"
@@ -76,9 +80,11 @@
 							[ngClass]="[
 								'border' + neutral,
 								'focus:border' + primary,
-								'focus:ring' + primary
+								'focus:ring' + primary,
+								'bg' + default
 							]"
 						>
+							<option>New component idea</option>
 							<option>Feature request</option>
 							<option>Feedback</option>
 							<option>Bug report</option>
@@ -87,8 +93,9 @@
 					</label>
 				</div>
 				<div class="sm:col-span-2">
-					<label for="message" class="block text-sm font-medium leading-5"
-						>Message<span class="text xs">*</span>
+					<label for="message" class="block text-sm font-medium leading-5">
+						Message
+						<span class="text xs">*</span>
 						<textarea
 							id="message"
 							name="message"
@@ -98,7 +105,8 @@
 							[ngClass]="[
 								'border' + neutral,
 								'focus:border' + primary,
-								'focus:ring' + primary
+								'focus:ring' + primary,
+								'bg' + default
 							]"
 						></textarea>
 					</label>
@@ -106,7 +114,7 @@
 				<div class="sm:col-span-2">
 					<button
 						type="submit"
-						class="inline-flex items-center justify-center w-full px-6 py-3 text-base font-medium leading-6 border border-transparent rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2"
+						class="inline-flex items-center justify-center w-full px-6 py-3 font-semibold leading-6 border border-transparent rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2"
 						[ngClass]="[
 							'bg' + primary,
 							'text' + contrast,
