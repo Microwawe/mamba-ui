@@ -5,6 +5,7 @@ import {SharedModule} from '@shared/shared.module';
 import {ReviewShowcaseComponent} from './review-showcase.component';
 import {Review1Component} from './review1/review1.component';
 import {Review2Component} from './review2/review2.component';
+import {Review3Component} from './review3/review3.component';
 
 const routes: Routes = [
 	{
@@ -15,6 +16,6 @@ const routes: Routes = [
 
 @NgModule({
 	imports: [RouterModule.forChild(routes), SharedModule],
-	declarations: [ReviewShowcaseComponent, Review1Component, Review2Component],
+	declarations: [ReviewShowcaseComponent, Review1Component, Review2Component, Review3Component],
 })
 export class ReviewModule {}

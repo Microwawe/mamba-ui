@@ -8,6 +8,7 @@ import {Button2Component} from './button2/button2.component';
 import {Button3Component} from './button3/button3.component';
 import {Button4Component} from './button4/button4.component';
 import {Button5Component} from './button5/button5.component';
+import {Button6Component} from './button6/button6.component';
 
 const routes: Routes = [
 	{
@@ -25,6 +26,7 @@ const routes: Routes = [
 		Button3Component,
 		Button4Component,
 		Button5Component,
+		Button6Component,
 	],
 })
 export class ButtonModule {}

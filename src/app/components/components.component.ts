@@ -17,7 +17,7 @@ export class ComponentsComponent extends BaseComponent implements OnDestroy {
 	categories: Category[] = [
 		{name: 'Avatar', link: 'avatar', count: 1},
 		{name: 'Blog', link: 'blog', count: 7},
-		{name: 'Button', link: 'button', count: 5},
+		{name: 'Button', link: 'button', count: 6},
 		{name: 'Call to action', link: 'call-to-action', count: 6},
 		{name: 'Contact', link: 'contact', count: 3},
 		{name: 'Error', link: 'error', count: 2},
@@ -35,7 +35,7 @@ export class ComponentsComponent extends BaseComponent implements OnDestroy {
 		{name: 'Pagination', link: 'pagination', count: 1},
 		{name: 'Pricing', link: 'pricing', count: 4},
 		{name: 'Profile', link: 'profile', count: 3},
-		{name: 'Review', link: 'review', count: 2},
+		{name: 'Review', link: 'review', count: 3},
 		{name: 'Shopping cart', link: 'shopping-cart', count: 3}, // TODO cleanup
 		{name: 'Sidebar', link: 'sidebar', count: 3},
 		{name: 'Stats', link: 'stats', count: 5}, // TODO cleanup

@@ -3,10 +3,10 @@ import {Component} from '@angular/core';
 import {BaseComponent} from '@shared/components/base/base.component';
 
 @Component({
-	selector: 'custom-review2',
-	templateUrl: './review2.component.html',
+	selector: 'custom-review3',
+	templateUrl: './review3.component.html',
 })
-export class Review2Component extends BaseComponent {
+export class Review3Component extends BaseComponent {
 	constructor() {
 		super();
 	}

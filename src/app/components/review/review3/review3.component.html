@@ -1,0 +1,43 @@
+<div
+	class="flex flex-col max-w-xl p-8 shadow-sm rounded-xl lg:p-12"
+	[ngClass]="['bg' + contrast, 'text' + defaultInv]"
+>
+	<div class="flex flex-col w-full">
+		<h2 class="text-3xl font-semibold text-center">Customer reviews</h2>
+		<div class="flex flex-wrap items-center mt-2 mb-1 space-x-2">
+			<div class="flex">
+				<button
+					*ngFor="let i of [1, 2, 3, 4, 5]"
+					type="button"
+					title="Rate {{ i }} stars"
+					attr.aria-label="Rate {{ i }} stars"
+				>
+					<svg
+						class="w-6 h-6"
+						[ngClass]="[i > 3 ? 'text' + plain : 'text-yellow-500']"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 20 20"
+						fill="currentColor"
+					>
+						<path
+							d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+						/>
+					</svg>
+				</button>
+			</div>
+			<span class="" [ngClass]="['text' + plainInv]">3 out of 5</span>
+		</div>
+		<p class="text-sm" [ngClass]="['text' + plainInv]">861 global ratings</p>
+		<div class="flex flex-col mt-4">
+			<div class="flex items-center space-x-1" *ngFor="let i of [5, 4, 3, 2, 1]">
+				<span class="flex-shrink-0 w-12 text-sm">{{ i }} star</span>
+				<div class="flex-1 h-4 overflow-hidden rounded-sm" [ngClass]="['bg' + neutral]">
+					<div class="w-{{ i }}/6 h-4 bg-orange-300"></div>
+				</div>
+				<span class="flex-shrink-0 w-12 text-sm text-right">
+					{{ ((i / 6) * 100).toFixed() }}%
+				</span>
+			</div>
+		</div>
+	</div>
+</div>
