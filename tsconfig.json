@@ -12,6 +12,7 @@
 		"declaration": false,
 		"downlevelIteration": true,
 		"experimentalDecorators": true,
+		"removeComments": true,
 		"moduleResolution": "node",
 		"importHelpers": true,
 		"target": "es2015",

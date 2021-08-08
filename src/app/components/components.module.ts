@@ -1,8 +1,9 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
+
 import {SharedModule} from '@shared/shared.module';
-import {ComponentsComponent} from './components.component';
 import {EmptyChildRouteComponent} from '@shared/components/empty-child-route/empty-child-route.component';
+import {ComponentsComponent} from './components.component';
 
 const routes: Routes = [
 	{
@@ -12,6 +13,11 @@ const routes: Routes = [
 			{
 				path: '',
 				component: EmptyChildRouteComponent,
+			},
+			{
+				path: 'article',
+				loadChildren: () => import('./article/article.module').then(m => m.ArticleModule),
+				data: {title: 'Articles', breadcrumb: 'Article'},
 			},
 			{
 				path: 'avatar',
@@ -82,20 +88,31 @@ const routes: Routes = [
 				data: {title: 'Hero', breadcrumb: 'Hero'},
 			},
 			{
+				path: 'input',
+				loadChildren: () => import('./input/input.module').then(m => m.InputModule),
+				data: {title: 'Input', breadcrumb: 'Input'},
+			},
+			{
+				path: 'loading',
+				loadChildren: () => import('./loading/loading.module').then(m => m.LoadingModule),
+				data: {title: 'Loading', breadcrumb: 'Loading'},
+			},
+			{
 				path: 'login',
 				loadChildren: () => import('./login/login.module').then(m => m.LoginModule),
 				data: {title: 'Login', breadcrumb: 'Login'},
+			},
+			{
+				path: 'notification',
+				loadChildren: () =>
+					import('./notification/notification.module').then(m => m.NotificationModule),
+				data: {title: 'Notifications', breadcrumb: 'Notification'},
 			},
 			{
 				path: 'pagination',
 				loadChildren: () =>
 					import('./pagination/pagination.module').then(m => m.PaginationModule),
 				data: {title: 'Paginations', breadcrumb: 'Pagination'},
-			},
-			{
-				path: 'review',
-				loadChildren: () => import('./review/review.module').then(m => m.ReviewModule),
-				data: {title: 'reviews', breadcrumb: 'review'},
 			},
 			{
 				path: 'pricing',
@@ -106,6 +123,11 @@ const routes: Routes = [
 				path: 'profile',
 				loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule),
 				data: {title: 'Profile', breadcrumb: 'Profile'},
+			},
+			{
+				path: 'review',
+				loadChildren: () => import('./review/review.module').then(m => m.ReviewModule),
+				data: {title: 'reviews', breadcrumb: 'review'},
 			},
 			{
 				path: 'shopping-cart',
@@ -119,12 +141,6 @@ const routes: Routes = [
 				data: {title: 'Sidebar', breadcrumb: 'Sidebar'},
 			},
 			{
-				path: 'snackbar',
-				loadChildren: () =>
-					import('./snackbar/snackbar.module').then(m => m.SnackbarModule),
-				data: {title: 'Snackbars', breadcrumb: 'Snackbar'},
-			},
-			{
 				path: 'stats',
 				loadChildren: () => import('./stats/stats.module').then(m => m.StatsModule),
 				data: {title: 'Stats', breadcrumb: 'Stats'},
@@ -134,11 +150,11 @@ const routes: Routes = [
 				loadChildren: () => import('./steps/steps.module').then(m => m.StepsModule),
 				data: {title: 'Step', breadcrumb: 'Step'},
 			},
-			/* {
+			{
 				path: 'tab',
 				loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsModule),
 				data: {title: 'Tabs', breadcrumb: 'Tabs'},
-			}, */
+			},
 			{
 				path: 'team',
 				loadChildren: () => import('./team/team.module').then(m => m.TeamModule),
@@ -155,6 +171,11 @@ const routes: Routes = [
 				loadChildren: () =>
 					import('./timeline/timeline.module').then(m => m.TimelineModule),
 				data: {title: 'Timeline', breadcrumb: 'Timeline'},
+			},
+			{
+				path: 'toggle',
+				loadChildren: () => import('./toggle/toggle.module').then(m => m.ToggleModule),
+				data: {title: 'Toggle', breadcrumb: 'Toggle'},
 			},
 			{
 				path: 'weather',

@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { AvatarShowcaseComponent } from './avatar-showcase.component';
-import { Routes, RouterModule } from '@angular/router';
-import { SharedModule } from '@shared/shared.module';
-import { Avatar1Component } from './avatar1/avatar1.component';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
+
+import {AvatarShowcaseComponent} from './avatar-showcase.component';
+import {SharedModule} from '@shared/shared.module';
+import {Avatar1Component} from './avatar1/avatar1.component';
 
 const routes: Routes = [
 	{

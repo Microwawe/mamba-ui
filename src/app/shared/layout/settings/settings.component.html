@@ -11,7 +11,8 @@
 		<div class="grid grid-cols-2 gap-1 px-3 grid-">
 			<button
 				*ngFor="let color of colors"
-				attr.aria-label="Set primary color to {{ color.name }}"
+				title="Set primary color to {{ color.name }}"
+				type="button"
 				class="w-8 h-8 border rounded"
 				[ngClass]="[
 					'bg-' + color.name + '-500',
@@ -19,15 +20,14 @@
 					'hover:ring-2',
 					'hover:ring-inset',
 					'hover:ring-white',
-					selectedColor.name == color.name ? 'ring-2' : '',
-					selectedColor.name == color.name ? 'ring-inset' : '',
-					selectedColor.name == color.name ? 'ring-gray-300' : ''
+					selectedColor.name == color.name ? 'ring-2 ring-inset ring-gray-300' : ''
 				]"
 				(click)="changeColor(color)"
 			></button>
 		</div>
 
 		<button
+			type="button"
 			(click)="toggleColors()"
 			class="absolute flex items-center justify-center h-32 transform translate-y-1/2 w-7 bottom-1/2 rounded-r-xl left-full bg-coolGray-700 text-coolGray-50 focus:outline-none"
 		>
@@ -35,8 +35,9 @@
 			<span
 				style="writing-mode: vertical-lr; text-orientation: upright"
 				class="font-mono text-sm antialiased font-medium"
-				>COLORS</span
 			>
+				COLORS
+			</span>
 			<span class="sr-only">menu</span>
 		</button>
 

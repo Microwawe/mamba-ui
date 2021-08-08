@@ -5,20 +5,45 @@
 	>
 		<div class="flex justify-between px-2 py-4 overflow-x-auto sm:p-4 flex-nowrap">
 			<div class="space-x-2">
-				<button class="px-2 py-1 text-sm" (click)="showPreview()" name="Show preview">
+				<button
+					class="px-2 py-1 text-sm"
+					type="button"
+					(click)="showPreview()"
+					name="Show preview"
+				>
 					Preview
 				</button>
-				<button class="px-2 py-1 text-sm" (click)="showHtml()" name="Show HTML code">
+				<button
+					class="px-2 py-1 text-sm"
+					type="button"
+					(click)="showHtml()"
+					name="Show HTML code"
+				>
 					HTML
 				</button>
-				<button class="px-2 py-1 text-sm" (click)="showVue()" name="Show Vue template">
+				<button
+					class="px-2 py-1 text-sm"
+					type="button"
+					(click)="showVue()"
+					name="Show Vue template"
+				>
 					Vue
 				</button>
-				<button class="px-2 py-1 text-sm" (click)="showJSX()" name="Show JSX code">
+				<button
+					class="px-2 py-1 text-sm"
+					type="button"
+					(click)="showJSX()"
+					name="Show JSX code"
+				>
 					JSX
 				</button>
 			</div>
-			<button class="px-2 text-sm" (click)="showFullscreen()" name="Show in fullscreen">
+			<button
+				class="px-2 text-sm"
+				(click)="showFullscreen()"
+				type="button"
+				title="Show in fullscreen"
+			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 512 512"
@@ -35,6 +60,10 @@
 			</button>
 		</div>
 		<div class="relative">
+			<custom-requirements
+				*ngIf="requires && !codeVisible"
+				[requires]="requires"
+			></custom-requirements>
 			<div
 				#rawContent
 				*ngIf="!codeVisible"
@@ -58,6 +87,7 @@
 				*ngIf="codeVisible"
 				(click)="copyToClipboard()"
 				name="Copy to clipboard"
+				type="button"
 				class="absolute top-0 right-0 flex items-center px-4 py-2 mt-3 mr-6 space-x-2 border rounded-lg hover:ring-4"
 				[ngClass]="[
 					'focus:ring' + primary,

@@ -1,17 +1,34 @@
 <div class="container flex-1 my-6" [ngClass]="['text' + defaultInv]">
-	<h1 class="text-4xl font-bold text-center">Components</h1>
-	<div class="flex flex-wrap p-4 place-content-center">
+	<div
+		class="flex flex-col items-center px-4 space-y-3 sm:space-y-0 sm:flex-row sm:justify-between"
+	>
+		<div class="space-y-2 text-center sm:text-left">
+			<h1 class="text-5xl font-bold">Components</h1>
+			<span class="block" [ngClass]="['text' + plainInv]">
+				{{ this.componentTotal }} components in {{ this.categoryTotal }} categories
+			</span>
+		</div>
+		<custom-search (queryChange)="updateQuery($event)"></custom-search>
+	</div>
+	<div class="flex flex-wrap p-6 place-content-center">
 		<a
 			*ngFor="let category of categories"
 			[routerLink]="['/components/' + category.link]"
-			[routerLinkActive]="['ring', 'ring-opacity-20', 'ring' + primary]"
-			class="relative px-3 py-1 m-1 rounded-md shadow-sm group md:px-4 md:py-2 hover:ring hover:ring-opacity-50"
-			[ngClass]="['hover:ring' + primary, 'bg' + default]"
+			[routerLinkActive]="['ring', 'ring-opacity-80', 'ring' + primary]"
+			class="relative px-3 py-1 m-1 rounded-md shadow-sm group md:px-4 md:py-2 hover:ring"
+			[ngClass]="[
+				'hover:ring' + primary,
+				(category | filter: query) ? 'text' + contrastInv : 'text' + plainInv,
+				(category | filter: query) ? activeBgColor : disabledBgColor,
+				(category | filter: query) ? 'no-underline' : 'line-through'
+			]"
 		>
 			<span
 				class="absolute top-0 right-0 p-1 text-xs opacity-0 group-hover:opacity-100"
-				[ngClass]="['text' + plainInv]"
-				>{{ category.count }}
+				[routerLinkActive]="['opacity-100']"
+				[ngClass]="['text' + defaultInv]"
+			>
+				{{ category.count }}
 			</span>
 			<span class="text-sm">{{ category.name }}</span>
 		</a>

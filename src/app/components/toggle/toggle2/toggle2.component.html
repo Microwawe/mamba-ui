@@ -1,0 +1,19 @@
+<label
+	for="Toggle"
+	class="inline-flex items-center space-x-4 cursor-pointer"
+	[ngClass]="['text' + defaultInv]"
+>
+	<span>This</span>
+	<span class="relative">
+		<input id="Toggle" type="checkbox" class="hidden peer" />
+		<div
+			class="w-10 h-4 rounded-full shadow"
+			[ngClass]="['bg' + plain, 'peer-checked:bg' + primary]"
+		></div>
+		<div
+			class="absolute left-0 w-6 h-6 rounded-full shadow -inset-y-1 peer-checked:right-0 peer-checked:left-auto"
+			[ngClass]="['bg' + primary]"
+		></div>
+	</span>
+	<span>That</span>
+</label>

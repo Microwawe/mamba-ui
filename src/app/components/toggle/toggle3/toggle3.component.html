@@ -1,0 +1,20 @@
+<label
+	for="toggle"
+	class="inline-flex items-center p-2 rounded-md cursor-pointer"
+	[ngClass]="['text' + default]"
+>
+	<input id="toggle" type="checkbox" class="hidden peer" />
+	<span
+		class="px-4 py-2 rounded-l-md"
+		[ngClass]="['bg' + primary, 'peer-checked:bg' + neutralInv]"
+	>
+		Monthly
+	</span>
+
+	<span
+		class="px-4 py-2 rounded-r-md"
+		[ngClass]="['bg' + neutralInv, 'peer-checked:bg' + primary]"
+	>
+		Annually
+	</span>
+</label>

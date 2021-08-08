@@ -1,0 +1,9 @@
+<label
+	for="toggle"
+	class="inline-flex items-center p-1 cursor-pointer"
+	[ngClass]="['bg' + neutralInv, 'text' + default]"
+>
+	<input id="toggle" type="checkbox" class="hidden peer" />
+	<span class="px-4 py-2" [ngClass]="['bg' + plain, 'peer-checked:bg' + neutralInv]">OFF</span>
+	<span class="px-4 py-2" [ngClass]="['bg' + neutralInv, 'peer-checked:bg' + primary]">ON</span>
+</label>

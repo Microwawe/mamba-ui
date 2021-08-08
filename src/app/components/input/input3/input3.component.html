@@ -1,0 +1,12 @@
+<fieldset [ngClass]="['text' + defaultInv]" class="w-full space-y-1">
+	<label for="files" class="block text-sm font-medium">Attachments</label>
+	<div class="flex">
+		<input
+			type="file"
+			name="files"
+			id="files"
+			class="px-8 py-12 border-2 border-dashed rounded-md"
+			[ngClass]="['border' + neutral, 'text' + plainInv, 'bg' + default]"
+		/>
+	</div>
+</fieldset>

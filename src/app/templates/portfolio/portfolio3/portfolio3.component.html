@@ -1,0 +1,475 @@
+<div [ngClass]="['bg' + default, 'text' + defaultInv]" class="antialiased">
+	<div class="flex flex-col min-h-screen space-y-12">
+		<header
+			class="container flex items-center justify-between w-full max-w-3xl px-6 py-10 mx-auto xl:max-w-5xl"
+		>
+			<a aria-label="Tailwind CSS Blog" href="/" class="block h-6 text-2xl font-semibold">
+				Brand name
+			</a>
+			<div class="flex items-center">
+				<div class="hidden space-x-2 font-medium sm:block">
+					<a class="p-1" href="/blog">Blog</a>
+					<a class="p-1" href="/tags">Tags</a>
+					<a class="p-1" href="/projects">Projects</a>
+					<a class="p-1" href="/about">About</a>
+				</div>
+				<button
+					aria-label="Toggle Dark Mode"
+					type="button"
+					class="w-8 h-8 p-1 ml-1 mr-1 rounded sm:ml-4"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 20 20"
+						fill="currentColor"
+						class=""
+						[ngClass]="['text' + contrast]"
+					>
+						<path
+							d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+						></path>
+					</svg>
+				</button>
+				<div class="sm:hidden">
+					<button
+						type="button"
+						class="w-8 h-8 ml-1 mr-1 rounded"
+						aria-label="Toggle Menu"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 20 20"
+							fill="currentColor"
+							class=""
+							[ngClass]="['text' + contrast]"
+						>
+							<path
+								fill-rule="evenodd"
+								d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+								clip-rule="evenodd"
+							></path>
+						</svg>
+					</button>
+					<div
+						class="fixed right-0 z-10 w-full h-full duration-300 ease-in-out transform translate-x-full top-24"
+					>
+						<button
+							type="button"
+							aria-label="toggle modal"
+							class="fixed w-full h-full cursor-auto focus:outline-none"
+						></button>
+						<nav class="fixed h-full mt-8">
+							<div class="px-12 py-4">
+								<a
+									class="text-2xl font-bold tracking-widest"
+									[ngClass]="['text' + contrast]"
+									href="/blog"
+								>
+									Blog
+								</a>
+							</div>
+							<div class="px-12 py-4">
+								<a
+									class="text-2xl font-bold tracking-widest"
+									[ngClass]="['text' + contrast]"
+									href="/tags"
+								>
+									Tags
+								</a>
+							</div>
+							<div class="px-12 py-4">
+								<a
+									class="text-2xl font-bold tracking-widest"
+									[ngClass]="['text' + contrast]"
+									href="/projects"
+								>
+									Projects
+								</a>
+							</div>
+							<div class="px-12 py-4">
+								<a
+									class="text-2xl font-bold tracking-widest"
+									[ngClass]="['text' + contrast]"
+									href="/about"
+								>
+									About
+								</a>
+							</div>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="container flex-1 max-w-3xl px-6 mx-auto space-y-12 xl:max-w-5xl">
+			<div class="space-y-6">
+				<h2 class="text-3xl font-extrabold" [ngClass]="['text' + contrastInv]">
+					Recent blog posts
+				</h2>
+				<ul class="space-y-8 xl:space-y-10">
+					<li *ngFor="let item of [1, 2, 3]">
+						<article>
+							<dl>
+								<dt class="sr-only">Published on</dt>
+								<dd class="text-xs" [ngClass]="['text' + plainInv]">
+									<time datetime="2021-01-12">January 12, 2021</time>
+								</dd>
+							</dl>
+							<div class="space-y-1">
+								<h3 class="text-2xl font-bold tracking-tight">
+									<a class="" [ngClass]="['text' + contrastInv]" href="">
+										Introducing Tailwind Nexjs Starter Blog
+									</a>
+								</h3>
+								<p class="max-w-full prose" [ngClass]="['text' + defaultInv]">
+									Looking for a performant, out of the box template, with all the
+									best in web technology to support your blogging needs? Checkout
+									the Tailwind Nextjs Starter Blog template.
+								</p>
+								<div class="flex flex-wrap space-x-3">
+									<a class="text-xs" [ngClass]="['text' + primary]" href="">
+										#angular
+									</a>
+									<a class="text-xs" [ngClass]="['text' + primary]" href="">
+										#tailwind
+									</a>
+									<a class="text-xs" [ngClass]="['text' + primary]" href="">
+										#webdev
+									</a>
+								</div>
+							</div>
+						</article>
+					</li>
+				</ul>
+			</div>
+			<div class="space-y-6">
+				<div>
+					<h2 class="text-3xl font-extrabold">Projects</h2>
+					<p>Showcase your projects with a hero image (16 x 9)</p>
+				</div>
+				<div class="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2">
+					<a
+						href="#"
+						aria-label="Te nulla oportere reprimique his dolorum"
+						*ngFor="let i of [1, 2, 3, 4]"
+						class="flex flex-col"
+						[ngClass]="['bg' + contrast]"
+					>
+						<img
+							class="object-cover w-full h-52"
+							alt=""
+							src="https://source.unsplash.com/20{{ i }}x20{{ i }}/?fashion"
+						/>
+						<div class="flex flex-col flex-1 p-6">
+							<a
+								href="#"
+								class="text-xs tracking-wider uppercase hover:underline"
+								[ngClass]="['text' + primary]"
+							>
+								Convenire
+							</a>
+							<h3 class="flex-1 py-2 text-lg font-semibold leading-snug">
+								Te nulla oportere reprimique his dolorum
+							</h3>
+							<div
+								class="flex flex-wrap justify-between pt-3 space-x-2 text-xs"
+								[ngClass]="['text' + plainInv]"
+							>
+								<span>June {{ i }}, 2020</span>
+								<span>2.{{ i }}K views</span>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="flex justify-center">
+					<button
+						type="button"
+						class="px-6 py-3 text-sm hover:underline"
+						[ngClass]="['text' + plainInv]"
+					>
+						Load more posts...
+					</button>
+				</div>
+			</div>
+			<div class="space-y-6">
+				<h2 class="text-2xl font-bold md:text-4xl">Timeline</h2>
+				<div class="space-y-8">
+					<div class="">
+						<h3 class="mb-3 text-lg font-bold md:text-xl">2021</h3>
+						<ul class="space-y-4">
+							<li class="ml-2 space-y-1">
+								<div class="flex items-center">
+									<svg
+										class="w-4 h-4 mr-2"
+										viewBox="0 0 24 24"
+										aria-label="Checkmark"
+										[ngClass]="['text' + primary]"
+									>
+										<g
+											fill="none"
+											stroke="currentColor"
+											stroke-width="2"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+											<path d="M22 4L12 14.01l-3-3"></path>
+										</g>
+									</svg>
+									<h4 class="font-medium">10,000 YouTube Subscribers 🎥</h4>
+								</div>
+								<p class="ml-6" [ngClass]="['text' + plainInv]">
+									After many years on YouTube, I've started to figure this whole
+									video thing out.
+								</p>
+							</li>
+							<li class="ml-2 space-y-1">
+								<div class="flex items-center">
+									<svg
+										class="w-4 h-4 mr-2"
+										viewBox="0 0 24 24"
+										aria-label="Checkmark"
+										[ngClass]="['text' + primary]"
+									>
+										<g
+											fill="none"
+											stroke="currentColor"
+											stroke-width="2"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+											<path d="M22 4L12 14.01l-3-3"></path>
+										</g>
+									</svg>
+									<h4 class="font-medium">5,000 Newsletter Subscribers 💌</h4>
+								</div>
+								<p class="ml-6" [ngClass]="['text' + plainInv]">
+									If you want to stay up-to-date on my latest work, it usually
+									hits the newsletter first. I try to send an update once a month.
+								</p>
+							</li>
+						</ul>
+					</div>
+					<div class="">
+						<h3 class="mb-3 text-lg font-bold md:text-xl">2020</h3>
+						<ul class="space-y-4">
+							<li class="ml-2 space-y-1">
+								<div class="flex items-center">
+									<svg
+										class="w-4 h-4 mr-2"
+										viewBox="0 0 24 24"
+										aria-label="Checkmark"
+										[ngClass]="['text' + primary]"
+									>
+										<g
+											fill="none"
+											stroke="currentColor"
+											stroke-width="2"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+											<path d="M22 4L12 14.01l-3-3"></path>
+										</g>
+									</svg>
+									<h4 class="font-medium">5,000 YouTube Subscribers 🎥</h4>
+								</div>
+								<p class="ml-6" [ngClass]="['text' + plainInv]">
+									After many years on YouTube, I've started to figure this whole
+									video thing out.
+								</p>
+							</li>
+							<li class="ml-2 space-y-1">
+								<div class="flex items-center">
+									<svg
+										class="w-4 h-4 mr-2"
+										viewBox="0 0 24 24"
+										aria-label="Checkmark"
+										[ngClass]="['text' + primary]"
+									>
+										<g
+											fill="none"
+											stroke="currentColor"
+											stroke-width="2"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+											<path d="M22 4L12 14.01l-3-3"></path>
+										</g>
+									</svg>
+									<h4 class="font-medium">2,000 Newsletter Subscribers 💌</h4>
+								</div>
+								<p class="ml-6" [ngClass]="['text' + plainInv]">
+									If you want to stay up-to-date on my latest work, it usually
+									hits the newsletter first. I try to send an update once a month.
+								</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</main>
+		<section class="py-6 rounded-md" [ngClass]="['bg' + contrast, 'text' + contrastInv]">
+			<div
+				class="container flex flex-col justify-center max-w-3xl p-4 px-6 mx-auto space-y-8 xl:max-w-5xl md:p-10 lg:space-y-0 lg:space-x-12 lg:justify-between lg:flex-row"
+			>
+				<div class="flex flex-col space-y-4 text-center lg:text-left">
+					<h1 class="text-5xl font-bold leading-none">Stay in the loop</h1>
+					<p class="">
+						Doloribus consectetur quasi ipsa quo neque culpa blanditiis ducimus
+						recusandae a veritatis optio cumque, in harum ad nam!
+					</p>
+				</div>
+				<div
+					class="flex flex-row items-center self-center justify-center flex-shrink-0 shadow-md lg:justify-end"
+				>
+					<div class="flex flex-row">
+						<input
+							type="text"
+							class="w-3/5 p-3 rounded-l-lg sm:w-2/3"
+							placeholder="example@email.com"
+						/>
+						<button
+							class="w-2/5 p-3 font-semibold rounded-r-lg sm:w-1/3"
+							type="button"
+							[ngClass]="['bg' + primary, 'text' + contrast]"
+						>
+							Subscribe
+						</button>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer class="container flex flex-col items-center max-w-3xl px-6 mx-auto xl:max-w-5xl">
+			<div class="flex mb-3 space-x-4">
+				<a
+					class="text-sm"
+					target="_blank"
+					rel="noopener noreferrer"
+					href="mailto:address@yoursite.com"
+				>
+					<span class="sr-only">mail</span>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 20 20"
+						class="w-6 h-6 fill-current"
+						[ngClass]="['text' + primary]"
+					>
+						<path
+							d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+						></path>
+						<path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+					</svg>
+				</a>
+				<a
+					class="text-sm"
+					target="_blank"
+					rel="noopener noreferrer"
+					href="https://github.com"
+				>
+					<span class="sr-only">github</span>
+					<svg
+						viewBox="0 0 24 24"
+						xmlns="http://www.w3.org/2000/svg"
+						class="w-6 h-6 fill-current"
+						[ngClass]="['text' + primary]"
+					>
+						<path
+							d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+						></path>
+					</svg>
+				</a>
+				<a
+					class="text-sm"
+					target="_blank"
+					rel="noopener noreferrer"
+					href="https://facebook.com"
+				>
+					<span class="sr-only">facebook</span>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						class="w-6 h-6 fill-current"
+						[ngClass]="['text' + primary]"
+					>
+						<path
+							d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+						></path>
+					</svg>
+				</a>
+				<a
+					class="text-sm"
+					target="_blank"
+					rel="noopener noreferrer"
+					href="https://youtube.com"
+				>
+					<span class="sr-only">youtube</span>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						class="w-6 h-6 fill-current"
+						[ngClass]="['text' + primary]"
+					>
+						<path
+							d="M23.499 6.203a3.008 3.008 0 00-2.089-2.089c-1.87-.501-9.4-.501-9.4-.501s-7.509-.01-9.399.501a3.008 3.008 0 00-2.088 2.09A31.258 31.26 0 000 12.01a31.258 31.26 0 00.523 5.785 3.008 3.008 0 002.088 2.089c1.869.502 9.4.502 9.4.502s7.508 0 9.399-.502a3.008 3.008 0 002.089-2.09 31.258 31.26 0 00.5-5.784 31.258 31.26 0 00-.5-5.808zm-13.891 9.4V8.407l6.266 3.604z"
+						></path>
+					</svg>
+				</a>
+				<a
+					class="text-sm"
+					target="_blank"
+					rel="noopener noreferrer"
+					href="https://www.linkedin.com"
+				>
+					<span class="sr-only">linkedin</span>
+					<svg
+						viewBox="0 0 24 24"
+						xmlns="http://www.w3.org/2000/svg"
+						class="w-6 h-6 fill-current"
+						[ngClass]="['text' + primary]"
+					>
+						<path
+							d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+						></path>
+					</svg>
+				</a>
+				<a
+					class="text-sm"
+					target="_blank"
+					rel="noopener noreferrer"
+					href="https://twitter.com/Twitter"
+				>
+					<span class="sr-only">twitter</span>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						class="w-6 h-6 fill-current"
+						[ngClass]="['text' + primary]"
+					>
+						<path
+							d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+						></path>
+					</svg>
+				</a>
+			</div>
+			<div class="flex mb-2 space-x-2 text-sm dark:text-gray-400">
+				<div>Tails Azimuth</div>
+				<div>•</div>
+				<div>© 2021</div>
+				<div>•</div>
+				<a href="/">Next.js Starter Blog</a>
+			</div>
+			<div class="mb-8 text-sm dark:text-gray-400">
+				<a
+					target="_blank"
+					rel="noopener noreferrer"
+					href="https://github.com/timlrx/tailwind-nextjs-starter-blog"
+				>
+					Tailwind Nextjs Theme
+				</a>
+			</div>
+		</footer>
+	</div>
+</div>

@@ -13,7 +13,7 @@ them easily by following the their [documentation](https://tailwindcss.com/docs)
 
 ## Features
 
-- [x] 50+ building blocks
+- [x] 100+ building blocks
 - [x] Choose your primary color from any of the 17 different Tailwind colors
 - [x] Fully responsive
 - [x] Export as HTML or JSX
@@ -47,7 +47,7 @@ module.exports = {
 			violet: colors.violet,
 			indigo: colors.indigo,
 			blue: colors.blue,
-			lightBlue: colors.lightBlue,
+			sky: colors.sky, // used to be "lightBlue" before v2.2
 			cyan: colors.cyan,
 			teal: colors.teal,
 			emerald: colors.emerald,
