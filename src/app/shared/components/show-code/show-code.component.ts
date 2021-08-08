@@ -9,6 +9,7 @@ import {FormatterService} from '@shared/services/formatter.service';
 import {BaseComponent} from '../base/base.component';
 import {AnalyticsService} from '@shared/services/analytics.service';
 import {PlausibleEvent} from '@shared/enum/plausible.event.enum';
+import {Requires} from '@shared/enum/requires.enum';
 
 @Component({
 	selector: 'custom-show-code',
@@ -18,6 +19,7 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit, O
 	@ViewChild('rawContent') rawContent!: ElementRef;
 	@Input() centered = false;
 	@Input() isTemplate = false;
+	@Input() requires: Requires | undefined;
 	combinedSub!: Subscription;
 	rawCode = '';
 	prettyCode = '';

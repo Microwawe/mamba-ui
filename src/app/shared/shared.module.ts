@@ -4,12 +4,19 @@ import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 
 import {FilterPipe} from '@shared/pipes/filter.pipe';
-import {BaseComponent} from './components/base/base.component';
-import {FullscreenModalComponent} from './components/fullscreen-modal/fullscreen-modal.component';
-import {ShowCodeComponent} from './components/show-code/show-code.component';
-import {ShowcaseComponent} from './components/showcase/showcase.component';
+import {BaseComponent} from '@shared/components/base/base.component';
+import {FullscreenModalComponent} from '@shared/components/fullscreen-modal/fullscreen-modal.component';
+import {RequirementsComponent} from '@shared/components/requirements/requirements.component';
+import {ShowCodeComponent} from '@shared/components/show-code/show-code.component';
+import {ShowcaseComponent} from '@shared/components/showcase/showcase.component';
 
-const components = [BaseComponent, ShowcaseComponent, ShowCodeComponent, FullscreenModalComponent];
+const components = [
+	BaseComponent,
+	ShowcaseComponent,
+	ShowCodeComponent,
+	FullscreenModalComponent,
+	RequirementsComponent,
+];
 const pipes = [FilterPipe];
 
 @NgModule({

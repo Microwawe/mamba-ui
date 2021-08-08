@@ -1,5 +1,14 @@
 <div class="container mx-auto my-6 min-h-96" [ngClass]="['text' + defaultInv]">
-	<h1 class="text-4xl font-bold text-center">Templates</h1>
+	<div
+		class="flex flex-col items-center px-4 space-y-3 sm:space-y-0 sm:flex-row sm:justify-start"
+	>
+		<div class="space-y-2 text-center sm:text-left">
+			<h1 class="text-5xl font-bold">Components</h1>
+			<span class="block" [ngClass]="['text' + plainInv]">
+				{{ this.componentTotal }} templates in {{ this.categoryTotal }} categories
+			</span>
+		</div>
+	</div>
 	<div class="flex flex-wrap justify-center max-w-3xl p-4 mx-auto">
 		<a
 			*ngFor="let category of categories"
@@ -11,7 +20,8 @@
 			<span
 				class="absolute top-0 right-0 p-1 text-xs opacity-0 group-hover:opacity-100"
 				[ngClass]="['text' + plainInv]"
-				>{{ category.count }}
+			>
+				{{ category.count }}
 			</span>
 			<span class="text-sm capitalize">{{ category.name }}</span>
 		</a>

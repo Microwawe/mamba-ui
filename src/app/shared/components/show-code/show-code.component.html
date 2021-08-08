@@ -60,6 +60,10 @@
 			</button>
 		</div>
 		<div class="relative">
+			<custom-requirements
+				*ngIf="requires && !codeVisible"
+				[requires]="requires"
+			></custom-requirements>
 			<div
 				#rawContent
 				*ngIf="!codeVisible"

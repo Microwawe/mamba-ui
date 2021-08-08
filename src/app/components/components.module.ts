@@ -15,6 +15,11 @@ const routes: Routes = [
 				component: EmptyChildRouteComponent,
 			},
 			{
+				path: 'article',
+				loadChildren: () => import('./article/article.module').then(m => m.ArticleModule),
+				data: {title: 'Articles', breadcrumb: 'Article'},
+			},
+			{
 				path: 'avatar',
 				loadChildren: () => import('./avatar/avatar.module').then(m => m.AvatarModule),
 				data: {title: 'Avatars', breadcrumb: 'Avatar'},

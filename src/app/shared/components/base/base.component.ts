@@ -5,6 +5,7 @@ import {CustomInjector} from '@core/injector/custom-injector.service';
 import {ColorService} from '@core/services/color.service';
 import {ThemeService} from '@core/services/theme.service';
 import {TailwindColor} from '@shared/interfaces/tailwind-colors.interface';
+import {Requires} from '@shared/enum/requires.enum';
 
 @Component({
 	template: '',
@@ -12,8 +13,9 @@ import {TailwindColor} from '@shared/interfaces/tailwind-colors.interface';
 export class BaseComponent implements OnDestroy {
 	darkTheme!: boolean;
 	combinedSub: Subscription;
-
-	btn = 'py-3 px-8 rounded text-lg';
+	enum = {
+		requires: Requires,
+	};
 
 	primary = '';
 	primaryLight = '';

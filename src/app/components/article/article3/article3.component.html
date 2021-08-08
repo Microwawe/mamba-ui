@@ -1,0 +1,33 @@
+<article
+	class="max-w-2xl px-6 py-24 mx-auto space-y-16"
+	[ngClass]="['bg' + default, 'text' + contrastInv]"
+>
+	<div class="w-full mx-auto space-y-4">
+		<h1 class="text-5xl font-bold leading-none">
+			Interdum et malesuada fames ac ante ipsum primis in faucibus?
+		</h1>
+		<div class="flex flex-wrap space-x-2 text-sm" [ngClass]="['text' + plainInv]">
+			<a class="p-1 hover:underline" href="#">#MambaUI</a>
+			<a class="p-1 hover:underline" href="#">#TailwindCSS</a>
+			<a class="p-1 hover:underline" href="#">#Angular</a>
+		</div>
+		<p class="">
+			by
+			<a
+				href="#"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="hover:underline"
+				[ngClass]="['text' + primary]"
+			>
+				<span itemprop="name">Leroy Jenkins</span>
+			</a>
+			on
+			<time datetime="2021-02-12 15:34:18-0200">Feb 12th 2021</time>
+		</p>
+	</div>
+
+	<div [ngClass]="['text' + defaultInv]">
+		<p>Insert the actual text content here...</p>
+	</div>
+</article>
