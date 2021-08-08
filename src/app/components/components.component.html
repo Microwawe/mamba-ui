@@ -8,47 +8,8 @@
 				{{ this.componentTotal }} components in {{ this.categoryTotal }} categories
 			</span>
 		</div>
-		<div class="relative space-y-1 text-sm">
-			<label
-				for="searchQuery"
-				class="block"
-				[ngClass]="['text' + plainInv, !query ? 'invisible' : 'visible']"
-			>
-				Filter categories...
-			</label>
-			<input
-				type="text"
-				name="searchQuery"
-				id="searchQuery"
-				class="px-3 py-1 rounded-md"
-				placeholder="Filter categories..."
-				[(ngModel)]="query"
-				[ngClass]="['border' + neutral, 'bg' + contrast, 'text' + defaultInv]"
-			/>
-			<button
-				*ngIf="!!query"
-				type="button"
-				title="Clear filter"
-				class="absolute border-transparent right-2 top-8"
-			>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 512 512"
-					fill="currentColor"
-					class="flex-shrink-0 w-3 h-3"
-					(click)="resetQuery()"
-				>
-					<polygon
-						points="427.314 107.313 404.686 84.687 256 233.373 107.314 84.687 84.686 107.313 233.373 256 84.686 404.687 107.314 427.313 256 278.627 404.686 427.313 427.314 404.687 278.627 256 427.314 107.313"
-					/>
-				</svg>
-			</button>
-		</div>
+		<custom-search (queryChange)="updateQuery($event)"></custom-search>
 	</div>
-	<!-- <div *ngIf="(categories | filter: query).length === 0" class="my-8">
-		<h2 class="text-lg font-semibold">Didn't find what you need?</h2>
-		<p>Request a new component</p>
-	</div> -->
 	<div class="flex flex-wrap p-4 place-content-center">
 		<a
 			*ngFor="let category of categories"

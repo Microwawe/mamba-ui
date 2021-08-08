@@ -9,18 +9,20 @@ import {FullscreenModalComponent} from '@shared/components/fullscreen-modal/full
 import {RequirementsComponent} from '@shared/components/requirements/requirements.component';
 import {ShowCodeComponent} from '@shared/components/show-code/show-code.component';
 import {ShowcaseComponent} from '@shared/components/showcase/showcase.component';
+import {SearchComponent} from '@shared/components/search/search.component';
 
 const components = [
 	BaseComponent,
-	ShowcaseComponent,
-	ShowCodeComponent,
 	FullscreenModalComponent,
 	RequirementsComponent,
+	SearchComponent,
+	ShowcaseComponent,
+	ShowCodeComponent,
 ];
 const pipes = [FilterPipe];
 
 @NgModule({
-	imports: [CommonModule, HttpClientModule],
+	imports: [CommonModule, HttpClientModule, FormsModule],
 	declarations: [...components, ...pipes],
 	exports: [CommonModule, HttpClientModule, FormsModule, ...components, ...pipes],
 	providers: [],

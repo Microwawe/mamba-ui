@@ -5,4 +5,5 @@ export enum PlausibleEvent {
 	NOT_FOUND = 'Page not found',
 	CHANGE_COLOR = 'Color change',
 	CHANGE_THEME = 'Theme change',
+	SEARCH = 'Search',
 }

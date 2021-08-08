@@ -61,8 +61,8 @@ export class ComponentsComponent extends BaseComponent implements OnDestroy {
 		});
 	}
 
-	resetQuery() {
-		this.query = '';
+	updateQuery(queryString: string) {
+		this.query = queryString;
 	}
 
 	ngOnDestroy() {
