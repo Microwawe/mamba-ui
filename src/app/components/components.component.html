@@ -10,7 +10,7 @@
 		</div>
 		<custom-search (queryChange)="updateQuery($event)"></custom-search>
 	</div>
-	<div class="flex flex-wrap p-4 place-content-center">
+	<div class="flex flex-wrap p-6 place-content-center">
 		<a
 			*ngFor="let category of categories"
 			[routerLink]="['/components/' + category.link]"
