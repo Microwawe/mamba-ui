@@ -208,8 +208,9 @@
 					<h2 class="text-3xl font-bold">Get the essentials in one place</h2>
 					<p class="my-6" [ngClass]="['text' + plainInv]">
 						We know it's frustrating to find an UI kit with all the right components and
-						then find out that each element costs money, so we're offering 80+ building
-						blocks for free. And there are many more on the way!
+						then find out that each element costs money, so we're offering
+						{{ roundedComponentTotal }}+ building blocks for free. And there are many
+						more on the way!
 					</p>
 				</div>
 			</div>
@@ -350,8 +351,29 @@
 					<p class="px-4 pb-4" [ngClass]="['text' + plainInv]">
 						The project is in active development and we are creating more elements and
 						templates as fast as we can. If you have a specific component, section or
-						template that you need, just message us via Github, Twitter or the contact
-						form and we'll see how we can help.
+						template that you need, just open an issue in
+						<a
+							href="https://github.com/Microwawe/mamba-ui/issues"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="font-semibold underline"
+						>
+							Github
+						</a>
+						or message us via
+						<a
+							href="https://twitter.com/mamba_ui"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="font-semibold underline"
+						>
+							Twitter
+						</a>
+						or the
+						<a [routerLink]="['/contact']" class="font-semibold underline">
+							contact form
+						</a>
+						and we'll see how we can help.
 					</p>
 				</details>
 				<details>

@@ -2,6 +2,7 @@ import {Component, OnDestroy} from '@angular/core';
 
 import {BaseComponent} from '@shared/components/base/base.component';
 import {Category} from '@shared/interfaces/category.interface';
+import {Subscription} from 'rxjs';
 
 @Component({
 	selector: 'custom-components',
@@ -11,7 +12,7 @@ export class ComponentsComponent extends BaseComponent implements OnDestroy {
 	query = '';
 	activeBgColor: String = 'bg' + this.neutral;
 	disabledBgColor: String = 'bg' + this.neutral;
-	themeSub;
+	themeSub: Subscription;
 	categoryTotal = 0;
 	componentTotal = 0;
 	categories: Category[] = [
@@ -31,20 +32,20 @@ export class ComponentsComponent extends BaseComponent implements OnDestroy {
 		{name: 'Hero', link: 'hero', count: 5},
 		{name: 'Input', link: 'input', count: 4},
 		{name: 'Loading', link: 'loading', count: 2},
-		{name: 'Login', link: 'login', count: 5},
+		{name: 'Login', link: 'login', count: 4},
 		{name: 'Notification', link: 'notification', count: 3},
 		{name: 'Pagination', link: 'pagination', count: 1},
 		{name: 'Pricing', link: 'pricing', count: 4},
 		{name: 'Profile', link: 'profile', count: 3},
 		{name: 'Review', link: 'review', count: 3},
-		{name: 'Shopping cart', link: 'shopping-cart', count: 3}, // TODO cleanup
+		{name: 'Shopping cart', link: 'shopping-cart', count: 2}, // TODO cleanup
 		{name: 'Sidebar', link: 'sidebar', count: 3},
 		{name: 'Stats', link: 'stats', count: 5}, // TODO cleanup
 		{name: 'Steps', link: 'steps', count: 3},
 		{name: 'Tab', link: 'tab', count: 2},
 		{name: 'Team', link: 'team', count: 4},
 		{name: 'Testimonial', link: 'testimonial', count: 5},
-		{name: 'Timeline', link: 'timeline', count: 3}, // TODO
+		{name: 'Timeline', link: 'timeline', count: 2}, // TODO
 		{name: 'Toggle', link: 'toggle', count: 4},
 		{name: 'Weather', link: 'weather', count: 2},
 	];

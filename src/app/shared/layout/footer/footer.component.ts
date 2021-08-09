@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 
+import {environment} from '@env';
 import {BaseComponent} from '@shared/components/base/base.component';
 import {PlausibleEvent} from '@shared/enum/plausible.event.enum';
 import {AnalyticsService} from '@shared/services/analytics.service';
@@ -12,9 +13,11 @@ import {AnalyticsService} from '@shared/services/analytics.service';
 export class FooterComponent extends BaseComponent implements OnInit {
 	currentYear!: number;
 	isDarkTheme!: Observable<boolean>;
+	roundedComponentTotal: number;
 
 	constructor(private analytics: AnalyticsService) {
 		super();
+		this.roundedComponentTotal = environment.roundedComponentTotal;
 	}
 
 	ngOnInit() {
