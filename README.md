@@ -9,7 +9,7 @@ Mamba UI is a free, open-source collection of beautiful UI elements based on Tai
 
 All the components are just good ol' HTML and CSS, but without the need of writing complex css rules thanks to [Tailwind CSS](https://tailwindcss.com/). Tailwind CSS is a utility-first CSS
 framework so if one of our components doesn't fit your needs just right, you can modify
-them easily by following the their [documentation](https://tailwindcss.com/docs) documentation</a> about the different classes.
+them easily by following the their [documentation](https://tailwindcss.com/docs) about the different classes.
 
 ## Features
 
@@ -47,7 +47,8 @@ module.exports = {
 			violet: colors.violet,
 			indigo: colors.indigo,
 			blue: colors.blue,
-			sky: colors.sky, // used to be "lightBlue" before v2.2
+			lightBlue: colors.lightBlue, // Only in Tailwind CSS <=v2.1
+			sky: colors.sky, // As of Tailwind CSS v2.2, `lightBlue` has been renamed to `sky`
 			cyan: colors.cyan,
 			teal: colors.teal,
 			emerald: colors.emerald,

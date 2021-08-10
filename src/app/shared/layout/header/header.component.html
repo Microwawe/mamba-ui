@@ -1,26 +1,37 @@
 <header class="fixed top-0 left-0 right-0 z-20 shadow-lg" [ngClass]="['bg' + primary]">
 	<button
 		class="absolute flex w-10 h-10 overflow-hidden border-transparent top-5 left-2 toggle md:hidden"
-		name="Toggle menu"
+		title="Toggle menu"
+		type="button"
 		(click)="toggleMenu($event)"
 	>
-		<input
-			type="checkbox"
-			class="invisible"
-			[checked]="menuOpen | async"
-			attr.aria-label="{{ (menuOpen | async) ? 'Close sidemenu' : 'Open sidemenu' }}"
-		/>
 		<svg
-			class="w-full h-full duration-300 ease-in-out transform select-none stroke-current"
+			*ngIf="!(menuOpen | async)"
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 512 512"
+			class="h-8 sm:h-10"
 			[ngClass]="['text' + contrast]"
 		>
-			<use xlink:href="#menu" />
-			<use xlink:href="#menu" />
+			<rect width="352" height="32" x="80" y="96" class="fill-current" />
+			<rect width="352" height="32" x="80" y="240" class="fill-current" />
+			<rect width="352" height="32" x="80" y="384" class="fill-current" />
+		</svg>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 512 512"
+			class="h-8 sm:h-10"
+			[ngClass]="['text' + contrast]"
+			*ngIf="menuOpen | async"
+		>
+			<polygon
+				class="fill-current"
+				points="427.314 107.313 404.686 84.687 256 233.373 107.314 84.687 84.686 107.313 233.373 256 84.686 404.687 107.314 427.313 256 278.627 404.686 427.313 427.314 404.687 278.627 256 427.314 107.313"
+			/>
 		</svg>
 	</button>
 	<div class="container flex items-center justify-center h-20 px-4 mx-auto md:justify-between">
 		<div class="flex items-center flex-shrink-0">
-			<a class="flex items-center" aria-label="Back to homepage" [routerLink]="['/']">
+			<a class="flex items-center" title="Back to homepage" [routerLink]="['/']">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					class="w-auto h-8 sm:h-10"
@@ -83,24 +94,27 @@
 				#rla
 				routerLinkActive
 				[routerLink]="['/components']"
-				>Components</a
 			>
+				Components
+			</a>
 			<a
 				class="p-3"
 				[ngClass]="['text' + contrast, rla.isActive ? 'underline' : 'no-underline']"
 				#rla
 				routerLinkActive
 				[routerLink]="['/templates']"
-				>Templates</a
 			>
+				Templates
+			</a>
 			<a
 				class="p-3"
 				[ngClass]="['text' + contrast, rla.isActive ? 'underline' : 'no-underline']"
 				#rla
 				routerLinkActive
 				[routerLink]="['/docs']"
-				>Documentation</a
 			>
+				Documentation
+			</a>
 		</nav>
 	</div>
 </header>

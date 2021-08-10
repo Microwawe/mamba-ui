@@ -7,8 +7,10 @@
 			<li>Setup Tailwind CSS</li>
 			<li>
 				Find something that you like from the
-				<a [routerLink]="['/components']">components</a> or
-				<a [routerLink]="['/templates']">templates</a>.
+				<a [routerLink]="['/components']">components</a>
+				or
+				<a [routerLink]="['/templates']">templates</a>
+				.
 			</li>
 			<li>Choose the primary color from the Tailwind CSS color palette</li>
 			<li>Select the light or dark theme</li>
@@ -24,26 +26,39 @@
 		</p>
 		<pre
 			class="language-shell"
-		><code class="language-shell">npm install tailwindcss postcss autoprefixer</code></pre>
+		><code class="language-shell">npm install tailwindcss postcss autoprefixer -D</code></pre>
 		<p>
 			The official
-			<a href="https://tailwindcss.com/docs/installation">installation instructions</a> are
-			really good and they have integration guides for some of the most popular frameworks as
-			well.
+			<a
+				href="https://tailwindcss.com/docs/installation"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				installation instructions
+			</a>
+			are really good and they have integration guides for some of the most popular frameworks
+			as well.
 		</p>
 
 		<p>
 			If you don't want to install Tailwind you can add a
-			<a href="https://tailwindcss.com/docs/installation#using-tailwind-via-cdn"
-				>link to the Tailwind stylesheet</a
+			<a
+				href="https://tailwindcss.com/docs/installation#using-tailwind-via-cdn"
+				target="_blank"
+				rel="noopener noreferrer"
 			>
+				link to the Tailwind stylesheet
+			</a>
 			inside the &lt;head&gt;&lt;&#8725;head&gt; tags in your html instead. Note that this way
 			doesn't remove all the unused classes from the production build.
 		</p>
 		<p>
 			In case you want to just quickly test the components or customize the code, you can also
 			copy them to Tailwind CSS's official online playground
-			<a href="https://play.tailwindcss.com/">Tailwind Play</a>.
+			<a href="https://play.tailwindcss.com/" target="_blank" rel="noopener noreferrer">
+				Tailwind Play
+			</a>
+			.
 		</p>
 
 		<p>
@@ -70,7 +85,8 @@ module.exports = {{ '{' }}
 			violet: colors.violet,
 			indigo: colors.indigo,
 			blue: colors.blue,
-			lightBlue: colors.lightBlue,
+			lightBlue: colors.lightBlue, // Only in Tailwind CSS &lt;=v2.1
+			sky: colors.sky, // As of Tailwind CSS v2.2, `lightBlue` has been renamed to `sky`&nbsp;&nbsp;
 			cyan: colors.cyan,
 			teal: colors.teal,
 			emerald: colors.emerald,

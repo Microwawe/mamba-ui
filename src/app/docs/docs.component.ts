@@ -10,7 +10,7 @@ export class DocsComponent extends BaseComponent implements OnInit {
 	categories = [
 		{name: 'Get started', link: '/docs'},
 		{name: 'General', link: 'general'},
-		// {name: 'Roadmap', link: 'roadmap'},
+		{name: 'Roadmap', link: 'roadmap'},
 		{name: 'Credits', link: 'credits'},
 		// {name: 'Privacy', link: 'privacy'},
 	];
