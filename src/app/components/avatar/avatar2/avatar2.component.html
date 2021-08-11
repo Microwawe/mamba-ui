@@ -1,0 +1,73 @@
+<div class="flex flex-col items-center justify-center">
+	<div class="flex flex-wrap gap-x-2 gap-y-2">
+		<div class="relative flex-shrink-0">
+			<span
+				class="absolute bottom-0 right-0 w-4 h-4 bg-green-600 border rounded-full"
+				[ngClass]="['text' + defaultInv, 'border' + contrast]"
+			></span>
+			<img
+				class="w-12 h-12 border rounded-full"
+				[ngClass]="['border' + neutral]"
+				src="https://source.unsplash.com/50x50/?portrait"
+				alt=""
+			/>
+		</div>
+
+		<div class="relative flex-shrink-0">
+			<span
+				class="absolute bottom-0 right-0 w-4 h-4 border rounded-full bg-amber-500"
+				[ngClass]="['border' + contrast]"
+			></span>
+			<img
+				class="w-12 h-12 border rounded-full"
+				[ngClass]="['border' + neutral]"
+				src="https://source.unsplash.com/51x51/?portrait"
+				alt=""
+			/>
+		</div>
+
+		<div class="relative flex-shrink-0">
+			<span
+				class="absolute bottom-0 right-0 flex items-center justify-center w-4 h-4 bg-red-600 border rounded-full"
+				[ngClass]="['border' + contrast, 'text' + dark]"
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 512 512"
+					class="w-2 h-3 fill-current"
+				>
+					<rect width="368" height="32" x="72" y="240" />
+				</svg>
+			</span>
+			<img
+				class="w-12 h-12 border rounded-full"
+				[ngClass]="['border' + neutral]"
+				src="https://source.unsplash.com/52x52/?portrait"
+				alt=""
+			/>
+		</div>
+
+		<div class="relative flex-shrink-0">
+			<span
+				class="absolute bottom-0 right-0 flex items-center justify-center w-4 h-4 border rounded-full"
+				[ngClass]="['bg' + dark, 'text' + light, 'border' + contrast]"
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 512 512"
+					class="w-2 h-2 fill-current"
+				>
+					<polygon
+						points="427.314 107.313 404.686 84.687 256 233.373 107.314 84.687 84.686 107.313 233.373 256 84.686 404.687 107.314 427.313 256 278.627 404.686 427.313 427.314 404.687 278.627 256 427.314 107.313"
+					/>
+				</svg>
+			</span>
+			<img
+				class="w-12 h-12 border rounded-full"
+				[ngClass]="['border' + neutral]"
+				src="https://source.unsplash.com/53x53/?portrait"
+				alt=""
+			/>
+		</div>
+	</div>
+</div>

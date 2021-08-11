@@ -17,7 +17,7 @@ export class ComponentsComponent extends BaseComponent implements OnDestroy {
 	componentTotal = 0;
 	categories: Category[] = [
 		{name: 'Article', link: 'article', count: 3},
-		{name: 'Avatar', link: 'avatar', count: 1},
+		{name: 'Avatar', link: 'avatar', count: 3},
 		{name: 'Blog', link: 'blog', count: 7},
 		{name: 'Button', link: 'button', count: 6},
 		{name: 'Call to action', link: 'call-to-action', count: 6},

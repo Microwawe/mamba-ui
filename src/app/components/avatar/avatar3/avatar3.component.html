@@ -1,0 +1,11 @@
+<div class="flex flex-col items-center justify-center">
+	<div class="flex space-x-5">
+		<img
+			*ngFor="let i of [1, 2, 3, 4]"
+			class="w-12 h-12 rounded-full ring-2 ring-offset-4"
+			[ngClass]="['ring' + (i > 3 ? neutral : primary), 'ring-offset' + default]"
+			src="https://source.unsplash.com/4{{ i }}x4{{ i }}/?portrait"
+			alt=""
+		/>
+	</div>
+</div>
