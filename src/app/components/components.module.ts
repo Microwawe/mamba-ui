@@ -30,6 +30,12 @@ const routes: Routes = [
 				data: {title: 'Buttons', breadcrumb: 'Button'},
 			},
 			{
+				path: 'breadcrumb',
+				loadChildren: () =>
+					import('./breadcrumb/breadcrumb.module').then(m => m.BreadcrumbModule),
+				data: {title: 'Breadcrumbs', breadcrumb: 'Breadcrumb'},
+			},
+			{
 				path: 'blog',
 				loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule),
 				data: {title: 'Blog', breadcrumb: 'Blog'},
