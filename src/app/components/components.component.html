@@ -14,8 +14,8 @@
 		<a
 			*ngFor="let category of categories"
 			[routerLink]="['/components/' + category.link]"
-			[routerLinkActive]="['ring', 'ring-opacity-80', 'ring' + primary]"
-			class="relative px-3 py-1 m-1 rounded-md shadow-sm group md:px-4 md:py-2 hover:ring"
+			[routerLinkActive]="['ring-opacity-80', 'ring' + primary]"
+			class="relative px-3 py-1 m-1 rounded-md shadow-sm ring ring-transparent group md:px-4 md:py-2 hover:ring"
 			[ngClass]="[
 				'hover:ring' + primary,
 				(category | filter: query) ? 'text' + contrastInv : 'text' + plainInv,
