@@ -42,7 +42,7 @@ export class ComponentsComponent extends BaseComponent implements OnDestroy {
 		{name: 'Shopping cart', link: 'shopping-cart', count: 2}, // TODO cleanup
 		{name: 'Sidebar', link: 'sidebar', count: 3},
 		{name: 'Stats', link: 'stats', count: 5}, // TODO cleanup
-		{name: 'Steps', link: 'steps', count: 3},
+		{name: 'Steps', link: 'steps', count: 4},
 		{name: 'Tab', link: 'tab', count: 2},
 		{name: 'Team', link: 'team', count: 4},
 		{name: 'Testimonial', link: 'testimonial', count: 5},
