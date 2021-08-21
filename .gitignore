@@ -43,6 +43,7 @@ debug.log
 /typings
 package-lock.json
 .lighthouseci
+*.tif
 
 # System Files
 .DS_Store
