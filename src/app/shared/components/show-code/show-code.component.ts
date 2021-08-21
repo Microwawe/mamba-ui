@@ -83,7 +83,8 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit, O
 			this.prettyCode,
 			this.options.darkTheme
 		);
-		this.showCode(this.formatter.useReactSyntax(this.prettyCode), 'jsx');
+		this.prettyCode = this.formatter.useReactSyntax(this.prettyCode);
+		this.showCode(this.prettyCode, 'jsx');
 	}
 
 	showReactClass() {
