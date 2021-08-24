@@ -2,10 +2,10 @@ import {Component} from '@angular/core';
 import {BaseComponent} from '@shared/components/base/base.component';
 
 @Component({
-	selector: 'custom-footer1',
-	templateUrl: './footer1.component.html',
+	selector: 'custom-footer4',
+	templateUrl: './footer4.component.html',
 })
-export class Footer1Component extends BaseComponent {
+export class Footer4Component extends BaseComponent {
 	constructor() {
 		super();
 	}

@@ -10,8 +10,8 @@ import {Subscription} from 'rxjs';
 })
 export class ComponentsComponent extends BaseComponent implements OnDestroy {
 	query = '';
-	activeBgColor: String = 'bg' + this.neutral;
-	disabledBgColor: String = 'bg' + this.neutral;
+	activeBgColor: string = 'bg' + this.neutral;
+	disabledBgColor: string = 'bg' + this.neutral;
 	themeSub: Subscription;
 	categoryTotal = 0;
 	componentTotal = 0;
@@ -26,7 +26,7 @@ export class ComponentsComponent extends BaseComponent implements OnDestroy {
 		{name: 'Error', link: 'error', count: 2},
 		{name: 'Faq', link: 'faq', count: 4},
 		{name: 'Feature', link: 'feature', count: 8},
-		{name: 'Footer', link: 'footer', count: 3}, // TODO
+		{name: 'Footer', link: 'footer', count: 5},
 		{name: 'Form', link: 'form', count: 1},
 		{name: 'Gallery', link: 'gallery', count: 1},
 		{name: 'Header', link: 'header', count: 5},
