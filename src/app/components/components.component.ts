@@ -35,7 +35,7 @@ export class ComponentsComponent extends BaseComponent implements OnDestroy {
 		{name: 'Loading', link: 'loading', count: 2},
 		{name: 'Login', link: 'login', count: 4},
 		{name: 'Notification', link: 'notification', count: 3},
-		{name: 'Pagination', link: 'pagination', count: 1},
+		{name: 'Pagination', link: 'pagination', count: 2},
 		{name: 'Pricing', link: 'pricing', count: 4},
 		{name: 'Profile', link: 'profile', count: 3},
 		{name: 'Review', link: 'review', count: 3},
@@ -43,7 +43,7 @@ export class ComponentsComponent extends BaseComponent implements OnDestroy {
 		{name: 'Sidebar', link: 'sidebar', count: 3},
 		{name: 'Stats', link: 'stats', count: 5}, // TODO cleanup
 		{name: 'Steps', link: 'steps', count: 4},
-		{name: 'Tab', link: 'tab', count: 2},
+		{name: 'Tabs', link: 'tab', count: 3},
 		{name: 'Team', link: 'team', count: 4},
 		{name: 'Testimonial', link: 'testimonial', count: 5},
 		{name: 'Timeline', link: 'timeline', count: 2}, // TODO

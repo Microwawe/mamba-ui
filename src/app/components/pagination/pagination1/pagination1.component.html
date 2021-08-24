@@ -1,40 +1,56 @@
 <div class="flex justify-center space-x-1" [ngClass]="['text' + defaultInv]">
-	<button class="flex items-center justify-center h-8 px-2 text-sm font-medium rounded">
+	<button
+		title="previous"
+		type="button"
+		class="inline-flex items-center justify-center w-8 h-8 py-0 border rounded-md shadow-md"
+		[ngClass]="['bg' + default, 'border' + default]"
+	>
 		<svg
-			class="w-5 h-5"
-			xmlns="http://www.w3.org/2000/svg"
-			viewBox="0 0 20 20"
-			fill="currentColor"
+			class="w-4"
+			viewBox="0 0 24 24"
+			stroke="currentColor"
+			stroke-width="2"
+			fill="none"
+			stroke-linecap="round"
+			stroke-linejoin="round"
 		>
-			<path
-				fill-rule="evenodd"
-				d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-				clip-rule="evenodd"
-			/>
+			<polyline points="15 18 9 12 15 6"></polyline>
 		</svg>
-		Prev
 	</button>
 	<button
-		*ngFor="let page of [1, 2, 3, 4]"
-		class="flex items-center justify-center w-8 h-8 text-sm font-medium rounded"
-		[ngClass]="['bg' + primary200, 'text' + primaryDark]"
+		type="button"
+		title="Page 1"
+		class="inline-flex items-center justify-center w-8 h-8 text-sm border rounded shadow-md"
+		[ngClass]="['text' + contrastInv, 'bg' + contrast, 'border' + contrast]"
+	>
+		1
+	</button>
+	<button
+		*ngFor="let page of [2, 3, 4]"
+		type="button"
+		title="Page {{ page }}"
+		class="inline-flex items-center justify-center w-8 h-8 text-sm border rounded shadow-md"
+		[ngClass]="['bg' + default, 'border' + default]"
 	>
 		{{ page }}
 	</button>
 
-	<button class="flex items-center justify-center h-8 px-2 text-sm font-medium rounded">
-		Next
+	<button
+		title="next"
+		type="button"
+		class="inline-flex items-center justify-center w-8 h-8 py-0 border rounded-md shadow-md"
+		[ngClass]="['bg' + default, 'border' + default]"
+	>
 		<svg
-			class="w-5 h-5"
-			xmlns="http://www.w3.org/2000/svg"
-			viewBox="0 0 20 20"
-			fill="currentColor"
+			class="w-4"
+			viewBox="0 0 24 24"
+			stroke="currentColor"
+			stroke-width="2"
+			fill="none"
+			stroke-linecap="round"
+			stroke-linejoin="round"
 		>
-			<path
-				fill-rule="evenodd"
-				d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-				clip-rule="evenodd"
-			/>
+			<polyline points="9 18 15 12 9 6"></polyline>
 		</svg>
 	</button>
 </div>
