@@ -1,8 +1,8 @@
 import {Component, OnDestroy} from '@angular/core';
+import {Subscription} from 'rxjs';
 
 import {BaseComponent} from '@shared/components/base/base.component';
 import {Category} from '@shared/interfaces/category.interface';
-import {Subscription} from 'rxjs';
 
 @Component({
 	selector: 'custom-components',
@@ -10,13 +10,13 @@ import {Subscription} from 'rxjs';
 })
 export class ComponentsComponent extends BaseComponent implements OnDestroy {
 	query = '';
-	activeBgColor: String = 'bg' + this.neutral;
-	disabledBgColor: String = 'bg' + this.neutral;
+	activeBgColor: string = 'bg' + this.neutral;
+	disabledBgColor: string = 'bg' + this.neutral;
 	themeSub: Subscription;
 	categoryTotal = 0;
 	componentTotal = 0;
 	categories: Category[] = [
-		{name: 'Article', link: 'article', count: 3},
+		{name: 'Article', link: 'article', count: 4},
 		{name: 'Avatar', link: 'avatar', count: 3},
 		{name: 'Blog', link: 'blog', count: 7},
 		{name: 'Breadcrumb', link: 'breadcrumb', count: 2},
@@ -26,7 +26,7 @@ export class ComponentsComponent extends BaseComponent implements OnDestroy {
 		{name: 'Error', link: 'error', count: 2},
 		{name: 'Faq', link: 'faq', count: 4},
 		{name: 'Feature', link: 'feature', count: 8},
-		{name: 'Footer', link: 'footer', count: 3}, // TODO
+		{name: 'Footer', link: 'footer', count: 5},
 		{name: 'Form', link: 'form', count: 1},
 		{name: 'Gallery', link: 'gallery', count: 1},
 		{name: 'Header', link: 'header', count: 5},
@@ -34,22 +34,24 @@ export class ComponentsComponent extends BaseComponent implements OnDestroy {
 		{name: 'Input', link: 'input', count: 4},
 		{name: 'Loading', link: 'loading', count: 2},
 		{name: 'Login', link: 'login', count: 4},
-		{name: 'Notification', link: 'notification', count: 3},
-		{name: 'Pagination', link: 'pagination', count: 1},
+		{name: 'News', link: 'news', count: 3},
+		{name: 'Pagination', link: 'pagination', count: 2},
 		{name: 'Pricing', link: 'pricing', count: 4},
-		{name: 'Profile', link: 'profile', count: 3},
+		{name: 'Profile', link: 'profile', count: 4},
 		{name: 'Review', link: 'review', count: 3},
-		{name: 'Shopping cart', link: 'shopping-cart', count: 2}, // TODO cleanup
+		{name: 'Shopping cart', link: 'shopping-cart', count: 2},
 		{name: 'Sidebar', link: 'sidebar', count: 3},
-		{name: 'Stats', link: 'stats', count: 5}, // TODO cleanup
+		{name: 'Skeleton loader', link: 'skeleton-loader', count: 2},
+		{name: 'Snackbar', link: 'snackbar', count: 3},
+		{name: 'Stats', link: 'stats', count: 5},
 		{name: 'Steps', link: 'steps', count: 4},
-		{name: 'Tab', link: 'tab', count: 2},
+		{name: 'Tabs', link: 'tab', count: 3},
 		{name: 'Team', link: 'team', count: 4},
 		{name: 'Testimonial', link: 'testimonial', count: 5},
-		{name: 'Timeline', link: 'timeline', count: 2}, // TODO
+		{name: 'Timeline', link: 'timeline', count: 3},
 		{name: 'Toggle', link: 'toggle', count: 4},
 		{name: 'Weather', link: 'weather', count: 2},
-	];
+	].sort((a, b) => a.name.localeCompare(b.name));
 
 	constructor() {
 		super();
@@ -63,11 +65,11 @@ export class ComponentsComponent extends BaseComponent implements OnDestroy {
 		});
 	}
 
-	updateQuery(queryString: string) {
+	updateQuery(queryString: string): void {
 		this.query = queryString;
 	}
 
-	ngOnDestroy() {
+	ngOnDestroy(): void {
 		this.themeSub.unsubscribe();
 	}
 }

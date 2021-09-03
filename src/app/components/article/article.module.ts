@@ -6,6 +6,7 @@ import {ArticleShowcaseComponent} from './article-showcase.component';
 import {Article1Component} from './article1/article1.component';
 import {Article2Component} from './article2/article2.component';
 import {Article3Component} from './article3/article3.component';
+import {Article4Component} from './article4/article4.component';
 
 const routes: Routes = [
 	{
@@ -21,6 +22,7 @@ const routes: Routes = [
 		Article1Component,
 		Article2Component,
 		Article3Component,
+		Article4Component,
 	],
 })
 export class ArticleModule {}

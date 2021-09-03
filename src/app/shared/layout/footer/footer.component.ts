@@ -3,8 +3,6 @@ import {Observable} from 'rxjs';
 
 import {environment} from '@env';
 import {BaseComponent} from '@shared/components/base/base.component';
-import {PlausibleEvent} from '@shared/enum/plausible.event.enum';
-import {AnalyticsService} from '@shared/services/analytics.service';
 
 @Component({
 	selector: 'custom-footer',
@@ -15,24 +13,17 @@ export class FooterComponent extends BaseComponent implements OnInit {
 	isDarkTheme!: Observable<boolean>;
 	roundedComponentTotal: number;
 
-	constructor(private analytics: AnalyticsService) {
+	constructor() {
 		super();
 		this.roundedComponentTotal = environment.roundedComponentTotal;
 	}
 
-	ngOnInit() {
+	ngOnInit(): void {
 		this.currentYear = new Date().getFullYear();
 		this.isDarkTheme = this.themeService.getDarkTheme();
 	}
 
-	toggleDarkTheme(dark: boolean) {
+	toggleDarkTheme(dark: boolean): void {
 		this.themeService.setDarkTheme(dark);
-	}
-
-	clickLink(link: string) {
-		this.analytics.triggerEvent(PlausibleEvent.EXTERNAL_LINK, {
-			link: link,
-			component: 'footer',
-		});
 	}
 }

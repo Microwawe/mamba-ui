@@ -1,0 +1,69 @@
+<div class="max-w-screen-xl p-5 mx-auto" [ngClass]="['bg' + default, 'text' + defaultInv]">
+	<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 md:gap-0 lg:grid-rows-2">
+		<div
+			class="relative flex items-end justify-start w-full text-left bg-center bg-cover cursor-pointer h-96 md:col-span-2 lg:row-span-2 lg:h-full group"
+			style="background-image: url(https://source.unsplash.com/random/245x320)"
+		>
+			<div
+				class="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b via-transparent"
+				[ngClass]="['from' + dark, 'to' + dark]"
+			></div>
+			<div class="absolute top-0 left-0 right-0 flex items-center justify-between mx-5 mt-3">
+				<a
+					href="#"
+					class="px-3 py-2 text-xs font-semibold tracking-wider uppercase hover:underline"
+					[ngClass]="['text' + light, 'bg' + primary600]"
+				>
+					Art
+				</a>
+				<div class="flex flex-col justify-start text-center" [ngClass]="['text' + light]">
+					<span class="text-3xl font-semibold leading-none tracking-wide">31</span>
+					<span class="leading-none uppercase">Jul</span>
+				</div>
+			</div>
+			<h2 class="z-10 p-5">
+				<a
+					href="#"
+					class="font-medium text-md group-hover:underline lg:text-2xl lg:font-semibold"
+					[ngClass]="['text' + light]"
+				>
+					Fuga ea ullam earum assumenda, beatae labore eligendi.
+				</a>
+			</h2>
+		</div>
+		<div
+			*ngFor="let n of news"
+			class="relative flex items-end justify-start w-full text-left bg-center bg-cover cursor-pointer h-96 group"
+			style="background-image: url({{ n.url }})"
+		>
+			<div
+				class="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b via-transparent"
+				[ngClass]="['from' + dark, 'to' + dark]"
+			></div>
+			<div class="absolute top-0 left-0 right-0 flex items-center justify-between mx-5 mt-3">
+				<a
+					href="#"
+					class="px-3 py-2 text-xs font-semibold tracking-wider uppercase hover:underline"
+					[ngClass]="['text' + light, 'bg' + primary600]"
+				>
+					{{ n.category }}
+				</a>
+				<div class="flex flex-col justify-start text-center" [ngClass]="['text' + light]">
+					<span class="text-3xl font-semibold leading-none tracking-wide">
+						{{ n.date }}
+					</span>
+					<span class="leading-none uppercase">{{ n.month }}</span>
+				</div>
+			</div>
+			<h2 class="z-10 p-5">
+				<a
+					href="#"
+					class="font-medium text-md group-hover:underline"
+					[ngClass]="['text' + light]"
+				>
+					{{ n.title }}
+				</a>
+			</h2>
+		</div>
+	</div>
+</div>

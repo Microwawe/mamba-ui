@@ -18,7 +18,7 @@ export class ColorService {
 		this.setupColors();
 	}
 
-	setCurrentColor(currentColor: TailwindColor) {
+	setCurrentColor(currentColor: TailwindColor): void {
 		localStorage.setItem(this.key, currentColor.name);
 		this.currentColor.next(currentColor);
 	}
@@ -53,7 +53,7 @@ export class ColorService {
 		this.currentColor = new BehaviorSubject<TailwindColor>(color);
 	}
 
-	isGrayscale(color: TailwindColor) {
+	isGrayscale(color: TailwindColor): boolean {
 		return color.name.toLowerCase().includes('gray');
 	}
 }

@@ -32,11 +32,6 @@ const routes: Routes = [
 				component: RoadmapComponent,
 				data: {title: 'Roadmap', breadcrumb: 'Roadmap'},
 			},
-			/* {
-				path: 'privacy',
-				component: PrivacyComponent,
-				data: {title: 'Privacy policy', breadcrumb: 'Privacy'},
-			}, */
 		],
 	},
 ];

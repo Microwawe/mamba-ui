@@ -4,6 +4,4 @@ import {Component} from '@angular/core';
 	selector: 'custom-docs-get-started',
 	templateUrl: './get-started.component.html',
 })
-export class GetStartedComponent {
-	constructor() {}
-}
+export class GetStartedComponent {}

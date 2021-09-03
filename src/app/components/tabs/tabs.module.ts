@@ -5,6 +5,7 @@ import {SharedModule} from '@shared/shared.module';
 import {TabsShowcaseComponent} from './tabs-showcase.component';
 import {Tabs1Component} from './tabs1/tabs1.component';
 import {Tabs2Component} from './tabs2/tabs2.component';
+import {Tabs3Component} from './tabs3/tabs3.component';
 
 const routes: Routes = [
 	{
@@ -15,6 +16,6 @@ const routes: Routes = [
 
 @NgModule({
 	imports: [RouterModule.forChild(routes), SharedModule],
-	declarations: [TabsShowcaseComponent, Tabs1Component, Tabs2Component],
+	declarations: [TabsShowcaseComponent, Tabs1Component, Tabs2Component, Tabs3Component],
 })
 export class TabsModule {}

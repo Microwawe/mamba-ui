@@ -109,10 +109,15 @@ const routes: Routes = [
 				data: {title: 'Login', breadcrumb: 'Login'},
 			},
 			{
-				path: 'notification',
+				path: 'news',
+				loadChildren: () => import('./news/news.module').then(m => m.NewsModule),
+				data: {title: 'News', breadcrumb: 'News'},
+			},
+			{
+				path: 'snackbar',
 				loadChildren: () =>
-					import('./notification/notification.module').then(m => m.NotificationModule),
-				data: {title: 'Notifications', breadcrumb: 'Notification'},
+					import('./snackbar/snackbar.module').then(m => m.SnackbarModule),
+				data: {title: 'Snackbars', breadcrumb: 'Snackbar'},
 			},
 			{
 				path: 'pagination',
@@ -145,6 +150,14 @@ const routes: Routes = [
 				path: 'sidebar',
 				loadChildren: () => import('./sidebar/sidebar.module').then(m => m.SidebarModule),
 				data: {title: 'Sidebar', breadcrumb: 'Sidebar'},
+			},
+			{
+				path: 'skeleton-loader',
+				loadChildren: () =>
+					import('./skeleton-loader/skeleton-loader.module').then(
+						m => m.SkeletonLoaderModule
+					),
+				data: {title: 'Skeleton loader', breadcrumb: 'Skeleton loader'},
 			},
 			{
 				path: 'stats',

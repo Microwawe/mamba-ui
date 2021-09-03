@@ -3,15 +3,13 @@
 		<header
 			class="container flex items-center justify-between w-full max-w-3xl px-6 py-10 mx-auto xl:max-w-5xl"
 		>
-			<a aria-label="Tailwind CSS Blog" href="/" class="block h-6 text-2xl font-semibold">
-				Brand name
-			</a>
+			<a href="/" class="block h-6 text-2xl font-semibold">Leroy Jenkins</a>
 			<div class="flex items-center">
 				<div class="hidden space-x-2 font-medium sm:block">
-					<a class="p-1" href="/blog">Blog</a>
-					<a class="p-1" href="/tags">Tags</a>
-					<a class="p-1" href="/projects">Projects</a>
-					<a class="p-1" href="/about">About</a>
+					<a class="p-1" href="/">Blog</a>
+					<a class="p-1" href="/">Tags</a>
+					<a class="p-1" href="/">Projects</a>
+					<a class="p-1" href="/">About</a>
 				</div>
 				<button
 					aria-label="Toggle Dark Mode"
@@ -63,7 +61,7 @@
 								<a
 									class="text-2xl font-bold tracking-widest"
 									[ngClass]="['text' + contrast]"
-									href="/blog"
+									href="/"
 								>
 									Blog
 								</a>
@@ -72,7 +70,7 @@
 								<a
 									class="text-2xl font-bold tracking-widest"
 									[ngClass]="['text' + contrast]"
-									href="/tags"
+									href="/"
 								>
 									Tags
 								</a>
@@ -81,7 +79,7 @@
 								<a
 									class="text-2xl font-bold tracking-widest"
 									[ngClass]="['text' + contrast]"
-									href="/projects"
+									href="/"
 								>
 									Projects
 								</a>
@@ -90,7 +88,7 @@
 								<a
 									class="text-2xl font-bold tracking-widest"
 									[ngClass]="['text' + contrast]"
-									href="/about"
+									href="/"
 								>
 									About
 								</a>
@@ -106,7 +104,7 @@
 					Recent blog posts
 				</h2>
 				<ul class="space-y-8 xl:space-y-10">
-					<li *ngFor="let item of [1, 2, 3]">
+					<li *ngFor="let p of posts">
 						<article>
 							<dl>
 								<dt class="sr-only">Published on</dt>
@@ -117,13 +115,11 @@
 							<div class="space-y-1">
 								<h3 class="text-2xl font-bold tracking-tight">
 									<a class="" [ngClass]="['text' + contrastInv]" href="">
-										Introducing Tailwind Nexjs Starter Blog
+										{{ p.title }}
 									</a>
 								</h3>
 								<p class="max-w-full prose" [ngClass]="['text' + defaultInv]">
-									Looking for a performant, out of the box template, with all the
-									best in web technology to support your blogging needs? Checkout
-									the Tailwind Nextjs Starter Blog template.
+									{{ p.content }}
 								</p>
 								<div class="flex flex-wrap space-x-3">
 									<a class="text-xs" [ngClass]="['text' + primary]" href="">
@@ -196,7 +192,7 @@
 					<div class="">
 						<h3 class="mb-3 text-lg font-bold md:text-xl">2021</h3>
 						<ul class="space-y-4">
-							<li class="ml-2 space-y-1">
+							<li class="ml-2 space-y-1" *ngFor="let t of timeline20">
 								<div class="flex items-center">
 									<svg
 										class="w-4 h-4 mr-2"
@@ -215,37 +211,10 @@
 											<path d="M22 4L12 14.01l-3-3"></path>
 										</g>
 									</svg>
-									<h4 class="font-medium">10,000 YouTube Subscribers 🎥</h4>
+									<h4 class="font-medium">{{ t.title }}</h4>
 								</div>
 								<p class="ml-6" [ngClass]="['text' + plainInv]">
-									After many years on YouTube, I've started to figure this whole
-									video thing out.
-								</p>
-							</li>
-							<li class="ml-2 space-y-1">
-								<div class="flex items-center">
-									<svg
-										class="w-4 h-4 mr-2"
-										viewBox="0 0 24 24"
-										aria-label="Checkmark"
-										[ngClass]="['text' + primary]"
-									>
-										<g
-											fill="none"
-											stroke="currentColor"
-											stroke-width="2"
-											stroke-linecap="round"
-											stroke-linejoin="round"
-										>
-											<path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
-											<path d="M22 4L12 14.01l-3-3"></path>
-										</g>
-									</svg>
-									<h4 class="font-medium">5,000 Newsletter Subscribers 💌</h4>
-								</div>
-								<p class="ml-6" [ngClass]="['text' + plainInv]">
-									If you want to stay up-to-date on my latest work, it usually
-									hits the newsletter first. I try to send an update once a month.
+									{{ t.content }}
 								</p>
 							</li>
 						</ul>
@@ -253,7 +222,7 @@
 					<div class="">
 						<h3 class="mb-3 text-lg font-bold md:text-xl">2020</h3>
 						<ul class="space-y-4">
-							<li class="ml-2 space-y-1">
+							<li class="ml-2 space-y-1" *ngFor="let t of timeline21">
 								<div class="flex items-center">
 									<svg
 										class="w-4 h-4 mr-2"
@@ -272,37 +241,10 @@
 											<path d="M22 4L12 14.01l-3-3"></path>
 										</g>
 									</svg>
-									<h4 class="font-medium">5,000 YouTube Subscribers 🎥</h4>
+									<h4 class="font-medium">{{ t.title }}</h4>
 								</div>
 								<p class="ml-6" [ngClass]="['text' + plainInv]">
-									After many years on YouTube, I've started to figure this whole
-									video thing out.
-								</p>
-							</li>
-							<li class="ml-2 space-y-1">
-								<div class="flex items-center">
-									<svg
-										class="w-4 h-4 mr-2"
-										viewBox="0 0 24 24"
-										aria-label="Checkmark"
-										[ngClass]="['text' + primary]"
-									>
-										<g
-											fill="none"
-											stroke="currentColor"
-											stroke-width="2"
-											stroke-linecap="round"
-											stroke-linejoin="round"
-										>
-											<path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
-											<path d="M22 4L12 14.01l-3-3"></path>
-										</g>
-									</svg>
-									<h4 class="font-medium">2,000 Newsletter Subscribers 💌</h4>
-								</div>
-								<p class="ml-6" [ngClass]="['text' + plainInv]">
-									If you want to stay up-to-date on my latest work, it usually
-									hits the newsletter first. I try to send an update once a month.
+									{{ t.content }}
 								</p>
 							</li>
 						</ul>
@@ -452,22 +394,6 @@
 							d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
 						></path>
 					</svg>
-				</a>
-			</div>
-			<div class="flex mb-2 space-x-2 text-sm dark:text-gray-400">
-				<div>Tails Azimuth</div>
-				<div>•</div>
-				<div>© 2021</div>
-				<div>•</div>
-				<a href="/">Next.js Starter Blog</a>
-			</div>
-			<div class="mb-8 text-sm dark:text-gray-400">
-				<a
-					target="_blank"
-					rel="noopener noreferrer"
-					href="https://github.com/timlrx/tailwind-nextjs-starter-blog"
-				>
-					Tailwind Nextjs Theme
 				</a>
 			</div>
 		</footer>

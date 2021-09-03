@@ -1,5 +1,5 @@
-<div class="max-w-2xl px-6 mx-auto">
-	<article class="py-12 space-y-8" [ngClass]="['bg' + default, 'text' + contrastInv]">
+<div class="max-w-2xl px-6 py-16 mx-auto space-y-12">
+	<article class="space-y-8" [ngClass]="['bg' + default, 'text' + contrastInv]">
 		<div class="space-y-6">
 			<h1 class="text-4xl font-bold md:tracking-tight md:text-5xl">
 				Suspendisse ut magna et ipsum sodales accumsan.
@@ -24,46 +24,50 @@
 			<p>Insert the actual text content here...</p>
 		</div>
 	</article>
-	<div
-		class="flex flex-wrap py-6 space-x-2 border-t border-dashed"
-		[ngClass]="['border' + plainInv]"
-	>
-		<a
-			class="px-3 py-1 rounded-sm hover:underline"
-			[ngClass]="['bg' + primary, 'text' + contrast]"
-			href="#"
+	<div class="">
+		<div
+			class="flex flex-wrap py-6 space-x-2 border-t border-dashed"
+			[ngClass]="['border' + plainInv]"
 		>
-			#MambaUI
-		</a>
-		<a
-			class="px-3 py-1 rounded-sm hover:underline"
-			[ngClass]="['bg' + primary, 'text' + contrast]"
-			href="#"
-		>
-			#TailwindCSS
-		</a>
-		<a
-			class="px-3 py-1 rounded-sm hover:underline"
-			[ngClass]="['bg' + primary, 'text' + contrast]"
-			href="#"
-		>
-			#Angular
-		</a>
-	</div>
-	<div class="space-y-2">
-		<h4 class="text-lg font-semibold">Related posts</h4>
-		<ul class="ml-4 space-y-1 list-disc">
-			<li>
-				<a class="hover:underline" href="#">Nunc id magna mollis</a>
-			</li>
-			<li>
-				<a class="hover:underline" href="#">Duis molestie, neque eget pretium lobortis</a>
-			</li>
-			<li>
-				<a class="hover:underline" href="#">
-					Mauris nec urna volutpat, aliquam lectus sit amet
-				</a>
-			</li>
-		</ul>
+			<a
+				class="px-3 py-1 rounded-sm hover:underline"
+				[ngClass]="['bg' + primary, 'text' + contrast]"
+				href="#"
+			>
+				#MambaUI
+			</a>
+			<a
+				class="px-3 py-1 rounded-sm hover:underline"
+				[ngClass]="['bg' + primary, 'text' + contrast]"
+				href="#"
+			>
+				#TailwindCSS
+			</a>
+			<a
+				class="px-3 py-1 rounded-sm hover:underline"
+				[ngClass]="['bg' + primary, 'text' + contrast]"
+				href="#"
+			>
+				#Angular
+			</a>
+		</div>
+		<div class="space-y-2">
+			<h4 class="text-lg font-semibold">Related posts</h4>
+			<ul class="ml-4 space-y-1 list-disc">
+				<li>
+					<a class="hover:underline" href="#">Nunc id magna mollis</a>
+				</li>
+				<li>
+					<a class="hover:underline" href="#">
+						Duis molestie, neque eget pretium lobortis
+					</a>
+				</li>
+				<li>
+					<a class="hover:underline" href="#">
+						Mauris nec urna volutpat, aliquam lectus sit amet
+					</a>
+				</li>
+			</ul>
+		</div>
 	</div>
 </div>
