@@ -4,6 +4,4 @@ import {Component} from '@angular/core';
 	selector: 'custom-profile-showcase',
 	templateUrl: './profile-showcase.component.html',
 })
-export class ProfileShowcaseComponent {
-	constructor() {}
-}
+export class ProfileShowcaseComponent {}

@@ -1,14 +1,17 @@
 <section class="p-6" [ngClass]="['bg' + default, 'text' + defaultInv]">
-	<div class="container mx-auto grid gap-6 text-center lg:grid-cols-2 xl:grid-cols-5">
-		<div class="w-full p-16 rounded-md xl:col-span-2" [ngClass]="['bg' + contrast]">
+	<div class="container grid gap-6 mx-auto text-center lg:grid-cols-2 xl:grid-cols-5">
+		<div
+			class="w-full px-6 py-16 rounded-md sm:px-12 md:px-16 xl:col-span-2"
+			[ngClass]="['bg' + contrast]"
+		>
 			<span class="block mb-2" [ngClass]="['text' + primary]">Mamba design system</span>
 			<h1 class="text-5xl font-extrabold" [ngClass]="['text' + contrastInv]">
 				Build it with Mamba
 			</h1>
 			<p class="my-8">
-				<span class="font-medium" [ngClass]="['text' + contrastInv]"
-					>Modular and versatile.</span
-				>
+				<span class="font-medium" [ngClass]="['text' + contrastInv]">
+					Modular and versatile.
+				</span>
 				Fugit vero facilis dolor sit neque cupiditate minus esse accusamus cumque at.
 			</p>
 
@@ -34,6 +37,7 @@
 					/>
 				</div>
 				<button
+					type="button"
 					class="w-full py-2 font-semibold rounded"
 					[ngClass]="['bg' + primary, 'text' + contrast]"
 				>
@@ -44,7 +48,7 @@
 		<img
 			src="https://source.unsplash.com/random/480x360"
 			alt=""
-			class="object-cover w-full h-full rounded-md xl:col-span-3"
+			class="object-cover w-full rounded-md xl:col-span-3"
 		/>
 	</div>
 </section>

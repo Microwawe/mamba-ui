@@ -1,11 +1,12 @@
 import {Component} from '@angular/core';
+
 import {BaseComponent} from '@shared/components/base/base.component';
 
 @Component({
-	selector: 'custom-notification1',
-	templateUrl: './notification1.component.html',
+	selector: 'custom-profile4',
+	templateUrl: './profile4.component.html',
 })
-export class Notification1Component extends BaseComponent {
+export class Profile4Component extends BaseComponent {
 	constructor() {
 		super();
 	}

@@ -6,7 +6,8 @@
 	<ul class="flex flex-col pt-4 space-y-2">
 		<li class="flex items-start justify-between">
 			<h3>
-				Hard taco, chicken <span [ngClass]="['text' + primary]" class="text-sm">x3</span>
+				Hard taco, chicken
+				<span [ngClass]="['text' + primary]" class="text-sm">x3</span>
 			</h3>
 			<div class="text-right">
 				<span class="block">$7.50</span>
@@ -14,21 +15,30 @@
 			</div>
 		</li>
 		<li class="flex items-start justify-between">
-			<h3>Hard taco, beef <span [ngClass]="['text' + primary]" class="text-sm">x3</span></h3>
+			<h3>
+				Hard taco, beef
+				<span [ngClass]="['text' + primary]" class="text-sm">x3</span>
+			</h3>
 			<div class="text-right">
 				<span class="block">$8.25</span>
 				<span class="text-sm" [ngClass]="['text' + plainInv]">à $2.75</span>
 			</div>
 		</li>
 		<li class="flex items-start justify-between">
-			<h3>Curly fries <span [ngClass]="['text' + primary]" class="text-sm">x1</span></h3>
+			<h3>
+				Curly fries
+				<span [ngClass]="['text' + primary]" class="text-sm">x1</span>
+			</h3>
 			<div class="text-right">
 				<span class="block">$1.75</span>
 				<span class="text-sm" [ngClass]="['text' + plainInv]">à $1.75</span>
 			</div>
 		</li>
 		<li class="flex items-start justify-between">
-			<h3>Large soda <span [ngClass]="['text' + primary]" class="text-sm">x2</span></h3>
+			<h3>
+				Large soda
+				<span [ngClass]="['text' + primary]" class="text-sm">x2</span>
+			</h3>
 			<div class="text-right">
 				<span class="block">$4.00</span>
 				<span class="text-sm" [ngClass]="['text' + plainInv]">à $2.00</span>
@@ -39,7 +49,7 @@
 		<div class="">
 			<div class="flex justify-between">
 				<span>Subtotal</span>
-				<span class=""> $21.50</span>
+				<span class="">$21.50</span>
 			</div>
 			<div class="flex items-center space-x-2 text-xs">
 				<svg
@@ -73,9 +83,9 @@
 				<span>Delivery fee</span>
 				<span class="">$4.00</span>
 			</div>
-			<a href="#" class="text-xs hover:underline" [ngClass]="['text' + primary]"
-				>How do our fees work?</a
-			>
+			<a href="#" class="text-xs hover:underline" [ngClass]="['text' + primary]">
+				How do our fees work?
+			</a>
 		</div>
 		<div class="space-y-6">
 			<div class="flex justify-between">
@@ -83,8 +93,9 @@
 				<span class="font-semibold">$22.70</span>
 			</div>
 			<button
+				type="button"
 				class="w-full py-2 font-semibold border rounded"
-				[ngClass]="['bg' + primary, 'text' + contrast]"
+				[ngClass]="['bg' + primary, 'text' + contrast, 'border' + primary]"
 			>
 				Go to checkout
 			</button>

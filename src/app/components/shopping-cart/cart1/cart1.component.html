@@ -32,7 +32,7 @@
 						</div>
 					</div>
 					<div class="flex text-sm divide-x">
-						<button class="flex items-center px-2 py-1 pl-0 space-x-1">
+						<button class="flex items-center px-2 py-1 pl-0 space-x-1" type="button">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								viewBox="0 0 512 512"
@@ -50,7 +50,7 @@
 							</svg>
 							<span>Remove</span>
 						</button>
-						<button class="flex items-center px-2 py-1 space-x-1">
+						<button class="flex items-center px-2 py-1 space-x-1" type="button">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								viewBox="0 0 512 512"
@@ -61,7 +61,7 @@
 								/>
 							</svg>
 
-							<span> Add to favorites </span>
+							<span>Add to favorites</span>
 						</button>
 					</div>
 				</div>
@@ -69,17 +69,26 @@
 		</li>
 	</ul>
 	<div class="space-y-1 text-right">
-		<p>Total amount: <span class="font-semibold"> 357 €</span></p>
+		<p>
+			Total amount:
+			<span class="font-semibold">357 €</span>
+		</p>
 		<p class="text-sm" [ngClass]="['text' + plainInv]">
 			Not including taxes and shipping costs
 		</p>
 	</div>
 	<div class="flex justify-end space-x-4">
-		<button class="px-6 py-2 border rounded-md" [ngClass]="['border' + primary]">
-			Back <span class="sr-only sm:not-sr-only">to shop</span>
+		<button class="px-6 py-2 border rounded-md" [ngClass]="['border' + primary]" type="button">
+			Back
+			<span class="sr-only sm:not-sr-only">to shop</span>
 		</button>
-		<button class="px-6 py-2 border rounded-md" [ngClass]="['bg' + primary, 'text' + contrast]">
-			<span class="sr-only sm:not-sr-only">Continue to</span> Checkout
+		<button
+			class="px-6 py-2 border rounded-md"
+			[ngClass]="['bg' + primary, 'text' + contrast, 'border' + primary]"
+			type="button"
+		>
+			<span class="sr-only sm:not-sr-only">Continue to</span>
+			Checkout
 		</button>
 	</div>
 </div>

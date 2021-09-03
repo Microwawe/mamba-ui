@@ -1,0 +1,131 @@
+<section class="px-5 py-10" [ngClass]="['bg' + default, 'text' + defaultInv]">
+	<div class="container grid grid-cols-12 mx-auto gap-y-6 md:gap-10">
+		<div
+			class="flex flex-col justify-between col-span-12 py-2 space-y-8 md:space-y-16 md:col-span-3"
+		>
+			<div class="flex flex-col space-y-8 md:space-y-12">
+				<div *ngFor="let exc of exclusives" class="flex flex-col space-y-2">
+					<h3 class="flex items-center space-x-2" [ngClass]="['text' + plainInv]">
+						<span
+							class="flex-shrink-0 w-2 h-2 uppercase rounded-full"
+							[ngClass]="['bg' + primary]"
+						></span>
+						<span class="text-xs font-bold tracking-wider uppercase">Exclusive</span>
+					</h3>
+					<a href="#" class="font-serif hover:underline">
+						{{ exc.title }}
+					</a>
+					<p class="text-xs" [ngClass]="['text' + plainInv]">
+						{{ exc.time }} ago by
+						<a href="#" class="hover:underline" [ngClass]="['text' + primary]">
+							Leroy Jenkins
+						</a>
+					</p>
+				</div>
+			</div>
+
+			<div class="flex flex-col w-full space-y-2">
+				<div class="w-full flex h-0.5 bg-opacity-10" [ngClass]="['bg' + primary]">
+					<div class="w-1/2 h-full" [ngClass]="['bg' + primary]"></div>
+				</div>
+				<a href="#" class="flex items-center justify-between w-full">
+					<span class="text-xs font-bold tracking-wider uppercase">
+						See more exclusives
+					</span>
+
+					<svg
+						viewBox="0 0 24 24"
+						stroke-width="2.5"
+						fill="none"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="w-3.5 stroke-current"
+						[ngClass]="['text' + primary]"
+					>
+						<line x1="5" y1="12" x2="19" y2="12"></line>
+						<polyline points="12 5 19 12 12 19"></polyline>
+					</svg>
+				</a>
+			</div>
+		</div>
+		<div
+			class="relative flex col-span-12 bg-center bg-no-repeat bg-cover xl:col-span-6 lg:col-span-5 md:col-span-9 min-h-96"
+			style="background-image: url('https://source.unsplash.com/random/239x319')"
+		>
+			<span
+				class="text-xs font-bold absolute left-6 top-6 pb-2.5 px-1 border-b-2 uppercase"
+				[ngClass]="['border' + primary, 'text' + light]"
+			>
+				paris, france
+			</span>
+			<a
+				class="flex flex-col items-center justify-end p-6 text-center sm:p-8 group via-transparent flex-grow-1 bg-gradient-to-b"
+				[ngClass]="['from' + dark, 'to' + dark]"
+			>
+				<span class="flex items-center mb-4 space-x-2" [ngClass]="['text' + primary]">
+					<span
+						class="relative flex-shrink-0 w-2 h-2 rounded-full"
+						[ngClass]="['bg' + primary]"
+					>
+						<span
+							class="absolute flex-shrink-0 w-3 h-3 rounded-full -left-0.5 -top-0.5 animate-ping"
+							[ngClass]="['bg' + primary]"
+						></span>
+					</span>
+					<span class="text-sm font-bold">Live</span>
+				</span>
+				<h1
+					href="#"
+					class="font-serif text-2xl font-semibold group-hover:underline"
+					[ngClass]="['text' + light]"
+				>
+					Morbi mattis justo est, ac consectetur dui eleifend vitae. Donec venenatis?
+				</h1>
+			</a>
+		</div>
+		<div class="hidden py-2 xl:col-span-3 lg:col-span-4 md:hidden lg:block">
+			<div
+				class="mb-8 space-x-5 border-b-2 border-opacity-10"
+				[ngClass]="['border' + primary]"
+			>
+				<button
+					class="pb-5 text-xs font-bold uppercase border-b-2"
+					type="button"
+					[ngClass]="['border' + primary]"
+				>
+					Latest
+				</button>
+				<button
+					class="pb-5 text-xs font-bold uppercase border-b-2 border-transparent"
+					[ngClass]="['text' + plainInv]"
+					type="button"
+				>
+					Popular
+				</button>
+			</div>
+			<div class="flex flex-col divide-y" [ngClass]="['divide' + neutral]">
+				<div *ngFor="let s of sidenews" class="flex px-1 py-4">
+					<img
+						src="{{ s.url }}"
+						alt=""
+						class="flex-shrink-0 object-cover w-20 h-20 mr-4"
+					/>
+					<div class="flex flex-col flex-grow">
+						<a href="#" class="font-serif hover:underline">
+							{{ s.title }}
+						</a>
+						<p class="mt-auto text-xs" [ngClass]="['text' + plainInv]">
+							{{ s.time }} ago
+							<a
+								href="#"
+								class="block text-blue-400 lg:ml-2 lg:inline hover:underline"
+							>
+								{{ s.category }}
+							</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

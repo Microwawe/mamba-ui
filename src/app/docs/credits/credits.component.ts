@@ -4,6 +4,4 @@ import {Component} from '@angular/core';
 	selector: 'custom-docs-credits',
 	templateUrl: './credits.component.html',
 })
-export class CreditsComponent {
-	constructor() {}
-}
+export class CreditsComponent {}

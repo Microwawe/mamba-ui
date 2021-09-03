@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 import {environment} from '@env';
 import {BaseComponent} from '@shared/components/base/base.component';
@@ -9,7 +9,7 @@ import {AnalyticsService} from '@shared/services/analytics.service';
 	selector: 'custom-home',
 	templateUrl: './home.component.html',
 })
-export class HomeComponent extends BaseComponent implements OnInit {
+export class HomeComponent extends BaseComponent {
 	roundedComponentTotal: number;
 
 	constructor(private analytics: AnalyticsService) {
@@ -17,16 +17,7 @@ export class HomeComponent extends BaseComponent implements OnInit {
 		this.roundedComponentTotal = environment.roundedComponentTotal;
 	}
 
-	ngOnInit() {}
-
-	clickCTA() {
+	clickCTA(): void {
 		this.analytics.triggerEvent(PlausibleEvent.CTA);
-	}
-
-	clickLink(target: string) {
-		this.analytics.triggerEvent(PlausibleEvent.EXTERNAL_LINK, {
-			link: target,
-			component: 'home',
-		});
 	}
 }

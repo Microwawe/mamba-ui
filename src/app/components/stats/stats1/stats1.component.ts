@@ -1,11 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {BaseComponent} from '@shared/components/base/base.component';
 
 @Component({
 	selector: 'custom-stats1',
 	templateUrl: './stats1.component.html',
 })
-export class Stats1Component extends BaseComponent implements OnInit {
+export class Stats1Component extends BaseComponent {
 	icons: string[] = [
 		'intel',
 		'digital-ocean',
@@ -19,6 +19,4 @@ export class Stats1Component extends BaseComponent implements OnInit {
 	constructor() {
 		super();
 	}
-
-	ngOnInit() {}
 }

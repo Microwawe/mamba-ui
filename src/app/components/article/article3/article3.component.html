@@ -11,7 +11,7 @@
 			<a class="p-1 hover:underline" href="#">#TailwindCSS</a>
 			<a class="p-1 hover:underline" href="#">#Angular</a>
 		</div>
-		<p class="">
+		<p class="text-sm" [ngClass]="['text' + plainInv]">
 			by
 			<a
 				href="#"
@@ -20,7 +20,7 @@
 				class="hover:underline"
 				[ngClass]="['text' + primary]"
 			>
-				<span itemprop="name">Leroy Jenkins</span>
+				<span>Leroy Jenkins</span>
 			</a>
 			on
 			<time datetime="2021-02-12 15:34:18-0200">Feb 12th 2021</time>

@@ -1,12 +1,11 @@
 import {Component} from '@angular/core';
-
 import {BaseComponent} from '@shared/components/base/base.component';
 
 @Component({
-	selector: 'custom-portfolio3',
-	templateUrl: './portfolio3.component.html',
+	selector: 'custom-skeleton1',
+	templateUrl: './skeleton1.component.html',
 })
-export class Portfolio3Component extends BaseComponent {
+export class Skeleton1Component extends BaseComponent {
 	constructor() {
 		super();
 	}

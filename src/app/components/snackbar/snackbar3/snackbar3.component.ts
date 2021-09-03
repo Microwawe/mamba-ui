@@ -2,10 +2,10 @@ import {Component} from '@angular/core';
 import {BaseComponent} from '@shared/components/base/base.component';
 
 @Component({
-	selector: 'custom-notification2',
-	templateUrl: './notification2.component.html',
+	selector: 'custom-snackbar3',
+	templateUrl: './snackbar3.component.html',
 })
-export class Notification2Component extends BaseComponent {
+export class Snackbar3Component extends BaseComponent {
 	constructor() {
 		super();
 	}

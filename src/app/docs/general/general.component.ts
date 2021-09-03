@@ -4,6 +4,4 @@ import {Component} from '@angular/core';
 	selector: 'custom-docs-general',
 	templateUrl: './general.component.html',
 })
-export class GeneralComponent {
-	constructor() {}
-}
+export class GeneralComponent {}
