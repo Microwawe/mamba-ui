@@ -5,6 +5,7 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
 	safelist: {
 		standard: [
 			/(bg|text|border|ring)-(coolGray|yellow|amber|orange|red|rose|pink|fuchsia|purple|violet|indigo|blue|sky|lightBlue|cyan|teal|emerald|green|lime)-[1-9][0]?0$/,
+			/(from|to)-coolGray-[1-9]00/,
 			/ring-offset-(coolGray)-[18]00$/,
 		],
 		greedy: [/token$/],
