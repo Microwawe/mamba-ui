@@ -1,10 +1,10 @@
 <nav class="w-full p-4" [ngClass]="['bg' + default, 'text' + defaultInv]" aria-label="breadcrumb">
-	<ol class="flex h-8 space-x-1.5" [ngClass]="['text' + defaultInv]">
+	<ol class="flex h-8 space-x-2" [ngClass]="['text' + defaultInv]">
 		<li class="flex items-center">
 			<a href="#" class="flex items-center hover:underline" title="Back to homepage">Home</a>
 		</li>
 
-		<li *ngFor="let num of [1, 2, 3]; let i = index" class="flex items-center space-x-1.5">
+		<li *ngFor="let num of [1, 2, 3]; let i = index" class="flex items-center space-x-1">
 			<span [ngClass]="['text' + plainInv]">/</span>
 			<a
 				href="#"
