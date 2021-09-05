@@ -1,7 +1,7 @@
 <div class="max-w-screen-xl p-5 mx-auto" [ngClass]="['bg' + default, 'text' + defaultInv]">
 	<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 md:gap-0 lg:grid-rows-2">
 		<div
-			class="relative flex items-end justify-start w-full text-left bg-center bg-cover cursor-pointer h-96 md:col-span-2 lg:row-span-2 lg:h-full group"
+			class="relative flex items-end justify-start w-full text-left bg-center bg-cover cursor-pointer h-96 md:col-span-2 lg:row-span-2 lg:h-full group bg-coolGray-500"
 			style="background-image: url(https://source.unsplash.com/random/245x320)"
 		>
 			<div
@@ -12,7 +12,7 @@
 				<a
 					href="#"
 					class="px-3 py-2 text-xs font-semibold tracking-wider uppercase hover:underline"
-					[ngClass]="['text' + light, 'bg' + primary600]"
+					[ngClass]="['text' + light, 'bg' + primary]"
 				>
 					Art
 				</a>
@@ -33,7 +33,7 @@
 		</div>
 		<div
 			*ngFor="let n of news"
-			class="relative flex items-end justify-start w-full text-left bg-center bg-cover cursor-pointer h-96 group"
+			class="relative flex items-end justify-start w-full text-left bg-center bg-cover cursor-pointer h-96 group bg-coolGray-500"
 			style="background-image: url({{ n.url }})"
 		>
 			<div
@@ -44,7 +44,7 @@
 				<a
 					href="#"
 					class="px-3 py-2 text-xs font-semibold tracking-wider uppercase hover:underline"
-					[ngClass]="['text' + light, 'bg' + primary600]"
+					[ngClass]="['text' + light, 'bg' + primary]"
 				>
 					{{ n.category }}
 				</a>

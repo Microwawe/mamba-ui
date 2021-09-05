@@ -21,16 +21,16 @@ export class BaseComponent implements OnDestroy {
 	primaryLight = '';
 	primaryDark = '';
 	primaryAlt = '';
-	primary50 = '';
-	primary100 = '';
-	primary200 = '';
-	primary300 = '';
-	primary400 = '';
-	primary500 = '';
-	primary600 = '';
-	primary700 = '';
-	primary800 = '';
-	primary900 = '';
+	// primary50 = '';
+	// primary100 = '';
+	// primary200 = '';
+	// primary300 = '';
+	// primary400 = '';
+	// primary500 = '';
+	// primary600 = '';
+	// primary700 = '';
+	// primary800 = '';
+	// primary900 = '';
 	plain = '-coolGray-400';
 	plainInv = '-coolGray-600';
 	neutral = '-coolGray-700';
@@ -76,16 +76,16 @@ export class BaseComponent implements OnDestroy {
 		this.primary = this.darkTheme ? `-${color.name}-400` : `-${color.name}-600`;
 		this.primaryAlt = this.darkTheme ? `-${color.name}-600` : `-${color.name}-400`;
 		this.primaryDark = this.darkTheme ? `-${color.name}-500` : `-${color.name}-700`;
-		this.primary50 = `-${color.name}-50`;
-		this.primary100 = `-${color.name}-100`;
-		this.primary200 = `-${color.name}-200`;
-		this.primary300 = `-${color.name}-300`;
-		this.primary400 = `-${color.name}-400`;
-		this.primary500 = `-${color.name}-500`;
-		this.primary600 = `-${color.name}-600`;
-		this.primary700 = `-${color.name}-700`;
-		this.primary800 = `-${color.name}-800`;
-		this.primary900 = `-${color.name}-900`;
+		// this.primary50 = `-${color.name}-50`;
+		// this.primary100 = `-${color.name}-100`;
+		// this.primary200 = `-${color.name}-200`;
+		// this.primary300 = `-${color.name}-300`;
+		// this.primary400 = `-${color.name}-400`;
+		// this.primary500 = `-${color.name}-500`;
+		// this.primary600 = `-${color.name}-600`;
+		// this.primary700 = `-${color.name}-700`;
+		// this.primary800 = `-${color.name}-800`;
+		// this.primary900 = `-${color.name}-900`;
 	}
 
 	ngOnDestroy(): void {
