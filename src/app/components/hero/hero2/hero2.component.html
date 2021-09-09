@@ -1,7 +1,7 @@
 <section class="">
 	<div [ngClass]="['bg' + primary]">
 		<div
-			class="container mx-auto flex flex-col items-center px-4 py-16 pb-24 text-center lg:pb-56 md:py-32 md:px-10 lg:px-32"
+			class="container flex flex-col items-center px-4 py-16 pb-24 mx-auto text-center lg:pb-56 md:py-32 md:px-10 lg:px-32"
 			[ngClass]="['text' + dark]"
 		>
 			<h1
@@ -16,12 +16,14 @@
 			</p>
 			<div class="flex flex-wrap justify-center">
 				<button
+					type="button"
 					class="px-8 py-3 m-2 text-lg font-semibold rounded"
 					[ngClass]="['bg' + default, 'text' + contrastInv]"
 				>
 					Get started
 				</button>
 				<button
+					type="button"
 					class="px-8 py-3 m-2 text-lg border rounded"
 					[ngClass]="['border' + neutral, 'text' + contrast]"
 				>
@@ -33,6 +35,6 @@
 	<img
 		src="https://source.unsplash.com/random/480x320"
 		alt=""
-		class="w-5/6 mx-auto mb-12 -mt-20 rounded-lg shadow-md lg:-mt-40"
+		class="w-5/6 mx-auto mb-12 -mt-20 rounded-lg shadow-md lg:-mt-40 bg-coolGray-500"
 	/>
 </section>

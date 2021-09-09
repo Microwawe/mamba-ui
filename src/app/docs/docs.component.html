@@ -11,14 +11,15 @@
 			#rla="routerLinkActive"
 			[ngClass]="[
 				rla.isActive ? 'border' + primary : 'border' + plain,
-				rla.isActive ? 'bg-white' : 'bg' + light,
+				rla.isActive ? 'bg-coolGray-50' : 'bg' + light,
 				'text' + dark
 			]"
 			class="px-2 py-2 capitalize border-l-4 cursor-pointer rounded-r-md md:py-3"
-			>{{ category.name }}</a
 		>
+			{{ category.name }}
+		</a>
 	</div>
 	<div class="py-4 prose">
-		<router-outlet> </router-outlet>
+		<router-outlet></router-outlet>
 	</div>
 </div>

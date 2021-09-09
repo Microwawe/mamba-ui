@@ -87,9 +87,6 @@
 				"serve": {
 					"builder": "@angular-builders/custom-webpack:dev-server",
 					"options": {
-						"customWebpackConfig": {
-							"path": "./webpack.config.js"
-						},
 						"browserTarget": "mamba-ui:build"
 					},
 					"configurations": {

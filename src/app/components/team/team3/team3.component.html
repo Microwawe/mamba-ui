@@ -12,7 +12,7 @@
 				[ngClass]="['bg' + defaultInv, 'text' + default]"
 			>
 				<img
-					class="self-center w-24 h-24 -mt-12 bg-center bg-cover rounded-full"
+					class="self-center w-24 h-24 -mt-12 bg-center bg-cover rounded-full bg-coolGray-500"
 					src="https://source.unsplash.com/10{{ i }}x10{{ i }}/?portrait"
 					alt=""
 				/>
@@ -21,7 +21,11 @@
 					<p class="">Visual Designer</p>
 				</div>
 				<div class="flex items-center justify-center p-3 space-x-3 border-t-2">
-					<a href="#" [ngClass]="['text' + contrast, 'hover:text' + primary]">
+					<a
+						href="#"
+						[ngClass]="['text' + contrast, 'hover:text' + primary]"
+						title="Email"
+					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 20 20"
@@ -34,7 +38,11 @@
 							<path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
 						</svg>
 					</a>
-					<a href="#" [ngClass]="['text' + contrast, 'hover:text' + primary]">
+					<a
+						href="#"
+						[ngClass]="['text' + contrast, 'hover:text' + primary]"
+						title="Twitter"
+					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 50 50"
@@ -46,7 +54,11 @@
 							></path>
 						</svg>
 					</a>
-					<a href="#" [ngClass]="['text' + contrast, 'hover:text' + primary]">
+					<a
+						href="#"
+						[ngClass]="['text' + contrast, 'hover:text' + primary]"
+						title="LinkedIn"
+					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							class="w-5 h-5"
@@ -58,7 +70,11 @@
 							/>
 						</svg>
 					</a>
-					<a href="#" [ngClass]="['text' + contrast, 'hover:text' + primary]">
+					<a
+						href="#"
+						[ngClass]="['text' + contrast, 'hover:text' + primary]"
+						title="GitHub"
+					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							class="w-5 h-5"

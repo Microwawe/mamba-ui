@@ -4,7 +4,7 @@
 >
 	<div class="flex space-x-4">
 		<img
-			class="object-cover w-12 h-12 rounded-full shadow"
+			class="object-cover w-12 h-12 rounded-full shadow bg-coolGray-500"
 			alt=""
 			src="https://source.unsplash.com/100x100/?portrait"
 		/>
@@ -17,7 +17,8 @@
 		<img
 			class="rounded"
 			src="https://picsum.photos/536/354"
-			class="object-cover w-full mb-4 h-60 sm:h-96"
+			alt=""
+			class="object-cover w-full mb-4 h-60 sm:h-96 bg-coolGray-500"
 		/>
 		<h2 class="mb-1 text-xl font-semibold">Nam cu platonem posidonium sanctus debitis te</h2>
 		<p class="text-sm" [ngClass]="['text' + plainInv]">
@@ -27,7 +28,7 @@
 	</div>
 	<div class="flex flex-wrap justify-between">
 		<div class="space-x-2">
-			<button class="p-2 text-center" aria-label="Share this post">
+			<button class="p-2 text-center" aria-label="Share this post" type="button">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 512 512"
@@ -39,7 +40,7 @@
 					/>
 				</svg>
 			</button>
-			<button class="p-2" aria-label="Bookmark this post">
+			<button class="p-2" aria-label="Bookmark this post" type="button">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 512 512"
@@ -53,7 +54,7 @@
 			</button>
 		</div>
 		<div class="flex space-x-2 text-sm" [ngClass]="['text' + plainInv]">
-			<button class="flex items-center p-1 space-x-1.5">
+			<button class="flex items-center p-1 space-x-1.5" type="button">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 512 512"
@@ -71,7 +72,7 @@
 
 				<span>30</span>
 			</button>
-			<button class="flex items-center p-1 space-x-1.5">
+			<button class="flex items-center p-1 space-x-1.5" type="button">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 512 512"

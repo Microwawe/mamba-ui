@@ -1,7 +1,7 @@
 <div [ngClass]="['bg' + default, 'text' + contrastInv]">
 	<div class="container grid grid-cols-12 mx-auto" [ngClass]="['bg' + contrast]">
 		<div
-			class="bg-gray-700 bg-no-repeat bg-cover col-span-full lg:col-span-4"
+			class="bg-no-repeat bg-cover bg-coolGray-700 col-span-full lg:col-span-4"
 			style="
 				background-image: url('https://source.unsplash.com/random/640x480');
 				background-position: center center;
@@ -13,7 +13,7 @@
 			<div class="flex justify-start">
 				<span
 					class="px-2 py-1 text-xs rounded-full"
-					[ngClass]="['bg' + primary200, 'text' + dark]"
+					[ngClass]="['bg' + primary, 'text' + contrast]"
 				>
 					Label
 				</span>
