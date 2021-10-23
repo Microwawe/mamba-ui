@@ -22,6 +22,7 @@ export class ComponentsComponent extends BaseComponent implements OnDestroy {
 		{name: 'Breadcrumb', link: 'breadcrumb', count: 2},
 		{name: 'Button', link: 'button', count: 6},
 		{name: 'Call to action', link: 'call-to-action', count: 6},
+		{name: 'Card', link: 'card', count: 4}, // TODO
 		{name: 'Contact', link: 'contact', count: 3},
 		{name: 'Error', link: 'error', count: 2},
 		{name: 'Faq', link: 'faq', count: 4},
@@ -35,8 +36,8 @@ export class ComponentsComponent extends BaseComponent implements OnDestroy {
 		{name: 'Loading', link: 'loading', count: 2},
 		{name: 'Login', link: 'login', count: 4},
 		{name: 'News', link: 'news', count: 3},
-		{name: 'Pagination', link: 'pagination', count: 2},
-		{name: 'Pricing', link: 'pricing', count: 4},
+		{name: 'Pagination', link: 'pagination', count: 3},
+		{name: 'Pricing', link: 'pricing', count: 5},
 		{name: 'Profile', link: 'profile', count: 4},
 		{name: 'Review', link: 'review', count: 3},
 		{name: 'Shopping cart', link: 'shopping-cart', count: 2},

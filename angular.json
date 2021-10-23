@@ -16,6 +16,7 @@
 			"architect": {
 				"build": {
 					"builder": "@angular-builders/custom-webpack:browser",
+					"defaultConfiguration": "development",
 					"options": {
 						"customWebpackConfig": {
 							"path": "./webpack.config.js"
@@ -81,6 +82,26 @@
 							],
 							"serviceWorker": true,
 							"ngswConfigPath": "ngsw-config.json"
+						},
+						"development": {
+							"optimization": false,
+							"sourceMap": true,
+							"namedChunks": true,
+							"extractLicenses": true,
+							"vendorChunk": true,
+							"buildOptimizer": false,
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "2mb",
+									"maximumError": "5mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "6kb",
+									"maximumError": "10kb"
+								}
+							]
 						}
 					}
 				},
@@ -91,7 +112,7 @@
 					},
 					"configurations": {
 						"production": {
-							"browserTarget": "mamba-ui:build:production"
+							"browserTarget": "mamba-ui:build:development"
 						}
 					}
 				},

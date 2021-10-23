@@ -1,4 +1,4 @@
-<div class="max-w-xl p-8 mx-auto">
+<div class="max-w-xl p-8 mx-auto" [ngClass]="['bg' + default, 'text' + defaultInv]">
 	<ul class="space-y-12">
 		<li class="flex items-start space-x-3">
 			<a href="#" class="flex items-center h-8 text-sm hover:underline">v3.2.0</a>
@@ -17,11 +17,13 @@
 							[ngClass]="['bg' + primary]"
 							aria-hidden="true"
 						></span>
-						<span class="group-hover:underline">Feature</span>
+						<span class="group-hover:underline" [ngClass]="['text' + defaultInv]">
+							Feature
+						</span>
 					</a>
 					<span class="text-xs whitespace-nowrap">10h ago</span>
 				</div>
-				<div [ngClass]="['text' + plainInv]">
+				<div>
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt nunc
 						ipsum tempor purus vitae id. Morbi in vestibulum nec varius. Et diam cursus
@@ -40,14 +42,21 @@
 				>
 					<a
 						href="#"
-						class="relative inline-flex items-center px-3 py-1 my-1 space-x-2 text-sm border rounded-full group"
+						class="inline-flex items-center px-3 py-1 my-1 space-x-2 text-sm border rounded-full group"
 						[ngClass]="['border' + neutral]"
 					>
-						<span class="group-hover:underline">Bugfix</span>
+						<span
+							class="h-1.5 w-1.5 rounded-full"
+							[ngClass]="['bg' + primary]"
+							aria-hidden="true"
+						></span>
+						<span class="group-hover:underline" [ngClass]="['text' + defaultInv]">
+							Bugfix
+						</span>
 					</a>
 					<span class="text-xs whitespace-nowrap">2 weeks ago</span>
 				</div>
-				<div class="space-y-2" [ngClass]="['text' + plainInv]">
+				<div class="space-y-2">
 					<p>
 						Scelerisque amet elit non sit ut tincidunt condimentum. Nisi ultrices eu
 						venenatis diam.

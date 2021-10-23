@@ -49,6 +49,11 @@ const routes: Routes = [
 				data: {title: 'CTA', breadcrumb: 'CTA'},
 			},
 			{
+				path: 'card',
+				loadChildren: () => import('./card/card.module').then(m => m.CardModule),
+				data: {title: 'Card', breadcrumb: 'Card'},
+			},
+			{
 				path: 'contact',
 				loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule),
 				data: {title: 'Contact', breadcrumb: 'Contact'},

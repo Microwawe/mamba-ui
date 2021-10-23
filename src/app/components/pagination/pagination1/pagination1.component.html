@@ -3,7 +3,7 @@
 		title="previous"
 		type="button"
 		class="inline-flex items-center justify-center w-8 h-8 py-0 border rounded-md shadow-md"
-		[ngClass]="['bg' + default, 'border' + default]"
+		[ngClass]="['bg' + contrast, 'border' + default]"
 	>
 		<svg
 			class="w-4"
@@ -20,8 +20,8 @@
 	<button
 		type="button"
 		title="Page 1"
-		class="inline-flex items-center justify-center w-8 h-8 text-sm border rounded shadow-md"
-		[ngClass]="['text' + contrastInv, 'bg' + contrast, 'border' + contrast]"
+		class="inline-flex items-center justify-center w-8 h-8 text-sm font-semibold border rounded shadow-md"
+		[ngClass]="['bg' + contrast, 'text' + primary, 'border' + primary]"
 	>
 		1
 	</button>
@@ -30,7 +30,7 @@
 		type="button"
 		title="Page {{ page }}"
 		class="inline-flex items-center justify-center w-8 h-8 text-sm border rounded shadow-md"
-		[ngClass]="['bg' + default, 'border' + default]"
+		[ngClass]="['bg' + contrast, 'border' + default]"
 	>
 		{{ page }}
 	</button>
@@ -39,7 +39,7 @@
 		title="next"
 		type="button"
 		class="inline-flex items-center justify-center w-8 h-8 py-0 border rounded-md shadow-md"
-		[ngClass]="['bg' + default, 'border' + default]"
+		[ngClass]="['bg' + contrast, 'border' + default]"
 	>
 		<svg
 			class="w-4"

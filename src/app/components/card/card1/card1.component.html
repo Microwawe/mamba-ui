@@ -1,0 +1,20 @@
+<div class="max-w-xs p-6 rounded-md shadow-md" [ngClass]="['bg' + contrast, 'text' + contrastInv]">
+	<img
+		class="object-cover object-center w-full rounded-md h-72 bg-coolGray-500"
+		src="https://source.unsplash.com/300x300/?random"
+		alt=""
+	/>
+	<div class="mt-6 mb-2">
+		<span
+			class="block text-xs font-medium tracking-widest uppercase"
+			[ngClass]="['text' + primary]"
+		>
+			Quisque
+		</span>
+		<h2 class="text-xl font-semibold tracking-wide">Nam maximus purus</h2>
+	</div>
+	<p class="" [ngClass]="['text' + defaultInv]">
+		Mauris et lorem at elit tristique dignissim et ullamcorper elit. In sed feugiat mi. Etiam ut
+		lacinia dui.
+	</p>
+</div>
