@@ -35,7 +35,7 @@ export class SearchComponent extends BaseComponent implements AfterViewInit, OnD
 					event instanceof KeyboardEvent ? (<HTMLInputElement>event.target).value : ''
 				),
 				tap((inputValue: string) => this.queryChange.emit(inputValue)), // emit every value change
-				filter(inputValue => !!inputValue),
+				filter((inputValue: string) => !!inputValue && inputValue.length >= 3),
 				distinctUntilChanged(),
 				debounceTime(1000) // trigger analytics only after user stops typing
 			)
