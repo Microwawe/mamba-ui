@@ -49,7 +49,7 @@ export class ComponentsComponent extends BaseComponent implements OnDestroy {
 		{name: 'Tabs', link: 'tab', count: 3},
 		{name: 'Team', link: 'team', count: 4},
 		{name: 'Testimonial', link: 'testimonial', count: 5},
-		{name: 'Timeline', link: 'timeline', count: 3},
+		{name: 'Timeline', link: 'timeline', count: 4},
 		{name: 'Toggle', link: 'toggle', count: 4},
 		{name: 'Weather', link: 'weather', count: 2},
 	].sort((a, b) => a.name.localeCompare(b.name));
