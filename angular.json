@@ -16,7 +16,7 @@
 			"architect": {
 				"build": {
 					"builder": "@angular-builders/custom-webpack:browser",
-					"defaultConfiguration": "development",
+					"defaultConfiguration": "production",
 					"options": {
 						"customWebpackConfig": {
 							"path": "./webpack.config.js"
@@ -63,7 +63,6 @@
 							"optimization": true,
 							"outputHashing": "all",
 							"sourceMap": false,
-							"extractCss": false,
 							"namedChunks": false,
 							"extractLicenses": true,
 							"vendorChunk": false,
@@ -112,7 +111,7 @@
 					},
 					"configurations": {
 						"production": {
-							"browserTarget": "mamba-ui:build:development"
+							"browserTarget": "mamba-ui:build:production"
 						}
 					}
 				},
