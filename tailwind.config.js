@@ -123,6 +123,7 @@ module.exports = {
 				'focus:bg-{colors}',
 				'hover:bg-{colors}',
 				'peer-checked:bg-{colors}',
+				'before:bg-{colors}',
 
 				'border-{colors}',
 				'focus:border-{colors}',
