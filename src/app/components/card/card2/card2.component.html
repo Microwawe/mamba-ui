@@ -1,0 +1,22 @@
+<div class="max-w-xs rounded-md shadow-md" [ngClass]="['bg' + contrast, 'text' + defaultInv]">
+	<img
+		class="object-cover object-center w-full rounded-t-md h-72 bg-coolGray-500"
+		src="https://source.unsplash.com/301x301/?random"
+		alt=""
+	/>
+	<div class="flex flex-col justify-between p-6 space-y-8">
+		<div class="space-y-2">
+			<h2 class="text-3xl font-semibold tracking-wide">Donec lectus leo</h2>
+			<p class="" [ngClass]="['text' + defaultInv]">
+				Curabitur luctus erat nunc, sed ullamcorper erat vestibulum eget.
+			</p>
+		</div>
+		<button
+			class="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md"
+			type="button"
+			[ngClass]="['bg' + primary, 'text' + contrast]"
+		>
+			Read more
+		</button>
+	</div>
+</div>

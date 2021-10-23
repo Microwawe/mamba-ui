@@ -107,8 +107,8 @@ describe('Service: Formatter', () => {
 		it('should add dark variant to placeholder color', inject(
 			[FormatterService],
 			(service: FormatterService) => {
-				const str = '<span class="placeholder-gray-300"></span>';
-				const result = '<span class="dark:placeholder-gray-300"></span>';
+				const str = '<span class="placeholder-coolGray-300"></span>';
+				const result = '<span class="dark:placeholder-coolGray-300"></span>';
 				expect(service.toggleDarkModeVariants(str, true)).toBe(result);
 			}
 		));
@@ -143,9 +143,10 @@ describe('Service: Formatter', () => {
 		it('should add dark variant to gradient colors', inject(
 			[FormatterService],
 			(service: FormatterService) => {
-				const str = '<span class="from-gray-100 via-gray-500 to-gray-900"></span>';
+				const str =
+					'<span class="from-coolGray-100 via-coolGray-500 to-coolGray-900"></span>';
 				const result =
-					'<span class="dark:from-gray-100 dark:via-gray-500 dark:to-gray-900"></span>';
+					'<span class="dark:from-coolGray-100 dark:via-coolGray-500 dark:to-coolGray-900"></span>';
 				expect(service.toggleDarkModeVariants(str, true)).toBe(result);
 			}
 		));

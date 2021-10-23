@@ -16,6 +16,7 @@
 			"architect": {
 				"build": {
 					"builder": "@angular-builders/custom-webpack:browser",
+					"defaultConfiguration": "production",
 					"options": {
 						"customWebpackConfig": {
 							"path": "./webpack.config.js"
@@ -62,7 +63,6 @@
 							"optimization": true,
 							"outputHashing": "all",
 							"sourceMap": false,
-							"extractCss": false,
 							"namedChunks": false,
 							"extractLicenses": true,
 							"vendorChunk": false,
@@ -81,6 +81,26 @@
 							],
 							"serviceWorker": true,
 							"ngswConfigPath": "ngsw-config.json"
+						},
+						"development": {
+							"optimization": false,
+							"sourceMap": true,
+							"namedChunks": true,
+							"extractLicenses": true,
+							"vendorChunk": true,
+							"buildOptimizer": false,
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "2mb",
+									"maximumError": "5mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "6kb",
+									"maximumError": "10kb"
+								}
+							]
 						}
 					}
 				},

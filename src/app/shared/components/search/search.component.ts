@@ -28,29 +28,29 @@ export class SearchComponent extends BaseComponent implements AfterViewInit, OnD
 		super();
 	}
 
-	ngAfterViewInit() {
+	ngAfterViewInit(): void {
 		this.eventSub = fromEvent(this.input.nativeElement, 'keyup')
 			.pipe(
 				map((event: unknown) =>
 					event instanceof KeyboardEvent ? (<HTMLInputElement>event.target).value : ''
 				),
-				tap(inputValue => this.queryChange.emit(inputValue)), // emit every value change
-				filter(inputValue => !!inputValue),
+				tap((inputValue: string) => this.queryChange.emit(inputValue)), // emit every value change
+				filter((inputValue: string) => !!inputValue && inputValue.length >= 3),
 				distinctUntilChanged(),
 				debounceTime(1000) // trigger analytics only after user stops typing
 			)
-			.subscribe(inputValue => {
+			.subscribe((inputValue: string) => {
 				this.analytics.triggerEvent(PlausibleEvent.SEARCH, {
 					query: inputValue,
 				});
 			});
 	}
 
-	resetQuery() {
+	resetQuery(): void {
 		this.query = '';
 	}
 
-	ngOnDestroy() {
+	ngOnDestroy(): void {
 		this.eventSub?.unsubscribe();
 	}
 }

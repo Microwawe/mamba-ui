@@ -7,6 +7,7 @@ import {Pricing1Component} from './pricing1/pricing1.component';
 import {Pricing2Component} from './pricing2/pricing2.component';
 import {Pricing3Component} from './pricing3/pricing3.component';
 import {Pricing4Component} from './pricing4/pricing4.component';
+import {Pricing5Component} from './pricing5/pricing5.component';
 
 const routes: Routes = [
 	{
@@ -23,6 +24,7 @@ const routes: Routes = [
 		Pricing2Component,
 		Pricing3Component,
 		Pricing4Component,
+		Pricing5Component,
 	],
 })
 export class PricingModule {}

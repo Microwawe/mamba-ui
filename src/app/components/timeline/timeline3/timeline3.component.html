@@ -1,5 +1,5 @@
 <section [ngClass]="['text' + defaultInv, 'bg' + default]">
-	<div class="container flex flex-col px-4 py-16 mx-auto space-y-12 md:py-32 lg:max-w-3xl">
+	<div class="container flex flex-col px-4 py-12 mx-auto space-y-12 md:py-16 lg:max-w-3xl">
 		<div class="flex items-center space-x-4">
 			<div class="w-12 h-px" [ngClass]="['bg' + neutral]"></div>
 			<h2 class="text-lg font-bold" [ngClass]="['text' + neutralInv]">December, 2020</h2>
@@ -90,7 +90,7 @@
 					<span class="text-sm" [ngClass]="['text' + plainInv]">December 20, 2020</span>
 				</div>
 				<div class="flex -ml-16 md:ml-0">
-					<a class="px-4 py-3 rounded-md shadow" [ngClass]="['bg' + contrast]" href="/">
+					<a class="px-4 py-6 rounded-md shadow" [ngClass]="['bg' + contrast]" href="/">
 						<div class="flex flex-col space-y-4">
 							<div class="flex flex-col space-y-1">
 								<p class="font-semibold">Design to Save People from Themselves</p>
@@ -195,30 +195,26 @@
 					<span class="text-sm" [ngClass]="['text' + plainInv]">November 3, 2020</span>
 				</div>
 				<div class="flex flex-col -ml-16 space-y-4 md:ml-0">
-					<a
-						target="_blank"
-						rel="noopener noreferrer"
-						href="/"
-						class="rounded"
+					<div
+						class="flex flex-col px-4 py-6 space-y-4 text-center rounded-md shadow"
 						[ngClass]="['bg' + contrast]"
 					>
-						<div class="flex flex-col space-y-4 text-center rounded-md shadow">
-							<h4 class="px-2 pt-2 text-lg font-semibold">
-								Consectetur adipisicing elit
-							</h4>
-							<p class="font-normal md:text-center">
-								Voluptatem sunt placeat mollitia rerum adipisci deleniti perferendis
-								minus reiciendis quis.
-							</p>
-							<p
-								class="flex-1 text-xs tracking-wider uppercase md:text-center"
-								[ngClass]="['text' + plainInv]"
-							>
-								Coming January, 2021
-							</p>
-							<div class="">View the project</div>
-						</div>
-					</a>
+						<h4 class="px-2 pt-2 text-lg font-semibold">
+							Consectetur adipisicing elit
+						</h4>
+						<p
+							class="flex-1 text-xs tracking-wider uppercase md:text-center"
+							[ngClass]="['text' + plainInv]"
+						>
+							Coming January, 2021
+						</p>
+						<p class="mx-auto font-normal md:text-center md:max-w-sm">
+							Voluptatem sunt placeat mollitia rerum adipisci deleniti perferendis
+							minus reiciendis quis.
+						</p>
+
+						<a href="#" class="mt-6 hover:underlin focus:underline">View the project</a>
+					</div>
 				</div>
 			</div>
 		</div>

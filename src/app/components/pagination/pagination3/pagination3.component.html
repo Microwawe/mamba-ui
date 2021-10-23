@@ -1,0 +1,77 @@
+<nav
+	class="inline-flex -space-x-px rounded-md shadow-sm"
+	aria-label="Pagination"
+	[ngClass]="['bg' + default, 'text' + defaultInv]"
+>
+	<button
+		type="button"
+		class="inline-flex items-center px-2 py-2 text-sm font-semibold border rounded-l-md"
+		[ngClass]="['border' + neutral]"
+	>
+		<span class="sr-only">Previous</span>
+		<svg
+			class="w-5 h-5"
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 20 20"
+			fill="currentColor"
+			aria-hidden="true"
+		>
+			<path
+				fill-rule="evenodd"
+				d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+				clip-rule="evenodd"
+			></path>
+		</svg>
+	</button>
+	<button
+		type="button"
+		aria-current="page"
+		class="inline-flex items-center px-4 py-2 text-sm font-semibold border"
+		[ngClass]="['bg' + primary, 'text' + contrast, 'border' + neutral]"
+	>
+		1
+	</button>
+	<button
+		*ngFor="let i of [2, 3]"
+		type="button"
+		class="inline-flex items-center px-4 py-2 text-sm font-semibold border"
+		[ngClass]="['border' + neutral]"
+	>
+		{{ i }}
+	</button>
+	<button
+		type="button"
+		class="inline-flex items-center px-4 py-2 text-sm font-semibold border"
+		[ngClass]="['border' + neutral]"
+	>
+		...
+	</button>
+	<button
+		*ngFor="let i of [7, 8, 9]"
+		type="button"
+		class="inline-flex items-center px-4 py-2 text-sm font-semibold border"
+		[ngClass]="['border' + neutral]"
+	>
+		{{ i }}
+	</button>
+	<button
+		type="button"
+		class="inline-flex items-center px-2 py-2 text-sm font-semibold border rounded-r-md"
+		[ngClass]="['border' + neutral]"
+	>
+		<span class="sr-only">Next</span>
+		<svg
+			class="w-5 h-5"
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 20 20"
+			fill="currentColor"
+			aria-hidden="true"
+		>
+			<path
+				fill-rule="evenodd"
+				d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+				clip-rule="evenodd"
+			></path>
+		</svg>
+	</button>
+</nav>

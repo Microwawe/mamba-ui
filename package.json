@@ -4,14 +4,15 @@
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve",
+		"start:dev": "ng serve --configuration development",
 		"build": "ng build",
-		"build:prod": "ng build --prod --build-optimizer --output-hashing all",
+		"build:dev": "ng build --configuration development --build-optimizer --output-hashing all",
 		"test": "ng test --browser ChromeHeadless --single-run",
 		"lint": "gts lint",
 		"watch": "ng test --browser ChromeHeadless",
 		"e2e": "ng e2e",
 		"release": "standard-version && git push --follow-tags origin master && npm publish",
-		"analyze": "ng build --prod --stats-json && webpack-bundle-analyzer dist/mamba-ui/stats.json",
+		"analyze": "ng build --configuration production --stats-json && webpack-bundle-analyzer dist/mamba-ui/stats.json",
 		"lhci": "lhci collect && lhci assert --config=./.lighthouserc.js"
 	},
 	"private": true,
