@@ -1,11 +1,12 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
+import {BaseComponent} from '@shared/components/base/base.component';
 
 @Component({
 	selector: 'custom-contact-showcase',
 	templateUrl: './contact-showcase.component.html',
 })
-export class ContactShowcaseComponent implements OnInit {
-	constructor() {}
-
-	ngOnInit() {}
+export class ContactShowcaseComponent extends BaseComponent {
+	constructor() {
+		super();
+	}
 }

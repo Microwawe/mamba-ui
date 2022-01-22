@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnDestroy, OnInit} from '@angular/core';
 
 import {BaseComponent} from '@shared/components/base/base.component';
 import {PlausibleEvent} from '@shared/enum/plausible.event.enum';
@@ -11,10 +11,11 @@ import {Observable, Subscription} from 'rxjs';
 	templateUrl: './settings.component.html',
 	styleUrls: ['./settings.component.scss'],
 })
-export class SettingsComponent extends BaseComponent implements OnInit, OnDestroy {
+export class SettingsComponent extends BaseComponent implements OnInit, OnDestroy, AfterViewInit {
 	colorSub!: Subscription;
 	isDarkTheme!: Observable<boolean>;
 	colorsOpen = false;
+	loaded = false;
 	colors: TailwindColor[] = [];
 	selectedColor!: TailwindColor;
 
@@ -22,29 +23,35 @@ export class SettingsComponent extends BaseComponent implements OnInit, OnDestro
 		super();
 	}
 
-	ngOnInit() {
+	ngOnInit(): void {
 		this.isDarkTheme = this.themeService.getDarkTheme();
 		this.colors = this.colorService.getAllColors();
-		this.colorSub = this.colorService.getCurrentColor().subscribe(color => {
+		this.colorSub = this.colorService.getCurrentColor().subscribe((color: TailwindColor) => {
 			this.selectedColor = color;
 		});
 	}
 
-	changeColor(color: TailwindColor) {
+	ngAfterViewInit(): void {
+		setTimeout(() => {
+			this.loaded = true;
+		}, 300);
+	}
+
+	changeColor(color: TailwindColor): void {
 		this.analytics.triggerEvent(PlausibleEvent.CHANGE_COLOR, {color: color});
 		this.colorService.setCurrentColor(color);
 	}
 
-	toggleDarkTheme(dark: boolean) {
+	toggleDarkTheme(dark: boolean): void {
 		this.analytics.triggerEvent(PlausibleEvent.CHANGE_THEME, {darkTheme: dark});
 		this.themeService.setDarkTheme(dark);
 	}
 
-	toggleColors() {
+	toggleColors(): void {
 		this.colorsOpen = !this.colorsOpen;
 	}
 
-	ngOnDestroy() {
+	ngOnDestroy(): void {
 		this.colorSub.unsubscribe();
 	}
 }

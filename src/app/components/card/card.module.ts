@@ -7,6 +7,7 @@ import {Card1Component} from './card1/card1.component';
 import {Card2Component} from './card2/card2.component';
 import {Card3Component} from './card3/card3.component';
 import {Card4Component} from './card4/card4.component';
+import {Card5Component} from './card5/card5.component';
 
 const routes: Routes = [
 	{
@@ -23,6 +24,7 @@ const routes: Routes = [
 		Card2Component,
 		Card3Component,
 		Card4Component,
+		Card5Component,
 	],
 })
 export class CardModule {}

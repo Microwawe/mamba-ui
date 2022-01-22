@@ -8,13 +8,13 @@ import {environment} from '@env';
 import {CoreModule} from '@core/core.module';
 import {CustomPreloadingStrategy} from '@core/custom.preload.strategy';
 import {SharedModule} from '@shared/shared.module';
-import {FooterComponent} from '@shared/layout/footer/footer.component';
-import {HeaderComponent} from '@shared/layout/header/header.component';
+import {FooterComponent} from '@shared/components/footer/footer.component';
+import {HeaderComponent} from '@shared/components/header/header.component';
 import {NotFoundComponent} from '@shared/components/not-found/not-found.component';
-import {BreadcrumbComponent} from '@shared/layout/breadcrumb/breadcrumb.component';
+import {BreadcrumbComponent} from '@shared/components/breadcrumb/breadcrumb.component';
 import {HomeComponent} from '@shared/components/home/home.component';
-import {SettingsComponent} from '@shared/layout/settings/settings.component';
-import {MenuComponent} from '@shared/layout/menu/menu.component';
+import {SettingsComponent} from '@shared/components/settings/settings.component';
+import {MenuComponent} from '@shared/components/menu/menu.component';
 
 @NgModule({
 	declarations: [

@@ -10,6 +10,13 @@ export class FilterPipe implements PipeTransform {
 			return category;
 		}
 
-		return category.name.toLowerCase().includes(query.toLowerCase()) ? category : null;
+		if (category.name.toLowerCase().includes(query.toLowerCase())) {
+			return category;
+		}
+		if (category.tags?.some(tag => tag.toLowerCase().includes(query.toLowerCase()))) {
+			return category;
+		}
+
+		return null;
 	}
 }

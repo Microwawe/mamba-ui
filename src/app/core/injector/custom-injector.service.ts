@@ -5,8 +5,6 @@ import {ThemeService} from '../services/theme.service';
 export class CustomInjector {
 	private static injector: Injector | undefined;
 
-	constructor() {}
-
 	static getInstance(): Injector {
 		if (!CustomInjector.injector) {
 			CustomInjector.injector = Injector.create({
@@ -20,7 +18,7 @@ export class CustomInjector {
 		return CustomInjector.injector;
 	}
 
-	static setInjector(injector: Injector) {
+	static setInjector(injector: Injector): void {
 		CustomInjector.injector = injector;
 	}
 

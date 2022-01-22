@@ -53,14 +53,14 @@ export class BaseComponent implements OnDestroy {
 		this.combinedSub = combineLatest([
 			this.themeService.getDarkTheme(),
 			this.colorService.getCurrentColor(),
-		]).subscribe(([theme, color]) => {
+		]).subscribe(([theme, color]: [boolean, TailwindColor]) => {
 			this.darkTheme = theme;
 			this.setPrimaryColor(color);
 			this.setGrayscale();
 		});
 	}
 
-	setGrayscale() {
+	setGrayscale(): void {
 		this.plain = this.darkTheme ? '-coolGray-600' : '-coolGray-400';
 		this.plainInv = this.darkTheme ? '-coolGray-400' : '-coolGray-600';
 		this.neutral = this.darkTheme ? '-coolGray-700' : '-coolGray-300';
@@ -71,7 +71,7 @@ export class BaseComponent implements OnDestroy {
 		this.contrastInv = this.darkTheme ? '-coolGray-50' : '-coolGray-900';
 	}
 
-	setPrimaryColor(color: TailwindColor) {
+	setPrimaryColor(color: TailwindColor): void {
 		this.primaryLight = this.darkTheme ? `-${color.name}-300` : `-${color.name}-500`;
 		this.primary = this.darkTheme ? `-${color.name}-400` : `-${color.name}-600`;
 		this.primaryAlt = this.darkTheme ? `-${color.name}-600` : `-${color.name}-400`;

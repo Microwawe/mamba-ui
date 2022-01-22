@@ -1,11 +1,12 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
+import {BaseComponent} from '@shared/components/base/base.component';
 
 @Component({
 	selector: 'custom-button-showcase',
 	templateUrl: './button-showcase.component.html',
 })
-export class ButtonShowcaseComponent implements OnInit {
-	constructor() {}
-
-	ngOnInit() {}
+export class ButtonShowcaseComponent extends BaseComponent {
+	constructor() {
+		super();
+	}
 }

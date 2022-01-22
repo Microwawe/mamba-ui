@@ -1,25 +1,23 @@
 import {Injectable} from '@angular/core';
-import {BehaviorSubject} from 'rxjs';
+import {BehaviorSubject, Observable} from 'rxjs';
 
 @Injectable()
 export class MenuService {
 	sideMenuOpen = new BehaviorSubject<boolean>(false);
 
-	constructor() {}
-
-	open() {
+	open(): void {
 		this.sideMenuOpen.next(true);
 	}
 
-	close() {
+	close(): void {
 		this.sideMenuOpen.next(false);
 	}
 
-	toggle() {
+	toggle(): void {
 		this.sideMenuOpen.next(!this.sideMenuOpen.value);
 	}
 
-	isOpen() {
+	isOpen(): Observable<boolean> {
 		return this.sideMenuOpen.asObservable();
 	}
 }

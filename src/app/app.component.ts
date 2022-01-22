@@ -3,11 +3,11 @@ import {Component, OnDestroy} from '@angular/core';
 import {Title} from '@angular/platform-browser';
 import {Router, NavigationEnd, ActivatedRoute} from '@angular/router';
 import {filter, map} from 'rxjs/operators';
-import {Observable, Subscription} from 'rxjs';
 
 import {BaseComponent} from '@shared/components/base/base.component';
 import {MenuService} from '@core/services/menu.service';
 import {FullscreenModalService} from '@shared/services/fullscreen.modal.service';
+import {Observable, Subscription} from 'rxjs';
 
 @Component({
 	selector: 'app-root',
@@ -30,7 +30,7 @@ export class AppComponent extends BaseComponent implements OnDestroy {
 		super();
 	}
 
-	ngOnInit() {
+	ngOnInit(): void {
 		this.isDarkTheme = this.themeService.getDarkTheme();
 		this.modalContent = this.modalService.getModalOpen();
 		this.isOpen = this.menuService.isOpen();
@@ -59,11 +59,11 @@ export class AppComponent extends BaseComponent implements OnDestroy {
 			});
 	}
 
-	closeMenu() {
+	closeMenu(): void {
 		this.menuService.close();
 	}
 
-	ngOnDestroy() {
+	ngOnDestroy(): void {
 		this.eventSub.unsubscribe();
 	}
 }

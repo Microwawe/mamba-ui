@@ -6,7 +6,11 @@
 		<div class="flex justify-between px-2 py-4 overflow-x-auto sm:p-4 flex-nowrap">
 			<div class="space-x-2">
 				<button
-					class="px-2 py-1 text-sm"
+					class="px-2 py-1 text-sm bg-opacity-25 rounded-md hover:bg-opacity-50 focus:bg-opacity-50"
+					[ngClass]="[
+						options.language === '' ? 'bg' + primary : 'bg-transparent',
+						'hover:bg' + primary
+					]"
 					type="button"
 					(click)="showPreview()"
 					name="Show preview"
@@ -14,7 +18,11 @@
 					Preview
 				</button>
 				<button
-					class="px-2 py-1 text-sm"
+					class="px-2 py-1 text-sm bg-opacity-25 rounded-md hover:bg-opacity-50 focus:bg-opacity-50"
+					[ngClass]="[
+						options.language === 'html' ? 'bg' + primary : 'bg-transparent',
+						'hover:bg' + primary
+					]"
 					type="button"
 					(click)="showHtml()"
 					name="Show HTML code"
@@ -22,7 +30,11 @@
 					HTML
 				</button>
 				<button
-					class="px-2 py-1 text-sm"
+					class="px-2 py-1 text-sm bg-opacity-25 rounded-md hover:bg-opacity-50 focus:bg-opacity-50"
+					[ngClass]="[
+						options.language === 'vue' ? 'bg' + primary : 'bg-transparent',
+						'hover:bg' + primary
+					]"
 					type="button"
 					(click)="showVue()"
 					name="Show Vue template"
@@ -30,7 +42,11 @@
 					Vue
 				</button>
 				<button
-					class="px-2 py-1 text-sm"
+					class="px-2 py-1 text-sm bg-opacity-25 rounded-md hover:bg-opacity-50 focus:bg-opacity-50"
+					[ngClass]="[
+						options.language === 'jsx' ? 'bg' + primary : 'bg-transparent',
+						'hover:bg' + primary
+					]"
 					type="button"
 					(click)="showJSX()"
 					name="Show JSX code"

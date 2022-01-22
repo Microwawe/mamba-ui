@@ -12,7 +12,6 @@ module.exports = {
 				standard: [
 					/(bg|text|border|ring)-(coolGray|yellow|amber|orange|red|rose|pink|fuchsia|purple|violet|indigo|blue|sky|lightBlue|cyan|teal|emerald|green|lime)-[1-9]00$/,
 					/(from|to|divide)-coolGray-[1-9]00$/,
-					/(from|to)-(yellow|amber|orange|red|rose|pink|fuchsia|purple|violet|indigo|blue|sky|lightBlue|cyan|teal|emerald|green|lime)-[46]00$/,
 					/ring-offset-(coolGray)-[18]00$/,
 				],
 				greedy: [/token$/],
@@ -118,6 +117,7 @@ module.exports = {
 				'text-{colors}',
 				'hover:text-{colors}',
 				'{screens}:text-{colors}',
+				'{screens}:text-{font-size}',
 
 				'bg-{colors}',
 				'focus:bg-{colors}',

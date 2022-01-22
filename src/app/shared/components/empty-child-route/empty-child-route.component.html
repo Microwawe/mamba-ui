@@ -1,8 +1,40 @@
 <div
-	class="container flex items-center justify-center p-6 mx-auto mt-8 lg:my-16 h-80 sm:h-96 md:h-112 xl:h-128"
+	class="container flex flex-col items-center justify-center p-6 mx-auto mt-8 space-y-4 lg:my-16"
 >
+	<div class="flex flex-wrap justify-center">
+		<a
+			href="https://github.com/Microwawe/mamba-ui"
+			class="flex-shrink-0 px-3 py-2 m-3 text-sm font-medium rounded-md shadow-sm sm:text-base ring group md:px-4"
+			[ngClass]="[
+				'bg' + contrast,
+				'text' + primary,
+				'ring' + primary,
+				'hover:text' + contrast,
+				'hover:bg' + primary,
+				'focus:text' + contrast,
+				'focus:bg' + primary
+			]"
+		>
+			Star us on GitHub
+		</a>
+		<a
+			[routerLink]="['/contact']"
+			class="flex-shrink-0 px-3 py-2 m-3 text-sm font-medium rounded-md shadow-sm sm:text-base ring group md:px-4"
+			[ngClass]="[
+				'bg' + contrast,
+				'text' + primary,
+				'ring' + primary,
+				'hover:text' + contrast,
+				'hover:bg' + primary,
+				'focus:text' + contrast,
+				'focus:bg' + primary
+			]"
+		>
+			Give feedback
+		</a>
+	</div>
 	<img
-		class="object-contain h-80 sm:h-96 md:h-112 xl:h-128"
+		class="object-contain h-80 sm:h-96 md:h-112 xl:h-128 aspect-square"
 		src="assets/svg/monsters.svg"
 		alt=""
 	/>
