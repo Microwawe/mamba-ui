@@ -139,6 +139,12 @@ module.exports = {
 
 				'from-coolGray-900',
 				'to-coolGray-900',
+
+				'w-1/6',
+				'w-2/6',
+				'w-3/6',
+				'w-4/6',
+				'w-5/6',
 			],
 		}),
 		({addComponents, theme}) => {

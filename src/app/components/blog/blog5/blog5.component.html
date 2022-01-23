@@ -1,6 +1,6 @@
 <div
 	class="relative flex flex-col max-w-xl p-6 divide-y xl:flex-row xl:divide-y-0 xl:divide-x"
-	[ngClass]="['bg' + default, 'text' + defaultInv]"
+	[ngClass]="['bg' + contrast, 'text' + defaultInv, 'divide' + neutral]"
 >
 	<div class="p-3 space-y-1 xl:ml-6">
 		<h3 class="text-3xl font-semibold">Lorem ipsum dolor sit amet</h3>
@@ -9,9 +9,9 @@
 			incidunt odit eligendi mollitia quaerat autem nobis fugiat natus?
 		</p>
 	</div>
-	<div class="flex p-3 space-x-3">
+	<div class="flex items-center p-3 space-x-3">
 		<img
-			class="absolute top-0 left-0 object-cover w-12 h-12 rounded-full shadow bg-coolGray-500"
+			class="object-cover w-12 h-12 rounded-full shadow bg-coolGray-500"
 			alt=""
 			src="https://source.unsplash.com/100x100/?portrait"
 		/>
