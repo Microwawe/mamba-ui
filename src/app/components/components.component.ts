@@ -47,7 +47,7 @@ export class ComponentsComponent extends BaseComponent implements OnDestroy {
 			name: 'Snackbar',
 			link: 'snackbar',
 			count: 3,
-			tags: ['banner', 'tooltip', 'pop-up', 'notification'],
+			tags: ['banner', 'tooltip', 'pop-up', 'notification', 'alert'],
 		},
 		{name: 'Stats', link: 'stats', count: 5, tags: ['logo cloud']},
 		{name: 'Steps', link: 'steps', count: 4},
