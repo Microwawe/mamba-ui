@@ -44,6 +44,7 @@
 					<a
 						class="px-4 py-2 mb-2 text-sm border rounded sm:mb-0"
 						[ngClass]="['bg' + default, 'border' + plain, 'hover:border' + contrast]"
+						rel="noopener noreferrer"
 						href="/"
 					>
 						Do something
@@ -51,6 +52,7 @@
 					<a
 						class="px-4 py-2 text-sm border rounded"
 						[ngClass]="['bg' + default, 'border' + plain, 'hover:border' + contrast]"
+						rel="noopener noreferrer"
 						href="/"
 					>
 						Do something else
@@ -90,7 +92,12 @@
 					<span class="text-sm" [ngClass]="['text' + plainInv]">December 20, 2020</span>
 				</div>
 				<div class="flex -ml-16 md:ml-0">
-					<a class="px-4 py-6 rounded-md shadow" [ngClass]="['bg' + contrast]" href="/">
+					<a
+						class="px-4 py-6 rounded-md shadow"
+						[ngClass]="['bg' + contrast]"
+						rel="noopener noreferrer"
+						href="/"
+					>
 						<div class="flex flex-col space-y-4">
 							<div class="flex flex-col space-y-1">
 								<p class="font-semibold">Design to Save People from Themselves</p>
@@ -155,6 +162,7 @@
 					</div>
 					<div class="flex flex-wrap space-y-3 md:space-y-0 md:space-x-3">
 						<a
+							rel="noopener noreferrer"
 							href="https://twitter.com/brian_lovin/status/1327734503142354945?s=21"
 							target="_blank"
 							rel="noopener noreferrer"
@@ -213,7 +221,13 @@
 							minus reiciendis quis.
 						</p>
 
-						<a href="#" class="mt-6 hover:underlin focus:underline">View the project</a>
+						<a
+							rel="noopener noreferrer"
+							href="#"
+							class="mt-6 hover:underlin focus:underline"
+						>
+							View the project
+						</a>
 					</div>
 				</div>
 			</div>

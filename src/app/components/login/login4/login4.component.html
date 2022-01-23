@@ -26,7 +26,7 @@
 				[ngClass]="['border' + neutral, 'bg' + contrast, 'text' + defaultInv]"
 			/>
 			<div class="flex justify-end text-xs" [ngClass]="['text' + plainInv]">
-				<a href="#"> Forgot Password? </a>
+				<a rel="noopener noreferrer" href="#">Forgot Password?</a>
 			</div>
 		</div>
 
@@ -82,6 +82,8 @@
 
 	<p class="text-xs text-center sm:px-6" [ngClass]="['text' + plainInv]">
 		Don't have an account?
-		<a href="#" class="underline" [ngClass]="['text' + defaultInv]"> Sign up </a>
+		<a rel="noopener noreferrer" href="#" class="underline" [ngClass]="['text' + defaultInv]">
+			Sign up
+		</a>
 	</p>
 </div>

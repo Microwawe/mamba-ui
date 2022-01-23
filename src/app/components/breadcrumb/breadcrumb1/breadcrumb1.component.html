@@ -1,7 +1,7 @@
 <nav class="w-full p-4" [ngClass]="['bg' + default, 'text' + defaultInv]" aria-label="breadcrumb">
 	<ol class="flex h-8 space-x-2">
 		<li class="flex items-center">
-			<a href="#" class="hover:underline" title="Back to homepage">
+			<a rel="noopener noreferrer" href="#" class="hover:underline" title="Back to homepage">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 20 20"
@@ -28,6 +28,7 @@
 				<path d="M32 30.031h-32l16-28.061z" />
 			</svg>
 			<a
+				rel="noopener noreferrer"
 				href="#"
 				class="flex items-center px-1 capitalize hover:underline"
 				[ngClass]="{'hover:no-underline cursor-default': i == 2}"

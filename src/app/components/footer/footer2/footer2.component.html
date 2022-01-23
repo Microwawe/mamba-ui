@@ -4,7 +4,11 @@
 	>
 		<div class="grid grid-cols-12">
 			<div class="pb-6 col-span-full md:pb-0 md:col-span-6">
-				<a class="flex justify-center space-x-3 md:justify-start" href="#">
+				<a
+					class="flex justify-center space-x-3 md:justify-start"
+					rel="noopener noreferrer"
+					href="#"
+				>
 					<div
 						class="flex items-center justify-center w-12 h-12 rounded-full"
 						[ngClass]="['bg' + primary]"
@@ -29,7 +33,14 @@
 				<p class="pb-1 text-lg font-medium">Category</p>
 				<ul>
 					<li *ngFor="let i of [1, 2, 3, 4, 5]">
-						<a href="#" class="" [ngClass]="['hover:text' + primary]">Link</a>
+						<a
+							rel="noopener noreferrer"
+							href="#"
+							class=""
+							[ngClass]="['hover:text' + primary]"
+						>
+							Link
+						</a>
 					</li>
 				</ul>
 			</div>
@@ -37,7 +48,14 @@
 				<p class="pb-1 text-lg font-medium">Category</p>
 				<ul>
 					<li *ngFor="let i of [1, 2, 3, 4, 5]">
-						<a href="#" class="" [ngClass]="['hover:text' + primary]">Link</a>
+						<a
+							rel="noopener noreferrer"
+							href="#"
+							class=""
+							[ngClass]="['hover:text' + primary]"
+						>
+							Link
+						</a>
 					</li>
 				</ul>
 			</div>
@@ -47,10 +65,10 @@
 				class="flex flex-col self-center text-sm text-center md:block lg:col-start-1 md:space-x-6"
 			>
 				<span>©{{ year }} All rights reserved</span>
-				<a class="" href="#">
+				<a class="" rel="noopener noreferrer" href="#">
 					<span>Privacy policy</span>
 				</a>
-				<a class="" href="#">
+				<a class="" rel="noopener noreferrer" href="#">
 					<span>Terms of service</span>
 				</a>
 			</div>
@@ -58,6 +76,7 @@
 				<a
 					class="flex items-center justify-center w-10 h-10 rounded-full"
 					[ngClass]="['bg' + primary, 'text' + contrast]"
+					rel="noopener noreferrer"
 					href="#"
 					title="Email"
 				>
@@ -76,6 +95,7 @@
 				<a
 					class="flex items-center justify-center w-10 h-10 rounded-full"
 					[ngClass]="['bg' + primary, 'text' + contrast]"
+					rel="noopener noreferrer"
 					href="#"
 					title="Twitter"
 				>
@@ -93,6 +113,7 @@
 				<a
 					class="flex items-center justify-center w-10 h-10 rounded-full"
 					[ngClass]="['bg' + primary, 'text' + contrast]"
+					rel="noopener noreferrer"
 					href="#"
 					title="GitHub"
 				>

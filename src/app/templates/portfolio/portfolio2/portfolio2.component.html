@@ -3,13 +3,15 @@
 		<header
 			class="container flex items-center justify-between w-full max-w-3xl px-6 py-10 mx-auto xl:max-w-5xl"
 		>
-			<a href="/" class="block h-6 text-2xl font-semibold">Leroy Jenkins</a>
+			<a rel="noopener noreferrer" href="/" class="block h-6 text-2xl font-semibold">
+				Leroy Jenkins
+			</a>
 			<div class="flex items-center">
 				<div class="hidden space-x-2 font-medium sm:block">
-					<a class="p-1" href="/">Blog</a>
-					<a class="p-1" href="/">Tags</a>
-					<a class="p-1" href="/">Projects</a>
-					<a class="p-1" href="/">About</a>
+					<a class="p-1" rel="noopener noreferrer" href="/">Blog</a>
+					<a class="p-1" rel="noopener noreferrer" href="/">Tags</a>
+					<a class="p-1" rel="noopener noreferrer" href="/">Projects</a>
+					<a class="p-1" rel="noopener noreferrer" href="/">About</a>
 				</div>
 				<button
 					aria-label="Toggle Dark Mode"
@@ -61,6 +63,7 @@
 								<a
 									class="text-2xl font-bold tracking-widest"
 									[ngClass]="['text' + contrast]"
+									rel="noopener noreferrer"
 									href="/"
 								>
 									Blog
@@ -70,6 +73,7 @@
 								<a
 									class="text-2xl font-bold tracking-widest"
 									[ngClass]="['text' + contrast]"
+									rel="noopener noreferrer"
 									href="/"
 								>
 									Tags
@@ -79,6 +83,7 @@
 								<a
 									class="text-2xl font-bold tracking-widest"
 									[ngClass]="['text' + contrast]"
+									rel="noopener noreferrer"
 									href="/"
 								>
 									Projects
@@ -88,6 +93,7 @@
 								<a
 									class="text-2xl font-bold tracking-widest"
 									[ngClass]="['text' + contrast]"
+									rel="noopener noreferrer"
 									href="/"
 								>
 									About
@@ -114,7 +120,12 @@
 							</dl>
 							<div class="space-y-1">
 								<h3 class="text-2xl font-bold tracking-tight">
-									<a class="" [ngClass]="['text' + contrastInv]" href="">
+									<a
+										class=""
+										[ngClass]="['text' + contrastInv]"
+										rel="noopener noreferrer"
+										href="#"
+									>
 										{{ p.title }}
 									</a>
 								</h3>
@@ -122,13 +133,28 @@
 									{{ p.content }}
 								</p>
 								<div class="flex flex-wrap space-x-3">
-									<a class="text-xs" [ngClass]="['text' + primary]" href="">
+									<a
+										class="text-xs"
+										[ngClass]="['text' + primary]"
+										rel="noopener noreferrer"
+										href="#"
+									>
 										#angular
 									</a>
-									<a class="text-xs" [ngClass]="['text' + primary]" href="">
+									<a
+										class="text-xs"
+										[ngClass]="['text' + primary]"
+										rel="noopener noreferrer"
+										href="#"
+									>
 										#tailwind
 									</a>
-									<a class="text-xs" [ngClass]="['text' + primary]" href="">
+									<a
+										class="text-xs"
+										[ngClass]="['text' + primary]"
+										rel="noopener noreferrer"
+										href="#"
+									>
 										#webdev
 									</a>
 								</div>
@@ -144,6 +170,7 @@
 				</div>
 				<div class="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2">
 					<a
+						rel="noopener noreferrer"
 						href="#"
 						aria-label="Te nulla oportere reprimique his dolorum"
 						*ngFor="let i of [1, 2, 3, 4]"
@@ -157,6 +184,7 @@
 						/>
 						<div class="flex flex-col flex-1 p-6">
 							<a
+								rel="noopener noreferrer"
 								href="#"
 								class="text-xs tracking-wider uppercase hover:underline"
 								[ngClass]="['text' + primary]"

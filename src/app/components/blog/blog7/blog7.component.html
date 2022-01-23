@@ -3,6 +3,7 @@
 		<a
 			class="block max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12"
 			[ngClass]="['bg' + contrast]"
+			rel="noopener noreferrer"
 			href="#"
 		>
 			<img
@@ -27,6 +28,7 @@
 			<a
 				class="max-w-sm mx-auto group hover:no-underline focus:no-underline"
 				[ngClass]="['bg' + contrast, i > 3 ? 'hidden sm:block' : '']"
+				rel="noopener noreferrer"
 				href="#"
 				*ngFor="let i of [1, 2, 3, 4, 5, 6]"
 			>

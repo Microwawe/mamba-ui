@@ -2,7 +2,12 @@
 <div [ngClass]="['bg' + default, 'text' + defaultInv]" class="space-y-12">
 	<header class="p-4">
 		<div class="container flex justify-between h-16 mx-auto">
-			<a class="flex items-center p-2" href="#" aria-label="Back to homepage">
+			<a
+				class="flex items-center p-2"
+				rel="noopener noreferrer"
+				href="#"
+				aria-label="Back to homepage"
+			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					class="w-8 h-8"
@@ -20,12 +25,17 @@
 			</a>
 			<ul class="items-stretch hidden space-x-3 md:flex">
 				<li class="flex">
-					<a href="#" class="flex items-center px-4 -mb-1 border-b-2 border-transparent">
+					<a
+						rel="noopener noreferrer"
+						href="#"
+						class="flex items-center px-4 -mb-1 border-b-2 border-transparent"
+					>
 						About
 					</a>
 				</li>
 				<li class="flex">
 					<a
+						rel="noopener noreferrer"
 						href="#"
 						class="flex items-center px-4 -mb-1 border-b-2 border-transparent"
 						[ngClass]="['text' + primary, 'border' + primary]"
@@ -34,12 +44,20 @@
 					</a>
 				</li>
 				<li class="flex">
-					<a href="#" class="flex items-center px-4 -mb-1 border-b-2 border-transparent">
+					<a
+						rel="noopener noreferrer"
+						href="#"
+						class="flex items-center px-4 -mb-1 border-b-2 border-transparent"
+					>
 						Projects
 					</a>
 				</li>
 				<li class="flex">
-					<a href="#" class="flex items-center px-4 -mb-1 border-b-2 border-transparent">
+					<a
+						rel="noopener noreferrer"
+						href="#"
+						class="flex items-center px-4 -mb-1 border-b-2 border-transparent"
+					>
 						Contact
 					</a>
 				</li>
@@ -291,6 +309,7 @@
 			<a
 				class="block max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12"
 				[ngClass]="['bg' + contrast]"
+				rel="noopener noreferrer"
 				href="#"
 			>
 				<img
@@ -315,6 +334,7 @@
 				<a
 					class="max-w-sm mx-auto group hover:no-underline focus:no-underline"
 					[ngClass]="['bg' + contrast, i > 3 ? 'hidden sm:block' : '']"
+					rel="noopener noreferrer"
 					href="#"
 					*ngFor="let i of [1, 2, 3, 4, 5, 6]"
 				>
@@ -535,6 +555,7 @@
 					<a
 						class="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10"
 						[ngClass]="['bg' + primary, 'text' + contrast]"
+						rel="noopener noreferrer"
 						href="#"
 					>
 						<svg
@@ -551,6 +572,7 @@
 					<a
 						class="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10"
 						[ngClass]="['bg' + primary, 'text' + contrast]"
+						rel="noopener noreferrer"
 						href="#"
 					>
 						<svg
@@ -567,6 +589,7 @@
 					<a
 						class="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10"
 						[ngClass]="['bg' + primary, 'text' + contrast]"
+						rel="noopener noreferrer"
 						href="#"
 					>
 						<svg
@@ -583,6 +606,7 @@
 					<a
 						class="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10"
 						[ngClass]="['bg' + primary, 'text' + contrast]"
+						rel="noopener noreferrer"
 						href="#"
 					>
 						<svg
@@ -599,6 +623,7 @@
 					<a
 						class="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10"
 						[ngClass]="['bg' + primary, 'text' + contrast]"
+						rel="noopener noreferrer"
 						href="#"
 					>
 						<svg
