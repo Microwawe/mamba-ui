@@ -1,6 +1,10 @@
 <div
-	class="fixed left-0 z-40 max-h-screen transition-transform duration-300 transform translate-y-1/2 shadow-xl bottom-1/2 bg-coolGray-700 rounded-r-2xl"
-	[ngClass]="{'translate-x-0': colorsOpen, '-translate-x-full': !colorsOpen}"
+	class="fixed left-0 z-40 max-h-screen translate-y-1/2 shadow-xl bottom-1/2 bg-coolGray-700 rounded-r-2xl"
+	[ngClass]="{
+		'translate-x-0': colorsOpen,
+		'-translate-x-full': !colorsOpen,
+		'transition-transform duration-300 transform': loaded
+	}"
 	(click)="$event.stopPropagation()"
 >
 	<p class="p-2 text-center capitalize" [ngClass]="['text' + light]">

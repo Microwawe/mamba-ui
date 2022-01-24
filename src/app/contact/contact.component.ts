@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
+import {Location} from '@angular/common';
 
 import {BaseComponent} from '@shared/components/base/base.component';
 
@@ -6,10 +7,12 @@ import {BaseComponent} from '@shared/components/base/base.component';
 	selector: 'custom-contact',
 	templateUrl: './contact.component.html',
 })
-export class ContactComponent extends BaseComponent implements OnInit {
-	constructor() {
+export class ContactComponent extends BaseComponent {
+	constructor(private location: Location) {
 		super();
 	}
 
-	ngOnInit() {}
+	goBack(): void {
+		this.location.back();
+	}
 }

@@ -12,12 +12,17 @@
 						></span>
 						<span class="text-xs font-bold tracking-wider uppercase">Exclusive</span>
 					</h3>
-					<a href="#" class="font-serif hover:underline">
+					<a rel="noopener noreferrer" href="#" class="font-serif hover:underline">
 						{{ exc.title }}
 					</a>
 					<p class="text-xs" [ngClass]="['text' + plainInv]">
 						{{ exc.time }} ago by
-						<a href="#" class="hover:underline" [ngClass]="['text' + primary]">
+						<a
+							rel="noopener noreferrer"
+							href="#"
+							class="hover:underline"
+							[ngClass]="['text' + primary]"
+						>
 							Leroy Jenkins
 						</a>
 					</p>
@@ -28,7 +33,11 @@
 				<div class="flex w-full h-1 bg-opacity-10" [ngClass]="['bg' + primary]">
 					<div class="w-1/2 h-full" [ngClass]="['bg' + primary]"></div>
 				</div>
-				<a href="#" class="flex items-center justify-between w-full">
+				<a
+					rel="noopener noreferrer"
+					href="#"
+					class="flex items-center justify-between w-full"
+				>
 					<span class="text-xs font-bold tracking-wider uppercase">
 						See more exclusives
 					</span>
@@ -75,6 +84,7 @@
 					<span class="text-sm font-bold">Live</span>
 				</span>
 				<h1
+					rel="noopener noreferrer"
 					href="#"
 					class="font-serif text-2xl font-semibold group-hover:underline"
 					[ngClass]="['text' + light]"
@@ -111,12 +121,13 @@
 						class="flex-shrink-0 object-cover w-20 h-20 mr-4 bg-coolGray-500"
 					/>
 					<div class="flex flex-col flex-grow">
-						<a href="#" class="font-serif hover:underline">
+						<a rel="noopener noreferrer" href="#" class="font-serif hover:underline">
 							{{ s.title }}
 						</a>
 						<p class="mt-auto text-xs" [ngClass]="['text' + plainInv]">
 							{{ s.time }} ago
 							<a
+								rel="noopener noreferrer"
 								href="#"
 								class="block text-blue-400 lg:ml-2 lg:inline hover:underline"
 							>

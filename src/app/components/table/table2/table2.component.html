@@ -1,0 +1,65 @@
+<div class="container p-6 mx-auto" [ngClass]="['bg' + default, 'text' + defaultInv]">
+	<h2 class="mb-6 text-2xl font-semibold leading-tight">Invoices</h2>
+	<div class="overflow-x-auto">
+		<table class="min-w-full">
+			<thead class="">
+				<tr
+					class="text-xs font-semibold tracking-wider text-left uppercase border-b-2"
+					[ngClass]="['bg' + neutral, 'text' + contrastInv, 'border' + neutral]"
+				>
+					<th class="px-3 py-4 md:p-5">Client / Invoice</th>
+					<th class="px-3 py-4 md:p-5">Amount</th>
+					<th class="px-3 py-4 md:p-5">Issued / Due</th>
+					<th class="px-3 py-4 md:p-5">Status</th>
+					<th class="px-3 py-4 md:p-5"></th>
+				</tr>
+			</thead>
+			<tbody class="divide-y" [ngClass]="['divide' + neutral]">
+				<tr *ngFor="let i of [1, 2, 3, 4]" class="space-x-5 text-sm">
+					<td class="p-3 md:p-5">
+						<div class="flex space-x-3">
+							<img
+								class="flex-shrink-0 w-10 h-10 rounded-full bg-coolGray-500"
+								src="https://source.unsplash.com/50x50/?portrait?{{ i }}"
+								alt=""
+							/>
+							<div class="">
+								<p class="">Leroy Jenkins</p>
+								<p class="text-xs" [ngClass]="['text' + plainInv]">000{{ i }}</p>
+							</div>
+						</div>
+					</td>
+					<td class="p-3 md:p-5">
+						<p class="">${{ i }}0,000</p>
+						<p class="" [ngClass]="['text' + plainInv]">USD</p>
+					</td>
+					<td class="p-3 md:p-5">
+						<p class="" [ngClass]="['text' + plainInv]">Due in {{ 3 * i + 2 }} days</p>
+					</td>
+					<td class="p-3 md:p-5">
+						<span
+							class="px-3 py-1 font-semibold rounded-full"
+							[ngClass]="['bg' + primary, 'text' + contrast]"
+						>
+							<span class="">Pending</span>
+						</span>
+					</td>
+					<td class="p-3 md:p-5">
+						<button
+							type="button"
+							title="Open details"
+							class=""
+							[ngClass]="['text' + plain]"
+						>
+							<svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+								<path
+									d="M12 6a2 2 0 110-4 2 2 0 010 4zm0 8a2 2 0 110-4 2 2 0 010 4zm-2 6a2 2 0 104 0 2 2 0 00-4 0z"
+								/>
+							</svg>
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

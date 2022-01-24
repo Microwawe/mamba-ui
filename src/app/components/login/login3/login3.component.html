@@ -22,9 +22,14 @@
 			<div class="">
 				<div class="flex justify-between mb-2">
 					<label for="password" class="text-sm">Password</label>
-					<a href="#" class="text-xs hover:underline" [ngClass]="['text' + plainInv]"
-						>Forgot password?</a
+					<a
+						rel="noopener noreferrer"
+						href="#"
+						class="text-xs hover:underline"
+						[ngClass]="['text' + plainInv]"
 					>
+						Forgot password?
+					</a>
 				</div>
 				<input
 					type="password"
@@ -48,7 +53,15 @@
 			</div>
 			<p class="px-6 text-sm text-center" [ngClass]="['text' + plainInv]">
 				Don&#x27;t have an account yet?
-				<a href="#" class="hover:underline" [ngClass]="['text' + primary]">Sign up</a>.
+				<a
+					rel="noopener noreferrer"
+					href="#"
+					class="hover:underline"
+					[ngClass]="['text' + primary]"
+				>
+					Sign up
+				</a>
+				.
 			</p>
 		</div>
 	</form>

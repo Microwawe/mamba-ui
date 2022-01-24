@@ -175,6 +175,11 @@ const routes: Routes = [
 				data: {title: 'Step', breadcrumb: 'Step'},
 			},
 			{
+				path: 'table',
+				loadChildren: () => import('./table/table.module').then(m => m.TableModule),
+				data: {title: 'Table', breadcrumb: 'Table'},
+			},
+			{
 				path: 'tab',
 				loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsModule),
 				data: {title: 'Tabs', breadcrumb: 'Tabs'},

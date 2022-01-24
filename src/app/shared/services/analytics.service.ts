@@ -11,7 +11,7 @@ export class AnalyticsService {
 
 	constructor(private http: HttpClient) {}
 
-	triggerEvent(eventName: string, props?: object) {
+	triggerEvent(eventName: string, props?: any): void {
 		if (
 			/^localhost$|^127(?:\.[0-9]+){0,2}\.[0-9]+$|^(?:0*:)*?:?0*1$/.test(location.hostname) ||
 			location.protocol === 'file:'

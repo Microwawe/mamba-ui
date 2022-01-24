@@ -1,11 +1,12 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
+import {BaseComponent} from '@shared/components/base/base.component';
 
 @Component({
 	selector: 'custom-feature-showcase',
 	templateUrl: './feature-showcase.component.html',
 })
-export class FeatureShowcaseComponent implements OnInit {
-	constructor() {}
-
-	ngOnInit() {}
+export class FeatureShowcaseComponent extends BaseComponent {
+	constructor() {
+		super();
+	}
 }

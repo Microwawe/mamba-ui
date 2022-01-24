@@ -10,12 +10,18 @@
 			[ngClass]="['bg' + contrast]"
 		>
 			<div class="space-y-2">
-				<a href="#" class="inline-block text-2xl font-semibold sm:text-3xl">
+				<a
+					rel="noopener noreferrer"
+					href="#"
+					class="inline-block text-2xl font-semibold sm:text-3xl"
+				>
 					The Best Activewear from the Nordstrom Anniversary Sale
 				</a>
 				<p class="text-xs" [ngClass]="['text' + plainInv]">
 					By
-					<a href="#" class="text-xs hover:underline">Leroy Jenkins</a>
+					<a rel="noopener noreferrer" href="#" class="text-xs hover:underline">
+						Leroy Jenkins
+					</a>
 				</p>
 			</div>
 			<div [ngClass]="['text' + defaultInv]">

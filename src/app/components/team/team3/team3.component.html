@@ -12,8 +12,8 @@
 				[ngClass]="['bg' + defaultInv, 'text' + default]"
 			>
 				<img
-					class="self-center w-24 h-24 -mt-12 bg-center bg-cover rounded-full bg-coolGray-500"
-					src="https://source.unsplash.com/10{{ i }}x10{{ i }}/?portrait"
+					class="self-center flex-shrink-0 w-24 h-24 -mt-12 bg-center bg-cover rounded-full bg-coolGray-500"
+					src="https://source.unsplash.com/100x100/?portrait?{{ i }}"
 					alt=""
 				/>
 				<div class="flex-1 my-4">
@@ -22,6 +22,7 @@
 				</div>
 				<div class="flex items-center justify-center p-3 space-x-3 border-t-2">
 					<a
+						rel="noopener noreferrer"
 						href="#"
 						[ngClass]="['text' + contrast, 'hover:text' + primary]"
 						title="Email"
@@ -39,6 +40,7 @@
 						</svg>
 					</a>
 					<a
+						rel="noopener noreferrer"
 						href="#"
 						[ngClass]="['text' + contrast, 'hover:text' + primary]"
 						title="Twitter"
@@ -55,6 +57,7 @@
 						</svg>
 					</a>
 					<a
+						rel="noopener noreferrer"
 						href="#"
 						[ngClass]="['text' + contrast, 'hover:text' + primary]"
 						title="LinkedIn"
@@ -71,6 +74,7 @@
 						</svg>
 					</a>
 					<a
+						rel="noopener noreferrer"
 						href="#"
 						[ngClass]="['text' + contrast, 'hover:text' + primary]"
 						title="GitHub"

@@ -1,13 +1,14 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {BaseComponent} from '@shared/components/base/base.component';
 
 @Component({
 	selector: 'custom-showcase',
 	templateUrl: './showcase.component.html',
 })
-export class ShowcaseComponent implements OnInit {
+export class ShowcaseComponent extends BaseComponent {
 	@Input() title = '';
 
-	constructor() {}
-
-	ngOnInit() {}
+	constructor() {
+		super();
+	}
 }

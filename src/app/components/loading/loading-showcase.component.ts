@@ -1,11 +1,12 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
+import {BaseComponent} from '@shared/components/base/base.component';
 
 @Component({
 	selector: 'custom-loading-showcase',
 	templateUrl: './loading-showcase.component.html',
 })
-export class LoadingShowcaseComponent implements OnInit {
-	constructor() {}
-
-	ngOnInit() {}
+export class LoadingShowcaseComponent extends BaseComponent {
+	constructor() {
+		super();
+	}
 }

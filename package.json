@@ -41,6 +41,7 @@
 		"@angular/cli": "^12.2.4",
 		"@angular/compiler-cli": "^12.2.4",
 		"@fullhuman/postcss-purgecss": "^4.0.3",
+		"@tailwindcss/aspect-ratio": "^0.4.0",
 		"@tailwindcss/forms": "^0.3.3",
 		"@tailwindcss/typography": "^0.4.1",
 		"@types/jasmine": "~3.5.0",

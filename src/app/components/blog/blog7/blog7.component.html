@@ -3,6 +3,7 @@
 		<a
 			class="block max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12"
 			[ngClass]="['bg' + contrast]"
+			rel="noopener noreferrer"
 			href="#"
 		>
 			<img
@@ -27,12 +28,13 @@
 			<a
 				class="max-w-sm mx-auto group hover:no-underline focus:no-underline"
 				[ngClass]="['bg' + contrast, i > 3 ? 'hidden sm:block' : '']"
+				rel="noopener noreferrer"
 				href="#"
 				*ngFor="let i of [1, 2, 3, 4, 5, 6]"
 			>
 				<img
 					class="object-cover w-full rounded h-44 bg-coolGray-500"
-					src="https://source.unsplash.com/random/48{{ i }}x36{{ i }}"
+					src="https://source.unsplash.com/random/480x360?{{ i }}"
 					role="presentation"
 				/>
 
@@ -53,6 +55,7 @@
 		</div>
 		<div class="flex justify-center">
 			<button
+				type="button"
 				class="px-6 py-3 text-sm rounded-md hover:underline"
 				[ngClass]="['bg' + contrast, 'text' + plainInv]"
 			>

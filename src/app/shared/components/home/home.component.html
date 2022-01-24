@@ -5,16 +5,16 @@
 	<section class="px-6 pt-8 pb-12 sm:pt-20 md:pb-16 lg:pb-0 2xl:pt-28">
 		<div class="container flex flex-col justify-center mx-auto lg:flex-row lg:justify-between">
 			<div
-				class="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left"
+				class="flex flex-col justify-center p-6 text-center rounded-sm lg:flex-1 lg:max-w-xl lg:text-left"
 			>
-				<h1 class="text-5xl font-bold leading-none sm:text-6xl">
+				<h1 class="text-5xl font-bold leading-none sm:text-7xl">
 					Kickstart your next
 					<span [ngClass]="['text' + primary]">website</span>
 					in minutes
 				</h1>
 				<p class="mt-6 mb-8 text-lg sm:mb-12">
 					Mamba UI is a free, open-source collection of UI components
-					<br class="hidden md:inline lg:hidden" />
+					<br class="hidden md:inline" />
 					and templates based on Tailwind CSS.
 				</p>
 				<div
@@ -31,10 +31,10 @@
 				</div>
 			</div>
 			<div
-				class="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128"
+				class="flex items-center justify-center flex-shrink-0 p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128"
 			>
 				<img
-					class="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128"
+					class="object-contain w-auto h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128 aspect-square"
 					src="assets/svg/Business_SVG.svg"
 					alt=""
 				/>
@@ -148,7 +148,7 @@
 		</div>
 	</section>
 
-	<section class="p-4 lg:p-8" [ngClass]="['bg' + default, 'text' + defaultInv]">
+	<section class="p-4 lg:p-8" [ngClass]="['text' + defaultInv]">
 		<div class="container mx-auto space-y-20 lg:space-y-36">
 			<div
 				class="flex flex-col max-w-xl mx-auto overflow-hidden rounded-md lg:max-w-full lg:flex-row min-h-96"
@@ -162,7 +162,7 @@
 						<img
 							src="assets/images/demo1.png"
 							alt="Screenshot of mambaui.com"
-							class="object-contain h-72 lg:h-96"
+							class="object-contain w-auto h-72 lg:h-96 aspect-video"
 						/>
 					</picture>
 				</div>
@@ -197,7 +197,7 @@
 						<img
 							src="assets/images/demo2.png"
 							alt="Screenshot of mambaui.com"
-							class="object-contain h-72 lg:h-96"
+							class="object-contain w-auto h-72 lg:h-96 aspect-video"
 						/>
 					</picture>
 				</div>
@@ -229,7 +229,7 @@
 						<img
 							src="assets/images/demo5.png"
 							alt="Screenshot of mambaui.com"
-							class="object-contain h-72 lg:h-96"
+							class="object-contain w-auto h-72 lg:h-96 aspect-video"
 						/>
 					</picture>
 				</div>
@@ -268,6 +268,7 @@
 				<a
 					class="flex items-center px-8 py-3 space-x-4 text-lg font-semibold rounded cursor-pointer"
 					[ngClass]="['bg' + contrast, 'text' + defaultInv]"
+					rel="noopener noreferrer"
 					href="https://twitter.com/mamba_ui"
 				>
 					<svg
@@ -317,9 +318,10 @@
 						What does this cost?
 					</summary>
 					<p class="px-4 pb-4" [ngClass]="['text' + plainInv]">
-						Nothing! All of this is MIT licensed so you can use them in your own
-						projects as you wish. If you'd still like to support me you can
+						Nothing! All of this is MIT licensed so you can use them in your own
+						projects as you wish. If you'd still like to support me you can
 						<a
+							rel="noopener noreferrer"
 							href="https://github.com/Microwawe/mamba-ui"
 							class="font-semibold underline"
 						>
@@ -329,17 +331,18 @@
 						<a
 							aria-label="Support me via Buy me a coffee"
 							class="font-semibold underline"
+							rel="noopener noreferrer"
 							href="https://www.buymeacoffee.com/mambaui"
 						>
 							buy me a coffee.
 						</a>
 					</p>
 					<p class="px-4 pb-4" [ngClass]="['text' + plainInv]">
-						We also have a couple of new and exiting extra features planned.
-						You can find more information about the upcoming features and
-						their release schedules in our 
+						We also have a couple of new and exiting extra features planned. You can
+						find more information about the upcoming features and their release
+						schedules in our
 						<a [routerLink]="['/docs/roadmap']" class="font-semibold underline">
-							product roadmap
+							product roadmap
 						</a>
 						.
 					</p>
@@ -353,6 +356,7 @@
 						templates as fast as we can. If you have a specific component, section or
 						template that you need, just open an issue in
 						<a
+							rel="noopener noreferrer"
 							href="https://github.com/Microwawe/mamba-ui/issues"
 							target="_blank"
 							rel="noopener noreferrer"
@@ -362,6 +366,7 @@
 						</a>
 						or message us via
 						<a
+							rel="noopener noreferrer"
 							href="https://twitter.com/mamba_ui"
 							target="_blank"
 							rel="noopener noreferrer"

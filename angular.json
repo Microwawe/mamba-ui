@@ -114,6 +114,9 @@
 					"configurations": {
 						"production": {
 							"browserTarget": "mamba-ui:build:production"
+						},
+						"development": {
+							"browserTarget": "mamba-ui:build:development"
 						}
 					}
 				},

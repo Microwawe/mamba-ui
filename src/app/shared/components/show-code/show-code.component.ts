@@ -41,7 +41,7 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit, O
 		super();
 	}
 
-	ngAfterViewInit() {
+	ngAfterViewInit(): void {
 		this.combinedSub = combineLatest([
 			this.colorService.getCurrentColor(),
 			this.themeService.getDarkTheme(),
@@ -55,18 +55,19 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit, O
 		this.options.component = this.rawContent?.nativeElement?.firstChild.localName;
 	}
 
-	copyToClipboard() {
+	copyToClipboard(): void {
 		this.copied = true;
 		this.formatter.copyToClipboard(this.prettyCode);
 		this.analytics.triggerEvent(PlausibleEvent.COPY_CODE, this.options);
 	}
 
-	showPreview() {
+	showPreview(): void {
 		this.codeVisible = false;
 		this.copied = false;
+		this.options.language = '';
 	}
 
-	showHtml() {
+	showHtml(): void {
 		this.options.language = 'html';
 		this.prettyCode = this.formatter.beautifyHTML(this.getRawCode());
 		this.prettyCode = this.formatter.toggleDarkModeVariants(
@@ -76,7 +77,7 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit, O
 		this.showCode(this.prettyCode);
 	}
 
-	showJSX() {
+	showJSX(): void {
 		this.options.language = 'jsx';
 		this.prettyCode = this.formatter.beautifyHTML(this.getRawCode());
 		this.prettyCode = this.formatter.toggleDarkModeVariants(
@@ -87,17 +88,17 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit, O
 		this.showCode(this.prettyCode, 'jsx');
 	}
 
-	showReactClass() {
+	showReactClass(): void {
 		this.prettyCode = this.formatter.toReactClass(this.getRawCode());
 		this.showCode(this.prettyCode, 'jsx');
 	}
 
-	showReactFunctional() {
+	showReactFunctional(): void {
 		this.prettyCode = this.formatter.toReactFunctional(this.getRawCode());
 		this.showCode(this.prettyCode, 'jsx');
 	}
 
-	showVue() {
+	showVue(): void {
 		this.options.language = 'vue';
 		this.prettyCode = this.formatter.toVue(this.getRawCode());
 		this.prettyCode = this.formatter.toggleDarkModeVariants(
@@ -107,23 +108,23 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit, O
 		this.showCode(this.prettyCode);
 	}
 
-	showCode(content: string, language = 'html') {
+	showCode(content: string, language = 'html'): void {
 		this.code = Prism.highlight(content, Prism.languages[language], language);
 		this.codeVisible = true;
 	}
 
-	getRawCode() {
+	getRawCode(): string {
 		if (this.rawContent?.nativeElement?.firstChild.innerHTML) {
 			this.rawCode = this.rawContent?.nativeElement?.firstChild.innerHTML;
 		}
 		return this.rawCode;
 	}
 
-	showFullscreen() {
+	showFullscreen(): void {
 		this.modal.open(this.getRawCode());
 	}
 
-	ngOnDestroy() {
+	ngOnDestroy(): void {
 		this.combinedSub.unsubscribe();
 	}
 }

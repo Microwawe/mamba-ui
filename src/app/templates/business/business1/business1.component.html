@@ -6,7 +6,7 @@
 			class="container flex items-center justify-between h-16 px-4 mx-auto rounded"
 			[ngClass]="['bg' + contrast]"
 		>
-			<a href="#" aria-label="Homepage">
+			<a rel="noopener noreferrer" href="#" aria-label="Homepage">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					class="w-6 h-6"
@@ -24,9 +24,9 @@
 			</a>
 			<div class="items-center hidden space-x-8 lg:flex">
 				<div class="space-x-4">
-					<a href="#">Link</a>
-					<a href="#">Link</a>
-					<a href="#">Link</a>
+					<a rel="noopener noreferrer" href="#">Link</a>
+					<a rel="noopener noreferrer" href="#">Link</a>
+					<a rel="noopener noreferrer" href="#">Link</a>
 				</div>
 				<button
 					class="px-4 py-2 rounded-md"
@@ -299,7 +299,7 @@
 							Our team is here to help you.
 						</h2>
 						<div class="flex justify-center p-4">
-							<a class="" href="#">Meet our crew &gt;</a>
+							<a class="" rel="noopener noreferrer" href="#">Meet our crew &gt;</a>
 						</div>
 						<img
 							src="https://source.unsplash.com/random/360x240"
@@ -315,12 +315,13 @@
 				class="container flex justify-between p-6 mx-auto lg:p-8"
 				[ngClass]="['bg' + contrast]"
 			>
-				<a class="font-bold" href="#">Mamba</a>
+				<a class="font-bold" rel="noopener noreferrer" href="#">Mamba</a>
 				<div class="flex space-x-2">
 					<a
 						class="flex items-center justify-center"
 						[ngClass]="['text' + plainInv]"
 						aria-label="Email"
+						rel="noopener noreferrer"
 						href="#"
 					>
 						<svg
@@ -339,6 +340,7 @@
 						class="flex items-center justify-center"
 						[ngClass]="['text' + plainInv]"
 						aria-label="Twitter"
+						rel="noopener noreferrer"
 						href="#"
 					>
 						<svg
@@ -356,6 +358,7 @@
 						class="flex items-center justify-center"
 						[ngClass]="['text' + plainInv]"
 						aria-label="Github"
+						rel="noopener noreferrer"
 						href="#"
 					>
 						<svg
