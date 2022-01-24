@@ -1,5 +1,13 @@
 import {environment} from '@env';
-import {Component, OnDestroy} from '@angular/core';
+import {
+	Component,
+	OnDestroy,
+	AfterViewInit,
+	OnInit,
+	Renderer2,
+	ViewChild,
+	ElementRef,
+} from '@angular/core';
 import {Title} from '@angular/platform-browser';
 import {Router, NavigationEnd, ActivatedRoute} from '@angular/router';
 import {filter, map} from 'rxjs/operators';
@@ -13,19 +21,22 @@ import {Observable, Subscription} from 'rxjs';
 	selector: 'app-root',
 	templateUrl: './app.component.html',
 })
-export class AppComponent extends BaseComponent implements OnDestroy {
+export class AppComponent extends BaseComponent implements OnInit, OnDestroy, AfterViewInit {
+	@ViewChild('loadingScreen') loadingScreen!: ElementRef;
 	modalContent!: Observable<string>;
 	isDarkTheme!: Observable<boolean>;
 	isOpen!: Observable<boolean>;
 	eventSub!: Subscription;
 	devMode = false;
+	loaded = false;
 
 	constructor(
 		private titleService: Title,
 		private menuService: MenuService,
 		private modalService: FullscreenModalService,
 		private router: Router,
-		private activatedRoute: ActivatedRoute
+		private activatedRoute: ActivatedRoute,
+		private renderer: Renderer2
 	) {
 		super();
 	}
@@ -57,6 +68,12 @@ export class AppComponent extends BaseComponent implements OnDestroy {
 					.join(' | ');
 				this.titleService.setTitle(newTitle);
 			});
+	}
+
+	ngAfterViewInit(): void {
+		setTimeout(() => {
+			this.renderer.setStyle(this.loadingScreen.nativeElement, 'display', 'none');
+		}, 500);
 	}
 
 	closeMenu(): void {
