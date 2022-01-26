@@ -1,40 +1,34 @@
 <div class="container p-6 mx-auto" [ngClass]="['bg' + default, 'text' + defaultInv]">
 	<h2 class="mb-6 text-2xl font-semibold leading-tight">Invoices</h2>
 	<div class="overflow-x-auto">
-		<table class="min-w-full">
+		<table class="w-full whitespace-nowrap">
+			<colgroup>
+				<col span="5" class="" />
+			</colgroup>
 			<thead class="">
 				<tr
 					class="text-xs font-semibold tracking-wider text-left uppercase border-b-2"
 					[ngClass]="['bg' + neutral, 'text' + contrastInv, 'border' + neutral]"
 				>
-					<th class="px-3 py-4 md:p-5">Client / Invoice</th>
+					<th class="px-3 py-4 md:p-5">Client</th>
 					<th class="px-3 py-4 md:p-5">Amount</th>
-					<th class="px-3 py-4 md:p-5">Issued / Due</th>
+					<th class="px-3 py-4 md:p-5">Schedule</th>
 					<th class="px-3 py-4 md:p-5">Status</th>
 					<th class="px-3 py-4 md:p-5"></th>
 				</tr>
 			</thead>
 			<tbody class="divide-y" [ngClass]="['divide' + neutral]">
-				<tr *ngFor="let i of [1, 2, 3, 4]" class="space-x-5 text-sm">
+				<tr *ngFor="let i of [1, 2, 3, 4]" class="m-3 space-x-5 text-sm md:m-5">
 					<td class="p-3 md:p-5">
-						<div class="flex space-x-3">
-							<img
-								class="flex-shrink-0 w-10 h-10 rounded-full bg-coolGray-500"
-								src="https://source.unsplash.com/50x50/?portrait?{{ i }}"
-								alt=""
-							/>
-							<div class="">
-								<p class="">Leroy Jenkins</p>
-								<p class="text-xs" [ngClass]="['text' + plainInv]">000{{ i }}</p>
-							</div>
-						</div>
+						<p class="">Leroy Jenkins</p>
+						<p class="text-xs" [ngClass]="['text' + plainInv]">000{{ i }}</p>
 					</td>
 					<td class="p-3 md:p-5">
 						<p class="">${{ i }}0,000</p>
 						<p class="" [ngClass]="['text' + plainInv]">USD</p>
 					</td>
 					<td class="p-3 md:p-5">
-						<p class="" [ngClass]="['text' + plainInv]">Due in {{ 3 * i + 2 }} days</p>
+						<p class="">Due in {{ 3 * i + 2 }} days</p>
 					</td>
 					<td class="p-3 md:p-5">
 						<span

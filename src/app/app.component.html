@@ -1,8 +1,4 @@
 <div
-	#loadingScreen
-	style="background-color: #1f2937; height: 100%; width: 100%; position: absolute; z-index: 9999"
-></div>
-<div
 	*ngIf="(modalContent | async) == ''"
 	class="relative flex flex-row w-full h-full font-sans"
 	[ngClass]="['text' + defaultInv, (isDarkTheme | async) ? 'bg-coolGray-900' : 'bg-coolGray-200']"
@@ -19,6 +15,10 @@
 	</div>
 </div>
 <custom-fullscreen-modal *ngIf="modalContent | async"></custom-fullscreen-modal>
+<div
+	#loadingScreen
+	style="background-color: #1f2937; height: 100%; width: 100%; position: absolute; z-index: 9999"
+></div>
 <span
 	*ngIf="devMode"
 	style="z-index: 999"
