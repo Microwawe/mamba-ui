@@ -51,7 +51,7 @@ export class ComponentsComponent extends BaseComponent implements OnDestroy {
 		},
 		{name: 'Stats', link: 'stats', count: 5, tags: ['logo cloud']},
 		{name: 'Steps', link: 'steps', count: 4},
-		{name: 'Table', link: 'table', count: 2, tags: ['list']}, // TODO
+		{name: 'Table', link: 'table', count: 4, tags: ['list']},
 		{name: 'Tabs', link: 'tab', count: 3},
 		{name: 'Team', link: 'team', count: 4},
 		{name: 'Testimonial', link: 'testimonial', count: 5},

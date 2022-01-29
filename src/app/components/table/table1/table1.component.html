@@ -1,4 +1,4 @@
-<div class="container p-4 mx-auto" [ngClass]="['text' + defaultInv]">
+<div class="container p-2 mx-auto sm:p-4" [ngClass]="['text' + defaultInv]">
 	<h2 class="mb-4 text-2xl font-semibold leading-tight">Contacts</h2>
 	<div class="overflow-x-auto">
 		<table class="w-full p-6 text-xs text-left whitespace-nowrap">
@@ -23,30 +23,30 @@
 				</tr>
 			</thead>
 			<tbody
-				*ngFor="let char of ['A', 'B', 'C']"
+				*ngFor="let row of rows"
 				class="border-b"
 				[ngClass]="['bg' + contrast, 'border' + neutral]"
 			>
-				<tr *ngFor="let i of [1, 2, 3]">
+				<tr *ngFor="let sub of row.subrows; let i = index">
 					<td class="px-3 text-2xl font-medium" [ngClass]="['text' + plainInv]">
-						{{ i == 1 ? char : '' }}
+						{{ i == 0 ? row.char : '' }}
 					</td>
 					<td class="px-3 py-2">
-						<p class="">Leroy Adams</p>
+						<p class="">{{ sub.name }}</p>
 					</td>
 					<td class="px-3 py-2">
-						<span class="">UI Designer</span>
-						<p class="" [ngClass]="['text' + plainInv]">Coca Cola co.</p>
+						<span class="">{{ sub.title }}</span>
+						<p class="" [ngClass]="['text' + plainInv]">{{ sub.company }}</p>
 					</td>
 					<td class="px-3 py-2">
-						<p class="">555-555-5555</p>
+						<p class="">{{ sub.phone }}</p>
 					</td>
 					<td class="px-3 py-2">
-						<p class="">leroy@jenkins.com</p>
+						<p class="">{{ sub.email }}</p>
 					</td>
 					<td class="px-3 py-2">
-						<p class="">71 Cherry Court, SO</p>
-						<p class="" [ngClass]="['text' + plainInv]">United Kingdom</p>
+						<p class="">{{ sub.address }}</p>
+						<p class="" [ngClass]="['text' + plainInv]">{{ sub.country }}</p>
 					</td>
 					<td class="px-3 py-2">
 						<button

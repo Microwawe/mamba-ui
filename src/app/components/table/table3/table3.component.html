@@ -1,0 +1,62 @@
+<div
+	class="container p-2 mx-auto rounded-md sm:p-4"
+	[ngClass]="['text' + defaultInv, 'bg' + contrast]"
+>
+	<h2 class="mb-3 text-2xl font-semibold leading-tight">Standings</h2>
+	<div class="overflow-x-auto">
+		<table class="min-w-full text-xs">
+			<thead class="rounded-t-lg" [ngClass]="['bg' + neutral]">
+				<tr class="text-right">
+					<th class="p-3 text-left" title="Ranking">#</th>
+					<th class="p-3 text-left" title="Team name">Team</th>
+					<th class="p-3" title="Wins">W</th>
+					<th class="p-3" title="Losses">L</th>
+					<th class="p-3" title="Win percentage">Win%</th>
+					<th class="p-3" title="Games behind">GB</th>
+					<th class="p-3" title="Home games">Home</th>
+					<th class="p-3" title="Away games">Away</th>
+					<th class="p-3" title="Last 10 games">L10</th>
+					<th class="p-3" title="Current streak">Streak</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr
+					*ngFor="let team of teams; let i = index"
+					class="text-right border-b border-opacity-20"
+					[ngClass]="['border' + neutral, 'bg' + default]"
+				>
+					<td class="px-3 py-2 text-left">
+						<span>{{ i + 1 }}</span>
+					</td>
+					<td class="px-3 py-2 text-left">
+						<span>{{ team.name }}</span>
+					</td>
+					<td class="px-3 py-2">
+						<span>{{ team.wins }}</span>
+					</td>
+					<td class="px-3 py-2">
+						<span class="">{{ team.losses }}</span>
+					</td>
+					<td class="px-3 py-2">
+						<span class="">{{ team.winprc }}</span>
+					</td>
+					<td class="px-3 py-2 text-right">
+						<span>{{ team.behind }}</span>
+					</td>
+					<td class="px-3 py-2">
+						<span>{{ team.home }}</span>
+					</td>
+					<td class="px-3 py-2">
+						<span>{{ team.away }}</span>
+					</td>
+					<td class="px-3 py-2">
+						<span>{{ team.last10 }}</span>
+					</td>
+					<td class="px-3 py-2">
+						<span>{{ team.streak }}</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

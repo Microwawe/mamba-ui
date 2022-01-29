@@ -1,5 +1,5 @@
-<div class="container p-4 mx-auto" [ngClass]="['text' + defaultInv]">
-	<h2 class="mb-6 text-2xl font-semibold leading-tight">Invoices</h2>
+<div class="container p-2 mx-auto sm:p-4" [ngClass]="['text' + defaultInv]">
+	<h2 class="mb-4 text-2xl font-semibold leading-tight">Invoices</h2>
 	<div class="overflow-x-auto">
 		<table class="min-w-full text-xs">
 			<colgroup>
@@ -10,7 +10,7 @@
 				<col />
 				<col class="w-24" />
 			</colgroup>
-			<thead class="rounded-t-lg" [ngClass]="['bg' + neutral]">
+			<thead class="" [ngClass]="['bg' + neutral]">
 				<tr class="text-left">
 					<th class="p-3">Invoice #</th>
 					<th class="p-3">Client</th>
@@ -22,33 +22,33 @@
 			</thead>
 			<tbody>
 				<tr
-					*ngFor="let i of [1, 2, 3, 4]"
+					*ngFor="let row of rows"
 					class="border-b border-opacity-20"
 					[ngClass]="['border' + neutral, 'bg' + contrast]"
 				>
 					<td class="p-3">
-						<p>00098236128</p>
+						<p>{{ row.invoice }}</p>
 					</td>
 					<td class="p-3">
-						<p>Company X</p>
+						<p>{{ row.client }}</p>
 					</td>
 					<td class="p-3">
-						<p class="">14 Jan 2022</p>
+						<p class="">{{ row.issued }}</p>
 						<p class="" [ngClass]="['text' + plainInv]">Friday</p>
 					</td>
 					<td class="p-3">
-						<p class="">01 Feb 2022</p>
+						<p class="">{{ row.due }}</p>
 						<p class="" [ngClass]="['text' + plainInv]">Tuesday</p>
 					</td>
 					<td class="p-3 text-right">
-						<p>$15,702</p>
+						<p>${{ row.amount }}</p>
 					</td>
 					<td class="p-3 text-right">
 						<span
 							class="px-3 py-1 font-semibold rounded-md"
 							[ngClass]="['bg' + primary, 'text' + contrast]"
 						>
-							<span class="">Pending</span>
+							<span class="">{{ row.status }}</span>
 						</span>
 					</td>
 				</tr>
