@@ -49,4 +49,7 @@ package-lock.json
 .DS_Store
 Thumbs.db
 
+# Angular cache
+.angular/
+
 safelist.txt
