@@ -30,7 +30,7 @@ export class ComponentsComponent extends BaseComponent implements OnDestroy {
 		{name: 'Feature', link: 'feature', count: 8, tags: ['content', 'incentives']},
 		{name: 'Footer', link: 'footer', count: 5},
 		{name: 'Form', link: 'form', count: 1, tags: ['input']},
-		{name: 'Gallery', link: 'gallery', count: 1},
+		{name: 'Gallery', link: 'gallery', count: 2},
 		{name: 'Header', link: 'header', count: 5, tags: ['navigation', 'navbar', 'menu']},
 		{name: 'Hero', link: 'hero', count: 5, tags: ['content']},
 		{name: 'Input', link: 'input', count: 4},

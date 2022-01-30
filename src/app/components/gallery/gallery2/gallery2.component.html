@@ -1,0 +1,11 @@
+<section class="py-6" [ngClass]="['bg' + default]">
+	<div class="container flex flex-col justify-center p-4 mx-auto">
+		<div class="grid grid-cols-1 gap-4 lg:grid-cols-4 sm:grid-cols-2">
+			<img
+				*ngFor="let i of [1, 2, 3, 4]"
+				src="https://source.unsplash.com/random/300x300/?{{ i }}"
+				class="object-cover w-full aspect-square bg-coolGray-500"
+			/>
+		</div>
+	</div>
+</section>
