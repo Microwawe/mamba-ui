@@ -23,6 +23,7 @@ export class ComponentsComponent extends BaseComponent implements OnDestroy {
 		{name: 'Button', link: 'button', count: 6},
 		{name: 'Call to action', link: 'call-to-action', count: 6, tags: ['cta', 'newsletter']},
 		{name: 'Card', link: 'card', count: 5},
+		{name: 'Carousel', link: 'carousel', count: 1}, // TODO
 		{name: 'Contact', link: 'contact', count: 3, tags: ['input']},
 		{name: 'Error', link: 'error', count: 2, tags: ['404', '500', 'offline']},
 		{name: 'Faq', link: 'faq', count: 4},

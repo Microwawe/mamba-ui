@@ -54,6 +54,12 @@ const routes: Routes = [
 				data: {title: 'Card', breadcrumb: 'Card'},
 			},
 			{
+				path: 'carousel',
+				loadChildren: () =>
+					import('./carousel/carousel.module').then(m => m.CarouselModule),
+				data: {title: 'Carousel', breadcrumb: 'Carousel'},
+			},
+			{
 				path: 'contact',
 				loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule),
 				data: {title: 'Contact', breadcrumb: 'Contact'},
