@@ -26,7 +26,7 @@ export class ComponentsComponent extends BaseComponent implements OnDestroy {
 		{name: 'Carousel', link: 'carousel', count: 1}, // TODO
 		{name: 'Contact', link: 'contact', count: 3, tags: ['input']},
 		{name: 'Error', link: 'error', count: 2, tags: ['404', '500', 'offline']},
-		{name: 'Faq', link: 'faq', count: 4},
+		{name: 'Faq', link: 'faq', count: 6},
 		{name: 'Feature', link: 'feature', count: 8, tags: ['content', 'incentives']},
 		{name: 'Footer', link: 'footer', count: 5},
 		{name: 'Form', link: 'form', count: 1, tags: ['input']},
