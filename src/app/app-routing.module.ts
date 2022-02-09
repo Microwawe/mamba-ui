@@ -13,12 +13,12 @@ const routes: Routes = [
 	{
 		path: 'components',
 		loadChildren: () => import('./components/components.module').then(m => m.ComponentsModule),
-		data: {title: 'Components', breadcrumb: 'Components'},
+		data: {title: 'Components', breadcrumb: 'Components', preload: true},
 	},
 	{
 		path: 'templates',
 		loadChildren: () => import('./templates/templates.module').then(m => m.TemplatesModule),
-		data: {title: 'Templates', breadcrumb: 'Templates'},
+		data: {title: 'Templates', breadcrumb: 'Templates', preload: true},
 	},
 	{
 		path: 'docs',
