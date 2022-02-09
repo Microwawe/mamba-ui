@@ -204,4 +204,35 @@ describe('Service: Formatter', () => {
 			expect(service.removeAngularCode(str)).toBe(result);
 		}));
 	});
+
+	describe('useReactSyntax()', () => {
+		it('should change "class" to "className"', inject(
+			[FormatterService],
+			(service: FormatterService) => {
+				const str = '<span class="text-coolGray-800"></span>';
+				const result = '<span className="text-coolGray-800"></span>';
+				expect(service.useReactSyntax(str)).toBe(result);
+			}
+		));
+
+		it('should add closing slash to <img>', inject(
+			[FormatterService],
+			(service: FormatterService) => {
+				const str = `<img src="https://source.unsplash.com/100x100/?portrait?1" alt="" >`;
+				const result = `<img src="https://source.unsplash.com/100x100/?portrait?1" alt="" />`;
+				expect(service.useReactSyntax(str)).toBe(result);
+			}
+		));
+
+		it('should change svg properties to camelCase', inject(
+			[FormatterService],
+			(service: FormatterService) => {
+				const str =
+					'<svg xmlns="http://www.w3.org/2000/svg" fill="none" class="w-5 h-5 fill-current" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd" clip-rule="evenodd" d="M19 9l-7 7-7-7" /></svg>';
+				const result =
+					'<svg xmlns="http://www.w3.org/2000/svg" fill="none" className="w-5 h-5 fill-current" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" fillRule="evenodd" clipRule="evenodd" d="M19 9l-7 7-7-7" /></svg>';
+				expect(service.useReactSyntax(str)).toBe(result);
+			}
+		));
+	});
 });

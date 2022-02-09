@@ -3,7 +3,7 @@ import {AfterViewInit, Component, OnDestroy, OnInit} from '@angular/core';
 import {BaseComponent} from '@shared/components/base/base.component';
 import {PlausibleEvent} from '@shared/enum/plausible.event.enum';
 import {TailwindColor} from '@shared/interfaces/tailwind-colors.interface';
-import {AnalyticsService} from '@shared/services/analytics.service';
+import {AnalyticsService} from '@core/services/analytics.service';
 import {Observable, Subscription} from 'rxjs';
 
 @Component({

@@ -1,8 +1,6 @@
 import {Injectable} from '@angular/core';
 
-@Injectable({
-	providedIn: 'root',
-})
+@Injectable()
 export class FormatterService {
 	constructor() {}
 
@@ -12,7 +10,6 @@ export class FormatterService {
 		cleanedString = this.removeAngularComments(cleanedString);
 		cleanedString = this.removeEmptyClasses(cleanedString);
 		cleanedString = this.removeEmptyWhitespace(cleanedString);
-		//cleanedString = this.toggleDarkModeVariants(cleanedString);
 
 		div.innerHTML = cleanedString.trim();
 		return this.formatNode(div, startAtLevel).innerHTML.trim();
@@ -43,7 +40,7 @@ export class FormatterService {
 
 	/**
 	 * Removes Angular directives that start with "ng" from the string
-	 * @param codeStr The code
+	 * @param codeStr The HTML code
 	 */
 	removeAngularCode(codeStr: string) {
 		return codeStr.replace(/[\s]*ng-[^"\s]*="[^"]*"/g, '');
@@ -51,15 +48,15 @@ export class FormatterService {
 
 	/**
 	 * Removes Angular binding comments for "ng-reflect-ng-if" and "ng-reflect-for-of" for example
-	 * @param codeStr The code
+	 * @param codeStr The HTML code
 	 */
 	removeAngularComments(codeStr: string) {
 		return codeStr.replace(/[\s]*<!--[.\s\w=":,{}[\]-]+-->[\s]*/gm, '');
 	}
 
 	/**
-	 * Removes class=""
-	 * @param codeStr The code
+	 * Removes empty class=""
+	 * @param codeStr The HTML code
 	 */
 	removeEmptyClasses(codeStr: string) {
 		return codeStr.replace(/ class=""/gm, '');
@@ -68,12 +65,18 @@ export class FormatterService {
 	/**
 	 * Removes extra whitespace between the opening and closing tags
 	 * <span> Whitespace before and after this text will be removed </span>
-	 * @param codeStr The code
+	 * @param codeStr The HTML code
 	 */
 	removeEmptyWhitespace(codeStr: string) {
 		return codeStr.replace(/>\s([^<]*)\s</g, '>$1<');
 	}
 
+	/**
+	 * Adds or removes the 'dark:' from all the colors.
+	 * @param codeStr The HTML code
+	 * @param darkTheme Adds dark-variant if this is true and vice versa
+	 * @returns
+	 */
 	toggleDarkModeVariants(codeStr: string, darkTheme: boolean) {
 		return darkTheme
 			? codeStr.replace(
@@ -96,11 +99,16 @@ export class FormatterService {
 	}
 
 	useReactSyntax(codeStr: string) {
-		const cleanSVGs = codeStr.replace(/(stroke|fill|clip)-[a-z]/g, prop => {
+		const cleanStroke = codeStr.replace(/(stroke)-[a-z]/g, prop => {
 			const parts = prop.split('-');
 			return parts[0] + parts[1].toUpperCase();
 		});
-		return cleanSVGs.replace(/class=/gm, 'className=');
+		const cleanSVGs = cleanStroke.replace(/(fill|clip)-rule/g, prop => {
+			const parts = prop.split('-');
+			return parts[0] + parts[1].charAt(0).toUpperCase() + parts[1].slice(1);
+		});
+		const closeImgTags = cleanSVGs.replace(/<img([^<]*)>/g, '<img$1/>');
+		return closeImgTags.replace(/class=/gm, 'className=');
 	}
 
 	toVue(codeStr: string) {
@@ -111,7 +119,7 @@ export class FormatterService {
 	}
 
 	toReactFunctional(codeStr: string) {
-		let content = 'const MambaUI = (props) => {\n';
+		let content = 'const mambaUI = (props) => {\n';
 		content += '\t return (\n';
 		content += '\t\t' + this.beautifyHTML(codeStr, 2);
 		content += '\n\t);\n';
@@ -120,7 +128,7 @@ export class FormatterService {
 	}
 
 	toReactClass(codeStr: string) {
-		let content = 'var mambaUI = React.createClass({\n';
+		let content = 'const mambaUI = React.createClass({\n';
 		content += '\t render: function() {' + '\n';
 		content += '\t\t return (';
 		content += codeStr;
