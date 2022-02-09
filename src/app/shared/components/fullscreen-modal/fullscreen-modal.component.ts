@@ -2,7 +2,7 @@ import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 import {take} from 'rxjs/operators';
 
 import {BaseComponent} from '@shared/components/base/base.component';
-import {FullscreenModalService} from '@shared/services/fullscreen.modal.service';
+import {FullscreenModalService} from '@core/services/fullscreen.modal.service';
 
 @Component({
 	selector: 'custom-fullscreen-modal',

@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 
 import {BaseComponent} from '@shared/components/base/base.component';
 import {PlausibleEvent} from '@shared/enum/plausible.event.enum';
-import {AnalyticsService} from '@shared/services/analytics.service';
+import {AnalyticsService} from '@core/services/analytics.service';
 
 @Component({
 	selector: 'app-not-found',

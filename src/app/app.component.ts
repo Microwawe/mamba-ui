@@ -14,7 +14,7 @@ import {filter, map} from 'rxjs/operators';
 
 import {BaseComponent} from '@shared/components/base/base.component';
 import {MenuService} from '@core/services/menu.service';
-import {FullscreenModalService} from '@shared/services/fullscreen.modal.service';
+import {FullscreenModalService} from '@core/services/fullscreen.modal.service';
 import {Observable, Subscription} from 'rxjs';
 
 @Component({
