@@ -90,27 +90,27 @@
 		<nav class="hidden md:block">
 			<a
 				class="p-3 font-medium"
-				[ngClass]="['text' + contrast, rla.isActive ? 'underline' : 'no-underline']"
+				[ngClass]="['text' + contrast]"
 				#rla
-				routerLinkActive
+				routerLinkActive="underline"
 				[routerLink]="['/components']"
 			>
 				Components
 			</a>
 			<a
 				class="p-3 font-medium"
-				[ngClass]="['text' + contrast, rla.isActive ? 'underline' : 'no-underline']"
+				[ngClass]="['text' + contrast]"
 				#rla
-				routerLinkActive
+				routerLinkActive="underline"
 				[routerLink]="['/templates']"
 			>
 				Templates
 			</a>
 			<a
 				class="p-3 font-medium"
-				[ngClass]="['text' + contrast, rla.isActive ? 'underline' : 'no-underline']"
+				[ngClass]="['text' + contrast]"
 				#rla
-				routerLinkActive
+				routerLinkActive="underline"
 				[routerLink]="['/docs']"
 			>
 				Documentation

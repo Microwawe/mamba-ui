@@ -5,6 +5,7 @@ import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 
 import {FilterPipe} from '@shared/pipes/filter.pipe';
+import {SafeHtmlPipe} from '@shared/pipes/safe-html.pipe';
 import {BaseComponent} from '@shared/components/base/base.component';
 import {FullscreenModalComponent} from '@shared/components/fullscreen-modal/fullscreen-modal.component';
 import {RequirementsComponent} from '@shared/components/requirements/requirements.component';
@@ -25,8 +26,7 @@ const components = [
 	ShowcaseComponent,
 	ShowCodeComponent,
 ];
-
-const pipes = [FilterPipe];
+const pipes = [FilterPipe, SafeHtmlPipe];
 
 const directives = [DummylinkDirective];
 

@@ -1,4 +1,12 @@
-<div class="relative flex items-center justify-center w-full" [ngClass]="['text' + contrastInv]">
+<div class="relative flex items-center justify-start w-full" [ngClass]="['text' + contrastInv]">
+	<div class="flex items-center justify-start w-full h-full gap-2 py-4 mx-auto overflow-auto">
+		<div *ngFor="let i of [1, 2, 3, 4, 5]" class="relative flex flex-shrink-0">
+			<img
+				src="https://source.unsplash.com/random/240x360/?{{ i }}"
+				class="object-cover object-center w-32 sm:h-96 sm:w-60 h-52 bg-coolGray-500"
+			/>
+		</div>
+	</div>
 	<button
 		aria-label="Slide back"
 		type="button"
