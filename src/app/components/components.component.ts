@@ -27,8 +27,8 @@ export class ComponentsComponent extends BaseComponent implements OnDestroy {
 		{name: 'Carousel', link: 'carousel', count: 2},
 		{name: 'Contact', link: 'contact', count: 3, tags: ['input']},
 		{name: 'Error', link: 'error', count: 2, tags: ['404', '500', 'offline']},
-		{name: 'Faq', link: 'faq', count: 5}, // TODO FAQ6
-		{name: 'Feature', link: 'feature', count: 8, tags: ['content', 'incentives']},
+		{name: 'Faq', link: 'faq', count: 6},
+		{name: 'Feature', link: 'feature', count: 8, tags: ['content', 'incentives']}, // https://tighten.com/
 		{name: 'Footer', link: 'footer', count: 5},
 		{name: 'Form', link: 'form', count: 1, tags: ['input']},
 		{name: 'Gallery', link: 'gallery', count: 2},
@@ -41,7 +41,7 @@ export class ComponentsComponent extends BaseComponent implements OnDestroy {
 		{name: 'News', link: 'news', count: 3},
 		{name: 'Pagination', link: 'pagination', count: 3},
 		{name: 'Pricing', link: 'pricing', count: 5},
-		{name: 'Profile', link: 'profile', count: 4},
+		{name: 'Profile', link: 'profile', count: 5},
 		{name: 'Review', link: 'review', count: 3},
 		{name: 'Shopping cart', link: 'shopping-cart', count: 2, tags: ['e-commerce', 'ecommerce']},
 		{name: 'Sidebar', link: 'sidebar', count: 3, tags: ['menu']},

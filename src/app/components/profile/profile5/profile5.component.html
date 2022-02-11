@@ -1,0 +1,69 @@
+<div
+	class="flex flex-col max-w-sm p-2 mx-auto rounded-sm shadow-lg"
+	[ngClass]="['bg' + contrast, 'text' + defaultInv]"
+>
+	<div class="flex-1 p-5 space-y-2">
+		<div class="flex items-start justify-between">
+			<div class="flex mb-2 space-x-4">
+				<img
+					class="w-12 h-12 rounded-full flex-shrink-0"
+					src="https://source.unsplash.com/100x100/?portrait?5"
+				/>
+				<a class="flex flex-col" href="#" rel="noopener noreffer" target="blank">
+					<h2 class="text-xl font-semibold leading-snug">Leroy Jenkins</h2>
+					<p class="text-xs" [ngClass]="['text' + plainInv]">Team lead @ Apple</p>
+				</a>
+			</div>
+			<button
+				class="inline-flex flex-shrink-0 rounded-full hover:ring focus-visible:ring"
+				[ngClass]="['text' + plainInv, 'ring' + plainInv]"
+			>
+				<span class="sr-only">Menu</span>
+				<svg class="w-8 h-8 fill-current" viewBox="0 0 32 32">
+					<circle cx="16" cy="10" r="2" />
+					<circle cx="16" cy="16" r="2" />
+					<circle cx="16" cy="22" r="2" />
+				</svg>
+			</button>
+		</div>
+		<p class="text-sm">Has veniam tritani recusabo ea, at malis scripta saperet usu.</p>
+	</div>
+	<div class="border-t" [ngClass]="['border' + plain]">
+		<div class="flex">
+			<a
+				class="flex-1 px-3 py-4 text-sm font-medium text-center flex items-center justify-center space-x-2 border-r"
+				[ngClass]="[
+					'hover:text' + primary,
+					'focus-visible:text' + primary,
+					'border' + plain,
+					'hover:border' + plain,
+					'focus-visible:border' + plain
+				]"
+				href="#"
+				rel="noopener noreffer"
+				target="blank"
+			>
+				<svg class="flex-shrink-0 w-4 h-4 fill-current" viewBox="0 0 16 16">
+					<path
+						d="M8 0C3.6 0 0 3.1 0 7s3.6 7 8 7h.6l5.4 2v-4.4c1.2-1.2 2-2.8 2-4.6 0-3.9-3.6-7-8-7zm4 10.8v2.3L8.9 12H8c-3.3 0-6-2.2-6-5s2.7-5 6-5 6 2.2 6 5c0 2.2-2 3.8-2 3.8z"
+					/>
+				</svg>
+				<span>Send email</span>
+			</a>
+			<a
+				class="flex-1 px-3 py-4 text-sm font-medium text-center flex space-x-2 items-center justify-center"
+				[ngClass]="['hover:text' + primary, 'focus-visible:text' + primary]"
+				href="#"
+				rel="noopener noreffer"
+				target="blank"
+			>
+				<svg class="flex-shrink-0 w-4 h-4 fill-current" viewBox="0 0 16 16">
+					<path
+						d="M11.7.3c-.4-.4-1-.4-1.4 0l-10 10c-.2.2-.3.4-.3.7v4c0 .6.4 1 1 1h4c.3 0 .5-.1.7-.3l10-10c.4-.4.4-1 0-1.4l-4-4zM4.6 14H2v-2.6l6-6L10.6 8l-6 6zM12 6.6L9.4 4 11 2.4 13.6 5 12 6.6z"
+					/>
+				</svg>
+				<span>Edit profile</span>
+			</a>
+		</div>
+	</div>
+</div>
