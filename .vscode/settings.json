@@ -137,7 +137,7 @@
 				"javascript": [
 					"const moduleName = await window.showInputBox({prompt: 'module name'})",
 
-					"const we = new vscode.WorkspaceEdit();",
+					"const edit = new vscode.WorkspaceEdit();",
 
 					"const uriBase = vscode.workspace.workspaceFolders[0].uri.toString() + '/src/app/components/' + `${moduleName}`;",
 
@@ -146,7 +146,7 @@
 					"const newModuleFile = vscode.Uri.parse(`${uriBase}/${moduleName}.module.ts`);",
 					"const newFiles = [showcaseHtmlFile, showcaseTsFile, newModuleFile];",
 
-					"for (const newFile of newFiles) { let document = await we.createFile(newFile, { ignoreIfExists: false, overwrite: true });};",
+					"for (const newFile of newFiles) { let document = await edit.createFile(newFile, { ignoreIfExists: false, overwrite: true });};",
 
 					"const uppercaseName = `${moduleName.charAt(0).toUpperCase() + moduleName.slice(1)}`;",
 
@@ -193,11 +193,11 @@
 					"</custom-showcase>",
 					"`;",
 
-					"await we.insert(showcaseHtmlFile, new vscode.Position(0, 0), showcaseHtmlTemplate);",
-					"await we.insert(showcaseTsFile, new vscode.Position(0, 0), showcaseTsTemplate);",
-					"await we.insert(newModuleFile, new vscode.Position(0, 0), moduleTemplate);",
+					"await edit.insert(showcaseHtmlFile, new vscode.Position(0, 0), showcaseHtmlTemplate);",
+					"await edit.insert(showcaseTsFile, new vscode.Position(0, 0), showcaseTsTemplate);",
+					"await edit.insert(newModuleFile, new vscode.Position(0, 0), moduleTemplate);",
 
-					"await vscode.workspace.applyEdit(we);",
+					"await vscode.workspace.applyEdit(edit);",
 
 					"for (const newFile of newFiles) { let document = await vscode.workspace.openTextDocument(newFile); await document.save(); };"
 				]
