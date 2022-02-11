@@ -215,11 +215,38 @@ describe('Service: Formatter', () => {
 			}
 		));
 
-		it('should add closing slash to <img>', inject(
+		it('should add a closing slash to <img>', inject(
 			[FormatterService],
 			(service: FormatterService) => {
 				const str = `<img src="https://source.unsplash.com/100x100/?portrait?1" alt="" >`;
 				const result = `<img src="https://source.unsplash.com/100x100/?portrait?1" alt="" />`;
+				expect(service.useReactSyntax(str)).toBe(result);
+			}
+		));
+
+		it('should not add a closing slash to <img> if it already has one', inject(
+			[FormatterService],
+			(service: FormatterService) => {
+				const str = `<img src="https://source.unsplash.com/100x100/?portrait?1" alt="" />`;
+				const result = `<img src="https://source.unsplash.com/100x100/?portrait?1" alt="" />`;
+				expect(service.useReactSyntax(str)).toBe(result);
+			}
+		));
+
+		it('should add a closing slash to <input>', inject(
+			[FormatterService],
+			(service: FormatterService) => {
+				const str = '<input type="text" placeholder="Add a comment..." >';
+				const result = '<input type="text" placeholder="Add a comment..." />';
+				expect(service.useReactSyntax(str)).toBe(result);
+			}
+		));
+
+		it('should not add a closing slash to <input> if it already has one', inject(
+			[FormatterService],
+			(service: FormatterService) => {
+				const str = '<input type="text" placeholder="Add a comment..." />';
+				const result = '<input type="text" placeholder="Add a comment..." />';
 				expect(service.useReactSyntax(str)).toBe(result);
 			}
 		));
