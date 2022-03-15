@@ -16,7 +16,7 @@
 			"architect": {
 				"build": {
 					"builder": "@angular-builders/custom-webpack:browser",
-					"defaultConfiguration": "production",
+					"defaultConfiguration": "development",
 					"options": {
 						"customWebpackConfig": {
 							"path": "./webpack.config.js"
@@ -36,7 +36,7 @@
 							"src/mstile-150x150.png",
 							"src/safari-pinned-tab.svg",
 							"src/site.webmanifest",
-                            "src/sitemap.xml",
+							"src/sitemap.xml",
 							"src/robots.txt",
 							{
 								"glob": "**/*",

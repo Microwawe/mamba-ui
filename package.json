@@ -4,9 +4,9 @@
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve",
-		"start:dev": "ng serve --configuration development",
+		"start:prod": "ng serve --configuration production",
 		"build": "ng build",
-		"build:dev": "ng build --configuration development --build-optimizer --output-hashing all",
+		"build:prod": "ng build --configuration production --build-optimizer --output-hashing all",
 		"test": "ng test",
 		"lint": "gts lint",
 		"watch": "ng test --browser ChromeHeadless",

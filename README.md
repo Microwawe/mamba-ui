@@ -81,15 +81,9 @@ How to use the components on your own websites?
 
 ## Contributing
 
-Right now this is just a hobby project for me and there aren't a lot of users (if any) so I update and maintain the project as I have spare time.
+Right now this is just a hobby project for me and there aren't a lot of users so I update and maintain the project as I have spare time.
 
-If you want to help, pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-## Development
-
-After you clone this repository to your desktop with `git clone https://github.com/Microwawe/mamba-ui.git`, go to its root directory and run `npm install` to install its dependencies.
-
-Once the dependencies are installed, you can run `ng serve` to start the application. You will then be able to access it at `localhost:4200`
+If you want to help, pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. A good place to start is our [contributing documentation](https://github.com/Microwawe/mamba-ui/blob/master/CONTRIBUTING.md).
 
 ## License
 
