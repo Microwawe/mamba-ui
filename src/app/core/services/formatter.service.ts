@@ -107,7 +107,7 @@ export class FormatterService {
 			const parts = prop.split('-');
 			return parts[0] + parts[1].charAt(0).toUpperCase() + parts[1].slice(1);
 		});
-		const closeImgTags = cleanSVGs.replace(/<img ([^<]*)[^\/]>/g, '<img $1 />');
+		const closeImgTags = cleanSVGs.replace(/<img ([^<]*[^\/\s])[\s]?>/g, '<img $1 />');
 		const closeInputTags = closeImgTags.replace(/<input ([^<]*)[^\/]>/g, '<input $1 />');
 		return closeInputTags.replace(/class=/gm, 'className=');
 	}

@@ -215,10 +215,10 @@ describe('Service: Formatter', () => {
 			}
 		));
 
-		it('should add a closing slash to <img>', inject(
+		it('should add a closing slash to <img> and a space before the closing tag', inject(
 			[FormatterService],
 			(service: FormatterService) => {
-				const str = `<img src="https://source.unsplash.com/100x100/?portrait?1" alt="" >`;
+				const str = `<img src="https://source.unsplash.com/100x100/?portrait?1" alt="">`;
 				const result = `<img src="https://source.unsplash.com/100x100/?portrait?1" alt="" />`;
 				expect(service.useReactSyntax(str)).toBe(result);
 			}
@@ -228,6 +228,24 @@ describe('Service: Formatter', () => {
 			[FormatterService],
 			(service: FormatterService) => {
 				const str = `<img src="https://source.unsplash.com/100x100/?portrait?1" alt="" />`;
+				const result = `<img src="https://source.unsplash.com/100x100/?portrait?1" alt="" />`;
+				expect(service.useReactSyntax(str)).toBe(result);
+			}
+		));
+
+		it('should not add double space before the closing tag', inject(
+			[FormatterService],
+			(service: FormatterService) => {
+				const str = `<img src="https://source.unsplash.com/100x100/?portrait?1" alt="" >`;
+				const result = `<img src="https://source.unsplash.com/100x100/?portrait?1" alt="" />`;
+				expect(service.useReactSyntax(str)).toBe(result);
+			}
+		));
+
+		it('should not replace the character just before the closing tag', inject(
+			[FormatterService],
+			(service: FormatterService) => {
+				const str = `<img src="https://source.unsplash.com/100x100/?portrait?1" alt="">`;
 				const result = `<img src="https://source.unsplash.com/100x100/?portrait?1" alt="" />`;
 				expect(service.useReactSyntax(str)).toBe(result);
 			}
