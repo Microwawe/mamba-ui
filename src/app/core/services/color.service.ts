@@ -7,6 +7,18 @@ import {TailwindColor, TailwindColorPalette} from '@shared/interfaces/tailwind-c
 
 @Injectable()
 export class ColorService {
+	ignoredColors = ['inherit', 'transparent', 'current', 'black', 'white', 'lightblue'];
+	grayScaleColors = [
+		'slate',
+		'gray',
+		'zinc',
+		'neutral',
+		'stone',
+		'warmgray',
+		'bluegray',
+		'coolgray',
+		'truegray',
+	];
 	private key = 'custom-current-color';
 	private currentColor!: BehaviorSubject<TailwindColor>;
 	private defaultColor: TailwindColor = {name: 'violet', shades: twColors.violet};
@@ -37,7 +49,7 @@ export class ColorService {
 
 	setupColors(): void {
 		this.allTailwindColors = Object.getOwnPropertyNames(twColors)
-			.filter(colorName => colorName !== 'black' && colorName !== 'white')
+			.filter(color => !this.ignoredColors.includes(color.toLowerCase()))
 			.map(colorName => {
 				const mappedColor: TailwindColor = {
 					name: colorName,
@@ -54,6 +66,6 @@ export class ColorService {
 	}
 
 	isGrayscale(color: TailwindColor): boolean {
-		return color.name.toLowerCase().includes('gray');
+		return this.grayScaleColors.includes(color.name.toLowerCase());
 	}
 }

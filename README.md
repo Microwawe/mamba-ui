@@ -29,7 +29,7 @@ If you want to know what we have planned for the near future, you can check out 
 
 There is no need to download or install anything from Mamba UI. Just copy-paste the components and templates to your project and they'll work out-of-the-box without any modifications as long as you have [TailwindCSS installed](https://tailwindcss.com/docs/installation) in your project.
 
-NOTE: Tailwind doesn't have all the different colors enabled in the default configuration so here are all the possible colors mapped to their respective names.
+NOTE: ~~Tailwind CSS doesn't have all the different colors enabled in the default configuration so here are all the possible colors mapped to their respective names.~~ Tailwind CSS 3.0 has all the different colors enabled by default.
 
 ```
 module.exports = {
@@ -58,11 +58,15 @@ module.exports = {
 			amber: colors.amber,
 			orange: colors.orange,
 			red: colors.red,
-			warmGray: colors.warmGray,
-			trueGray: colors.trueGray,
+			warmGray: colors.warmGray, 	// Tailwind CSS 2.x
+			trueGray: colors.trueGray, 	// Tailwind CSS 2.x
+			blueGray: colors.blueGray, 	// Tailwind CSS 2.x
+			coolGray: colors.coolGray, 	// Tailwind CSS 2.x
 			gray: colors.gray,
-			blueGray: colors.blueGray,
-			coolGray: colors.coolGray,
+			slate: colors.slate, 		// Tailwind CSS 3.x
+			zinc: colors.zinc, 			// Tailwind CSS 3.x
+			neutral: colors.blueGray, 	// Tailwind CSS 3.x
+			stone: colors.stone, 		// Tailwind CSS 3.x
 		},
 	}
 };

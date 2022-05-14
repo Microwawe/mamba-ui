@@ -10,9 +10,9 @@ module.exports = {
 		options: {
 			safelist: {
 				standard: [
-					/(bg|text|border|ring)-(coolGray|yellow|amber|orange|red|rose|pink|fuchsia|purple|violet|indigo|blue|sky|lightBlue|cyan|teal|emerald|green|lime)-[1-9]00$/,
-					/(from|to|divide)-coolGray-[1-9]00$/,
-					/ring-offset-(coolGray)-[18]00$/,
+					/(bg|text|border|ring)-(gray|yellow|amber|orange|red|rose|pink|fuchsia|purple|violet|indigo|blue|sky|cyan|teal|emerald|green|lime)-[1-9]00$/,
+					/(from|to|divide)-gray-[1-9]00$/,
+					/ring-offset-(gray)-[18]00$/,
 				],
 				greedy: [/token$/],
 			},
@@ -34,7 +34,6 @@ module.exports = {
 			violet: colors.violet,
 			indigo: colors.indigo,
 			blue: colors.blue,
-			lightBlue: colors.sky, // As of Tailwind CSS v2.2, `lightBlue` has been renamed to `sky`
 			sky: colors.sky,
 			cyan: colors.cyan,
 			teal: colors.teal,
@@ -45,11 +44,7 @@ module.exports = {
 			amber: colors.amber,
 			orange: colors.orange,
 			red: colors.red,
-			// warmGray: colors.warmGray,
-			// trueGray: colors.trueGray,
-			// gray: colors.gray,
-			// blueGray: colors.blueGray,
-			coolGray: colors.coolGray,
+			gray: colors.gray,
 		},
 		extend: {
 			flex: {
@@ -70,15 +65,15 @@ module.exports = {
 			typography: theme => ({
 				DEFAULT: {
 					css: {
-						color: theme('colors.coolGray.700'),
+						color: theme('colors.gray.700'),
 						h2: {
-							color: theme('colors.coolGray.800'),
+							color: theme('colors.gray.800'),
 						},
 						h3: {
-							color: theme('colors.coolGray.800'),
+							color: theme('colors.gray.800'),
 						},
 						strong: {
-							color: theme('colors.coolGray.800'),
+							color: theme('colors.gray.800'),
 						},
 						a: {
 							color: theme('colors.violet.500'),
@@ -90,17 +85,17 @@ module.exports = {
 				},
 				dark: {
 					css: {
-						color: theme('colors.coolGray.400'),
-						a: {color: theme('colors.coolGray.100')},
-						strong: {color: theme('colors.coolGray.100')},
-						h1: {color: theme('colors.coolGray.100')},
-						h2: {color: theme('colors.coolGray.100')},
-						h3: {color: theme('colors.coolGray.100')},
-						h4: {color: theme('colors.coolGray.100')},
-						code: {color: theme('colors.coolGray.100')},
+						color: theme('colors.gray.400'),
+						a: {color: theme('colors.gray.100')},
+						strong: {color: theme('colors.gray.100')},
+						h1: {color: theme('colors.gray.100')},
+						h2: {color: theme('colors.gray.100')},
+						h3: {color: theme('colors.gray.100')},
+						h4: {color: theme('colors.gray.100')},
+						code: {color: theme('colors.gray.100')},
 						pre: {
-							color: theme('colors.coolGray.200'),
-							backgroundColor: theme('colors.coolGray.800'),
+							color: theme('colors.gray.200'),
+							backgroundColor: theme('colors.gray.800'),
 						},
 					},
 				},
@@ -134,11 +129,11 @@ module.exports = {
 				'hover:ring-{colors}',
 				'focus:ring-{colors}',
 
-				'ring-offset-coolGray-100',
-				'ring-offset-coolGray-800',
+				'ring-offset-gray-100',
+				'ring-offset-gray-800',
 
-				'from-coolGray-900',
-				'to-coolGray-900',
+				'from-gray-900',
+				'to-gray-900',
 
 				'w-1/6',
 				'w-2/6',

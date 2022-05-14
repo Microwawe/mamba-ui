@@ -108,7 +108,7 @@ export class FormatterService {
 			return parts[0] + parts[1].charAt(0).toUpperCase() + parts[1].slice(1);
 		});
 		const closeImgTags = cleanSVGs.replace(/<img ([^<]*[^\/\s])[\s]?>/g, '<img $1 />');
-		const closeInputTags = closeImgTags.replace(/<input ([^<]*)[^\/]>/g, '<input $1 />');
+		const closeInputTags = closeImgTags.replace(/<input ([^<]*[^\/\s])[\s]?>/g, '<input $1 />');
 		return closeInputTags.replace(/class=/gm, 'className=');
 	}
 

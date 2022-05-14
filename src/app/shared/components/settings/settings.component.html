@@ -1,5 +1,5 @@
 <div
-	class="fixed left-0 z-40 max-h-screen translate-y-1/2 shadow-xl bottom-1/2 bg-coolGray-700 rounded-r-2xl"
+	class="fixed left-0 z-40 max-h-screen translate-y-1/2 shadow-xl bottom-1/2 bg-gray-700 rounded-r-2xl"
 	[ngClass]="{
 		'translate-x-0': colorsOpen,
 		'-translate-x-full': !colorsOpen,
@@ -23,8 +23,8 @@
 					'border-' + color.name + '-900',
 					'hover:ring-2',
 					'hover:ring-inset',
-					'hover:ring-coolGray-100',
-					selectedColor.name == color.name ? 'ring-2 ring-inset ring-coolGray-300' : ''
+					'hover:ring-gray-100',
+					selectedColor.name == color.name ? 'ring-2 ring-inset ring-gray-300' : ''
 				]"
 				(click)="changeColor(color)"
 			></button>
@@ -33,7 +33,7 @@
 		<button
 			type="button"
 			(click)="toggleColors()"
-			class="absolute flex items-center justify-center h-32 transform translate-y-1/2 w-7 bottom-1/2 rounded-r-xl left-full bg-coolGray-700 text-coolGray-50 focus:outline-none"
+			class="absolute flex items-center justify-center h-32 transform translate-y-1/2 w-7 bottom-1/2 rounded-r-xl left-full bg-gray-700 text-gray-50 focus:outline-none"
 		>
 			<span class="sr-only">Toggle</span>
 			<span
@@ -46,7 +46,7 @@
 		</button>
 
 		<!-- Light/Dark theme -->
-		<div class="my-4 rounded-full power-switch bg-coolGray-800">
+		<div class="my-4 rounded-full power-switch bg-gray-800">
 			<input
 				#themeCheckbox
 				type="checkbox"
