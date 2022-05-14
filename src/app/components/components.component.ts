@@ -23,10 +23,10 @@ export class ComponentsComponent extends BaseComponent implements OnDestroy {
 		{name: 'Button', link: 'button', count: 6},
 		{name: 'Call to action', link: 'call-to-action', count: 6, tags: ['cta', 'newsletter']},
 		{name: 'Card', link: 'card', count: 5},
-		{name: 'Carousel', link: 'carousel', count: 1}, // TODO
+		{name: 'Carousel', link: 'carousel', count: 2},
 		{name: 'Contact', link: 'contact', count: 3, tags: ['input']},
 		{name: 'Error', link: 'error', count: 2, tags: ['404', '500', 'offline']},
-		{name: 'Faq', link: 'faq', count: 6},
+		{name: 'Faq', link: 'faq', count: 6}, // TODO faq6
 		{name: 'Feature', link: 'feature', count: 8, tags: ['content', 'incentives']},
 		{name: 'Footer', link: 'footer', count: 5},
 		{name: 'Form', link: 'form', count: 1, tags: ['input']},
@@ -35,7 +35,8 @@ export class ComponentsComponent extends BaseComponent implements OnDestroy {
 		{name: 'Hero', link: 'hero', count: 5, tags: ['content']},
 		{name: 'Input', link: 'input', count: 4},
 		{name: 'Loading', link: 'loading', count: 2},
-		{name: 'Login', link: 'login', count: 4},
+		{name: 'Login', link: 'login', count: 5},
+		{name: 'Modal', link: 'modal', count: 4},
 		{name: 'News', link: 'news', count: 3},
 		{name: 'Pagination', link: 'pagination', count: 3},
 		{name: 'Pricing', link: 'pricing', count: 5},

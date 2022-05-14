@@ -120,6 +120,11 @@ const routes: Routes = [
 				data: {title: 'Login', breadcrumb: 'Login'},
 			},
 			{
+				path: 'modal',
+				loadChildren: () => import('./modal/modal.module').then(m => m.ModalModule),
+				data: {title: 'Modal', breadcrumb: 'Modal'},
+			},
+			{
 				path: 'news',
 				loadChildren: () => import('./news/news.module').then(m => m.NewsModule),
 				data: {title: 'News', breadcrumb: 'News'},

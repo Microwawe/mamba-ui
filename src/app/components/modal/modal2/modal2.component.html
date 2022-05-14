@@ -1,0 +1,32 @@
+<div
+	class="flex flex-col max-w-md gap-2 p-6 rounded-md shadow-md"
+	[ngClass]="['bg' + contrast, 'text' + defaultInv]"
+>
+	<h2 class="text-xl font-semibold leading-tight tracking-wide">
+		Aut fuga esse quasi id dicta dolorem?
+	</h2>
+	<p class="flex-1" [ngClass]="['text' + plainInv]">
+		Vero mollitia, accusantium deserunt fugiat obcaecati aperiam a, libero soluta asperiores sed
+		quis incidunt.
+	</p>
+	<div class="flex flex-col justify-between gap-6 mt-6 sm:flex-row">
+		<div class="flex items-center gap-2">
+			<input
+				type="checkbox"
+				name="showAgain"
+				id="showAgain"
+				class="rounded-sm"
+				[ngClass]="['focus:ring' + primary, 'focus:border' + primary, 'focus:ring-2']"
+			/>
+			<label for="showAgain" class="text-sm cursor-pointer" [ngClass]="['text' + plainInv]">
+				Don't show this again
+			</label>
+		</div>
+		<button
+			class="px-6 py-2 rounded-sm shadow-sm"
+			[ngClass]="['bg' + primary, 'text' + contrast]"
+		>
+			Continue
+		</button>
+	</div>
+</div>
