@@ -1,18 +1,18 @@
 <section class="py-6" [ngClass]="['bg' + default, 'text' + contrastInv]">
 	<div class="container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4">
 		<img
-			class="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-3 md:row-start-1 bg-coolGray-500 aspect-square"
+			class="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-3 md:row-start-1 bg-gray-500 aspect-square"
 			src="https://source.unsplash.com/random/301x301/"
 			alt=""
 		/>
 		<img
 			*ngFor="let i of [0, 1, 2, 3, 4, 5, 6, 7]"
-			class="w-full h-full rounded shadow-sm min-h-48 bg-coolGray-500 aspect-square"
+			class="w-full h-full rounded shadow-sm min-h-48 bg-gray-500 aspect-square"
 			src="https://source.unsplash.com/random/200x200/?{{ i }}"
 			alt=""
 		/>
 		<img
-			class="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-1 md:row-start-3 bg-coolGray-500 aspect-square"
+			class="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-1 md:row-start-3 bg-gray-500 aspect-square"
 			src="https://source.unsplash.com/random/302x302/"
 			alt=""
 		/>

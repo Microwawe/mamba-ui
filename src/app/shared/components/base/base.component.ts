@@ -31,16 +31,16 @@ export class BaseComponent implements OnDestroy {
 	// primary700 = '';
 	// primary800 = '';
 	// primary900 = '';
-	plain = '-coolGray-400';
-	plainInv = '-coolGray-600';
-	neutral = '-coolGray-700';
-	neutralInv = '-coolGray-300';
-	default = '-coolGray-800';
-	defaultInv = '-coolGray-100';
-	contrast = '-coolGray-900';
-	contrastInv = '-coolGray-200';
-	dark = '-coolGray-900';
-	light = '-coolGray-100';
+	plain = '-gray-400';
+	plainInv = '-gray-600';
+	neutral = '-gray-700';
+	neutralInv = '-gray-300';
+	default = '-gray-800';
+	defaultInv = '-gray-100';
+	contrast = '-gray-900';
+	contrastInv = '-gray-200';
+	dark = '-gray-900';
+	light = '-gray-100';
 
 	protected colorService: ColorService;
 	protected themeService: ThemeService;
@@ -61,14 +61,14 @@ export class BaseComponent implements OnDestroy {
 	}
 
 	setGrayscale(): void {
-		this.plain = this.darkTheme ? '-coolGray-600' : '-coolGray-400';
-		this.plainInv = this.darkTheme ? '-coolGray-400' : '-coolGray-600';
-		this.neutral = this.darkTheme ? '-coolGray-700' : '-coolGray-300';
-		this.neutralInv = this.darkTheme ? '-coolGray-300' : '-coolGray-700';
-		this.default = this.darkTheme ? '-coolGray-800' : '-coolGray-100';
-		this.defaultInv = this.darkTheme ? '-coolGray-100' : '-coolGray-800';
-		this.contrast = this.darkTheme ? '-coolGray-900' : '-coolGray-50';
-		this.contrastInv = this.darkTheme ? '-coolGray-50' : '-coolGray-900';
+		this.plain = this.darkTheme ? '-gray-600' : '-gray-400';
+		this.plainInv = this.darkTheme ? '-gray-400' : '-gray-600';
+		this.neutral = this.darkTheme ? '-gray-700' : '-gray-300';
+		this.neutralInv = this.darkTheme ? '-gray-300' : '-gray-700';
+		this.default = this.darkTheme ? '-gray-800' : '-gray-100';
+		this.defaultInv = this.darkTheme ? '-gray-100' : '-gray-800';
+		this.contrast = this.darkTheme ? '-gray-900' : '-gray-50';
+		this.contrastInv = this.darkTheme ? '-gray-50' : '-gray-900';
 	}
 
 	setPrimaryColor(color: TailwindColor): void {

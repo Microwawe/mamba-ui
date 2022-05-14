@@ -4,7 +4,7 @@
 			<img
 				src="https://source.unsplash.com/50x50/?portrait"
 				alt=""
-				class="object-cover object-center w-8 h-8 rounded-full shadow-sm bg-coolGray-500"
+				class="object-cover object-center w-8 h-8 rounded-full shadow-sm bg-gray-500"
 				[ngClass]="['border' + neutral]"
 			/>
 			<div class="-space-y-1">
@@ -33,7 +33,7 @@
 		</button>
 	</div>
 	<img
-		class="object-cover object-center w-full h-72 bg-coolGray-500"
+		class="object-cover object-center w-full h-72 bg-gray-500"
 		src="https://source.unsplash.com/301x301/?random"
 		alt=""
 	/>
@@ -95,7 +95,7 @@
 				<div class="flex -space-x-1">
 					<img
 						*ngFor="let i of [1, 2, 3]"
-						class="w-5 h-5 border rounded-full bg-coolGray-500"
+						class="w-5 h-5 border rounded-full bg-gray-500"
 						[ngClass]="['border' + default]"
 						src="https://source.unsplash.com/40x40/?portrait?{{ i }}"
 						alt=""

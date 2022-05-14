@@ -2,7 +2,7 @@
 	<div class="flex space-x-5">
 		<img
 			*ngFor="let i of [1, 2, 3, 4]"
-			class="w-12 h-12 rounded-full ring-2 ring-offset-4 bg-coolGray-500"
+			class="w-12 h-12 rounded-full ring-2 ring-offset-4 bg-gray-500"
 			[ngClass]="['ring' + (i > 3 ? neutral : primary), 'ring-offset' + default]"
 			src="https://source.unsplash.com/40x40/?portrait?{{ i }}"
 			alt=""

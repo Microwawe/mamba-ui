@@ -107,8 +107,8 @@ describe('Service: Formatter', () => {
 		it('should add dark variant to placeholder color', inject(
 			[FormatterService],
 			(service: FormatterService) => {
-				const str = '<span class="placeholder-coolGray-300"></span>';
-				const result = '<span class="dark:placeholder-coolGray-300"></span>';
+				const str = '<span class="placeholder-gray-300"></span>';
+				const result = '<span class="dark:placeholder-gray-300"></span>';
 				expect(service.toggleDarkModeVariants(str, true)).toBe(result);
 			}
 		));
@@ -143,10 +143,9 @@ describe('Service: Formatter', () => {
 		it('should add dark variant to gradient colors', inject(
 			[FormatterService],
 			(service: FormatterService) => {
-				const str =
-					'<span class="from-coolGray-100 via-coolGray-500 to-coolGray-900"></span>';
+				const str = '<span class="from-gray-100 via-gray-500 to-gray-900"></span>';
 				const result =
-					'<span class="dark:from-coolGray-100 dark:via-coolGray-500 dark:to-coolGray-900"></span>';
+					'<span class="dark:from-gray-100 dark:via-gray-500 dark:to-gray-900"></span>';
 				expect(service.toggleDarkModeVariants(str, true)).toBe(result);
 			}
 		));
@@ -198,9 +197,8 @@ describe('Service: Formatter', () => {
 		));
 
 		it('should remove ngClass', inject([FormatterService], (service: FormatterService) => {
-			const str =
-				'<span class="text-coolGray-800" ng-reflect-ng-class="text-coolGray-800"></span>';
-			const result = '<span class="text-coolGray-800"></span>';
+			const str = '<span class="text-gray-800" ng-reflect-ng-class="text-gray-800"></span>';
+			const result = '<span class="text-gray-800"></span>';
 			expect(service.removeAngularCode(str)).toBe(result);
 		}));
 	});
@@ -209,16 +207,16 @@ describe('Service: Formatter', () => {
 		it('should change "class" to "className"', inject(
 			[FormatterService],
 			(service: FormatterService) => {
-				const str = '<span class="text-coolGray-800"></span>';
-				const result = '<span className="text-coolGray-800"></span>';
+				const str = '<span class="text-gray-800"></span>';
+				const result = '<span className="text-gray-800"></span>';
 				expect(service.useReactSyntax(str)).toBe(result);
 			}
 		));
 
-		it('should add a closing slash to <img>', inject(
+		it('should add a closing slash to <img> and a space before the closing tag', inject(
 			[FormatterService],
 			(service: FormatterService) => {
-				const str = `<img src="https://source.unsplash.com/100x100/?portrait?1" alt="" >`;
+				const str = `<img src="https://source.unsplash.com/100x100/?portrait?1" alt="">`;
 				const result = `<img src="https://source.unsplash.com/100x100/?portrait?1" alt="" />`;
 				expect(service.useReactSyntax(str)).toBe(result);
 			}
@@ -228,6 +226,15 @@ describe('Service: Formatter', () => {
 			[FormatterService],
 			(service: FormatterService) => {
 				const str = `<img src="https://source.unsplash.com/100x100/?portrait?1" alt="" />`;
+				const result = `<img src="https://source.unsplash.com/100x100/?portrait?1" alt="" />`;
+				expect(service.useReactSyntax(str)).toBe(result);
+			}
+		));
+
+		it('should not add double space before the closing tag', inject(
+			[FormatterService],
+			(service: FormatterService) => {
+				const str = `<img src="https://source.unsplash.com/100x100/?portrait?1" alt="" >`;
 				const result = `<img src="https://source.unsplash.com/100x100/?portrait?1" alt="" />`;
 				expect(service.useReactSyntax(str)).toBe(result);
 			}
@@ -247,6 +254,15 @@ describe('Service: Formatter', () => {
 			(service: FormatterService) => {
 				const str = '<input type="text" placeholder="Add a comment..." />';
 				const result = '<input type="text" placeholder="Add a comment..." />';
+				expect(service.useReactSyntax(str)).toBe(result);
+			}
+		));
+
+		it('should add a space just before the closing input tag', inject(
+			[FormatterService],
+			(service: FormatterService) => {
+				const str = `<input type="text" placeholder="Add a comment...">`;
+				const result = `<input type="text" placeholder="Add a comment..." />`;
 				expect(service.useReactSyntax(str)).toBe(result);
 			}
 		));
