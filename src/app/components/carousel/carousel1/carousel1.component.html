@@ -2,17 +2,19 @@
 	<button
 		aria-label="Slide back"
 		type="button"
-		class="absolute left-0 z-30 p-3 ml-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
+		class="absolute left-0 z-30 p-2 ml-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
 	>
 		<svg
-			class="w-4 h-4 stroke-current"
+			class="w-4 h-4"
 			width="8"
 			height="14"
+			fill="none"
 			viewBox="0 0 8 14"
 			xmlns="http://www.w3.org/2000/svg"
 		>
 			<path
 				d="M7 1L1 7L7 13"
+				stroke="currentColor"
 				stroke-width="2"
 				stroke-linecap="round"
 				stroke-linejoin="round"
@@ -25,25 +27,18 @@
 		<div *ngFor="let i of [1, 2, 3, 4, 5]" class="relative flex flex-shrink-0 w-full sm:w-auto">
 			<img
 				src="https://source.unsplash.com/random/240x360/?{{ i }}"
-				alt="'Image ' + i"
-				class="object-cover object-center h-96 aspect-video bg-coolGray-500"
+				alt="Image {{ i }}"
+				class="object-cover object-center h-96 aspect-square bg-gray-500"
 			/>
-			<!-- <div class="absolute w-full h-full p-6" [ngClass]="['text' + contrastInv]">
-				<div class="flex items-end h-full pb-6">
-					<h3 class="text-xl font-semibold leading-5 lg:text-2xl lg:leading-6">
-						Lorem Ipsum
-					</h3>
-				</div>
-			</div> -->
 		</div>
 	</div>
 	<button
 		aria-label="Slide forward"
-		class="absolute right-0 z-30 mr-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
+		class="absolute right-0 z-30 p-2 mr-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
 		id="next"
 	>
 		<svg
-			class=""
+			class="w-4 h-4"
 			width="8"
 			height="14"
 			viewBox="0 0 8 14"

@@ -4,18 +4,14 @@
 const colors = require('tailwindcss/colors');
 
 module.exports = {
-	content: {
-		content: ['./src/**/*.{html,ts}', './safelist.txt'],
-		options: {
-			safelist: {
-				standard: [
-					/(bg|text|border|ring)-(gray|yellow|amber|orange|red|rose|pink|fuchsia|purple|violet|indigo|blue|sky|cyan|teal|emerald|green|lime)-[1-9]00$/,
-					/(from|to|divide)-gray-[1-9]00$/,
-					/ring-offset-(gray)-[18]00$/,
-				],
-				greedy: [/token$/],
-			},
-		},
+	content: ['./src/**/*.{html,ts}', './safelist.txt'],
+	safelist: {
+		standard: [
+			/(bg|text|border|ring)-(gray|yellow|amber|orange|red|rose|pink|fuchsia|purple|violet|indigo|blue|sky|cyan|teal|emerald|green|lime)-[1-9]00$/,
+			/(from|to|divide)-gray-[1-9]00$/,
+			/ring-offset-(gray)-[18]00$/,
+		],
+		greedy: [/token$/],
 	},
 	theme: {
 		container: {

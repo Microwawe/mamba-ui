@@ -26,7 +26,7 @@ export class ComponentsComponent extends BaseComponent implements OnDestroy {
 		{name: 'Carousel', link: 'carousel', count: 2},
 		{name: 'Contact', link: 'contact', count: 3, tags: ['input']},
 		{name: 'Error', link: 'error', count: 2, tags: ['404', '500', 'offline']},
-		{name: 'Faq', link: 'faq', count: 6}, // TODO faq6
+		{name: 'Faq', link: 'faq', count: 5}, // TODO FAQ6
 		{name: 'Feature', link: 'feature', count: 8, tags: ['content', 'incentives']},
 		{name: 'Footer', link: 'footer', count: 5},
 		{name: 'Form', link: 'form', count: 1, tags: ['input']},
@@ -59,7 +59,7 @@ export class ComponentsComponent extends BaseComponent implements OnDestroy {
 		{name: 'Testimonial', link: 'testimonial', count: 5},
 		{name: 'Timeline', link: 'timeline', count: 4},
 		{name: 'Toggle', link: 'toggle', count: 4, tags: ['input']},
-		{name: 'Weather', link: 'weather', count: 2},
+		{name: 'Weather', link: 'weather', count: 3, tags: ['card']},
 	].sort((a, b) => a.name.localeCompare(b.name));
 
 	constructor() {

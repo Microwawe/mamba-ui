@@ -1,0 +1,8 @@
+<div class="relative w-full flex gap-4 py-6 overflow-x-auto">
+	<img
+		*ngFor="let i of [1, 2, 3, 4, 5]"
+		src="https://source.unsplash.com/random/241x361/?{{ i }}"
+		alt="Image {{ i }}"
+		class="h-48 aspect-video rounded-sm object-cover object-center bg-gray-500"
+	/>
+</div>

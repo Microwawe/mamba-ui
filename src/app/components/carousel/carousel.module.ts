@@ -4,6 +4,7 @@ import {SharedModule} from '@shared/shared.module';
 
 import {CarouselShowcaseComponent} from './carousel-showcase.component';
 import {Carousel1Component} from './carousel1/carousel1.component';
+import {Carousel2Component} from './carousel2/carousel2.component';
 
 const routes: Routes = [
 	{
@@ -14,6 +15,6 @@ const routes: Routes = [
 
 @NgModule({
 	imports: [RouterModule.forChild(routes), SharedModule],
-	declarations: [CarouselShowcaseComponent, Carousel1Component],
+	declarations: [CarouselShowcaseComponent, Carousel1Component, Carousel2Component],
 })
 export class CarouselModule {}
