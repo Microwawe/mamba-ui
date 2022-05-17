@@ -44,7 +44,12 @@ export class ComponentsComponent extends BaseComponent implements OnDestroy {
 		{name: 'Review', link: 'review', count: 3},
 		{name: 'Shopping cart', link: 'shopping-cart', count: 2, tags: ['e-commerce', 'ecommerce']},
 		{name: 'Sidebar', link: 'sidebar', count: 3, tags: ['menu']},
-		{name: 'Skeleton loader', link: 'skeleton-loader', count: 2, tags: ['spinner']},
+		{
+			name: 'Skeleton loader',
+			link: 'skeleton-loader',
+			count: 2,
+			tags: ['spinner', 'loading', 'card'],
+		},
 		{
 			name: 'Snackbar',
 			link: 'snackbar',
