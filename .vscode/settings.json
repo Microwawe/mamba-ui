@@ -4,5 +4,130 @@
 	"files.insertFinalNewline": true,
 	"css.validate": false,
 	"less.validate": false,
-	"scss.validate": false
+	"scss.validate": false,
+	"macros": {
+		"newComponent": [
+			// creates new html and ts files for a new component
+			// asks for folder (src/app/components/<folder>) and number of the component
+			// for example "feature" and "8" answers would create
+			// feature8.component.html and feature8.component.ts
+			// with basic content in src/app/components/feature/feature8
+			{
+				"javascript": [
+					"const folderName = await window.showInputBox({prompt: 'Folder name'})",
+					"const componentNumber = await window.showInputBox({prompt: 'Component number'})",
+
+					"const edit = new vscode.WorkspaceEdit();",
+
+					"const selectedFolder = vscode.workspace.workspaceFolders[0].uri.toString() + '/src/app/components/' + `${folderName}`;",
+					"const uriBase = `${selectedFolder}/${folderName + componentNumber}`;",
+
+					"const newHtmlFile = vscode.Uri.parse(`${uriBase}/${folderName + componentNumber}.component.html`);",
+					"const newTsFile = vscode.Uri.parse(`${uriBase}/${folderName + componentNumber}.component.ts`);",
+					"const newFiles = [newHtmlFile, newTsFile];",
+
+					"for (const newFile of newFiles) { let document = await edit.createFile(newFile, { ignoreIfExists: false, overwrite: true });};",
+
+					"const tsTemplate = `import {Component, OnInit} from '@angular/core';",
+					"",
+					"import {BaseComponent} from '@shared/components/base/base.component';",
+					"",
+					"@Component({",
+					"selector: 'custom-${folderName + componentNumber}',",
+					"templateUrl: './${folderName + componentNumber}.component.html',",
+					"})",
+					"export class ${folderName.charAt(0).toUpperCase() + folderName.slice(1) + componentNumber}Component extends BaseComponent implements OnInit {",
+					"\tconstructor() {",
+					"\t\tsuper();",
+					"\t}",
+					"",
+					"\tngOnInit() {}",
+					"}",
+					"`;",
+
+					"await edit.insert(newTsFile, new vscode.Position(0, 0), tsTemplate);",
+
+					"await vscode.workspace.applyEdit(edit);",
+
+					"for (const newFile of newFiles) { let document = await vscode.workspace.openTextDocument(newFile); await document.save(); };"
+				]
+			}
+		],
+		"newModule": [
+			// creates new module and showcase html/ts files
+			// asks for folder (src/app/components/<folder>)
+			// for example "chat" answer would create
+			// chat.module.ts, chat-showcase.component.html and chat-showcase.component.ts
+			// with basic content in src/app/components/chat
+			{
+				"javascript": [
+					"const moduleName = await window.showInputBox({prompt: 'module name'})",
+
+					"const edit = new vscode.WorkspaceEdit();",
+
+					"const uriBase = vscode.workspace.workspaceFolders[0].uri.toString() + '/src/app/components/' + `${moduleName}`;",
+
+					"const showcaseHtmlFile = vscode.Uri.parse(`${uriBase}/${moduleName}-showcase.component.html`);",
+					"const showcaseTsFile = vscode.Uri.parse(`${uriBase}/${moduleName}-showcase.component.ts`);",
+					"const newModuleFile = vscode.Uri.parse(`${uriBase}/${moduleName}.module.ts`);",
+					"const newFiles = [showcaseHtmlFile, showcaseTsFile, newModuleFile];",
+
+					"for (const newFile of newFiles) { let document = await edit.createFile(newFile, { ignoreIfExists: false, overwrite: true });};",
+
+					"const uppercaseName = `${moduleName.charAt(0).toUpperCase() + moduleName.slice(1)}`;",
+
+					"const moduleTemplate = `import {NgModule} from '@angular/core';",
+					"import {RouterModule, Routes} from '@angular/router';",
+					"import {SharedModule} from '@shared/shared.module';",
+					"",
+					"import {${uppercaseName}ShowcaseComponent} from './${moduleName}-showcase.component';",
+					"import {${uppercaseName}1Component} from './${moduleName}1/${moduleName}1.component';",
+					"",
+					"const routes: Routes = [",
+					"\t{",
+					"\t\tpath: '',",
+					"\t\tcomponent: ${uppercaseName}ShowcaseComponent,",
+					"\t},",
+					"];",
+					"",
+					"@NgModule({",
+					"\timports: [RouterModule.forChild(routes), SharedModule],",
+					"\tdeclarations: [${uppercaseName}ShowcaseComponent, ${uppercaseName}1Component],",
+					"})",
+					"export class ${uppercaseName}Module {}",
+					"`;",
+
+					"const showcaseTsTemplate = `import {Component} from '@angular/core';",
+					"",
+					"import {BaseComponent} from '@shared/components/base/base.component';",
+					"",
+					"@Component({",
+					"selector: 'custom-${moduleName}-showcase',",
+					"templateUrl: './${moduleName}-showcase.component.html',",
+					"})",
+					"export class ${uppercaseName}ShowcaseComponent extends BaseComponent {",
+					"\tconstructor() {",
+					"\t\tsuper();",
+					"\t}",
+					"}",
+					"`;",
+
+					"const showcaseHtmlTemplate = `<custom-showcase [title]=\"'${uppercaseName}'\">",
+					"\t<custom-show-code>",
+					"\t\t<custom-${moduleName}1></custom-${moduleName}1>",
+					"\t</custom-show-code>",
+					"</custom-showcase>",
+					"`;",
+
+					"await edit.insert(showcaseHtmlFile, new vscode.Position(0, 0), showcaseHtmlTemplate);",
+					"await edit.insert(showcaseTsFile, new vscode.Position(0, 0), showcaseTsTemplate);",
+					"await edit.insert(newModuleFile, new vscode.Position(0, 0), moduleTemplate);",
+
+					"await vscode.workspace.applyEdit(edit);",
+
+					"for (const newFile of newFiles) { let document = await vscode.workspace.openTextDocument(newFile); await document.save(); };"
+				]
+			}
+		]
+	}
 }

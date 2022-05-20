@@ -51,7 +51,7 @@ export class FormatterService {
 	 * @param codeStr The HTML code
 	 */
 	removeAngularComments(codeStr: string) {
-		return codeStr.replace(/[\s]*<!--[.\s\w=":,{}[\]-]+-->[\s]*/gm, '');
+		return codeStr.replace(/[\s]*<!--[.\s\w=":,{}[\]-]*-->[\s]*/gm, '');
 	}
 
 	/**

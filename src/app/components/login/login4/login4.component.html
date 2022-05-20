@@ -12,7 +12,12 @@
 				id="username"
 				class="w-full px-4 py-3 rounded-md"
 				placeholder="Username"
-				[ngClass]="['border' + neutral, 'bg' + contrast, 'text' + defaultInv]"
+				[ngClass]="[
+					'border' + neutral,
+					'bg' + contrast,
+					'text' + defaultInv,
+					'focus:border' + primary
+				]"
 			/>
 		</div>
 		<div class="space-y-1 text-sm">
@@ -23,7 +28,12 @@
 				id="password"
 				class="w-full px-4 py-3 rounded-md"
 				placeholder="Password"
-				[ngClass]="['border' + neutral, 'bg' + contrast, 'text' + defaultInv]"
+				[ngClass]="[
+					'border' + neutral,
+					'bg' + contrast,
+					'text' + defaultInv,
+					'focus:border' + primary
+				]"
 			/>
 			<div class="flex justify-end text-xs" [ngClass]="['text' + plainInv]">
 				<a rel="noopener noreferrer" href="#">Forgot Password?</a>

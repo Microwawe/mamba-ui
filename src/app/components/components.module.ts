@@ -54,6 +54,12 @@ const routes: Routes = [
 				data: {title: 'Card', breadcrumb: 'Card'},
 			},
 			{
+				path: 'carousel',
+				loadChildren: () =>
+					import('./carousel/carousel.module').then(m => m.CarouselModule),
+				data: {title: 'Carousel', breadcrumb: 'Carousel'},
+			},
+			{
 				path: 'contact',
 				loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule),
 				data: {title: 'Contact', breadcrumb: 'Contact'},
@@ -112,6 +118,11 @@ const routes: Routes = [
 				path: 'login',
 				loadChildren: () => import('./login/login.module').then(m => m.LoginModule),
 				data: {title: 'Login', breadcrumb: 'Login'},
+			},
+			{
+				path: 'modal',
+				loadChildren: () => import('./modal/modal.module').then(m => m.ModalModule),
+				data: {title: 'Modal', breadcrumb: 'Modal'},
 			},
 			{
 				path: 'news',

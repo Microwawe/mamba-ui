@@ -1,0 +1,57 @@
+<div class="relative flex items-center justify-center w-full" [ngClass]="['text' + contrastInv]">
+	<button
+		aria-label="Slide back"
+		type="button"
+		class="absolute left-0 z-30 p-2 ml-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
+	>
+		<svg
+			class="w-4 h-4"
+			width="8"
+			height="14"
+			fill="none"
+			viewBox="0 0 8 14"
+			xmlns="http://www.w3.org/2000/svg"
+		>
+			<path
+				d="M7 1L1 7L7 13"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+			/>
+		</svg>
+	</button>
+	<div
+		class="flex items-center justify-start w-full h-full gap-6 py-4 mx-auto overflow-auto lg:gap-8"
+	>
+		<div *ngFor="let i of [1, 2, 3, 4, 5]" class="relative flex flex-shrink-0 w-full sm:w-auto">
+			<img
+				src="https://source.unsplash.com/random/240x360/?{{ i }}"
+				alt="Image {{ i }}"
+				class="object-cover object-center h-96 aspect-square bg-gray-500"
+			/>
+		</div>
+	</div>
+	<button
+		aria-label="Slide forward"
+		class="absolute right-0 z-30 p-2 mr-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
+		id="next"
+	>
+		<svg
+			class="w-4 h-4"
+			width="8"
+			height="14"
+			viewBox="0 0 8 14"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+		>
+			<path
+				d="M1 1L7 7L1 13"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+			/>
+		</svg>
+	</button>
+</div>
