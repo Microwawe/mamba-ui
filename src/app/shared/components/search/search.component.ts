@@ -41,7 +41,7 @@ export class SearchComponent extends BaseComponent implements AfterViewInit, OnD
 			)
 			.subscribe((inputValue: string) => {
 				this.analytics.triggerEvent(PlausibleEvent.SEARCH, {
-					query: inputValue,
+					query: inputValue.toLowerCase(),
 				});
 			});
 	}
