@@ -1,0 +1,61 @@
+<div class="relative inline-block text-left">
+	<button
+		type="button"
+		class="inline-flex justify-center px-4 py-2 text-sm font-medium border rounded-md shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+		[ngClass]="[
+			'bg' + contrast,
+			'text' + defaultInv,
+			'border' + neutral,
+			'focus-visible:ring' + primary
+		]"
+	>
+		Adipisicing
+		<svg
+			class="w-5 h-5 ml-2 -mr-1"
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 20 20"
+			fill="currentColor"
+			aria-hidden="true"
+		>
+			<path
+				fill-rule="evenodd"
+				d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+				clip-rule="evenodd"
+			/>
+		</svg>
+	</button>
+
+	<div
+		class="absolute right-0 w-56 py-1 mt-2 text-left origin-top-right rounded-md shadow-lg ring-1 ring-opacity-5 focus-visible:outline-none"
+		[ngClass]="['bg' + contrast, 'text' + defaultInv, 'ring' + contrastInv]"
+	>
+		<a
+			href="#"
+			class="block px-4 py-2 text-sm"
+			[ngClass]="['focus-visible:bg' + default, 'hover:bg' + default]"
+		>
+			Blanditiis
+		</a>
+		<a
+			href="#"
+			class="block px-4 py-2 text-sm"
+			[ngClass]="['focus-visible:bg' + default, 'hover:bg' + default]"
+		>
+			Doloribus
+		</a>
+		<a
+			href="#"
+			class="block px-4 py-2 text-sm"
+			[ngClass]="['focus-visible:bg' + default, 'hover:bg' + default]"
+		>
+			Cupiditate
+		</a>
+		<button
+			type="button"
+			class="block w-full px-4 py-2 text-sm text-left"
+			[ngClass]="['focus-visible:bg' + default, 'hover:bg' + default]"
+		>
+			Deleniti
+		</button>
+	</div>
+</div>

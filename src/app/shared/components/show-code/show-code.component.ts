@@ -1,5 +1,13 @@
 /* eslint-disable node/no-unpublished-import */
-import {AfterViewInit, Component, ElementRef, Input, OnDestroy, ViewChild} from '@angular/core';
+import {
+	AfterViewInit,
+	Component,
+	ElementRef,
+	Input,
+	OnDestroy,
+	Renderer2,
+	ViewChild,
+} from '@angular/core';
 import {combineLatest, Subscription} from 'rxjs';
 import * as Prism from 'prismjs';
 import 'prismjs/components/prism-jsx';
@@ -37,7 +45,8 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit, O
 	constructor(
 		private modal: FullscreenModalService,
 		private formatter: FormatterService,
-		private analytics: AnalyticsService
+		private analytics: AnalyticsService,
+		private renderer: Renderer2
 	) {
 		super();
 	}
@@ -54,6 +63,35 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit, O
 			this.options.darkTheme = theme;
 		});
 		this.options.component = this.rawContent?.nativeElement?.firstChild.localName;
+		this.setShowCodeContainerHeight();
+	}
+
+	/**
+	 * Dropdown components have an absolutely positioned element and the parent element
+	 * ignores the height of it (= it overflows the container and is hidden because of that).
+	 * We need to calculate the height of all the elements in the component and set the height of the container.
+	 * This method assumes that the component has a wrapper element and inside that are the actual
+	 * elements that need to be counted. Extra 32px to the height so that there is some padding-y.
+	 */
+	setShowCodeContainerHeight() {
+		const contentHeight = Array.from<HTMLElement>(
+			this.rawContent.nativeElement.firstChild.children
+		)
+			.flatMap((el: any) => Array.from(el.children))
+			.map((el: any) => el.offsetHeight)
+			.reduce((acc: number, sum: number) => acc + sum, 0);
+		this.renderer.setStyle(
+			this.rawContent.nativeElement,
+			'min-height',
+			contentHeight + 32 + 'px'
+		);
+		if (this.centered) {
+			this.renderer.setStyle(
+				this.rawContent.nativeElement,
+				'padding-bottom',
+				contentHeight + 'px'
+			);
+		}
 	}
 
 	/**
@@ -77,6 +115,9 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit, O
 		this.dropdownOpen = false;
 		this.copied = false;
 		this.options.language = '';
+		setTimeout(() => {
+			this.setShowCodeContainerHeight();
+		}, 0);
 	}
 
 	showHtml(): void {

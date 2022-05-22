@@ -70,6 +70,12 @@ const routes: Routes = [
 				data: {title: 'Contact', breadcrumb: 'Contact'},
 			},
 			{
+				path: 'dropdown',
+				loadChildren: () =>
+					import('./dropdown/dropdown.module').then(m => m.DropdownModule),
+				data: {title: 'Dropdown', breadcrumb: 'Dropdown'},
+			},
+			{
 				path: 'error',
 				loadChildren: () => import('./error/error.module').then(m => m.ErrorModule),
 				data: {title: 'Error', breadcrumb: 'Error'},

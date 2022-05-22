@@ -26,6 +26,7 @@ export class ComponentsComponent extends BaseComponent implements OnDestroy {
 		{name: 'Card', link: 'card', count: 5},
 		{name: 'Carousel', link: 'carousel', count: 2},
 		{name: 'Contact', link: 'contact', count: 3, tags: ['input']},
+		{name: 'Dropdown', link: 'dropdown', count: 3, tags: ['button', 'menu', 'navigation']}, // TODO fix overflow-x in mobile
 		{name: 'Error', link: 'error', count: 2, tags: ['404', '500', 'offline']},
 		{name: 'Faq', link: 'faq', count: 5}, // TODO FAQ6
 		{name: 'Feature', link: 'feature', count: 8, tags: ['content', 'incentives']},
