@@ -115,6 +115,7 @@ module.exports = {
 				'peer-checked:bg-{colors}',
 				'before:bg-{colors}',
 
+				'divide-{colors}',
 				'border-{colors}',
 				'focus:border-{colors}',
 				'hover:border-{colors}',
