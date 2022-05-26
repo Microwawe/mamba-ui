@@ -7,7 +7,7 @@ module.exports = {
 	content: ['./src/**/*.{html,ts}', './safelist.txt'],
 	safelist: {
 		standard: [
-			/(bg|text|border|ring)-(gray|yellow|amber|orange|red|rose|pink|fuchsia|purple|violet|indigo|blue|sky|cyan|teal|emerald|green|lime)-[1-9]00$/,
+			/(bg|text|border|ring|accent|divide)-(gray|yellow|amber|orange|red|rose|pink|fuchsia|purple|violet|indigo|blue|sky|cyan|teal|emerald|green|lime)-[1-9]00$/,
 			/(from|to|divide)-gray-[1-9]00$/,
 			/ring-offset-(gray)-[18]00$/,
 		],
@@ -121,9 +121,11 @@ module.exports = {
 				'hover:border-{colors}',
 				'{screens}:border-{colors}',
 
+				'accent-{colors}',
 				'ring-{colors}',
 				'hover:ring-{colors}',
 				'focus:ring-{colors}',
+				'peer-checked:ring-{colors}',
 
 				'ring-offset-gray-100',
 				'ring-offset-gray-800',

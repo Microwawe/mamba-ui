@@ -16,7 +16,12 @@
 				name="showAgain"
 				id="showAgain"
 				class="rounded-sm"
-				[ngClass]="['focus:ring' + primary, 'focus:border' + primary, 'focus:ring-2']"
+				[ngClass]="[
+					'focus:ring' + primary,
+					'focus:border' + primary,
+					'focus:ring-2',
+					'accent' + primary
+				]"
 			/>
 			<label for="showAgain" class="text-sm cursor-pointer" [ngClass]="['text' + plainInv]">
 				Don't show this again
