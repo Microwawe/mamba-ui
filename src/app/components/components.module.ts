@@ -25,6 +25,11 @@ const routes: Routes = [
 				data: {title: 'Avatars', breadcrumb: 'Avatar'},
 			},
 			{
+				path: 'banner',
+				loadChildren: () => import('./banner/banner.module').then(m => m.BannerModule),
+				data: {title: 'Banners', breadcrumb: 'Banner'},
+			},
+			{
 				path: 'button',
 				loadChildren: () => import('./button/button.module').then(m => m.ButtonModule),
 				data: {title: 'Buttons', breadcrumb: 'Button'},
@@ -174,6 +179,11 @@ const routes: Routes = [
 						m => m.SkeletonLoaderModule
 					),
 				data: {title: 'Skeleton loader', breadcrumb: 'Skeleton loader'},
+			},
+			{
+				path: 'slider',
+				loadChildren: () => import('./slider/slider.module').then(m => m.SliderModule),
+				data: {title: 'Slider', breadcrumb: 'Slider'},
 			},
 			{
 				path: 'stats',
