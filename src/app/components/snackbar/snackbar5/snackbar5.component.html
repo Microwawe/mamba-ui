@@ -1,0 +1,17 @@
+<div
+	class="flex shadow-md gap-6 rounded-lg overflow-hidden divide-x max-w-2xl"
+	[ngClass]="['bg' + contrast, 'text' + defaultInv, 'divide' + neutral]"
+>
+	<div class="flex flex-1 flex-col p-4 border-l-8" [ngClass]="['border' + primary]">
+		<span class="text-2xl">Success</span>
+		<span class="text-xs" [ngClass]="['text' + plainInv]">
+			Vitae nulla eligendi dignissimos culpa doloribus.
+		</span>
+	</div>
+	<button
+		class="px-4 flex items-center text-xs uppercase tracking-wide"
+		[ngClass]="['text' + plainInv, 'border' + neutral]"
+	>
+		Dismiss
+	</button>
+</div>

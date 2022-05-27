@@ -37,7 +37,7 @@ export class ComponentsComponent extends BaseComponent implements OnDestroy {
 		{name: 'Input', link: 'input', count: 4},
 		{name: 'Loading', link: 'loading', count: 2},
 		{name: 'Login', link: 'login', count: 5},
-		{name: 'Modal', link: 'modal', count: 4},
+		{name: 'Modal', link: 'modal', count: 4, tags: ['dialog']},
 		{name: 'News', link: 'news', count: 3},
 		{name: 'Pagination', link: 'pagination', count: 3},
 		{name: 'Pricing', link: 'pricing', count: 5},
@@ -55,7 +55,7 @@ export class ComponentsComponent extends BaseComponent implements OnDestroy {
 		{
 			name: 'Snackbar',
 			link: 'snackbar',
-			count: 3,
+			count: 6,
 			tags: ['tooltip', 'pop-up', 'notification', 'alert'],
 		},
 		{name: 'Stats', link: 'stats', count: 5, tags: ['logo cloud']},
