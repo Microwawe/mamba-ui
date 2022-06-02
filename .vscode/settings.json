@@ -28,7 +28,7 @@
 
 					"for (const newFile of newFiles) { let document = await edit.createFile(newFile, { ignoreIfExists: false, overwrite: true });};",
 
-					"const tsTemplate = `import {Component, OnInit} from '@angular/core';",
+					"const tsTemplate = `import {Component} from '@angular/core';",
 					"",
 					"import {BaseComponent} from '@shared/components/base/base.component';",
 					"",
@@ -36,12 +36,10 @@
 					"selector: 'custom-${folderName + componentNumber}',",
 					"templateUrl: './${folderName + componentNumber}.component.html',",
 					"})",
-					"export class ${folderName.charAt(0).toUpperCase() + folderName.slice(1) + componentNumber}Component extends BaseComponent implements OnInit {",
+					"export class ${folderName.charAt(0).toUpperCase() + folderName.slice(1) + componentNumber}Component extends BaseComponent{",
 					"\tconstructor() {",
 					"\t\tsuper();",
 					"\t}",
-					"",
-					"\tngOnInit() {}",
 					"}",
 					"`;",
 

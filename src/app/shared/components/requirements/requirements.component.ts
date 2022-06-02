@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {BaseComponent} from '@shared/components/base/base.component';
 import {Requires} from '@shared/enum/requires.enum';
 
@@ -6,11 +6,9 @@ import {Requires} from '@shared/enum/requires.enum';
 	selector: 'custom-requirements',
 	templateUrl: './requirements.component.html',
 })
-export class RequirementsComponent extends BaseComponent implements OnInit {
+export class RequirementsComponent extends BaseComponent {
 	@Input() requires!: Requires;
 	constructor() {
 		super();
 	}
-
-	ngOnInit() {}
 }
