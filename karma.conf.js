@@ -22,7 +22,7 @@ module.exports = function (config) {
 			fixWebpackSourcePaths: true,
 		},
 		customLaunchers: {
-			ChromeHeadless: {
+			CustomChromeHeadless: {
 				base: 'Chrome',
 				flags: [
 					'--headless',
@@ -37,12 +37,8 @@ module.exports = function (config) {
 		colors: true,
 		logLevel: config.LOG_INFO,
 		autoWatch: false,
-		browsers: ['ChromeHeadless'],
+		browsers: ['CustomChromeHeadless'],
 		singleRun: true,
 		restartOnFileChange: false,
-		captureTimeout: 210000,
-		browserDisconnectTolerance: 3,
-		browserDisconnectTimeout: 210000,
-		browserNoActivityTimeout: 210000,
 	});
 };
