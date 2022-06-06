@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 import {BaseComponent} from '@shared/components/base/base.component';
 
@@ -6,7 +6,7 @@ import {BaseComponent} from '@shared/components/base/base.component';
 	selector: 'custom-stats4',
 	templateUrl: './stats4.component.html',
 })
-export class Stats4Component extends BaseComponent implements OnInit {
+export class Stats4Component extends BaseComponent {
 	stats = [
 		{amount: '50+', label: 'Clients'},
 		{amount: '89K', label: 'Followers on social media'},
@@ -18,6 +18,4 @@ export class Stats4Component extends BaseComponent implements OnInit {
 	constructor() {
 		super();
 	}
-
-	ngOnInit() {}
 }

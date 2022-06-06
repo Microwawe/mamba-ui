@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 import {BaseComponent} from '@shared/components/base/base.component';
 
@@ -6,7 +6,7 @@ import {BaseComponent} from '@shared/components/base/base.component';
 	selector: 'custom-portfolio1',
 	templateUrl: './portfolio1.component.html',
 })
-export class Portfolio1Component extends BaseComponent implements OnInit {
+export class Portfolio1Component extends BaseComponent {
 	year = new Date().getFullYear();
 	stats = [
 		{amount: '50+', label: 'Clients'},
@@ -20,6 +20,4 @@ export class Portfolio1Component extends BaseComponent implements OnInit {
 	constructor() {
 		super();
 	}
-
-	ngOnInit() {}
 }

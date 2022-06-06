@@ -55,10 +55,11 @@
 				</button>
 			</div>
 			<button
-				class="px-2 text-sm"
+				class="px-2 text-sm rounded-md hover:bg-opacity-50 focus-visible:bg-opacity-50"
 				(click)="showFullscreen()"
 				type="button"
 				title="Show in fullscreen"
+				[ngClass]="['hover:bg' + primary]"
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"

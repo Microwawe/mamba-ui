@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 import {BaseComponent} from '@shared/components/base/base.component';
 
@@ -6,10 +6,8 @@ import {BaseComponent} from '@shared/components/base/base.component';
 	selector: 'custom-faq4',
 	templateUrl: './faq4.component.html',
 })
-export class Faq4Component extends BaseComponent implements OnInit {
+export class Faq4Component extends BaseComponent {
 	constructor() {
 		super();
 	}
-
-	ngOnInit() {}
 }

@@ -1,11 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
 	selector: 'custom-business-showcase',
 	templateUrl: './business-showcase.component.html',
 })
-export class BusinessShowcaseComponent implements OnInit {
+export class BusinessShowcaseComponent {
 	constructor() {}
-
-	ngOnInit() {}
 }

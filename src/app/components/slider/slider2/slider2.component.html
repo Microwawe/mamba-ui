@@ -1,0 +1,17 @@
+<fieldset [ngClass]="['text' + defaultInv]" class="space-y-1 sm:w-60">
+	<input
+		class="w-full"
+		type="range"
+		[min]="1"
+		[max]="5"
+		[value]="3"
+		[ngClass]="['accent' + primary]"
+	/>
+	<div class="flex justify-between px-1" aria-hidden="true">
+		<span>1</span>
+		<span>2</span>
+		<span>3</span>
+		<span>4</span>
+		<span>5</span>
+	</div>
+</fieldset>
