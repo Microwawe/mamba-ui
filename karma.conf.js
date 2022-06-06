@@ -14,7 +14,7 @@ module.exports = function (config) {
 			require('@angular-devkit/build-angular/plugins/karma'),
 		],
 		client: {
-			clearContext: false, // leave Jasmine Spec Runner output visible in browser
+			clearContext: true,
 		},
 		coverageIstanbulReporter: {
 			dir: require('path').join(__dirname, './coverage/angular-quickstart'),
@@ -36,9 +36,9 @@ module.exports = function (config) {
 		port: 9876,
 		colors: true,
 		logLevel: config.LOG_INFO,
-		autoWatch: true,
+		autoWatch: false,
 		browsers: ['ChromeHeadless'],
 		singleRun: true,
-		restartOnFileChange: true,
+		restartOnFileChange: false,
 	});
 };
