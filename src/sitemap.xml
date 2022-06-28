@@ -11,6 +11,9 @@
 		<loc>https://mambaui.com/components/avatar</loc>
 	</url>
 	<url>
+		<loc>https://mambaui.com/components/banner</loc>
+	</url>
+	<url>
 		<loc>https://mambaui.com/components/blog</loc>
 	</url>
 	<url>
@@ -24,6 +27,9 @@
 	</url>
 	<url>
 		<loc>https://mambaui.com/components/card</loc>
+	</url>
+	<url>
+		<loc>https://mambaui.com/components/carousel</loc>
 	</url>
 	<url>
 		<loc>https://mambaui.com/components/contact</loc>
@@ -62,6 +68,9 @@
 		<loc>https://mambaui.com/components/login</loc>
 	</url>
 	<url>
+		<loc>https://mambaui.com/components/modal</loc>
+	</url>
+	<url>
 		<loc>https://mambaui.com/components/news</loc>
 	</url>
 	<url>
@@ -84,6 +93,9 @@
 	</url>
 	<url>
 		<loc>https://mambaui.com/components/skeleton-loader</loc>
+	</url>
+	<url>
+		<loc>https://mambaui.com/components/slider</loc>
 	</url>
 	<url>
 		<loc>https://mambaui.com/components/snackbar</loc>
