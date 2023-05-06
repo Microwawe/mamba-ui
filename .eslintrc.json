@@ -5,5 +5,14 @@
 		"plugin:@typescript-eslint/eslint-recommended",
 		"plugin:@typescript-eslint/recommended",
 		"prettier"
-	]
+	],
+	"rules": {
+		"prettier/prettier": [
+			"error",
+			{
+				"endOfLine": "auto"
+			}
+		],
+		"node/no-unpublished-require": ["error", {"devDependencies": true}]
+	}
 }

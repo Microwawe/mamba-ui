@@ -1,13 +1,15 @@
 {
 	"extends": "./node_modules/gts/tsconfig-google.json",
 	"compilerOptions": {
-		"baseUrl": "src",
+		"baseUrl": ".",
 		"paths": {
-			"@env": ["environments/environment"],
-			"@shared/*": ["app/shared/*"],
-			"@core/*": ["app/core/*"]
+			"@env": ["src/environments/environment"],
+			"@shared/*": ["src/app/shared/*"],
+			"@core/*": ["src/app/core/*"]
 		},
 		"outDir": "./dist/out-tsc",
+		"allowJs": true,
+		"noImplicitAny": false,
 		"sourceMap": false,
 		"declaration": false,
 		"downlevelIteration": true,
@@ -17,7 +19,8 @@
 		"importHelpers": true,
 		"target": "es2017",
 		"module": "es2020",
-		"lib": ["es2018", "dom"]
+		"lib": ["es2018", "dom"],
+		"types": ["cypress", "node"]
 	},
-	"include": ["src/**/*.ts", "test/**/*.ts"]
+	"include": ["src/**/*.ts", "cypress/**/*.ts"]
 }

@@ -1,5 +1,6 @@
 <div
-	class="fixed left-0 z-40 max-h-screen translate-y-1/2 shadow-xl bottom-1/2 bg-gray-700 rounded-r-2xl"
+	class="fixed left-0 z-40 max-h-screen translate-y-1/2 bg-gray-700 shadow-xl bottom-1/2 rounded-r-2xl"
+	data-cy="settings-component"
 	[ngClass]="{
 		'translate-x-0': colorsOpen,
 		'-translate-x-full': !colorsOpen,
@@ -7,12 +8,16 @@
 	}"
 	(click)="$event.stopPropagation()"
 >
-	<p class="p-2 text-center capitalize" [ngClass]="['text' + light]">
+	<p
+		class="p-2 text-center capitalize"
+		[ngClass]="['text' + light]"
+		data-cy="settings-selected-color"
+	>
 		{{ selectedColor?.name }}
 	</p>
 	<div class="flex flex-col items-center justify-center">
 		<!-- Color palette -->
-		<div class="grid grid-cols-2 gap-1 px-3 grid-">
+		<div class="grid grid-cols-2 gap-1 px-3" data-cy="settings-colors-grid">
 			<button
 				*ngFor="let color of colors"
 				title="Set primary color to {{ color.name }}"
@@ -33,7 +38,8 @@
 		<button
 			type="button"
 			(click)="toggleColors()"
-			class="absolute flex items-center justify-center h-32 transform translate-y-1/2 w-7 bottom-1/2 rounded-r-xl left-full bg-gray-700 text-gray-50 focus:outline-none"
+			data-cy="settings-toggle"
+			class="absolute flex items-center justify-center h-32 transform translate-y-1/2 bg-gray-700 w-7 bottom-1/2 rounded-r-xl left-full text-gray-50 focus:outline-none"
 		>
 			<span class="sr-only">Toggle</span>
 			<span
@@ -46,13 +52,14 @@
 		</button>
 
 		<!-- Light/Dark theme -->
-		<div class="my-4 rounded-full power-switch bg-gray-800">
+		<div class="my-4 bg-gray-800 rounded-full power-switch">
 			<input
 				#themeCheckbox
 				type="checkbox"
 				aria-label="Dark mode toggle"
 				[checked]="isDarkTheme | async"
 				(change)="toggleDarkTheme(themeCheckbox.checked)"
+				data-cy="settings-dark-mode-toggle"
 			/>
 			<div class="button">
 				<svg class="power-off">

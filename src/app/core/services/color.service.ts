@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
-// eslint-disable-next-line node/no-unpublished-require
-const twColors: TailwindColorPalette = require('tailwindcss/colors');
+import * as twColors from 'tailwindcss/colors';
 
 import {TailwindColor, TailwindColorPalette} from '@shared/interfaces/tailwind-colors.interface';
 
