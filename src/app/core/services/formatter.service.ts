@@ -8,6 +8,7 @@ export class FormatterService {
 		const div = document.createElement('div');
 		let cleanedString = this.removeAngularCode(codeStr);
 		cleanedString = this.removeAngularComments(cleanedString);
+		cleanedString = this.removeAngularClasses(cleanedString);
 		cleanedString = this.removeEmptyClasses(cleanedString);
 		cleanedString = this.removeEmptyWhitespace(cleanedString);
 
