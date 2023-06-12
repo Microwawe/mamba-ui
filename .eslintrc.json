@@ -10,7 +10,7 @@
 		"prettier/prettier": [
 			"error",
 			{
-				"endOfLine": "auto"
+				"endOfLine": "lf"
 			}
 		],
 		"node/no-unpublished-require": ["error", {"devDependencies": true}]
