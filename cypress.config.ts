@@ -7,6 +7,8 @@ export default defineConfig({
 			framework: 'angular',
 			bundler: 'webpack',
 		},
+		video: false,
+		screenshotOnRunFailure: false,
 		specPattern: '**/*.cy.ts',
 	},
 });

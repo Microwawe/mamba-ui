@@ -8,6 +8,7 @@
 		"build": "ng build",
 		"build:dev": "ng build --configuration development --build-optimizer --output-hashing all",
 		"test": "ng test",
+		"test:component": "cypress run --component --quiet",
 		"lint": "gts lint",
 		"watch": "ng test --browser ChromeHeadless",
 		"e2e": "ng e2e",
