@@ -201,6 +201,16 @@ describe('Service: Formatter', () => {
 			const result = '<span class="text-gray-800"></span>';
 			expect(service.removeAngularCode(str)).toBe(result);
 		}));
+
+		it('should remove angular classes', inject(
+			[FormatterService],
+			(service: FormatterService) => {
+				const str =
+					'<form novalidate="" action="" class="space-y-12 ng-untouched ng-pristine ng-valid"></form>';
+				const result = '<form novalidate="" action="" class="space-y-12"></form>';
+				expect(service.removeAngularClasses(str)).toBe(result);
+			}
+		));
 	});
 
 	describe('useReactSyntax()', () => {

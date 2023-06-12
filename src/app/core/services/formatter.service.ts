@@ -15,7 +15,7 @@ export class FormatterService {
 		return this.formatNode(div, startAtLevel).innerHTML.trim();
 	}
 
-	formatNode(node: any, level: number) {
+	formatNode(node: any, level: number): any {
 		const indentBefore = level > 0 ? '\t'.repeat(level) : '';
 		const indentAfter = indentBefore.substr(1);
 		let textNode;
@@ -42,15 +42,23 @@ export class FormatterService {
 	 * Removes Angular directives that start with "ng" from the string
 	 * @param codeStr The HTML code
 	 */
-	removeAngularCode(codeStr: string) {
-		return codeStr.replace(/[\s]*ng-[^"\s]*="[^"]*"/g, '');
+	removeAngularCode(codeStr: string): string {
+		return codeStr.replace(/[\s]*ng-[^"\s]*="[^"]*"/gm, '');
+	}
+
+	/**
+	 * Removes Angular's css-classes that start with "ng" from the string
+	 * @param codeStr The HTML code
+	 */
+	removeAngularClasses(codeStr: string): string {
+		return codeStr.replace(/[\s]*ng-[^"\s]*/gm, '');
 	}
 
 	/**
 	 * Removes Angular binding comments for "ng-reflect-ng-if" and "ng-reflect-for-of" for example
 	 * @param codeStr The HTML code
 	 */
-	removeAngularComments(codeStr: string) {
+	removeAngularComments(codeStr: string): string {
 		return codeStr.replace(/[\s]*<!--[.\s\w=":,{}[\]-]*-->[\s]*/gm, '');
 	}
 
@@ -58,7 +66,7 @@ export class FormatterService {
 	 * Removes empty class=""
 	 * @param codeStr The HTML code
 	 */
-	removeEmptyClasses(codeStr: string) {
+	removeEmptyClasses(codeStr: string): string {
 		return codeStr.replace(/ class=""/gm, '');
 	}
 
@@ -67,7 +75,7 @@ export class FormatterService {
 	 * <span> Whitespace before and after this text will be removed </span>
 	 * @param codeStr The HTML code
 	 */
-	removeEmptyWhitespace(codeStr: string) {
+	removeEmptyWhitespace(codeStr: string): string {
 		return codeStr.replace(/>\s([^<]*)\s</g, '>$1<');
 	}
 
@@ -77,7 +85,7 @@ export class FormatterService {
 	 * @param darkTheme Adds dark-variant if this is true and vice versa
 	 * @returns
 	 */
-	toggleDarkModeVariants(codeStr: string, darkTheme: boolean) {
+	toggleDarkModeVariants(codeStr: string, darkTheme: boolean): string {
 		return darkTheme
 			? codeStr.replace(
 					/(bg|border|placeholder|text|from|via|to)-(?!opacity)(black|white|transparent|\w+-\d{2,3})/gm,
@@ -86,7 +94,7 @@ export class FormatterService {
 			: codeStr.replace(/dark:/gm, '');
 	}
 
-	replaceColor(codeStr: string, oldColor: string, newColor: string) {
+	replaceColor(codeStr: string, oldColor: string, newColor: string): string {
 		const colorsWithOnlyOneShade: string[] = ['black', 'white', 'transparent'];
 
 		oldColor = colorsWithOnlyOneShade.includes(oldColor)
@@ -98,7 +106,7 @@ export class FormatterService {
 		return codeStr.replace(oldColor, newColor);
 	}
 
-	useReactSyntax(codeStr: string) {
+	useReactSyntax(codeStr: string): string {
 		const cleanStroke = codeStr.replace(/(stroke)-[a-z]/g, prop => {
 			const parts = prop.split('-');
 			return parts[0] + parts[1].toUpperCase();
@@ -107,19 +115,19 @@ export class FormatterService {
 			const parts = prop.split('-');
 			return parts[0] + parts[1].charAt(0).toUpperCase() + parts[1].slice(1);
 		});
-		const closeImgTags = cleanSVGs.replace(/<img ([^<]*[^\/\s])[\s]?>/g, '<img $1 />');
-		const closeInputTags = closeImgTags.replace(/<input ([^<]*[^\/\s])[\s]?>/g, '<input $1 />');
+		const closeImgTags = cleanSVGs.replace(/<img ([^<]*[^/\s])[\s]?>/g, '<img $1 />');
+		const closeInputTags = closeImgTags.replace(/<input ([^<]*[^/\s])[\s]?>/g, '<input $1 />');
 		return closeInputTags.replace(/class=/gm, 'className=');
 	}
 
-	toVue(codeStr: string) {
+	toVue(codeStr: string): string {
 		let content = '<template>\n\t';
 		content += this.beautifyHTML(codeStr, 1) + '\n';
 		content += '</template>';
 		return content;
 	}
 
-	toReactFunctional(codeStr: string) {
+	toReactFunctional(codeStr: string): string {
 		let content = 'const mambaUI = (props) => {\n';
 		content += '\t return (\n';
 		content += '\t\t' + this.beautifyHTML(codeStr, 2);
@@ -128,7 +136,7 @@ export class FormatterService {
 		return this.useReactSyntax(content);
 	}
 
-	toReactClass(codeStr: string) {
+	toReactClass(codeStr: string): string {
 		let content = 'const mambaUI = React.createClass({\n';
 		content += '\t render: function() {' + '\n';
 		content += '\t\t return (';
@@ -140,7 +148,7 @@ export class FormatterService {
 		return this.useReactSyntax(beautified);
 	}
 
-	copyToClipboard(code: string) {
+	copyToClipboard(code: string): void {
 		const el = document.createElement('textarea');
 		el.value = code;
 		el.setAttribute('readonly', '');
