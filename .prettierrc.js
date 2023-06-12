@@ -4,6 +4,7 @@ module.exports = {
 	'useTabs': true,
 	'tabWidth': 4,
 	'quoteProps': 'preserve',
+	'endOfLine': 'lf',
 	'printWidth': 100,
 	'htmlWhitespaceSensitivity': 'ignore',
 	'overrides': [

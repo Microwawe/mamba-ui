@@ -21,8 +21,9 @@
 			routerLinkActive
 			[routerLinkActiveOptions]="{exact: category.name === 'Home'}"
 			[routerLink]="['/' + category.link]"
-			>{{ category.name }}</a
 		>
+			{{ category.name }}
+		</a>
 		<div class="relative">
 			<button
 				(click)="toggleDocs($event)"
@@ -60,8 +61,9 @@
 						routerLinkActive
 						[routerLinkActiveOptions]="{exact: true}"
 						[routerLink]="['/' + doc.link]"
-						>{{ doc.name }}</a
 					>
+						{{ doc.name }}
+					</a>
 				</div>
 			</div>
 		</div>

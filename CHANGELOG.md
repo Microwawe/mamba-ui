@@ -4,12 +4,11 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [0.2.0](https://github.com/Microwawe/angular-quickstart/compare/v0.1.2...v0.2.0) (2020-10-20)
 
-
 ### ⚠ BREAKING CHANGES
 
-* Refactor to use custom-webpack, added TailwindCSS
+- Refactor to use custom-webpack, added TailwindCSS
 
-* :feat Configured TailwindCSS and purgecss ([cc88b7b](https://github.com/Microwawe/angular-quickstart/commit/cc88b7b81c2f7015063bdc8fab36466f06562b31))
+- :feat Configured TailwindCSS and purgecss ([cc88b7b](https://github.com/Microwawe/angular-quickstart/commit/cc88b7b81c2f7015063bdc8fab36466f06562b31))
 
 ### [0.1.2](https://github.com/Microwawe/angular-quickstart/compare/v0.1.1...v0.1.2) (2020-10-20)
 
@@ -17,18 +16,16 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [0.1.0](https://github.com/Microwawe/angular-quickstart/compare/v0.0.2...v0.1.0) (2020-10-19)
 
-
 ### ⚠ BREAKING CHANGES
 
-* changed tslint to eslint
+- changed tslint to eslint
 
-* changed tslint to eslint ([eb82f01](https://github.com/Microwawe/angular-quickstart/commit/eb82f01dc80ba6c84b7dbf0429b0970927078740))
+- changed tslint to eslint ([eb82f01](https://github.com/Microwawe/angular-quickstart/commit/eb82f01dc80ba6c84b7dbf0429b0970927078740))
 
 ### [0.0.2](https://github.com/Microwawe/angular-quickstart/compare/v0.0.1...v0.0.2) (2020-10-18)
 
 ### 0.0.1 (2020-10-18)
 
-
 ### Features
 
-* Added service worker, simplified paths and core files ([afac450](https://github.com/Microwawe/angular-quickstart/commit/afac450e16326332f5cdeb8c7e79efb464a148e9))
+- Added service worker, simplified paths and core files ([afac450](https://github.com/Microwawe/angular-quickstart/commit/afac450e16326332f5cdeb8c7e79efb464a148e9))
