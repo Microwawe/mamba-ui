@@ -21,6 +21,7 @@
 						"customWebpackConfig": {
 							"path": "./webpack.config.js"
 						},
+						"allowedCommonJsDependencies": ["prismjs", "tailwindcss/colors"],
 						"outputPath": "dist/mamba-ui",
 						"index": "src/index.html",
 						"main": "src/main.ts",
@@ -174,5 +175,5 @@
 				}
 			}
 		}
-  }
+	}
 }
