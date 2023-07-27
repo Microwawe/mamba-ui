@@ -12,8 +12,10 @@ import {ShowCodeComponent} from '@shared/components/show-code/show-code.componen
 import {ShowcaseComponent} from '@shared/components/showcase/showcase.component';
 import {SearchComponent} from '@shared/components/search/search.component';
 import {EmptyChildRouteComponent} from '@shared/components/empty-child-route/empty-child-route.component';
+import {AdsComponent} from './components/ads/ads.component';
 
 const components = [
+	AdsComponent,
 	BaseComponent,
 	EmptyChildRouteComponent,
 	FullscreenModalComponent,

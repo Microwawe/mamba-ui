@@ -3,11 +3,7 @@
 	<div class="flex flex-col space-y-12">
 		<ng-content></ng-content>
 	</div>
-	<div
-		class="dark horizontal flat"
-		data-ea-publisher="mambauicom"
-		data-ea-type="text"
-		data-ea-keywords="tailwind|tailwindcss|css|component|template|web development"
-		id="showcase-after"
-	></div>
+	<div class="flex justify-center">
+		<ads [keyword]="title" [sticky]="true"></ads>
+	</div>
 </div>

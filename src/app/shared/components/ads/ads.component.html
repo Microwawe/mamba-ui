@@ -1,0 +1,26 @@
+<div
+	*ngIf="fixed"
+	class="dark raised"
+	data-ea-publisher="mambauicom"
+	data-ea-type="text"
+	data-ea-style="fixedfooter"
+	data-ea-keywords="{{ keywords }}"
+	id="fixedfooter"
+></div>
+<div
+	*ngIf="sticky"
+	class="dark raised"
+	data-ea-publisher="mambauicom"
+	data-ea-type="image"
+	data-ea-style="stickybox"
+	data-ea-keywords="{{ keywords }}"
+	id="sticky"
+></div>
+<div
+	*ngIf="!sticky && !fixed"
+	class="dark horizontal flat"
+	data-ea-publisher="mambauicom"
+	data-ea-type="text"
+	data-ea-keywords="{{ keywords }}"
+	id="showcase"
+></div>
