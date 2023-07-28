@@ -1,5 +1,4 @@
-import {AfterViewInit, Component} from '@angular/core';
-import {ethicalads} from 'src/assets/js/ads';
+import {Component} from '@angular/core';
 
 import {environment} from '@env';
 import {BaseComponent} from '@shared/components/base/base.component';
@@ -10,16 +9,12 @@ import {AnalyticsService} from '@core/services/analytics.service';
 	selector: 'custom-home',
 	templateUrl: './home.component.html',
 })
-export class HomeComponent extends BaseComponent implements AfterViewInit {
+export class HomeComponent extends BaseComponent {
 	roundedComponentTotal: number;
 
 	constructor(private analytics: AnalyticsService) {
 		super();
 		this.roundedComponentTotal = environment.roundedComponentTotal;
-	}
-
-	ngAfterViewInit(): void {
-		ethicalads.reload();
 	}
 
 	clickCTA(): void {

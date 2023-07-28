@@ -1,5 +1,4 @@
-import {AfterViewInit, Component} from '@angular/core';
-import {ethicalads} from 'src/assets/js/ads';
+import {Component} from '@angular/core';
 
 import {BaseComponent} from '@shared/components/base/base.component';
 
@@ -7,12 +6,8 @@ import {BaseComponent} from '@shared/components/base/base.component';
 	selector: 'custom-empty-child-route',
 	templateUrl: './empty-child-route.component.html',
 })
-export class EmptyChildRouteComponent extends BaseComponent implements AfterViewInit {
+export class EmptyChildRouteComponent extends BaseComponent {
 	constructor() {
 		super();
-	}
-
-	ngAfterViewInit(): void {
-		ethicalads.reload();
 	}
 }

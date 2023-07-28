@@ -8,12 +8,13 @@ import {
 	ViewChild,
 } from '@angular/core';
 import {ethicalads} from 'src/assets/js/ads';
+import {BaseComponent} from '../base/base.component';
 
 @Component({
 	selector: 'ads',
 	templateUrl: './ads.component.html',
 })
-export class AdsComponent implements OnInit, OnDestroy, AfterViewInit {
+export class AdsComponent extends BaseComponent implements OnInit, OnDestroy, AfterViewInit {
 	@ViewChild('ad') ad: ElementRef | undefined;
 	@Input() sticky: boolean = false;
 	@Input() fixed: boolean = false;
@@ -21,17 +22,20 @@ export class AdsComponent implements OnInit, OnDestroy, AfterViewInit {
 	keywords =
 		'angular|reactjs|vuejs|frontend|javascript|typescript|css|tailwindcss|aws|database|security|redis|testing|ai';
 	interval;
+	manuallyClosed = false;
 
-	constructor() {}
+	constructor() {
+		super();
+	}
 
 	ngOnInit() {
 		if (this.keyword) {
 			this.keywords += '|' + this.keyword;
 		}
-		ethicalads.reload();
 	}
 
 	ngAfterViewInit(): void {
+		ethicalads.reload();
 		this.refreshAdsInIntervalIfElementVisible();
 	}
 
@@ -51,6 +55,20 @@ export class AdsComponent implements OnInit, OnDestroy, AfterViewInit {
 			});
 		});
 
-		observer.observe(this.ad?.nativeElement);
+		if (this.ad) {
+			observer.observe(this.ad.nativeElement);
+		}
+	}
+
+	clickAd() {
+		const linkElement = document.querySelector('.custom-ad a');
+		if (linkElement) {
+			const url = linkElement.getAttribute('href');
+			if (url) {
+				window.open(url, '_blank');
+			}
+		}
+		clearInterval(this.interval);
+		this.manuallyClosed = true;
 	}
 }
