@@ -8,7 +8,7 @@
 	data-ea-keywords="{{ keywords }}"
 	id="fixedfooter"
 ></div>
-<div class="absolute hidden bottom-2 right-6 sm:block" *ngIf="sticky && !manuallyClosed">
+<div class="absolute z-50 hidden bottom-2 right-6 sm:block" *ngIf="sticky && !manuallyClosed">
 	<button
 		class="absolute px-2 pb-0.5 rounded-full -right-3 -top-3 text-gray-900 bg-gray-200 border border-gray-800"
 		(click)="clickAd()"
@@ -17,7 +17,7 @@
 	</button>
 	<div
 		#ad
-		class="bg-gray-800 dark raised custom-ad"
+		class="dark raised custom-ad"
 		data-ea-publisher="mambauicom"
 		data-ea-type="image"
 		data-ea-keywords="{{ keywords }}"
@@ -27,7 +27,7 @@
 <div
 	#ad
 	*ngIf="!sticky && !fixed"
-	class="dark horizontal flat custom-ad"
+	class="dark flat custom-ad"
 	data-ea-publisher="mambauicom"
 	data-ea-type="text"
 	data-ea-keywords="{{ keywords }}"

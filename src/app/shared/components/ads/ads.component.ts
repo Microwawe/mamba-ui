@@ -19,8 +19,7 @@ export class AdsComponent extends BaseComponent implements OnInit, OnDestroy, Af
 	@Input() sticky: boolean = false;
 	@Input() fixed: boolean = false;
 	@Input() keyword = '';
-	keywords =
-		'angular|reactjs|vuejs|frontend|javascript|typescript|css|tailwindcss|aws|database|security|redis|testing|ai';
+	keywords = 'tailwind|tailwindcss|css|component|template|web development|webdev|document';
 	interval;
 	manuallyClosed = false;
 
@@ -47,11 +46,11 @@ export class AdsComponent extends BaseComponent implements OnInit, OnDestroy, Af
 		const observer = new IntersectionObserver((entries, obs) => {
 			entries.forEach(entry => {
 				clearInterval(this.interval);
-				if (entry.isIntersecting) {
-					this.interval = setInterval(() => {
+				this.interval = setInterval(() => {
+					if (!document.hidden && entry.isIntersecting) {
 						ethicalads.reload();
-					}, 17000);
-				}
+					}
+				}, 17000);
 			});
 		});
 
