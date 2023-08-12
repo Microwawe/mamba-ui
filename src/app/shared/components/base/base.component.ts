@@ -12,7 +12,7 @@ import {Requires} from '@shared/enum/requires.enum';
 })
 export class BaseComponent implements OnDestroy {
 	darkTheme!: boolean;
-	combinedSub: Subscription;
+	combinedBaseSub: Subscription;
 	enum = {
 		requires: Requires,
 	};
@@ -50,7 +50,7 @@ export class BaseComponent implements OnDestroy {
 		this.colorService = injector.get(ColorService);
 		this.themeService = injector.get(ThemeService);
 
-		this.combinedSub = combineLatest([
+		this.combinedBaseSub = combineLatest([
 			this.themeService.getDarkTheme(),
 			this.colorService.getCurrentColor(),
 		]).subscribe(([theme, color]: [boolean, TailwindColor]) => {
@@ -89,6 +89,6 @@ export class BaseComponent implements OnDestroy {
 	}
 
 	ngOnDestroy(): void {
-		this.combinedSub.unsubscribe();
+		this.combinedBaseSub.unsubscribe();
 	}
 }
