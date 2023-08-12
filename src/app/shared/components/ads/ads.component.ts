@@ -47,10 +47,10 @@ export class AdsComponent extends BaseComponent implements OnInit, OnDestroy, Af
 			entries.forEach(entry => {
 				clearInterval(this.interval);
 				this.interval = setInterval(() => {
-					if (!document.hidden && entry.isIntersecting) {
+					if (entry.isIntersecting) {
 						ethicalads.reload();
 					}
-				}, 17000);
+				}, 12000);
 			});
 		});
 
