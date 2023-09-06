@@ -34,7 +34,7 @@ export class SettingsComponent extends BaseComponent implements OnInit, OnDestro
 	ngAfterViewInit(): void {
 		setTimeout(() => {
 			this.loaded = true;
-		}, 300);
+		}, 1500);
 	}
 
 	changeColor(color: TailwindColor): void {
