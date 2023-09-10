@@ -4,7 +4,7 @@
 
 export const environment = {
 	production: false,
-	roundedComponentTotal: 100,
+	roundedComponentTotal: 150,
 };
 
 /*
