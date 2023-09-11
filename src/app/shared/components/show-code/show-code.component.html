@@ -87,7 +87,7 @@
 				class="p-3"
 				[ngClass]="{
 					'px-6 min-h-48 flex justify-center items-center': centered,
-					'overflow-y-auto overscroll-contain max-h-half-screen': isTemplate
+					'overflow-y-auto overscroll-contain max-h-[75vh]': isTemplate
 				}"
 			>
 				<ng-content></ng-content>
@@ -146,7 +146,7 @@
 						/>
 					</svg>
 				</button>
-				<div *ngIf="!!copied" class="px-3 py-2 gap-2 flex">
+				<div *ngIf="!!copied" class="flex gap-2 px-3 py-2">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 512 512"
@@ -169,12 +169,12 @@
 			</div>
 			<ul
 				*ngIf="dropdownOpen"
-				class="absolute top-0 mt-14 mr-6 right-0 flex flex-col shadow-lg"
+				class="absolute top-0 right-0 flex flex-col mr-6 shadow-lg mt-14"
 				[ngClass]="['bg' + contrast, 'text' + defaultInv]"
 			>
 				<li class="">
 					<button
-						class="px-3 py-1 w-full"
+						class="w-full px-3 py-1"
 						[ngClass]="[
 							'hover:bg' + default,
 							'hover:text' + defaultInv,
@@ -188,7 +188,7 @@
 				</li>
 				<li class="">
 					<button
-						class="px-3 py-1 w-full"
+						class="w-full px-3 py-1"
 						[ngClass]="[
 							'hover:bg' + default,
 							'hover:text' + defaultInv,
