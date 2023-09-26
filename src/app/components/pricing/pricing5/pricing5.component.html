@@ -9,7 +9,7 @@
 		<div class="flex flex-wrap items-stretch -mx-4">
 			<div class="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
 				<div
-					class="flex flex-col p-6 space-y-6 rounded shadow sm:p-8"
+					class="flex flex-grow flex-col p-6 space-y-6 rounded shadow sm:p-8"
 					[ngClass]="['bg' + contrast]"
 				>
 					<div class="space-y-2">
@@ -80,7 +80,7 @@
 			</div>
 			<div class="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
 				<div
-					class="flex flex-col p-6 space-y-6 rounded shadow sm:p-8"
+					class="flex flex-grow flex-col p-6 space-y-6 rounded shadow sm:p-8"
 					[ngClass]="['bg' + primary, 'text' + contrast]"
 				>
 					<div class="space-y-2">
@@ -164,8 +164,8 @@
 					</a>
 				</div>
 			</div>
-			<div class="w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
-				<div class="p-6 space-y-6 rounded shadow sm:p-8" [ngClass]="['bg' + contrast]">
+			<div class="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
+				<div class="flex flex-grow flex-col p-6 space-y-6 rounded shadow sm:p-8" [ngClass]="['bg' + contrast]">
 					<div class="space-y-2">
 						<h4 class="text-2xl font-bold">Team</h4>
 						<span class="text-6xl font-bold">
