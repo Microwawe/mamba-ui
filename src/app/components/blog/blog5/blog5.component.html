@@ -1,23 +1,23 @@
 <div
-	class="relative flex flex-col max-w-xl p-6 divide-y xl:flex-row xl:divide-y-0 xl:divide-x"
+	class="relative flex flex-col max-w-2xl p-6 divide-y xl:flex-row xl:divide-y-0 xl:divide-x"
 	[ngClass]="['bg' + contrast, 'text' + defaultInv, 'divide' + neutral]"
 >
-	<div class="p-3 space-y-1 xl:ml-6">
+	<div class="p-3 space-y-1">
 		<h3 class="text-3xl font-semibold">Lorem ipsum dolor sit amet</h3>
 		<p class="text-sm" [ngClass]="['text' + plainInv]">
 			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam possimus repellat
 			incidunt odit eligendi mollitia quaerat autem nobis fugiat natus?
 		</p>
 	</div>
-	<div class="flex items-center p-3 space-x-3">
+	<div class="flex items-center gap-3 p-3">
 		<img
-			class="object-cover w-12 h-12 rounded-full shadow bg-gray-500"
+			class="object-cover w-12 h-12 bg-gray-500 rounded-full shadow"
 			alt=""
 			src="https://source.unsplash.com/100x100/?portrait"
 		/>
 		<div class="space-y-1">
-			<span class="text-sm">April 03, 2021</span>
-			<div class="flex flex-wrap space-x-3">
+			<span class="text-xs">April 03, 2021</span>
+			<div class="flex flex-wrap gap-3">
 				<a
 					rel="noopener noreferrer"
 					href="#"
@@ -46,9 +46,3 @@
 		</div>
 	</div>
 </div>
-
-<!-- <img
-			class="object-cover w-12 h-12 rounded-full shadow bg-gray-500"
-			alt=""
-			src="https://source.unsplash.com/100x100/?portrait"
-		/> -->
