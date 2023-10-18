@@ -85,7 +85,11 @@
 							"ngswConfigPath": "ngsw-config.json"
 						},
 						"development": {
-							"optimization": false,
+							"optimization": {
+								"styles": {
+									"inlineCritical": false
+								}
+							},
 							"sourceMap": true,
 							"namedChunks": true,
 							"extractLicenses": true,

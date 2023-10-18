@@ -9,6 +9,7 @@ import {
 } from '@angular/core';
 import {ethicalads} from 'src/assets/js/ads';
 import {BaseComponent} from '../base/base.component';
+import {NavigationEnd, Router} from '@angular/router';
 
 @Component({
 	selector: 'ads',
@@ -21,9 +22,11 @@ export class AdsComponent extends BaseComponent implements OnInit, OnDestroy, Af
 	@Input() keyword = '';
 	keywords = 'tailwind|tailwindcss|css|component|template|web development|webdev|document';
 	interval;
+	routerSubscription;
 	manuallyClosed = false;
+	lastNavigationTime = 0;
 
-	constructor() {
+	constructor(private router: Router) {
 		super();
 	}
 
@@ -31,6 +34,17 @@ export class AdsComponent extends BaseComponent implements OnInit, OnDestroy, Af
 		if (this.keyword) {
 			this.keywords += '|' + this.keyword;
 		}
+
+		this.routerSubscription = this.router.events.subscribe(event => {
+			if (event instanceof NavigationEnd) {
+				const currentTime = Date.now();
+				if (currentTime - this.lastNavigationTime > 2000) {
+					ethicalads.reload();
+					this.manuallyClosed = false;
+					this.lastNavigationTime = currentTime;
+				}
+			}
+		});
 	}
 
 	ngAfterViewInit(): void {
@@ -40,6 +54,7 @@ export class AdsComponent extends BaseComponent implements OnInit, OnDestroy, Af
 
 	ngOnDestroy(): void {
 		clearInterval(this.interval);
+		this.routerSubscription.unsubscribe();
 	}
 
 	refreshAdsInIntervalIfElementVisible() {

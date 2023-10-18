@@ -158,7 +158,7 @@ module.exports = {
 						maxWidth: theme('maxWidth.6xl'),
 					},
 					'@screen 2xl': {
-						maxWidth: theme('maxWidth.7xl'),
+						maxWidth: theme('maxWidth.6xl'),
 					},
 				},
 			};
