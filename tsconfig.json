@@ -1,26 +1,39 @@
 {
 	"extends": "./node_modules/gts/tsconfig-google.json",
 	"compilerOptions": {
-		"baseUrl": ".",
-		"paths": {
-			"@env": ["src/environments/environment"],
-			"@shared/*": ["src/app/shared/*"],
-			"@core/*": ["src/app/core/*"]
-		},
-		"outDir": "./dist/out-tsc",
-		"allowJs": true,
-		"noImplicitAny": false,
-		"sourceMap": false,
-		"declaration": false,
-		"downlevelIteration": true,
-		"experimentalDecorators": true,
-		"removeComments": true,
-		"moduleResolution": "node",
-		"importHelpers": true,
-		"target": "es2017",
-		"module": "es2020",
-		"lib": ["es2018", "dom"],
-		"types": ["cypress", "node"]
-	},
+    "baseUrl": ".",
+    "paths": {
+      "@env": [
+        "src/environments/environment"
+      ],
+      "@shared/*": [
+        "src/app/shared/*"
+      ],
+      "@core/*": [
+        "src/app/core/*"
+      ]
+    },
+    "outDir": "./dist/out-tsc",
+    "allowJs": true,
+    "noImplicitAny": false,
+    "sourceMap": false,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "removeComments": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "es2020",
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "types": [
+      "cypress",
+      "node"
+    ],
+    "useDefineForClassFields": false
+  },
 	"include": ["src/**/*.ts", "cypress/**/*.ts"]
 }

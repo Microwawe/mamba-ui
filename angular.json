@@ -21,6 +21,7 @@
 						"customWebpackConfig": {
 							"path": "./webpack.config.js"
 						},
+						"allowedCommonJsDependencies": ["prismjs", "tailwindcss/colors"],
 						"outputPath": "dist/mamba-ui",
 						"index": "src/index.html",
 						"main": "src/main.ts",
@@ -62,7 +63,11 @@
 									"with": "src/environments/environment.prod.ts"
 								}
 							],
-							"optimization": true,
+							"optimization": {
+								"styles": {
+									"inlineCritical": false
+								}
+							},
 							"outputHashing": "all",
 							"sourceMap": false,
 							"namedChunks": false,
@@ -174,6 +179,5 @@
 				}
 			}
 		}
-	},
-	"defaultProject": "mamba-ui"
+	}
 }
