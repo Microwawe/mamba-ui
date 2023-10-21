@@ -12,3 +12,5 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           command: npm run test:component
+        env:
+          ELECTRON_EXTRA_LAUNCH_ARGS: '--disable-gpu'
