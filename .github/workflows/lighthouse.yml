@@ -4,7 +4,7 @@ jobs:
   lighthouseci:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
           node-version: '16'
@@ -16,8 +16,8 @@ jobs:
             ${{ runner.os }}-node-
       - run: npm install
       - run: npm install -g @angular/cli
-      - run: npm install -g @lhci/cli@0.6.x
-      - run: ng build --prod
+      - run: npm install -g @lhci/cli
+      - run: ng build
       - run: lhci autorun
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
