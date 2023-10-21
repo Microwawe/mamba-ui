@@ -7,8 +7,10 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Cypress run
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v6
         with:
-          component: true
+          command: npm run test:component
+        env:
+          ELECTRON_EXTRA_LAUNCH_ARGS: '--disable-gpu'

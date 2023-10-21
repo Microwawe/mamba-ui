@@ -4,7 +4,7 @@ jobs:
   tests:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
           node-version: '16.x'
@@ -15,5 +15,5 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
       - run: npm install
-      - run: npm install -g @angular/cli@13
+      - run: npm install -g @angular/cli
       - run: ng test --watch=false
