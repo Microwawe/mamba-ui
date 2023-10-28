@@ -132,7 +132,7 @@
 				"extract-i18n": {
 					"builder": "@angular-devkit/build-angular:extract-i18n",
 					"options": {
-						"browserTarget": "mamba-ui:build"
+						"buildTarget": "mamba-ui:build"
 					}
 				},
 				"test": {
