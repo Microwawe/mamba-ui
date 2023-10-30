@@ -7,7 +7,7 @@
 			"projectType": "application",
 			"schematics": {
 				"@schematics/angular:component": {
-					"style": "scss"
+					"style": "css"
 				}
 			},
 			"root": "",
@@ -15,12 +15,9 @@
 			"prefix": "custom",
 			"architect": {
 				"build": {
-					"builder": "@angular-builders/custom-webpack:browser",
+					"builder": "@angular-devkit/build-angular:browser-esbuild",
 					"defaultConfiguration": "production",
 					"options": {
-						"customWebpackConfig": {
-							"path": "./webpack.config.js"
-						},
 						"allowedCommonJsDependencies": ["prismjs", "tailwindcss/colors"],
 						"outputPath": "dist/mamba-ui",
 						"index": "src/index.html",
@@ -46,9 +43,9 @@
 							}
 						],
 						"styles": [
-							"src/styles/prism_light.scss",
-							"src/styles/prism_dark.scss",
-							"src/styles/styles.scss"
+							"src/styles/prism_light.css",
+							"src/styles/prism_dark.css",
+							"src/styles/styles.css"
 						],
 						"stylePreprocessorOptions": {
 							"includePaths": ["src/styles"]
@@ -116,16 +113,16 @@
 					}
 				},
 				"serve": {
-					"builder": "@angular-builders/custom-webpack:dev-server",
+					"builder": "@angular-devkit/build-angular:dev-server",
 					"options": {
-						"browserTarget": "mamba-ui:build"
+						"buildTarget": "mamba-ui:build"
 					},
 					"configurations": {
 						"production": {
-							"browserTarget": "mamba-ui:build:production"
+							"buildTarget": "mamba-ui:build:production"
 						},
 						"development": {
-							"browserTarget": "mamba-ui:build:development"
+							"buildTarget": "mamba-ui:build:development"
 						}
 					}
 				},
@@ -143,7 +140,7 @@
 						"tsConfig": "tsconfig.spec.json",
 						"karmaConfig": "karma.conf.js",
 						"assets": ["src/favicon.ico", "src/assets", "src/site.webmanifest"],
-						"styles": ["src/styles/styles.scss"],
+						"styles": ["src/styles/styles.css"],
 						"stylePreprocessorOptions": {
 							"includePaths": ["src/styles"]
 						},

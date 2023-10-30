@@ -8,6 +8,7 @@ import {
 	ViewChild,
 	ElementRef,
 	Inject,
+	Signal,
 } from '@angular/core';
 import {Title} from '@angular/platform-browser';
 import {Router, NavigationEnd, ActivatedRoute} from '@angular/router';
@@ -25,9 +26,8 @@ import {DOCUMENT} from '@angular/common';
 })
 export class AppComponent extends BaseComponent implements OnInit, OnDestroy, AfterViewInit {
 	@ViewChild('loadingScreen') loadingScreen!: ElementRef;
-	modalContent!: Observable<string>;
+	modalContent!: Signal<string>;
 	isDarkTheme!: Observable<boolean>;
-	isOpen!: Observable<boolean>;
 	eventSub!: Subscription;
 	devMode = false;
 	loaded = false;
@@ -48,8 +48,7 @@ export class AppComponent extends BaseComponent implements OnInit, OnDestroy, Af
 
 	ngOnInit(): void {
 		this.isDarkTheme = this.themeService.getDarkTheme();
-		this.modalContent = this.modalService.getModalOpen();
-		this.isOpen = this.menuService.isOpen();
+		this.modalContent = this.modalService.getModalSignal();
 		this.devMode = !environment.production;
 
 		const [defaultTitle, defaultTitleDescription] = this.titleService.getTitle().split('|');

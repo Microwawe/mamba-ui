@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Signal} from '@angular/core';
 import {MenuService} from '@core/services/menu.service';
 import {BaseComponent} from '@shared/components/base/base.component';
 import {Observable} from 'rxjs';
@@ -9,14 +9,14 @@ import {Observable} from 'rxjs';
 	styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent extends BaseComponent implements OnInit {
-	menuOpen!: Observable<boolean>;
+	menuOpen!: Signal<boolean>;
 
 	constructor(private menuService: MenuService) {
 		super();
 	}
 
 	ngOnInit() {
-		this.menuOpen = this.menuService.isOpen();
+		this.menuOpen = this.menuService.openSignal();
 	}
 
 	closeMenu() {

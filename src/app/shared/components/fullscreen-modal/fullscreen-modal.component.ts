@@ -1,12 +1,18 @@
-import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
-import {take} from 'rxjs/operators';
+import {
+	AfterViewInit,
+	ChangeDetectionStrategy,
+	Component,
+	ElementRef,
+	ViewChild,
+} from '@angular/core';
 
-import {BaseComponent} from '@shared/components/base/base.component';
 import {FullscreenModalService} from '@core/services/fullscreen.modal.service';
+import {BaseComponent} from '@shared/components/base/base.component';
 
 @Component({
 	selector: 'custom-fullscreen-modal',
 	templateUrl: './fullscreen-modal.component.html',
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FullscreenModalComponent extends BaseComponent implements AfterViewInit {
 	@ViewChild('content') content!: ElementRef;
@@ -16,12 +22,8 @@ export class FullscreenModalComponent extends BaseComponent implements AfterView
 	}
 
 	ngAfterViewInit() {
-		this.modal
-			.getModalOpen()
-			.pipe(take(1))
-			.subscribe(html => {
-				this.content.nativeElement.innerHTML = html;
-			});
+		const modalContent = this.modal.getModalSignal();
+		this.content.nativeElement.innerHTML = modalContent();
 	}
 
 	close() {

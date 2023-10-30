@@ -1,11 +1,11 @@
 <!-- <div
 	#backdrop
 	class="fixed inset-0 z-30 bg-black opacity-10 lg:hidden"
-	[ngClass]="[(menuOpen | async) ? 'block' : 'hidden']"
+	[ngClass]="[menuOpen() ? 'block' : 'hidden']"
 	(click)="closeMenu()"
 ></div> -->
 <nav
-	[ngClass]="[(menuOpen | async) ? 'flex' : 'hidden', 'bg' + contrast, 'text' + defaultInv]"
+	[ngClass]="[menuOpen() ? 'flex' : 'hidden', 'bg' + contrast, 'text' + defaultInv]"
 	class="fixed z-10 flex-col w-full pt-2 shadow-sm top-20"
 >
 	<div class="md:hidden">

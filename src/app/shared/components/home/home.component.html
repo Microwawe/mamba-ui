@@ -34,11 +34,13 @@
 			<div
 				class="flex items-center justify-center flex-shrink-0 p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128"
 			>
+				@defer(on idle) {
 				<img
 					class="object-contain w-auto h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128 aspect-square"
 					src="assets/svg/Business_SVG.svg"
 					alt=""
 				/>
+				}
 			</div>
 		</div>
 	</section>
@@ -157,6 +159,7 @@
 				<div
 					class="flex items-center justify-center flex-1 px-4 mb-8 lg:flex-3 h-72 lg:justify-start sm:h-80 lg:h-96 lg:mb-0"
 				>
+					@defer(on idle) {
 					<picture class="object-contain" alt="">
 						<source type="image/webp" srcset="assets/images/demo1.webp" />
 						<source type="image/jpeg" srcset="assets/images/demo1.png" />
@@ -166,6 +169,7 @@
 							class="object-contain w-auto h-72 lg:h-96 aspect-video"
 						/>
 					</picture>
+					}
 				</div>
 				<div class="flex flex-col justify-center flex-1 px-6 lg:flex-2">
 					<span
@@ -192,6 +196,7 @@
 				<div
 					class="flex items-center justify-center flex-1 px-4 mb-8 lg:flex-3 h-72 lg:justify-end sm:h-80 lg:h-96 lg:mb-0"
 				>
+					@defer(on idle) {
 					<picture class="object-contain" alt="">
 						<source type="image/webp" srcset="assets/images/demo2.webp" />
 						<source type="image/jpeg" srcset="assets/images/demo2.png" />
@@ -201,6 +206,7 @@
 							class="object-contain w-auto h-72 lg:h-96 aspect-video"
 						/>
 					</picture>
+					}
 				</div>
 				<div class="flex flex-col justify-center flex-1 px-6 lg:flex-2">
 					<span
@@ -224,6 +230,7 @@
 				<div
 					class="flex items-center justify-center flex-1 px-4 my-8 lg:justify-start lg:flex-3 h-72 sm:h-80 lg:h-96 lg:mb-0"
 				>
+					@defer(on idle) {
 					<picture class="object-contain" alt="">
 						<source type="image/webp" srcset="assets/images/demo5.webp" />
 						<source type="image/jpeg" srcset="assets/images/demo5.png" />
@@ -233,6 +240,7 @@
 							class="object-contain w-auto h-72 lg:h-96 aspect-video"
 						/>
 					</picture>
+					}
 				</div>
 				<div class="flex flex-col justify-center flex-1 px-6 lg:flex-2">
 					<span
