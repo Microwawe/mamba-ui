@@ -13,6 +13,7 @@ import {ShowcaseComponent} from '@shared/components/showcase/showcase.component'
 import {SearchComponent} from '@shared/components/search/search.component';
 import {EmptyChildRouteComponent} from '@shared/components/empty-child-route/empty-child-route.component';
 import {AdsComponent} from './components/ads/ads.component';
+import {DummylinkDirective} from './directives/dummylink.directive';
 
 const components = [
 	AdsComponent,
@@ -24,12 +25,15 @@ const components = [
 	ShowcaseComponent,
 	ShowCodeComponent,
 ];
+
 const pipes = [FilterPipe];
+
+const directives = [DummylinkDirective];
 
 @NgModule({
 	imports: [CommonModule, HttpClientModule, FormsModule, RouterModule],
-	declarations: [...components, ...pipes],
-	exports: [CommonModule, HttpClientModule, FormsModule, ...components, ...pipes],
+	declarations: [...components, ...pipes, ...directives],
+	exports: [CommonModule, HttpClientModule, FormsModule, ...components, ...pipes, ...directives],
 	providers: [],
 })
 export class SharedModule {}

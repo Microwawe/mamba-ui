@@ -2,7 +2,8 @@
 	<button
 		aria-label="Slide back"
 		type="button"
-		class="absolute left-0 z-30 p-2 ml-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
+		[ngClass]="['bg' + contrast]"
+		class="absolute left-0 z-30 p-2 ml-10 bg-opacity-50 rounded-full focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
 	>
 		<svg
 			class="w-4 h-4"
@@ -28,13 +29,14 @@
 			<img
 				src="https://source.unsplash.com/random/240x360/?{{ i }}"
 				alt="Image {{ i }}"
-				class="object-cover object-center h-96 aspect-square bg-gray-500"
+				class="object-cover object-center bg-gray-500 h-96 aspect-square"
 			/>
 		</div>
 	</div>
 	<button
 		aria-label="Slide forward"
-		class="absolute right-0 z-30 p-2 mr-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
+		[ngClass]="['bg' + contrast]"
+		class="absolute right-0 z-30 p-2 mr-10 bg-opacity-50 rounded-full focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
 		id="next"
 	>
 		<svg
