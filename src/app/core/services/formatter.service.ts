@@ -18,7 +18,7 @@ export class FormatterService {
 
 	formatNode(node: any, level: number): any {
 		const indentBefore = level > 0 ? '\t'.repeat(level) : '';
-		const indentAfter = indentBefore.substr(1);
+		const indentAfter = indentBefore.substring(1);
 		let textNode;
 
 		for (let i = 0; i < node.children.length; i++) {
@@ -89,14 +89,14 @@ export class FormatterService {
 	toggleDarkModeVariants(codeStr: string, darkTheme: boolean): string {
 		return darkTheme
 			? codeStr.replace(
-					/(bg|border|placeholder|text|from|via|to)-(?!opacity)(black|white|transparent|\w+-\d{2,3})/gm,
+					/(bg|border|placeholder|text|from|via|to|ring|ring-offset|accent|divide|outline|decoration|shadow|caret|fill|stroke)-(?!opacity)(black|white|transparent|\w+-\d{2,3})/gm,
 					'dark:$1-$2'
 			  )
 			: codeStr.replace(/dark:/gm, '');
 	}
 
 	replaceColor(codeStr: string, oldColor: string, newColor: string): string {
-		const colorsWithOnlyOneShade: string[] = ['black', 'white', 'transparent'];
+		const colorsWithOnlyOneShade: string[] = ['black', 'white', 'transparent', 'current'];
 
 		oldColor = colorsWithOnlyOneShade.includes(oldColor)
 			? '-' + oldColor

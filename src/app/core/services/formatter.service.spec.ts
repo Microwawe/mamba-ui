@@ -68,29 +68,28 @@ describe('Service: Formatter', () => {
 	});
 
 	describe('toggleDarkModeVariants()', () => {
-		it('should add dark variant to bg color', inject(
-			[FormatterService],
-			(service: FormatterService) => {
-				const str = '<span class="bg-black"></span>';
-				const result = '<span class="dark:bg-black"></span>';
-				expect(service.toggleDarkModeVariants(str, true)).toBe(result);
-			}
-		));
-
-		it('should add dark variant to border color', inject(
-			[FormatterService],
-			(service: FormatterService) => {
-				const str = '<span class="border-red-500"></span>';
-				const result = '<span class="dark:border-red-500"></span>';
-				expect(service.toggleDarkModeVariants(str, true)).toBe(result);
-			}
-		));
+		it('should add dark variants', inject([FormatterService], (service: FormatterService) => {
+			const str =
+				'<span class="text-white border-white ring-white ring-offset-white accent-white divide-white bg-white from-white via-white to-white outline-white decoration-white shadow-white caret-white fill-white stroke-white"></span>';
+			const result =
+				'<span class="dark:text-white dark:border-white dark:ring-white dark:ring-offset-white dark:accent-white dark:divide-white dark:bg-white dark:from-white dark:via-white dark:to-white dark:outline-white dark:decoration-white dark:shadow-white dark:caret-white dark:fill-white dark:stroke-white"></span>';
+			expect(service.toggleDarkModeVariants(str, true)).toBe(result);
+		}));
 
 		it('should not add dark variant to border width', inject(
 			[FormatterService],
 			(service: FormatterService) => {
 				const str = '<span class="border-t-4"></span>';
 				const result = '<span class="border-t-4"></span>';
+				expect(service.toggleDarkModeVariants(str, true)).toBe(result);
+			}
+		));
+
+		it('should not add dark variant to svg fill or fill-rule', inject(
+			[FormatterService],
+			(service: FormatterService) => {
+				const str = '<svg><path fill="#fff" fill-rule="evenodd"></path></svg>';
+				const result = '<svg><path fill="#fff" fill-rule="evenodd"></path></svg>';
 				expect(service.toggleDarkModeVariants(str, true)).toBe(result);
 			}
 		));
@@ -104,29 +103,11 @@ describe('Service: Formatter', () => {
 			}
 		));
 
-		it('should add dark variant to placeholder color', inject(
-			[FormatterService],
-			(service: FormatterService) => {
-				const str = '<span class="placeholder-gray-300"></span>';
-				const result = '<span class="dark:placeholder-gray-300"></span>';
-				expect(service.toggleDarkModeVariants(str, true)).toBe(result);
-			}
-		));
-
 		it('should not add dark variant to placeholder opacity', inject(
 			[FormatterService],
 			(service: FormatterService) => {
 				const str = '<span class="placeholder-opacity-50"></span>';
 				const result = '<span class="placeholder-opacity-50"></span>';
-				expect(service.toggleDarkModeVariants(str, true)).toBe(result);
-			}
-		));
-
-		it('should add dark variant to text color', inject(
-			[FormatterService],
-			(service: FormatterService) => {
-				const str = '<span class="text-white"></span>';
-				const result = '<span class="dark:text-white"></span>';
 				expect(service.toggleDarkModeVariants(str, true)).toBe(result);
 			}
 		));
@@ -140,15 +121,6 @@ describe('Service: Formatter', () => {
 			}
 		));
 
-		it('should add dark variant to gradient colors', inject(
-			[FormatterService],
-			(service: FormatterService) => {
-				const str = '<span class="from-gray-100 via-gray-500 to-gray-900"></span>';
-				const result =
-					'<span class="dark:from-gray-100 dark:via-gray-500 dark:to-gray-900"></span>';
-				expect(service.toggleDarkModeVariants(str, true)).toBe(result);
-			}
-		));
 		it('should remove dark variant when not in dark mode', inject(
 			[FormatterService],
 			(service: FormatterService) => {
