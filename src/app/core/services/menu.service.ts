@@ -1,5 +1,4 @@
 import {Injectable, Signal, signal} from '@angular/core';
-import {BehaviorSubject, Observable} from 'rxjs';
 
 @Injectable()
 export class MenuService {
@@ -17,7 +16,7 @@ export class MenuService {
 		this.sideMenuOpen.update(value => !value);
 	}
 
-	openSignal() {
-		return this.sideMenuOpen;
+	openSignal(): Signal<boolean> {
+		return this.sideMenuOpen.asReadonly();
 	}
 }

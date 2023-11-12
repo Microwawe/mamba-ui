@@ -15,6 +15,6 @@ export class FullscreenModalService {
 	}
 
 	getModalSignal(): Signal<string> {
-		return this.modalContent;
+		return this.modalContent.asReadonly();
 	}
 }
