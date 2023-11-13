@@ -15,14 +15,14 @@
 			"prefix": "custom",
 			"architect": {
 				"build": {
-					"builder": "@angular-devkit/build-angular:browser-esbuild",
+					"builder": "@angular-devkit/build-angular:application",
 					"defaultConfiguration": "production",
 					"options": {
 						"allowedCommonJsDependencies": ["prismjs", "tailwindcss/colors"],
 						"outputPath": "dist/mamba-ui",
 						"index": "src/index.html",
-						"main": "src/main.ts",
-						"polyfills": "src/polyfills.ts",
+						"browser": "src/main.ts",
+						"polyfills": ["src/polyfills.ts"],
 						"tsConfig": "tsconfig.app.json",
 						"aot": true,
 						"assets": [
@@ -69,8 +69,6 @@
 							"sourceMap": false,
 							"namedChunks": false,
 							"extractLicenses": true,
-							"vendorChunk": false,
-							"buildOptimizer": true,
 							"budgets": [
 								{
 									"type": "initial",
@@ -82,9 +80,7 @@
 									"maximumWarning": "6kb",
 									"maximumError": "10kb"
 								}
-							],
-							"serviceWorker": true,
-							"ngswConfigPath": "ngsw-config.json"
+							]
 						},
 						"development": {
 							"optimization": {
@@ -95,8 +91,6 @@
 							"sourceMap": true,
 							"namedChunks": true,
 							"extractLicenses": true,
-							"vendorChunk": true,
-							"buildOptimizer": false,
 							"budgets": [
 								{
 									"type": "initial",
