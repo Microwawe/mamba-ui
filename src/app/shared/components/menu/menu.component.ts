@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Signal, signal} from '@angular/core';
 import {MenuService} from '@core/services/menu.service';
 
 import {BaseComponent} from '@shared/components/base/base.component';
@@ -10,7 +10,7 @@ import {Observable} from 'rxjs';
 	styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent extends BaseComponent implements OnInit {
-	menuOpen!: Observable<boolean>;
+	menuOpen!: Signal<boolean>;
 	docsOpen = false;
 	categories = [
 		{link: '', name: 'Home'},
@@ -31,7 +31,7 @@ export class MenuComponent extends BaseComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.menuOpen = this.menuService.isOpen();
+		this.menuOpen = this.menuService.openSignal();
 	}
 
 	closeMenu() {

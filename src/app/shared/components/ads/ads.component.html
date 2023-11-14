@@ -1,7 +1,8 @@
 <div
 	#ad
 	*ngIf="fixed"
-	class="dark raised custom-ad"
+	class="raised custom-ad"
+	[ngClass]="{'dark': darkTheme}"
 	data-ea-publisher="mambauicom"
 	data-ea-type="text"
 	data-ea-style="fixedfooter"
@@ -17,7 +18,8 @@
 	</button>
 	<div
 		#ad
-		class="dark raised custom-ad"
+		class="raised custom-ad"
+		[ngClass]="{'dark': darkTheme}"
 		data-ea-publisher="mambauicom"
 		data-ea-type="image"
 		data-ea-keywords="{{ keywords }}"
@@ -27,7 +29,8 @@
 <div
 	#ad
 	*ngIf="!sticky && !fixed"
-	class="dark flat custom-ad"
+	class="flat custom-ad"
+	[ngClass]="{'dark': darkTheme}"
 	data-ea-publisher="mambauicom"
 	data-ea-type="text"
 	data-ea-keywords="{{ keywords }}"

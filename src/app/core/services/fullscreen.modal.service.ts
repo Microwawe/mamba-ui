@@ -1,23 +1,20 @@
-import {Injectable} from '@angular/core';
-import {BehaviorSubject, Observable} from 'rxjs';
+import {Injectable, Signal, signal} from '@angular/core';
 
 @Injectable()
 export class FullscreenModalService {
-	private isModalOpen: BehaviorSubject<string>;
+	private modalContent = signal<string>('');
 
-	constructor() {
-		this.isModalOpen = new BehaviorSubject<string>('');
-	}
+	constructor() {}
 
 	open(html: string): void {
-		this.isModalOpen.next(html);
+		this.modalContent.set(html);
 	}
 
 	close(): void {
-		this.isModalOpen.next('');
+		this.modalContent.set('');
 	}
 
-	getModalOpen(): Observable<string> {
-		return this.isModalOpen;
+	getModalSignal(): Signal<string> {
+		return this.modalContent.asReadonly();
 	}
 }

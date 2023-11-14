@@ -1,4 +1,7 @@
-<section class="container mx-auto overflow-hidden rounded-lg shadow-sm scrollbar-none">
+<section
+	class="container mx-auto overflow-hidden rounded-lg shadow-sm scrollbar-none"
+	data-cy="section-component"
+>
 	<div
 		class="overflow-hidden divide-y rounded shadow-sm"
 		[ngClass]="['bg' + default, 'divide' + neutralInv]"
@@ -14,6 +17,7 @@
 					type="button"
 					(click)="showPreview()"
 					name="Show preview"
+					data-cy="show-preview-button"
 				>
 					Preview
 				</button>
@@ -26,6 +30,7 @@
 					type="button"
 					(click)="showHtml()"
 					name="Show HTML code"
+					data-cy="show-html-button"
 				>
 					HTML
 				</button>
@@ -38,6 +43,7 @@
 					type="button"
 					(click)="showVue()"
 					name="Show Vue template"
+					data-cy="show-vue-button"
 				>
 					Vue
 				</button>
@@ -50,6 +56,7 @@
 					type="button"
 					(click)="showJSX()"
 					name="Show JSX code"
+					data-cy="show-jsx-button"
 				>
 					JSX
 				</button>
@@ -59,6 +66,7 @@
 				(click)="showFullscreen()"
 				type="button"
 				title="Show in fullscreen"
+				data-cy="show-fullscreen-button"
 				[ngClass]="['hover:bg' + primary]"
 			>
 				<svg
@@ -76,6 +84,7 @@
 				</svg>
 			</button>
 		</div>
+		@defer (on idle) {
 		<div class="relative">
 			<custom-requirements
 				*ngIf="requires && !codeVisible"
@@ -119,6 +128,7 @@
 					class="px-4 py-2"
 					name="Copy to clipboard"
 					type="button"
+					data-cy="copy-code-button"
 					(click)="copyToClipboard()"
 				>
 					Copy
@@ -128,6 +138,7 @@
 					class="p-2"
 					type="button"
 					title="Toggle dropdown"
+					data-cy="copy-caret-button"
 					(click)="toggleDropdown()"
 				>
 					<svg
@@ -146,7 +157,7 @@
 						/>
 					</svg>
 				</button>
-				<div *ngIf="!!copied" class="flex gap-2 px-3 py-2">
+				<div *ngIf="!!copied" class="flex gap-2 px-3 py-2" data-cy="copy-code-success">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 512 512"
@@ -202,5 +213,6 @@
 				</li>
 			</ul>
 		</div>
+		}
 	</div>
 </section>
