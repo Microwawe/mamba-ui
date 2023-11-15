@@ -35,7 +35,7 @@ export class BreadcrumbComponent extends BaseComponent implements OnInit, OnDest
 		url = '',
 		breadcrumbs: IBreadCrumb[] = []
 	): IBreadCrumb[] {
-		//If no routeConfig is avalailable we are on the root path
+		//If no routeConfig is available we are on the root path
 		let label = route?.routeConfig?.data?.breadcrumb || '';
 		let path = route?.routeConfig?.path || '';
 

@@ -94,10 +94,12 @@
 				#rawContent
 				*ngIf="!codeVisible"
 				class="p-3"
-				[ngClass]="{
-					'px-6 min-h-48 flex justify-center items-center': centered,
-					'overflow-y-auto overscroll-contain max-h-[75vh]': isTemplate
-				}"
+				[ngClass]="[
+					centered ? 'px-6 min-h-48 flex justify-center items-center' : '',
+					isTemplate ? 'overflow-y-auto overscroll-contain max-h-[75vh]' : '',
+					absoluteHeight ? 'p-6 flex justify-center' : ''
+				]"
+				[ngStyle]="{'height': absoluteHeight || 'auto'}"
 			>
 				<ng-content></ng-content>
 			</div>

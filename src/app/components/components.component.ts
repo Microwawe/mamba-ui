@@ -1,14 +1,15 @@
-import {Component, OnDestroy} from '@angular/core';
-import {Subscription} from 'rxjs';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Subscription, distinctUntilChanged, filter, map, tap} from 'rxjs';
 
 import {BaseComponent} from '@shared/components/base/base.component';
 import {Category} from '@shared/interfaces/category.interface';
+import {ActivatedRoute, Event, NavigationEnd, Router, RouterEvent} from '@angular/router';
 
 @Component({
 	selector: 'custom-components',
 	templateUrl: './components.component.html',
 })
-export class ComponentsComponent extends BaseComponent implements OnDestroy {
+export class ComponentsComponent extends BaseComponent implements OnInit, OnDestroy {
 	query = '';
 	activeBgColor: string = 'bg' + this.neutral;
 	disabledBgColor: string = 'bg' + this.neutral;
@@ -70,7 +71,7 @@ export class ComponentsComponent extends BaseComponent implements OnDestroy {
 		{name: 'Weather', link: 'weather', count: 3, tags: ['card']},
 	].sort((a, b) => a.name.localeCompare(b.name));
 
-	constructor() {
+	constructor(private router: Router, private activatedRoute: ActivatedRoute) {
 		super();
 		this.categoryTotal = this.categories.length;
 		this.componentTotal = this.categories
@@ -80,6 +81,20 @@ export class ComponentsComponent extends BaseComponent implements OnDestroy {
 			this.activeBgColor = isDarkmode ? 'bg' + this.plain : 'bg' + this.contrast;
 			this.disabledBgColor = isDarkmode ? 'bg' + this.default : 'bg' + this.neutral;
 		});
+	}
+
+	ngOnInit(): void {
+		this.router.events
+			.pipe(
+				filter(event => event instanceof NavigationEnd),
+				distinctUntilChanged()
+			)
+			.subscribe(() => {
+				const route = this.activatedRoute.root;
+				let path = route?.routeConfig?.path || '';
+				const lastRoutePart = path.split('/').pop();
+				console.log(route, path, lastRoutePart);
+			});
 	}
 
 	updateQuery(queryString: string): void {
