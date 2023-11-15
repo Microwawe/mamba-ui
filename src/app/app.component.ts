@@ -93,7 +93,8 @@ export class AppComponent extends BaseComponent implements OnInit, OnDestroy, Af
 	}
 
 	updateCanonicalUrl() {
-		this.canonicalLink.setAttribute('href', this.document.URL);
+		const url = this.document.URL.replace(/www./, '');
+		this.canonicalLink.setAttribute('href', url);
 	}
 
 	ngOnDestroy(): void {
