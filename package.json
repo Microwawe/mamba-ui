@@ -16,6 +16,9 @@
 		"analyze": "ng build --configuration production --stats-json && webpack-bundle-analyzer dist/mamba-ui/stats.json",
 		"lhci": "lhci collect && lhci assert --config=./.lighthouserc.js"
 	},
+	"engines": {
+		"node": "18.x"
+	},
 	"private": true,
 	"dependencies": {
 		"@angular/animations": "^17.0.2",
