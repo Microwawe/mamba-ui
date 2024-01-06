@@ -12,6 +12,7 @@ export class DocsComponent extends BaseComponent {
 		{name: 'General', link: 'general'},
 		{name: 'Roadmap', link: 'roadmap'},
 		{name: 'Credits', link: 'credits'},
+		{name: 'Privacy policy', link: 'privacy-policy'},
 	];
 	selectedCategory = this.categories[0];
 
