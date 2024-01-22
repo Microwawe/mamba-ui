@@ -7,7 +7,6 @@ import {DocsComponent} from './docs.component';
 import {GeneralComponent} from './general/general.component';
 import {GetStartedComponent} from './get-started/get-started.component';
 import {RoadmapComponent} from './roadmap/roadmap.component';
-import {PrivacyPolicyComponent} from './privacy-policy/privacy-policy.component';
 
 const routes: Routes = [
 	{
@@ -33,11 +32,6 @@ const routes: Routes = [
 				component: RoadmapComponent,
 				data: {title: 'Roadmap', breadcrumb: 'Roadmap'},
 			},
-			{
-				path: 'privacy-policy',
-				component: PrivacyPolicyComponent,
-				data: {title: 'Privacy policy', breadcrumb: 'Privacy policy'},
-			},
 		],
 	},
 ];
@@ -50,7 +44,6 @@ const routes: Routes = [
 		CreditsComponent,
 		GetStartedComponent,
 		RoadmapComponent,
-		PrivacyPolicyComponent,
 	],
 })
 export class DocsModule {}

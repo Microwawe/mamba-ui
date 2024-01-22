@@ -20,11 +20,14 @@ export class AdsComponent extends BaseComponent implements OnInit, OnDestroy, Af
 	@Input() sticky: boolean = false;
 	@Input() fixed: boolean = false;
 	@Input() keyword = '';
-	keywords = 'tailwind|tailwindcss|css|component|template|web development|webdev|document';
+	keywords =
+		'pdf|document|aws|gcp|azure|database|search|ai|scalable|serverless|cloud|devops|docker|kubernetes|microservices|mysql|postgresql|postgres|oauth|ml|react|angular|vue';
 	interval;
 	routerSubscription;
 	manuallyClosed = false;
 	lastNavigationTime = 0;
+	minViewTimeMs = 2000;
+	maxViewTimeMs = 8000;
 
 	constructor(private router: Router) {
 		super();
@@ -38,7 +41,7 @@ export class AdsComponent extends BaseComponent implements OnInit, OnDestroy, Af
 		this.routerSubscription = this.router.events.subscribe(event => {
 			if (event instanceof NavigationEnd) {
 				const currentTime = Date.now();
-				if (currentTime - this.lastNavigationTime > 2000) {
+				if (currentTime - this.lastNavigationTime > this.minViewTimeMs) {
 					ethicalads.reload();
 					this.manuallyClosed = false;
 					this.lastNavigationTime = currentTime;
@@ -65,7 +68,7 @@ export class AdsComponent extends BaseComponent implements OnInit, OnDestroy, Af
 					if (entry.isIntersecting) {
 						ethicalads.reload();
 					}
-				}, 12000);
+				}, this.maxViewTimeMs);
 			});
 		});
 
