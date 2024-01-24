@@ -12,7 +12,7 @@ import {debounceTime, distinctUntilChanged, filter, map, tap} from 'rxjs/operato
 
 import {BaseComponent} from '@shared/components/base/base.component';
 import {PlausibleEvent} from '@shared/enum/plausible.event.enum';
-import {AnalyticsService} from '@core/services/analytics.service';
+import {AnalyticsService} from '@shared/services/analytics.service';
 
 @Component({
 	selector: 'custom-search',

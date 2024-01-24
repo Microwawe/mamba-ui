@@ -1,7 +1,9 @@
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 
-@Injectable()
+@Injectable({
+	providedIn: 'root',
+})
 export class AnalyticsService {
 	private endpoint = 'https://plausible.io/api/event';
 	private domain = 'mambaui.com';

@@ -1,8 +1,8 @@
 import {Component, OnDestroy, inject} from '@angular/core';
 import {combineLatest, Subscription} from 'rxjs';
 
-import {ColorService} from '@core/services/color.service';
-import {ThemeService} from '@core/services/theme.service';
+import {ColorService} from '@shared/services/color.service';
+import {ThemeService} from '@shared/services/theme.service';
 import {TailwindColor} from '@shared/interfaces/tailwind-colors.interface';
 import {Requires} from '@shared/enum/requires.enum';
 

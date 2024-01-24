@@ -1,8 +1,7 @@
 import {Component, OnInit, Signal, signal} from '@angular/core';
-import {MenuService} from '@core/services/menu.service';
+import {MenuService} from '@shared/services/menu.service';
 
 import {BaseComponent} from '@shared/components/base/base.component';
-import {Observable} from 'rxjs';
 
 @Component({
 	selector: 'custom-menu',

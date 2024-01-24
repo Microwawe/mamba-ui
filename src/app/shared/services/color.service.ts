@@ -4,7 +4,9 @@ import * as twColors from 'tailwindcss/colors';
 
 import {TailwindColor, TailwindColorPalette} from '@shared/interfaces/tailwind-colors.interface';
 
-@Injectable()
+@Injectable({
+	providedIn: 'root',
+})
 export class ColorService {
 	ignoredColors = ['inherit', 'transparent', 'current', 'black', 'white', 'lightblue'];
 	grayScaleColors = [
