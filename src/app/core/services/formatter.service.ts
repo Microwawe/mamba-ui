@@ -108,17 +108,32 @@ export class FormatterService {
 	}
 
 	useReactSyntax(codeStr: string): string {
-		const cleanStroke = codeStr.replace(/(stroke)-[a-z]/g, prop => {
-			const parts = prop.split('-');
-			return parts[0] + parts[1].toUpperCase();
-		});
-		const cleanSVGs = cleanStroke.replace(/(fill|clip)-rule/g, prop => {
-			const parts = prop.split('-');
-			return parts[0] + parts[1].charAt(0).toUpperCase() + parts[1].slice(1);
-		});
-		const closeImgTags = cleanSVGs.replace(/<img ([^<]*[^/\s])[\s]?>/g, '<img $1 />');
-		const closeInputTags = closeImgTags.replace(/<input ([^<]*[^/\s])[\s]?>/g, '<input $1 />');
-		return closeInputTags.replace(/class=/gm, 'className=');
+		const reactSyntax = codeStr
+			.replace(/(stroke)-[a-z]/g, prop => {
+				const parts = prop.split('-');
+				return parts[0] + parts[1].toUpperCase();
+			})
+			.replace(/(fill|clip)-rule/g, prop => {
+				const parts = prop.split('-');
+				return parts[0] + parts[1].charAt(0).toUpperCase() + parts[1].slice(1);
+			})
+			.replace(/<img ([^<]*[^/\s])[\s]?>/g, '<img $1 />')
+			.replace(/<input ([^<]*[^/\s])[\s]?>/g, '<input $1 />')
+			.replace(/<area([^<]*[^/\s])[\s]?>/g, '<area $1 />')
+			.replace(/<base([^<]*[^/\s])[\s]?>/g, '<base $1 />')
+			.replace(/<br([^<]*[^/\s])[\s]?>/g, '<br $1 />')
+			.replace(/<col[^group]([^<]*[^/\s])[\s]?>/g, '<col $1 />')
+			.replace(/<col>/g, '<col />')
+			.replace(/<embed([^<]*[^/\s])[\s]?>/g, '<embed $1 />')
+			.replace(/<hr([^<]*[^/\s])[\s]?>/g, '<hr $1 />')
+			.replace(/<link([^<]*[^/\s])[\s]?>/g, '<link $1 />')
+			.replace(/<meta([^<]*[^/\s])[\s]?>/g, '<meta $1 />')
+			.replace(/<param([^<]*[^/\s])[\s]?>/g, '<param $1 />')
+			.replace(/<source([^<]*[^/\s])[\s]?>/g, '<source $1 />')
+			.replace(/<track([^<]*[^/\s])[\s]?>/g, '<track $1 />')
+			.replace(/<wbr([^<]*[^/\s])[\s]?>/g, '<wbr />')
+			.replace(/class=/gm, 'className=');
+		return reactSyntax;
 	}
 
 	toVue(codeStr: string): string {
