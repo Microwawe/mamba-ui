@@ -249,6 +249,42 @@ describe('Service: Formatter', () => {
 			}
 		));
 
+		it('should add closing slash to col elements but not colgroup', inject(
+			[FormatterService],
+			(service: FormatterService) => {
+				const str = `
+				<colgroup>
+					<col class="w-5">
+					<col>
+					<col>
+					<col>
+					<col>
+					<col>
+					<col class="w-5">
+				</colgroup>`;
+				const result = `
+				<colgroup>
+					<col className="w-5" />
+					<col />
+					<col />
+					<col />
+					<col />
+					<col />
+					<col className="w-5" />
+				</colgroup>`;
+				expect(service.useReactSyntax(str)).toBe(result);
+			}
+		));
+
+		it('should not add a closing slash to col elements if it already has one', inject(
+			[FormatterService],
+			(service: FormatterService) => {
+				const str = `<col class="w-5" /><col />`;
+				const result = `<col className="w-5" /><col />`;
+				expect(service.useReactSyntax(str)).toBe(result);
+			}
+		));
+
 		it('should change svg properties to camelCase', inject(
 			[FormatterService],
 			(service: FormatterService) => {
