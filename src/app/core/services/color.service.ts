@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {Injectable, afterNextRender} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
 import * as twColors from 'tailwindcss/colors';
 
@@ -27,6 +27,11 @@ export class ColorService {
 
 	constructor() {
 		this.setupColors();
+		afterNextRender(() => {
+			const savedColor = localStorage.getItem(this.key);
+			const color = this.colors.find(color => color.name === savedColor) || this.defaultColor;
+			this.currentColor = new BehaviorSubject<TailwindColor>(color);
+		});
 	}
 
 	setCurrentColor(currentColor: TailwindColor): void {
@@ -59,9 +64,7 @@ export class ColorService {
 		this.colors = this.allTailwindColors.filter(color => !this.isGrayscale(color));
 		this.grayscale = this.allTailwindColors.filter(color => this.isGrayscale(color));
 
-		const savedColor = localStorage.getItem(this.key);
-		const color = this.colors.find(color => color.name === savedColor) || this.defaultColor;
-		this.currentColor = new BehaviorSubject<TailwindColor>(color);
+		this.currentColor = new BehaviorSubject<TailwindColor>(this.defaultColor);
 	}
 
 	isGrayscale(color: TailwindColor): boolean {

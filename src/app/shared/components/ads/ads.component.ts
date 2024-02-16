@@ -6,8 +6,9 @@ import {
 	OnDestroy,
 	OnInit,
 	ViewChild,
+	afterNextRender,
 } from '@angular/core';
-import {ethicalads} from 'src/assets/js/ads';
+// import {ethicalads} from 'src/assets/js/ads';
 import {BaseComponent} from '../base/base.component';
 import {NavigationEnd, Router} from '@angular/router';
 
@@ -15,7 +16,7 @@ import {NavigationEnd, Router} from '@angular/router';
 	selector: 'ads',
 	templateUrl: './ads.component.html',
 })
-export class AdsComponent extends BaseComponent implements OnInit, OnDestroy, AfterViewInit {
+export class AdsComponent extends BaseComponent implements OnInit, OnDestroy {
 	@ViewChild('ad') ad: ElementRef | undefined;
 	@Input() sticky: boolean = false;
 	@Input() fixed: boolean = false;
@@ -31,6 +32,10 @@ export class AdsComponent extends BaseComponent implements OnInit, OnDestroy, Af
 
 	constructor(private router: Router) {
 		super();
+		afterNextRender(() => {
+			// ethicalads.reload();
+			this.refreshAdsInIntervalIfElementVisible();
+		});
 	}
 
 	ngOnInit() {
@@ -42,17 +47,12 @@ export class AdsComponent extends BaseComponent implements OnInit, OnDestroy, Af
 			if (event instanceof NavigationEnd) {
 				const currentTime = Date.now();
 				if (currentTime - this.lastNavigationTime > this.minViewTimeMs) {
-					ethicalads.reload();
+					// ethicalads.reload();
 					this.manuallyClosed = false;
 					this.lastNavigationTime = currentTime;
 				}
 			}
 		});
-	}
-
-	ngAfterViewInit(): void {
-		ethicalads.reload();
-		this.refreshAdsInIntervalIfElementVisible();
 	}
 
 	ngOnDestroy(): void {
@@ -66,7 +66,7 @@ export class AdsComponent extends BaseComponent implements OnInit, OnDestroy, Af
 				clearInterval(this.interval);
 				this.interval = setInterval(() => {
 					if (entry.isIntersecting) {
-						ethicalads.reload();
+						// ethicalads.reload();
 					}
 				}, this.maxViewTimeMs);
 			});

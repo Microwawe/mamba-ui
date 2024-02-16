@@ -9,6 +9,7 @@ import {
 	ElementRef,
 	Inject,
 	Signal,
+	afterNextRender,
 } from '@angular/core';
 import {Title} from '@angular/platform-browser';
 import {Router, NavigationEnd, ActivatedRoute} from '@angular/router';
@@ -43,7 +44,12 @@ export class AppComponent extends BaseComponent implements OnInit, OnDestroy, Af
 		private renderer: Renderer2
 	) {
 		super();
-		this.createCanonicalLink();
+		afterNextRender(() => {
+			setTimeout(() => {
+				this.renderer.setStyle(this.loadingScreen.nativeElement, 'display', 'none');
+			}, 500);
+			this.createCanonicalLink();
+		});
 	}
 
 	ngOnInit(): void {
@@ -51,7 +57,8 @@ export class AppComponent extends BaseComponent implements OnInit, OnDestroy, Af
 		this.modalContent = this.modalService.getModalSignal();
 		this.devMode = !environment.production;
 
-		const [defaultTitle, defaultTitleDescription] = this.titleService.getTitle().split('|');
+		const defaultTitle = 'Mamba UI';
+		const defaultTitleDescription = 'Free Tailwind CSS components and templates';
 		this.eventSub = this.router.events
 			.pipe(
 				filter(event => event instanceof NavigationEnd),
@@ -75,11 +82,7 @@ export class AppComponent extends BaseComponent implements OnInit, OnDestroy, Af
 			});
 	}
 
-	ngAfterViewInit(): void {
-		setTimeout(() => {
-			this.renderer.setStyle(this.loadingScreen.nativeElement, 'display', 'none');
-		}, 500);
-	}
+	ngAfterViewInit(): void {}
 
 	closeMenu(): void {
 		this.menuService.close();
@@ -93,8 +96,10 @@ export class AppComponent extends BaseComponent implements OnInit, OnDestroy, Af
 	}
 
 	updateCanonicalUrl() {
-		const url = this.document.URL.replace(/www./, '');
-		this.canonicalLink.setAttribute('href', url);
+		if (this.canonicalLink) {
+			const url = this.document.URL.replace(/www./, '');
+			this.canonicalLink.setAttribute('href', url);
+		}
 	}
 
 	ngOnDestroy(): void {

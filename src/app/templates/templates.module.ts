@@ -18,13 +18,13 @@ const routes: Routes = [
 				path: 'business',
 				loadChildren: () =>
 					import('./business/business.module').then(m => m.BusinessModule),
-				data: {title: 'Business', breadcrumb: 'Business'},
+				data: {title: 'Business templates', breadcrumb: 'Business'},
 			},
 			{
 				path: 'portfolio',
 				loadChildren: () =>
 					import('./portfolio/portfolio.module').then(m => m.PortfolioModule),
-				data: {title: 'Portfolio', breadcrumb: 'Portfolio'},
+				data: {title: 'Portfolio templates', breadcrumb: 'Portfolio'},
 			},
 		],
 	},

@@ -2,21 +2,8 @@
 	#loadingScreen
 	style="background-color: #1f2937; height: 100%; width: 100%; position: absolute; z-index: 9999"
 ></div>
-<div
-	*ngIf="!modalContent()"
-	class="relative flex flex-row w-full h-full font-sans"
-	[ngClass]="['text' + defaultInv, (isDarkTheme | async) ? 'bg-gray-900' : 'bg-gray-200']"
->
-	<div class="flex flex-col w-full h-auto mt-20 overflow-y-auto" (click)="closeMenu()">
-		<custom-header></custom-header>
-		<custom-menu></custom-menu>
-		<!-- <custom-breadcrumb></custom-breadcrumb> -->
-		<main class="flex-1">
-			<custom-settings></custom-settings>
-			<router-outlet></router-outlet>
-		</main>
-		<custom-footer></custom-footer>
-	</div>
+<div *ngIf="!modalContent()" (click)="closeMenu()">
+	<router-outlet></router-outlet>
 </div>
 <custom-fullscreen-modal *ngIf="modalContent()"></custom-fullscreen-modal>
 <span

@@ -18,54 +18,44 @@
 					"builder": "@angular-devkit/build-angular:application",
 					"defaultConfiguration": "production",
 					"options": {
-            "allowedCommonJsDependencies": [
-              "prismjs",
-              "tailwindcss/colors"
-            ],
-            "outputPath": "dist/mamba-ui",
-            "index": "src/index.html",
-            "browser": "src/main.ts",
-            "polyfills": [
-              "src/polyfills.ts"
-            ],
-            "tsConfig": "tsconfig.app.json",
-            "aot": true,
-            "assets": [
-              "src/favicon.ico",
-              "src/favicon-16x16.png",
-              "src/favicon-32x32.png",
-              "src/apple-touch-icon.png",
-              "src/android-chrome-192x192.png",
-              "src/mstile-150x150.png",
-              "src/safari-pinned-tab.svg",
-              "src/site.webmanifest",
-              "src/sitemap.xml",
-              "src/robots.txt",
-              {
-                "glob": "**/*",
-                "input": "src/assets",
-                "output": "assets"
-              }
-            ],
-            "styles": [
-              "src/styles/prism_light.css",
-              "src/styles/prism_dark.css",
-              "src/styles/styles.css"
-            ],
-            "stylePreprocessorOptions": {
-              "includePaths": [
-                "src/styles"
-              ]
-            },
-            "scripts": [
-              "src/assets/js/ads.js"
-            ],
-            "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
-          },
+						"allowedCommonJsDependencies": ["prismjs", "tailwindcss/colors"],
+						"outputPath": "dist/mamba-ui",
+						"index": "src/index.html",
+						"browser": "src/main.ts",
+						"polyfills": ["src/polyfills.ts"],
+						"tsConfig": "tsconfig.app.json",
+						"aot": true,
+						"assets": [
+							"src/favicon.ico",
+							"src/favicon-16x16.png",
+							"src/favicon-32x32.png",
+							"src/apple-touch-icon.png",
+							"src/android-chrome-192x192.png",
+							"src/mstile-150x150.png",
+							"src/safari-pinned-tab.svg",
+							"src/site.webmanifest",
+							"src/sitemap.xml",
+							"src/robots.txt",
+							{
+								"glob": "**/*",
+								"input": "src/assets",
+								"output": "assets"
+							}
+						],
+						"styles": [
+							"src/styles/prism_light.css",
+							"src/styles/prism_dark.css",
+							"src/styles/styles.css"
+						],
+						"stylePreprocessorOptions": {
+							"includePaths": ["src/styles"]
+						},
+						"server": "src/main.server.ts",
+						"prerender": true,
+						"ssr": {
+							"entry": "server.ts"
+						}
+					},
 					"configurations": {
 						"production": {
 							"fileReplacements": [

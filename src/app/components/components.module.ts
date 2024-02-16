@@ -17,33 +17,33 @@ const routes: Routes = [
 			{
 				path: 'article',
 				loadChildren: () => import('./article/article.module').then(m => m.ArticleModule),
-				data: {title: 'Articles', breadcrumb: 'Article'},
+				data: {title: 'Article components', breadcrumb: 'Article'},
 			},
 			{
 				path: 'avatar',
 				loadChildren: () => import('./avatar/avatar.module').then(m => m.AvatarModule),
-				data: {title: 'Avatars', breadcrumb: 'Avatar'},
+				data: {title: 'Avatar components', breadcrumb: 'Avatar'},
 			},
 			{
 				path: 'banner',
 				loadChildren: () => import('./banner/banner.module').then(m => m.BannerModule),
-				data: {title: 'Banners', breadcrumb: 'Banner'},
+				data: {title: 'Banner components', breadcrumb: 'Banner'},
 			},
 			{
 				path: 'button',
 				loadChildren: () => import('./button/button.module').then(m => m.ButtonModule),
-				data: {title: 'Buttons', breadcrumb: 'Button'},
+				data: {title: 'Button components', breadcrumb: 'Button'},
 			},
 			{
 				path: 'breadcrumb',
 				loadChildren: () =>
 					import('./breadcrumb/breadcrumb.module').then(m => m.BreadcrumbModule),
-				data: {title: 'Breadcrumbs', breadcrumb: 'Breadcrumb'},
+				data: {title: 'Breadcrumb components', breadcrumb: 'Breadcrumb'},
 			},
 			{
 				path: 'blog',
 				loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule),
-				data: {title: 'Blog', breadcrumb: 'Blog'},
+				data: {title: 'Blog components', breadcrumb: 'Blog'},
 			},
 			{
 				path: 'call-to-action',
@@ -51,126 +51,126 @@ const routes: Routes = [
 					import('./call-to-action/call-to-action.module').then(
 						m => m.CallToActionModule
 					),
-				data: {title: 'CTA', breadcrumb: 'CTA'},
+				data: {title: 'CTA components', breadcrumb: 'CTA'},
 			},
 			{
 				path: 'card',
 				loadChildren: () => import('./card/card.module').then(m => m.CardModule),
-				data: {title: 'Card', breadcrumb: 'Card'},
+				data: {title: 'Card components', breadcrumb: 'Card'},
 			},
 			{
 				path: 'carousel',
 				loadChildren: () =>
 					import('./carousel/carousel.module').then(m => m.CarouselModule),
-				data: {title: 'Carousel', breadcrumb: 'Carousel'},
+				data: {title: 'Carousel components', breadcrumb: 'Carousel'},
 			},
 			{
 				path: 'contact',
 				loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule),
-				data: {title: 'Contact', breadcrumb: 'Contact'},
+				data: {title: 'Contact components', breadcrumb: 'Contact'},
 			},
 			{
 				path: 'error',
 				loadChildren: () => import('./error/error.module').then(m => m.ErrorModule),
-				data: {title: 'Error', breadcrumb: 'Error'},
+				data: {title: 'Error components', breadcrumb: 'Error'},
 			},
 			{
 				path: 'faq',
 				loadChildren: () => import('./faq/faq.module').then(m => m.FaqModule),
-				data: {title: 'FAQ', breadcrumb: 'FAQ'},
+				data: {title: 'FAQ components', breadcrumb: 'FAQ'},
 			},
 			{
 				path: 'feature',
 				loadChildren: () => import('./feature/feature.module').then(m => m.FeatureModule),
-				data: {title: 'Feature', breadcrumb: 'Feature'},
+				data: {title: 'Feature components', breadcrumb: 'Feature'},
 			},
 			{
 				path: 'footer',
 				loadChildren: () => import('./footer/footer.module').then(m => m.FooterModule),
-				data: {title: 'Footer', breadcrumb: 'Footer'},
+				data: {title: 'Footer components', breadcrumb: 'Footer'},
 			},
 			{
 				path: 'form',
 				loadChildren: () => import('./form/form.module').then(m => m.FormModule),
-				data: {title: 'Form', breadcrumb: 'Form'},
+				data: {title: 'Form components', breadcrumb: 'Form'},
 			},
 			{
 				path: 'gallery',
 				loadChildren: () => import('./gallery/gallery.module').then(m => m.GalleryModule),
-				data: {title: 'Gallery', breadcrumb: 'Gallery'},
+				data: {title: 'Gallery components', breadcrumb: 'Gallery'},
 			},
 			{
 				path: 'header',
 				loadChildren: () => import('./header/header.module').then(m => m.HeaderModule),
-				data: {title: 'Header', breadcrumb: 'Header'},
+				data: {title: 'Header components', breadcrumb: 'Header'},
 			},
 			{
 				path: 'hero',
 				loadChildren: () => import('./hero/hero.module').then(m => m.HeroModule),
-				data: {title: 'Hero', breadcrumb: 'Hero'},
+				data: {title: 'Hero components', breadcrumb: 'Hero'},
 			},
 			{
 				path: 'input',
 				loadChildren: () => import('./input/input.module').then(m => m.InputModule),
-				data: {title: 'Input', breadcrumb: 'Input'},
+				data: {title: 'Input components', breadcrumb: 'Input'},
 			},
 			{
 				path: 'loading',
 				loadChildren: () => import('./loading/loading.module').then(m => m.LoadingModule),
-				data: {title: 'Loading', breadcrumb: 'Loading'},
+				data: {title: 'Loading components', breadcrumb: 'Loading'},
 			},
 			{
 				path: 'login',
 				loadChildren: () => import('./login/login.module').then(m => m.LoginModule),
-				data: {title: 'Login', breadcrumb: 'Login'},
+				data: {title: 'Login components', breadcrumb: 'Login'},
 			},
 			{
 				path: 'modal',
 				loadChildren: () => import('./modal/modal.module').then(m => m.ModalModule),
-				data: {title: 'Modal', breadcrumb: 'Modal'},
+				data: {title: 'Modal components', breadcrumb: 'Modal'},
 			},
 			{
 				path: 'news',
 				loadChildren: () => import('./news/news.module').then(m => m.NewsModule),
-				data: {title: 'News', breadcrumb: 'News'},
+				data: {title: 'News components', breadcrumb: 'News'},
 			},
 			{
 				path: 'snackbar',
 				loadChildren: () =>
 					import('./snackbar/snackbar.module').then(m => m.SnackbarModule),
-				data: {title: 'Snackbars', breadcrumb: 'Snackbar'},
+				data: {title: 'Snackbar components', breadcrumb: 'Snackbar'},
 			},
 			{
 				path: 'pagination',
 				loadChildren: () =>
 					import('./pagination/pagination.module').then(m => m.PaginationModule),
-				data: {title: 'Paginations', breadcrumb: 'Pagination'},
+				data: {title: 'Pagination components', breadcrumb: 'Pagination'},
 			},
 			{
 				path: 'pricing',
 				loadChildren: () => import('./pricing/pricing.module').then(m => m.PricingModule),
-				data: {title: 'Pricing', breadcrumb: 'Pricing'},
+				data: {title: 'Pricing components', breadcrumb: 'Pricing'},
 			},
 			{
 				path: 'profile',
 				loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule),
-				data: {title: 'Profile', breadcrumb: 'Profile'},
+				data: {title: 'Profile components', breadcrumb: 'Profile'},
 			},
 			{
 				path: 'review',
 				loadChildren: () => import('./review/review.module').then(m => m.ReviewModule),
-				data: {title: 'reviews', breadcrumb: 'review'},
+				data: {title: 'Review components', breadcrumb: 'review'},
 			},
 			{
 				path: 'shopping-cart',
 				loadChildren: () =>
 					import('./shopping-cart/shopping-cart.module').then(m => m.ShoppingCartModule),
-				data: {title: 'Shopping cart', breadcrumb: 'Shopping cart'},
+				data: {title: 'Shopping cart components', breadcrumb: 'Shopping cart'},
 			},
 			{
 				path: 'sidebar',
 				loadChildren: () => import('./sidebar/sidebar.module').then(m => m.SidebarModule),
-				data: {title: 'Sidebar', breadcrumb: 'Sidebar'},
+				data: {title: 'Sidebar components', breadcrumb: 'Sidebar'},
 			},
 			{
 				path: 'skeleton-loader',
@@ -178,59 +178,59 @@ const routes: Routes = [
 					import('./skeleton-loader/skeleton-loader.module').then(
 						m => m.SkeletonLoaderModule
 					),
-				data: {title: 'Skeleton loader', breadcrumb: 'Skeleton loader'},
+				data: {title: 'Skeleton loader components', breadcrumb: 'Skeleton loader'},
 			},
 			{
 				path: 'slider',
 				loadChildren: () => import('./slider/slider.module').then(m => m.SliderModule),
-				data: {title: 'Slider', breadcrumb: 'Slider'},
+				data: {title: 'Slider components', breadcrumb: 'Slider'},
 			},
 			{
 				path: 'stats',
 				loadChildren: () => import('./stats/stats.module').then(m => m.StatsModule),
-				data: {title: 'Stats', breadcrumb: 'Stats'},
+				data: {title: 'Stats components', breadcrumb: 'Stats'},
 			},
 			{
 				path: 'steps',
 				loadChildren: () => import('./steps/steps.module').then(m => m.StepsModule),
-				data: {title: 'Step', breadcrumb: 'Step'},
+				data: {title: 'Steps components', breadcrumb: 'Step'},
 			},
 			{
 				path: 'table',
 				loadChildren: () => import('./table/table.module').then(m => m.TableModule),
-				data: {title: 'Table', breadcrumb: 'Table'},
+				data: {title: 'Table components', breadcrumb: 'Table'},
 			},
 			{
 				path: 'tab',
 				loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsModule),
-				data: {title: 'Tabs', breadcrumb: 'Tabs'},
+				data: {title: 'Tab components', breadcrumb: 'Tabs'},
 			},
 			{
 				path: 'team',
 				loadChildren: () => import('./team/team.module').then(m => m.TeamModule),
-				data: {title: 'Team', breadcrumb: 'Team'},
+				data: {title: 'Team components', breadcrumb: 'Team'},
 			},
 			{
 				path: 'testimonial',
 				loadChildren: () =>
 					import('./testimonial/testimonial.module').then(m => m.TestimonialModule),
-				data: {title: 'Testimonial', breadcrumb: 'Testimonial'},
+				data: {title: 'Testimonial components', breadcrumb: 'Testimonial'},
 			},
 			{
 				path: 'timeline',
 				loadChildren: () =>
 					import('./timeline/timeline.module').then(m => m.TimelineModule),
-				data: {title: 'Timeline', breadcrumb: 'Timeline'},
+				data: {title: 'Timeline components', breadcrumb: 'Timeline'},
 			},
 			{
 				path: 'toggle',
 				loadChildren: () => import('./toggle/toggle.module').then(m => m.ToggleModule),
-				data: {title: 'Toggle', breadcrumb: 'Toggle'},
+				data: {title: 'Toggle components', breadcrumb: 'Toggle'},
 			},
 			{
 				path: 'weather',
 				loadChildren: () => import('./weather/weather.module').then(m => m.WeatherModule),
-				data: {title: 'Weather', breadcrumb: 'Weather'},
+				data: {title: 'Weather components', breadcrumb: 'Weather'},
 			},
 		],
 	},

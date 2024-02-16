@@ -15,6 +15,7 @@ import {BreadcrumbComponent} from '@shared/components/breadcrumb/breadcrumb.comp
 import {HomeComponent} from '@shared/components/home/home.component';
 import {SettingsComponent} from '@shared/components/settings/settings.component';
 import {MenuComponent} from '@shared/components/menu/menu.component';
+import {LayoutComponent} from '@shared/components/layout/layout.component';
 
 @NgModule({
 	declarations: [
@@ -23,6 +24,7 @@ import {MenuComponent} from '@shared/components/menu/menu.component';
 		FooterComponent,
 		HeaderComponent,
 		HomeComponent,
+		LayoutComponent,
 		MenuComponent,
 		NotFoundComponent,
 		SettingsComponent,
@@ -32,9 +34,9 @@ import {MenuComponent} from '@shared/components/menu/menu.component';
 		AppRoutingModule,
 		BrowserModule,
 		SharedModule,
-		ServiceWorkerModule.register('ngsw-worker.js', {
-			enabled: environment.production,
-		}),
+		// ServiceWorkerModule.register('ngsw-worker.js', {
+		// 	enabled: environment.production,
+		// }),
 	],
 	providers: [CustomPreloadingStrategy, provideClientHydration()],
 	bootstrap: [AppComponent],

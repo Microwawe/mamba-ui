@@ -1,7 +1,6 @@
-import {Component, OnDestroy} from '@angular/core';
+import {Component, OnDestroy, inject} from '@angular/core';
 import {combineLatest, Subscription} from 'rxjs';
 
-import {CustomInjector} from '@core/injector/custom-injector.service';
 import {ColorService} from '@core/services/color.service';
 import {ThemeService} from '@core/services/theme.service';
 import {TailwindColor} from '@shared/interfaces/tailwind-colors.interface';
@@ -46,9 +45,8 @@ export class BaseComponent implements OnDestroy {
 	protected themeService: ThemeService;
 
 	constructor() {
-		const injector = CustomInjector.getInstance();
-		this.colorService = injector.get(ColorService);
-		this.themeService = injector.get(ThemeService);
+		this.colorService = inject(ColorService);
+		this.themeService = inject(ThemeService);
 
 		this.combinedBaseSub = combineLatest([
 			this.themeService.getDarkTheme(),
