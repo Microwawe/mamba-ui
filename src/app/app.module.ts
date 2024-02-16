@@ -1,4 +1,4 @@
-import {BrowserModule} from '@angular/platform-browser';
+import {BrowserModule, provideClientHydration} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {ServiceWorkerModule} from '@angular/service-worker';
 
@@ -36,7 +36,7 @@ import {MenuComponent} from '@shared/components/menu/menu.component';
 			enabled: environment.production,
 		}),
 	],
-	providers: [CustomPreloadingStrategy],
+	providers: [CustomPreloadingStrategy, provideClientHydration()],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}
