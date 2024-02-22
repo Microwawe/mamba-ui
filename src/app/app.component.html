@@ -2,7 +2,7 @@
 	#loadingScreen
 	style="background-color: #1f2937; height: 100%; width: 100%; position: absolute; z-index: 9999"
 ></div>
-<div *ngIf="!modalContent()" (click)="closeMenu()">
+<div *ngIf="!modalContent()" (click)="closeMenu()" class="relative h-screen w-screen">
 	<router-outlet></router-outlet>
 </div>
 <custom-fullscreen-modal *ngIf="modalContent()"></custom-fullscreen-modal>
