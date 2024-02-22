@@ -126,8 +126,8 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit, O
 	}
 
 	getRawCode(): string {
-		if (this.rawContent?.nativeElement?.firstChild.innerHTML) {
-			this.rawCode = this.rawContent?.nativeElement?.firstChild.innerHTML;
+		if (this.rawContent?.nativeElement?.firstChild?.innerHTML) {
+			this.rawCode = this.rawContent.nativeElement.firstChild.innerHTML;
 		}
 		return this.rawCode;
 	}
