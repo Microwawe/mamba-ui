@@ -34,9 +34,9 @@ import {LayoutComponent} from '@shared/components/layout/layout.component';
 		AppRoutingModule,
 		BrowserModule,
 		SharedModule,
-		// ServiceWorkerModule.register('ngsw-worker.js', {
-		// 	enabled: environment.production,
-		// }),
+		ServiceWorkerModule.register('ngsw-worker.js', {
+			enabled: environment.production,
+		}),
 	],
 	providers: [CustomPreloadingStrategy, provideClientHydration()],
 	bootstrap: [AppComponent],
