@@ -50,7 +50,11 @@
 						"stylePreprocessorOptions": {
 							"includePaths": ["src/styles"]
 						},
-						"scripts": ["src/assets/js/ads.js"]
+						"server": "src/main.server.ts",
+						"prerender": true,
+						"ssr": {
+							"entry": "server.ts"
+						}
 					},
 					"configurations": {
 						"production": {

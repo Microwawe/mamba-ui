@@ -1,15 +1,15 @@
 <div
-	#ad
 	*ngIf="fixed"
+	#fixedAd
 	class="raised custom-ad"
 	[ngClass]="{'dark': darkTheme}"
 	data-ea-publisher="mambauicom"
 	data-ea-type="text"
 	data-ea-style="fixedfooter"
-	data-ea-keywords="{{ keywords }}"
+	attr.data-ea-keywords="{{ keywords }}"
 	id="fixedfooter"
 ></div>
-<div class="absolute z-50 hidden bottom-4 right-6 sm:block" *ngIf="sticky && !manuallyClosed">
+<div *ngIf="sticky && !manuallyClosed" class="absolute z-50 bottom-4 right-6">
 	<button
 		class="absolute px-2 pb-0.5 rounded-full -right-3 -top-3 text-gray-900 bg-gray-200 border border-gray-800"
 		(click)="clickAd()"
@@ -17,22 +17,22 @@
 		X
 	</button>
 	<div
-		#ad
+		#stickyAd
 		class="raised custom-ad"
 		[ngClass]="{'dark': darkTheme}"
 		data-ea-publisher="mambauicom"
 		data-ea-type="image"
-		data-ea-keywords="{{ keywords }}"
+		attr.data-ea-keywords="{{ keywords }}"
 		id="{{ keyword || 'Sticky' }}"
 	></div>
 </div>
 <div
-	#ad
-	*ngIf="!sticky && !fixed"
+	#showcaseAd
+	*ngIf="showcase"
 	class="flat custom-ad"
 	[ngClass]="{'dark': darkTheme}"
 	data-ea-publisher="mambauicom"
 	data-ea-type="text"
-	data-ea-keywords="{{ keywords }}"
+	attr.data-ea-keywords="{{ keywords }}"
 	id="showcase"
 ></div>

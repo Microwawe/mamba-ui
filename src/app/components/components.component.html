@@ -14,7 +14,7 @@
 		<a
 			*ngFor="let category of categories"
 			[routerLink]="['/components/' + category.link]"
-			[routerLinkActive]="['ring-opacity-75', 'ring' + primary]"
+			[routerLinkActive]="['active:ring-opacity-75', 'ring' + primary]"
 			class="relative px-3 py-1 m-1 text-sm rounded-md shadow-sm sm:py-2 sm:text-base ring ring-transparent group md:px-4 hover:ring hover:ring-opacity-50 focus:ring-opacity-50"
 			[ngClass]="[
 				'hover:ring' + primary,

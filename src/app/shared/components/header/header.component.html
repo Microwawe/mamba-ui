@@ -6,7 +6,7 @@
 		(click)="toggleMenu($event)"
 	>
 		<svg
-			*ngIf="!(menuOpen | async)"
+			*ngIf="!menuOpen()"
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 512 512"
 			class="h-8 sm:h-10"
@@ -21,7 +21,7 @@
 			viewBox="0 0 512 512"
 			class="h-8 sm:h-10"
 			[ngClass]="['text' + contrast]"
-			*ngIf="menuOpen | async"
+			*ngIf="menuOpen()"
 		>
 			<polygon
 				class="fill-current"

@@ -1,4 +1,4 @@
-import {BrowserModule} from '@angular/platform-browser';
+import {BrowserModule, provideClientHydration} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {ServiceWorkerModule} from '@angular/service-worker';
 
@@ -15,6 +15,7 @@ import {BreadcrumbComponent} from '@shared/components/breadcrumb/breadcrumb.comp
 import {HomeComponent} from '@shared/components/home/home.component';
 import {SettingsComponent} from '@shared/components/settings/settings.component';
 import {MenuComponent} from '@shared/components/menu/menu.component';
+import {LayoutComponent} from '@shared/components/layout/layout.component';
 
 @NgModule({
 	declarations: [
@@ -23,6 +24,7 @@ import {MenuComponent} from '@shared/components/menu/menu.component';
 		FooterComponent,
 		HeaderComponent,
 		HomeComponent,
+		LayoutComponent,
 		MenuComponent,
 		NotFoundComponent,
 		SettingsComponent,
@@ -36,7 +38,7 @@ import {MenuComponent} from '@shared/components/menu/menu.component';
 			enabled: environment.production,
 		}),
 	],
-	providers: [CustomPreloadingStrategy],
+	providers: [CustomPreloadingStrategy, provideClientHydration()],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}
