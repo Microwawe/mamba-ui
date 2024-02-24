@@ -35,6 +35,7 @@ export class AdsComponent extends BaseComponent implements AfterViewInit, OnDest
 	lastNavigationTime = 0;
 	minViewTimeMs = 2000;
 	maxViewTimeMs = 8000;
+	mobileView = false;
 
 	constructor(private router: Router, @Inject(PLATFORM_ID) private platformId: Object) {
 		super();
@@ -46,6 +47,7 @@ export class AdsComponent extends BaseComponent implements AfterViewInit, OnDest
 		}
 
 		if (isPlatformBrowser(this.platformId)) {
+			this.mobileView = window.innerWidth < 640; // Tailwind CSS's sm breakpoint
 			ethicalads.reload();
 			this.routerSubscription = this.router.events.subscribe(event => {
 				if (event instanceof NavigationEnd) {

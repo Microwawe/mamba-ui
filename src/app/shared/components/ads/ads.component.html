@@ -9,7 +9,7 @@
 	attr.data-ea-keywords="{{ keywords }}"
 	id="fixedfooter"
 ></div>
-<div *ngIf="sticky && !manuallyClosed" class="absolute z-50 bottom-4 right-6">
+<div *ngIf="sticky && !mobileView && !manuallyClosed" class="absolute z-50 bottom-4 right-6">
 	<button
 		class="absolute px-2 pb-0.5 rounded-full -right-3 -top-3 text-gray-900 bg-gray-200 border border-gray-800"
 		(click)="clickAd()"
