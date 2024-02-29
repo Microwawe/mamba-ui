@@ -1,6 +1,6 @@
-import {AnalyticsService} from '@core/services/analytics.service';
-import {FormatterService} from '@core/services/formatter.service';
-import {FullscreenModalService} from '@core/services/fullscreen.modal.service';
+import {AnalyticsService} from '@shared/services/analytics.service';
+import {FormatterService} from '@shared/services/formatter.service';
+import {FullscreenModalService} from '@shared/services/fullscreen.modal.service';
 import {ShowCodeComponent} from '@shared/components/show-code/show-code.component';
 import {selectors} from 'cypress/support/selectors';
 

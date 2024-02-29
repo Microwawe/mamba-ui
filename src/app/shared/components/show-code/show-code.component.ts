@@ -5,9 +5,9 @@ import * as Prism from 'prismjs';
 import 'prismjs/components/prism-jsx';
 
 import {BaseComponent} from '../base/base.component';
-import {FullscreenModalService} from '@core/services/fullscreen.modal.service';
-import {FormatterService} from '@core/services/formatter.service';
-import {AnalyticsService} from '@core/services/analytics.service';
+import {FullscreenModalService} from '@shared/services/fullscreen.modal.service';
+import {FormatterService} from '@shared/services/formatter.service';
+import {AnalyticsService} from '@shared/services/analytics.service';
 import {PlausibleEvent} from '@shared/enum/plausible.event.enum';
 import {Requires} from '@shared/enum/requires.enum';
 

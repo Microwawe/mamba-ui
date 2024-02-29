@@ -1,7 +1,9 @@
 import {Injectable, afterNextRender} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
 
-@Injectable()
+@Injectable({
+	providedIn: 'root',
+})
 export class ThemeService {
 	private themeKey = 'is-custom-dark-theme';
 	private isDarkTheme: BehaviorSubject<boolean>;

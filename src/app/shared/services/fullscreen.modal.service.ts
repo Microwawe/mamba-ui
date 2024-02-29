@@ -1,6 +1,8 @@
 import {Injectable, Signal, signal} from '@angular/core';
 
-@Injectable()
+@Injectable({
+	providedIn: 'root',
+})
 export class FullscreenModalService {
 	private modalContent = signal<string>('');
 

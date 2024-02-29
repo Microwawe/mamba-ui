@@ -16,8 +16,8 @@ import {Router, NavigationEnd, ActivatedRoute} from '@angular/router';
 import {filter, map, tap} from 'rxjs/operators';
 
 import {BaseComponent} from '@shared/components/base/base.component';
-import {MenuService} from '@core/services/menu.service';
-import {FullscreenModalService} from '@core/services/fullscreen.modal.service';
+import {MenuService} from '@shared/services/menu.service';
+import {FullscreenModalService} from '@shared/services/fullscreen.modal.service';
 import {Observable, Subscription} from 'rxjs';
 import {DOCUMENT} from '@angular/common';
 

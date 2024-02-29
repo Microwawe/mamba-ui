@@ -6,7 +6,7 @@ import {
 	ViewChild,
 } from '@angular/core';
 
-import {FullscreenModalService} from '@core/services/fullscreen.modal.service';
+import {FullscreenModalService} from '@shared/services/fullscreen.modal.service';
 import {BaseComponent} from '@shared/components/base/base.component';
 
 @Component({
