@@ -1,9 +1,6 @@
 import {Component} from '@angular/core';
 
-import {environment} from '@env';
 import {BaseComponent} from '@shared/components/base/base.component';
-import {PlausibleEvent} from '@shared/enum/plausible.event.enum';
-import {AnalyticsService} from '@core/services/analytics.service';
 import {Observable} from 'rxjs';
 
 @Component({
