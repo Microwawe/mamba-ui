@@ -20,8 +20,10 @@ describe('Service: Formatter', () => {
 		it('should not remove valid classes', inject(
 			[FormatterService],
 			(service: FormatterService) => {
-				const str = '<h1 class="bg-black">The class property should disappear</h1>';
-				const result = '<h1 class="bg-black">The class property should disappear</h1>';
+				const str =
+					'<h1 class="bg-black tracking-wider">The class property should disappear</h1>';
+				const result =
+					'<h1 class="bg-black tracking-wider">The class property should disappear</h1>';
 				expect(service.removeEmptyClasses(str)).toBe(result);
 			}
 		));
@@ -178,8 +180,9 @@ describe('Service: Formatter', () => {
 			[FormatterService],
 			(service: FormatterService) => {
 				const str =
-					'<form novalidate="" action="" class="space-y-12 ng-untouched ng-pristine ng-valid"></form>';
-				const result = '<form novalidate="" action="" class="space-y-12"></form>';
+					'<form novalidate="" action="" class="ng-untouched space-y-12 tracking-wider ng-pristine ng-valid"></form>';
+				const result =
+					'<form novalidate="" action="" class="space-y-12 tracking-wider"></form>';
 				expect(service.removeAngularClasses(str)).toBe(result);
 			}
 		));

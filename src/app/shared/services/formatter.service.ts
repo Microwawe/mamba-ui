@@ -54,7 +54,7 @@ export class FormatterService {
 	 * @param codeStr The HTML code
 	 */
 	removeAngularClasses(codeStr: string): string {
-		return codeStr.replace(/[\s]*ng-[^"\s]*/gm, '');
+		return codeStr.replace(/\b[\s]*ng-[^"\s]*[\s]*/gm, '');
 	}
 
 	/**
@@ -93,7 +93,7 @@ export class FormatterService {
 			? codeStr.replace(
 					/(bg|border|placeholder|text|from|via|to|ring|ring-offset|accent|divide|outline|decoration|shadow|caret|fill|stroke)-(?!opacity)(black|white|transparent|\w+-\d{2,3})/gm,
 					'dark:$1-$2'
-			  )
+				)
 			: codeStr.replace(/dark:/gm, '');
 	}
 
