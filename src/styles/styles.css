@@ -6,3 +6,27 @@
 	margin: 0px !important;
 	padding: 12px 8px !important;
 }
+
+.text-custom-light {
+	@apply text-gray-100;
+}
+
+.bg-custom-light {
+	@apply bg-gray-100;
+}
+
+.text-custom-dark {
+	@apply text-gray-900;
+}
+
+.bg-custom-dark {
+	@apply bg-gray-900;
+}
+
+.from-custom-dark {
+	@apply from-gray-900;
+}
+
+.to-custom-dark {
+	@apply to-gray-900;
+}

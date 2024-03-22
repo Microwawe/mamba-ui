@@ -143,7 +143,7 @@
 				class="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128"
 			>
 				<img
-					class="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128 bg-gray-500"
+					class="object-contain bg-gray-500 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128"
 					src="assets/svg/Business_SVG.svg"
 					alt=""
 				/>
@@ -289,7 +289,7 @@
 				</div>
 				<div class="mt-10 lg:mt-0" aria-hidden="true">
 					<img
-						class="mx-auto rounded-lg shadow-lg bg-gray-500"
+						class="mx-auto bg-gray-500 rounded-lg shadow-lg"
 						src="https://source.unsplash.com/random/360x480"
 						alt=""
 					/>
@@ -421,7 +421,7 @@
 					</div>
 					<div class="mt-10 lg:mt-0 lg:col-start-1 lg:row-start-1">
 						<img
-							class="mx-auto rounded-lg shadow-lg bg-gray-500"
+							class="mx-auto bg-gray-500 rounded-lg shadow-lg"
 							src="https://source.unsplash.com/random/361x481"
 							alt=""
 						/>
@@ -445,12 +445,11 @@
 			class="container flex flex-col flex-wrap content-center justify-center p-4 py-20 mx-auto md:py-28"
 		>
 			<h1
-				class="text-5xl antialiased font-bold leading-none text-center md:text-6xl"
-				[ngClass]="['text' + light]"
+				class="text-5xl antialiased font-bold leading-none text-center md:text-6xl text-custom-light"
 			>
 				Get Our Updates
 			</h1>
-			<p class="pt-2 pb-8 text-xl antialiased text-center" [ngClass]="['text' + light]">
+			<p class="pt-2 pb-8 text-xl antialiased text-center text-custom-light">
 				Find out about events and other news
 			</p>
 			<div class="flex flex-row">
@@ -629,7 +628,7 @@
 					class="flex space-x-6"
 				>
 					<img
-						class="object-cover w-auto h-56 mb-4 bg-center rounded-sm bg-gray-500"
+						class="object-cover w-auto h-56 mb-4 bg-gray-500 bg-center rounded-sm"
 						src="https://source.unsplash.com/240x320/?portrait?{{ i }}"
 						alt=""
 					/>
@@ -705,7 +704,7 @@
 			</p>
 			<div class="flex justify-center space-x-3">
 				<img
-					class="w-20 h-20 bg-center bg-cover rounded-md bg-gray-500"
+					class="w-20 h-20 bg-gray-500 bg-center bg-cover rounded-md"
 					[ngClass]="['bg' + neutral]"
 					src="https://source.unsplash.com/80x80/?portrait"
 					alt=""

@@ -10,6 +10,7 @@ import {FormatterService} from '@shared/services/formatter.service';
 import {AnalyticsService} from '@shared/services/analytics.service';
 import {PlausibleEvent} from '@shared/enum/plausible.event.enum';
 import {Requires} from '@shared/enum/requires.enum';
+import {ThemeVariant} from '@shared/enum/theme.variant.enum';
 
 @Component({
 	selector: 'custom-show-code',
@@ -27,10 +28,11 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit, O
 	copied = false;
 	codeVisible = false;
 	dropdownOpen = false;
+	themevariant = ThemeVariant;
 	options = {
 		language: '',
 		component: '',
-		darkTheme: false,
+		theme: ThemeVariant.light,
 		color: '',
 	};
 
@@ -44,14 +46,14 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit, O
 
 	ngAfterViewInit(): void {
 		this.combinedSub = combineLatest([
-			this.colorService.getCurrentColor(),
+			this.themeService.getCurrentColor(),
 			this.themeService.getDarkTheme(),
 		]).subscribe(([color, theme]) => {
 			if (this.codeVisible) {
 				this.showPreview();
 			}
 			this.options.color = color.name;
-			this.options.darkTheme = theme;
+			this.options.theme = theme ? ThemeVariant.dark : ThemeVariant.light;
 		});
 		this.options.component = this.rawContent?.nativeElement?.firstChild.localName;
 	}
@@ -60,12 +62,12 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit, O
 	 * Copies the selected component's code to the clipboard. Adds/removes 'dark:' variants if the user selected the param.
 	 * @param dropdownDarkTheme If the user selected light/dark theme from the dropdown when copying a component. UI theme by default.
 	 */
-	copyToClipboard(dropdownDarkTheme: boolean = this.options.darkTheme): void {
+	copyToClipboard(dropdownTheme: ThemeVariant = this.options.theme): void {
 		this.copied = true;
 		this.dropdownOpen = false;
 		this.formatter.copyToClipboard(this.prettyCode);
 		const analyticsOptions = Object.assign({}, this.options);
-		analyticsOptions.darkTheme = dropdownDarkTheme;
+		analyticsOptions.theme = dropdownTheme;
 		this.analytics.triggerEvent(PlausibleEvent.COPY_CODE, analyticsOptions);
 		setTimeout(() => {
 			this.copied = false;
@@ -84,7 +86,7 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit, O
 		this.prettyCode = this.formatter.beautifyHTML(this.getRawCode());
 		this.prettyCode = this.formatter.toggleDarkModeVariants(
 			this.prettyCode,
-			this.options.darkTheme
+			this.options.theme
 		);
 		this.showCode(this.prettyCode);
 	}
@@ -94,7 +96,7 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit, O
 		this.prettyCode = this.formatter.beautifyHTML(this.getRawCode());
 		this.prettyCode = this.formatter.toggleDarkModeVariants(
 			this.prettyCode,
-			this.options.darkTheme
+			this.options.theme
 		);
 		this.prettyCode = this.formatter.useReactSyntax(this.prettyCode);
 		this.showCode(this.prettyCode, 'jsx');
@@ -115,7 +117,7 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit, O
 		this.prettyCode = this.formatter.toVue(this.getRawCode());
 		this.prettyCode = this.formatter.toggleDarkModeVariants(
 			this.prettyCode,
-			this.options.darkTheme
+			this.options.theme
 		);
 		this.showCode(this.prettyCode);
 	}
@@ -132,13 +134,8 @@ export class ShowCodeComponent extends BaseComponent implements AfterViewInit, O
 		return this.rawCode;
 	}
 
-	copyLightMode() {
-		this.prettyCode = this.formatter.toggleDarkModeVariants(this.prettyCode, false);
-		this.copyToClipboard();
-	}
-
-	copyDarkMode() {
-		this.prettyCode = this.formatter.toggleDarkModeVariants(this.prettyCode, true);
+	copyWithMode(mode: ThemeVariant): void {
+		this.prettyCode = this.formatter.toggleDarkModeVariants(this.prettyCode, mode);
 		this.copyToClipboard();
 	}
 

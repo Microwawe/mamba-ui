@@ -58,18 +58,17 @@
 			</div>
 		</div>
 		<div
-			class="relative flex col-span-12 bg-center bg-no-repeat bg-cover bg-gray-500 xl:col-span-6 lg:col-span-5 md:col-span-9 min-h-96"
+			class="relative flex col-span-12 bg-gray-500 bg-center bg-no-repeat bg-cover xl:col-span-6 lg:col-span-5 md:col-span-9 min-h-96"
 			style="background-image: url('https://source.unsplash.com/random/239x319')"
 		>
 			<span
-				class="absolute px-1 pb-2 text-xs font-bold uppercase border-b-2 left-6 top-6"
-				[ngClass]="['border' + primary, 'text' + light]"
+				class="absolute px-1 pb-2 text-xs font-bold uppercase border-b-2 left-6 top-6 text-custom-light"
+				[ngClass]="['border' + primary]"
 			>
 				paris, france
 			</span>
 			<a
-				class="flex flex-col items-center justify-end p-6 text-center sm:p-8 group via-transparent flex-grow-1 bg-gradient-to-b"
-				[ngClass]="['from' + dark, 'to' + dark]"
+				class="flex flex-col items-center justify-end p-6 text-center sm:p-8 group via-transparent flex-grow-1 bg-gradient-to-b from-custom-dark to-custom-dark"
 			>
 				<span class="flex items-center mb-4 space-x-2" [ngClass]="['text' + primary]">
 					<span
@@ -86,8 +85,7 @@
 				<h1
 					rel="noopener noreferrer"
 					href="#"
-					class="font-serif text-2xl font-semibold group-hover:underline"
-					[ngClass]="['text' + light]"
+					class="font-serif text-2xl font-semibold group-hover:underline text-custom-light"
 				>
 					Morbi mattis justo est, ac consectetur dui eleifend vitae. Donec venenatis?
 				</h1>

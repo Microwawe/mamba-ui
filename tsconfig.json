@@ -22,7 +22,7 @@
 		"target": "ES2022",
 		"module": "es2020",
 		"lib": ["es2018", "dom"],
-		"types": ["cypress", "node"],
+		"types": ["cypress", "node", "jasmine"],
 		"useDefineForClassFields": false
 	},
 	"include": ["src/**/*.ts", "cypress/**/*.ts"]
