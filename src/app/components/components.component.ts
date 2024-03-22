@@ -75,9 +75,9 @@ export class ComponentsComponent extends BaseComponent implements OnDestroy {
 		this.componentTotal = this.categories
 			.map(categ => categ.count)
 			.reduce((acc, sum) => sum + acc, 0);
-		this.themeSub = this.themeService.getDarkTheme().subscribe((isDarkmode: boolean) => {
-			this.activeBgColor = isDarkmode ? 'bg' + this.plain : 'bg' + this.contrast;
-			this.disabledBgColor = isDarkmode ? 'bg' + this.default : 'bg' + this.neutral;
+		this.themeSub = this.themeService.getCurrentTheme().subscribe(theme => {
+			this.activeBgColor = theme.darkTheme ? 'bg' + theme.plain : 'bg' + theme.contrast;
+			this.disabledBgColor = theme.darkTheme ? 'bg' + theme.default : 'bg' + theme.neutral;
 		});
 	}
 

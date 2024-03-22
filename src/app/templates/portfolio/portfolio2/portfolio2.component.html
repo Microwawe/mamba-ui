@@ -129,7 +129,7 @@
 										{{ p.title }}
 									</a>
 								</h3>
-								<p class="max-w-full prose" [ngClass]="['text' + defaultInv]">
+								<p class="max-w-full" [ngClass]="['text' + defaultInv, prose]">
 									{{ p.content }}
 								</p>
 								<div class="flex flex-wrap space-x-3">
@@ -178,7 +178,7 @@
 						[ngClass]="['bg' + contrast]"
 					>
 						<img
-							class="object-cover w-full h-52 bg-gray-500"
+							class="object-cover w-full bg-gray-500 h-52"
 							alt=""
 							src="https://source.unsplash.com/200x200/?fashion?{{ i }}"
 						/>

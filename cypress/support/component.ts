@@ -20,7 +20,7 @@ declare global {
 
 const imports: any[] = [];
 const declarations: any[] = [];
-const providers: any[] = [AnalyticsService, ColorService, ThemeService, HttpClient, HttpHandler];
+const providers: any[] = [AnalyticsService, ThemeService, HttpClient, HttpHandler];
 
 function customMount<T>(component: string | Type<T>, config?: MountConfig<T>) {
 	if (!config) {

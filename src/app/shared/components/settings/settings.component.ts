@@ -25,8 +25,8 @@ export class SettingsComponent extends BaseComponent implements OnInit, OnDestro
 
 	ngOnInit(): void {
 		this.isDarkTheme = this.themeService.getDarkTheme();
-		this.colors = this.colorService.getAllColors();
-		this.colorSub = this.colorService.getCurrentColor().subscribe((color: TailwindColor) => {
+		this.colors = this.themeService.getAllColors();
+		this.colorSub = this.themeService.getCurrentColor().subscribe((color: TailwindColor) => {
 			this.selectedColor = color;
 		});
 	}
@@ -39,7 +39,7 @@ export class SettingsComponent extends BaseComponent implements OnInit, OnDestro
 
 	changeColor(color: TailwindColor): void {
 		this.analytics.triggerEvent(PlausibleEvent.CHANGE_COLOR, {color: color});
-		this.colorService.setCurrentColor(color);
+		this.themeService.setCurrentColor(color);
 	}
 
 	toggleDarkTheme(dark: boolean): void {

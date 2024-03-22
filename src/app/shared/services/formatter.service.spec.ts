@@ -2,6 +2,7 @@
 
 import {TestBed, inject} from '@angular/core/testing';
 import {FormatterService} from './formatter.service';
+import {ThemeVariant} from '@shared/enum/theme.variant.enum';
 
 describe('Service: Formatter', () => {
 	beforeEach(() => {
@@ -69,21 +70,48 @@ describe('Service: Formatter', () => {
 		));
 	});
 
+	describe('renameCustomColors()', () => {
+		it('should replace custom colors', inject(
+			[FormatterService],
+			(service: FormatterService) => {
+				const str =
+					'<span class="text-custom-dark bg-custom-light from-custom-dark to-custom-dark"></span>';
+				const result =
+					'<span class="text-gray-900 bg-gray-100 from-gray-900 to-gray-900"></span>';
+				expect(service.renameCustomColors(str)).toBe(result);
+			}
+		));
+	});
+
 	describe('toggleDarkModeVariants()', () => {
-		it('should add dark variants', inject([FormatterService], (service: FormatterService) => {
-			const str =
-				'<span class="text-white border-white ring-white ring-offset-white accent-white divide-white bg-white from-white via-white to-white outline-white decoration-white shadow-white caret-white fill-white stroke-white"></span>';
-			const result =
-				'<span class="dark:text-white dark:border-white dark:ring-white dark:ring-offset-white dark:accent-white dark:divide-white dark:bg-white dark:from-white dark:via-white dark:to-white dark:outline-white dark:decoration-white dark:shadow-white dark:caret-white dark:fill-white dark:stroke-white"></span>';
-			expect(service.toggleDarkModeVariants(str, true)).toBe(result);
-		}));
+		it('should add dark variants and swap color shades', inject(
+			[FormatterService],
+			(service: FormatterService) => {
+				const str =
+					'<span class="text-gray-600 border-gray-400 ring-gray-700 ring-offset-gray-300 accent-gray-800 divide-gray-100 bg-gray-900 from-gray-50 via-gray-500 to-gray-500 outline-gray-500 decoration-gray-500 shadow-gray-500 caret-gray-500 fill-gray-500 stroke-gray-500"></span>';
+				const result =
+					'<span class="dark:text-gray-400 dark:border-gray-600 dark:ring-gray-300 dark:ring-offset-gray-700 dark:accent-gray-100 dark:divide-gray-800 dark:bg-gray-50 dark:from-gray-900 dark:via-gray-500 dark:to-gray-500 dark:outline-gray-500 dark:decoration-gray-500 dark:shadow-gray-500 dark:caret-gray-500 dark:fill-gray-500 dark:stroke-gray-500"></span>';
+				expect(service.toggleDarkModeVariants(str, ThemeVariant.dark)).toBe(result);
+			}
+		));
+
+		it('should remove dark variants and swap color shades', inject(
+			[FormatterService],
+			(service: FormatterService) => {
+				const str =
+					'<span class="dark:text-gray-400 dark:border-gray-600 dark:ring-gray-300 dark:ring-offset-gray-700 dark:accent-gray-100 dark:divide-gray-800 dark:bg-gray-50 dark:from-gray-900 dark:via-gray-500 dark:to-gray-500 dark:outline-gray-500 dark:decoration-gray-500 dark:shadow-gray-500 dark:caret-gray-500 dark:fill-gray-500 dark:stroke-gray-500"></span>';
+				const result =
+					'<span class="text-gray-600 border-gray-400 ring-gray-700 ring-offset-gray-300 accent-gray-800 divide-gray-100 bg-gray-900 from-gray-50 via-gray-500 to-gray-500 outline-gray-500 decoration-gray-500 shadow-gray-500 caret-gray-500 fill-gray-500 stroke-gray-500"></span>';
+				expect(service.toggleDarkModeVariants(str, ThemeVariant.light)).toBe(result);
+			}
+		));
 
 		it('should not add dark variant to border width', inject(
 			[FormatterService],
 			(service: FormatterService) => {
 				const str = '<span class="border-t-4"></span>';
 				const result = '<span class="border-t-4"></span>';
-				expect(service.toggleDarkModeVariants(str, true)).toBe(result);
+				expect(service.toggleDarkModeVariants(str, ThemeVariant.dark)).toBe(result);
 			}
 		));
 
@@ -92,7 +120,7 @@ describe('Service: Formatter', () => {
 			(service: FormatterService) => {
 				const str = '<svg><path fill="#fff" fill-rule="evenodd"></path></svg>';
 				const result = '<svg><path fill="#fff" fill-rule="evenodd"></path></svg>';
-				expect(service.toggleDarkModeVariants(str, true)).toBe(result);
+				expect(service.toggleDarkModeVariants(str, ThemeVariant.dark)).toBe(result);
 			}
 		));
 
@@ -101,7 +129,7 @@ describe('Service: Formatter', () => {
 			(service: FormatterService) => {
 				const str = '<span class="border-opacity-50"></span>';
 				const result = '<span class="border-opacity-50"></span>';
-				expect(service.toggleDarkModeVariants(str, true)).toBe(result);
+				expect(service.toggleDarkModeVariants(str, ThemeVariant.dark)).toBe(result);
 			}
 		));
 
@@ -110,7 +138,7 @@ describe('Service: Formatter', () => {
 			(service: FormatterService) => {
 				const str = '<span class="placeholder-opacity-50"></span>';
 				const result = '<span class="placeholder-opacity-50"></span>';
-				expect(service.toggleDarkModeVariants(str, true)).toBe(result);
+				expect(service.toggleDarkModeVariants(str, ThemeVariant.dark)).toBe(result);
 			}
 		));
 
@@ -119,18 +147,39 @@ describe('Service: Formatter', () => {
 			(service: FormatterService) => {
 				const str = '<span class="text-xl"></span>';
 				const result = '<span class="text-xl"></span>';
-				expect(service.toggleDarkModeVariants(str, true)).toBe(result);
+				expect(service.toggleDarkModeVariants(str, ThemeVariant.dark)).toBe(result);
 			}
 		));
 
 		it('should remove dark variant when not in dark mode', inject(
 			[FormatterService],
 			(service: FormatterService) => {
-				const str = '<span class="dark:bg-black"></span>';
-				const result = '<span class="bg-black"></span>';
-				expect(service.toggleDarkModeVariants(str, false)).toBe(result);
+				const str = '<span class="dark:bg-gray-500"></span>';
+				const result = '<span class="bg-gray-500"></span>';
+				expect(service.toggleDarkModeVariants(str, ThemeVariant.light)).toBe(result);
 			}
 		));
+
+		it('should add both variants', inject([FormatterService], (service: FormatterService) => {
+			const str =
+				'<span class="text-gray-500 border-gray-500 ring-gray-500 ring-offset-gray-500 accent-gray-500 divide-gray-500 bg-gray-500 from-gray-500 via-gray-500 to-gray-500 outline-gray-500 decoration-gray-500 shadow-gray-500 caret-gray-500 fill-gray-500 stroke-gray-500"></span>';
+			const result =
+				'<span class="text-gray-500 dark:text-gray-500 border-gray-500 dark:border-gray-500 ring-gray-500 dark:ring-gray-500 ring-offset-gray-500 dark:ring-offset-gray-500 accent-gray-500 dark:accent-gray-500 divide-gray-500 dark:divide-gray-500 bg-gray-500 dark:bg-gray-500 from-gray-500 dark:from-gray-500 via-gray-500 dark:via-gray-500 to-gray-500 dark:to-gray-500 outline-gray-500 dark:outline-gray-500 decoration-gray-500 dark:decoration-gray-500 shadow-gray-500 dark:shadow-gray-500 caret-gray-500 dark:caret-gray-500 fill-gray-500 dark:fill-gray-500 stroke-gray-500 dark:stroke-gray-500"></span>';
+			expect(service.toggleDarkModeVariants(str, ThemeVariant.both)).toBe(result);
+		}));
+
+		it('should keep pseudo-classes on both modes', inject(
+			[FormatterService],
+			(service: FormatterService) => {
+				const str =
+					'<span class="dark:text-gray-100 hover:dark:text-indigo-400 focus-visible:dark:border-gray-300"></span>';
+				const result =
+					'<span class="text-gray-800 dark:text-gray-100 hover:text-indigo-600 hover:dark:text-indigo-400 focus-visible:border-gray-700 focus-visible:dark:border-gray-300"></span>';
+				expect(service.toggleDarkModeVariants(str, ThemeVariant.both)).toBe(result);
+			}
+		));
+
+		// class="text-gray-100 dark:text-gray-800 text-gray-800 dark:text-gray-100 hover:text-indigo-400 hover:dark:text-indigo-600 hover:text-indigo-600 hover:dark:text-indigo-400"
 	});
 
 	describe('removeAngularComments()', () => {

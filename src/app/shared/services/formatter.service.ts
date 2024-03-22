@@ -1,10 +1,12 @@
 import {Injectable} from '@angular/core';
+import {ThemeVariant} from '@shared/enum/theme.variant.enum';
+import {ThemeService} from './theme.service';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class FormatterService {
-	constructor() {}
+	constructor(private themeService: ThemeService) {}
 
 	beautifyHTML(codeStr: string, startAtLevel = 0): string {
 		const div = document.createElement('div');
@@ -13,6 +15,7 @@ export class FormatterService {
 		cleanedString = this.removeAngularClasses(cleanedString);
 		cleanedString = this.removeEmptyClasses(cleanedString);
 		cleanedString = this.removeEmptyWhitespace(cleanedString);
+		cleanedString = this.renameCustomColors(cleanedString);
 
 		div.innerHTML = cleanedString.trim();
 		return this.formatNode(div, startAtLevel).innerHTML.trim();
@@ -83,18 +86,48 @@ export class FormatterService {
 	}
 
 	/**
+	 * Replaces custom non-dynamic colors with their actual Tailwind CSS color
+	 * @param codeStr The HTML code
+	 */
+	renameCustomColors(codeStr: string): string {
+		return codeStr
+			.replace(/-custom-dark/gm, '-gray-900')
+			.replace(/-custom-light/gm, '-gray-100');
+	}
+
+	/**
 	 * Adds or removes the 'dark:' from all the colors.
 	 * @param codeStr The HTML code
-	 * @param darkTheme Adds dark-variant if this is true and vice versa
+	 * @param mode Accepts dark|light|both,
+	 * - Dark: adds 'dark:' to all the colors
+	 * - Light: removes 'dark:' from all the colors
+	 * - Both: adds the colors with and without 'dark:'
 	 * @returns
 	 */
-	toggleDarkModeVariants(codeStr: string, darkTheme: boolean): string {
-		return darkTheme
-			? codeStr.replace(
-					/(bg|border|placeholder|text|from|via|to|ring|ring-offset|accent|divide|outline|decoration|shadow|caret|fill|stroke)-(?!opacity)(black|white|transparent|\w+-\d{2,3})/gm,
-					'dark:$1-$2'
-				)
-			: codeStr.replace(/dark:/gm, '');
+	toggleDarkModeVariants(codeStr: string, mode: ThemeVariant): string {
+		const replacer = (
+			match: string,
+			pseudoClass: string,
+			dark: string,
+			color: string,
+			shade: string
+		) => {
+			const currentShade = shade;
+			const inverseShade = this.themeService.getInverseShade(shade);
+			const darkShade = dark ? currentShade : inverseShade;
+			const lightShade = dark ? inverseShade : currentShade;
+			if (mode == ThemeVariant.both) {
+				return `${pseudoClass || ''}${color}-${lightShade} ${pseudoClass || ''}dark:${color}-${darkShade}`;
+			} else {
+				const shade = mode == ThemeVariant.dark ? darkShade : lightShade;
+				const dark = mode == ThemeVariant.dark ? 'dark:' : '';
+				return `${pseudoClass || ''}${dark}${color}-${shade}`;
+			}
+		};
+
+		const regex =
+			/((?!dark)[\w-]*:)?(dark:)?(bg|border|placeholder|text|from|via|to|ring|ring-offset|accent|divide|outline|decoration|shadow|caret|fill|stroke)-(?!opacity)(black|white|transparent|\w+-\d{2,3})/gm;
+		return codeStr.replace(regex, replacer);
 	}
 
 	replaceColor(codeStr: string, oldColor: string, newColor: string): string {

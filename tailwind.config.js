@@ -57,44 +57,6 @@ module.exports = {
 			maxHeight: {
 				'half-screen': '50vh',
 			},
-			typography: theme => ({
-				DEFAULT: {
-					css: {
-						color: theme('colors.gray.700'),
-						h2: {
-							color: theme('colors.gray.800'),
-						},
-						h3: {
-							color: theme('colors.gray.800'),
-						},
-						strong: {
-							color: theme('colors.gray.800'),
-						},
-						a: {
-							color: theme('colors.violet.500'),
-							'&:hover': {
-								color: theme('colors.violet.600'),
-							},
-						},
-					},
-				},
-				dark: {
-					css: {
-						color: theme('colors.gray.400'),
-						a: {color: theme('colors.gray.100')},
-						strong: {color: theme('colors.gray.100')},
-						h1: {color: theme('colors.gray.100')},
-						h2: {color: theme('colors.gray.100')},
-						h3: {color: theme('colors.gray.100')},
-						h4: {color: theme('colors.gray.100')},
-						code: {color: theme('colors.gray.100')},
-						pre: {
-							color: theme('colors.gray.200'),
-							backgroundColor: theme('colors.gray.800'),
-						},
-					},
-				},
-			}),
 		},
 	},
 	variants: {},
@@ -129,9 +91,6 @@ module.exports = {
 
 				'ring-offset-gray-100',
 				'ring-offset-gray-800',
-
-				'from-gray-900',
-				'to-gray-900',
 
 				'w-1/6',
 				'w-2/6',
