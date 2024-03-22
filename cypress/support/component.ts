@@ -3,7 +3,6 @@ import {HttpClient, HttpHandler} from '@angular/common/http';
 import './commands';
 import {MountConfig, mount} from 'cypress/angular';
 import {AnalyticsService} from '@shared/services/analytics.service';
-import {ColorService} from '@shared/services/color.service';
 import {ThemeService} from '@shared/services/theme.service';
 
 // Augment the Cypress namespace to include type definitions for
