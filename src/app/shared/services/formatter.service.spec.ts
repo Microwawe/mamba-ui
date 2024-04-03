@@ -178,8 +178,6 @@ describe('Service: Formatter', () => {
 				expect(service.toggleDarkModeVariants(str, ThemeVariant.both)).toBe(result);
 			}
 		));
-
-		// class="text-gray-100 dark:text-gray-800 text-gray-800 dark:text-gray-100 hover:text-indigo-400 hover:dark:text-indigo-600 hover:text-indigo-600 hover:dark:text-indigo-400"
 	});
 
 	describe('removeAngularComments()', () => {
@@ -235,6 +233,16 @@ describe('Service: Formatter', () => {
 				expect(service.removeAngularClasses(str)).toBe(result);
 			}
 		));
+
+		it('should not change ring-something classes', inject(
+			[FormatterService],
+			(service: FormatterService) => {
+				const str = '<span class="ring-gray-500 focus:ring focus:ring-opacity-75"></span>';
+				const result =
+					'<span class="ring-gray-500 focus:ring focus:ring-opacity-75"></span>';
+				expect(service.removeAngularCode(str)).toBe(result);
+			}
+		));
 	});
 
 	describe('useReactSyntax()', () => {
@@ -243,6 +251,24 @@ describe('Service: Formatter', () => {
 			(service: FormatterService) => {
 				const str = '<span class="text-gray-800"></span>';
 				const result = '<span className="text-gray-800"></span>';
+				expect(service.useReactSyntax(str)).toBe(result);
+			}
+		));
+
+		it('should change "novalidate" to "noValidate"', inject(
+			[FormatterService],
+			(service: FormatterService) => {
+				const str = '<form novalidate="" action=""></form>';
+				const result = '<form noValidate="" action=""></form>';
+				expect(service.useReactSyntax(str)).toBe(result);
+			}
+		));
+
+		it('should change "for" to "htmlFor"', inject(
+			[FormatterService],
+			(service: FormatterService) => {
+				const str = '<label for="email">Email</label>';
+				const result = '<label htmlFor="email">Email</label>';
 				expect(service.useReactSyntax(str)).toBe(result);
 			}
 		));
