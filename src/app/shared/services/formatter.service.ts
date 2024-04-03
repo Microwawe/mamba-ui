@@ -152,6 +152,8 @@ export class FormatterService {
 				const parts = prop.split('-');
 				return parts[0] + parts[1].charAt(0).toUpperCase() + parts[1].slice(1);
 			})
+			.replace(/novalidate=/gm, 'noValidate=')
+			.replace(/for=/gm, 'htmlFor=')
 			.replace(/<img ([^<]*[^/\s])[\s]?>/g, '<img $1 />')
 			.replace(/<input ([^<]*[^/\s])[\s]?>/g, '<input $1 />')
 			.replace(/<area([^<]*[^/\s])[\s]?>/g, '<area $1 />')
